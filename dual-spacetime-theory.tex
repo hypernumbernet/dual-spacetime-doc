@@ -72,6 +72,8 @@ Section~\ref{sec:unified} shows that inertia and gravity are identical phenomena
 
 Section~\ref{sec:timedilation} derives time dilation effects from torsional mismatch, predicting measurable deviations from GR in strong gravitational fields and planetary interiors.
 
+Section~\ref{sec:hyperspacetimecube} interprets the biquaternion structure as a hyperspacetime cube functioning as a dynamic sensor for environmental mass-energy distributions, providing a geometric visualization of torsion as sensed misalignment.
+
 Section~\ref{sec:darkmatter} eliminates the need for dark matter by deriving flat galactic rotation curves from baryons alone.
 
 Section~\ref{sec:strongfield} reinterprets stellar remnants as torsion stars with multi-layered attractive-repulsive structure, forbidding both singularities and event horizons.
@@ -148,7 +150,7 @@ Each particle is postulated to carry an intrinsic \emph{pair} of compactified Mi
 
   \item \textbf{Dual Spacetime:} Represented by vectors of the form
   \[
-  X' = -ct' \, k + x' \, jI + y' \, jJ + z' \, jK,
+  X' = ct' \, k + x' \, jI + y' \, jJ + z' \, jK,
   \]
   with identical Minkowski norm
   \[
@@ -220,7 +222,7 @@ This single operation preserves the Minkowski norm ($X^2 = \tilde{X}^2$) and act
 
 \subsection{Rotors in the Dual Spacetime}
 
-The kinematic structure developed for the usual spacetime extends seamlessly to its dual counterpart, thanks to the commuting nature of the biquaternion generators. However, when the full rotor \(R_\text{total} = R_\text{usual} R_\text{dual}\) acts via the sandwich product \(\tilde{X}' = R_\text{total} X' R_\text{total}^\dagger\) on a dual spacetime vector \(X' = -ct' \, k + x' \, jI + y' \, jJ + z' \, jK\), a richer interplay emerges: the dual sector undergoes Lorentzian transformations that mirror those of the usual spacetime, but with a characteristic sign flip in the boost components due to the intrinsic time reversal of the dual map \(X \mapsto X i\).
+The kinematic structure developed for the usual spacetime extends seamlessly to its dual counterpart, thanks to the commuting nature of the biquaternion generators. However, when the full rotor \(R_\text{total} = R_\text{usual} R_\text{dual}\) acts via the sandwich product \(\tilde{X}' = R_\text{total} X' R_\text{total}^\dagger\) on a dual spacetime vector \(X' = ct' \, k + x' \, jI + y' \, jJ + z' \, jK\), a richer interplay emerges: the dual sector undergoes Lorentzian transformations that mirror those of the usual spacetime, but with a characteristic sign flip in the boost components due to the intrinsic time reversal of the dual map \(X \mapsto X i\).
 
 To elucidate this evolution, consider explicit computations within the biquaternion algebra, leveraging the multiplication rules isomorphic to \(\mathrm{Cl}(3,1)\). For simplicity, focus on a pure boost in the \(x\)-direction generated solely by \(R_\text{usual} = \exp\left( \frac{\theta}{2} iI \right) = \cosh\left( \frac{\theta}{2} \right) + \sinh\left( \frac{\theta}{2} \right) iI\), with \(R_\text{dual} = 1\) (i.e., \(\phi_a = 0\)). This isolates the cross-action of the usual rotor on the dual basis. The dual time-like component \(X' = k\) (setting \(ct' = 1\)) transforms as:
 \[
@@ -415,6 +417,63 @@ The theory's predictions diverge from GR in observable ways, enabling immediate 
 \end{itemize}
 
 These tests, feasible with current technology, could confirm or falsify the theory within the decade. Successful verification would validate gravity as an engineerable torsional degree of freedom, enabling control via dual rotor excitation.
+
+\section{Physical Interpretation: The Hyperspacetime Cube as a Sensor for Dual Spacetime Mismatch}
+\label{sec:hyperspacetimecube}
+
+In the dual spacetime theory, the biquaternion algebra $\mathbb{H} \otimes \mathbb{H} \cong \mathrm{Cl}(3,1)$ not only provides the algebraic scaffold for particle-intrinsic dual spacetimes but also admits a profound geometric visualization as a \emph{hyperspacetime cube}. This 16-real-dimensional structure, compactified within each massive particle, can be interpreted as a hypercube (tesseract projected into 4D Minkowski space) whose vertices, edges, faces, and volumes encode the interplay between the usual spacetime basis $\{j, kI, kJ, kK\}$ and its dual counterpart $\{k, jI, jJ, jK\}$. Far from a mere mathematical artifact, this hyperspacetime cube functions as a dynamic \emph{sensor}, detecting surrounding energy and mass distributions through geometric distortions that propagate via $R_\text{dual} i$ to generate the torsional mismatch rotor $\Omega = R_\text{usual}^\dagger R_\text{dual}$. This interpretation demystifies the origin of torsion as an emergent response to environmental coupling, reinforcing the theory's rejection of the continuum hypothesis and opening new avenues for gravitational sensing and engineering.
+
+\subsection{Geometric Structure of the Hyperspacetime Cube}
+
+The Clifford algebra $\mathrm{Cl}(3,1)$ generates a graded structure: scalars (grade 0), vectors (grade 1: 4D), bivectors (grade 2: 6D), trivectors (grade 3: 4D), and the pseudoscalar (grade 4: 1D), spanning the full 16 dimensions. Projecting this onto a hyperspacetime cube aligns the usual spacetime vectors with the ``front face'' vertices:
+\[
+e_0 = j \quad (t\text{-like}), \quad e_1 = kI, \quad e_2 = kJ, \quad e_3 = kK \quad (x,y,z\text{-like}),
+\]
+while the dual spacetime occupies the ``back face'':
+\[
+\tilde{e}_0 = k = e_1 e_2 e_3, \quad \tilde{e}_1 = jI = e_0 e_3 e_2, \quad \tilde{e}_2 = jJ = e_0 e_1 e_3, \quad \tilde{e}_3 = jK = e_0 e_2 e_1.
+\]
+The edges of the cube are defined by the anticommutation relations $\{e_\mu, e_\nu\} = 2\eta_{\mu\nu}$, with $\eta = \mathrm{diag}(-1,1,1,1)$, ensuring Lorentz invariance. The dual map $X \mapsto X i$, where $i = e_0 e_1 e_2 e_3$ is the pseudoscalar ($i^2 = -1$), twists the cube along the temporal axis: $j i = -k$, reversing the arrow of time while preserving the norm $X^2 = (X i)^2 i^{-2} = X^2$.
+
+Bivectors form the cube's faces: boost-like generators $(iI)^2 = +1$, $iJ$, $iK$ span hyperbolic distortions on the front, while rotation-like $\Gamma_a = (I, J, K)$ with $\Gamma_a^2 = -1$ govern the back. Trivectors fill the edges' intersections, and $i$ orients the overall volume, imprinting chirality. This hypercube is not rigid; external mass-energy $\rho$ induces shears and torsions, with the front face coupling to incoming fields (via $R_\text{usual}$) and the back accumulating retrograde responses (via $R_\text{dual}$).
+
+\subsection{The Cube as an Environmental Sensor}
+
+Each particle's hyperspacetime cube acts as a localized sensor for the cosmic environment, transducing nearby energy-momentum $T_{\mu\nu}$ into internal geometric strain. In the weak-field limit, surrounding mass generates a potential $\Phi \propto GM/r$, biasing the usual rotor:
+\[
+R_\text{usual} = \exp\left( \sum_{a=1}^3 \frac{\omega_a}{2} i \Gamma_a \right), \quad \omega_a \propto \partial_a (\Phi / c^2).
+\]
+This shears the front vertices, propagating through edges to the back face, where the dual rotor lags due to the particle's intrinsic rigidity (proportional to rest mass $m$):
+\[
+R_\text{dual} = \exp\left( \sum_{a=1}^3 \frac{\phi_a}{2} \Gamma_a \right), \quad \phi_a \approx \beta \omega_a, \quad \beta < 1 \quad (\text{mass-induced delay}).
+\]
+The resulting distortion $\delta \theta = |\omega_a - \phi_a|$ warps the cube's faces: bivector angles deviate from flatness, with boost dominance ($i\Gamma_a$) stretching temporal edges positively and rotations ($\Gamma_a$) compressing spatial ones negatively. For massless particles, $\beta = 1$ and the cube remains undistorted ($\delta \theta = 0$), enabling eternal free propagation at $c$. For massive particles, the sensor's ``backlog'' manifests as inertia—the energetic cost of unresolved strain.
+
+This sensing is chiral: the pseudoscalar $i$ ensures that detected $\rho$ on the front inverts to a retrograde signal on the back, mirroring the dual map's time reversal. Thus, the cube is not passive but a responsive antenna, where environmental ``echoes'' (from neighboring particles' cubes) accumulate as phase memory in the trivector volumes.
+
+\subsection{Propagation Chain and Torsional Mismatch}
+
+The sensor's output channels through the composite operator $R_\text{dual} i$, which feedback-distorts the cube via mirror inversion. Since $\{i, \Gamma_a\} = 0$ yet commuting with the primary quaternions, 
+\[
+R_\text{dual} i = i R_\text{dual} \quad (\text{commutativity: } i \Gamma_a = \Gamma_a i).
+\]
+Acting on a dual vector $X' = ct' k + x' jI + \cdots$ via the sandwich product,
+\[
+\tilde{X}' = R_\text{dual} i \, X' \, (R_\text{dual} i)^\dagger = R_\text{dual} \, (i X' i^{-1}) \, R_\text{dual}^{-1},
+\]
+where $i X' i^{-1} = -X$ (time-reversed usual vector). This inverts the back face's strain into a front-like boost with sign flip: rotations $\phi_a$ generate effective hyperbolic mixing ($\cosh(\phi_a/2) \pm \sinh(\phi_a/2) i \Gamma_a$, negative for retrograde propagation). Physically, $R_\text{dual} i$ is the cube's ``inversion transducer'': detected distortions on the back resonate through $i$'s volume twist, amplifying the temporal shear and imprinting parity-odd responses (e.g., $\tilde{k} \mapsto \cosh \phi \, k + \sinh \phi \, jI$ with flipped sign relative to $R_\text{usual}$).
+
+The culmination is the torsional mismatch:
+\[
+\Omega = R_\text{usual}^\dagger (R_\text{dual} i) = (R_\text{usual}^\dagger R_\text{dual}) i,
+\]
+with bivector $\Omega_\text{biv} = \log \Omega \in \mathfrak{so}(3,1) \oplus \mathfrak{so}(3,1)$. The pseudoscalar phase from $i$ enriches $J = \frac{1}{16} B(\Omega_\text{biv}, \Omega_\text{biv})$, introducing oscillatory modulations: low $\rho$ yields $J > 0$ (attractive sensing), high $\rho$ flips to $J < 0$ (repulsive overload). On galactic scales, collective cube distortions accumulate logarithmic phases, yielding flat rotation curves without dark matter; at nuclear densities, layer flips emerge as the ``strong force.''
+
+\subsection{Implications for Sensing and Engineering}
+
+This hyperspacetime cube interpretation elevates the dual spacetime from algebraic duality to a sensor network: particles ``feel'' the universe through cube distortions, crystallizing gravity as collective $\Omega$. It resolves inertia as sensor lag and enables engineering: resonant excitation of back-face modes (e.g., THz fields tuned to $\phi_a i$) can nullify $\delta \theta$, achieving $J \to 0$ for shielding or $J < 0$ for antigravity. Future N-body simulations incorporating cube distortions will quantify these effects, predicting deviations in pulsar glitches or nuclear EOS oscillations.
+
+The cube thus unveils particles as sentient probes in a discrete cosmos—torsion not as curvature, but as the whisper of sensed misalignment.
 
 \section{Dark Matter-Free Galactic Rotation Curves}
 \label{sec:darkmatter}
