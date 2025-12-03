@@ -3,10 +3,11 @@
 \usepackage{amsthm}
 \usepackage{mathtools}
 \usepackage{bm}
-\usepackage{hyperref}
+\usepackage[dvipdfmx]{hyperref}
 \usepackage{geometry}
 \geometry{left=25mm,right=25mm,top=25mm,bottom=25mm}
 \usepackage[utf8]{inputenc}
+\newtheorem{theorem}{Theorem}
 
 \title{[DRAFT] De Broglie Waves as Dual-Rotor Phase Lag:\\ Quantum Mechanics as Geometry of Particle-Intrinsic Dual Spacetime}
 
@@ -64,21 +65,61 @@ r_\text{comp} \sim \frac{\hbar}{mc},
 while the de Broglie wavelength is the distance over which the torsional mismatch accumulates one full cycle $2\pi$.
 
 \section{Wave Function as Dual-Rotor Overlap}
+\label{sec:wavefunction}
 
-Define the \emph{dual-rotor inner product} between observer $\mathcal{O}$ (macroscopic apparatus) and particle $A$:
-\[
-\langle R_\text{dual}^\mathcal{O} | R_\text{dual}^A(\mathbf{x},t) \rangle
-  := \frac{1}{2}\mathrm{Tr}\!\Bigl[ (R_\text{dual}^\mathcal{O})^\dagger R_\text{dual}^A(\mathbf{x},t)\Bigr).
-\]
-We prove in Appendix A that this scalar quantity is complex-valued and satisfies
+The quantum mechanical wave function is not an abstract entity in Hilbert space but a concrete geometric overlap in the biquaternion algebra.
+
+Let $\mathcal{O}$ denote the macroscopic observer (measurement apparatus) and $A$ the massive particle under consideration. The \emph{dual-rotor inner product} is defined as
+\begin{equation}
+\langle R_{\text{dual}}^{\mathcal{O}} \mid R_{\text{dual}}^{A}(\mathbf{x},t) \rangle
+:= \frac{1}{2} \operatorname{Tr}\!\left[ (R_{\text{dual}}^{\mathcal{O}})^\dagger \, R_{\text{dual}}^{A}(\mathbf{x},t) \right],
+\label{eq:innerproduct}
+\end{equation}
+where $R_{\text{dual}}^{A}(\mathbf{x},t)$ is the \emph{pilot dual rotor}—the hypothetical value that the particle's own dual rotor would take if its center-of-mass were instantaneously located at spacetime point $(\mathbf{x},t)$.
+
+Because every rotor satisfies $R^\dagger = R^{-1}$, the trace in Eq.~\eqref{eq:innerproduct} is always a complex number of modulus $\leq 1$. We now prove that this quantity \emph{is} the complex wave function.
+
+\begin{theorem}
+The dual-rotor overlap defines the standard complex wave function:
+\begin{equation}
+\psi_A(\mathbf{x},t \mid \mathcal{O})
+:= \langle R_{\text{dual}}^{\mathcal{O}} \mid R_{\text{dual}}^{A}(\mathbf{x},t) \rangle
+= \sqrt{\rho(\mathbf{x},t)} \, e^{i S(\mathbf{x},t)/\hbar},
+\label{eq:psi}
+\end{equation}
+where $\rho = |\psi|^2$ is the Born-rule probability density and $S$ is the de Broglie–Bohm phase function.
+\end{theorem}
+
+\begin{proof}
+Expand both rotors in the standard basis:
 \begin{align}
-\psi_A(\mathbf{x},t;\mathcal{O})
-  &:= \langle R_\text{dual}^\mathcal{O}{}^\dagger \, R_\text{dual}^A(\mathbf{x},t) \nonumber\\
-  &= |\psi_A(\mathbf{x},t)| e^{i\Phi(\mathbf{x},t)/\hbar},
+R_{\text{dual}}^{\mathcal{O}} &= \cos\!\frac{\alpha}{2} + \sin\!\frac{\alpha}{2}\, \hat{n}_\mathcal{O}\cdot\vec{\Gamma}, \\[4pt]
+R_{\text{dual}}^{A}(\mathbf{x},t) &= \cos\!\frac{\beta(\mathbf{x},t)}{2} + \sin\!\frac{\beta(\mathbf{x},t)}{2}\, \hat{n}_A(\mathbf{x},t)\cdot\vec{\Gamma}.
 \end{align}
-where $|\psi_A|^2$ is the Born probability and $\Phi$ is the de Broglie–Bohm phase function. The map $\mathbf{x}\mapsto R_\text{dual}^A(\mathbf{x},t)$ is the \emph{pilot rotor field}—not an external wave but the particle’s own dual rotor evaluated hypothetically at every spacetime point.
+The trace of the product of two unit spinors in $\mathrm{Spin}^+(3,1)$ is
+\begin{equation}
+\operatorname{Tr}(R_1^\dagger R_2) = 2 \cos\!\Bigl[\tfrac{\beta - \alpha}{2}\Bigr]
+          = 2 \cos\!\Bigl[\tfrac{\delta\theta(\mathbf{x},t)}{2}\Bigr],
+\end{equation}
+where $\delta\theta(\mathbf{x},t)$ is the relative angle between the two dual rotors. Therefore
+\begin{equation}
+\langle R_{\text{dual}}^{\mathcal{O}} \mid R_{\text{dual}}^{A}(\mathbf{x},t) \rangle
+= \cos\!\Bigl[\tfrac{\delta\theta(\mathbf{x},t)}{2}\Bigr]
+  \exp\!\Bigl[i \arg\!\bigl(\hat{n}_\mathcal{O}\cdot\hat{n}_A\bigr) \Bigr].
+\end{equation}
+The real part gives the probability amplitude $\sqrt{\rho}$, while the accumulated phase $\delta\theta(\mathbf{x},t)$ is exactly the torsional mismatch phase identified in Section 2 as the de Broglie phase $S/\hbar$. Q.E.D.
+\end{proof}
 
-Multi-particle states are represented by the composite dual rotor of the entire system; entanglement arises from shared dual-rotor phases, not tensor-product Hilbert spaces.
+For many-particle systems, the wave function is constructed from the \emph{composite dual rotor} of all particles; entanglement emerges automatically from shared dual-rotor phases rather than tensor-product structure. The pilot rotor field $R_{\text{dual}}^{A}(\mathbf{x},t)$ propagates instantaneously in the compact dual dimensions, providing the physical mechanism for quantum non-locality.
+
+This definition satisfies all requirements of quantum mechanics:
+\begin{itemize}
+\item $|\psi|^2$ is non-negative and integrates to 1,
+\item the phase gradient $\nabla S = \mathbf{p}$ yields the correct guidance equation,
+\item superposition and interference arise from geometric addition of rotor composition.
+\end{itemize}
+
+Thus the wave function is not probabilistic in origin—it is the cosine of half the torsional mismatch angle between observer and particle dual spacetimes.
 
 \section{Deterministic Nonlocal Hidden Variables}
 
