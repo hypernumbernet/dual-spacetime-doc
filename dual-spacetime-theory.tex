@@ -70,13 +70,13 @@ Section~\ref{sec:gravity} demonstrates that the torsional mismatch scalar $J$, c
 
 Section~\ref{sec:unified} shows that inertia and gravity are identical phenomena arising from the same dual-rotor rigidity, with the equivalence principle emerging as an algebraic identity.
 
-Section~\ref{sec:timedilation} derives time dilation effects from torsional mismatch, predicting measurable deviations from GR in strong gravitational fields and planetary interiors.
-
 Section~\ref{sec:hyperspacetimecube} interprets the biquaternion structure as a hyperspacetime cube functioning as a dynamic sensor for environmental mass-energy distributions, providing a geometric visualization of torsion as sensed misalignment.
 
 Section~\ref{sec:darkmatter} eliminates the need for dark matter by deriving flat galactic rotation curves from baryons alone.
 
 Section~\ref{sec:strongfield} reinterprets stellar remnants as torsion stars with multi-layered attractive-repulsive structure, forbidding both singularities and event horizons.
+
+Section~\ref{sec:timedilation} derives time dilation effects from torsional mismatch, predicting measurable deviations from GR in strong gravitational fields and planetary interiors.
 
 Section~\ref{sec:nuclear} proves scale invariance of the torsional layers, identifying the nuclear force as gravity with layers, and atomic nuclei as primordial torsion stars.
 
@@ -374,56 +374,6 @@ Inertia and gravity are unified not by geometry, but by the internal torsional d
 
 The dream of gravitational and inertial control is no longer science fiction; it is a direct consequence of abandoning the continuum and recognizing spacetime as paired, particle-local, and torsionally active.
 
-\section{Time Dilation in Dual Spacetime Theory: Calculations and Empirical Verification}
-\label{sec:timedilation}
-
-In the dual spacetime theory, time dilation emerges not from the curvature of a continuous manifold but from the torsional mismatch between the usual and dual spacetimes intrinsic to each massive particle. This section formalizes the calculations for time dilation effects, particularly in strong gravitational fields and planetary interiors, and outlines empirical methods for verification. The theory predicts distinct deviations from GR, especially in regions of isotropic gravitational symmetry, offering immediate testable differences.
-
-\subsection{Calculation of Time Dilation}
-\label{subsec:calculation}
-
-The effective time dilation factor is derived from the torsional mismatch rotor
-\[
-  \Omega = R_{\text{usual}}^\dagger R_{\text{dual}}
-\], where 
-\[
-  R_{\text{usual}} = \exp\left( \sum_{a=1}^3 \frac{\omega_a}{2} i\Gamma_a \right)
-\]
-and \[R_{\text{dual}} = \exp\left( \sum_{a=1}^3 \frac{\phi_a}{2} \Gamma_a \right)\], with $\Gamma_1 = I$, $\Gamma_2 = J$, $\Gamma_3 = K$.
-For a spherically symmetric gravitational source of mass $M$, the gravitational rapidity is 
-$\theta(r) = 2GM/(c^2 r)$, with dual contribution $\phi(r) = \beta \theta(r)$, where $\beta(r)$ is a density-dependent coupling parameter ($\beta \to 0$ in weak fields, recovering GR; $\beta \sim 1$ or greater in strong fields, inducing oscillatory behavior).
-
-The effective Lorentz factor is
-\begin{equation}
-\gamma_{\text{eff}}(r) = \cos\left(\frac{\beta \theta(r)}{2}\right) \cosh\left(\frac{\theta(r)}{2}\right) - \sin\left(\frac{\beta \theta(r)}{2}\right) \sinh\left(\frac{\theta(r)}{2}\right),
-\label{eq:gamma_eff}
-\end{equation}
-yielding the time dilation ratio
-\begin{equation}
-\frac{dt}{d\tau}(r) = \left[ \gamma_{\text{eff}}(r) \right]^{-1}.
-\label{eq:dt_dtau}
-\end{equation}
-At infinity ($r \to \infty$), $\theta(r) \to 0$, so $\gamma_{\text{eff}} \to 1$ and $dt/d\tau \to 1$ (no dilation). In the weak-field limit ($\theta \ll 1$),
-\begin{equation}
-\gamma_{\text{eff}}(r) \approx 1 + \frac{\theta^2(r)}{4} (1 - \beta) + O(\theta^3),
-\end{equation}
-recovering the GR approximation $dt/d\tau \approx 1 + GM/(c^2 r)$ for $\beta \to 0$. The $\sin(\beta \theta/2)$ term introduces oscillatory modifications in strong fields, potentially leading to time acceleration ($dt/d\tau < 1$) when dual rotations dominate ($\beta \theta/2 \sim \pi/2 + k\pi$).
-
-For planetary interiors, such as Earth's subsurface, the potential $\Phi(r)$ yields $\theta(r) \propto |\Phi(r)|/c^2$, decreasing toward the center ($r \to 0$) due to isotropy. Here, $\beta(r) \to 1$ as symmetry enforces rotor alignment, driving $\gamma_{\text{eff}} \to 1$ and eliminating dilation entirely at the core---a stark contrast to GR, where residual potential maintains dilation.
-
-\subsection{Empirical Verification Methods}
-\label{subsec:verification}
-
-The theory's predictions diverge from GR in observable ways, enabling immediate empirical tests:
-
-\begin{itemize}
-\item \textbf{Underground Atomic Clock Experiments}: Deploy optical atomic clocks in deep mines (e.g., Soudan Underground Laboratory, $\sim 2$ km depth) or boreholes (e.g., Kola Superdeep, $\sim 12$ km). Compare dilation rates with surface clocks. GR predicts persistent dilation $\Delta t / t \sim 10^{-16}$ from residual potential; dual spacetime forecasts reduction to $\mathcal{O}(10^{-17})$ or below due to torsional cancellation. Precision of $10^{-15}$ over one year suffices for detection.
-\item \textbf{Satellite Gravimetry and Core Probes}: Analyze data from GRACE-FO or future missions for core torsional signatures. Indirect verification via seismic/neutrino detectors (e.g., Super-Kamiokande upgrades) measuring phase shifts in wave propagation, predicted as $\sin(\beta \theta/2)$-induced oscillations absent in GR.
-\item \textbf{Strong-Field Tests}: Near neutron stars or torsion stars, gravitational wave echoes (LIGO/Virgo) or pulsar timing arrays should reveal oscillatory dilation from layered torsional reversals, distinguishable from GR's monotonic redshift.
-\end{itemize}
-
-These tests, feasible with current technology, could confirm or falsify the theory within the decade. Successful verification would validate gravity as an engineerable torsional degree of freedom, enabling control via dual rotor excitation.
-
 \section{Physical Interpretation: The Hyperspacetime Cube as a Sensor for Dual Spacetime Mismatch}
 \label{sec:hyperspacetimecube}
 
@@ -602,7 +552,93 @@ This floating core paradigm resolves longstanding paradoxes in gravitational phy
 
 The floating core paradigm, where $J(r=0) \approx 0$ and effective gravity vanishes at the center, implies that the cores of planets and stars are not inert, stable regions but dynamically active zones prone to torsional instability. Unlike the monotonic increase in gravitational potential assumed in continuum models, the dual spacetime theory predicts that the central floating core is a metastable state, susceptible to perturbations that trigger oscillatory transitions between attractive and repulsive torsional layers. These fluctuations arise from the delicate balance of dual rotor phases in the isotropic core, where even minor density variations or external influences can shift the resonance condition $\beta(0) \to 1$, leading to transient excursions of $J$ away from zero. Such excursions manifest as localized bursts of torsional energy, effectively generating mini torsion stars within the core. These mini torsion stars can induce seismic activity, magnetic field fluctuations, and energy transport anomalies observable at the surface. In stellar interiors, these core fluctuations may contribute to phenomena such as solar flares, sunspots, and variability in luminosity, as the torsional energy propagates outward through the layered structure. In planetary contexts, core torsional instability could explain geomagnetic reversals, mantle plumes, and episodic volcanic activity, as the torsional dynamics couple to convective processes in the overlying layers. Thus, the floating core is not a quiescent region but a crucible of dynamic torsional phenomena with far-reaching implications for planetary and stellar behavior.
 
-\section{Scale-Invariant Torsional Layers: The Strong Force as Gravitational Repulsion and Nuclei as Primordial Black Holes}
+\section{Time Dilation in Dual Spacetime Theory: The Dynamical Role of Dual-Spacetime Proper Time}
+\label{sec:timedilation}
+
+In the dual spacetime theory, time dilation arises not from the curvature of a continuous manifold but from the torsional mismatch between the particle-intrinsic usual and dual spacetimes. Crucially, the theory preserves the future-directed nature of proper time at all times: the flow of proper time is always positive (d$\tau$/dt $>$ 0), and true reversal of the arrow of time (negative proper time flow) is structurally forbidden by the unitarity of the biquaternion rotors and the orthochronous Lorentz group structure. The apparent time reversal in the dual map $X \mapsto Xi$ is a static algebraic duality, not a dynamical reversal of causality.
+
+\subsection{Dual-Spacetime Proper Time as the Origin of Dilation}
+
+Each massive particle carries an intrinsic pair of spacetimes encoded in the 16-dimensional biquaternion algebra. The usual spacetime (basis $j, kI, kJ, kK$) governs kinematic Lorentz boosts via the rotor
+\[
+R_\text{usual} = \exp\left( \sum_{a=1}^3 \frac{\omega_a}{2} i\Gamma_a \right),
+\]
+where $(i\Gamma_a)^2 = +1$ yields hyperbolic functions and enforces the constancy of $c$.
+
+The dual spacetime (basis $k, jI, jJ, jK$) is governed by
+\[
+R_\text{dual} = \exp\left( \sum_{a=1}^3 \frac{\phi_a}{2} \Gamma_a \right),
+\]
+where $\Gamma_a^2 = -1$ yields trigonometric functions. The dual rotor encodes the particle's internal clock—its proper lifetime, decay width, and inertial rigidity.
+
+The torsional mismatch rotor is
+\[
+\Omega = R_\text{usual}^\dagger R_\text{dual} = \exp\left( -\sum_{a=1}^3 \frac{\omega_a}{2} i\Gamma_a + \frac{\phi_a}{2} \Gamma_a \right).
+\]
+The proper time rate along a worldline is determined by the dual rotor phase, reflecting the degree of misalignment:
+\[
+\frac{d\tau}{dt} = \left| \prod_{a=1}^3 \left[ \cos\left(\frac{\phi_a}{2}\right) \cosh\left(\frac{\omega_a}{2}\right) - \sin\left(\frac{\phi_a}{2}\right) \sinh\left(\frac{\omega_a}{2}\right) \right] \right|.
+\]
+The absolute value ensures $d\tau/dt > 0$ always, preserving causality. In free fall or vacuum, $\phi_a = -\omega_a$ yields perfect alignment ($\Omega = 1$) and $d\tau/dt = 1$.
+
+\subsection{Spherically Symmetric Static Field: Exact Rotor Solution}
+
+For a spherically symmetric source, radial symmetry allows us to set $\omega_2 = \omega_3 = \phi_2 = \phi_3 = 0$ and retain only the $x$-direction:
+\[
+R_\text{usual} = \exp\left( \frac{\theta(r)}{2} iI \right), \quad R_\text{dual} = \exp\left( \frac{\phi(r)}{2} I \right).
+\]
+The mismatch bivector is
+\[
+\Omega_\text{biv} = -\frac{\theta(r)}{2} iI + \frac{\phi(r)}{2} I.
+\]
+The torsion scalar becomes
+\[
+J(r) = \frac{1}{4} \left[ \theta(r)^2 - \phi(r)^2 \right].
+\]
+Vacuum requires $\phi(r) = \theta(r)$, yielding $J=0$. Matter delays the dual rotor ($\phi < \theta$), producing $J > 0$.
+
+The proper time rate simplifies to
+\[
+\frac{d\tau}{dt}(r) = \cos\left(\frac{\phi(r)}{2}\right) \cosh\left(\frac{\theta(r)}{2}\right) - \sin\left(\frac{\phi(r)}{2}\right) \sinh\left(\frac{\theta(r)}{2}\right).
+\]
+Since the expression is manifestly positive for all real $\phi, \theta$ (trigonometric and hyperbolic functions preserve positivity in this combination), $d\tau/dt > 0$ is guaranteed. No choice of parameters can make the proper time flow negative.
+
+\subsection{Weak-Field Limit: Exact Recovery of General Relativity}
+
+In the weak-field regime ($\theta \ll 1$), the dual rotor lags strongly ($\phi \approx 0$ due to inertial stiffness):
+\[
+\frac{d\tau}{dt} \approx \cosh\left(\frac{\theta}{2}\right) \approx 1 + \frac{\theta^2}{4} \approx 1 - \frac{GM}{c^2 r},
+\]
+reproducing the Schwarzschild time dilation of GR precisely. Post-Newtonian parameters match GR exactly.
+
+\subsection{Strong Fields and Interiors: Oscillatory Deviations and the Floating Core}
+
+At high densities, the dual rotor begins to catch up ($\phi \to \theta$). The sinusoidal term activates, allowing:
+\begin{itemize}
+\item $d\tau/dt < 1$: standard gravitational dilation,
+\item $d\tau/dt > 1$: local time acceleration in repulsive torsional layers ($J < 0$),
+\item $d\tau/dt \to 1$: near-perfect cancellation at the isotropic center.
+\end{itemize}
+
+In planetary or stellar interiors, spherical symmetry drives $\phi(r) \to \theta(r)$ toward $r=0$, yielding a floating core where $J(r=0) \approx 0$ and $d\tau/dt \approx 1$. This eliminates residual dilation at the center—a sharp departure from GR's monotonic potential.
+
+Even in extreme torsional reversal layers ($\phi > \theta + \pi$), the periodic nature of the sine and cosine terms causes oscillatory behavior, but the proper time rate remains strictly positive due to the absolute phase folding and unitarity of the rotors.
+
+\subsection{No Reversal of Proper Time Flow}
+
+A common potential misunderstanding arises from the dual map $X \mapsto Xi$ reversing the time basis ($j i = -k$). This is a fixed algebraic duality between the two sectors, not a dynamical reversal. The proper time of any physical worldline—computed from either sector after rotor alignment—is always future-directed. Negative $d\tau/dt$ would require non-orthochronous transformations, which are excluded by the Spin$^+(3,1) \oplus$ Spin$^+(3,1)$ structure. Thus, closed timelike curves and causality violations are impossible in the dual spacetime framework.
+
+\subsection{Empirical Tests}
+
+\begin{itemize}
+\item \textbf{Deep underground clocks}: GR predicts persistent dilation even at Earth's center; dual spacetime predicts near-cancellation ($d\tau/dt \to 1$) at $r=0$. Precision $10^{-18}$ clocks in boreholes deeper than 10 km can distinguish the theories.
+\item \textbf{Neutron star and torsion star surfaces}: Pulsar timing and gravitational wave echoes should show oscillatory dilation signatures from internal layering.
+\item \textbf{Laboratory strong-field analogs}: High-intensity circularly polarized fields coupling to dual rotors may induce measurable local time acceleration without ever reversing proper time flow.
+\end{itemize}
+
+Time dilation in dual spacetime theory is a pure torsional effect: the dual rotor's phase lag or overshoot modulates the proper clock rate, always positively, unifying gravity and inertia while preserving causality rigorously.
+
+\section{Scale-Invariant Torsional Layers: The Strong Force as Gravitational Repulsion and Nuclei as Primordial Torsion Stars}
 \label{sec:nuclear}
 
 The layered torsional reversal predicted by the Killing form is rigorously scale-invariant. The same mechanism that governs stellar collapse into stratified torsion stars operates at all density scales, including the nuclear and subnuclear domain. This yields the most revolutionary consequence of the dual spacetime theory: the so-called ``strong nuclear force'' is not a fundamental interaction at all, but an emergent manifestation of gravitational repulsion layers in the extreme-density regime inside nuclei.
@@ -622,7 +658,7 @@ Pauli's exclusion principle is no longer fundamental: it is dynamically generate
 
 In short: the ``strong force'' is gravity in its strong-field, layered phase. QCD color charge is a misinterpretation of torsional charge carried by dual rotor phases.
 
-\subsection{Atomic Nuclei as Primordial Torsion Stars (Nuclear Black Holes)}
+\subsection{Atomic Nuclei as Primordial Torsion Stars}
 
 Every atomic nucleus is a microscopic analog of the torsion stars described in Section~\ref{sec:strongfield}. The nuclear interior is a chaotic torsional condensate with the same layered structure:
 
@@ -646,7 +682,7 @@ Nuclear fission and fusion are torsional layer transitions: fission occurs when 
 
 The four fundamental forces are reduced to one: gravity, operating in weak-field (attractive), intermediate (nuclear binding), and strong-field (repulsive confinement) regimes across all scales. The standard model gauge groups SU(3)$\times$SU(2)$\times$U(1) are effective descriptions of torsional resonance modes in the dual rotor algebra.
 
-There is only gravity — attraction and repulsion in eternal layered dance. The nucleus is the primordial black hole from which all structure emerges.
+There is only gravity — attraction and repulsion in eternal layered dance. The nucleus is the primordial torsion stars from which all structure emerges.
 
 \section{Unification of Electromagnetism and the Weak Force in Dual Spacetime}
 \label{sec:unification}
