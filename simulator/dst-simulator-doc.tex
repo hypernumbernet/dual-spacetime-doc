@@ -1,0 +1,625 @@
+\documentclass[a4paper,12pt,notitlepage]{jsreport}
+\usepackage[left=10truemm,right=10truemm,top=25truemm,bottom=20truemm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{bm}
+\usepackage{setspace}
+\usepackage{wrapfig}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{docmute}
+\DeclareMathOperator\arctanh{arctanh}
+\DeclareMathOperator\arccosh{arccosh}
+
+\title{dual-spacetime-simulator documents}
+
+\author{https://github.com/hypernumbernet}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  重力多体シミュレーションを行うに当たって数学的基盤を整えておく目的でまとめを書いています。
+  プログラミングですぐに活用できるように計算手順を具体化し実係数で式を展開しています。
+\end{abstract}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+\input{dst-simulator-doc-complex-quaternion.tex}
+
+\input{dst-simulator-doc-rotation.tex}
+
+\chapter{多体シミュレーションにおける物理法則}
+
+\section{時間進捗の考え方の導入}
+
+多体物理シミュレーションに適用する物理法則を考えるに当たって、最も重要な事は時間に対する考え方になります。
+通常の物理方程式の解の求め方では、時間を連続した直線的な概念として把握します。
+時間を直線的な$t$のパラメーターとして考えてある時刻を$t$に当てはめれば、どんな未来も過去も物理的実体を厳密に算出する事ができます。
+
+しかし、このような物理方程式を多体について厳密に解いていく事は不可能です。
+コンピューターによる多体シミュレーションでは時間は非連続的であると考えます。
+フィルム映画やアニメーションのようにコマ送りで物理法則を計算していきます。
+計算する内容は現在の物理的パラメーターに基づいた次の瞬間の物理パラメーターの遷移についてだけです。
+
+このシミュレーションの方法では任意に時刻を指定して状態を厳密に算出する事はできません。
+もし任意の時刻の状態を知りたいのであれば、一度知りたい時刻の範囲の計算を行っておいて、そのデータを全部記録しておく事になります。
+
+\section{時間進捗で計算する内容}
+
+全ての物体が分解したり合体したりしないで総数が一定の粒子であるとすれば、
+それぞれの粒子について位置と運動量をデータとして持っておき、それらの相互作用を計算することで多体シミュレーションを成立させます。
+具体的に行う計算には2種類あります。
+
+一つは、状態変化の計算になります。
+具体的には速度を位置の変化に反映させる計算になります。
+$N$体あれば$N$回の計算で済みます。
+
+もう一つは、他の粒子との相互作用になります。
+この計算は、$N$体あれば$N(N-1)/2$回の計算になり、計算量オーダー的に$O(n^2)$となりますので、粒子数が増えると計算量が激増します。
+具体的には、運動量の交換がこの相互作用で行われます。
+
+\chapter{クリフォード代数の導入}
+
+\section{クリフォード代数の構成}
+
+クリフォード代数は、2種類の基底ベクトルで構成されます。二乗して$1$になる基底ベクトルと、二乗して$-1$になる基底ベクトルです。
+これらの基底ベクトルを任意の個数だけ使う事ができます。通常は、$e$に添え字で書いて$e_1, e_2, ...$というように基底ベクトルを表記します。
+異なる基底ベクトル間の積に交換法則はありません。積の順序を変えると符号が反転します。
+
+\begin{equation}
+  e_1e_2=-e_2e_1,\quad e_2e_3=-e_3e_2
+\end{equation}
+
+この符号反転の法則から添え字の大きい方から開始する基底ベクトルの積は、小さい方から開始される基底ベクトルの積に入れ替えが可能です。
+小さい添え字から開始される積により、新たな基底ベクトルが定義されます。
+例えば、基底ベクトルの数が3個あるとすると、以下のような構成になります。
+
+\begin{equation}
+  e_1,\quad e_2,\quad e_3,\quad e_1e_2,\quad e_1e_3,\quad e_2e_3,\quad e_1e_2e_3
+\end{equation}
+
+実係数を加えると、
+
+\begin{equation}
+  a_0+a_1e_1+a_2e_2+a_3e_3+a_4e_1e_2+a_5e_1e_3+a_6e_2e_3+a_7e_1e_2e_3,\quad a_0,..., a_7\in\mathbb{R}
+\end{equation}
+
+という8次元の数になります。2つの基底ベクトルの積の事を特別に双ベクトル(bivector)と呼び、
+3つの基底ベクトルの積は、3-ベクトル(trivector)と呼びます。
+
+\begin{itemize}
+  \item 双ベクトル(bivector): $e_1e_2,\quad e_1e_3,\quad e_2e_3$
+  \item 3-ベクトル(trivector): $e_1e_2e_3$
+\end{itemize}
+これらに対して単一構成の基底ベクトルを、1-ベクトルと言う事があります。
+
+組み合わせて使用する1-ベクトルの内、二乗して$1$になる1-ベクトルの数を$m$個、
+二乗して$-1$になる1-ベクトルの数を$n$個とした時のクリフォード代数を$Cl(m,n)$と表現します。
+$Cl(3,0)$では通常の3次元空間を扱うことができます。
+$Cl(0,0)$は実数$\mathbb{R}$と同型で、$Cl(0,1)$は複素数$\mathbb{C}$と同型です。
+四元数は$Cl(0,2)$により構成可能ですが、八元数は$Cl(0,3)$と同型にはなりません。
+クリフォード代数が結合的である一方、八元数は非結合だからです。
+
+\begin{itemize}
+  \item クリフォード代数は結合的で括弧の付け方で結果が変わらない。$(e_ie_j)e_k = e_i(e_je_k)$
+  \item 八元数は非結合で括弧の付け方で結果が変わる。$(e_ie_j)e_k \neq e_i(e_je_k)$
+\end{itemize}
+
+\section{クリフォード代数による時空表現}
+
+クリフォード代数で特殊相対性理論の時空を表現する場合、$Cl(3,1)$もしくは、$Cl(1,3)$が適合すると考えられます。
+物理学的には$(+,-,-,-)$が習慣的に良く使用されるので、$Cl(1,3)$を選択します。
+
+\begin{itemize}
+  \item 1-ベクトル:\quad $e_0,\quad e_1,\quad e_2,\quad e_3$
+\end{itemize}
+
+\begin{equation}
+  e_0^2=+1（時間的）\quad e_1^2=e_2^2=e_3^2=-1（空間的）\quad e_ie_j=-e_je_i\quad (i\neq j)
+\end{equation}
+
+\begin{itemize}
+  \item 双ベクトル:\quad $e_0e_1,\quad e_0e_2,\quad e_0e_3,\quad e_1e_2,\quad e_1e_3,\quad e_2e_3$
+  \item 3-ベクトル:\quad $e_0e_1e_2,\quad e_0e_1e_3,\quad e_0e_2e_3,\quad e_1e_2e_3$
+  \item 4-ベクトル:\quad $e_0e_1e_2e_3$
+\end{itemize}
+
+これらの要素でクリフォード代数の16次元を構成します。
+\begin{equation}
+  \begin{split}
+    \texttt{Cl(1,3)}\coloneq &r_0+r_1e_0+r_2e_1+r_3e_2+r_4e_3\\
+    &+r_5e_0e_1+r_6e_0e_2+r_7e_0e_3+r_8e_1e_2+r_9e_1e_3+r_{10}e_2e_3\\
+    &+r_{11}e_0e_1e_2+r_{12}e_0e_1e_3+r_{13}e_0e_2e_3+r_{14}e_1e_2e_3\\
+    &+r_{15}e_0e_1e_2e_3\\
+    &\quad r_0,...,r_{15}\in\mathbb{R}
+  \end{split}
+\end{equation}
+
+時間$t$と空間$x,y,z$はこの一部を使い、
+\begin{equation}
+  te_0+xe_1+ye_2+ze_3
+\end{equation}
+と表されます。
+
+その他の係数は主に回転を算出するための要素となります。詳しく見ていきます。
+
+\section{クリフォード代数の積}
+
+基底ベクトルの積は、添え字を小さい順になるように入れ替えて符号を変えるという操作と、
+二乗して$1$か$-1$にするという操作を組み合わせて行います。幾何積（geometric product）とも呼びます。
+例えば、$e_0e_2$と$e_0e_1e_3$の積は、
+\begin{equation}
+  e_0e_2e_0e_1e_3=e_0(e_2e_0)e_1e_3=-e_0(e_0e_2)e_1e_3=-(e_0e_0)e_2e_1e_3=e_2e_1e_3=-e_1e_2e_3
+\end{equation}
+となります。この規則により$Cl(1,3)$の乗積表を作ると以下の通りです。
+プログラムで作成しています。基底ベクトルをビットパターンに当てはめる事で、比較的単純な規則で算出可能です。
+\begin{itemize}
+  \item $e_0$を2進数で[0001]、$e_1$を[0010]とすると、$e_0e_1$が[0011]、$e_1e_2e_3$は[1110]
+\end{itemize}
+
+\begin{table}[ht]
+  \begin{center}
+    \caption{Cl(1,3)の乗積表1}
+    \small
+    \begin{tabular}{r|rrrrrrrrrrrrrrr}
+      &$e_0$&$e_1$&$e_2$&$e_3$&$e_0e_1$&$e_0e_2$&$e_0e_3$\\\hline
+      $e_0$&$+1$&$+e_0e_1$&$+e_0e_2$&$+e_0e_3$&$+e_1$&$+e_2$&$+e_3$\\
+      $e_1$&$-e_0e_1$&$-1$&$+e_1e_2$&$+e_1e_3$&$+e_0$&$-e_0e_1e_2$&$-e_0e_1e_3$\\
+      $e_2$&$-e_0e_2$&$-e_1e_2$&$-1$&$+e_2e_3$&$+e_0e_1e_2$&$+e_0$&$-e_0e_2e_3$\\
+      $e_3$&$-e_0e_3$&$-e_1e_3$&$-e_2e_3$&$-1$&$+e_0e_1e_3$&$+e_0e_2e_3$&$+e_0$\\
+      $e_0e_1$&$-e_1$&$-e_0$&$+e_0e_1e_2$&$+e_0e_1e_3$&$+1$&$-e_1e_2$&$-e_1e_3$\\
+      $e_0e_2$&$-e_2$&$-e_0e_1e_2$&$-e_0$&$+e_0e_2e_3$&$+e_1e_2$&$+1$&$-e_2e_3$\\
+      $e_0e_3$&$-e_3$&$-e_0e_1e_3$&$-e_0e_2e_3$&$-e_0$&$+e_1e_3$&$+e_2e_3$&$+1$\\
+      $e_1e_2$&$+e_0e_1e_2$&$+e_2$&$-e_1$&$+e_1e_2e_3$&$+e_0e_2$&$-e_0e_1$&$+e_0e_1e_2e_3$\\
+      $e_1e_3$&$+e_0e_1e_3$&$+e_3$&$-e_1e_2e_3$&$-e_1$&$+e_0e_3$&$-e_0e_1e_2e_3$&$-e_0e_1$\\
+      $e_2e_3$&$+e_0e_2e_3$&$+e_1e_2e_3$&$+e_3$&$-e_2$&$+e_0e_1e_2e_3$&$+e_0e_3$&$-e_0e_2$\\
+      $e_0e_1e_2$&$+e_1e_2$&$+e_0e_2$&$-e_0e_1$&$+e_0e_1e_2e_3$&$+e_2$&$-e_1$&$+e_1e_2e_3$\\
+      $e_0e_1e_3$&$+e_1e_3$&$+e_0e_3$&$-e_0e_1e_2e_3$&$-e_0e_1$&$+e_3$&$-e_1e_2e_3$&$-e_1$\\
+      $e_0e_2e_3$&$+e_2e_3$&$+e_0e_1e_2e_3$&$+e_0e_3$&$-e_0e_2$&$+e_1e_2e_3$&$+e_3$&$-e_2$\\
+      $e_1e_2e_3$&$-e_0e_1e_2e_3$&$-e_2e_3$&$+e_1e_3$&$-e_1e_2$&$+e_0e_2e_3$&$-e_0e_1e_3$&$+e_0e_1e_2$\\
+      $e_0e_1e_2e_3$&$-e_1e_2e_3$&$-e_0e_2e_3$&$+e_0e_1e_3$&$-e_0e_1e_2$&$+e_2e_3$&$-e_1e_3$&$+e_1e_2$\\
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\begin{table}[ht]
+  \begin{center}
+    \caption{Cl(1,3)の乗積表2}
+    \small
+    \begin{tabular}{r|rrrrrrrrrrrrrrr}
+      &$e_1e_2$&$e_1e_3$&$e_2e_3$&$e_0e_1e_2$&$e_0e_1e_3$&$e_0e_2e_3$&$e_1e_2e_3$&$e_0e_1e_2e_3$\\\hline
+      $e_0$&$+e_0e_1e_2$&$+e_0e_1e_3$&$+e_0e_2e_3$&$+e_1e_2$&$+e_1e_3$&$+e_2e_3$&$+e_0e_1e_2e_3$&$+e_1e_2e_3$\\
+      $e_1$&$-e_2$&$-e_3$&$+e_1e_2e_3$&$+e_0e_2$&$+e_0e_3$&$-e_0e_1e_2e_3$&$-e_2e_3$&$+e_0e_2e_3$\\
+      $e_2$&$+e_1$&$-e_1e_2e_3$&$-e_3$&$-e_0e_1$&$+e_0e_1e_2e_3$&$+e_0e_3$&$+e_1e_3$&$-e_0e_1e_3$\\
+      $e_3$&$+e_1e_2e_3$&$+e_1$&$+e_2$&$-e_0e_1e_2e_3$&$-e_0e_1$&$-e_0e_2$&$-e_1e_2$&$+e_0e_1e_2$\\
+      $e_0e_1$&$-e_0e_2$&$-e_0e_3$&$+e_0e_1e_2e_3$&$+e_2$&$+e_3$&$-e_1e_2e_3$&$-e_0e_2e_3$&$+e_2e_3$\\
+      $e_0e_2$&$+e_0e_1$&$-e_0e_1e_2e_3$&$-e_0e_3$&$-e_1$&$+e_1e_2e_3$&$+e_3$&$+e_0e_1e_3$&$-e_1e_3$\\
+      $e_0e_3$&$+e_0e_1e_2e_3$&$+e_0e_1$&$+e_0e_2$&$-e_1e_2e_3$&$-e_1$&$-e_2$&$-e_0e_1e_2$&$+e_1e_2$\\
+      $e_1e_2$&$-1$&$+e_2e_3$&$-e_1e_3$&$-e_0$&$+e_0e_2e_3$&$-e_0e_1e_3$&$-e_3$&$-e_0e_3$\\
+      $e_1e_3$&$-e_2e_3$&$-1$&$+e_1e_2$&$-e_0e_2e_3$&$-e_0$&$+e_0e_1e_2$&$+e_2$&$+e_0e_2$\\
+      $e_2e_3$&$+e_1e_3$&$-e_1e_2$&$-1$&$+e_0e_1e_3$&$-e_0e_1e_2$&$-e_0$&$-e_1$&$-e_0e_1$\\
+      $e_0e_1e_2$&$-e_0$&$+e_0e_2e_3$&$-e_0e_1e_3$&$-1$&$+e_2e_3$&$-e_1e_3$&$-e_0e_3$&$-e_3$\\
+      $e_0e_1e_3$&$-e_0e_2e_3$&$-e_0$&$+e_0e_1e_2$&$-e_2e_3$&$-1$&$+e_1e_2$&$+e_0e_2$&$+e_2$\\
+      $e_0e_2e_3$&$+e_0e_1e_3$&$-e_0e_1e_2$&$-e_0$&$+e_1e_3$&$-e_1e_2$&$-1$&$-e_0e_1$&$-e_1$\\
+      $e_1e_2e_3$&$-e_3$&$+e_2$&$-e_1$&$+e_0e_3$&$-e_0e_2$&$+e_0e_1$&$+1$&$-e_0$\\
+      $e_0e_1e_2e_3$&$-e_0e_3$&$+e_0e_2$&$-e_0e_1$&$+e_3$&$-e_2$&$+e_1$&$+e_0$&$-1$\\
+    \end{tabular}
+  \end{center}
+\end{table}
+
+この積の規則により、時空ベクトルについては二乗が不変量になります。
+\begin{equation}
+  \begin{split}
+    (te_0+xe_1+ye_2+ze_3)^2=~&t^2e_0e_0+txe_0e_1+tye_0e_2+tze_0e_3\\
+    &+txe_1e_0+x^2e_1e_1+xye_1e_2+xze_1e_3\\
+    &+tye_2e_0+xye_2e_1+y^2e_2e_2+yze_2e_3\\
+    &+tze_3e_0+xze_3e_1+yze_3e_2+z^2e_3e_3\\
+    =~&t^2+txe_0e_1+tye_0e_2+tze_0e_3\\
+    &-txe_0e_1-x^2+xye_1e_2+xze_1e_3\\
+    &-tye_0e_2-xye_1e_2-y^2+yze_2e_3\\
+    &-tze_0e_3-xze_1e_3-yze_2e_3-z^2\\
+    =~&t^2-x^2-y^2-z^2
+  \end{split}
+\end{equation}
+
+双ベクトルや3-ベクトルなどのベクトルの階層の事を、ブレード（Blade）という言葉で呼ぶことがあります。
+また、末尾の基底ベクトルの積については、擬スカラーと呼び、
+末尾から2番目の基底ベクトルの積については、擬ベクトルと呼ぶこともあります。
+\begin{itemize}
+  \item 0-ブレード:スカラー
+  \item 1-ブレード:1-ベクトル
+  \item 2-ブレード:双ベクトル（bivector）
+  \item 3-ブレード:3-ベクトル、擬ベクトル（trivector、pseudo-vector）
+  \item 4-ブレード:4-ベクトル、擬スカラー（4-vector、pseudo-scalar）
+\end{itemize}
+さらにそれぞれを階層に見立ててグレードと呼んだりもします。
+偶数グレードや奇数グレードとまとめて表現する事が出来るようになります。
+
+\section{クリフォード代数の内積と外積}
+
+クリフォード代数の内積は通常、幾何積のスカラー部分を取り出す形で定義されます。外積はそれ以外の部分とみなせます。
+\begin{equation}
+  ab=a\cdot b+a\wedge b
+\end{equation}
+正確な定義としては幾何積の可換部分が内積、反可換部分が外積になります。
+反可換部分とは順序を逆にすると符号が反転するという意味になります。
+\begin{equation}
+  a\cdot b=\frac{1}{2}(ab+ba)
+\end{equation}
+\begin{equation}
+  a\wedge b=\frac{1}{2}(ab-ba)
+\end{equation}
+
+交換子$[a,b]=ab-ba$、反交換子$\{a,b\}=ab+ba$の記法を使うと、
+\begin{equation}
+  2a\cdot b=\{a,b\},\quad 2a\wedge b=[a,b]
+\end{equation}
+と表記する事もできます。
+
+\section{クリフォード代数の共役}
+
+一般的には、クリフォード代数の共役には3種類あると考えられます。
+\begin{table}[ht]
+  \centering
+  \caption{クリフォード代数の共役}
+  \begin{tabular}{|l|l|l|} \hline
+    名前 & 表記 & 操作 \\ \hline
+    リバース(Reverse) & $\widetilde{A}$ & 基底ベクトルの順序を逆にする \\ \hline
+    グレード対合(Grade Involution) & $\overline{A}$ & 奇数グレードの符号反転 \\ \hline
+    クリフォード共役(Clifford Conjugate) & $A^*$ & 他の共役の掛け合わせ \\ \hline
+  \end{tabular}
+\end{table}
+
+通常、クリフォード代数の共役にはリバースが使用されます。
+クリフォード代数においてリバース演算は、要素の基底ベクトルの順序を逆にしたものです。例えば、
+\begin{itemize}
+  \item スカラー: $\widetilde{a}=a$（変化なし）
+  \item 1-ベクトル: $\widetilde{e_0}=e_0$（変化なし）
+  \item 双ベクトル: $\widetilde{e_0e_1}=-e_1e_0$（$-1$倍）
+  \item 3-ベクトル: $\widetilde{e_0e_1e_2}=e_2e_1e_0=-e_1e_2e_0=e_1e_0e_2=-e_0e_1e_2$（$-1$倍）
+  \item 4-ベクトル: $\widetilde{e_0e_1e_2e_3}=e_3e_2e_1e_0=e_0e_1e_2e_3$（変化なし）
+\end{itemize}
+
+各共役の符号についてまとめると以下の表になります。
+\begin{table}[ht]
+  \centering
+  \caption{グレード$k$の符号の一般式}
+  \begin{tabular}{|l|c|c|c|c|l|} \hline
+    k mod 4 & 0 & 1 & 2 & 3 & \\ \hline
+    $\widetilde{A}$ & $+$ & $+$ & $-$ & $-$ & $(-1)^{k(k-1)/2}$ \\ \hline
+    $\overline{A}$ & $+$ & $-$ & $+$ & $-$ & $(-1)^k$ \\ \hline
+    $A^*$ & $+$ & $-$ & $-$ & $+$ & $(-1)^{k(k+1)/2}$ \\ \hline
+  \end{tabular}
+\end{table}
+
+\section{クリフォード代数の回転子}
+
+クリフォード代数の回転子(Rotor)は偶数グレードから形成され、以下の条件を満たします。
+\begin{equation}
+  R\widetilde{R}=\widetilde{R}R=1
+\end{equation}
+ここで$\widetilde{R}$は$R$のリバース(Reverse)です。
+
+この回転子を以下の様に対象$X$に作用させます。
+\begin{equation}
+  R X \widetilde{R} = X'
+\end{equation}
+この様な挟み込みの掛け合わせで対象を変換することを、サンドイッチ積(Sandwich Product)と呼びます。
+通常、サンドイッチ積による操作は対象の示す座標を回転させる事になります。
+
+\subsection{空間的双ベクトルの回転子}
+
+空間的双ベクトル$e_1e_2,e_1e_3,e_2e_3$を使って回転子(Rotor)を定義します。
+二乗について確認します。
+\begin{equation}
+  (e_1e_2)^2 = (e_1e_3)^2 = (e_2e_3)^2 = -1
+\end{equation}
+よってベルソル$\bm{v}$が定義できます。回転角を$2\theta$とすると、
+\begin{equation}
+  \bm{v} = v_1 e_1e_2 + v_2 e_1e_3 + v_3 e_2e_3 , \quad
+  \bm{v}^2 = - 1 , \quad v_1 , v_2 , v_3 \in \mathbb{R}
+\end{equation}
+\begin{equation}
+  B_x = \theta (v_1 e_1e_2 + v_2 e_1e_3 + v_3 e_2e_3) , \quad \theta \in \mathbb{R}
+\end{equation}
+と定義して、回転子は以下の通りです。
+\begin{equation}
+  \texttt{Rotor} : R_x = \exp(B_x) = \cos \theta + \bm{v} \sin \theta
+\end{equation}
+$\bm{v}^2$を展開すると、
+\begin{equation}
+  \begin{split}
+    \bm{v}^2 = ~ & (v_1 e_1e_2 + v_2 e_1e_3 + v_3 e_2e_3)^2\\
+    = ~ & v_1^2 e_1e_2e_1e_2 + v_1 v_2 e_1e_2e_1e_3 + v_1 v_3 e_1e_2e_2e_3\\
+    & + v_1 v_2 e_1e_3e_1e_2 + v_2^2 e_1e_3e_1e_3 + v_2 v_3 e_1e_3e_2e_3\\
+    & + v_1 v_3 e_2e_3e_1e_2 + v_2 v_3 e_2e_3e_1e_3 + v_3^2 e_2e_3e_2e_3\\
+    = ~ & - v_1^2 + v_1 v_2 e_2e_3 - v_1 v_3 e_1e_3
+    - v_1 v_2 e_2e_3 - v_2^2 + v_2 v_3 e_1e_2
+    + v_1 v_3 e_1e_3 - v_2 v_3 e_1e_2 - v_3^2\\
+    = ~ & - v_1^2 - v_2^2 - v_3^2\\
+  \end{split}
+\end{equation}
+
+\subsection{時間的双ベクトルの回転子}
+
+次に、双ベクトルの内、時間的双ベクトル$e_0e_1,e_0e_2,e_0e_3$を使って回転子(Rotor)を定義します。
+二乗について確認します。
+\begin{equation}
+  (e_0e_1)^2 = (e_0e_2)^2 = (e_0e_3)^2 = 1
+\end{equation}
+よって双曲的ベルソル$\bm{u}$が定義できます。回転角を$2\phi$とすると、
+\begin{equation}
+  \bm{u} = u_1 e_0e_1 + u_2 e_0e_2 + u_3 e_0e_3 , \quad
+  \bm{u}^2 = 1 , \quad u_1 , u_2 , u_3 \in \mathbb{R}
+\end{equation}
+\begin{equation}
+  B_t = \phi (u_1 e_0e_1 + u_2 e_0e_2 + u_3 e_0e_3) , \quad \phi \in \mathbb{R}
+\end{equation}
+と定義して、回転子は以下の通りです。
+\begin{equation}
+  \texttt{Rotor} : R_t = \exp(B_t) = \cosh \phi + \bm{u} \sinh \phi
+\end{equation}
+$\bm{u}^2$を展開すると、
+\begin{equation}
+  \begin{split}
+    \bm{u}^2 = ~ & (u_1 e_0e_1 + u_2 e_0e_2 + u_3 e_0e_3)^2\\
+    = ~ & u_1^2 e_0e_1e_0e_1 + u_1 u_2 e_0e_1e_0e_2 + u_1 u_3 e_0e_1e_0e_3\\
+    & + u_1 u_2 e_0e_2e_0e_1 + u_2^2 e_0e_2e_0e_2 + u_2 u_3 e_0e_2e_0e_3\\
+    & + u_1 u_3 e_0e_3e_0e_1 + u_2 u_3 e_0e_3e_0e_2 + u_3^2 e_0e_3e_0e_3\\
+    = ~ & u_1^2 - u_1 u_2 e_1e_2 - u_1 u_3 e_1e_3
+     + u_1 u_2 e_1e_2 + u_2^2 - u_2 u_3 e_2e_3
+     + u_1 u_3 e_1e_3 + u_2 u_3 e_2e_3 + u_3^2\\
+    = ~ & u_1^2 + u_2^2 + u_3^2\\
+  \end{split}
+\end{equation}
+
+\section{クリフォード代数のローレンツ変換}
+
+$Cl(1,3)$におけるローレンツ変換の計算を説明します。改めて時空については以下の定義です。
+\begin{equation}
+  \texttt{Spacetime}:\mathbb{M}\coloneq \{te_0+xe_1+ye_2+ze_3,\quad t,x,y,z\in\mathbb{R}\}
+\end{equation}
+\begin{equation}
+  \texttt{Invariant}:m^2=t^2-x^2-y^2-z^2,\quad m\in\mathbb{M}
+\end{equation}
+
+1-ベクトルよりなる時空を双ベクトルによるサンドイッチ積で回転変換する事を考えます。
+双ベクトルは6種類あります。様子を見るために具体的に一方向だけを計算してみましょう。
+$R=a+be_0e_1$とすると$\widetilde{R}=a-be_0e_1$になります。
+$Cl(1,3)$では、
+\[R\widetilde{R}=(a+be_0e_1)(a-be_0e_1)=a^2-b^2=1\]
+を満たすように係数が決定される必要があります。
+ご存知の様に、この数式に当てはまる適切な関数は双曲線関数です。
+$e_0$が含まれるため、これは時間方向の回転であり、ローレンツブーストを意味しています。
+$e_0e_2,e_0e_3$についても同様と考えられます。
+双ベクトルの内、$e_0$が含まれる双ベクトルは時間的な双ベクトルと考えられます。
+
+一方、$e_0$が含まれない双ベクトルは空間的な双ベクトルと考えられます。
+$R=a+be_1e_2$で計算してみましょう。$\widetilde{R}=a-be_1e_2$になり、
+\[R\widetilde{R}=(a+be_0e_1)(a-be_0e_1)=a^2+b^2=1\]
+空間的双ベクトルによるサンドイッチ積では、満たすべき係数の条件は単位円上という事になります。
+これは空間方向の回転ですので、ローレンツブーストにはなりません。
+$e_1e_3,e_2e_3$についても同様と考えられます。
+
+ここまでは双四元数で実現できる計算と変わりません。
+
+\section{四元数の直積との対比}
+
+双四元数は四元数の係数を複素数にしましたが、同じように係数を四元数にしてみます。
+四元数としてお互いに干渉しない虚数単位のセットを2つ定義します。
+\begin{gather}
+  i^2=j^2=k^2=-1\\
+  I^2=J^2=K^2=-1\\
+  ij=k,~jk=i,~ki=j,~ji=-k,~kj=-i,~ik=-j\\
+  IJ=K,~JK=I,~KI=J,~JI=-K,~KJ=-I,~IK=-J\\
+  iI=Ii,~jI=Ij,~kI=Ik\\
+  iJ=Ji,~jJ=Jj,~kJ=Jk\\
+  iK=Ki,~jK=Kj,~kK=Kk
+\end{gather}
+これらを組み合わせて2つの四元数の直積を作りますが、利便性の為に以後「四双四元数」(クアクォータニオン)と呼称します。
+\begin{equation}
+  \begin{split}
+    \texttt{Quaquaternion}:\mathbb{H}\otimes\mathbb{H}\coloneq ~&a+bi+cj+dk+m+ni+rj+sk\\
+    &a,b,c,d\in\mathbb{R}\\
+    &m=m_1I+m_2J+m_3K,\quad m_1,m_2,m_3\in\mathbb{R}\\
+    &n=n_1I+n_2J+n_3K,\quad n_1,n_2,n_3\in\mathbb{R}\\
+    &r=r_1I+r_2J+r_3K,\quad r_1,r_2,r_3\in\mathbb{R}\\
+    &s=s_1I+s_2J+s_3K,\quad s_1,s_2,s_3\in\mathbb{R}\\
+  \end{split}
+\end{equation}
+四双四元数はクリフォード代数$ Cl(3,1) $の変形と同型になっています。以下の様に各ブレードに割り当てます。
+\begin{itemize}
+  \item スカラー: $ a $
+  \item 1-ベクトル: $ c j + s k = c j + s_1 kI + s_2 kJ + s_3 kK $
+  \item 双ベクトル: $ n i + m = n_1 iI + n_2 iJ + n_3 iK + m_1 I + m_2 J + m_3 K $
+  \item 3-ベクトル: $ dk + rj = dk + r_1 jI+r_2 jJ+r_3 jK $
+  \item 擬スカラー: $ bi $
+\end{itemize}
+$ Cl(3,1) $の変形は以下の様に一部の順序を置き換えます。
+\begin{itemize}
+  \item 双ベクトルの一部: $ e_1 e_2 , e_2 e_3 \rightarrow e_2 e_1 , e_3 e_2 $
+  \item 3-ベクトルの一部: $ e_0 e_1 e_2 , e_0 e_2 e_3 \rightarrow e_0 e_2 e_1 , e_0 e_3 e_2 $
+\end{itemize}
+全体的に順序を整えます。
+\begin{itemize}
+  \item 1-ベクトル: $ e_0 , e_1 , e_2 , e_3 $
+  \item 双ベクトル: $ e_0e_1 , e_0e_2 , e_0e_3 , e_3e_2 , e_1e_3 , e_2e_1 $
+  \item 3-ベクトル: $ e_1e_2e_3 , e_0e_3e_2 , e_0e_1e_3 , e_0e_2e_1 $
+  \item 擬スカラー: $ e_0e_1e_2e_3 $
+\end{itemize}
+乗積表を作って確かめてみます。
+
+\clearpage
+
+\begin{table}[ht]
+  \begin{center}
+    \caption{四双四元数の乗積表}
+    \small
+    \begin{tabular}{r|rrrrrrrrrrrrrrr}
+      &$j$&$kI$&$kJ$&$kK$&$iI$&$iJ$&$iK$&$I$&$J$&$K$&$k$&$jI$&$jJ$&$jK$&$i$ \\ \hline
+      j&$-1$&$+iI$&$+iJ$&$+iK$&$-kI$&$-kJ$&$-kK$&$+jI$&$+jJ$&$+jK$&$+i$&$-I$&$-J$&$-K$&$-k$ \\ \hline
+      kI&$-iI$&$+1$&$-K$&$+J$&$-j$&$+jK$&$-jJ$&$-k$&$+kK$&$-kJ$&$-I$&$+i$&$-iK$&$+iJ$&$+jI$ \\ \hline
+      kJ&$-iJ$&$+K$&$+1$&$-I$&$-jK$&$-j$&$+jI$&$-kK$&$-k$&$+kI$&$-J$&$+iK$&$+i$&$-iI$&$+jJ$ \\ \hline
+      kK&$-iK$&$-J$&$+I$&$+1$&$+jJ$&$-jI$&$-j$&$+kJ$&$-kI$&$-k$&$-K$&$-iJ$&$+iI$&$+i$&$+jK$ \\ \hline
+      iI&$+kI$&$+j$&$-jK$&$+jJ$&$+1$&$-K$&$+J$&$-i$&$+iK$&$-iJ$&$-jI$&$-k$&$+kK$&$-kJ$&$-I$ \\ \hline
+      iJ&$+kJ$&$+jK$&$+j$&$-jI$&$+K$&$+1$&$-I$&$-iK$&$-i$&$+iI$&$-jJ$&$-kK$&$-k$&$+kI$&$-J$ \\ \hline
+      iK&$+kK$&$-jJ$&$+jI$&$+j$&$-J$&$+I$&$+1$&$+iJ$&$-iI$&$-i$&$-jK$&$+kJ$&$-kI$&$-k$&$-K$ \\ \hline
+      I&$+jI$&$-k$&$+kK$&$-kJ$&$-i$&$+iK$&$-iJ$&$-1$&$+K$&$-J$&$+kI$&$-j$&$+jK$&$-jJ$&$+iI$ \\ \hline
+      J&$+jJ$&$-kK$&$-k$&$+kI$&$-iK$&$-i$&$+iI$&$-K$&$-1$&$+I$&$+kJ$&$-jK$&$-j$&$+jI$&$+iJ$ \\ \hline
+      K&$+jK$&$+kJ$&$-kI$&$-k$&$+iJ$&$-iI$&$-i$&$+J$&$-I$&$-1$&$+kK$&$+jJ$&$-jI$&$-j$&$+iK$ \\ \hline
+      k&$-i$&$-I$&$-J$&$-K$&$+jI$&$+jJ$&$+jK$&$+kI$&$+kJ$&$+kK$&$-1$&$-iI$&$-iJ$&$-iK$&$+j$ \\ \hline
+      jI&$-I$&$-i$&$+iK$&$-iJ$&$+k$&$-kK$&$+kJ$&$-j$&$+jK$&$-jJ$&$+iI$&$+1$&$-K$&$+J$&$-kI$ \\ \hline
+      jJ&$-J$&$-iK$&$-i$&$+iI$&$+kK$&$+k$&$-kI$&$-jK$&$-j$&$+jI$&$+iJ$&$+K$&$+1$&$-I$&$-kJ$ \\ \hline
+      jK&$-K$&$+iJ$&$-iI$&$-i$&$-kJ$&$+kI$&$+k$&$+jJ$&$-jI$&$-j$&$+iK$&$-J$&$+I$&$+1$&$-kK$ \\ \hline
+      i&$+k$&$-jI$&$-jJ$&$-jK$&$-I$&$-J$&$-K$&$+iI$&$+iJ$&$+iK$&$-j$&$+kI$&$+kJ$&$+kK$&$-1$ \\ \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+\begin{table}[ht]
+  \begin{center}
+    \caption{Cl(3,1)変化形の乗積表（e表記を省略）}
+    \scriptsize
+    \begin{tabular}{r|rrrrrrrrrrrrrrr}
+      &$0$&$1$&$2$&$3$&$01$&$02$&$03$&$32$&$13$&$21$&$123$&$032$&$013$&$021$&$0123$\\\hline
+      $0$&$-$&$+01$&$+02$&$+03$&$-1$&$-2$&$-3$&$+032$&$+013$&$+021$&$+0123$&$-32$&$-13$&$-21$&$-123$\\
+      $1$&$-01$&$+$&$-21$&$+13$&$-0$&$+021$&$-013$&$-123$&$+3$&$-2$&$-32$&$+0123$&$-03$&$+02$&$+032$\\
+      $2$&$-02$&$+21$&$+$&$-32$&$-021$&$-0$&$+032$&$-3$&$-123$&$+1$&$-13$&$+03$&$+0123$&$-01$&$+013$\\
+      $3$&$-03$&$-13$&$+32$&$+$&$+013$&$-032$&$-0$&$+2$&$-1$&$-123$&$-21$&$-02$&$+01$&$+0123$&$+021$\\
+      $01$&$+1$&$+0$&$-021$&$+013$&$+$&$-21$&$+13$&$-0123$&$+03$&$-02$&$-032$&$-123$&$+3$&$-2$&$-32$\\
+      $02$&$+2$&$+021$&$+0$&$-032$&$+21$&$+$&$-32$&$-03$&$-0123$&$+01$&$-013$&$-3$&$-123$&$+1$&$-13$\\
+      $03$&$+3$&$-013$&$+032$&$+0$&$-13$&$+32$&$+$&$+02$&$-01$&$-0123$&$-021$&$+2$&$-1$&$-123$&$-21$\\
+      $32$&$+032$&$-123$&$+3$&$-2$&$-0123$&$+03$&$-02$&$-$&$+21$&$-13$&$+1$&$-0$&$+021$&$-013$&$+01$\\
+      $13$&$+013$&$-3$&$-123$&$+1$&$-03$&$-0123$&$+01$&$-21$&$-$&$+32$&$+2$&$-021$&$-0$&$+032$&$+02$\\
+      $21$&$+021$&$+2$&$-1$&$-123$&$+02$&$-01$&$-0123$&$+13$&$-32$&$-$&$+3$&$+013$&$-032$&$-0$&$+03$\\
+      $123$&$-0123$&$-32$&$-13$&$-21$&$+032$&$+013$&$+021$&$+1$&$+2$&$+3$&$-$&$-01$&$-02$&$-03$&$+0$\\
+      $032$&$-32$&$-0123$&$+03$&$-02$&$+123$&$-3$&$+2$&$-0$&$+021$&$-013$&$+01$&$+$&$-21$&$+13$&$-1$\\
+      $013$&$-13$&$-03$&$-0123$&$+01$&$+3$&$+123$&$-1$&$-021$&$-0$&$+032$&$+02$&$+21$&$+$&$-32$&$-2$\\
+      $021$&$-21$&$+02$&$-01$&$-0123$&$-2$&$+1$&$+123$&$+013$&$-032$&$-0$&$+03$&$-13$&$+32$&$+$&$-3$\\
+      $0123$&$+123$&$-032$&$-013$&$-021$&$-32$&$-13$&$-21$&$+01$&$+02$&$+03$&$-0$&$+1$&$+2$&$+3$&$-$\\
+    \end{tabular}
+  \end{center}
+\end{table}
+これらは一致しています。
+
+\section{四双四元数の内積と外積}
+
+さて、四元数の積には以下のように内積と外積が組み込まれています。
+\begin{equation}
+  \begin{split}
+    a=~&a_0+a_1i+a_2j+a_3k=a_0+u\\
+    b=~&b_0+b_1i+b_2j+b_3k=b_0+v\\
+  \end{split}
+\end{equation}
+と置いて、
+\begin{equation}
+  \begin{split}
+    ab=~&a_0b_0-a_1b_1-a_2b_2-a_3b_3\\
+    &+(a_0b_1+a_1b_0+a_2b_3-a_3b_2)i\\
+    &+(a_0b_2+a_2b_0+a_3b_1-a_1b_3)j\\
+    &+(a_0b_3+a_3b_0+a_1b_2-a_2b_1)k\\
+    = ~ & a_0 b_0 - u \cdot v + a_0 v + b_0 u + u \times v
+  \end{split}
+\end{equation}
+スカラー部分を取り除くと、
+\begin{equation}
+  uv=-u\cdot v+u\times v
+\end{equation}
+
+1-ベクトルの内積と外積を考えます。1-ベクトルを実数係数で具体化すると以下のようになっています。
+\begin{equation}
+  \begin{split}
+    p = ~ & p_0 e_0 + p_1 e_1 + p_2 e_2 + p_3 e_3 \\
+    q = ~ & q_0 e_0 + q_1 e_1 + q_2 e_2 + q_3 e_3 , \quad
+    p_0 , ... , q_3 , q_0 , ... , q_3 \in \mathbb{R}
+  \end{split}
+\end{equation}
+内積と外積の極めて一般的な定義としてはウェッジ積を用いて以下の定義になります。
+\begin{equation}
+  pq=\lambda p\cdot q+\mu p\wedge q,\quad \lambda,\mu\in\mathbb{R}
+\end{equation}
+ここで$\lambda=\mu=-1$を選択すると、
+\begin{equation}
+  \begin{split}
+    pq=~&-p\cdot q-p\wedge q\\
+    qp=~&-q\cdot p-q\wedge p=-p\cdot q+p\wedge q
+  \end{split}
+\end{equation}
+\begin{equation}
+  \begin{split}
+    2p\cdot q=~&-(pq+qp)\\
+    2p\wedge q=~&-(pq-qp)\\
+    p \cdot q = ~ & - \frac{1}{2} (p q + q p) \\
+    p \wedge q = ~ & - \frac{1}{2} (p q - q p)
+  \end{split}
+\end{equation}
+一般的に、1-ベクトル$ p $とnグレードのマルチベクトル \footnote{複数回ウェッジ積を重ねた結果の事で、双ベクトルや3-ベクトルが構成される}
+$ A_n = p_1 \wedge p_2 ... \wedge p_n $の
+内積と外積は以下のようになります。
+\begin{equation}
+  \begin{split}
+    2p \cdot A_n = ~ & (-1)^n (p A_n - (-1)^n A_n p) \\
+    2p \wedge A_n = ~ & (-1)^n (p A_n + (-1)^n A_n p) \\
+  \end{split}
+\end{equation}
+特に双ベクトル$ B $の場合は、$ n = 2 $なので、$ 2p \cdot B = p B - B p $となります。
+具体的に、$ p = p_0 j + p_1 kI, B = b_0 iI + b_1 iJ $の内積について計算すると、
+\begin{equation}
+  \begin{split}
+    pB = ~ & (p_0 j + p_1 kI)(b_0 iI + b_1 iJ) = - p_0 b_0 kI - p_0 b_1 kJ - p_1 b_0 j + p_1 b_1 jK \\
+    Bp = ~ & (b_0 iI + b_1 iJ)(p_0 j + p_1 kI) = p_0 b_0 kI + p_0 b_1 kJ + p_1 b_0 j + p_1 b_1 jK \\
+    2 p \cdot B = ~ & p B - B p = - 2 p_0 b_0 kI - 2 p_0 b_1 kJ - 2 p_1 b_0 j \\
+    p \cdot B = ~ & - p_1 b_0 j - p_0 b_0 kI - p_0 b_1 kJ \\
+  \end{split}
+\end{equation}
+または、
+\begin{equation}
+  \begin{split}
+    pB = ~ & (p_0 e_0 + p_1 e_1)(b_0 e_0e_1 + b_1 e_0e_2) = - p_0 b_0 e_1 - p_0 b_1 e_2 - p_1 b_0 e_0 + p_1 b_1 e_0e_2e_1 \\
+    Bp = ~ & (b_0 e_0e_1 + b_1 e_0e_2)(p_0 e_0 + p_1 e_1) = p_0 b_0 e_1 + p_0 b_1 e_2 + p_1 b_0 e_0 + p_1 b_1 e_0e_2e_1 \\
+    p \cdot B = ~ & - p_1 b_0 e_0 - p_0 b_0 e_1 - p_0 b_1 e_2 \\
+  \end{split}
+\end{equation}
+
+\section{四双四元数による擬ユークリッド空間}
+
+1-ベクトルの実数係数を以下のように定めて内積を計算すると、
+\begin{gather}
+  s = t j + x kI + y kJ + z kK, \quad t, x, y, z \in \mathbb{R} \\
+  s \cdot s = - ss = t^2 - x^2 - y^2 - z^2
+\end{gather}
+内積は相対論的不変量になります。ローレンツ変換は以下のように定義されます。
+\begin{gather}
+  X'= R X R^*
+\end{gather}
+ここで$ R $は$ R R^* = 1 $を満たす偶数グレード（通常、双ベクトル）です。
+同様に任意の3-ベクトル$ A $に対して、
+\begin{gather}
+  A = a_0 k + a_1 jI + a_2 jJ + a_3 jK
+\end{gather}
+\begin{gather}
+  A' = R A R^*
+\end{gather}
+が成り立ち、相対論的不変量$ A \cdot A $が得られます。
+ラピディティ$ \theta $が、$ \tanh \theta = v/c $で与えられ、方向を表す単位ベクトル（ベルソル）が、
+\begin{gather}
+  d=d_1I+d_2J+d_3K,\quad d_1^2+d_2^2+d_3^2=1,\quad d_1,d_2,d_3\in\mathbb{R}
+\end{gather}
+で与えられる時、
+\begin{equation}
+  \begin{split}
+    R = ~ & \exp \left( \frac{1}{2} \theta d i \right) \\
+    = ~ & \cosh \frac{\theta}{2} + d i \sinh \frac{\theta}{2} \\
+    = ~ & \cosh \frac{\theta}{2} + (d_1 iI + d_2 iJ + d_3 iK) \sinh \frac{\theta}{2}
+  \end{split}
+\end{equation}
+として$ R $が定まります。
+
+\input{dst-simulator-doc-gr.tex}
+
+\end{document}
