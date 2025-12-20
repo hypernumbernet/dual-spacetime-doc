@@ -1,0 +1,68 @@
+\documentclass[a4paper,12pt,notitlepage]{jsreport}
+\usepackage[left=10truemm,right=10truemm,top=25truemm,bottom=20truemm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{bm}
+\usepackage{setspace}
+\usepackage{wrapfig}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{docmute}
+\DeclareMathOperator\arctanh{arctanh}
+\DeclareMathOperator\arccosh{arccosh}
+
+\begin{document}
+
+\chapter{二重時空理論の成立}
+
+\section{二重時空理論での重力計算}
+
+\subsection{重力と慣性力の本質}
+
+前章で、重力による影響の結果、双対時空の時空立方体が回転し歪む様子を、三角関数と双曲線関数の混合回転で見てきました。
+物体の運動量は時空立方体に沿って進行すると考えれば、時空立方体が変形すれば運動量が見かけ上変化するように見えるでしょう。
+もし物体の通常時空が時空立方体の変形に応じて変化するのであれば、物体側は、慣性力は感じられず無重力浮遊の状態を経験すると考えられます。
+ここで重要な幾何学的なイメージは、通常時空と双対時空の食い違いが重力に抵抗する時の慣性力になっているのではないかという推定です。
+
+さて、リーマン幾何学とは別の一般相対性理論の定式化として、アインシュタイン・カルタン理論（1922年）というものが存在します。
+この理論では、時空連続体の曲率ではなく、ねじれ（torsion）を重力の性質を決定する要素として扱います。
+アインシュタイン・カルタン理論は数年で廃れてしまいましたが、テレパラレル重力理論として研究自体は続いており、
+近年、TEGR（Teleparallel Equivalent to General Relativity）として一般相対性理論と同型であることが示されています。
+
+TEGRの結論を簡単に述べると、時空の曲率をゼロとし、トーションを非ゼロにする事で、一般相対性理論と同じ重力方程式を得ることが出来るというものです。
+この理論では、トーションは時空のねじれを表し、物体のスピンと相互作用することで重力効果を生み出すとされています。
+
+ここでは時空連続体を否定したいので、時空のねじれは定義できませんが、通常時空と双対時空のねじれは定義できるでしょう。
+以下の様に定式化してみます。
+
+\begin{equation}
+R_\text{total} = \exp\left( \sum_{a=1}^3 \frac{\omega_a}{2} i\Gamma_a + \sum_{a=1}^3 \frac{\phi_a}{2} \Gamma_a \right),
+\end{equation}
+ここで、$\Gamma_1 = I$, $\Gamma_2 = J$, $\Gamma_3 = K$ であり、$\omega_a $は通常時空の回転角、$ \phi_a $は双対時空の回転角です。
+
+\begin{equation}
+R_\text{usual} = \exp\left( \sum_{a=1}^3 \frac{\omega_a}{2} i\Gamma_a \right), \quad R_\text{dual} = \exp\left( \sum_{a=1}^3 \frac{\phi_a}{2} \Gamma_a \right).
+\end{equation}
+ここで、$ R_\text{usual} $は通常時空の回転子、$ R_\text{dual} $は双対時空の回転子です。
+
+\subsection{双対時空の表現}
+
+双対時空を今度は双四元数で表現してみます。
+\begin{equation}
+  \begin{split}
+    S = ~ & t j + x kI + y kJ + z kK \\
+    S^\dag = ~ & (t j + x kI + y kJ + z kK)i = - t k + x jI + y jJ + z jK \\
+  \end{split}
+\end{equation}
+\begin{itemize}
+  \item ある瞬間の物体の双対時空: $ S^\dag = - t k + x jI + y jJ + z jK $
+  \item $ Cl(1,3) $表現 : $ S^\dag = t e_1e_2e_3 + x e_0e_2e_3 - y e_0e_1e_3 + z e_0e_1e_2 $
+\end{itemize}
+双四元数の方が符号が時間反転になっており、クリフォード代数の空間の対称性が乱れるよりは、双四元数版の方が物理的な意味が深まります。
+クリフォード代数でも基底の順序を入れ替える事で符号を揃えることは可能ですが、より直接的には双四元数を使う方が良いでしょう。
+実は、この時間反転には深い物理的意味として、慣性力の本質や量子重力理論と関係があると考えられます。
+
+
+
+\end{document}
