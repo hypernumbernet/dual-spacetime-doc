@@ -16,6 +16,24 @@
 
 \chapter{二重時空理論の成立}
 
+\section{クリフォード代数表現の放棄}
+
+前章まで行ってきた通常時空と双対時空の二重時空を、今度は双四元数で表現してみます。
+\begin{equation}
+  \begin{split}
+    S = ~ & t j + x kI + y kJ + z kK \\
+    S^\dag = ~ & (t j + x kI + y kJ + z kK)i = - t k + x jI + y jJ + z jK \\
+  \end{split}
+\end{equation}
+\begin{itemize}
+  \item ある瞬間の物体の双対時空: $ S^\dag = - t k + x jI + y jJ + z jK $
+  \item $ Cl(1,3) $表現 : $ S^\dag = t e_1e_2e_3 + x e_0e_2e_3 - y e_0e_1e_3 + z e_0e_1e_2 $
+\end{itemize}
+双四元数の方は符号が時間反転になっており、クリフォード代数の空間の特定軸の対称性が乱れるよりは、双四元数版の方が物理的な意味が深まると考えられます。
+クリフォード代数でも基底の順序を入れ替える事で時間の反転として符号を揃えることは可能ですが、より直接的には双四元数を使う方が良いでしょう。
+この時間反転には深い物理的意味として、慣性力の本質や量子力学と関係がありそうです。
+今後は特に理由がない限り、双四元数表現を使うことにします。
+
 \section{二重時空理論での重力計算}
 
 \subsection{重力と慣性力の本質}
@@ -46,22 +64,8 @@ R_\text{usual} = \exp\left( \sum_{a=1}^3 \frac{\omega_a}{2} i\Gamma_a \right), \
 \end{equation}
 ここで、$ R_\text{usual} $は通常時空の回転子、$ R_\text{dual} $は双対時空の回転子です。
 
-\subsection{双対時空の表現}
 
-双対時空を今度は双四元数で表現してみます。
-\begin{equation}
-  \begin{split}
-    S = ~ & t j + x kI + y kJ + z kK \\
-    S^\dag = ~ & (t j + x kI + y kJ + z kK)i = - t k + x jI + y jJ + z jK \\
-  \end{split}
-\end{equation}
-\begin{itemize}
-  \item ある瞬間の物体の双対時空: $ S^\dag = - t k + x jI + y jJ + z jK $
-  \item $ Cl(1,3) $表現 : $ S^\dag = t e_1e_2e_3 + x e_0e_2e_3 - y e_0e_1e_3 + z e_0e_1e_2 $
-\end{itemize}
-双四元数の方が符号が時間反転になっており、クリフォード代数の空間の対称性が乱れるよりは、双四元数版の方が物理的な意味が深まります。
-クリフォード代数でも基底の順序を入れ替える事で符号を揃えることは可能ですが、より直接的には双四元数を使う方が良いでしょう。
-実は、この時間反転には深い物理的意味として、慣性力の本質や量子重力理論と関係があると考えられます。
+
 
 
 
