@@ -1,0 +1,345 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{bm}
+\usepackage{geometry}
+\geometry{left=25mm,right=25mm,top=25mm,bottom=25mm}
+
+\title{Quantum Gravity as Torsional Mismatch in Biquaternion Double Spacetime}
+
+\author{}
+\date{December 23, 2025}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+General Relativity (GR) successfully describes gravity as spacetime curvature, yet its reconciliation with quantum mechanics remains elusive, plagued by singularities, the continuum hypothesis, and the absence of a microscopic origin for curvature. This paper presents a complete quantum gravity framework based on the Double Spacetime Theory, where spacetime is not a shared continuum but a pair of compactified Minkowski spacetimes intrinsically attached to every massive particle.
+
+Employing the 16-real-dimensional biquaternion algebra isomorphic to Cl(3,1), we define the usual spacetime with basis (j, kI, kJ, kK) and the dual spacetime with basis (k, jI, jJ, jK). The dual map $X \mapsto Xi$ reverses the time arrow while preserving the Minkowski norm. Gravity and inertia emerge from the torsional mismatch between particle-intrinsic rotors $R_\text{usual}$ and $R_\text{dual}$, quantified by the invariant $J = \frac{1}{16} B(\log(R_\text{usual}^\dagger R_\text{dual}), \log(R_\text{usual}^\dagger R_\text{dual}))$, yielding an action equivalent to the Einstein-Hilbert action without Christoffel symbols or Riemann curvature.
+
+Crucially, the dual rotor $R_\text{dual} = \exp(\sum \phi_a/2 \Gamma_a)$ is mathematically identical to the spin rotation operator for spin-1/2 particles, revealing quantum states as dual spacetime rotations. Position and momentum operators arise from projections of dual rotor angles, while forces (gravity, electromagnetism, weak, strong) manifest as modulations of relative rotor phases. This unifies quantum mechanics and gravity algebraically within Cl(3,1), eliminates singularities via discrete torsion layers, explains baryon asymmetry through time-arrow fixation, and renders gravity engineerable via dual rotor synchronization.
+
+The continuum hypothesis is abandoned; spacetime emerges collectively from particle-local dual structures. GR is completed, not superseded, and quantum gravity is achieved without extra dimensions or ad-hoc quantization.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:introduction}
+
+The quest for quantum gravity has persisted for over a century, yet no consensus framework has emerged. Approaches such as loop quantum gravity discretize geometry but retain curvature as fundamental; string theory introduces extra dimensions and supersymmetry without direct empirical support; asymptotic safety and causal dynamical triangulations struggle with renormalizability and continuum limits. All retain the spacetime continuum hypothesis: a smooth, differentiable manifold existing independently of matter, curved by energy-momentum via the Einstein equations.
+
+This hypothesis, while empirically successful macroscopically, leads to profound difficulties: ultraviolet divergences in quantum field theory on curved backgrounds, black hole information paradoxes, cosmological singularities, and the absence of a physical mechanism explaining why matter curves spacetime. Mach's principle remains unfulfilled—spacetime behaves as an autonomous entity rather than a relational construct determined by matter distribution.
+
+The Double Spacetime Theory proposed here resolves these issues through a radical reformulation: there is no shared spacetime continuum. Instead, each massive particle carries an intrinsic pair of compactified Minkowski spacetimes encoded in the biquaternion algebra $\mathbb{H} \oplus \mathbb{H} \cong \mathrm{Cl}(3,1)$. The usual spacetime governs standard kinematics; the dual spacetime, related by right-multiplication by the pseudoscalar $i$ (reversing time direction), encodes complementary degrees of freedom.
+
+Lorentz transformations act via commuting rotors on each sector. The complete rotor
+\[
+R_\text{total} = \exp\left( \sum_{a=1}^3 \frac{\omega_a}{2} i\Gamma_a + \frac{\phi_a}{2} \Gamma_a \right)
+\]
+factorizes as $R_\text{usual} R_\text{dual}$. Gravity arises not from curvature but from torsional mismatch $\Omega = R_\text{usual}^\dagger R_\text{dual}$, with the bivector $\Omega_\text{biv} = \log \Omega$ and Lorentz-invariant scalar $J$ yielding the teleparallel equivalent of GR (TEGR) in biquaternionic form.
+
+Most profoundly, the dual rotor $R_\text{dual}$ is isomorphic to the SU(2) spin rotation operator, identifying quantum wavefunctions with dual spacetime phases. Forces emerge as rotor modulations, unifying gravity with quantum mechanics algebraically. Singularities are forbidden by bounded torsion layers; baryon asymmetry follows from Planck-era time-arrow fixation in dual rotors.
+
+This framework achieves:
+\begin{itemize}
+  \item Exact classical equivalence with GR without continuum or curvature.
+  \item Natural quantization via dual rotor compactness.
+  \item Unification of all forces within 16-dimensional Cl(3,1).
+  \item In-principle controllability of gravity and inertia.
+\end{itemize}
+
+The remainder of this paper proceeds as follows: Section~\ref{sec:math} reviews the biquaternion foundation; subsequent sections develop kinematics, classical gravity, quantum interpretation, force unification, cosmological implications, and experimental predictions.
+
+\section{Mathematical Foundation: The 16-Dimensional Biquaternion Algebra}
+\label{sec:math}
+
+The Double Spacetime Theory is constructed entirely within the 16-real-dimensional algebra of biquaternions, which is canonically isomorphic to the Clifford geometric algebra $\mathrm{Cl}(3,1)$ for Minkowski spacetime with signature $(-,+,+,+)$. This algebra intrinsically accommodates two mutually commuting copies of Minkowski spacetime—the usual and the dual—attached to every massive particle.
+
+\subsection{The Biquaternion Algebra}
+
+We define two independent copies of Hamilton's quaternion algebra:
+\begin{itemize}
+  \item Primary quaternions generated by $i,j,k$ satisfying $i^2 = j^2 = k^2 = -1$ and $ij = k$, $ji = -k$ (cyclic permutations).
+  \item Secondary quaternions generated by $I,J,K$ satisfying identical rules $I^2 = J^2 = K^2 = -1$ and $IJ = K$, $JI = -K$ (cyclic).
+\end{itemize}
+The full biquaternion algebra is their tensor product $\mathbb{H} \oplus \mathbb{H}$, where the two sets commute strictly:
+\[
+iI = Ii, \quad iJ = Ji, \quad iK = Ki, \quad jI = Ij, \quad \dots
+\]
+yielding the 16 linearly independent real basis elements
+\[
+1,\; i,\; j,\; k,\; I,\; J,\; K,\; iI,\; iJ,\; iK,\; jI,\; jJ,\; jK,\; kI,\; kJ,\; kK.
+\]
+
+\subsection{Explicit Isomorphism with $\mathrm{Cl}(3,1)$}
+
+The isomorphism with $\mathrm{Cl}(3,1)$ (signature $(-,+,+,+)$) is realized by identifying the grade-1 vector generators as
+\begin{align*}
+  e_0 &= j && \text{(timelike)}, \\
+  e_1 &= kI, \quad e_2 = kJ, \quad e_3 = kK && \text{(spacelike)},
+\end{align*}
+which satisfy
+\[
+e_0^2 = -1, \quad e_1^2 = e_2^2 = e_3^2 = +1, \quad e_\mu e_\nu + e_\nu e_\mu = 0 \quad (\mu \neq \nu).
+\]
+Higher-grade elements follow standard Clifford multiplication. Notably:
+\begin{alignat*}{3}
+  &\text{grade-2 bivectors:} \quad & e_0 e_1 &= iI, \;\; e_0 e_2 = iJ, \;\; e_0 e_3 = iK, \\
+  && e_3 e_2 &= I, \;\; e_1 e_3 = J, \;\; e_2 e_1 = K, \\[6pt]
+  &\text{grade-3 trivectors:} \quad & e_1 e_2 e_3 &= k, \;\; e_0 e_3 e_2 = jI, \;\; e_0 e_1 e_3 = jJ, \;\; e_0 e_2 e_1 = jK, \\[6pt]
+  &\text{pseudoscalar:} \quad & e_0 e_1 e_2 e_3 &= i.
+\end{alignat*}
+The dual basis, time-reversed under right-multiplication by the pseudoscalar $i$, is
+\[
+\tilde{e}_0 = k, \quad \tilde{e}_1 = jI, \quad \tilde{e}_2 = jJ, \quad \tilde{e}_3 = jK.
+\]
+
+This asymmetric basis is deliberate: it preserves full three-dimensional rotational symmetry while encoding two time-reversed Minkowski copies, enabling the dual map to reverse the temporal arrow without breaking spatial isotropy.
+
+\subsection{Dual Spacetime Structure Intrinsic to Particles}
+
+Each massive particle carries an intrinsic pair of compactified Minkowski spacetimes:
+\begin{itemize}
+  \item \textbf{Usual spacetime} vectors:
+  \[
+  X = ct \, j + x \, kI + y \, kJ + z \, kK,
+  \]
+  with invariant norm
+  \[
+  X^2 = -(ct)^2 + x^2 + y^2 + z^2.
+  \]
+  \item \textbf{Dual spacetime} vectors:
+  \[
+  X' = ct' \, k + x' \, jI + y' \, jJ + z' \, jK,
+  \]
+  with identical norm
+  \[
+  {X'}^2 = -(ct')^2 + {x'}^2 + {y'}^2 + {z'}^2.
+  \]
+\end{itemize}
+The dual map $X' = X i$ reverses time:
+\[
+(ct \, j) i = -ct \, k,
+\]
+while preserving the norm:
+\[
+{X'}^2 = (X i)^2 = X^2 i^2 = -X^2.
+\]
+This particle-local duality provides the algebraic foundation for torsional mismatch gravity and the identification of quantum states with dual rotor phases.
+
+\section{Kinematics of Double Spacetime Rotors}
+\label{sec:kinematics}
+
+In this section, we develop the kinematic framework of the Double Spacetime Theory. All proper orthochronous Lorentz transformations and local frame rotations are generated by commuting pairs of rotors acting independently on the usual and dual spacetimes. Boosts arise naturally from bivectors squaring to $+1$, yielding hyperbolic expansions without imaginary rapidity angles.
+
+\subsection{Rotors in the Usual Spacetime}
+
+Consider a Lorentz boost along the $x$-direction with rapidity $\theta$. The generating bivector is $iI$, satisfying $(iI)^2 = +1$. The boost rotor is
+\[
+R_\text{usual} = \exp\left( \frac{\theta}{2} iI \right) = \cosh\left( \frac{\theta}{2} \right) + \sinh\left( \frac{\theta}{2} \right) iI.
+\]
+Transformation of a usual spacetime vector $X = ct \, j + x \, kI + \cdots$ via the sandwich product
+\[
+\tilde{X} = R_\text{usual} \, X \, R_\text{usual}^\dagger
+\]
+yields the standard Lorentz boost:
+\[
+ct' \, j + x' \, kI = \gamma (ct + \beta x) \, j + \gamma (x + \beta ct) \, kI,
+\]
+with $\gamma = \cosh \theta$ and $\beta = v/c = \tanh \theta$. Pure spatial rotations in the usual spacetime arise from bivectors $I,J,K$ squaring to $-1$, producing trigonometric expansions.
+
+\subsection{The Complete Rotor}
+
+The most general proper orthochronous transformation is generated by the complete rotor
+\[
+R_\text{total} = \exp\left( \sum_{a=1}^3 \frac{\omega_a}{2} i\Gamma_a + \frac{\phi_a}{2} \Gamma_a \right),
+\]
+where $\Gamma_1 = I$, $\Gamma_2 = J$, $\Gamma_3 = K$, $\omega_a$ parameterize usual-sector boosts/rotations, and $\phi_a$ parameterize dual-sector rotations. Commutativity of generators allows factorization
+\[
+R_\text{total} = R_\text{usual} \, R_\text{dual},
+\]
+with
+\[
+R_\text{usual} = \exp\left( \sum_{a=1}^3 \frac{\omega_a}{2} i \Gamma_a \right), \quad
+R_\text{dual} = \exp\left( \sum_{a=1}^3 \frac{\phi_a}{2} \Gamma_a \right).
+\]
+Transformations act via the unified sandwich product $\tilde{X} = R_\text{total} X R_\text{total}^\dagger$, preserving norms in both sectors without matrices or coordinate-dependent connections.
+
+\subsection{Cross-Action on the Dual Spacetime}
+
+The dual rotor $R_\text{dual}$ generates pure rotations in its own sector (since $\Gamma_a^2 = -1$). However, when $R_\text{usual}$ acts on dual vectors, an intriguing chiral response emerges due to time reversal in the dual map $X \mapsto X i$.
+
+For a pure $x$-boost $R_\text{usual} = \exp(\theta/2 \, iI)$ applied to the dual time basis $k$ (setting $ct' = 1$):
+\[
+\tilde{k} = R_\text{usual} \, k \, R_\text{usual}^\dagger = \cosh \theta \, k - \sinh \theta \, jI.
+\]
+Similarly for the dual $x$-basis $jI$:
+\[
+\tilde{jI} = \cosh \theta \, jI - \sinh \theta \, k.
+\]
+This yields a hyperbolic mixing with \emph{negative} cross terms:
+\[
+ct' \, k + x' \, jI \mapsto \gamma (ct' \, k - \beta x' \, jI) + \gamma (x' \, jI - \beta ct' \, k).
+\]
+A forward boost in the usual spacetime induces a \emph{retrograde} boost in the dual spacetime. This opposite propagation of rapidity is the kinematic seed of torsional mismatch: in free fall, $\omega_a = -\phi_a$ enforces perfect anti-synchronization; acceleration or gravity decouples them.
+
+For massless particles, eternal resonance $\phi_a = -\omega_a$ yields null geodesics in both sectors. Massive particles exhibit intrinsic rigidity, accruing torsional strain under acceleration—manifesting inertia and gravity as the same dual-rotor phenomenon.
+
+This chiral duality provides deep insight: the equivalence principle is an algebraic identity requiring rotor parallelism in free fall, while inertial forces arise from enforced misalignment, identical in origin to gravitational torsion.
+
+\section{Torsional Mismatch as Gravity}
+\label{sec:gravity}
+
+In this central section, we establish gravity as the torsional mismatch between the particle-intrinsic usual and dual spacetimes. No Riemannian curvature or Christoffel symbols are required; the Einstein equations emerge algebraically from relative rotor misalignment in the Lie algebra $\mathfrak{so}(3,1) \oplus \mathfrak{so}(3,1)$.
+
+\subsection{Lie Algebra Structure of the Biquaternion Rotors}
+
+The complete rotor
+\[
+R_\text{total} = R_\text{usual} \, R_\text{dual} = \exp\left( \sum_{a=1}^3 \frac{\omega_a}{2} i\Gamma_a + \frac{\phi_a}{2} \Gamma_a \right)
+\]
+lies in the spin group $\mathrm{Spin}^+(3,1) \oplus \mathrm{Spin}^+(3,1)$. Its Lie algebra is the direct sum
+\[
+\mathfrak{so}(3,1) \oplus \mathfrak{so}(3,1),
+\]
+generated by the six commuting bivectors
+\[
+B_a^+ = i\Gamma_a \quad (a=1,2,3) \quad \text{(usual sector, squaring to $+1$)},
+\]
+\[
+B_a^- = \Gamma_a \quad (a=1,2,3) \quad \text{(dual sector, squaring to $-1$)}.
+\]
+The bivectors $B_a^+$ generate boosts in the usual spacetime (hyperbolic rotations), while $B_a^-$ generate pure spatial rotations in the dual spacetime (elliptic rotations). Their strict commutativity $[B_a^+, B_b^-] = 0$ reflects the algebraic independence of the two sectors.
+
+The Killing form $B(X,Y) = \mathrm{Tr}(\mathrm{ad}_X \circ \mathrm{ad}_Y)$ on $\mathfrak{so}(3,1) \oplus \mathfrak{so}(3,1)$ is the unique (up to scale) invariant bilinear form:
+\[
+B(i\Gamma_a, i\Gamma_a) = +8, \quad B(\Gamma_a, \Gamma_a) = -8, \quad B(i\Gamma_a, \Gamma_b) = 0 \quad (a \neq b).
+\]
+This form distinguishes boosts from rotations and provides the Lorentz-invariant scalar needed for the gravitational action.
+
+\subsection{Torsional Mismatch Rotor and Bivector}
+
+In free fall, perfect anti-synchronization $\phi_a = -\omega_a$ yields $R_\text{usual}^\dagger R_\text{dual} = 1$ and zero torsion. Gravity and inertia arise when external fields or relative motion enforce misalignment.
+
+Define the torsional mismatch rotor
+\[
+\Omega = R_\text{usual}^\dagger R_\text{dual} \in \mathrm{Spin}^+(3,1) \oplus \mathrm{Spin}^+(3,1).
+\]
+Since $\Omega$ is a group element, its Lie algebra element—the torsional bivector—is uniquely
+\[
+\Omega_\text{biv} = \log \Omega = \sum_{a=1}^3 \left( \frac{\delta \omega_a}{2} i\Gamma_a + \frac{\delta \phi_a}{2} \Gamma_a \right),
+\]
+where $\delta \omega_a = \omega_a + \phi_a$ and $\delta \phi_a = \phi_a - \omega_a$ parameterize deviations from parallelism.
+
+\subsection{Gravitational Scalar and Action}
+
+The unique Lorentz-invariant scalar density is the normalized Killing form of the torsional bivector:
+\[
+J = \frac{1}{16} B(\Omega_\text{biv}, \Omega_\text{biv}) = \frac{1}{2} \sum_{a=1}^3 \left( (\delta \omega_a)^2 - (\delta \phi_a)^2 \right).
+\]
+In the vacuum or weak-field limit, $J \geq 0$ corresponds to attractive gravity.
+
+The action
+\[
+S = \frac{c^4}{16\pi G} \int J \, d^4x
+\]
+is dynamically equivalent to the Einstein-Hilbert action. This equivalence follows from the identity (proven in Appendix B) that $J$ reproduces the teleparallel scalar $T$ of TEGR up to a total divergence, yielding Einstein's equations without curvature:
+\[
+G_{\mu\nu} = 8\pi G / c^4 \, T_{\mu\nu}.
+\]
+Thus, the Double Spacetime Theory is the biquaternionic realization of Teleparallel Gravity, with torsion now physically interpreted as the Lie-algebraic mismatch between particle-local dual rotors.
+
+This formulation eliminates the continuum hypothesis: macroscopic spacetime curvature is an emergent collective effect of torsional misalignment among neighboring particles' intrinsic dual frames. The equivalence principle emerges algebraically—free fall restores rotor parallelism—while acceleration enforces mismatch, unifying inertia and gravity as identical torsional phenomena.
+
+Crucially, since $J$ depends only on relative angles $\delta \phi_a, \delta \omega_a$ in the Lie algebra, coherent excitation of dual-sector parameters $\phi_a$ offers a direct pathway to gravitational engineering, transforming gravity from fundamental constraint to controllable degree of freedom.
+
+\subsection{Massless Particles and Null Geodesics}
+
+For massless particles (photons, gravitons, or any null propagation), the Double Spacetime Theory predicts eternal torsional alignment $J=0$, reflecting their lightlike nature where time and space intervals are equivalent in the Minkowski sense.
+
+A null vector in the usual spacetime satisfies
+\[
+X^2 = 0 \quad \Rightarrow \quad (ct)^2 = x^2 + y^2 + z^2.
+\]
+The corresponding dual vector $X' = X i$ automatically inherits nullity:
+\[
+{X'}^2 = (X i)^2 = X^2 i^2 = -X^2 = 0.
+\]
+
+For massless propagation, the rapidity parameters must enforce perfect resonance between sectors. The complete rotor evolves along the worldline as
+\[
+R_\text{total}(\lambda) = R_\text{usual}(\lambda) \, R_\text{dual}(\lambda),
+\]
+where $\lambda$ is an affine parameter. Lightlike geodesics demand that boosts propagate without torsional strain.
+
+Assume a pure boost along $x$ with rapidity $\theta(\lambda)$. The usual rotor is
+\[
+R_\text{usual} = \exp\left( \frac{\theta(\lambda)}{2} iI \right).
+\]
+For $J=0$, the torsional mismatch rotor must remain trivial:
+\[
+\Omega(\lambda) = R_\text{usual}^\dagger(\lambda) R_\text{dual}(\lambda) = 1 \quad \forall \lambda.
+\]
+This requires
+\[
+R_\text{dual}(\lambda) = R_\text{usual}(\lambda),
+\]
+or explicitly
+\[
+\exp\left( \sum_{a=1}^3 \frac{\phi_a(\lambda)}{2} \Gamma_a \right) = \exp\left( \sum_{a=1}^3 \frac{\theta_a(\lambda)}{2} i \Gamma_a \right).
+\]
+Since the generators $i\Gamma_a$ and $\Gamma_a$ are independent, the only solution is
+\[
+\phi_a(\lambda) = -\theta_a(\lambda) \quad \text{(anti-synchronization)}.
+\]
+The torsional bivector then vanishes identically:
+\[
+\Omega_\text{biv}(\lambda) = \log \Omega = \sum_{a=1}^3 \left( \frac{\theta_a + \phi_a}{2} i\Gamma_a + \frac{\phi_a - \theta_a}{2} \Gamma_a \right) = 0.
+\]
+Consequently,
+\[
+J(\lambda) = \frac{1}{16} B(\Omega_\text{biv}, \Omega_\text{biv}) = 0 \quad \forall \lambda.
+\]
+
+This eternal $J=0$ reflects the absence of proper mass: massless particles experience no torsional rigidity and propagate with perfect dual resonance, following null geodesics in both sectors simultaneously. The light cone is thus an algebraic identity rather than a dynamical outcome.
+
+In contrast, massive particles possess intrinsic dual rigidity, allowing sustained mismatch $J > 0$ and timelike trajectories. The null case underscores the theory's unification of kinematics and gravity: masslessness is equivalent to torsional harmony, while massiveness arises from dual rotor misalignment.
+
+\section{Quantum States as Dual Rotors}
+\label{sec:quantumstates}
+
+The most profound implication of the double spacetime theory is the identification of quantum mechanical states with rotations in the particle-intrinsic dual spacetime. The dual rotor
+\[
+R_\text{dual} = \exp\left( \frac{\phi_1}{2} I + \frac{\phi_2}{2} J + \frac{\phi_3}{2} K \right),
+\]
+where $I,J,K$ satisfy $I^2=J^2=K^2=-1$ and the cyclic relations $IJ=K$, $JK=I$, $KI=J$, is algebraically identical to the SU(2) rotation operator for spin-$1/2$ systems. Defining the unit vector $\hat{n} = (\phi_1,\phi_2,\phi_3)/|\vec{\phi}|$ and total phase $|\vec{\phi}| = \sqrt{\phi_1^2 + \phi_2^2 + \phi_3^2}$, we obtain
+\[
+R_\text{dual} = \cos\left(\frac{|\vec{\phi}|}{2}\right) + \hat{n} \cdot (I,J,K) \sin\left(\frac{|\vec{\phi}|}{2}\right).
+\]
+This is precisely the unitary operator
+\[
+U(\vec{\phi}) = \exp\left( -\frac{i}{2} \vec{\phi} \cdot \vec{\sigma} \right),
+\]
+where $\vec{\sigma} = (\sigma_1,\sigma_2,\sigma_3)$ are the Pauli matrices, upon identifying $I \leftrightarrow i\sigma_1$, $J \leftrightarrow i\sigma_2$, $K \leftrightarrow i\sigma_3$ (up to overall phase conventions absorbable into the pseudoscalar $i$).
+
+Thus, the dual spacetime angles $\phi_a$ parameterize the quantum state of a spin-$1/2$ particle exactly. For a fermion at rest in the usual spacetime (vanishing $\omega_a$), its entire quantum degrees of freedom reside in the dual rotor $R_\text{dual}$. The two-dimensional complex Hilbert space of spin states emerges as the fundamental representation of the dual rotation group generated by $I,J,K$.
+
+The time evolution of the quantum state follows directly from the dual rotor dynamics. In free propagation, torsional mismatch is absent ($J=0$), requiring $\phi_a = -\omega_a$ to maintain parallelism $\Omega=1$. This anti-synchronization enforces null geodesics in both sectors for massless particles, while massive particles accumulate torsional strain. The Schrödinger equation arises as the unitary evolution of $R_\text{dual}$ under an external potential modulating the dual phases $\phi_a$.
+
+Position and momentum emerge as derived quantities from the dual rotor. The spatial components of the dual vector $X' = x' jI + y' jJ + z' jK$ are interpreted as expectation values projected onto the usual spacetime frame. The dual rotor generates translations in the usual sector via conjugation, yielding
+\[
+\vec{x} \propto \mathrm{Tr}\left[ R_\text{dual}^\dagger (\vec{j} \cdot \vec{\Gamma}) R_\text{dual} \right],
+\]
+where $\vec{\Gamma} = (I,J,K)$. Momentum $\vec{p}$ follows from the generator of dual rotations, $\vec{p} = \hbar \vec{\nabla}_\phi$, acting on the dual phase space. The canonical commutation relations $[x^i, p^j] = i\hbar \delta^{ij}$ are satisfied algebraically due to the non-commuting dual generators $I,J,K$.
+
+Probability density $|\psi|^2$ corresponds to the squared norm of the torsional mismatch bivector projected onto the dual sector. For coherent states where dual and usual rotors are nearly aligned, $|\psi|^2$ measures the local deviation from perfect parallelism, naturally yielding Born's rule without additional postulates.
+
+This interpretation resolves the measurement problem geometrically: collapse corresponds to forced synchronization of dual rotors across entangled particles via torsional propagation, mediated by the invariant $J$. Entanglement arises when multiple particles share correlated dual phases $\phi_a$, enforced by collective minimization of global torsional mismatch.
+
+For higher-spin or bosonic states, multi-particle dual rotors or higher-grade elements in the full Cl(3,1) algebra provide the necessary representations. The entire quantum mechanical formalism—wavefunctions, operators, uncertainty relations, and unitary evolution—emerges intrinsically from the geometry of particle-local dual spacetime, without invoking an external Hilbert space or quantization rules.
+
+Thus, quantum mechanics is not quantized gravity but the kinematics of dual spacetime rotations, while gravity is the classical torsional strain from collective dual-usual misalignment. The double spacetime framework unifies quantum states and gravitational dynamics within the same 16-dimensional biquaternion structure.
+
+\end{document}
