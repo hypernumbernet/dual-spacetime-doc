@@ -46,27 +46,84 @@
 さて、リーマン幾何学とは別の一般相対性理論の定式化として、アインシュタイン・カルタン理論（1922年）というものが存在します。
 この理論では、時空連続体の曲率ではなく、ねじれ（torsion）を重力の性質を決定する要素として扱います。
 アインシュタイン・カルタン理論は数年で廃れてしまいましたが、テレパラレル重力理論として研究自体は続いており、
-近年、TEGR（Teleparallel Equivalent to General Relativity）として一般相対性理論と同型であることが示されています。
+近年、TEGR（Teleparallel Equivalent to General Relativity）として一般相対性理論と同型である理論が示されています。
 
 TEGRの結論を簡単に述べると、時空の曲率をゼロとし、トーションを非ゼロにする事で、一般相対性理論と同じ重力方程式を得ることが出来るというものです。
 この理論では、トーションは時空のねじれを表し、物体のスピンと相互作用することで重力効果を生み出すとされています。
 
 ここでは時空連続体を否定したいので、時空のねじれは定義できませんが、通常時空と双対時空のねじれは定義できるでしょう。
-以下の様に定式化してみます。
+TEGRに合う様に定式化します。
 
 \begin{equation}
-R_\text{total} = \exp\left( \sum_{a=1}^3 \frac{\omega_a}{2} i\Gamma_a + \sum_{a=1}^3 \frac{\phi_a}{2} \Gamma_a \right),
+  R_\text{usual} = \exp\left( \frac{\omega_1}{2} iI + \frac{\omega_2}{2} iJ + \frac{\omega_3}{2} iK \right), 
+  \quad R_\text{dual} = \exp\left( \frac{\phi_1}{2} I + \frac{\phi_2}{2} J + \frac{\phi_3}{2} K \right)
 \end{equation}
-ここで、$\Gamma_1 = I$, $\Gamma_2 = J$, $\Gamma_3 = K$ であり、$\omega_a $は通常時空の回転角、$ \phi_a $は双対時空の回転角です。
+ここで、$\omega_1, \omega_2, \omega_3$ は通常時空の回転角、$\phi_1, \phi_2, \phi_3$ は双対時空の回転角、
+$ R_\text{usual} $は通常ローター、$ R_\text{dual} $は双対ローターです。
 
+$ R_\text{usual} $を用いて、通常時空と双対時空の両方に作用するローレンツ変換を表現できます。
 \begin{equation}
-R_\text{usual} = \exp\left( \sum_{a=1}^3 \frac{\omega_a}{2} i\Gamma_a \right), \quad R_\text{dual} = \exp\left( \sum_{a=1}^3 \frac{\phi_a}{2} \Gamma_a \right).
+  \tilde{S} = R_\text{usual} \, S \, R_\text{usual}^\dagger
 \end{equation}
-ここで、$ R_\text{usual} $は通常時空の回転子、$ R_\text{dual} $は双対時空の回転子です。
+この変換は速度の変化を意味します。開空間であり非コンパクトです。
 
+$ R_\text{dual} $を用いて、通常時空と双対時空の両方に作用する回転を表現できます。
+\begin{equation}
+  \tilde{S} = R_\text{dual} \, S \, R_\text{dual}^\dagger
+\end{equation}
+この変換は単純化すれば回転を意味しますが、物理的にはもっと豊かな意味を持ちます。閉空間でありコンパクトです。
 
+これらを組み合わせた全体の回転子は以下のようになります。
+\begin{equation}
+  R_\text{total} = R_\text{usual}R_\text{dual} = \exp\left( \frac{\omega_1}{2} iI + \frac{\omega_2}{2} iJ + \frac{\omega_3}{2} iK + \frac{\phi_1}{2} I + \frac{\phi_2}{2} J + \frac{\phi_3}{2} K \right)
+\end{equation}
 
+$ I, J, K $でまとめると、
+\begin{equation}
+  R_\text{total} = \exp\left( \frac{1}{2}\left( (\omega_1 i + \phi_1) I + (\omega_2 i + \phi_2) J + (\omega_3 i + \phi_3) K \right) \right)
+\end{equation}
+ここで、$ \omega_1 i + \phi_1, \omega_2 i + \phi_2, \omega_3 i + \phi_3 $は複素数です。
+この複素数を用いて、全体の回転子を以下のように書き換えられます。
+\begin{equation}
+  R_\text{total} = \exp\left( \frac{1}{2}\left( \psi_1 I + \psi_2 J + \psi_3 K \right) \right)
+\end{equation}
+ここで、$ \psi_1 = \omega_1 i + \phi_1, \psi_2 = \omega_2 i + \phi_2, \psi_3 = \omega_3 i + \phi_3 $です。
+この形式は、通常時空と双対時空の回転を一つの複素回転として統一的に扱うことができます。
 
+\subsection{ねじれ不整合回転子の定義}
+
+ここで、$ \Omega $を以下のように定義します。
+\begin{equation}
+  \texttt{Torsional Mismatch Rotor}: \Omega = R_\text{usual}^\dagger R_\text{dual} \in \mathrm{Spin}^+(3,1) \oplus \mathrm{Spin}^+(3,1)
+\end{equation}
+この$ \Omega $は、通常時空と双対時空の角度の差異を表し、重力効果を記述するための重要な要素となります。
+
+$ \mathrm{Spin}^+(3,1) \oplus \mathrm{Spin}^+(3,1) $を理解するにはリー群とリー代数の説明が必要かと思います。
+用語の定義にポイントを絞って説明します。
+
+\begin{itemize}
+  \item 群構造とは、集合に結合法則・単位元・逆元を満たす二項演算（積）が定義された代数構造です。
+  \item 多様体とは、局所的にユークリッド空間と同相な位相空間で、滑らかな構造を備えた幾何オブジェクトです。
+  \item パラメータを連続的に変化させても物理法則や対象の性質が不変である対称性は、連続対称性と呼ばれます。
+  \item リー群は、群構造を持ちかつ滑らかな多様体である連続対称性の全体を表すオブジェクトです。
+  \item リー群の全分類を列挙すると、古典群（直交群、特殊直交群、ユニタリ群、特殊ユニタリ群、交代群）と例外群（G2, F4, E6, E7, E8）に分けられます。
+  \item SOとは、特殊直交群（Special Orthogonal group）の略で、距離を保ち、かつ向きを保存する回転変換全体の群を指します。
+  \item 例えば$ SO(3) $は3次元空間の回転群、$ SO(3,1) $は4次元時空のローレンツ群を表します。
+  \item 被覆群とは、ある群の元に対して複数の元が対応するような群のことです。
+  \item 二重被覆群とは、ある群の各元に対して2つの元が対応するような被覆群のことです。
+  \item スピン群とは、特殊直交群の二重被覆群であり、スピン1/2粒子の対称性を扱うために重要なリー群です。
+  \item リー代数は、そのリー群の単位元近傍（局所的）での微小変換を接空間として線形化し、リー括弧で非可換性を捉えた代数構造です。要は、微分方程式が扱いやすくなるようにしたものです。
+  \item リー括弧とは、リー代数における二項演算で、非可換性を表現し、ヤコビ恒等式を満たすものです。
+  \item ヤコビ恒等式とは、リー代数のリー括弧が満たすべき特定の恒等式で、非可換性の一貫性を保証します。具体的には、任意の元 $ x, y, z $ に対して以下の式が成り立ちます。
+  \[ [x,[y,z]] + [y,[z,x]] + [z,[x,y]] = 0 \]
+  \item ヤコビ恒等式により、リー代数の構造が安定し、物理的な対称性の解析において重要な役割を果たします。
+  \item 直和とは、複数のベクトル空間や代数構造を一つにまとめる操作で、各成分が独立に作用するように構成されます。
+\end{itemize}
+
+$ \mathrm{Spin}^+(3,1) \oplus \mathrm{Spin}^+(3,1) $は、通常時空と双対時空のスピン群の直和を表し、各時空の回転対称性を独立に扱うことができます。
+この構造を用いることで、通常時空と双対時空の角度の差異を捉え、重力効果を記述するための数学的基盤を提供します。
+
+$ R $の$ \dagger $は共役を意味します。共役を織り交ぜる事で、通常時空と双対時空の角度の差異を抽出することになります。
 
 
 \end{document}
