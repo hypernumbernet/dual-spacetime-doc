@@ -123,7 +123,37 @@ $ \mathrm{Spin}^+(3,1) \oplus \mathrm{Spin}^+(3,1) $を理解するにはリー�
 $ \mathrm{Spin}^+(3,1) \oplus \mathrm{Spin}^+(3,1) $は、通常時空と双対時空のスピン群の直和を表し、各時空の回転対称性を独立に扱うことができます。
 この構造を用いることで、通常時空と双対時空の角度の差異を捉え、重力効果を記述するための数学的基盤を提供します。
 
-$ R $の$ \dagger $は共役を意味します。共役を織り交ぜる事で、通常時空と双対時空の角度の差異を抽出することになります。
+$ R_\text{usual} $の$ \dagger $は共役を意味します。共役を織り交ぜる事で、通常時空と双対時空の角度の差異を抽出することになります。
+
+\begin{equation}
+  \begin{split}
+    \Omega =~& R_\text{usual}^\dagger R_\text{dual} = \exp\left( -\frac{\omega_1}{2} iI - \frac{\omega_2}{2} iJ - \frac{\omega_3}{2} iK \right) \exp\left( \frac{\phi_1}{2} I + \frac{\phi_2}{2} J + \frac{\phi_3}{2} K \right)\\
+    =~& \exp\left( \frac{1}{2}\left( (-\omega_1 i + \phi_1) I + (-\omega_2 i + \phi_2) J + (-\omega_3 i + \phi_3) K \right) \right)
+    \\
+    =~& \exp\left( \frac{1}{2}\left( \chi_1 I + \chi_2 J + \chi_3 K \right) \right)
+  \end{split}
+\end{equation}
+ここで、$ \chi_1 = -\omega_1 i + \phi_1, \chi_2 = -\omega_2 i + \phi_2, \chi_3 = -\omega_3 i + \phi_3 $です。
+この形式は、通常時空と双対時空の回転の不整合を一つの複素回転として統一的に扱うことができます。
+
+ここで、$ 2 \omega = \sqrt{\omega_1^2 + \omega_2^2 + \omega_3^2}, 2 \phi = \sqrt{\phi_1^2 + \phi_2^2 + \phi_3^2} $とします。
+$ \omega, \phi $はそれぞれ通常時空と双対時空の回転角の大きさを表します。
+ベルソルを、$ \hat{\omega} = \frac{1}{2\omega}(\omega_1, \omega_2, \omega_3), \hat{\phi} = \frac{1}{2\phi}(\phi_1, \phi_2, \phi_3) $と定義します。
+$ \hat{\omega}, \hat{\phi} $はそれぞれ通常時空と双対時空の回転軸の単位ベクトルを表します。
+$ \Omega $を展開すると以下のようになります。
+
+\begin{equation}
+  \begin{split}
+    \Omega =~& R_\text{usual}^\dagger R_\text{dual} = \exp\left( -\frac{\omega_1}{2} iI - \frac{\omega_2}{2} iJ - \frac{\omega_3}{2} iK \right) \exp\left( \frac{\phi_1}{2} I + \frac{\phi_2}{2} J + \frac{\phi_3}{2} K \right)\\
+    =~& \left( \cosh \omega - i \hat{\omega} \cdot \bm{\Gamma} \sinh \omega \right) \left( \cos \phi + \hat{\phi} \cdot \bm{\Gamma} \sin \phi \right)
+    \\
+    =~& \cosh \omega \cos \phi + \hat{\phi} \cdot \bm{\Gamma} \cosh \omega \sin \phi - i \hat{\omega} \cdot \bm{\Gamma} \sinh \omega \cos \phi - i (\hat{\omega} \cdot \bm{\Gamma})(\hat{\phi} \cdot \bm{\Gamma}) \sinh \omega \sin \phi
+  \end{split}
+\end{equation}
+ここで、$ \bm{\Gamma} = (I, J, K) $です。
+
+$\Omega = 1 $となる必要十分条件は、$ \omega_1 = \omega_2 = \omega_3 = 0 $かつ$ \phi_1 = \phi_2 = \phi_3 = 0 $です。
+
 
 
 \end{document}
