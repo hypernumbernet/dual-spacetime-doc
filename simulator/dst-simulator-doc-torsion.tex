@@ -120,11 +120,16 @@ $ \mathrm{Spin}^+(3,1) \oplus \mathrm{Spin}^+(3,1) $を理解するにはリー�
   \item 直和とは、複数のベクトル空間や代数構造を一つにまとめる操作で、各成分が独立に作用するように構成されます。
 \end{itemize}
 
+リー代数は連続対称性を記述し、無限小変換の代数を扱います。
+対称性を持つ微分方程式は解の構造が制約され、解きやすくなります。
+交換子構造により保存則を系統的に導出できます。
+表現論で方程式を不変部分空間に分解し、特殊関数解を予言します。
+つまり、対称性を代数的に解析することで複雑な微分方程式を大幅に簡略化します。
+
 $ \mathrm{Spin}^+(3,1) \oplus \mathrm{Spin}^+(3,1) $は、通常時空と双対時空のスピン群の直和を表し、各時空の回転対称性を独立に扱うことができます。
 この構造を用いることで、通常時空と双対時空の角度の差異を捉え、重力効果を記述するための数学的基盤を提供します。
 
 $ R_\text{usual} $の$ \dagger $は共役を意味します。共役を織り交ぜる事で、通常時空と双対時空の角度の差異を抽出することになります。
-
 \begin{equation}
   \begin{split}
     \Omega =~& R_\text{usual}^\dagger R_\text{dual} = \exp\left( -\frac{\omega_1}{2} iI - \frac{\omega_2}{2} iJ - \frac{\omega_3}{2} iK \right) \exp\left( \frac{\phi_1}{2} I + \frac{\phi_2}{2} J + \frac{\phi_3}{2} K \right)\\
@@ -141,7 +146,6 @@ $ \omega, \phi $はそれぞれ通常時空と双対時空の回転角の大き�
 ベルソルを、$ \hat{\omega} = \frac{1}{2\omega}(\omega_1, \omega_2, \omega_3), \hat{\phi} = \frac{1}{2\phi}(\phi_1, \phi_2, \phi_3) $と定義します。
 $ \hat{\omega}, \hat{\phi} $はそれぞれ通常時空と双対時空の回転軸の単位ベクトルを表します。
 $ \Omega $を展開すると以下のようになります。
-
 \begin{equation}
   \begin{split}
     \Omega =~& R_\text{usual}^\dagger R_\text{dual} = \exp\left( -\frac{\omega_1}{2} iI - \frac{\omega_2}{2} iJ - \frac{\omega_3}{2} iK \right) \exp\left( \frac{\phi_1}{2} I + \frac{\phi_2}{2} J + \frac{\phi_3}{2} K \right)\\
@@ -154,6 +158,132 @@ $ \Omega $を展開すると以下のようになります。
 
 $\Omega = 1 $となる必要十分条件は、$ \omega_1 = \omega_2 = \omega_3 = 0 $かつ$ \phi_1 = \phi_2 = \phi_3 = 0 $です。
 
+リー代数は「強力なショートカット」や「深い理解のツール」なのです。
 
+\subsection{キリング形式とは}
+
+キリング形式は、リー代数上の自然な双線形形式で、随伴表現のトレースから定義されます。
+コンパクトリー群の場合、負定値で非退化であり、リー代数に不変内積を与えます。
+これにより、リー代数上のノルムや直交性が定義され、構造の幾何学的理解が可能になります。
+半単純リー代数では、非退化性がカルタン基準を満たす重要な性質です。
+要するに、キリング形式はリー代数の「自然な計量」を提供し、群のバイインバリアント計量や測地線（例: Slerp）の基礎となります。
+
+\begin{itemize}
+  \item 双線形形式とは、二つのベクトルを取ってスカラーを返す関数で、各引数に対して線形性を持つものです。
+  \item 随伴表現とは、リー代数の元を線形変換として表現する方法で、各元が他の元に対してどのように作用するかを示します。
+  \item トレースとは、正方行列の対角成分の和を取る操作で、行列の基本的な不変量の一つです。
+  \item コンパクトリー群とは、位相的にコンパクトなリー群で、有限体積を持ち、ユニタリ表現が豊富に存在します。
+  \item 負定値とは、双線形形式が任意の非ゼロベクトルに対して負の値を返す性質です。
+  \item 非退化とは、双線形形式が任意の非ゼロベクトルに対してゼロを返さない性質で、内積のような計量を定義するために重要です。
+  \item 不変内積とは、リー群の作用に対して変化しない内積で、群の対称性を反映した計量です。
+  \item 半単純リー代数とは、アーベル部分代数を持たないリー代数で、直和分解が可能なものです。
+  \item アーベル部分代数とは、リー代数の部分集合で、すべての元が互いに可換するものです。
+  \item カルタン基準とは、リー代数が半単純であるための条件で、キリング形式の非退化性に基づいています。
+  \item バイインバリアント計量とは、リー群の両側作用に対して不変な計量で、群の対称性を反映した計量です。
+  \item 両側作用とは、リー群が自身に対して左からも右からも作用することを指します。
+  \item 測地線とは、曲がった空間における最短経路で、リーマン幾何学において重要な概念です。
+  \item Slerp（Spherical Linear Interpolation）とは、球面上での線形補間手法で、回転の補間に用いられます。
+\end{itemize}
+
+リー代数が「地図の座標系」を作るなら、キリング形式はその地図に「正確な距離と方向」を刻み込む定規のような存在です。
+
+\subsection{$ \mathrm{SO}(3) $におけるキリング形式とSlerp}
+
+球面線形補間（Slerp）は、$ \mathrm{SO}(3) $上の回転を最短経路（測地線）に沿って補間する手法です。
+$ \mathrm{SO}(3) $の二重被覆である$ \mathrm{Spin}(3) $では、回転は単位rotor $R \in \mathrm{Spin}(3)$（$R^\dagger R = 1$）で表現されます。
+
+二つの回転$R_1, R_2 \in \mathrm{Spin}(3)$に対するSlerpは、次のように定義されます。
+\begin{equation}
+  \mathrm{Slerp}(R_1, R_2; t) = R_1 \exp\left( t \log(R_1^\dagger R_2) \right), \quad t \in [0, 1].
+\end{equation}
+ここで、$\log$は$ \mathrm{Spin}(3) $の指数写像の逆写像（リー代数$\mathfrak{spin}(3) \cong \mathbb{R}^3$への射影）です。
+
+$ \mathrm{SO}(3) $のリー代数$\mathfrak{so}(3)$上のキリング形式$B$は、Ad不変な負定値双線形形式であり、標準的な正規化では
+\begin{equation}
+  B(X, Y) = -2 \operatorname{tr}(X Y)
+\end{equation}
+で与えられます（ただし、異なる正規化もよく使われます）。
+
+これを用いて、$R_1, R_2$間の測地距離（回転角）を
+\begin{equation}
+  d(R_1, R_2) = \sqrt{ -B(\log(R_1^\dagger R_2), \log(R_1^\dagger R_2)) }
+\end{equation}
+と定義できます。この距離は、$R_1^\dagger R_2 = \exp(\theta \hat{n})$（$\hat{n}$は回転軸の単位ベクトルに対応するbivector）の場合に$d(R_1, R_2) = \theta$となります。
+
+簡単な例として$R_1 = 1$, $R_2 = \exp(\theta \hat{v})$（$\hat{v}^2 = -1$, $\|\theta \hat{v}\| = \theta$）を考えます。
+このとき、
+\begin{equation}
+  \begin{split}
+    \mathrm{Slerp}(1, \exp(\theta \hat{v}); t) 
+    &= \exp(t \theta \hat{v}) \\
+    &= \cos(t\theta) + \hat{v} \sin(t\theta), \quad t \in [0,1]
+  \end{split}
+\end{equation}
+また、
+\begin{equation}
+  B(\log(R_2), \log(R_2)) = B(\theta \hat{v}, \theta \hat{v}) = -\theta^2
+\end{equation}
+（正規化によっては係数が異なる場合があります）となり、
+\begin{equation}
+  d(1, R_2) = \sqrt{-B(\log(R_2), \log(R_2))} = \theta
+\end{equation}
+を得ます。このように、キリング形式はSO(3)上の自然な距離（回転角）を直接与えることがわかります。
+
+\subsection{$ \mathrm{Spin}^+(3,1) $におけるブースト補間}
+
+ローレンツ群$ \mathrm{SO}^+(3,1) $の二重被覆である$ \mathrm{Spin}^+(3,1) $は、時空の回転とブーストを統一的に扱う群です。
+クリフォード代数$ \mathrm{Cl}(1,3) $内で単位ローター$R$（$R \tilde{R} = 1$、ここで$\tilde{R}$は共役）により表現されます。
+
+純粋ブーストのローターは、時間-空間方向のバイベクトルと分解型複素数を用いて表現できます。
+空間単位ベクトル$\hat{d} \in \mathbb{R}^3$（$\hat{d}^2 = 1$）に対し、$\varepsilon$を$\varepsilon^2 = +1$を満たす形式的な記号（双曲単位）とみなします。
+このとき、方向$\hat{d}$へのラピディティ$\theta$のブーストローターは
+\begin{equation}
+  R = \exp(\theta \hat{d} \varepsilon) = \cosh\theta + \hat{d} \varepsilon \sinh\theta
+\end{equation}
+と書けます。
+
+成分表示で確認しましょう。$\hat{d} = (d_x, d_y, d_z), ~ d_x^2 + d_y^2 + d_z^2 = 1$とし、Cl(1,3)の基底を$e_0$(時間), $e_1, e_2, e_3$(空間)とします。
+ブースト生成子は$P_i = e_0 e_i$（$i=1,2,3$）で、$(P_i)^2 = +1$です。
+したがって方向$\hat{d}$への生成子は$P = \hat{d} \cdot \boldsymbol{P} = d_x P_1 + d_y P_2 + d_z P_3$であり、$P^2 = 1$です。
+よって指数写像は
+\begin{equation}
+  \exp(\theta P) = \sum_{n=0}^\infty \frac{(\theta P)^n}{n!} = \cosh\theta + P \sinh\theta
+\end{equation}
+となり、成分では時間成分が$\cosh\theta$、空間成分が$d_i \sinh\theta$となります。
+
+いま、単位ローター$R_1 = 1$、純粋ブースト$R_2 = \exp(\theta \hat{d} \varepsilon) = \cosh\theta + \hat{d} \varepsilon \sinh\theta$を考えます。
+この間の対数線形補間（Log-linear interpolation）は
+\begin{equation}
+  \mathrm{Slerp}(1, R_2; t) = \exp\left( t \log(R_2) \right) = \exp(t \theta \hat{d} \varepsilon)
+  = \cosh(t\theta) + \hat{d} \varepsilon \sinh(t\theta), \quad t \in [0,1]
+\end{equation}
+です。これはラピディティを$t\theta$に線形補間したブーストに対応し、リー代数的には単純実数三次元空間と同相です。
+つまり、特殊相対性理論は幾何学的には実三次元空間上の加法群として理解できます。
+
+\subsection{$ \mathrm{Spin}^+(3,1) $におけるキリング形式}
+
+次に、$ \mathrm{Spin}^+(3,1) $上のキリング形式を考えてみましょう。
+非コンパクト半単純リー群であるため、キリング形式$B(X,Y) = \mathrm{Tr}(\mathrm{ad}_X \circ \mathrm{ad}_Y)$は不定符号です。
+回転部分（空間-空間）とブースト部分（時間-空間）で符号が異なり、標準正規化では
+\begin{itemize}
+  \item 回転生成子$Q_i$に対して $B(Q_i, Q_j) = -4\delta_{ij}$（負）
+  \item ブースト生成子$P_i$に対して $B(P_i, P_j) = +4\delta_{ij}$（正）
+\end{itemize}
+となります。（正規化係数$4$は任意）
+
+純粋ブースト$X = \theta \hat{d} \cdot \boldsymbol{P}$に対し、
+\begin{equation}
+  B(X, X) = \theta^2 B(\hat{d} \cdot \boldsymbol{P}, \hat{d} \cdot \boldsymbol{P}) = \theta^2 \cdot (+4) = +4\theta^2
+\end{equation}
+となります。ブースト部分は正のノルムを持ち、ラピディティの二乗に比例します。
+
+距離関数を定義する際は、キリング形式の符号に注意が必要です。
+回転角度に対しては$\sqrt{-B}$が実距離を与えましたが、ブーストに対しては$\sqrt{+B}$がラピディティ（双曲距離）を与えます。
+そこで$R_1 = 1$, $R_2 = \exp(\theta \hat{d} \varepsilon)$間のブースト強度（ラピディティ）を
+\begin{equation}
+  d(1, R_2) = \sqrt{B(\log R_2, \log R_2)} = \sqrt{4} \theta = 2\theta
+\end{equation}
+と定義できます。
+このように、キリング形式は$ \mathrm{Spin}^+(3,1) $においても群上の不変距離の基礎を与えますが、回転とブーストで符号が逆転するため、統一的なユークリッド距離ではなくミンコフスキー的な構造を反映しています。
 
 \end{document}
