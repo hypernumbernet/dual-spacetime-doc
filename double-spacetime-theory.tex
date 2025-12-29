@@ -89,6 +89,8 @@ Section~\ref{sec:baryonasymmetry} proposes a mechanism for baryon asymmetry base
 
 Section~\ref{sec:discretetime} introduces a discrete model of dual spacetime, where the torsional layers are quantized and bounded, leading to a finite unit group in the corresponding integer ring and enabling rigorous Diophantine constraints.
 
+Section~\ref{sec:quantumgravity} extends the theory to quantum gravity, identifying quantum states with dual-spacetime rotor phases and deriving uncertainty relations from torsional coherence conditions.
+
 Section~\ref{sec:conclusions} summarizes the unification of all forces within the 16-dimensional biquaternion algebra and outlines near-term experimental tests that can confirm or falsify the theory within this decade.
 
 With this reformulation, GR is liberated from the prison of the continuum and elevated to a theory in which gravity is, for the first time, \emph{controllable in principle}.
@@ -765,6 +767,27 @@ where $N \gg 1$ is a large integer related to the particle's compactification sc
 
 This discretization renders the corresponding unit group of the integer biquaternion ring finite, imposing rigorous Diophantine constraints on allowable gravitational configurations. All classical predictions of General Relativity are recovered in the continuum limit $N \to \infty$.
 
+\section{Towards Quantum Gravity and Full Unification}
+\label{sec:quantumgravity}
+
+The classical formulation presented thus far demonstrates that gravity emerges as torsional mismatch between the particle-intrinsic usual and dual spacetimes, encoded in the 16-dimensional biquaternion algebra isomorphic to $\mathrm{Cl}(3,1)$. The action $S = \frac{c^4}{16\pi G} \int J \, d^4x$, with
+\[
+J = \frac{1}{16} B(\Omega_\text{biv}, \Omega_\text{biv}), \quad \Omega_\text{biv} = \log(R_\text{usual}^\dagger R_\text{dual}),
+\]
+yields exact equivalence to the Einstein-Hilbert action while abandoning the continuum hypothesis and Riemannian curvature.
+
+A profound extension arises from recognizing that the dual rotor
+\[
+R_\text{dual} = \exp\left( \sum_{a=1}^3 \frac{\phi_a}{2} \Gamma_a \right), \quad \Gamma_a = I,J,K,
+\]
+is mathematically identical to the SU(2) spin-1/2 rotation operator. The dual-sector phases $\phi_a$ thus directly parameterize quantum states. Due to the intrinsic compactness of the dual spacetime ($\phi_a \mod 4\pi$), these phases live on a compact manifold, naturally yielding a Hilbert space structure where each particle's quantum state $|\psi\rangle$ corresponds to the unitary phase part of $R_\text{dual}$.
+
+Position and momentum operators emerge as projections of dual rotor angles, while forces—including gravity itself—manifest as modulations of relative rotor phases. This identifies quantum mechanics with dual spacetime rotations and gravity with torsional mismatch in the same algebraic framework, eliminating singularities via bounded discrete torsion layers.
+
+The full quantum gravity framework, including explicit Hilbert space construction, spinor embedding in minimal left ideals of $\mathrm{Cl}(3,1)$, unification of all interactions, and resolution of baryon asymmetry through Planck-era time-arrow fixation, is developed in detail in the companion paper ``Quantum Gravity as Torsional Mismatch in Biquaternion Double Spacetime'' \cite{dst-quantum-gravity}.
+
+This extension completes the theory: General Relativity is preserved classically, yet quantum gravity emerges algebraically without extra dimensions or ad-hoc quantization—solely from the double spacetime structure intrinsic to every massive particle.
+
 \section{Conclusions}
 \label{sec:conclusions}
 The double spacetime theory, grounded in the biquaternionic algebra $\mathbb{H} \otimes \mathbb{H} \cong \mathrm{Cl}(3,1)$, offers a transformative framework for understanding gravity, inertia, and fundamental interactions. By embedding each particle within a pair of intertwined Minkowski spacetimes—one usual and one dual—the theory reinterprets gravitational phenomena as manifestations of torsional misalignment between these sectors. This paradigm shift resolves longstanding paradoxes in gravitational physics, unifies the strong nuclear force as a manifestation of layered torsional dynamics, and provides a natural mechanism for baryon asymmetry through intrinsic chirality and time arrow fixation. The theory's predictions, from gravity control via dual rotor synchronization to the reinterpretation of atomic nuclei as primordial torsion stars, open new avenues for experimental verification and technological innovation. As we stand on the cusp of a new era in gravitational physics, the dual spacetime framework beckons us to rethink our understanding of the cosmos and our place within it.
@@ -798,6 +821,8 @@ J.~W. Maluf,
 \textit{Ann. Phys. (Berlin)},
 \textbf{525}, 339--359 (2013).
 doi:10.1002/andp.201200272
+
+\bibitem{dst-quantum-gravity} Anonymous 2025, ``Quantum Gravity as Torsional Mismatch in Biquaternion Double Spacetime'', https://github.com/hypernumbernet/dual-spacetime-doc/blob/main/dst-quantum-gravity.pdf.
 
 \end{thebibliography}
 
