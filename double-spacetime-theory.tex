@@ -229,30 +229,6 @@ The versor formalism provides a compact means to apply these transformations: fo
 \]
 This single operation preserves the Minkowski norm ($X^2 = \tilde{X}^2$) and acts coherently on both usual and dual components, seamlessly integrating boosts, rotations, and the incipient torsional mismatch into one algebraic expression. No matrices or coordinate-dependent machinery are required; the geometry unfolds intrinsically within the algebra.
 
-\subsection{Rotors in the Dual Spacetime}
-
-The kinematic structure developed for the usual spacetime extends seamlessly to its dual counterpart, thanks to the commuting nature of the biquaternion generators. However, when the full rotor \(R_\text{total} = R_\text{usual} R_\text{dual}\) acts via the sandwich product \(\tilde{X}' = R_\text{total} X' R_\text{total}^\dagger\) on a dual spacetime vector \(X' = ct' \, k + x' \, jI + y' \, jJ + z' \, jK\), a richer interplay emerges: the dual sector undergoes Lorentzian transformations that mirror those of the usual spacetime, but with a characteristic sign flip in the boost components due to the intrinsic time reversal of the dual map \(X \mapsto X i\).
-
-To elucidate this evolution, consider explicit computations within the biquaternion algebra, leveraging the multiplication rules isomorphic to \(\mathrm{Cl}(3,1)\). For simplicity, focus on a pure boost in the \(x\)-direction generated solely by \(R_\text{usual} = \exp\left( \frac{\theta}{2} iI \right) = \cosh\left( \frac{\theta}{2} \right) + \sinh\left( \frac{\theta}{2} \right) iI\), with \(R_\text{dual} = 1\) (i.e., \(\phi_a = 0\)). This isolates the cross-action of the usual rotor on the dual basis. The dual time-like component \(X' = k\) (setting \(ct' = 1\)) transforms as:
-\[
-\tilde{k} = R_\text{usual} \, k \, R_\text{usual}^\dagger = \cosh \theta \, k - \sinh \theta \, jI,
-\]
-while the dual space-like component \(X' = jI\) (setting \(x' = 1\)) yields:
-\[
-\tilde{jI} = R_\text{usual} \, jI \, R_\text{usual}^\dagger = \cosh \theta \, jI - \sinh \theta \, k.
-\]
-These relations follow directly from the algebra: \(iI \cdot k = -jI\), \(k \cdot iI = jI\), \(iI \cdot jI = -k\), and \(jI \cdot iI = k\), combined with the hyperbolic expansion and the unitarity \(R_\text{usual}^\dagger = \cosh\left( \frac{\theta}{2} \right) - \sinh\left( \frac{\theta}{2} \right) iI\).
-
-Interpreting these, the transformation mixes the dual time-like basis \(k\) and the \(x\)-dual space-like basis \(jI\) hyperbolically, precisely as in a Lorentz boost:
-\[
-ct' \, k + x' \, jI \mapsto \gamma (ct' \, k - \beta x' \, jI) + \gamma (x' \, jI - \beta ct' \, k),
-\]
-where \(\gamma = \cosh \theta\) and \(\beta = \tanh \theta = v/c\). The negative signs in the cross terms (\(-\beta\)) signify that the boost acts in the \emph{opposite direction} to the one imposed on the usual spacetime. For comparison, the usual spacetime boost yields positive cross terms: \(ct \, j + x \, kI \mapsto \gamma (ct \, j + \beta x \, kI) + \gamma (x \, kI + \beta ct \, j)\). This directional reversal is no accident---it stems from the dual map's time inversion: right-multiplication by \(i\) flips the temporal arrow (\(j i = -k\)), imprinting an effective parity-odd response in the dual sector. Thus, a forward boost in the usual spacetime induces a retrograde boost in the dual, preserving the overall Minkowski norm \({\tilde{X'}}^2 = X'^2 = -(ct')^2 + (x')^2 + (y')^2 + (z')^2\) while enforcing the theory's chiral duality.
-
-Analogous results hold for \(y\)- and \(z\)-directions, with \(iJ\) mixing \(k\) and \(jJ\) (yielding \(-\sinh \theta \, jJ\)), and \(iK\) mixing with \(jK\). When \(R_\text{dual} \neq 1\), the commuting factorization \(R_\text{total} = R_\text{usual} R_\text{dual}\) implies additive rapidities: the dual rotations \(\phi_a\) superimpose trigonometric mixing on the spatial bases (\(jI, jJ, jK\)) alone, as \(\Gamma_a^2 = -1\) generates \(\cos(\phi_a/2) + \sin(\phi_a/2) \Gamma_a\), rotating the dual spatial frame without temporal coupling. For instance, a \(y\)-rotation via \(\phi_2/2 \, J\) rotates \(jI \mapsto \cos(\phi_2/2) jI - \sin(\phi_2/2) jK\) (and cyclically for others), leaving \(k\) invariant---a pure SO(3) action on the dual space.
-
-This dual evolution underscores the theory's kinematic symmetry: the paired spacetimes transform covariantly under the full Spin\(^+(3,1) \oplus\) Spin\(^+(3,1)\) structure, yet their mutual time reversal ensures that boosts propagate oppositely, sowing the seeds for torsional mismatch in the presence of matter. In free propagation, \(\omega_a = -\phi_a\) maintains parallelism (\(\Omega = 1\)); gravitational fields decouple them, evolving the dual frame retrograde relative to the usual, with the relative bivector \(\Omega_\text{biv} = \log(R_\text{usual}^\dagger R_\text{dual})\) quantifying the torsion. For massless particles, perfect resonance (\(\phi_a = -\omega_a\)) enforces eternal alignment, yielding null geodesics in both sectors; massive particles, with their intrinsic rigidity, accrue torsional strain, manifesting as inertia or gravity.
-
 \section{Gravity as Torsional Mismatch between Dual Spacetime}
 \label{sec:gravity}
 
@@ -322,6 +298,37 @@ yielding $\Omega_\text{biv} \approx \sum \alpha_a \, i\Gamma_a$ and $J \approx \
 \nabla^2 \Phi = 4\pi G \rho
 \]
 with the correct coefficient. Post-Newtonian parameters are identical to GR ($\gamma = \beta = 1$, etc.).
+
+\subsection{Rotor Action in the Dual Spacetime}
+\label{subsec:dual-rotors}
+
+In the double spacetime theory, the sole physical realities are the rotor angles within the intrinsic biquaternion algebra $\mathbb{H} \oplus \mathbb{H} \cong \mathrm{Cl}(3,1)$ carried by every massive particle. Unlike string theory, which posits extended physical objects as fundamental entities, here the boost and rotation angles encoded in the commuting pairs of rotors are the primary ontological elements. Gravity, inertia, and quantum states all emerge from deviations and coherences among these angles.
+
+The dual spacetime, related to the usual spacetime by the dual map $X \mapsto Xi$, inherits a time-reversed orientation. Consequently, an angle that generates a pure spatial rotation in the dual sector must be appropriately dual-transformed when incorporated into the unified rotor description.
+
+Consider a dual-sector angle $\phi_a$. In the pure dual basis, it produces a rotation generated by the elliptic bivectors $\Gamma_a = I,J,K$ ($\Gamma_a^2 = -1$):
+\[
+\exp\left( \sum_{a=1}^3 \frac{\phi_a}{2} \Gamma_a \right).
+\]
+However, since the dual map reverses the arrow of time, the physical effect of this angle on the dual spacetime is equivalent to a boost when viewed through the dual transformation.
+
+To reflect this correctly in the torsional mismatch calculation, we apply the dual conversion to the angle itself: $\phi_a \mapsto \phi_a i$. This transforms the dual contribution into a hyperbolic boost term:
+\[
+\exp\left( \sum_{a=1}^3 \frac{\phi_a i}{2} \Gamma_a \right) = \exp\left( \sum_{a=1}^3 \frac{\phi_a}{2} i \Gamma_a \right).
+\]
+Thus, the dual rotor is defined as
+\[
+R_\text{dual} = \exp\left( \sum_{a=1}^3 \frac{\phi_a}{2} \Gamma_a \right),
+\]
+while its action on dual spacetime vectors, after the angle dual conversion $\phi_a \mapsto \phi_a i$, manifests as a boost generated by $i\Gamma_a$ ($ (i\Gamma_a)^2 = +1 $).
+
+In vacuum (free fall), perfect anti-synchronization requires $\omega_a = i \phi_a$ ($\omega_a = \phi_a = 0$), ensuring complete cancellation of the boost contributions and $J=0$. Mass-energy induces deviations from this condition, manifesting as the torsional mismatch scalar $J$ and, collectively, as gravitational attraction.
+
+This angle-centric treatment, with explicit dual conversion $\phi_a \mapsto \phi_a i$, preserves the original form of the total rotor
+\[
+R_\text{total} = \exp\left( \sum_{a=1}^3 \frac{\omega_a}{2} i\Gamma_a + \frac{\phi_a}{2} \Gamma_a \right)
+\]
+while correctly incorporating the time-reversal duality: the dual rotor $R_\text{dual}$ generates rotations in its native basis, but its physical effect on the dual spacetime—through the dual-transformed angles—is that of a boost, naturally opposing the usual-sector boosts in vacuum.
 
 \subsection{Physical Interpretation and Gravitational Engineering}
 
