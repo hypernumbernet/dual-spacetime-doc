@@ -20,60 +20,47 @@
 \section{はじめに}
 
 二重時空理論では、すべての質量を持つ粒子が内在的に通常時空と双対時空のペアを持つ。これらは双四元数代数 $\mathbb{H}\otimes\mathbb{H}\cong\mathrm{Cl}(3,1)$ により記述され、完全ローターは
-\[
+\begin{equation}
 R_{\text{total}} = R_{\text{usual}} R_{\text{dual}}
-= \exp\!\left[ \left(\frac{\theta}{2} \hat{p} + \frac{\phi}{2}\hat{q}\right)\right]
-\]
-と表される。ここに $\hat{p} = p_1 iI + p_2 iJ + p_3 iK, ~ \hat{q} = q_1 I + q_2 J + q_3 K$ であり、$\hat{p}$ はブーストベルソル（平方 $+1$）、$\hat{q}$ は双対セクターの回転ベルソル（平方 $-1$）である。
+= \exp \left(\frac{\theta}{2} \hat{p} + \frac{\phi}{2}\hat{q}\right)
+\end{equation}
+と表される。ここで $\hat{p} = p_1 iI + p_2 iJ + p_3 iK, ~ \hat{q} = q_1 I + q_2 J + q_3 K$ であり、$\hat{p}$ はブーストベルソル（平方 $+1$）、$\hat{q}$ は双対セクターの回転ベルソル（平方 $-1$）である。
 
 重力は相対ローター $\Omega = R_{\text{usual}}^\dagger R_{\text{dual}}$ の対数から得られるバイベクトル $\Omega_{\text{biv}}=\log\Omega$ のキリング形式
-\[
+\begin{equation}
 J = \frac{1}{16} B(\Omega_{\text{biv}},\Omega_{\text{biv}})
-\]
+\end{equation}
 により記述され、これはテレパラレル重力（TEGR）と古典的に等価である。
 
 本節では、このねじれ不整合エネルギー $J$ を個別粒子レベルで内在的ポテンシャルとして採用し、変分原理から双対ローター遅れの厳密な動態方程式を導出する。これにより、質量による遅れが自然に現れ、自由粒子のド・ブロイ位相が再現されることを示す。
 
-\section{ねじれ不整合ポテンシャルの小角近似}
-
-相対ローターを $\Omega = R_{\text{usual}}^\dagger R_{\text{dual}}$ と定義する。低エネルギー領域ではねじれ不整合角 $\delta\theta_a = \theta_a - \phi_a$ が小さく、
-\[
-\Omega \approx 1 + \frac{1}{2}\sum_{a=1}^3 \delta\theta_a (i\Gamma_a + \Gamma_a)
-\]
-と近似できる。$\Omega_{\text{biv}}=\log\Omega$ は純バイベクトルであり、キリング形式の計算により交叉項が消滅し、
-\[
-J \approx \frac{1}{2}\sum_{a=1}^3 \delta\theta_a^2
-\]
-を得る（正規化定数を調整後）。質量 $m$ をポテンシャル剛性として組み込むため、
-\[
-J = \frac{1}{2} m \sum_{a=1}^3 \delta\theta_a^2
-\]
-とスケールする。
-
 \section{粒子内在行動原理}
 
 個別粒子の内在的動態を記述する有効行動を次のように提案する：
-\[
-S_{\text{particle}} = \int \left[ \frac{1}{2}\sum_{a=1}^3 \dot{\theta}_a^2 
-- \frac{1}{2}\sum_{a=1}^3 \dot{\phi}_a^2 
-- \frac{m}{2}\sum_{a=1}^3 (\theta_a - \phi_a)^2 \right] dt.
-\]
-ここに
+\begin{equation}
+S_{\text{particle}} = \int \left[ 
+\frac{1}{2} \dot{\phi}^2 \, \hat{p}\cdot\hat{p}
+- \frac{1}{2} \dot{\theta}^2 \, \hat{q}\cdot\hat{q}
+- \frac{m}{2} (\theta - \phi)^2 
+\right] dt
+\end{equation}
+ここで、
 \begin{itemize}
-\item $\frac{1}{2}\dot{\theta}_a^2$：通常セクターの運動エネルギー（ブースト自由度）
-\item $-\frac{1}{2}\dot{\phi}_a^2$：双対セクターの符号反転（時間反転性を反映）
-\item $\frac{m}{2}(\theta_a - \phi_a)^2$：ねじれ不整合ポテンシャル（$J$ に比例）
+\item $\frac{1}{2}\dot{\theta}^2$：通常セクターの運動エネルギー（ブースト自由度）
+\item $-\frac{1}{2}\dot{\phi}^2$：双対セクターの符号反転（時間反転性を反映）
+\item $\frac{m}{2}(\theta - \phi)^2$：ねじれ不整合ポテンシャル（$J$ に比例）
+\item $m$：粒子の質量、ポテンシャルの剛性を表す
 \end{itemize}
 である。この行動は、多数の粒子の集団平均で古典重力の $\int J\,d^4x$ を再現する。
 
 \section{運動方程式の導出}
 
 ラグランジアンを
-\[
-L = \frac{1}{2}\sum_{a=1}^3 \dot{\theta}_a^2 
-- \frac{1}{2}\sum_{a=1}^3 \dot{\phi}_a^2 
-- \frac{m}{2}\sum_{a=1}^3 (\theta_a - \phi_a)^2
-\]
+\begin{equation}
+L = \frac{1}{2} \dot{\phi}^2 \, \hat{p}\cdot\hat{p}
+- \frac{1}{2} \dot{\theta}^2 \, \hat{q}\cdot\hat{q}
+- \frac{m}{2} (\theta - \phi)^2
+\end{equation}
 とする。オイラー・ラグランジュ方程式を適用する。
 
 \begin{align}
@@ -82,19 +69,20 @@ L = \frac{1}{2}\sum_{a=1}^3 \dot{\theta}_a^2
 \frac{d}{dt}\frac{\partial L}{\partial \dot{\phi}_a} &= \frac{\partial L}{\partial \phi_a}
 \;\Rightarrow\; -\ddot{\phi}_a - m (\theta_a - \phi_a) = 0.
 \end{align}
+ここで、$\theta_a$ と $\phi_a$ はそれぞれ通常および双対セクターの独立した空間方向の成分である。
 
 ねじれ不整合角 $\delta\theta_a = \theta_a - \phi_a$ を導入すると、
-\[
+\begin{equation}
 \ddot{\delta\theta}_a + m \delta\theta_a = 0.
-\]
+\end{equation}
 これは角振動数 $\sqrt{m}$ の調和振動子方程式である。
 
 \section{自由粒子の解とド・ブロイ位相}
 
 自由粒子（外部加速なし）の場合、$\dot{\theta}_a = \gamma v_a/c$（定数）と仮定する。初期条件を静止系で同期（$\delta\theta_a(0)=0$）とし、初期遅れ率を考慮すると、一般解は
-\[
+\begin{equation}
 \delta\theta_a(t) = A \sin(\sqrt{m}\, t) + B \cos(\sqrt{m}\, t).
-\]
+\end{equation}
 コンプトンスケールでの高周波振動を平均化する低エネルギー近似（$\sqrt{m}\, t \ll 1$）では線形蓄積
 \[
 \delta\theta_a(t) \approx \dot{\delta\theta}_a(0)\, t
