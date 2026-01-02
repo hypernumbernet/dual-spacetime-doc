@@ -528,7 +528,7 @@ J(r=0) = \frac{1}{16} B(\Omega_\text{biv}(0), \Omega_\text{biv}(0)) \approx 0,
 \]
 as \( \Omega_\text{biv}(0) = \log \Omega(0) \to 0 \) from the logarithmic phase neutralization. The effective Lorentz factor recovers its vacuum value,
 \[
-\gamma_\text{eff}(0) = \cos\left(\frac{\beta(0) \theta(0)}{2}\right) \cosh\left(\frac{\theta(0)}{2}\right) - \sin\left(\frac{\beta(0) \theta(0)}{2}\right) \sinh\left(\frac{\theta(0)}{2}\right) \to 1,
+\gamma_\text{eff}(0) = \cos\left(\frac{\phi(0)}{2}\right) \cosh\left(\frac{\theta(0)}{2}\right) - \sin\left(\frac{\phi(0)}{2}\right) \sinh\left(\frac{\theta(0)}{2}\right) \to 1,
 \]
 yielding zero time dilation \( dt/d\tau(0) = 1 \) and no inertial resistance. Particles in this floating core experience a torsion-free vacuum-like drift, with dual rotors perfectly synchronized (\( R_\text{dual} = R_\text{usual} \))—a state akin to eternal free fall for massless particles, but extended to massive aggregates via collective resonance.
 
@@ -543,44 +543,60 @@ The floating core paradigm, where $J(r=0) \approx 0$ and effective gravity vanis
 \section{Time Dilation in Double Spacetime Theory: The Dynamical Role of Dual-Spacetime Proper Time}
 \label{sec:timedilation}
 
-Time dilation in the double spacetime theory arises from the interplay between the usual and dual spacetimes, each possessing its own proper time parameter. The usual spacetime proper time $\tau$ governs the dynamics of particles as observed in our familiar 4D Minkowski space, while the dual spacetime proper time $\tilde{\tau}$ encapsulates the internal torsional dynamics associated with the dual rotor $R_\text{dual}$. The effective time dilation experienced by a massive particle is thus a composite effect resulting from the relative alignment of these two temporal frameworks.
+Time dilation in the double spacetime theory emerges from the interplay between the usual spacetime and the dual spacetime, each endowed with its own proper time. The usual spacetime proper time $\tau$ governs the familiar kinematics observed in macroscopic Minkowski space, while the dual spacetime proper time $\tilde{\tau}$, encoded in the compact rotor phases $\phi$, drives the internal torsional dynamics that manifest as gravitational and inertial effects.
 
-\subsection{Dual-Spacetime Proper Time and Rotor Dynamics}
+\subsection{Derivation of the Effective Lorentz Factor}
 
-The effective Lorentz factor $\gamma_\text{eff}$, which determines the rate of time dilation, is given by
+The effective Lorentz factor $\gamma_{\text{eff}} = dt/d\tau$, which determines the observed time dilation, arises directly from the algebraic structure of the total rotor
 \[
-  \gamma_\text{eff} = \cos\left(\frac{\beta \theta}{2}\right) \cosh\left(\frac{\theta}{2}\right) - \sin\left(\frac{\beta \theta}{2}\right) \sinh\left(\frac{\theta}{2}\right),
+R_{\text{total}} = R_{\text{usual}} R_{\text{dual}},
 \]
-\label{eq:gamma_eff}
+where
+\[
+R_{\text{usual}} = \exp\left(\frac{\theta}{2} \hat{p}\right) = \cosh\frac{\theta}{2} + \sinh\frac{\theta}{2} \hat{p}, \quad \hat{p}^2 = +1,
+\]
+generates boosts in the usual spacetime, and
+\[
+R_{\text{dual}} = \exp\left(\frac{\phi}{2} \hat{q}\right) = \cos\frac{\phi}{2} + \sin\frac{\phi}{2} \hat{q}, \quad \hat{q}^2 = -1,
+\]
+generates rotations in the dual spacetime.
 
-where $\theta$ is the rapidity associated with the usual rotor $R_\text{usual}$, and $\beta$ is a density-dependent coupling parameter that modulates the influence of the dual rotor $R_\text{dual}$. The parameter $\beta$ encapsulates the degree of synchronization between the two spacetimes: $\beta = 1$ indicates perfect alignment (as in massless particles), while $\beta < 1$ reflects a lag in the dual rotor response due to the particle's rest mass.
-The relationship between the proper times is then expressed as
-\[\frac{dt}{d\tau} = \gamma_\text{eff}, \]
-indicating that the observed time dilation is a direct consequence of the dual spacetime's torsional dynamics. As the particle's velocity increases, the rapidity $\theta$ grows, leading to enhanced time dilation. However, the presence of the dual rotor introduces additional modulation through $\beta$, which can either amplify or mitigate the dilation effect depending on the local density and torsional state.
-This framework provides a more nuanced understanding of time dilation, revealing it as a dynamic interplay between two intertwined spacetimes. It also opens avenues for manipulating time dilation through external control of the dual rotor parameters, potentially enabling novel applications in propulsion and timekeeping technologies.
+The dual map $X \mapsto Xi$ reverses the time arrow, transforming the dual rotation into an effective boost contribution with opposite orientation relative to the usual sector. When acting on the time basis vector $j$ via the sandwich product $\tilde{X} = R_{\text{total}} X R_{\text{total}}^\dagger$, the scalar part yields the net scaling of the time component.
 
-\subsection{Fields where time is negative}
+The even (scalar) contributions multiply constructively, while the odd (boost-like) contributions interfere destructively due to the time-reversed duality:
+\[
+\gamma_{\text{eff}} = \cosh\left(\frac{\theta}{2}\right) \cos\left(\frac{\phi}{2}\right) - \sinh\left(\frac{\theta}{2}\right) \sin\left(\frac{\phi}{2}\right).
+\]
 
-In regions where the dual rotor parameters $\phi$ dominate significantly over the usual rotor parameters $\theta$, the effective Lorentz factor $\gamma_\text{eff}$ can become negative. This occurs when the sine term in the expression for $\gamma_\text{eff}$ outweighs the cosine term, leading to a scenario where\[\gamma_\text{eff} < 0.\]
-In such regions, the relationship between the coordinate time $t$ and the proper time $\tau$ becomes inverted, resulting in a counterintuitive phenomenon where the passage of proper time appears to run backward relative to coordinate time. This negative time dilation has profound implications for causality and the structure of spacetime, as it suggests the existence of zones where the conventional flow of time is disrupted.
+The negative sign in the second term is fixed by the requirement of anti-synchronization in vacuum: when $\phi = \theta$ (with appropriate alignment $\hat{q} i = -\hat{p}$), the sinh and sin terms cancel, recovering the standard special-relativistic dilation in the torsion-free limit.
 
-Physically, these regions of negative time dilation simply represent a repulsive manifestation of gravity, rather than a reversal of the temporal order of events. The dual spacetime framework accommodates this by allowing for torsional configurations that produce effective repulsion without violating causality. Particles traversing these regions would experience a form of gravitational repulsion, akin to being pushed away from a mass, rather than a literal reversal of time.
+In exponential form, this becomes
+\[
+\gamma_{\text{eff}} = \frac{1}{2} e^{\theta/2} \left( \cos\frac{\phi}{2} - \sin\frac{\phi}{2} \right) + \frac{1}{2} e^{-\theta/2} \left( \cos\frac{\phi}{2} + \sin\frac{\phi}{2} \right).
+\]
 
-\subsection{Conditions for Negative Time Dilation}
+Alternatively, using a sine-phase representation to emphasize oscillatory behavior:
+\[
+\gamma_{\text{eff}} = \frac{1}{\sqrt{2}} \left[ e^{\theta/2} \sin\left(\frac{\pi}{4} - \frac{\phi}{2}\right) + e^{-\theta/2} \sin\left(\frac{\pi}{4} + \frac{\phi}{2}\right) \right].
+\]
 
-Starting from the definition of the effective Lorentz factor in the double spacetime theory, we have
-\[\gamma_\text{eff} = \cos\left(\frac{\beta \theta}{2}\right) \cosh\left(\frac{\theta}{2}\right) - \sin\left(\frac{\beta \theta}{2}\right) \sinh\left(\frac{\theta}{2}\right).\]
-To explore the conditions under which $\gamma_\text{eff}$ becomes negative, we can rewrite this expression in terms of hyperbolic and trigonometric identities. Using the identities
-\[\cosh x = \frac{e^x + e^{-x}}{2}, \quad \sinh x = \frac{e^x - e^{-x}}{2},\]
-we can express $\gamma_\text{eff}$ as
-\[\gamma_\text{eff} = \frac{1}{2}\left[\cos\left(\frac{\beta \theta}{2}\right)(e^{\theta/2} + e^{-\theta/2}) - \sin\left(\frac{\beta \theta}{2}\right)(e^{\theta/2} - e^{-\theta/2})\right].\]
-Combining terms, we obtain
-\[\gamma_\text{eff} = \frac{1}{2}e^{\theta/2}\left[\cos\left(\frac{\beta \theta}{2}\right) - \sin\left(\frac{\beta \theta}{2}\right)\right] + \frac{1}{2}e^{-\theta/2}\left[\cos\left(\frac{\beta \theta}{2}\right) + \sin\left(\frac{\beta \theta}{2}\right)\right].\]
-For $\gamma_\text{eff}$ to be negative, the first term must be sufficiently negative to outweigh the second term. This occurs when
-\[\\cos\left(\frac{\beta \theta}{2}\right) - \sin\left(\frac{\beta \theta}{2}\right) < 0,\]
-which simplifies to
-\[\tan\left(\frac{\beta \theta}{2}\right) > 1.\]
-This inequality indicates that for sufficiently large values of $\beta \theta$, the effective Lorentz factor becomes negative, leading to the phenomenon of negative time dilation. This condition highlights the critical role of the dual rotor parameters in modulating the temporal dynamics of particles in the double spacetime framework.
+\subsection{Vacuum Limit and Massless Particles}
+
+In the torsion-free vacuum ($J=0$), perfect anti-synchronization between the usual and dual rotors enforces $\phi \approx \theta$ (modulo compact periodicity), yielding $\gamma_{\text{eff}} \to \cosh\theta$, recovering the standard Lorentz factor of special relativity. Massless particles maintain this synchronization exactly at all velocities, experiencing no torsional mismatch and thus no deviation from the usual kinematic dilation.
+
+\subsection{Massive Particles and Gravitational Effects}
+
+For massive particles, rest mass introduces rigidity that causes the dual rotor to lag behind the usual rotor under acceleration or in the presence of torsional mismatch. The resulting deviation $\delta\phi = \phi - \theta$ generates additional modulation of $\gamma_{\text{eff}}$, producing the gravitational redshift and time dilation observed in General Relativity, now interpreted as a direct consequence of dual-spacetime dynamics.
+
+\subsection{Negative Time Dilation and Repulsive Layers}
+
+When dual-spacetime rotations dominate ($\phi/2$ sufficiently large), the sinusoidal term can overpower the hyperbolic growth:
+\[
+\tan\left(\frac{\phi}{2}\right) > \coth\left(\frac{\theta}{2}\right).
+\]
+In these regimes, $\gamma_{\text{eff}} < 0$, corresponding to regions of repulsive gravity within torsion stars. Physically, this manifests as an inversion of the proper-time flow relative to coordinate time, not as a literal reversal of causality but as gravitational repulsion arising from dual-sector dominance.
+
+This $\phi$-centric formulation makes manifest that time dilation is fundamentally a torsional phenomenon originating in the particle-intrinsic dual spacetime. The usual rapidity $\theta$ provides the kinematic baseline, while deviations in the compact dual angle $\phi$ encode the gravitational and inertial corrections that distinguish General Relativity from flat-spacetime kinematics. External coherent excitation of $\phi$ thus offers a pathway to manipulate time dilation and effective gravitational fields.
 
 \section{Scale-Invariant Torsional Layers: The Strong Force as Gravitational Repulsion and Nuclei as Primordial Torsion Stars}
 \label{sec:nuclear}
@@ -636,8 +652,8 @@ Taking into account the time effect of the $\gamma_\text{eff}$ formula and the i
 \[F = \frac{GMm}{\gamma_\text{eff} r^2}\]
 
 When we apply this formula to the hydrogen atom, we can get the following formula.
-\[F = \frac{GMm}{\left( \cos\left(\frac{\beta Z \alpha}{2}\right) \cosh\left(\frac{Z \alpha}{2}\right) - \sin\left(\frac{\beta Z \alpha}{2}\right) \sinh\left(\frac{Z \alpha}{2}\right) \right) r^2}\]
-Where Z is the mass number, and alpha is the fine structure constant.
+\[F = \frac{GMm}{\left( \cos\left(\frac{Z \beta}{2}\right) \cosh\left(\frac{Z \alpha}{2}\right) - \sin\left(\frac{Z \beta}{2}\right) \sinh\left(\frac{Z \alpha}{2}\right) \right) r^2}\]
+Where Z is the mass number, and $\alpha, \beta$ is the fine structure constant.
 
 When we calculate the force between the proton and electron in the hydrogen atom using this formula, we find that at certain radii, the force becomes repulsive due to the time reversal effect encoded in $\gamma_\text{eff}$. This repulsive force creates stable orbits for the electron around the nucleus, corresponding to the observed electron shells. These stable orbits arise naturally from the interplay between gravitational attraction and time-reversal repulsion, providing a new explanation for the orbits of electrons within atoms and the bonds between atoms, without relying on conventional quantum mechanics.
 
