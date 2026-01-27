@@ -1,0 +1,102 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[dvipdfmx]{geometry}
+\geometry{left=25mm,right=25mm,top=25mm,bottom=25mm}
+\usepackage[japanese]{babel}
+
+\title{二重時空理論における内在モジュラリティによる\\ABC予想の仮想的証明スケッチ}
+\author{二重時空理論における思考実験}
+\date{2026年1月}
+
+\begin{document}
+
+\selectlanguage{japanese}
+
+\maketitle
+
+\begin{abstract}
+本稿は、二重時空理論（16次元双四元数代数 $\mathbb{H} \oplus \mathbb{H} \cong \mathrm{Cl}(3,1)$ にミンコフスキー時空の2つの可換コピーを粒子内在的に埋め込む非標準枠組み）の代数的構造とABC予想を結びつける\emph{仮想的かつ極めて推測的な}考察を提示する。
+
+核心的なアイデアは、双対時空のコンパクト性が楕円曲線や保型形式のモジュラリティに類似した\emph{内在モジュラリティ}を誘発することである。ABC予想の強い反例（$c \gg \mathrm{rad}(abc)^{1+\epsilon}$）が存在すると仮定すると、ねじれ不整合が異常増大し、この内在モジュラリティに違反して離散モデル内で矛盾に至る。
+\end{abstract}
+
+\section{背景：二重時空理論}
+
+二重時空理論は、すべての質量を持つ粒子が双四元数代数 $\mathbb{H} \oplus \mathbb{H} \cong \mathrm{Cl}(3,1)$（計量 $(-,,+,+,+)$）に内在的にエンコードされたミンコフスキー時空の対を持つと仮定する。
+
+\begin{itemize}
+  \item \textbf{通常時空}：基底 $\{j, kI, kJ, kK\}$。ベクトル $X = ct\, j + x\, kI + y\, kJ + z\, kK$。
+  \item \textbf{双対時空}：基底 $\{k, jI, jJ, jK\}$。双対写像 $X \mapsto Xi$（擬スカラー $i$ による右乗）で関連し、時間の矢を反転させる。
+  \item 完全ローター：$R_\text{total} = R_\text{usual} R_\text{dual}$、ここで
+  \[
+  R_\text{usual} = \exp\!\left(\frac{\theta}{2} \hat{p}\right), \quad \hat{p}^2 = +1,
+  \]
+  \[
+  R_\text{dual} = \exp\!\left(\frac{\phi}{2} \hat{q}\right), \quad \hat{q}^2 = -1.
+  \]
+  \item ねじれ不整合ローター：$\Omega = R_\text{usual}^\dagger R_\text{dual}$。
+  \item 不変量：キリング形式スカラー $J = \frac{1}{16} B(\log \Omega, \log \Omega)$。
+\end{itemize}
+
+有効ローレンツ因子は複素化された形で表現可能であり、双対時空のコンパクト性（$\phi \mod 4\pi$）が通常時空の非コンパクト性（$\theta \in \mathbb{R}$）と対比される。離散モデルでは $\theta_k, \phi_k \in \frac{2\pi}{N} \mathbb{Z}$（大きな有限 $N$）とし、整数双四元数環の単位群を有限化する。
+
+\section{ABC予想の概要}
+
+ABC予想（Oesterlé-Masser, 1985）は、互いに素な正整数 $a, b, c$ ($a + b = c$) に対し、基数（radical）$\mathrm{rad}(abc) = \prod_{p \mid abc} p$ を用いて
+\[
+c < C_\epsilon \, \mathrm{rad}(abc)^{1+\epsilon}
+\]
+が任意の $\epsilon > 0$ に対して定数 $C_\epsilon$ を除いて成り立つ、というものである（強形では指数1でも可）。
+
+この予想はディオファントス方程式の解の「質」（素因子の豊富さ）と「大きさ」のトレードオフを記述し、フェルマーの最終定理やモジュラー形式の深層構造と密接に関連する。反例が存在すれば、極めて「滑らかな」（素因子が少ない）大きな $c$ が許容されることになる。
+
+\section{双対時空のコンパクト性と内在モジュラリティ}
+
+双対時空はコンパクト（$\phi \mod 4\pi$）であり、これは素因子の有限性やradicalの「コンパクトな」性質に類似する。通常時空は非コンパクトで、$c$ の大きさを反映する。
+
+上半平面への写像を
+\[
+\tau = \frac{\phi}{2\pi} + i \frac{\theta}{2\pi}
+\]
+で定義すると、双対ローターの周期性が $\mathrm{SL}(2,\mathbb{Z})$ に類似した離散不変性を誘発する。$q = \exp(2\pi i \tau) = \exp(i \phi - \theta)$ は $\theta$ 大で急速収束し、ねじれ不整合 $J$ が保型不変量のように振る舞う。
+
+この構造が\emph{内在モジュラリティ}を提供する：物理的・数論的状態は $\tau$ のモジュラー配置に対応し、異常な非コンパクト成長（大きな $c$ で小さな $\mathrm{rad}(abc)$）がこの不変性を破る。
+
+\section{仮想的矛盾の仮定}
+
+ABC予想の強い反例、すなわち任意の $K > 1$ に対して無限に多くの互いに素三つ組 $(a,b,c)$ が存在し
+\[
+c > \mathrm{rad}(abc)^K
+\]
+を満たすと仮定する（原始的で $a + b = c$）。
+
+通常時空の単位ブーストバイベクトル $\hat{p}$ を
+\[
+\hat{p} = \frac{\log a \, iI + \log b \, iJ + \log c \, iK}{\sqrt{(\log a)^2 + (\log b)^2 + (\log c)^2}}
+\]
+で構成する（対数スケールで加法性を反映）。仮定により $c \approx a + b \gg \mathrm{rad}(abc)^K$ なので、$\log c \approx \log(a+b)$ が支配的だが、$\mathrm{rad}(abc)$ が相対的に小さいため分母が「コンパクト」に抑えられる。
+
+ラピディティを
+\[
+\theta = 2 \log c - 2 K \log \mathrm{rad}(abc)
+\]
+と定義する（反例の強さ $K$ を反映）。反例が強いほど $\theta \gg 1$ となり、虚部 $y = \theta/(2\pi)$ が異常増大する。
+
+この異常ブーストは $q = \exp(i \phi - \theta)$ の収束を過剰に加速し、ねじれ不整合ローター $\Omega$ の展開で非収束項を生む。特に離散モデルでは、$\hat{p}$ の方向が $\log(a:b:c)$ の有理点に固定され、$\mathrm{rad}(abc)$ のコンパクト性が双対ローター $R_\text{dual}$ を有限離散位相に制限する一方、$\theta$ の異常成長が単位群外への逸脱を強制する。
+
+\section{$K > 1$ における非モジュラー挙動}
+
+$K \leq 1$ の場合（予想が許容する範囲）は、$\theta \propto \log c \lesssim \log \mathrm{rad}(abc)$ が有限範囲に収まり、内在モジュラリティが保たれる（双対時空のコンパクト性がradicalの有限性を自然に吸収）。
+
+一方 $K > 1$ の強い反例では、$\theta \propto K \log \mathrm{rad}(abc)$ が $K$ に比例して異常増大し、$|q| \propto e^{-\theta}$ が超急速収束する。これによりねじれ不整合の $q$ 展開類似で異常極が生じ、保型性が破れる。
+
+離散モデル（固定大 $N$）では、整数双四元数環の有限単位群がこの異常を収容できず、$\Omega$ が群外に逸脱するか $J$ が非物理的発散を取る。これが内在モジュラリティの直接違反となる。
+
+\section{思考実験の結論}
+
+$K > 1$ の強い反例の仮定は、二重時空理論の離散モデルにおける内在モジュラー不変性と矛盾する。
+
+したがって、そのような反例は存在し得ず、ABC予想が支持される。
+
+\end{document}
