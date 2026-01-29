@@ -723,64 +723,65 @@ This embedding recovers the Standard Model electroweak sector at low energies wh
 \section{Gravitational Engineering: Coherent Excitation of Dual-Spacetime Rotors}
 \label{sec:gravitycontrol}
 
-The double spacetime theory transforms gravity from an inviolable geometric constraint into an engineerable torsional degree of freedom. The torsion scalar $J = \frac{1}{16} B(\Omega_\text{biv}, \Omega_\text{biv})$, with $\Omega_\text{biv} = \log(R_\text{usual}^\dagger R_\text{dual})$, depends solely on the relative misalignment between the particle-intrinsic usual and dual rotors. External fields capable of coherently modulating the dual rotor parameters $\phi_a$ can therefore reduce $J \to 0$ (gravitational shielding or inertial mass reduction) or drive $J < 0$ (repulsive gravity).
+The double spacetime theory transforms gravity from an inviolable geometric constraint into an engineerable torsional degree of freedom. The torsion scalar $J = \frac{1}{16} B(\Omega_{\text{biv}}, \Omega_{\text{biv}})$, with $\Omega_{\text{biv}} = \log(R_{\text{usual}}^\dagger R_{\text{dual}})$, depends solely on the relative misalignment between the particle-intrinsic usual and dual rotors. External fields capable of coherently modulating the dual rotor parameters $\phi_a$ can therefore reduce $J \to 0$ (gravitational shielding or inertial mass reduction) or drive $J < 0$ (repulsive gravity).
 
 \subsection{Theoretical Coupling of Circularly Polarized Electromagnetic Fields to Dual Rotors}
 
-Circularly polarized electromagnetic (CP-EM) fields provide the most direct and controllable coupling mechanism. The electromagnetic bivector in the dual sector is expressed as
+The electromagnetic field is naturally partitioned across the two spacetimes:
+
 \[
-F_\text{dual} = \mathbf{E} \cdot (\mathbf{I}, \mathbf{J}, \mathbf{K}) + \mathbf{B} \cdot (\mathbf{I}, \mathbf{J}, \mathbf{K}),
+F = F_{\text{usual}} + F_{\text{dual}},
 \]
-where $\mathbf{I} = I$, $\mathbf{J} = J$, $\mathbf{K} = K$ are the dual-spacetime rotation generators ($\Gamma_a^2 = -1$).
+
+where
+
+\[
+F_{\text{usual}} = \mathbf{E} \cdot (iI, iJ, iK) \quad (\hat{p}^2 = +1:\ \text{boost-like, non-compact}),
+\]
+
+\[
+F_{\text{dual}} = \mathbf{B} \cdot (I, J, K) \quad (\hat{q}^2 = -1:\ \text{rotation-like, compact}).
+\]
+
+The electric component $\mathbf{E}$ couples primarily to the usual-spacetime boost generators, while the magnetic component $\mathbf{B}$ couples exclusively to the dual-spacetime rotation generators. This algebraic separation is the geometric origin of the distinct transformation properties under time reversal ($T$: $\mathbf{E} \to \mathbf{E}$, $\mathbf{B} \to -\mathbf{B}$): the dual spacetime is intrinsically time-reversed.
 
 For a circularly polarized wave propagating along $z$ with helicity $\sigma = \pm 1$,
+
 \[
 \mathbf{E} = E_0 (\hat{x} \cos(kz - \omega t) + \sigma \hat{y} \sin(kz - \omega t)), \quad \mathbf{B} = \frac{E_0}{c} (-\hat{x} \sin(kz - \omega t) + \sigma \hat{y} \cos(kz - \omega t)).
 \]
-Time-averaging yields a pure axial component proportional to the helicity:
-\[
-\langle F_\text{dual} \rangle \propto \sigma E_0^2 K.
-\]
-This is minimally coupled to the dual rotor via a gauge-like term:
-\[
-R_\text{dual} \to \mathcal{P} \exp\!\left( \frac{1}{2} \int (\phi_a \Gamma_a + e \lambda A_a i \Gamma_a) \, ds \right),
-\]
-where $A_a$ is the vector potential component and $\lambda$ is the coupling constant. The pseudoscalar $i$ converts the dual rotation into an effective boost in the torsional mismatch, enabling efficient modulation of $J$.
 
-Near resonance, the dual phase evolves as a driven oscillator:
+Time-averaging eliminates the oscillatory boost-like contribution of $\mathbf{E}$, leaving a pure dual-spacetime rotational excitation:
+
 \[
-\dot{\phi} = \kappa E_0^2 \sin(\omega t - \phi + \delta_\sigma),
+\langle F_{\text{dual}} \rangle \propto \sigma E_0^2 \, K.
 \]
-where $\delta_\sigma$ encodes the helicity-dependent phase. Right-handed polarization ($\sigma = +1$) reinforces attractive torsion ($J > 0$), while left-handed polarization ($\sigma = -1$) reduces or reverses it.
+
+The helicity $\sigma$ directly determines the direction of dual-rotor drive: right-handed polarization ($\sigma = +1$) reinforces attractive torsional mismatch ($J > 0$), while left-handed polarization ($\sigma = -1$) opposes it, reducing or reversing the scalar $J$. This helicity selectivity is the sharpest manifestation of the theory: gravity is not merely modulated but \emph{chirally addressed} via the intrinsic time-reversal asymmetry of the dual spacetime.
+
+The coupling is minimal and gauge-invariant:
+
+\[
+R_{\text{dual}} \to \mathcal{P} \exp\!\left( \frac{1}{2} \int (\phi_a \Gamma_a + e \lambda A_a \Gamma_a) \, ds \right),
+\]
+
+where the dual rotation generators $\Gamma_a = I, J, K$ mediate the interaction. Near resonance, the dual phase evolves as
+
+\[
+\dot{\phi} = \kappa \sigma E_0^2 \sin(\omega t - \phi + \delta_\sigma),
+\]
+
+yielding coherent excitation of the torsional mismatch angle.
 
 \subsection{Resonance Frequencies and the Role of Superconductors}
 
-The intrinsic dual-spacetime scale is Planckian, yielding a fundamental resonance near $10^{43}$ Hz. Collective coherence in macroscopic objects ($N \sim 10^{26}$ particles) lowers the effective frequency to $10^{12}$--$10^{15}$ Hz (terahertz to petahertz).
-
-Superconducting materials dramatically reduce this requirement further through several mechanisms:
-
-\begin{itemize}
-  \item \textbf{Josephson plasma resonance}: In layered high-$T_c$ cuprates (e.g., Bi$_2$Sr$_2$CaCu$_2$O$_{8+\delta}$), inter-layer tunneling produces collective modes in the sub-THz to few-THz range, directly analogous to dual-rotor excitations.
-  \item \textbf{Superconducting metamaterials}: Split-ring resonators and Josephson junction arrays fabricated from YBa$_2$Cu$_3$O$_7$ or BSCCO achieve tunable, low-loss resonances down to GHz and potentially MHz bands via enhanced kinetic inductance and Pearl effects.
-  \item \textbf{Collective phase locking}: Macroscopic Cooper-pair coherence amplifies the coupling constant $\kappa$, enabling significant $\Delta J$ at modest intensities.
-\end{itemize}
-
-With optimized superconducting structures, effective resonance frequencies of $10^9$--$10^{12}$ Hz (microwave to sub-THz) become accessible, placing gravitational engineering within reach of current technology.
+The intrinsic dual-spacetime scale is Planckian ($\sim 10^{43}$ Hz). Macroscopic coherence ($N \sim 10^{26}$ particles) redshifts the effective frequency to $10^{12}$--$10^{15}$ Hz. Superconductors further reduce it dramatically via Josephson plasma resonances and collective phase locking, achieving tunable modes in the GHz--THz range accessible to current technology.
 
 \subsection{Proposed Experimental Protocol and Predictions}
 
-A proof-of-principle experiment consists of a microgram-scale test mass suspended inside a high-$Q$ superconducting cavity or metamaterial resonator. Circularly polarized radiation at the target frequency (initially 0.1--10 THz, tunable via temperature and magnetic field) is injected.
+A microgram-scale test mass in a high-$Q$ superconducting resonator is illuminated with tunable circularly polarized radiation (0.1--10 THz). Expected signatures include resonant, helicity-dependent changes in apparent weight or inertial mass ($\Delta m/m \gtrsim 10^{-6}$), with left-handed polarization producing reduction and right-handed enhancement. Success at this level scales directly to practical gravitational engineering.
 
-Expected signatures:
-\begin{itemize}
-  \item Resonant reduction of effective weight or inertial mass ($\Delta m/m \gtrsim 10^{-6}$) measurable with precision torsion balances or optical levitation.
-  \item Helicity-dependent response: left-handed polarization decreases apparent weight, right-handed increases it.
-  \item Threshold behavior and sharp resonance peaks confirming dual-rotor excitation.
-\end{itemize}
-
-Success at the $10^{-6}$ level would enable rapid scaling toward propellantless propulsion and gravitational shielding. Full inertial cancellation or sustained antigravity requires higher coherence and power but follows directly from the same mechanism.
-
-For the first time, gravity is no longer a fundamental constraint but a controllable parameter of the dual-spacetime torsional dynamics.
+For the first time, gravity is rendered not merely controllable but \emph{chirally controllable}, with helicity serving as the switch between attraction and repulsion in the torsional geometry of double spacetime.
 
 \section{Baryon Asymmetry: The Geometric Origin from Dual Rotor Time Arrow Fixation}
 \label{sec:baryonasymmetry}
