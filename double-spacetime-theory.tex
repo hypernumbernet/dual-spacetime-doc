@@ -832,15 +832,34 @@ In essence, the baryon asymmetry is not a puzzle but the geometric echo of the u
 \section{Discrete Time and Compactified Torsion Scalar}
 \label{sec:discretetime}
 
-The rejection of the spacetime continuum hypothesis naturally leads to a discrete structure at the fundamental scale. The intrinsic duality encoded in the biquaternion algebra—particularly the pseudoscalar $i$ and the dual map $X \mapsto Xi$ that reverses the temporal arrow while preserving the Minkowski norm—suggests a compactification of the rapidity parameters along the time-like directions.
+The rejection of the spacetime continuum hypothesis demands a discrete structure at the fundamental scale. The intrinsic duality encoded in the biquaternion algebra—particularly the pseudoscalar $i$ and the dual map $X \mapsto Xi$ that reverses the temporal arrow while preserving the Minkowski norm—compactifies the \emph{dual spacetime} intrinsically, while leaving the \emph{usual spacetime} non-compact.
 
-By discretizing the rapidity parameters as
+We therefore discretize \emph{only} the dual-spacetime rotation angle:
 \[
-\phi, \theta \in \frac{2\pi}{N} \mathbb{Z},
+\theta \in \frac{2\pi}{N} \mathbb{Z},
 \]
-where $N \gg 1$ is a large integer related to the particle's compactification scale (e.g., proportional to the rest mass), the torsional mismatch rotor $\Omega = R_\text{usual}^\dagger R_\text{dual}$ takes values in a finite set. Consequently, the torsion scalar $J$ becomes discrete and bounded, naturally eliminating singularities and unbounded accelerations that would otherwise arise in the continuum formulation.
+where $N \gg 1$ is a very large integer determining the compactification scale of the dual spacetime (typically proportional to the particle’s rest mass in Planck units). The usual-spacetime rapidity remains continuous:
+\[
+\phi \in \mathbb{R}.
+\]
 
-This discretization renders the corresponding unit group of the integer biquaternion ring finite, imposing rigorous Diophantine constraints on allowable gravitational configurations. All classical predictions of General Relativity are recovered in the continuum limit $N \to \infty$.
+This asymmetry is required for theoretical consistency:
+\begin{itemize}
+  \item The dual spacetime is elliptic ($\hat{q}^2 = -1$), inherently compact, and its discretization directly reflects the $4\pi$-periodic topology of $S^3$ parameterized by $R_{\text{dual}}$. This provides the finite phase volume essential for resolving the Newton–Wigner localization problem and yielding natural quantum discreteness.
+  \item The usual spacetime is hyperbolic ($\hat{p}^2 = +1$), intrinsically non-compact, so continuity of $\phi$ preserves the full Lorentz group and ensures exact equivalence with classical general relativity in the macroscopic limit.
+\end{itemize}
+
+The torsional mismatch rotor $\Omega = R_{\text{usual}}^\dagger R_{\text{dual}}$ thus combines a continuous usual component with a discrete dual component. The torsion scalar $J = \frac{1}{16} B(\Omega_{\text{biv}}, \Omega_{\text{biv}})$ remains bounded, rigorously excluding continuum-induced singularities.
+
+A critical issue arises in the effective Lorentz factor across torsional layers, which typically appears as a synchronization function of the form
+\[
+\gamma_{\text{eff}} \propto \frac{\sin(N \delta\theta / 2)}{N \sin(\delta\theta / 2)},
+\]
+where $\delta\theta$ is the torsional mismatch angle. The denominator could in principle vanish, suggesting pathological infinite boosts.
+
+However, when $N$ is a \emph{very large prime}, the equation $\sin(N \delta\theta / 2) = 0$ forces simultaneous vanishing of the numerator ($\sin(k\pi) = 0$), yielding a $0/0$ form that resolves to a finite limit (typically unity). The field-like structure of $\mathbb{Z}/p\mathbb{Z}$ ensures maximal uniformity of the phase lattice, eliminating intermediate resonances and structurally prohibiting true denominator-zero divergence.
+
+Thus $N$ must be a very large prime to guarantee that all torsional configurations remain finite and free of spurious singularities while preserving the classical continuum limit as $N \to \infty$. This primality condition—emerging purely from the demand for bounded torsional dynamics—imparts a profound number-theoretic structure to the theory, linking particle mass spectra directly to the arithmetic properties of dual-spacetime compactification.
 
 \section{Dual-Rotor Dynamics and the Geometric Origin of the de Broglie Phase}
 \label{sec:dualrotordynamics}
