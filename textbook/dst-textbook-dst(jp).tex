@@ -1,0 +1,660 @@
+\documentclass[a4paper,oneside]{jsbook}
+\usepackage[left=20truemm,right=20truemm,top=25truemm,bottom=25truemm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{setspace}
+\usepackage{wrapfig}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{docmute}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{tikz}
+
+\usepackage{amsthm}  % 定理環境の基本パッケージ
+
+% 日本語の定理環境を定義（章単位で番号付け：定理1.1, 1.2...）
+\newtheorem{theorem}{定理}[chapter]      % メインの定理
+\newtheorem{lemma}[theorem]{補題}        % 定理と番号共有
+\newtheorem{proposition}[theorem]{命題}  % 定理と番号共有
+\newtheorem{corollary}[theorem]{系}     % 定理と番号共有
+
+% 定義・注意などは番号なしスタイルが一般的
+\theoremstyle{definition}
+\newtheorem{definition}{定義}[chapter]
+\newtheorem{example}{例}[chapter]
+
+\theoremstyle{remark}
+\newtheorem{remark}{注意}[chapter]
+
+% 証明環境（日本語で「証明」表示、末尾に□）
+\renewcommand{\proofname}{証明}  % 「Proof」を「証明」に変更
+
+\title{\Huge 二重時空理論\\[2ex] \Large 重力の本質を双四元数代数で解き明かす}
+\author{二重時空理論プロジェクト}
+\date{\today}
+
+\begin{document}
+
+\frontmatter
+\maketitle
+
+\begin{singlespace}
+\tableofcontents
+\end{singlespace}
+
+\mainmatter
+
+\part{数学的基礎：複素数から双四元数へ}
+
+\chapter{人類の至宝：オイラーの公式}
+\label{chap:euler}
+
+本書は、二重時空理論（重力を双四元数代数によって完全に記述する新しい理論）の入門書である。
+その旅は、まず「人類の至宝」と呼ばれる一つの等式から始まる。
+それは、数学の美しさと物理学の深淵を同時に示す、永遠の宝石である。
+
+\section{出会い：最も美しい等式}
+\label{sec:euler-introduction}
+
+「これは我々の至宝であって、数学における最も注目すべき公式である」リチャード・ファインマンは、オイラーの公式をそう評した。
+\begin{equation}
+  e^{i\pi} + 1 = 0
+  \label{eq:euler-identity}
+\end{equation}
+この等式は、五大定数（自然対数の底 $e$、虚数単位 $i$、円周率 $\pi$、$1$、$0$）を一つの関係式にまとめている。
+しかし、真の美しさは単なる数の集合ではなく、指数関数と三角関数が虚数単位を通じて完全に結びつく点にある。
+本節では、読者が初めてこの等式に出会う感動を再現することを目指す。
+
+\section{複素数と複素平面の復習}
+\label{sec:complex-review}
+
+オイラーの公式を深く理解するためには、まず複素数の基本的な性質をしっかりと復習しておく必要がある。
+本節では、複素数を代数的な対象としてだけでなく、幾何学的な対象として捉える視点を強調する。
+この視点こそが、オイラーの公式が「人類の至宝」と呼ばれる理由の核心にある。
+
+\subsection{複素数の定義と基本演算}
+
+複素数とは、実数 $a, b$ と虚数単位 $i$（$i^2 = -1$）を用いて
+\begin{equation}
+  z = a + bi
+\end{equation}
+と表される数である。
+ここで $a = \Re(z)$ を\emph{実部}、$b = \Im(z)$ を\emph{虚部}と呼ぶ。
+
+複素数の基本演算は次の通りである：
+\begin{itemize}
+  \item 加法・減法：$(a + bi) \pm (c + di) = (a \pm c) + (b \pm d)i$
+  \item 乗法：$(a + bi)(c + di) = (ac - bd) + (ad + bc)i$
+  \item 共役複素数：$\bar{z} = a - bi$
+  \item 絶対値：$|z| = \sqrt{a^2 + b^2}$
+  \item 逆数：$z^{-1} = \bar{z} / |z|^2$（$z \neq 0$）
+  \item 除法：$z_1 / z_2 = (z_1 \bar{z_2}) / |z_2|^2$（$z_2 \neq 0$）
+\end{itemize}
+
+特に乗法の規則は、虚数単位の性質 $i^2 = -1$ から生まれる「負の数の平方根」を自然に扱える点で革命的だった。
+
+\subsection{複素平面上の幾何学的表現}
+
+複素数 $z = a + bi$ を、横軸を実部、縦軸を虚部とする直交座標平面上の点 $(a, b)$ に対応させる。
+この平面を\emph{複素平面}（またはガウス平面）と呼ぶ。
+
+複素数の幾何学的性質は以下の通りである：
+\begin{itemize}
+  \item \emph{絶対値} $|z| = \sqrt{a^2 + b^2}$：原点からの距離
+  \item \emph{偏角} $\arg(z) = \tan^{-1}(b/a)$（適切な象限を考慮）：正の実軸からの角度（主値は通常 $(-\pi, \pi]$）
+\end{itemize}
+
+複素数を極形式で表すと
+\begin{equation}
+  z = r (\cos\theta + i \sin\theta), \quad r = |z|, \quad \theta = \arg(z)
+  \label{eq:polar-form}
+\end{equation}
+となる。
+この表現が、オイラーの公式と直接結びつく。
+
+\subsection{乗法の幾何学的意味}
+
+複素数の乗法は、複素平面上で特に美しい性質を示す：
+\begin{theorem}
+  二つの複素数 $z_1 = r_1 (\cos\theta_1 + i \sin\theta_1)$、$z_2 = r_2 (\cos\theta_2 + i \sin\theta_2)$ の積は
+  \begin{equation}
+    z_1 z_2 = r_1 r_2 \bigl( \cos(\theta_1 + \theta_2) + i \sin(\theta_1 + \theta_2) \bigr)
+  \end{equation}
+  となる（ド・モアブルの公式）。
+\end{theorem}
+
+これは、次の幾何学的解釈を持つ：
+\begin{itemize}
+  \item 絶対値は積：$|z_1 z_2| = |z_1| |z_2|$（距離のスケーリング）
+  \item 偏角は和：$\arg(z_1 z_2) = \arg(z_1) + \arg(z_2)$（原点を中心とした回転）
+\end{itemize}
+
+すなわち、複素数の乗法は「拡大・縮小」と「回転」の合成演算である。
+この性質が、複素平面上の回転群 SO(2) を単純な乗法群として表現することを可能にする。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    scale=3,
+    axis/.style={very thick, ->, >=stealth},
+    vector/.style={->, >=stealth, thick},
+    dashedline/.style={dashed, thin}
+  ]
+
+  % 座標軸
+  \draw[axis] (-0.5,0) -- (1.8,0) node[anchor=north west] {実部};
+  \draw[axis] (0,-0.5) -- (0,1.5) node[anchor=south east] {虚部};
+
+  % 原点
+  \fill (0,0) circle (0.03) node[below left] {O};
+
+  % z_1 (青)
+  \draw[vector, blue] (0,0) -- (0.8,0.4) node[near end, above left, blue] {$z_1$};
+  \draw[dashedline] (0.6,0) arc (0:26.565:0.6); % 角度弧 (tan^{-1}(0.4/0.8)=26.565°)
+  \node at (0.7,0.15) {$\theta_1$};
+
+  % z_1 z_2 (赤)：ここでは |z_2|=1.5, arg(z_2)=50° と仮定
+  \draw[vector, red!80!black] (0,0) -- (1.2,1.35) node[midway, above left, red!80!black] {$z_1 z_2$};
+  \draw[dashedline] (1.2,0) arc (0:48.37:1.2); % 角度弧 (θ_1 + θ_2 ≈ 50° + 26.565°)
+  \node at (1.4,0.35) {$\theta_1 + \theta_2$};
+
+  % 説明テキスト
+  \node[align=center, font=\small] at (0.45,1.2) {
+    $z_2$ を掛ける操作\\[-2pt]
+    $\to$ 回転 + 拡大
+  };
+\end{tikzpicture}
+
+\caption{複素数の乗法の幾何学的意味：$z_2$ を掛けることで $z_1$ が回転・拡大される}
+\label{fig:complex-multiplication}
+\end{figure}
+
+\subsection{なぜ複素数が回転を完璧に記述するのか}
+
+実数のみでは回転を表現するために 2×2 の回転行列
+\begin{equation}
+  \begin{pmatrix}
+    \cos\theta & -\sin\theta \\
+    \sin\theta & \cos\theta
+  \end{pmatrix}
+\end{equation}
+が必要だった。
+しかし複素数を用いると、単なる乗法で同じ回転が実現される。
+
+次節では、この極形式を指数関数で統一的に表現する方法（テイラー展開によるオイラーの公式の導出）に進む。
+複素平面上の回転が、なぜ指数関数で記述されるのか、その驚くべき理由が明らかになるだろう。
+
+\section{テイラー展開による導出}
+\label{sec:taylor-derivation}
+
+オイラーの公式の美しさは、見た目の簡潔さだけではない。
+指数関数と三角関数が本質的に同一の構造を持つことを、解析的な手法で明らかにする。
+本節では、テイラー展開（マクローリン展開）を用いて、オイラーの公式を厳密に導出する。
+この導出は、複素関数論の基本定理（解析関数は複素平面全体で一貫したテイラー級数を持つ）に基づいている。
+
+\subsection{テイラー展開の基本}
+
+関数 $f(x)$ が原点周りで無限回微分可能ならば、そのテイラー展開は
+\begin{equation}
+  f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!} x^n
+\end{equation}
+で与えられる。
+ここで $f^{(n)}(0)$ は原点における $n$ 階微分値である。
+
+以下では、特に重要な三つの関数のマクローリン展開（$x=0$ 周りのテイラー展開）を求める。
+
+\subsection{指数関数の展開}
+
+指数関数 $e^x$ の微分は自身に等しい：$\frac{d}{dx} e^x = e^x$。
+したがって
+\begin{align}
+  e^x &= 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!} + \cdots \notag \\
+      &= \sum_{n=0}^\infty \frac{x^n}{n!}.
+  \label{eq:exp-taylor}
+\end{align}
+この級数は実数 $x$ だけでなく、複素数 $z$ に対しても収束する（収束半径は無限大）。
+
+\subsection{余弦関数と正弦関数の展開}
+
+余弦関数 $\cos\theta$ と正弦関数 $\sin\theta$ の微分規則はよく知られている：
+\begin{align}
+  \frac{d}{d\theta} \cos\theta &= -\sin\theta, &
+  \frac{d}{d\theta} \sin\theta &= \cos\theta.
+\end{align}
+原点での値と微分を計算すると、
+\begin{align}
+  \cos\theta &= 1 - \frac{\theta^2}{2!} + \frac{\theta^4}{4!} - \frac{\theta^6}{6!} + \cdots
+              = \sum_{n=0}^\infty \frac{(-1)^n \theta^{2n}}{(2n)!},
+  \label{eq:cos-taylor} \\
+  \sin\theta &= \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \frac{\theta^7}{7!} + \cdots
+              = \sum_{n=0}^\infty \frac{(-1)^n \theta^{2n+1}}{(2n+1)!}.
+  \label{eq:sin-taylor}
+\end{align}
+
+\subsection{虚数単位を代入する奇跡}
+
+ここで鍵となる操作を行う：指数関数の引数に純虚数 $i\theta$ を代入する。
+式\eqref{eq:exp-taylor}に $x = i\theta$ を入れると
+\begin{equation}
+  e^{i\theta} = \sum_{n=0}^\infty \frac{(i\theta)^n}{n!}.
+\end{equation}
+$i$ のべき乗は周期4で循環する：
+\begin{align*}
+  i^0 &= 1, \\
+  i^1 &= i, \\
+  i^2 &= -1, \\
+  i^3 &= -i, \\
+  i^4 &= 1, \quad \text{など}.
+\end{align*}
+したがって、級数を偶数項と奇数項に分離すると
+\begin{align*}
+  e^{i\theta} &= \sum_{k=0}^\infty \frac{(i\theta)^{2k}}{(2k)!}
+                + \sum_{k=0}^\infty \frac{(i\theta)^{2k+1}}{(2k+1)!} \\
+              &= \sum_{k=0}^\infty \frac{(-1)^k \theta^{2k}}{(2k)!}
+                + i \sum_{k=0}^\infty \frac{(-1)^k \theta^{2k+1}}{(2k+1)!}.
+\end{align*}
+右辺の第一項はちょうど $\cos\theta$（式\eqref{eq:cos-taylor}）、第二項は $i\sin\theta$（式\eqref{eq:sin-taylor}）に一致する。
+したがって
+\begin{equation}
+  \boxed{e^{i\theta} = \cos\theta + i\sin\theta}
+  \label{eq:euler-formula}
+\end{equation}
+が得られる。これがオイラーの公式である。
+
+\subsection{導出の意義と収束性}
+
+この導出の驚くべき点は、三つの一見無関係な関数（指数関数、余弦関数、正弦関数）が、虚数単位 $i$ を介して完全に同一視されることである。
+級数の収束半径が無限大であるため、この等式はすべての実数 $\theta$ に対して成立する（実際にはすべての複素数に対しても成立するが、ここでは実 $\theta$ に限定する）。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=2.5]
+  % 単位円
+  \draw[thick] (0,0) circle (1);
+  % 座標軸
+  \draw[->] (-1.2,0) -- (1.2,0) node[below] {実部};
+  \draw[->] (0,-1.2) -- (0,1.2) node[left] {虚部};
+  % 点 e^{iθ}
+  \draw[->, thick, red] (0,0) -- ({cos(45)},{sin(45)}) node[pos=1, above right] {$e^{i\theta}$};
+  % 角度弧
+  \draw[blue, dashed] (0.4,0) arc (0:45:0.4);
+  \node[blue] at (0.45,0.18) {$\theta$};
+  % 実部・虚部の投影
+  \draw[dashed] ({cos(45)},0) -- ({cos(45)},{sin(45)});
+  \draw[dashed] (0,{sin(45)}) -- ({cos(45)},{sin(45)});
+  \node at ({cos(45)},-0.1) {$\cos\theta$};
+  \node at (-0.25,{sin(45)}) {$i\sin\theta$};
+\end{tikzpicture}
+\caption{オイラーの公式の幾何学的意味：$e^{i\theta}$ は単位円上を角度 $\theta$ だけ移動した点}
+\label{fig:euler-circle}
+\end{figure}
+
+図\ref{fig:euler-circle}に示すように、$e^{i\theta}$ は複素平面上の単位円をパラメトライズする。
+この単純な指数関数が、円運動の完全な記述を与えること・・・まだほんの一端であるが、これが「人類の至宝」と呼ばれる理由である。
+
+次節では、この公式が複素平面上の回転をどのように表現するかをさらに深く探り、3次元への拡張への道筋を明らかにする。
+
+\section{幾何学的意味：複素平面上の回転}
+\label{sec:geometric-rotation}
+
+オイラーの公式 $e^{i\theta} = \cos\theta + i\sin\theta$ は、単なる解析的な等式ではない。
+それは、複素平面上で「回転」という幾何学的操作を、指数関数の形で完璧に記述するものである。
+本節では、この公式の幾何学的本質を明らかにし、さらに波動の記述や現代工学・情報圧縮技術への応用を探る。
+これらの応用は、オイラーの公式が単なる数学の宝石ではなく、現代科学技術の基盤であることを示す。
+
+\subsection{単位円上の軌跡と連続回転}
+
+まず、絶対値が1の複素数に注目する：
+\begin{equation}
+  e^{i\theta} = \cos\theta + i\sin\theta, \quad |e^{i\theta}| = 1.
+\end{equation}
+これは、複素平面上の原点を中心とする単位円上の点である。
+パラメータ $\theta$ を連続的に変化させると、点 $e^{i\theta}$ は単位円上を反時計回りに滑らかに回転する。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=3]
+  % 単位円
+  \draw[thick] (0,0) circle (1);
+  % 座標軸
+  \draw[->] (-1.3,0) -- (1.3,0) node[below] {実部};
+  \draw[->] (0,-1.3) -- (0,1.3) node[left] {虚部};
+  % θ=0 の点
+  \fill[red] (1,0) circle (0.03) node[above right] {$e^{i\cdot0} = 1$};
+  % θ=π/4 の点
+  \draw[->, thick, blue] (0,0) -- ({cos(45)},{sin(45)}) node[pos=1, above right] {$e^{i\pi/4}$};
+  % θ=π/2 の点
+  \draw[->, thick, green!60!black] (0,0) -- ({cos(90)},{sin(90)}) node[pos=1, above right] {$e^{i\pi/2} = i$};
+  % θ=π の点
+  \draw[->, thick, orange] (0,0) -- ({cos(180)},{sin(180)}) node[pos=0.7, above] {$e^{i\pi} = -1$};
+  \draw[->, thick, purple] (0,0) -- ({cos(270)},{sin(270)}) node[pos=0.7, above right] {$e^{i\pi3/2} = -i$};
+  % 角度弧
+  \draw[blue, dashed] (0.35,0) arc (0:45:0.35);
+  \node[blue] at (0.4,0.18) {$\theta$};
+\end{tikzpicture}
+\caption{オイラーの公式による単位円上の回転：$\theta$ を変化させると点が連続的に回転する}
+\label{fig:euler-rotation}
+\end{figure}
+
+図\ref{fig:euler-rotation}に示すように、$e^{i\theta}$ は回転群 SO(2) のすべての要素を、単一のパラメータ $\theta$ で完全にパラメトライズする。
+従来の回転行列
+\begin{equation}
+  \begin{pmatrix}
+    \cos\theta & -\sin\theta \\
+    \sin\theta & \cos\theta
+  \end{pmatrix}
+\end{equation}
+と比較すると、指数関数による表現の簡潔さが際立つ。
+この「回転の指数化」は、後述の四元数や双四元数による3次元・4次元回転の基礎となる。
+
+\subsection{波動の記述：位相と振幅の統一}
+
+オイラーの公式は、波動現象を複素数で記述する強力なツールを提供する。
+実数値の正弦波 $A \cos(kx - \omega t + \phi)$ を考えると、これを複素数で
+\begin{equation}
+  \psi(x,t) = A e^{i(kx - \omega t + \phi)} = A (\cos(kx - \omega t + \phi) + i \sin(kx - \omega t + \phi))
+\end{equation}
+と表せる。
+実際の物理量は実部 $\Re(\psi)$ を取るが、複素表現の利点は以下の通りである：
+\begin{itemize}
+  \item 位相 $\phi$ と振幅 $A$ が指数関数の引数と絶対値に分離される。
+  \item 微分演算が簡潔：$\frac{\partial}{\partial x} \psi = i k \psi$（波数 $k$ が固有値のように現れる）。
+  \item 複数の波の重ね合わせが乗算・加算で容易に扱える。
+\end{itemize}
+
+電磁波、音波、量子力学の波動関数など、あらゆる調和振動子がこの形で記述される。
+特に量子力学では、シュレーディンガー方程式の解として平面波 $\psi = e^{i(\mathbf{k}\cdot\mathbf{x} - \omega t)}$ が現れ、位相の違いが干渉現象を生む。
+オイラーの公式なくして、現代の波動物理学は成り立たないと言える。
+
+\subsection{工学応用：交流回路と信号処理}
+
+電気工学では、交流電圧 $V(t) = V_0 \cos(\omega t + \phi)$ を複素数 $\tilde{V} = V_0 e^{i(\omega t + \phi)}$ で表す（ファゼ法）。
+これにより、オームの法則 $V = I R$ が複素インピーダンス $Z = R + i(\omega L - 1/\omega C)$ で統一的に扱える。
+回路の位相差や共振条件が、複素平面上の回転として視覚的に理解できる。
+
+信号処理では、フーリエ変換
+\begin{equation}
+  F(\omega) = \int_{-\infty}^\infty f(t) e^{-i\omega t} \, dt
+\end{equation}
+が基盤である。
+ここでオイラーの公式が周波数分解を実現し、音声・画像・通信信号の解析を可能にする。
+離散フーリエ変換（DFT）とその高速版（FFT）は、デジタル信号処理の心臓部であり、現代の無線通信技術や音声認識を支えている。
+
+\subsection{情報圧縮技術への応用：JPEGとMP3}
+
+画像圧縮のJPEG規格では、離散コサイン変換（DCT）が用いられる。
+DCTはオイラーの公式の離散版（実部のみ）と見なせ、画像を周波数成分に分解して低エネルギー成分を捨てることで圧縮を実現する。
+同様に、音声圧縮のMP3は修正離散コサイン変換（MDCT）を基盤とし、人間の聴覚特性に合わせて高周波成分を削減する。
+
+これらの技術は、オイラーの公式がもたらした「回転と振動の統一」がなければ生まれなかった。
+1枚の写真や1曲の音楽が、数MBから数百KBに圧縮される奇跡の背後には、複素平面上の回転が潜んでいる。
+
+\subsection{まとめ：回転の力と次元拡張への展望}
+
+オイラーの公式は、複素平面上の回転を指数関数で表現するだけでなく、波動・信号・情報の本質を捉える普遍的な言語を提供する。
+しかし、この美しさは2次元に限定されている。
+3次元空間の回転は、複素数では不十分であり、より豊かな代数構造が必要となる。
+次章では、ハミルトンが発見した四元数が、3次元回転を同様に美しい形で記述することを見る。
+そしてその先には、時空と重力を統一する双四元数が待っている。
+オイラーの公式は、壮大な旅の第一歩にすぎない。
+
+\section{なぜ「人類の至宝」なのか}
+\label{sec:why-treasure}
+
+オイラーの公式 $e^{i\theta} = \cos\theta + i\sin\theta$（特に $\theta = \pi$ の場合 $e^{i\pi} + 1 = 0$）は、なぜこれほどまでに称賛されるのか。
+それは単に「美しい」からではなく、数学と物理学の深い統一を象徴し、人類の知の歴史に永遠の輝きを与えるからである。
+本節では、その理由を歴史的エピソードを交えながら探り、さらに数学的な不変性と計算の簡略化という決定的なアドバンテージにも光を当てる。
+
+\subsection{歴史的評価：天才たちが感動した瞬間}
+
+オイラーの公式は、1748年にレオンハルト・オイラー自身によって初めて明示的に述べられた（彼の著書『無限解析入門』において）。
+しかし、その真の価値が広く認識されたのは19世紀以降である。
+
+著名な数学者カール・フリードリヒ・ガウスは、この公式を初めて見たとき「雷に打たれたような衝撃を受けた」と語ったと伝えられる。
+ガウスは複素数を幾何学的に扱う先駆者であり、この公式が複素平面上の回転を完璧に表現することを即座に理解したのだろう。
+
+20世紀に入り、物理学者リチャード・ファインマンは自著『ファインマン物理学』でこう述べている：
+\begin{quote}
+  「数学の最も注目すべき公式は $e^{i\pi} + 1 = 0$ である。（中略）これは人類の至宝である。なぜなら、数学の異なる分野から最も重要な数を集め、加法、乗法、べき乗という最も基本的な関係で結びつけているからだ。」
+\end{quote}
+ファインマンは量子電磁力学の創始者として、この公式が量子力学の波動関数に不可欠であることを知っていた。
+
+さらに、数学者ベンジャミン・パースは「この公式を見たとき、神の存在を信じざるを得なくなった」とまで言ったという逸話がある（真偽は別として、その感動の大きさを物語る）。
+
+これらのエピソードは、オイラーの公式が単なる計算結果ではなく、知性の頂点で生まれる「驚嘆」を呼び起こすことを示している。
+
+\subsection{三つの偉大な概念の統一と数学的な不変性}
+
+オイラーの公式が「至宝」と呼ばれる本質的な理由は、以下の三つの根本的概念を一つの等式で結びつける点にある：
+\begin{itemize}
+  \item \textbf{指数成長}：$e^x$ は自然対数の底として、連続成長や複利を表す。
+  \item \textbf{円運動・振動}：$\cos\theta$ と $\sin\theta$ は三角関数として、周期現象の本質。
+  \item \textbf{虚数単位 $i$}：$i^2 = -1$ という「不可能な」数の導入が、次元を拡張し回転を可能にする。
+\end{itemize}
+
+これらが虚数単位を通じて統一される瞬間は、数学史上の奇跡である。
+実数だけでは指数関数と三角関数は別物だったが、複素数を導入することで両者が同一の解析構造を持つことが明らかになった。
+
+さらに注目すべきは、\emph{微分不変性}である。
+複素指数関数 $e^{i\theta}$ を $\theta$ について微分すると
+\begin{equation}
+  \frac{d}{d\theta} e^{i\theta} = i e^{i\theta}
+\end{equation}
+となり、形が変わらず単に $i$ 倍されるだけである。
+これは「何度微分しても本質的に同じ形を保つ」という極めて稀有な性質で、調和振動子（$\frac{d^2}{d\theta^2} e^{i\theta} = -e^{i\theta}$）の完璧な記述を可能にする。
+三角関数側からも同じ不変性が見られる：
+\begin{align}
+  \frac{d}{d\theta} (\cos\theta + i\sin\theta) &= -\sin\theta + i\cos\theta = i (\cos\theta + i\sin\theta).
+\end{align}
+この不変性が、波動方程式や量子力学の時間発展演算子 $e^{-iHt/\hbar}$ の美しさを支えている。
+
+\subsection{計算の簡略化：掛け算を角度の足し算に変えるアドバンテージ}
+
+もう一つの決定的なアドバンテージは、複素数の乗法が「回転の合成」を単純な加法に変換することである。
+二つの回転 $e^{i\theta_1}$ と $e^{i\theta_2}$ を合成すると
+\begin{equation}
+  e^{i\theta_1} \cdot e^{i\theta_2} = e^{i(\theta_1 + \theta_2)}
+\end{equation}
+となり、行列の掛け算という複雑な操作が、角度の足し算という初等的な演算に還元される。
+この簡略化は、計算量の爆発的な削減をもたらし、フーリエ解析や信号処理の高速アルゴリズム（FFT）の基盤となった。
+実数の回転行列を繰り返し掛けると三角関数の加法定理が煩雑に現れるが、複素指数関数ではすべてが指数の加法に帰着する――これがオイラーの公式の実践的な優位性である。
+
+\subsection{物理学と工学への決定的影響}
+
+歴史的に見て、オイラーの公式は単なる抽象ではなく、物理法則の記述に革命をもたらした：
+\begin{itemize}
+  \item \textbf{量子力学}：波動関数 $\psi = A e^{i(kx - \omega t)}$ はオイラーの公式そのものである。位相因子 $e^{i\phi}$ が干渉や不確定性原理の鍵。
+  \item \textbf{電磁気学}：マクスウェル方程式の解として平面波が現れ、交流回路の解析（ファゼ法）が可能に。
+  \item \textbf{フーリエ解析}：信号を周波数成分に分解する基盤。現代のデジタル信号処理、MRI、通信技術のすべてがここに依存する。
+\end{itemize}
+
+これらの応用は、18世紀の純粋数学が20-21世紀の技術革命を支えている証左である。
+
+\subsection{二重時空理論への伏線：回転の指数化の始まり}
+
+オイラーの公式は、「回転を指数関数で表現する」というアイデアの最初の成功例であり、その不変性と簡略化のアドバンテージは、後続の理論に受け継がれる。
+この考え方は、ハミルトンの四元数（3次元回転）、さらに本書で扱う双四元数（ローレンツ変換と重力の記述）へと発展する。
+複素平面上のSO(2)回転が $e^{i\theta}$ で記述されるように、3次元回転は四元数で、4次元ミンコフスキー時空の変換は双四元数で指数化される。
+
+オイラーの公式は、人類が「回転の本質」を捉えた最初の瞬間だった。
+それは同時に、重力と時空の本質に迫る長い旅の、輝かしい出発点でもある。
+
+次節では、この2次元の限界を超え、3次元空間の回転を記述する四元数へと進む。
+オイラーの至宝は、さらなる宝への道標なのである。
+
+\chapter{四元数：3次元回転の完璧な記述}
+\label{chap:quaternion}
+
+前章で見たオイラーの公式 $e^{i\theta} = \cos\theta + i\sin\theta$ は、複素平面上の2次元回転を驚くほど簡潔に表現した。
+しかし、現実の物理世界は3次元である。
+航空機の姿勢、分子の配向、コンピュータグラフィックス・・・これらすべてで必要とされるのは、3次元空間の回転を連続的かつ一意的に記述する方法だ。
+複素数ではこれが不可能だった。
+そこで登場するのが、ウィリアム・ローワン・ハミルトンが1843年に発見した\emph{四元数}である。
+四元数は、オイラーの公式の精神を3次元に拡張し、「完璧な」回転記述を実現した。
+本章では、その発見のドラマから数学的構造、そして物理的意義までを追う。
+
+\section{2次元の限界と3次元回転の難しさ}
+\label{sec:quaternion-limitation}
+
+複素数 $e^{i\theta}$ はSO(2)回転群を単一のパラメータで完全に覆う。
+しかし3次元では、回転群SO(3)は3つの独立パラメータ（オイラー角など）を持ち、しかもオイラー角表示には\emph{ジンバルロック}という特異点問題が生じる。
+回転行列を用いても、9個の成分を3つのパラメータで制約する煩雑さが残る。
+ハミルトンは「複素数のように、3次元でも乗法で回転を表現したい」と長年悩んだ。
+この難問が、四元数の発見を促した。
+
+\section{ハミルトンの発見：運河の橋での閃き}
+\label{sec:hamilton-discovery}
+
+1843年10月16日、ダブリンのロイヤル運河にかかるブローム橋を妻と散歩していたハミルトンは、突然解決を見出した。
+彼は橋の石に $i^2 = j^2 = k^2 = ijk = -1$ と刻みつけたという逸話は有名である。
+複素数（1と$i$）を拡張して、3つの虚数単位 $i,j,k$ を導入し、それらの乗法規則を
+\begin{align}
+  ij &= k, & ji &= -k, \\
+  jk &= i, & kj &= -i, \\
+  ki &= j, & ik &= -j, \\
+  i^2 &= j^2 = k^2 = -1
+\end{align}
+と定義した。
+この非可換性が、3次元回転の非可換性を完璧に捉える鍵だった。
+
+\section{四元数の定義と基本性質}
+\label{sec:quaternion-definition}
+
+四元数 $q$ は実数部と3つの虚数部からなる：
+\begin{equation}
+  q = w + xi + yj + zk, \quad w,x,y,z \in \mathbb{R}.
+\end{equation}
+共役四元数 $\bar{q} = w - xi - yj - zk$、ノルム $|q|^2 = q\bar{q} = w^2 + x^2 + y^2 + z^2$。
+単位四元数（$|q|=1$）が回転を表現する。
+
+乗法は分配法則を満たすが非可換：
+\begin{equation}
+  (w_1 + \mathbf{v}_1)(w_2 + \mathbf{v}_2) = w_1 w_2 - \mathbf{v}_1 \cdot \mathbf{v}_2 + w_1 \mathbf{v}_2 + w_2 \mathbf{v}_1 + \mathbf{v}_1 \times \mathbf{v}_2
+\end{equation}
+（ベクトル部 $\mathbf{v} = xi + yj + zk$、内積・外積で表現）。
+
+\section{純虚四元数と回転軸}
+\label{sec:pure-quaternion}
+
+純虚四元数（実部ゼロ：$u = xi + yj + zk,\ u^2 = -|u|^2$）は、単位純虚四元数 $\hat{n}$（$|\hat{n}|=1$）が回転軸を表す。
+オイラーの公式の直接的拡張として、四元数の指数関数
+\begin{equation}
+  e^{\hat{n}\theta/2} = \cos\frac{\theta}{2} + \hat{n} \sin\frac{\theta}{2}
+\end{equation}
+が単位四元数を与える。
+これが3次元回転のローター「ベルソル」である。
+
+\section{四元数による3次元回転の表現}
+\label{sec:quaternion-rotation}
+
+3次元ベクトル $\mathbf{v}$ を純虚四元数 $v = x i + y j + z k$ と同一視する。
+単位四元数 $q = \cos(\theta/2) + \hat{n} \sin(\theta/2)$ による回転は
+\begin{equation}
+  v' = q v q^{-1} = q v \bar{q}
+  \label{eq:quaternion-sandwich}
+\end{equation}
+で与えられる（サンドイッチ積）。
+この操作は：
+\begin{itemize}
+  \item 軸 $\hat{n}$ 周りの角度 $\theta$ の回転を正確に実現。
+  \item ジンバルロックがなく、すべての姿勢を一意に表現（ただし $q$ と $-q$ は同一回転）。
+  \item 回転の合成が単なる四元数の乗法：$q_2 q_1$。
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=2.5]
+  % 軸
+  \draw[->] (0,0,0) -- (1,0,0) node[anchor=north east] {$x$};
+  \draw[->] (0,0,0) -- (0,1,0) node[anchor=north west] {$y$};
+  \draw[->] (0,0,0) -- (0,0,1) node[anchor=south] {$z$};
+  % 元のベクトル（青）
+  \draw[->, thick, blue] (0,0,0) -- (1,0.5,0) node[pos=1, below right] {$\mathbf{v}$};
+  % 回転軸（赤）
+  \draw[->, thick, red] (0,0,0) -- (0,0.5,0.7) node[pos=1, above left] {$\hat{n}$};
+  % 回転後（緑）
+  \draw[->, thick, green] (0,0,0) -- (0.914156,0.636273,-0.097338);
+  \draw[->, thick, green] (0,0,0) -- (0.800536,0.758347,-0.184533);
+  \draw[->, thick, green] (0,0,0) -- (0.662592,0.862510,-0.258936);
+  \draw[->, thick, green] (0,0,0) -- (0.504516,0.945600,-0.318285);
+  \draw[->, thick, green] (0,0,0) -- (0.331110,1.005090,-0.360778);
+  \draw[->, thick, green!60!black] (0,0,0) -- (0.147643,1.039173,-0.385124) node[pos=1, left] {$\mathbf{v}'$};
+\end{tikzpicture}
+\caption{四元数による回転：軸 $\hat{n}$ 周りに連続的に $\pi/3$ 回転}
+\label{fig:quaternion-rotation}
+\end{figure}
+
+\section{なぜ「完璧」なのか：行列表示との優位性}
+\label{sec:quaternion-advantage}
+
+四元数は3×3回転行列と等価だが、以下の点で優れている：
+\begin{itemize}
+  \item パラメータ数：4個（単位制約で実質3個） vs 行列9個。
+  \item 計算効率：乗法16回 vs 行列乗算27回。
+  \item 補間（slerp）が滑らかで、コンピュータグラフィックスやロボット工学で標準。
+  \item 特異点なし、連続パスが常に存在。
+\end{itemize}
+
+\section{次元を超えるもう一つの拡張：双曲線版への道}
+\label{sec:to-biquaternion}
+
+四元数は空間回転を完璧に記述したが、時空のローレンツ変換（ブースト）は双曲線関数を必要とする。
+次章では、オイラーの公式の双曲線版 $e^{\hat{p}\phi/2} = \cosh(\phi/2) + \hat{p} \sinh(\phi/2)$ を導入し、四元数をさらに拡張した双四元数が、特殊相対性と重力を統一する鍵となることを見る。
+四元数は、二重時空理論への不可欠なステップなのである。
+
+\chapter{双曲線版オイラー公式とローレンツ変換の萌芽}
+
+\chapter{双四元数：二つの四元数の可換テンソル積}
+
+\chapter{クリフォード代数 Cl(3,1) と双四元数の同相}
+
+\part{二重時空理論の核心}
+
+\chapter{光速度一定の革命：エーテル否定から特殊相対性理論へ、そして通常時空基底との完全一致}
+
+\chapter{二重時空の構造：各粒子が持つ二つの時空}
+
+\chapter{キネマティクス：完全ローターとサンドイッチ積}
+
+\chapter{重力＝双対時空間のねじれ不整合}
+
+\chapter{慣性と重力の完全統一}
+
+\part{応用と予測}
+
+\chapter{暗黒物質不要の銀河回転曲線}
+
+\chapter{強重力場：トーション星と層状構造}
+
+\chapter{核力・原子構造・力の統一}
+
+\chapter{重力工学と未来技術}
+
+\chapter{量子重力への道と結論}
+
+\backmatter
+
+\appendix
+
+\chapter{双四元数乗法表}
+
+\chapter{Cl(3,1) 乗法表との対応}
+
+\chapter{主要数式まとめ}
+
+\chapter{参考文献・歴史的文献}
+
+\bibliographystyle{unsrt}
+\begin{thebibliography}{99}
+% ここに参考文献を記述
+\bibitem{hamilton} W. R. Hamilton, "On Quaternions; or on a new System of Imaginaries in Algebra," Philosophical Magazine, vol. 25, pp. 489-495, 1844.
+\bibitem{euler} L. Euler, "Introductio in analysin infinitorum," 1748.
+\bibitem{feynman} R. P. Feynman, "The Feynman Lectures on Physics," Vol. 1, Addison-Wesley, 1963.
+\bibitem{misner} C. W. Misner, K. S. Thorne, J. A. Wheeler, "Gravitation," W. H. Freeman, 1973.
+\bibitem{penrose} R. Penrose, "The Road to Reality: A Complete Guide to the Laws of the Universe," Jonathan Cape, 2004.
+\end{thebibliography}
+
+\end{document}
