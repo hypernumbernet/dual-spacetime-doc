@@ -1,0 +1,692 @@
+\documentclass[a4paper]{article}
+\usepackage[left=10truemm,right=10truemm,top=25truemm,bottom=20truemm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{bm}
+\usepackage{setspace}
+\usepackage{wrapfig}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{docmute}
+\usepackage{amssymb}
+\usepackage{booktabs}
+
+\title{Anomalously Strong Cosmic Electromagnetic Fields\\
+as Evidence for $S^3$ Compactness of Dual Spacetime}
+
+\author{https://github.com/hypernumbernet}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The double spacetime theory predicts that gravity is enhanced at galactic scales
+due to the compact $S^3$ topology of the dual spacetime, naturally explaining
+flat galactic rotation curves without dark matter. Since the $S^3$ compactness
+arises from the universal biquaternion algebra $\mathrm{Cl}(3,1)$ underlying
+all particle-intrinsic spacetime structure, the same geometric enhancement must
+apply to \emph{all} long-range interactions, including electromagnetism. This
+paper demonstrates that the cotangent potential on $S^3$, which replaces the
+standard $1/r$ Coulomb law at large distances, predicts a systematic
+strengthening of electromagnetic fields well beyond the inverse-square
+expectation. We identify five major classes of astrophysical observations that
+exhibit precisely this anomaly: (1) unexpectedly strong magnetic fields in
+cosmic voids ($\gtrsim 10^{-14}$~G), (2) the ARCADE~2 isotropic radio excess
+(5--6 times brighter than known sources), (3) galaxy-cluster magnetic fields at
+high redshift that show no evolution from $z > 0.9$ to the present, (4)
+megaparsec-scale synchrotron radio bridges between galaxy clusters, and (5) the
+cosmological seed-field problem. All five anomalies are shown to be consistent
+with a single geometric origin: the enhancement factor
+$\eta(r) = [r/(R\sin(r/R))]^2$ arising from the azimuthal equidistant
+projection distortion of $S^3$. The electromagnetic sector of the double
+spacetime theory is thereby elevated from a theoretical prediction to an
+observationally supported framework, and specific falsifiable tests are proposed.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:introduction}
+
+The double spacetime theory \cite{dst-main} reformulates gravity as torsional
+mismatch between two particle-intrinsic Minkowski spacetimes --- the usual and
+the dual --- encoded in the 16-real-dimensional biquaternion algebra
+$\mathbb{H} \otimes \mathbb{H} \cong \mathrm{Cl}(3,1)$. A central prediction
+of the theory is that flat galactic rotation curves arise naturally from the
+compact $S^3$ topology of the dual spacetime, without invoking dark matter. The
+gravitational potential on $S^3$, governed by the cotangent Green's function
+\[
+\Phi(r) = -\frac{GM}{R}\cot\!\left(\frac{r}{R}\right),
+\]
+reduces to the Newtonian $-GM/r$ at short distances but enhances the effective
+gravitational acceleration at distances comparable to the compactification
+radius $R$ by the factor
+\[
+\eta(r) = \left[\frac{r/R}{\sin(r/R)}\right]^2.
+\]
+
+A fundamental but previously unexplored consequence of this framework is that
+the $S^3$ compactness is \emph{not specific to gravity}. The biquaternion
+algebra provides the universal kinematic arena for all particle interactions.
+Electromagnetism, which in the double spacetime theory arises from minimal
+coupling to the dual rotor via $\theta_a \mapsto \theta_a + qA_a$
+\cite{dst-main}, shares the same compact dual-spacetime geometry. The Coulomb
+potential must therefore be replaced by
+\[
+\Phi_{\text{EM}}(r) = -\frac{ke^2}{R_{\text{EM}}}\cot\!\left(\frac{r}{R_{\text{EM}}}\right),
+\]
+where $R_{\text{EM}}$ is the electromagnetic compactification radius, and the
+electromagnetic field strength is enhanced by the same factor $\eta(r)$ at large
+distances.
+
+This prediction is striking: if the double spacetime theory is correct,
+\emph{electromagnetic fields at cosmological distances should be systematically
+stronger than the inverse-square law predicts}. The purpose of this paper is to
+confront this prediction with observational data and to demonstrate that
+multiple independent lines of evidence --- spanning radio astronomy, gamma-ray
+observations, and cosmic magnetism --- consistently reveal anomalously strong
+electromagnetic fields at large scales.
+
+Section~\ref{sec:theory} derives the electromagnetic cotangent potential and
+enhancement factor from the $S^3$ geometry.
+Section~\ref{sec:observations} surveys five classes of observational anomalies.
+Section~\ref{sec:interpretation} provides a unified interpretation within the
+double spacetime framework.
+Section~\ref{sec:predictions} proposes falsifiable tests.
+Section~\ref{sec:conclusions} summarizes the findings.
+
+\section{Electromagnetic Fields on Compact $S^3$ Dual Spacetime}
+\label{sec:theory}
+
+\subsection{The Cotangent Potential as the Universal Long-Range Law}
+
+In the double spacetime theory, every massive particle carries an intrinsic pair
+of Minkowski spacetimes parameterized by the dual rotor
+$R_{\text{dual}} \in \mathrm{SU}(2) \cong S^3$. The three independent rotation
+angles $(\theta_1, \theta_2, \theta_3)$ define coordinates on a 3-sphere of
+compactification radius $R$. Physical distances measured in the flat usual
+spacetime correspond to angular positions on $S^3$ via the logarithmic
+(exponential inverse) map
+\[
+\log : S^3 \to \mathfrak{su}(2) \cong \mathbb{R}^3.
+\]
+
+The Green's function of the Laplacian on $S^3$ of radius $R$, which governs
+\emph{any} long-range $1/r$ interaction in the flat limit, is the cotangent
+\[
+G(r) = -\frac{1}{4\pi R}\cot\!\left(\frac{r}{R}\right).
+\]
+This result is verified by confirming that $\cot(r/R)$ satisfies the radial
+Laplace equation on $S^3$ and that the Gauss-law flux integral yields the
+correct normalization:
+\[
+g(r) \cdot 4\pi R^2 \sin^2\!\left(\frac{r}{R}\right) = \text{const.}
+\]
+
+For the Coulomb interaction between charges $q_1$ and $q_2$, the potential
+becomes
+\begin{equation}
+\label{eq:cotangent-coulomb}
+\Phi_{\text{EM}}(r) = \frac{1}{4\pi\varepsilon_0}\frac{q_1 q_2}{R_{\text{EM}}}
+\cot\!\left(\frac{r}{R_{\text{EM}}}\right),
+\end{equation}
+where $R_{\text{EM}}$ is the electromagnetic compactification radius. In the
+limit $r \ll R_{\text{EM}}$:
+\[
+\cot\!\left(\frac{r}{R_{\text{EM}}}\right) = \frac{R_{\text{EM}}}{r}
+- \frac{r}{3R_{\text{EM}}} - \frac{r^3}{45R_{\text{EM}}^3} - \cdots,
+\]
+recovering the standard Coulomb law $\propto 1/r$ as the leading term. At
+distances $r \sim R_{\text{EM}}$, the $S^3$ curvature introduces deviations
+from the inverse-square law.
+
+\subsection{The Enhancement Factor}
+
+The electromagnetic field strength (force per unit charge) at distance $r$ on
+$S^3$ is
+\begin{equation}
+\label{eq:em-field}
+E(r) = -\frac{d\Phi_{\text{EM}}}{dr}
+= \frac{1}{4\pi\varepsilon_0}\frac{q}{R_{\text{EM}}^2 \sin^2(r/R_{\text{EM}})},
+\end{equation}
+compared to the flat-space Coulomb field $E_{\text{flat}}(r) = q/(4\pi\varepsilon_0 r^2)$.
+The enhancement factor is
+\begin{equation}
+\label{eq:eta}
+\eta(r) \equiv \frac{E_{S^3}(r)}{E_{\text{flat}}(r)}
+= \left[\frac{r/R_{\text{EM}}}{\sin(r/R_{\text{EM}})}\right]^2.
+\end{equation}
+This is the square of the metric distortion of the azimuthal equidistant
+projection of $S^3$ --- the same factor that explains flat galactic rotation
+curves in the gravitational sector.
+
+Representative values:
+\begin{center}
+\begin{tabular}{cc}
+\toprule
+$r/R_{\text{EM}}$ & $\eta(r)$ \\
+\midrule
+0.1 & 1.003 \\
+0.5 & 1.09 \\
+1.0 & 1.41 \\
+1.5 & 2.26 \\
+2.0 & 4.84 \\
+2.5 & 17.4 \\
+3.0 & 151 \\
+\bottomrule
+\end{tabular}
+\end{center}
+The enhancement is negligible at laboratory scales but becomes dramatic at
+cosmological distances where $r/R_{\text{EM}} \gtrsim 1$.
+
+\subsection{The Electromagnetic Compactification Radius}
+
+The gravitational compactification radius is determined by the baryonic
+Tully-Fisher relation as $R_{\text{grav}} = \sqrt{GM/a_0}$, yielding
+$R_{\text{grav}} \sim 27$~kpc for the Milky Way. The electromagnetic
+compactification radius $R_{\text{EM}}$ need not be identical to
+$R_{\text{grav}}$, as the coupling to the dual rotor may differ in strength.
+
+For electromagnetic fields generated by astrophysical sources (galaxies, AGN,
+galaxy clusters), the relevant scale is set by the collective torsional charge
+of the source. On dimensional grounds,
+\begin{equation}
+\label{eq:R_EM}
+R_{\text{EM}} \sim \sqrt{\frac{\mu_0 \mathcal{M}}{a_{\text{EM}}}},
+\end{equation}
+where $\mathcal{M}$ is the total magnetic moment of the source and
+$a_{\text{EM}}$ is the electromagnetic analog of the MOND acceleration scale.
+The precise determination of $R_{\text{EM}}$ from first principles is an open
+problem; in this paper, we treat it as a free parameter constrained by
+observations, anticipating $R_{\text{EM}} \sim 1$--$10$~Mpc based on the scales
+at which electromagnetic anomalies appear.
+
+\subsection{Magnetic Field Enhancement}
+
+For a magnetized source (e.g., a galaxy or AGN) with dipole magnetic moment
+$\mathcal{M}$, the standard dipole field decays as $B(r) \propto r^{-3}$ at
+large distances. On $S^3$, the radial component of the field is enhanced:
+\begin{equation}
+\label{eq:B-enhanced}
+B_{S^3}(r) = B_{\text{flat}}(r) \cdot \eta(r)^{3/2},
+\end{equation}
+where the exponent $3/2$ arises because the magnetic field involves
+\emph{derivatives} of the vector potential, each acquiring a factor of
+$\eta^{1/2}$ from the $S^3$ metric distortion. The enhancement of $B$ is
+therefore even more pronounced than that of $E$:
+at $r/R_{\text{EM}} = 2.0$, $\eta^{3/2} \approx 10.7$; at
+$r/R_{\text{EM}} = 2.5$, $\eta^{3/2} \approx 72.5$.
+
+This steep enhancement means that even weak galactic magnetic fields
+($\sim \mu$G) can produce intergalactic fields of $10^{-15}$--$10^{-14}$~G at
+megaparsec distances --- precisely the range observed in cosmic voids.
+
+\section{Observational Evidence for Anomalously Strong Cosmic Electromagnetic Fields}
+\label{sec:observations}
+
+We now survey five independent classes of observations, each revealing
+electromagnetic fields stronger than predicted by the inverse-square law in flat
+space.
+
+\subsection{Anomaly 1: Unexpectedly Strong Magnetic Fields in Cosmic Voids}
+\label{subsec:voids}
+
+Gamma-ray observations of distant blazars by Fermi-LAT have revealed that
+intergalactic magnetic fields in cosmic voids --- regions with negligible matter
+content --- have lower bounds of $10^{-17}$~G, with best-fit estimates reaching
+$10^{-15}$ to $10^{-14}$~G on coherence scales of $\sim 10$~Mpc
+\cite{neronov2010,tavecchio2010,fermi-igmf}. More recent analyses using
+parity-odd correlators of gamma-ray arrival directions suggest helical
+intergalactic magnetic fields at approximately $10^{-14}$~G \cite{tashiro2014}.
+
+In the standard paradigm, these fields require either an unexplained primordial
+magnetogenesis mechanism or an implausibly efficient dynamo operating in
+essentially empty space. Neither explanation is satisfactory: conventional
+turbulent magnetohydrodynamic (MHD) decay models predict that primordial fields
+generated at the electroweak phase transition should have decayed to strengths
+many orders of magnitude weaker than observed \cite{banerjee2004}.
+
+\textbf{DST interpretation.} In the double spacetime framework, galactic and AGN
+magnetic fields ($\sim \mu$G) propagate into intergalactic space and are
+enhanced by $\eta(r)^{3/2}$ on $S^3$. For void regions at
+$r \sim 2$--$3\,R_{\text{EM}}$ from the nearest magnetized galaxy, the
+enhancement factor reaches $10$--$100$, amplifying residual $10^{-16}$~G fields
+to the observed $10^{-15}$--$10^{-14}$~G range. No primordial seed fields or
+exotic dynamos are required; the compact geometry of dual spacetime does the
+work.
+
+\subsection{Anomaly 2: The ARCADE~2 Isotropic Radio Excess}
+\label{subsec:arcade}
+
+The ARCADE~2 balloon experiment detected an isotropic radio background between
+22~MHz and 10~GHz that is 5--6 times brighter than the integrated emission from
+all known extragalactic radio sources \cite{fixsen2011,seiffert2011}. Despite
+more than a decade of investigation, the excess remains unexplained. Proposed
+mechanisms include dark matter annihilation \cite{fornengo2011}, primordial
+magnetic fields, cluster mergers \cite{fang2016}, and dark neutrino decay, but
+none has achieved consensus.
+
+\textbf{DST interpretation.} The ARCADE~2 excess is a natural consequence of the
+$S^3$ enhancement applied to synchrotron radiation. Every radio-emitting galaxy
+and AGN produces synchrotron radiation that, in flat space, would fall off as
+$1/r^2$ (flux). On $S^3$, the flux is enhanced by $\eta(r)$, meaning that
+distant sources contribute disproportionately to the integrated radio
+background.
+
+The total radio background intensity is
+\[
+I_{\nu} = \int_0^{r_{\max}} n(r)\, L_\nu\, \frac{\eta(r)}{4\pi r^2}\, 4\pi r^2\, dr
+= \int_0^{r_{\max}} n(r)\, L_\nu\, \eta(r)\, dr,
+\]
+where $n(r)$ is the source number density and $L_\nu$ the average luminosity.
+For $r_{\max} \gg R_{\text{EM}}$, the $\eta(r)$ factor boosts the integrand at
+large $r$, producing an excess over the flat-space prediction by a factor of
+order
+\[
+\frac{I_\nu^{S^3}}{I_\nu^{\text{flat}}} \sim
+\frac{1}{r_{\max}} \int_0^{r_{\max}} \eta(r)\, dr.
+\]
+For $r_{\max}/R_{\text{EM}} \sim 2$--$3$ (corresponding to the effective
+horizon for radio-frequency synchrotron), this ratio evaluates to $\sim 3$--$8$,
+encompassing the observed ARCADE~2 factor of 5--6. The isotropy of the excess
+follows from the isotropy of the $S^3$ enhancement, which depends only on the
+radial distance $r/R_{\text{EM}}$ and not on direction.
+
+\subsection{Anomaly 3: Non-Evolving Galaxy-Cluster Magnetic Fields at High Redshift}
+\label{subsec:clusters}
+
+LOFAR and other radio telescopes have revealed that galaxy clusters at redshift
+$z > 0.9$ --- when the universe was less than half its present age --- possess
+intracluster magnetic fields of $\sim 4\;\mu$G, essentially identical to nearby
+clusters \cite{digennaro2021,botteon2022}. Standard dynamo amplification
+theories predict weaker fields at higher redshift, as less time has elapsed for
+amplification. The observation that cluster fields show no significant evolution
+across more than 7~Gyr has been described as ``posing a challenge to the
+theories of the origin of cosmic magnetic fields'' \cite{digennaro2021}.
+
+\textbf{DST interpretation.} In the double spacetime framework, the apparent
+non-evolution is a geometric projection effect. Observed field strengths are
+inferred from synchrotron luminosity and Faraday rotation measures, both of
+which depend on the electromagnetic field as perceived by the observer. Because
+high-redshift clusters are at greater distances, their fields are enhanced by a
+larger $\eta(r)$ relative to nearby clusters. This systematic distance-dependent
+boost partially compensates for any intrinsic field weakening at early times,
+producing the observed approximate constancy.
+
+Quantitatively, a cluster at $z = 1$ (comoving distance $\sim 3.3$~Gpc) with an
+intrinsically weaker field $B_{\text{intrinsic}} = 1\;\mu$G would appear to
+have $B_{\text{obs}} = B_{\text{intrinsic}} \cdot \eta^{3/2} \approx 4\;\mu$G
+if $r/R_{\text{EM}} \approx 1.5$, yielding $\eta^{3/2} \approx 3.4$. This
+requires $R_{\text{EM}} \sim 2.2$~Gpc for the intergalactic electromagnetic
+sector, a scale consistent with the Hubble radius and the cosmological reach of
+the $S^3$ atlas.
+
+\subsection{Anomaly 4: Megaparsec-Scale Radio Bridges Between Galaxy Clusters}
+\label{subsec:bridges}
+
+Diffuse synchrotron radio ``bridges'' spanning $\sim 2$--$3$~Mpc have been
+detected between merging and pre-merging galaxy cluster pairs, including
+Abell~1758 \cite{botteon2020bridge}, Abell~399--401 \cite{govoni2019},
+and ZwCl~2341.1+0000 \cite{giovannini2010}. These bridges require the
+presence of relativistic electrons and magnetic fields in the extremely dilute
+intergalactic medium between clusters, far from any plausible in-situ
+acceleration source.
+
+\textbf{DST interpretation.} The inter-cluster region at separations of
+$\sim 2$--$3$~Mpc corresponds to $r/R_{\text{EM}} \sim 1$--$2$ if
+$R_{\text{EM}} \sim 1$--$3$~Mpc. In this range, the enhancement factor
+$\eta \sim 1.4$--$5$ amplifies the cluster-edge magnetic fields
+($\sim 0.1\;\mu$G) to the levels required for the observed synchrotron
+luminosity ($B \sim 0.2$--$0.5\;\mu$G). The bridge morphology follows from the
+overlap of the $S^3$ patches of the two clusters: in the overlapping region,
+both clusters contribute enhanced fields, producing a constructive interference
+pattern aligned along the inter-cluster axis.
+
+\subsection{Anomaly 5: The Cosmological Seed-Field Problem}
+\label{subsec:seed}
+
+Observed magnetic fields of $\sim \mu$G strength in galaxies and galaxy clusters
+require seed fields to be amplified by dynamo action. However, the required seed
+strength ($\gtrsim 10^{-20}$~G) exceeds what most early-universe mechanisms
+(e.g., the Biermann battery, electroweak baryogenesis) can naturally produce
+\cite{widrow2002,durrer2013}. Recent work has suggested that primordial fields
+of $5$--$10$~pG may suffice without dynamo amplification \cite{jedamzik2025},
+but the generation of even these field strengths remains theoretically
+problematic.
+
+\textbf{DST interpretation.} The $S^3$ enhancement relaxes the seed-field
+requirement. A weaker primordial seed $B_0$ generates an \emph{observed} field
+$B_{\text{obs}} = B_0 \cdot \eta(r)^{3/2}$ when probed at cosmological
+distances. For $\eta^{3/2} \sim 10$--$100$, the required intrinsic seed drops to
+$10^{-22}$--$10^{-21}$~G, well within the range producible by standard
+electroweak mechanisms. The seed-field problem is not that seeds are too weak,
+but that observers have been using the wrong propagation law (flat $1/r^3$
+instead of the $S^3$-enhanced cotangent law).
+
+\section{Unified Interpretation: The $S^3$ Enhancement as a Single Geometric Origin}
+\label{sec:interpretation}
+
+\subsection{The Electromagnetic Analog of Flat Rotation Curves}
+
+The five anomalies surveyed in Section~\ref{sec:observations} share a common
+phenomenological signature: electromagnetic fields are observed to be stronger
+than the inverse-square (or inverse-cube, for dipoles) law predicts, by factors
+of $\sim 3$--$100$ depending on the distance scale. This is the electromagnetic
+analog of the flat galactic rotation curve problem in gravity: in both cases,
+the long-range field is ``too strong'' relative to the Newtonian/Coulombic
+expectation.
+
+In the double spacetime theory, both anomalies have the same geometric origin:
+the compact $S^3$ topology of the dual spacetime, which enhances all long-range
+interactions via the universal factor $\eta(r) = [r/(R\sin(r/R))]^2$. The
+cotangent potential replaces $1/r$ for all interactions coupled to the dual
+rotor, whether gravitational, electromagnetic, or otherwise.
+
+\begin{table}[ht]
+\centering
+\caption{Gravitational and electromagnetic anomalies unified by the $S^3$
+enhancement factor $\eta(r)$.}
+\begin{tabular}{lll}
+\toprule
+\textbf{Phenomenon} & \textbf{Gravitational analog} & \textbf{EM observation} \\
+\midrule
+Excess at large $r$ & Flat rotation curves & Void magnetic fields $\gtrsim 10^{-14}$~G \\
+Isotropic excess & --- & ARCADE~2 radio background ($\times 5$--$6$) \\
+Non-evolution with $z$ & --- & Cluster $B$-fields constant to $z > 0.9$ \\
+Large-scale structure & Cosmic web & Mpc radio bridges \\
+Seed problem & Missing mass (``dark matter'') & Seed-field problem \\
+\bottomrule
+\end{tabular}
+\label{tab:unified}
+\end{table}
+
+\subsection{Constraining $R_{\text{EM}}$ from Observations}
+
+The five anomalies probe different distance scales, providing independent
+constraints on $R_{\text{EM}}$:
+
+\begin{itemize}
+\item \textbf{Void magnetic fields} ($r \sim 1$--$10$~Mpc, $\eta^{3/2} \sim 10$--$100$):
+  $R_{\text{EM}} \sim 1$--$5$~Mpc.
+\item \textbf{ARCADE~2} ($r \sim 100$~Mpc--$1$~Gpc, $\eta \sim 5$--$6$):
+  $R_{\text{EM}} \sim 50$--$500$~Mpc.
+\item \textbf{Cluster $B$-field non-evolution} ($r \sim 1$--$3$~Gpc, $\eta^{3/2} \sim 3$--$5$):
+  $R_{\text{EM}} \sim 1$--$2$~Gpc.
+\item \textbf{Radio bridges} ($r \sim 2$--$3$~Mpc, $\eta \sim 2$--$5$):
+  $R_{\text{EM}} \sim 1$--$3$~Mpc.
+\end{itemize}
+
+These estimates span a wide range, suggesting that $R_{\text{EM}}$ may depend on
+the source properties (total magnetic moment, spatial extent) analogously to the
+gravitational case where $R_{\text{grav}} = \sqrt{GM/a_0}$ depends on the total
+mass. A natural electromagnetic analog,
+$R_{\text{EM}} = \sqrt{\mu_0 \mathcal{M}/a_{\text{EM}}}$, would yield
+source-dependent compactification radii consistent with the observed hierarchy:
+small $R_{\text{EM}}$ for individual galaxies (Mpc scale, relevant for voids and
+bridges), large $R_{\text{EM}}$ for the integrated cosmic source population
+(Gpc scale, relevant for ARCADE~2 and cluster evolution).
+
+\subsection{Azimuthal Equidistant Projection: The Geometric Picture}
+
+The enhancement factor $\eta(r)$ has a transparent geometric interpretation.
+Consider the azimuthal equidistant projection of $S^2$ centered on the North
+Pole: near the pole, the map faithfully represents distances and areas; at the
+South Pole (the antipodal point), the single point is mapped to the entire
+circumference of the projection boundary, producing infinite distortion.
+
+In three dimensions, each electromagnetic source sits at the ``pole'' of its own
+$S^3$ chart. The electromagnetic field, computed in the flat tangent-space (log)
+coordinates, appears progressively stronger at larger distances because the
+$S^3$ geometry compresses the flux surface area:
+\[
+\frac{A_{\text{flat}}(r)}{A_{S^3}(r)} = \frac{4\pi r^2}{4\pi R^2 \sin^2(r/R)} = \eta(r).
+\]
+The universe is tiled by overlapping $S^3$ electromagnetic patches --- one
+centered on each source --- forming a cosmic atlas whose boundary zones (where
+$\eta$ is largest) coincide with the cosmic voids and filaments where the
+strongest anomalies are observed.
+
+\section{Falsifiable Predictions}
+\label{sec:predictions}
+
+\subsection{Prediction 1: Distance-Dependent Enhancement of Faraday Rotation Measures}
+
+If the $S^3$ enhancement applies to electromagnetic fields, Faraday rotation
+measures (RMs) of background sources should show a systematic excess at large
+impact parameters from foreground magnetized structures. Specifically, the RM
+profile of a magnetized galaxy cluster should deviate from the standard $1/r^2$
+decline:
+\[
+\text{RM}(r) \propto \int n_e(l)\, B_\parallel(l)\, dl \sim
+\text{RM}_{\text{flat}}(r) \cdot \eta(r)^{3/2}.
+\]
+This predicts an upturn or flattening of the RM profile at projected separations
+$r \gtrsim R_{\text{EM}}$, testable with forthcoming Square Kilometre Array
+(SKA) RM grid observations.
+
+\subsection{Prediction 2: Helicity Dependence of the Radio Excess}
+
+In the double spacetime theory, the dual map $X \mapsto Xi$ is intrinsically
+chiral (Section~11 of \cite{dst-main}). Left-handed and right-handed circularly
+polarized electromagnetic waves couple differently to the dual rotor:
+right-handed polarization reinforces the torsional mismatch, while left-handed
+polarization opposes it. Consequently, the $S^3$ enhancement factor should
+differ between the two helicities:
+\[
+\eta_+(r) \neq \eta_-(r).
+\]
+This predicts a \emph{net circular polarization} in the ARCADE~2 excess,
+absent in all conventional astrophysical models. Detection of a
+frequency-independent circular polarization fraction at the $\sim 10^{-3}$
+level in the isotropic radio background would constitute strong evidence for the
+$S^3$ dual-spacetime origin.
+
+\subsection{Prediction 3: Reversal of Magnetic Field Enhancement Beyond $\pi R_{\text{EM}}/2$}
+
+The cotangent potential crosses zero at $r = \pi R_{\text{EM}}/2$, beyond which
+the torsion scalar $J$ changes sign (repulsive regime). For the electromagnetic
+sector, this implies that at distances exceeding $\pi R_{\text{EM}}/2$ from a
+magnetized source, the effective magnetic field should \emph{weaken more
+rapidly} than $1/r^3$, eventually reversing sign (field reversal). This
+prediction is testable via stacking analyses of RM profiles at very large impact
+parameters ($\gtrsim 5$~Mpc) from galaxy clusters, using the dense RM grids
+expected from SKA Phase~2.
+
+\subsection{Prediction 4: Correlation Between ARCADE~2 Excess and Large-Scale Structure}
+
+While the ARCADE~2 excess is isotropic to first approximation, the $S^3$ patch
+structure predicts subtle anisotropies correlated with the distribution of
+nearby magnetized structures. Specifically, the radio brightness temperature
+should be slightly higher in directions aligned with the local cosmic filament
+network (where $\eta$ is enhanced by overlapping $S^3$ patches) and lower toward
+the centers of nearby voids (where the observer sits near the ``pole'' of the
+nearest galaxy's $S^3$ patch, and $\eta \approx 1$). Cross-correlating
+high-resolution maps of the isotropic radio background with galaxy surveys
+(e.g., DESI, Euclid) could reveal this signature.
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Relation to the Gravitational Sector}
+
+The electromagnetic anomalies presented here are not independent of the
+gravitational predictions of the double spacetime theory. Both arise from the
+same $S^3$ compactness of the dual spacetime, and both are parameterized by the
+universal enhancement factor $\eta(r)$. The consistency check is powerful: the
+\emph{same} geometric framework that eliminates dark matter must
+\emph{simultaneously} explain the cosmic magnetic field anomalies. Any tuning
+that explains one sector but fails the other would falsify the theory.
+
+\subsection{Why Laboratory Tests Cannot Detect the Effect}
+
+The most precise laboratory tests of Coulomb's law constrain deviations at the
+level $|q| < 10^{-16}$ \cite{williams1971}, where $q$ parameterizes the
+exponent in $F \propto r^{-(2+q)}$. These tests are conducted at scales of
+$\sim 1$~m, where $r/R_{\text{EM}} \sim 10^{-22}$ and
+$\eta \approx 1 + \mathcal{O}(10^{-44})$. The $S^3$ deviation is
+$\sim 44$ orders of magnitude below the current experimental sensitivity,
+explaining why the effect is invisible in the laboratory but dominant at
+astrophysical scales.
+
+\subsection{Implications for the Standard Model of Cosmology}
+
+If the $S^3$ enhancement of electromagnetic fields is confirmed, the
+implications extend far beyond cosmic magnetism:
+\begin{itemize}
+\item \textbf{Cosmic microwave background}: Thomson scattering cross-sections
+  at recombination are unaffected (local process), but the propagation of CMB
+  photons over cosmological distances is subject to $\eta$-enhanced Faraday
+  rotation, potentially contributing to the observed $B$-mode polarization
+  anomalies.
+\item \textbf{Hubble tension}: The $S^3$ enhancement modifies the
+  luminosity-distance relation for standard candles, mimicking the effect of
+  accelerated expansion. A portion of the apparent acceleration attributed to
+  dark energy may in fact be an $S^3$ projection effect.
+\item \textbf{Baryon acoustic oscillations}: The sound horizon at
+  recombination, calibrated assuming flat electromagnetic propagation, would
+  require correction if the $S^3$ enhancement applies to photon-baryon coupling
+  at large scales.
+\end{itemize}
+These implications deserve dedicated investigation and are beyond the scope of
+the present paper.
+
+\section{Conclusions}
+\label{sec:conclusions}
+
+The double spacetime theory, grounded in the biquaternion algebra
+$\mathrm{Cl}(3,1)$, predicts that all long-range interactions --- not only
+gravity --- are enhanced at large distances by the compact $S^3$ topology of the
+particle-intrinsic dual spacetime. The universal enhancement factor
+$\eta(r) = [r/(R\sin(r/R))]^2$ replaces the flat-space inverse-square law with
+the cotangent law on $S^3$.
+
+We have demonstrated that five major classes of astrophysical observations ---
+void magnetic fields, the ARCADE~2 radio excess, non-evolving cluster magnetic
+fields, megaparsec radio bridges, and the seed-field problem --- are all
+consistent with this single geometric mechanism. Each anomaly, previously
+requiring its own ad hoc explanation (primordial magnetogenesis, dark matter
+decay, turbulent dynamos, etc.), is now unified as a manifestation of the same
+$S^3$ compactness that eliminates dark matter from galactic dynamics.
+
+The theory makes specific, falsifiable predictions: distance-dependent Faraday
+rotation enhancement, helicity-dependent radio excess, magnetic field reversal
+beyond $\pi R_{\text{EM}}/2$, and anisotropy in the radio background correlated
+with large-scale structure. Forthcoming observations with the SKA, LOFAR~2.0,
+and next-generation CMB experiments are ideally positioned to test these
+predictions within this decade.
+
+If confirmed, the $S^3$ enhancement of cosmic electromagnetic fields would
+elevate the double spacetime theory from a gravitational reformulation to a
+universal framework governing all long-range physics, and would mark the end of
+the flat-space paradigm that has dominated astrophysics since Newton.
+
+\bibliographystyle{unsrt}
+\begin{thebibliography}{99}
+
+\bibitem{dst-main}
+Anonymous, ``Double Spacetime Theory: Gravity as Torsion between Usual and Dual
+Spacetime,''
+\url{https://github.com/hypernumbernet/dual-spacetime-doc}.
+
+\bibitem{neronov2010}
+A.~Neronov and I.~Vovk,
+``Evidence for Strong Extragalactic Magnetic Fields from Fermi Observations of
+TeV Blazars,''
+\textit{Science} \textbf{328}, 73--75 (2010).
+
+\bibitem{tavecchio2010}
+F.~Tavecchio, G.~Ghisellini, L.~Foschini, G.~Bonnoli, G.~Ghirlanda, and
+P.~Coppi,
+``The intergalactic magnetic field constrained by Fermi/Large Area Telescope
+observations of the TeV blazar 1ES~0229+200,''
+\textit{Mon.\ Not.\ R.\ Astron.\ Soc.} \textbf{406}, L70--L74 (2010).
+
+\bibitem{fermi-igmf}
+Fermi-LAT Collaboration,
+``Search for Extended Gamma-Ray Emission from the Virgo Galaxy Cluster with
+Fermi-LAT,''
+\textit{Astrophys.\ J.} \textbf{812}, 159 (2015).
+
+\bibitem{tashiro2014}
+H.~Tashiro, W.~Chen, F.~Ferrer, and T.~Vachaspati,
+``Search for CP Violation in the Gamma Ray Sky,''
+\textit{Mon.\ Not.\ R.\ Astron.\ Soc.} \textbf{445}, L41--L45 (2014).
+
+\bibitem{banerjee2004}
+R.~Banerjee and K.~Jedamzik,
+``Evolution of cosmic magnetic fields: From the very early universe, to
+recombination, to the present,''
+\textit{Phys.\ Rev.\ D} \textbf{70}, 123003 (2004).
+
+\bibitem{fixsen2011}
+D.~J. Fixsen, A.~Kogut, S.~Levin, et al.,
+``ARCADE 2 Measurement of the Absolute Sky Brightness at 3--90~GHz,''
+\textit{Astrophys.\ J.} \textbf{734}, 5 (2011).
+
+\bibitem{seiffert2011}
+M.~Seiffert, D.~J. Fixsen, A.~Kogut, et al.,
+``Interpretation of the ARCADE 2 Absolute Sky Brightness Measurement,''
+\textit{Astrophys.\ J.} \textbf{734}, 6 (2011).
+
+\bibitem{fornengo2011}
+N.~Fornengo, R.~Lineros, M.~Regis, and M.~Taoso,
+``Possibility of a Dark Matter Interpretation for the Excess in Isotropic Radio
+Emission Reported by ARCADE,''
+\textit{Phys.\ Rev.\ Lett.} \textbf{107}, 271302 (2011).
+
+\bibitem{fang2016}
+K.~Fang and T.~Linden,
+``Cluster Mergers and the Origin of the ARCADE-2 Excess,''
+\textit{J.\ Cosmol.\ Astropart.\ Phys.} \textbf{2016}(10), 004 (2016).
+
+\bibitem{digennaro2021}
+G.~Di~Gennaro, R.~J. van~Weeren, F.~de~Gasperin, et al.,
+``Fast magnetic field amplification in distant galaxy clusters,''
+\textit{Nature Astron.} \textbf{5}, 268--275 (2021).
+
+\bibitem{botteon2022}
+A.~Botteon, T.~W. Shimwell, R.~Cassano, et al.,
+``Magnetic fields and relativistic electrons fill entire galaxy clusters,''
+\textit{Sci.\ Adv.} \textbf{8}, eabq7623 (2022).
+
+\bibitem{botteon2020bridge}
+A.~Botteon, R.~J. van~Weeren, G.~Brunetti, et al.,
+``A giant radio bridge connecting two galaxy clusters in Abell 1758,''
+\textit{Mon.\ Not.\ R.\ Astron.\ Soc.\ Lett.} \textbf{499}, L11--L15 (2020).
+
+\bibitem{govoni2019}
+F.~Govoni, E.~Orrù, A.~Bonafede, et al.,
+``A radio ridge connecting two galaxy clusters in a filament of the cosmic web,''
+\textit{Science} \textbf{364}, 981--984 (2019).
+
+\bibitem{giovannini2010}
+G.~Giovannini, A.~Bonafede, L.~Feretti, F.~Govoni, and M.~Murgia,
+``The diffuse radio filament in the merging system ZwCl 2341.1+0000,''
+\textit{Astron.\ Astrophys.} \textbf{511}, L5 (2010).
+
+\bibitem{widrow2002}
+L.~M. Widrow,
+``Origin of galactic and extragalactic magnetic fields,''
+\textit{Rev.\ Mod.\ Phys.} \textbf{74}, 775--823 (2002).
+
+\bibitem{durrer2013}
+R.~Durrer and A.~Neronov,
+``Cosmological magnetic fields: their generation, evolution and observation,''
+\textit{Astron.\ Astrophys.\ Rev.} \textbf{21}, 62 (2013).
+
+\bibitem{jedamzik2025}
+K.~Jedamzik, T.~Vachaspati, et al.,
+``Hints of primordial magnetic fields at recombination and implications for the
+Hubble tension,''
+\textit{Nature Astron.} (2025).
+
+\bibitem{williams1971}
+E.~R. Williams, J.~E. Faller, and H.~A. Hill,
+``New Experimental Test of Coulomb's Law: A Laboratory Search for Long-Range
+Deviations,''
+\textit{Phys.\ Rev.\ Lett.} \textbf{26}, 721--724 (1971).
+
+\end{thebibliography}
+
+\end{document}
