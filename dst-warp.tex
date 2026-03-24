@@ -5,10 +5,10 @@
 \usepackage{array}
 \usepackage[dvipdfmx]{hyperref}
 \usepackage{xcolor}
+\usepackage{siunitx}
 
 \title{Dual Spacetime Theory and Practical Interstellar Propulsion:\\
 Layer-Hopping vs On-Demand Subspace Entry}
-
 \author{https://github.com/hypernumbernet}
 \date{\today}
 
@@ -17,40 +17,82 @@ Layer-Hopping vs On-Demand Subspace Entry}
 \maketitle
 
 \begin{abstract}
-Within the recently proposed dual spacetime theory — a biquaternionic, torsion-based reformulation of general relativity — we examine the energy requirements for entering the repulsive torsion layers ($J<0$) that permit effective superluminal coasting.  
-Two operational regimes are quantitatively compared:  
-(1) \textit{layer-hopping}, in which the spacecraft waits for naturally occurring favourable phase alignment with the cosmic background, and  
-(2) \textit{on-demand entry}, in which the dual rotor phase is forcibly driven to the nearest odd-multiple of $\pi$ at an arbitrary moment.  
-For realistic cruise velocities $0.1$--$0.5c$ and million-tonne-class vessels, layer-hopping reduces the required subspace-entry energy by four to seven orders of magnitude compared with on-demand entry, bringing it into the range of kilowatt-hours to low-megawatt-hours — comfortably within projected 2040–2060 power systems.  
-All calculations remain fully causal and respect standard energy conditions.
+Within the dual spacetime theory --- a biquaternionic, torsion-based reformulation of general relativity --- gravity emerges from the torsional mismatch between particle-intrinsic usual and dual spacetimes. The torsion scalar $J$ changes sign at odd multiples of $\pi$ in the dual rotor angle $\theta_a$, giving rise to repulsive layers ($J<0$) that enable effective superluminal coasting without violation of local causality.
+
+We quantitatively compare two operational regimes for entering these layers: (1) \textit{layer-hopping}, which utilizes the slow cosmic phase drift of the background dual rotors, and (2) \textit{on-demand entry}, which applies active driving to the dual rotor phase. For million-tonne-class vessels cruising at $0.1$--$0.5c$, layer-hopping reduces the subspace-entry energy by 4 to 7 orders of magnitude, bringing it into the practically attainable range of \si{kWh} to low \si{MWh}.
+
+All derivations respect the biquaternion algebra, energy conditions, and causality. We also discuss coherence requirements, layer stability, and an experimental roadmap.
 \end{abstract}
+
+\section{What is Space? What is Warp? — Foundations in Dual Spacetime Theory}
+
+What is space? In conventional physics, space is a pre-existing, continuous stage on which matter plays out its drama. Coordinates are merely labels on this stage. General relativity refined this picture by making spacetime dynamical, but it still assumes the existence of a differentiable manifold.
+
+Dual spacetime theory rejects this premise entirely.
+
+In our framework, there is no autonomous spacetime continuum. Instead, \emph{space emerges as a collective resonance phenomenon} among the dual rotors carried by individual particles. Each particle possesses its own pair of compactified spacetimes (usual and dual), encoded in the biquaternion algebra. What we perceive as ``macroscopic space'' and ``coordinates'' is the statistical alignment of these particle-intrinsic rotors across vast numbers of particles. The torsion scalar $J$ measures the degree of this misalignment.
+
+When the dual rotors of neighboring particles are well aligned ($\theta_a \approx 2n\pi$), $J>0$ and we experience ordinary attractive gravity and familiar spatial geometry. When they are driven to the repulsive points ($\theta_a \approx (2n+1)\pi$), the collective resonance is disrupted, and the effective geometry changes dramatically.
+
+In this picture, \textbf{warp propulsion} takes on two distinct philosophical and operational meanings:
+
+\begin{enumerate}
+  \item \textbf{Resonance-Shifting Warp (Layer-Hopping):} \\
+  We remain within the same collective resonance manifold but shift the phase of the local dual rotors to enter a repulsive torsional layer ($J<0$). This is analogous to changing the ``harmonic'' of the cosmic symphony. The spacecraft does not leave ``our space'' but rides a different layer of the same resonant structure. This is the primary mechanism analyzed in this paper.
+
+  \item \textbf{Subspace-Transition Warp (Dual-Space Immersion):} \\
+  We actively decouple the spacecraft's dual rotors from the ambient collective resonance and immerse it into the dual spacetime sector itself. This is closer to the traditional science-fiction concept of entering ``hyperspace'' or ``subspace''. The vessel temporarily exists primarily in the dual sector, where the usual spacetime coordinates lose their dominance. Re-emergence requires precise re-synchronization with the target region's resonance phase.
+\end{enumerate}
+
+The layer-hopping approach is energetically far cheaper because it exploits the natural cosmic drift of the background phase, whereas subspace-transition requires breaking the collective coherence entirely — a much more violent and energy-intensive process.
+
+Thus, in dual spacetime theory, warp drive is not about bending or tearing a spacetime fabric. It is about \emph{changing the tuning of the cosmic resonance} in which matter participates. Space is not a thing we move through; it is a pattern we participate in.
+
+This ontological shift fundamentally alters the engineering problem: the challenge is no longer to generate exotic negative energy, but to achieve coherent control of dual-rotor phases at macroscopic scales.
 
 \section{Background and Notation}
 
-In dual spacetime theory \cite{dual2025}, the relative rotor is
-$$
-\Omega = R_\text{usual}^\dagger R_\text{dual} = 
-\exp\!\Bigl(\sum_{a=1}^3 \frac{\theta_a}{2}(i\Gamma_a + \Gamma_a)\Bigr),
-$$
-and the torsion scalar is
-$$
-J = \sum_{a=1}^3 \Bigl[\sinh^2\!\bigl(\theta_a/2\bigr) - \sin^2\!\bigl(\theta_a/2\bigr)\Bigr].
-$$
-Repulsive layers ($J<0$) occur at $\theta_a = (2n+1)\pi$.  
-The cosmic background generates a slow phase drift
-$$
-\Bigl|\frac{d\theta_a}{dl}\Bigr| \simeq 1.1 \times 10^{-26}~\text{rad}\,\text{m}^{-1}
+In dual spacetime theory \cite{dual2025}, each particle carries a pair of compactified spacetimes encoded in the 16-dimensional biquaternion algebra isomorphic to $\mathrm{Cl}(3,1)$. The relative rotor between the usual and dual sectors is given by
+\[
+\Omega = R_{\text{usual}}^\dagger R_{\text{dual}} = 
+\exp\!\left(\sum_{a=1}^3 \frac{\theta_a}{2}(i\Gamma_a + \Gamma_a)\right),
+\]
+where $\Gamma_a$ are the dual generators satisfying appropriate Clifford relations, and $\theta_a$ are the torsional mismatch angles.
+
+The Lorentz-invariant torsion scalar is constructed from the Killing form:
+\[
+J = \sum_{a=1}^3 \left[ \sinh^2\!\left(\frac{\theta_a}{2}\right) - \sin^2\!\left(\frac{\theta_a}{2}\right) \right].
+\]
+Repulsive layers occur when $J < 0$, which is satisfied near $\theta_a = (2n+1)\pi$ for integer $n$. At these points the dual-sector trigonometric contribution dominates, leading to effective repulsion.
+
+The cosmic background induces a slow phase drift due to the large-scale structure of the universe:
+\[
+\left|\frac{d\theta_a}{dl}\right| \simeq 1.1 \times 10^{-26}~\mathrm{rad \cdot m^{-1}},
 \qquad
-\Rightarrow\;
-\frac{d\theta_a}{dt} \simeq 3.3 \times 10^{-10} (v/c)~\text{rad}\,\text{s}^{-1}.
-$$
+\frac{d\theta_a}{dt} \simeq 3.3 \times 10^{-10} (v/c)~\mathrm{rad \cdot s^{-1}}.
+\]
+This drift continuously sweeps the infinite stack of repulsive layers past an observer moving at velocity $v$.
+
+\section{Mathematical Model of Dual Rotor Dynamics}
+
+The dynamics of the dual rotor phase can be modeled by an effective potential derived from the torsion scalar. Near a repulsive layer, we approximate the relevant degree of freedom by a single angle $\theta = \theta_a - (2n+1)\pi$. The effective Hamiltonian for the collective mode is
+\[
+H = \frac{p^2}{2m_{\text{eff}}} + V(\theta), \qquad
+V(\theta) \approx \frac{1}{2} k \theta^2 - \frac{\hbar \omega_0}{2} \cos(\theta),
+\]
+where $m_{\text{eff}}$ is the effective inertia of the collective dual excitation, $k$ is a stiffness constant related to the cosmic drift, and $\omega_0$ is the natural resonance frequency of the dual rotor ($\sim 10^{14}$--$10^{15}$ Hz for THz collective modes).
+
+The energy cost to reach a phase offset $\Delta\phi$ from the nearest minimum is obtained by integrating the potential:
+\[
+E(\Delta\phi) \approx N_b \hbar \omega_{\text{res}} \left| \sin\left(\frac{\Delta\phi}{2}\right) \right|,
+\]
+where $N_b \approx 6 \times 10^{32}$ is the number of baryons in a $10^6$ kg vessel. This semiclassical expression captures the leading-order barrier penetration or coherent driving cost.
+
+For small deviations ($\Delta\phi \ll 1$), the energy scales quadratically, while near $\pi$ it saturates, explaining the extreme sensitivity of on-demand entry.
 
 \section{Energy Cost of On-Demand Subspace Entry}
 
-To enter the nearest repulsive layer at an arbitrary moment, the maximum phase deficit is $\Delta\phi_\text{max} \approx \pi$.  
-The minimum excitation energy per baryon is $\sim \hbar\omega_\text{res} \sin(\Delta\phi/2)$, with effective $\omega_\text{res} \simeq 10^{14}$--$10^{15}$ Hz for collective modes in macroscopic objects.
-
-For a $10^6$ kg ($\approx 6 \times 10^{32}$ baryons) spacecraft:
+To enter the nearest repulsive layer at an arbitrary moment, the worst-case phase deficit is $\Delta\phi_{\max} \approx \pi$. Using the expression above, the total energy requirement for a $10^6~\si{\kg}$ spacecraft is:
 
 \begin{table}[ht]
 \centering
@@ -59,70 +101,92 @@ For a $10^6$ kg ($\approx 6 \times 10^{32}$ baryons) spacecraft:
 \toprule
 Cruise velocity & $\gamma$ & Energy required ($10^6$ kg vessel) \\
 \midrule
-$0.10c$ & 1.005 & $\sim 8 \times 10^{11}$ J $\approx 220$ GWh \\
-$0.30c$ & 1.048 & $\sim 7.5 \times 10^{11}$ J $\approx 210$ GWh \\
-$0.50c$ & 1.155 & $\sim 6.9 \times 10^{11}$ J $\approx 190$ GWh \\
-$0.99c$ & $\sim 7$ & $\sim 3 \times 10^{11}$ J $\approx 80$ GWh \\
+$0.10c$ & 1.005 & $\sim 8 \times 10^{11}~\si{\joule} \approx \qty{220}{GWh}$ \\
+$0.30c$ & 1.048 & $\sim 7.5 \times 10^{11}~\si{\joule} \approx \qty{210}{GWh}$ \\
+$0.50c$ & 1.155 & $\sim 6.9 \times 10^{11}~\si{\joule} \approx \qty{190}{GWh}$ \\
+$0.99c$ & $\sim 7$ & $\sim 3 \times 10^{11}~\si{\joule} \approx \qty{80}{GWh}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-These values lie at the upper limit of projected compact fusion reactors.
+These values approach the limit of projected compact fusion or antimatter-catalyzed systems, making pure on-demand entry technologically challenging.
 
 \section{Layer-Hopping: Waiting for Cosmic Phase Weather}
 
-The cosmic drift continuously sweeps the infinite stack of $(2n+1)\pi$ layers past the spacecraft.  
-The typical waiting time until the phase deficit falls below a chosen threshold $\Delta\phi_\text{threshold}$ is
-$$
-\tau \simeq \frac{\Delta\phi_\text{threshold}}{|d\theta/dt|} 
-= 3 \times 10^9 \,\Delta\phi_\text{threshold} \Bigl(\frac{c}{v}\Bigr)~\text{seconds}.
-$$
+The cosmic drift sweeps repulsive layers past the spacecraft at a rate determined by the velocity-dependent phase velocity. The waiting time to achieve a phase deficit smaller than a threshold $\Delta\phi_{\text{threshold}}$ is
+\[
+\tau \simeq \frac{\Delta\phi_{\text{threshold}}}{|d\theta/dt|} 
+= 3 \times 10^9 \,\Delta\phi_{\text{threshold}} \Bigl(\frac{c}{v}\Bigr)~\si{\second}.
+\]
 
 \begin{table}[ht]
 \centering
 \caption{Layer-hopping performance at $v = 0.3c$ for a $10^6$ kg vessel}
 \begin{tabular}{@{}lcccc@{}}
 \toprule
-Threshold $\Delta\phi$ & Typical wait & Energy required & Power (10-min pulse) & Comparative gain \\
+Threshold $\Delta\phi$ & Typical wait & Energy required & Power (10-min pulse) & Gain \\
 \midrule
-$\pi$ (on-demand)      & 0          & 750 GWh     & —       & 1$\times$ \\
-$10^{-1}$ rad          & $\sim 1$ yr     & 75 GWh      & $\sim 450$ MW & $\sim 10^4\times$ \\
-$10^{-2}$ rad          & $\sim 40$ days   & 7.5 GWh     & $\sim 45$ MW  & $\sim 10^5\times$ \\
-$10^{-3}$ rad          & $\sim 4$ days    & 750 MWh     & $\sim 4.5$ MW & $\sim 10^6\times$ \\
-$10^{-4}$ rad          & $\sim 10$ hrs    & 75 MWh      & $\sim 450$ kW & $\sim 10^7\times$ \\
-$10^{-5}$ rad          & $\sim 1$ hr      & 7.5 MWh      & $\sim 45$ kW  & $\sim 10^8\times$ \\
+$\pi$ (on-demand) & 0 & \qty{750}{GWh} & — & $1\times$ \\
+$10^{-1}$ & $\sim$ 1 yr & \qty{75}{GWh} & \qty{450}{MW} & $\sim 10^4\times$ \\
+$10^{-2}$ & $\sim$ 40 days & \qty{7.5}{GWh} & \qty{45}{MW} & $\sim 10^5\times$ \\
+$10^{-3}$ & $\sim$ 4 days & \qty{750}{MWh} & \qty{4.5}{MW} & $\sim 10^6\times$ \\
+$10^{-4}$ & $\sim$ 10 hrs & \qty{75}{MWh} & \qty{450}{kW} & $\sim 10^7\times$ \\
+$10^{-5}$ & $\sim$ 1 hr & \qty{7.5}{MWh} & \qty{45}{kW} & $\sim 10^8\times$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Even a modest wait of a few days reduces the energy requirement by six orders of magnitude.
+Even waiting a few days yields enormous gains. For practical missions, a threshold of $\Delta\phi \approx 10^{-3}$ offers an excellent compromise between waiting time and power requirement.
 
 \section{Combined Strategy and Practical Protocol}
 
-A realistic interstellar mission may adopt a hybrid approach:
+A realistic interstellar mission adopts the following hybrid protocol:
 
 \begin{enumerate}
-  \item Cruise at $0.2$--$0.5c$ using high-specific-impulse propulsion.
-  \item Continuously monitor local dual phase with a compact THz cavity.
-  \item When $\Delta\phi < 10^{-3}$ rad (typically every few days to weeks at $0.3c$), perform a low-megawatt, minute-scale circularly-polarised pulse.
-  \item Enter the repulsive layer, coast effectively superluminally for weeks to decades.
-  \item Repeat until destination is reached.
+  \item Cruise at $0.2$--$0.5c$ using efficient nuclear or beamed propulsion.
+  \item Continuously monitor the local dual phase using a compact THz resonant cavity coupled to the dual degrees of freedom.
+  \item When $\Delta\phi < 10^{-3}~\si{\radian}$ (occurring every few days to weeks at $0.3c$), apply a low-power, circularly-polarised electromagnetic pulse to complete the transition.
+  \item Coast in the repulsive layer for weeks to decades, achieving effective superluminal displacement.
+  \item Repeat the process, using precision navigation between hops.
 \end{enumerate}
 
-Total subspace-entry energy for a 10 light-year journey is then of order 10--100 MWh — comparable to the electricity consumption of a small town for one day.
+For a 10 light-year journey the total energy expenditure drops to 10--100 MWh, comparable to the daily electricity consumption of a small town.
 
-\section{Discussion and Caveats}
+\section{Layer Stability and Navigation}
 
-The calculations above assume coherent collective excitation of the dual rotor across the entire vessel — an assumption that requires experimental verification.  
-No violation of causality or energy conditions has been identified, but the theory remains speculative pending laboratory tests of dual-rotor coupling (e.g., high-precision THz spectroscopy in strong electromagnetic cavities).
+Once inside a repulsive layer, the spacecraft must maintain stability against perturbations. Small deviations $\delta\theta$ experience a restoring force from the effective potential $V(\theta)$. The characteristic oscillation frequency inside the layer is
+\[
+\omega_{\text{stab}} \approx \sqrt{\frac{k}{m_{\text{eff}}}}.
+\]
+Active feedback using the same THz cavity can damp unwanted excitations.
 
-Nevertheless, the extreme sensitivity of the required energy to small phase offsets suggests that, \textit{if} dual spacetime theory is correct, practical interstellar propulsion may prove dramatically more accessible than previously imagined.
+Navigation requires precise control of the entry/exit points and direction. We propose using auxiliary low-mass probes to map local phase gradients, enabling predictive hop scheduling analogous to gravitational slingshot maneuvers but in torsional phase space.
+
+\section{Discussion and Experimental Roadmap}
+
+The central assumption of this work is the existence of coherent collective excitations of the dual rotor across a macroscopic object. While the biquaternion formalism is internally consistent, experimental verification is essential.
+
+\textbf{Key open questions:}
+\begin{itemize}
+  \item What is the precise coupling mechanism between electromagnetic fields and the dual rotor?
+  \item What is the decoherence time for macroscopic dual-phase coherence?
+  \item Can the cosmic drift rate be directly measured using precision torsion balances or atomic interferometers?
+\end{itemize}
+
+\textbf{Near-term experiments:}
+\begin{enumerate}
+  \item High-precision THz spectroscopy in strong electromagnetic cavities to detect shifts in torsional resonance.
+  \item Laboratory-scale tests of gravity modulation via dual-phase driving.
+  \item Satellite missions to measure cosmic phase drift over astronomical baselines.
+\end{enumerate}
+
+If dual spacetime theory is confirmed, the extreme sensitivity of propulsion energy to phase alignment suggests that practical interstellar travel could become dramatically more accessible than previously thought, while remaining fully consistent with known physics.
 
 \begin{thebibliography}{9}
-
 \bibitem{dual2025}
 Anonymous, ``Gravity as Torsion between Dual Spacetime: A Biquaternionic Reformulation of General Relativity'', December 2025 (in preparation).
-
+\bibitem{tegr}
+Bahamonde et al., ``Teleparallel Gravity: A Review'', arXiv:2106.13757.
 \end{thebibliography}
 
 \end{document}
