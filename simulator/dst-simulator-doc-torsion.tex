@@ -55,10 +55,10 @@ TEGRの結論を簡単に述べると、時空の曲率をゼロとし、トー�
 TEGRに合う様に定式化します。
 
 \begin{equation}
-  R_\text{usual} = \exp\left( \frac{\omega_1}{2} iI + \frac{\omega_2}{2} iJ + \frac{\omega_3}{2} iK \right), 
-  \quad R_\text{dual} = \exp\left( \frac{\phi_1}{2} I + \frac{\phi_2}{2} J + \frac{\phi_3}{2} K \right)
+  R_\text{usual} = \exp\left( \frac{\phi_1}{2} iI + \frac{\phi_2}{2} iJ + \frac{\phi_3}{2} iK \right), 
+  \quad R_\text{dual} = \exp\left( \frac{\theta_1}{2} I + \frac{\theta_2}{2} J + \frac{\theta_3}{2} K \right)
 \end{equation}
-ここで、$\omega_1, \omega_2, \omega_3$ は通常時空の回転角、$\phi_1, \phi_2, \phi_3$ は双対時空の回転角、
+ここで、$\phi_1, \phi_2, \phi_3$ は通常時空のブースト（$iI,iJ,iK$）の係数（ラピディティの成分）、$\theta_1, \theta_2, \theta_3$ は双対時空の回転（$I,J,K$）の係数、
 $ R_\text{usual} $は通常ローター、$ R_\text{dual} $は双対ローターです。
 
 $ R_\text{usual} $を用いて、通常時空と双対時空の両方に作用するローレンツ変換を表現できます。
@@ -75,19 +75,19 @@ $ R_\text{dual} $を用いて、通常時空と双対時空の両方に作用す
 
 これらを組み合わせた全体の回転子は以下のようになります。
 \begin{equation}
-  R_\text{total} = R_\text{usual}R_\text{dual} = \exp\left( \frac{\omega_1}{2} iI + \frac{\omega_2}{2} iJ + \frac{\omega_3}{2} iK + \frac{\phi_1}{2} I + \frac{\phi_2}{2} J + \frac{\phi_3}{2} K \right)
+  R_\text{total} = R_\text{usual}R_\text{dual} = \exp\left( \frac{\phi_1}{2} iI + \frac{\phi_2}{2} iJ + \frac{\phi_3}{2} iK + \frac{\theta_1}{2} I + \frac{\theta_2}{2} J + \frac{\theta_3}{2} K \right)
 \end{equation}
 
 $ I, J, K $でまとめると、
 \begin{equation}
-  R_\text{total} = \exp\left( \frac{1}{2}\left( (\omega_1 i + \phi_1) I + (\omega_2 i + \phi_2) J + (\omega_3 i + \phi_3) K \right) \right)
+  R_\text{total} = \exp\left( \frac{1}{2}\left( (\phi_1 i + \theta_1) I + (\phi_2 i + \theta_2) J + (\phi_3 i + \theta_3) K \right) \right)
 \end{equation}
-ここで、$ \omega_1 i + \phi_1, \omega_2 i + \phi_2, \omega_3 i + \phi_3 $は複素数です。
+ここで、$ \phi_1 i + \theta_1, \phi_2 i + \theta_2, \phi_3 i + \theta_3 $は複素数です。
 この複素数を用いて、全体の回転子を以下のように書き換えられます。
 \begin{equation}
   R_\text{total} = \exp\left( \frac{1}{2}\left( \psi_1 I + \psi_2 J + \psi_3 K \right) \right)
 \end{equation}
-ここで、$ \psi_1 = \omega_1 i + \phi_1, \psi_2 = \omega_2 i + \phi_2, \psi_3 = \omega_3 i + \phi_3 $です。
+ここで、$ \psi_1 = \phi_1 i + \theta_1, \psi_2 = \phi_2 i + \theta_2, \psi_3 = \phi_3 i + \theta_3 $です。
 この形式は、通常時空と双対時空の回転を一つの複素回転として統一的に扱うことができます。
 
 \subsection{ねじれ不整合回転子の定義}
@@ -132,31 +132,38 @@ $ \mathrm{Spin}^+(3,1) \oplus \mathrm{Spin}^+(3,1) $は、通常時空と双対�
 $ R_\text{usual} $の$ \dagger $は共役を意味します。共役を織り交ぜる事で、通常時空と双対時空の角度の差異を抽出することになります。
 \begin{equation}
   \begin{split}
-    \Omega =~& R_\text{usual}^\dagger R_\text{dual} = \exp\left( -\frac{\omega_1}{2} iI - \frac{\omega_2}{2} iJ - \frac{\omega_3}{2} iK \right) \exp\left( \frac{\phi_1}{2} I + \frac{\phi_2}{2} J + \frac{\phi_3}{2} K \right)\\
-    =~& \exp\left( \frac{1}{2}\left( (-\omega_1 i + \phi_1) I + (-\omega_2 i + \phi_2) J + (-\omega_3 i + \phi_3) K \right) \right)
+    \Omega =~& R_\text{usual}^\dagger R_\text{dual} = \exp\left( -\frac{\phi_1}{2} iI - \frac{\phi_2}{2} iJ - \frac{\phi_3}{2} iK \right) \exp\left( \frac{\theta_1}{2} I + \frac{\theta_2}{2} J + \frac{\theta_3}{2} K \right)\\
+    =~& \exp\left( \frac{1}{2}\left( (-\phi_1 i + \theta_1) I + (-\phi_2 i + \theta_2) J + (-\phi_3 i + \theta_3) K \right) \right)
     \\
     =~& \exp\left( \frac{1}{2}\left( \chi_1 I + \chi_2 J + \chi_3 K \right) \right)
   \end{split}
 \end{equation}
-ここで、$ \chi_1 = -\omega_1 i + \phi_1, \chi_2 = -\omega_2 i + \phi_2, \chi_3 = -\omega_3 i + \phi_3 $です。
+ここで、$ \chi_1 = -\phi_1 i + \theta_1, \chi_2 = -\phi_2 i + \theta_2, \chi_3 = -\phi_3 i + \theta_3 $です。
 この形式は、通常時空と双対時空の回転の不整合を一つの複素回転として統一的に扱うことができます。
 
-ここで、$ 2 \omega = \sqrt{\omega_1^2 + \omega_2^2 + \omega_3^2}, 2 \phi = \sqrt{\phi_1^2 + \phi_2^2 + \phi_3^2} $とします。
-$ \omega, \phi $はそれぞれ通常時空と双対時空の回転角の大きさを表します。
-ベルソルを、$ \hat{\omega} = \frac{1}{2\omega}(\omega_1, \omega_2, \omega_3), \hat{\phi} = \frac{1}{2\phi}(\phi_1, \phi_2, \phi_3) $と定義します。
-$ \hat{\omega}, \hat{\phi} $はそれぞれ通常時空と双対時空の回転軸の単位ベクトルを表します。
+合計ラピディティと合計双対角を
+\begin{equation}
+  \phi = \sqrt{\phi_1^2 + \phi_2^2 + \phi_3^2}, \qquad
+  \theta = \sqrt{\theta_1^2 + \theta_2^2 + \theta_3^2}
+\end{equation}
+とし（$\phi = 0$ または $\theta = 0$ のときは方向ベクトルの極限で解釈）、単位方向を
+\begin{equation}
+  \hat{p} = \frac{1}{\phi}(\phi_1, \phi_2, \phi_3), \qquad
+  \hat{q} = \frac{1}{\theta}(\theta_1, \theta_2, \theta_3)
+\end{equation}
+とします（論文の $\hat{p},\hat{q}$ に対応）。$\hat{p}$ はブースト方向、$\hat{q}$ は双対回転軸の方向です。
 $ \Omega $を展開すると以下のようになります。
 \begin{equation}
   \begin{split}
-    \Omega =~& R_\text{usual}^\dagger R_\text{dual} = \exp\left( -\frac{\omega_1}{2} iI - \frac{\omega_2}{2} iJ - \frac{\omega_3}{2} iK \right) \exp\left( \frac{\phi_1}{2} I + \frac{\phi_2}{2} J + \frac{\phi_3}{2} K \right)\\
-    =~& \left( \cosh \omega - i \hat{\omega} \cdot \bm{\Gamma} \sinh \omega \right) \left( \cos \phi + \hat{\phi} \cdot \bm{\Gamma} \sin \phi \right)
+    \Omega =~& R_\text{usual}^\dagger R_\text{dual} = \exp\left( -\frac{\phi_1}{2} iI - \frac{\phi_2}{2} iJ - \frac{\phi_3}{2} iK \right) \exp\left( \frac{\theta_1}{2} I + \frac{\theta_2}{2} J + \frac{\theta_3}{2} K \right)\\
+    =~& \left( \cosh \frac{\phi}{2} - i \hat{p} \cdot \bm{\Gamma} \sinh \frac{\phi}{2} \right) \left( \cos \frac{\theta}{2} + \hat{q} \cdot \bm{\Gamma} \sin \frac{\theta}{2} \right)
     \\
-    =~& \cosh \omega \cos \phi + \hat{\phi} \cdot \bm{\Gamma} \cosh \omega \sin \phi - i \hat{\omega} \cdot \bm{\Gamma} \sinh \omega \cos \phi - i (\hat{\omega} \cdot \bm{\Gamma})(\hat{\phi} \cdot \bm{\Gamma}) \sinh \omega \sin \phi
+    =~& \cosh \frac{\phi}{2} \cos \frac{\theta}{2} + \hat{q} \cdot \bm{\Gamma} \cosh \frac{\phi}{2} \sin \frac{\theta}{2} - i \hat{p} \cdot \bm{\Gamma} \sinh \frac{\phi}{2} \cos \frac{\theta}{2} - i (\hat{p} \cdot \bm{\Gamma})(\hat{q} \cdot \bm{\Gamma}) \sinh \frac{\phi}{2} \sin \frac{\theta}{2}
   \end{split}
 \end{equation}
 ここで、$ \bm{\Gamma} = (I, J, K) $です。
 
-$\Omega = 1 $となる必要十分条件は、$ \omega_1 = \omega_2 = \omega_3 = 0 $かつ$ \phi_1 = \phi_2 = \phi_3 = 0 $です。
+$\Omega = 1 $となる必要十分条件は、$ \phi_1 = \phi_2 = \phi_3 = 0 $かつ$ \theta_1 = \theta_2 = \theta_3 = 0 $です。
 
 リー代数は「強力なショートカット」や「深い理解のツール」なのです。
 
@@ -208,24 +215,24 @@ $ \mathrm{SO}(3) $のリー代数$\mathfrak{so}(3)$上のキリング形式$B$�
 \begin{equation}
   d(R_1, R_2) = \sqrt{ -B(\log(R_1^\dagger R_2), \log(R_1^\dagger R_2)) }
 \end{equation}
-と定義できます。この距離は、$R_1^\dagger R_2 = \exp(\theta \hat{n})$（$\hat{n}$は回転軸の単位ベクトルに対応するbivector）の場合に$d(R_1, R_2) = \theta$となります。
+と定義できます。この距離は、$R_1^\dagger R_2 = \exp(\alpha \hat{n})$（$\hat{n}$は回転軸の単位ベクトルに対応するbivector）の場合に$d(R_1, R_2) = \alpha$となります。
 
-簡単な例として$R_1 = 1$, $R_2 = \exp(\theta \hat{v})$（$\hat{v}^2 = -1$, $\|\theta \hat{v}\| = \theta$）を考えます。
+簡単な例として$R_1 = 1$, $R_2 = \exp(\alpha \hat{v})$（$\hat{v}^2 = -1$, $\|\alpha \hat{v}\| = \alpha$）を考えます（$\alpha$ は回転角であり、双対時空の $\theta_a$ とは別物です）。
 このとき、
 \begin{equation}
   \begin{split}
-    \mathrm{Slerp}(1, \exp(\theta \hat{v}); t) 
-    &= \exp(t \theta \hat{v}) \\
-    &= \cos(t\theta) + \hat{v} \sin(t\theta), \quad t \in [0,1]
+    \mathrm{Slerp}(1, \exp(\alpha \hat{v}); t) 
+    &= \exp(t \alpha \hat{v}) \\
+    &= \cos(t\alpha) + \hat{v} \sin(t\alpha), \quad t \in [0,1]
   \end{split}
 \end{equation}
 また、
 \begin{equation}
-  B(\log(R_2), \log(R_2)) = B(\theta \hat{v}, \theta \hat{v}) = -\theta^2
+  B(\log(R_2), \log(R_2)) = B(\alpha \hat{v}, \alpha \hat{v}) = -\alpha^2
 \end{equation}
 （正規化によっては係数が異なる場合があります）となり、
 \begin{equation}
-  d(1, R_2) = \sqrt{-B(\log(R_2), \log(R_2))} = \theta
+  d(1, R_2) = \sqrt{-B(\log(R_2), \log(R_2))} = \alpha
 \end{equation}
 を得ます。このように、キリング形式はSO(3)上の自然な距離（回転角）を直接与えることがわかります。
 
@@ -236,9 +243,9 @@ $ \mathrm{SO}(3) $のリー代数$\mathfrak{so}(3)$上のキリング形式$B$�
 
 純粋ブーストのローターは、時間-空間方向のバイベクトルと分解型複素数を用いて表現できます。
 空間単位ベクトル$\hat{d} \in \mathbb{R}^3$（$\hat{d}^2 = 1$）に対し、$\varepsilon$を$\varepsilon^2 = +1$を満たす形式的な記号（双曲単位）とみなします。
-このとき、方向$\hat{d}$へのラピディティ$\theta$のブーストローターは
+このとき、方向$\hat{d}$へのラピディティ$\phi$のブーストローターは
 \begin{equation}
-  R = \exp(\theta \hat{d} \varepsilon) = \cosh\theta + \hat{d} \varepsilon \sinh\theta
+  R = \exp(\phi \hat{d} \varepsilon) = \cosh\phi + \hat{d} \varepsilon \sinh\phi
 \end{equation}
 と書けます。
 
@@ -247,17 +254,17 @@ $ \mathrm{SO}(3) $のリー代数$\mathfrak{so}(3)$上のキリング形式$B$�
 したがって方向$\hat{d}$への生成子は$P = \hat{d} \cdot \boldsymbol{P} = d_x P_1 + d_y P_2 + d_z P_3$であり、$P^2 = 1$です。
 よって指数写像は
 \begin{equation}
-  \exp(\theta P) = \sum_{n=0}^\infty \frac{(\theta P)^n}{n!} = \cosh\theta + P \sinh\theta
+  \exp(\phi P) = \sum_{n=0}^\infty \frac{(\phi P)^n}{n!} = \cosh\phi + P \sinh\phi
 \end{equation}
-となり、成分では時間成分が$\cosh\theta$、空間成分が$d_i \sinh\theta$となります。
+となり、成分では時間成分が$\cosh\phi$、空間成分が$d_i \sinh\phi$となります。
 
-いま、単位ローター$R_1 = 1$、純粋ブースト$R_2 = \exp(\theta \hat{d} \varepsilon) = \cosh\theta + \hat{d} \varepsilon \sinh\theta$を考えます。
+いま、単位ローター$R_1 = 1$、純粋ブースト$R_2 = \exp(\phi \hat{d} \varepsilon) = \cosh\phi + \hat{d} \varepsilon \sinh\phi$を考えます。
 この間の対数線形補間（Log-linear interpolation）は
 \begin{equation}
-  \mathrm{Slerp}(1, R_2; t) = \exp\left( t \log(R_2) \right) = \exp(t \theta \hat{d} \varepsilon)
-  = \cosh(t\theta) + \hat{d} \varepsilon \sinh(t\theta), \quad t \in [0,1]
+  \mathrm{Slerp}(1, R_2; t) = \exp\left( t \log(R_2) \right) = \exp(t \phi \hat{d} \varepsilon)
+  = \cosh(t\phi) + \hat{d} \varepsilon \sinh(t\phi), \quad t \in [0,1]
 \end{equation}
-です。これはラピディティを$t\theta$に線形補間したブーストに対応し、リー代数的には単純実数三次元空間と同相です。
+です。これはラピディティを$t\phi$に線形補間したブーストに対応し、リー代数的には単純実数三次元空間と同相です。
 つまり、特殊相対性理論は幾何学的には実三次元空間上の加法群として理解できます。
 
 \subsection{$ \mathrm{Spin}^+(3,1) $におけるキリング形式}
@@ -271,17 +278,17 @@ $ \mathrm{SO}(3) $のリー代数$\mathfrak{so}(3)$上のキリング形式$B$�
 \end{itemize}
 となります。（正規化係数$4$は任意）
 
-純粋ブースト$X = \theta \hat{d} \cdot \boldsymbol{P}$に対し、
+純粋ブースト$X = \phi \hat{d} \cdot \boldsymbol{P}$に対し、
 \begin{equation}
-  B(X, X) = \theta^2 B(\hat{d} \cdot \boldsymbol{P}, \hat{d} \cdot \boldsymbol{P}) = \theta^2 \cdot (+4) = +4\theta^2
+  B(X, X) = \phi^2 B(\hat{d} \cdot \boldsymbol{P}, \hat{d} \cdot \boldsymbol{P}) = \phi^2 \cdot (+4) = +4\phi^2
 \end{equation}
 となります。ブースト部分は正のノルムを持ち、ラピディティの二乗に比例します。
 
 距離関数を定義する際は、キリング形式の符号に注意が必要です。
 回転角度に対しては$\sqrt{-B}$が実距離を与えましたが、ブーストに対しては$\sqrt{+B}$がラピディティ（双曲距離）を与えます。
-そこで$R_1 = 1$, $R_2 = \exp(\theta \hat{d} \varepsilon)$間のブースト強度（ラピディティ）を
+そこで$R_1 = 1$, $R_2 = \exp(\phi \hat{d} \varepsilon)$間のブースト強度（ラピディティ）を
 \begin{equation}
-  d(1, R_2) = \sqrt{B(\log R_2, \log R_2)} = \sqrt{4} \theta = 2\theta
+  d(1, R_2) = \sqrt{B(\log R_2, \log R_2)} = \sqrt{4} \phi = 2\phi
 \end{equation}
 と定義できます。
 このように、キリング形式は$ \mathrm{Spin}^+(3,1) $においても群上の不変距離の基礎を与えますが、回転とブーストで符号が逆転するため、統一的なユークリッド距離ではなくミンコフスキー的な構造を反映しています。
