@@ -1086,9 +1086,8 @@ doi:10.1002/andp.201200272
 
 \clearpage
 \appendix
-\label{sec:appendix}
-
 \section{Multiplication Table}
+\label{app:mult-table}
 
 \begin{table}[ht]
   \begin{center}
@@ -1139,5 +1138,47 @@ doi:10.1002/andp.201200272
   \end{center}
 \end{table}
 These are indeed the same results and are isomorphic.
+\clearpage
+\section{Equivalence of the Torsional Mismatch Scalar J to the Teleparallel Torsion Scalar T of TEGR}
+\label{app:TEGR-equivalence}
+
+The torsional mismatch bivector is
+\[
+\Omega_{\rm biv} = \log(R_{\rm usual}^\dagger R_{\rm dual}) = \sum_{a=1}^3 \left( \frac{\alpha_a}{2} i\Gamma_a + \frac{\beta_a}{2} \Gamma_a \right),
+\]
+with \( (i\Gamma_a)^2 = +1 \), \( \Gamma_a^2 = -1 \), and \([i\Gamma_a, \Gamma_b] = 0\).
+
+The Killing form on \(\mathfrak{so}(3,1) \oplus \mathfrak{so}(3,1)\) satisfies \( B(i\Gamma_a, i\Gamma_a) = +8 \), \( B(\Gamma_a, \Gamma_a) = -8 \), yielding
+\[
+B(\Omega_{\rm biv}, \Omega_{\rm biv}) = 8 \sum_{a=1}^3 (\alpha_a^2 - \beta_a^2).
+\]
+Thus the torsional mismatch scalar is
+\[
+J = \frac{1}{16} B(\Omega_{\rm biv}, \Omega_{\rm biv}) = \frac12 \sum_{a=1}^3 (\alpha_a^2 - \beta_a^2).
+\]
+
+This quadratic invariant corresponds (up to total divergence) to the teleparallel torsion scalar
+\[
+T = \frac14 T_{\rho\mu\nu}T^{\rho\mu\nu} + \frac12 T_{\rho\mu\nu}T^{\nu\mu\rho} - T_\rho T^\rho
+\]
+of TEGR via the identification of \(\Omega_{\rm biv}\) (projected to the tetrad defined by the total rotor \(R_{\rm total} = R_{\rm usual} R_{\rm dual}\)) with the contorsion, so that
+\[
+J = \frac12 T + \text{divergence}.
+\]
+
+It is a standard result that
+\[
+\int T\, e\, d^4x = -\int R\sqrt{-g}\, d^4x + \text{boundary term}.
+\]
+Substituting the relation for \(J\) gives
+\[
+S = \frac{c^4}{16\pi G} \int J \, d^4x = -\frac{c^4}{16\pi G} \int R \sqrt{-g}\, d^4x + \text{boundary term}.
+\]
+The boundary term does not affect the field equations. Variation with respect to the tetrad (or equivalently the rotor field) therefore reproduces the Einstein equations
+\[
+G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}.
+\]
+
+Thus the Double Spacetime action is dynamically equivalent to the Einstein--Hilbert action in the classical limit.
 
 \end{document}
