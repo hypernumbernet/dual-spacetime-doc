@@ -65,7 +65,7 @@ IUTでは、初期ホッジ劇場 $\mathcal{HT}^{\mathrm{init}}$ と最終ホッ
 IUTの数学的基礎の核心は、ログ・テータ格子と呼ばれる2次元構造です。これは、垂直方向のログリンクと水平方向のテータリンクを組み合わせ、初期ホッジ劇場から最終ホッジ劇場への橋渡しを体系化します。
 
 \begin{itemize}
-  \item \textbf{垂直方向}：ログリンクにより加法データを対数化し、意図的忘却を導入します。これによりスケーリング効果が生まれ、ディオファントス高さ\footnote{ディオファントス高さとは、ディオファントス幾何学において数論的対象の複雑さや大きさを測る不変量です。IUTでは、ログシェル不変量とともに上下限の不等式を導出する核心的な量であり、ABC予想の強い形の証明において中心的な役割を果たします。}の上下限を制御します。
+  \item \textbf{垂直方向}：ログリンクにより加法データを対数化し、意図的忘却を導入します。これによりスケーリング効果が生まれ、ディオファントス高さ\footnote{ディオファントス高さとは、ディオファントス幾何学において数論的対象の複雑さや大きさを測る不変量です。IUTでは、ログシェル不変量とともに上下限の不等式を導出する核心的な量であり、abc予想の強い形の証明において中心的な役割を果たします。}の上下限を制御します。
   \item \textbf{水平方向}：テータリンクによりポリ同型を用いた周期的テータデータの移行を行い、モノドロミーを保存しつつ乗法データの非自明な再構築を実現します。
 \end{itemize}
 
@@ -97,14 +97,88 @@ IUTの数学的基礎の核心は、ログ・テータ格子と呼ばれる2次�
   \item ディオファントス高さに対する精密な上下限不等式が導出される。
 \end{itemize}
 
-これが望月氏によるIUTの第III論文および第IV論文における核心的な結果、すなわちABC予想の強い形およびスピロ予想の証明へと直接つながります。望月氏の一連の論文では、p進ホッジ理論の枠組みを徹底的に活用し、フロベニウス様態射の精密な制御、大域的な乗法構造の解析、ホッジ劇場間の宇宙際的な対応関係の厳密な再構築を通じて、この理論体系を築き上げています。
+これが望月氏によるIUTの第III論文および第IV論文における核心的な結果、すなわちabc予想の強い形およびスピロ予想の証明へと直接つながります。望月氏の一連の論文では、p進ホッジ理論の枠組みを徹底的に活用し、フロベニウス様態射の精密な制御、大域的な乗法構造の解析、ホッジ劇場間の宇宙際的な対応関係の厳密な再構築を通じて、この理論体系を築き上げています。
 
-特に、ログリンクによる意図的忘却のメカニズムとテータリンクによる非自明なポリ同型を組み合わせたログ・テータ格子が、ディオファントス高さに対する上下限不等式を導出する鍵となります。この不等式は、従来の数論的手法では到達し得なかった強力なものであり、第III論文でその詳細な導出が示され、第IV論文ではABC予想をはじめとする幅広い数論的応用に展開されています。理論の基盤は、異なるホッジ劇場をエイリアン的な関係として扱い、その非自明性を積極的に活用する点にあります。これにより、乗法的再接着の過程で保存されるログシェル不変量を効果的に用いた精密な高さ制御が可能となり、深いディオファントス幾何学的帰結を引き出しています。
+特に、ログリンクによる意図的忘却のメカニズムとテータリンクによる非自明なポリ同型を組み合わせたログ・テータ格子が、ディオファントス高さに対する上下限不等式を導出する鍵となります。この不等式は、従来の数論的手法では到達し得なかった強力なものであり、第III論文でその詳細な導出が示され、第IV論文ではabc予想をはじめとする幅広い数論的応用に展開されています。理論の基盤は、異なるホッジ劇場をエイリアン的な関係として扱い、その非自明性を積極的に活用する点にあります。これにより、乗法的再接着の過程で保存されるログシェル不変量を効果的に用いた精密な高さ制御が可能となり、深いディオファントス幾何学的帰結を引き出しています。
 
 \subsection{IUTによるフェルマーの最終定理の再証明}
 
-IUTによるフェルマーの最終定理の再証明は、以下のような流れで行われます。
+本節では、ジョン・ポン・ジョウ氏による論文（arXiv:2503.14510）を基に、IUTを用いたフェルマーの最終定理（FLT）の再証明について詳しく解説する。この論文は「宇宙際タイヒミュラー理論と有理数に関する新たなディオファントス的結果 I（The inter-universal Teichmüller theory and new Diophantine results over the rational numbers. I）」と題され、IUTの枠組みに有理数体上での軽微な修正を加えることで、新たなディオファントスの結果（特に有効なabc不等式および一般化されたフェルマー方程式の明示的境界）を導き、これにより素数指数\(\geq 11\)に対するFLTを証明し、古典的な小指数の場合と組み合わせることでFLTの完全な代替証明を与えている。
 
+\subsubsection{論文の概要と主張}
+ジョウ氏の論文は、望月氏によるIUT（特に\(\mu_6\)-initial \(\Theta\)-dataの枠組み）を有理数上の数論的状況に適応させることで、従来のIUTによるディオファントスの境界（Mochizuki–Fesenko–Hoshi–Minamide–Porowskiによる有効abc定数の\(1.7 \times 10^{30}\)）を大幅に改善する。具体的には、互いに素な整数\(a,b,c\)に対して\(a+b=c\)かつ\(\log|abc| \geq 700\)を満たす場合に
+\[
+\log|abc| \leq 3\log\mathrm{rad}(abc) + 8\sqrt{\log|abc| \cdot \log\log|abc|}
+\]
+という有効abc不等式を証明する（ここで\(\mathrm{rad}(abc)\)は\(abc\)の異なる素因数の積）。これにより、任意の\(0 < \epsilon \leq 1/10\)に対して
+\[
+|abc| \leq \max\left\{ \exp(400 \cdot \epsilon^{-2} \cdot \log(\epsilon^{-1})), \ \mathrm{rad}(abc)^{3+3\epsilon} \right\}
+\]
+が得られ、有効abc定数が400にまで低減される。
+
+さらに、一般化フェルマー方程式
+\[
+x^r + y^s = z^t \quad (r,s,t \geq 3)
+\]
+の正の原始解\((x,y,z)\)（\(\gcd(x,y,z)=1\))に対して、\(h = \log(x^r y^s z^t)\)の明示的上界を与える：
+\begin{itemize}
+\item \(r,s,t \geq 8\)のとき \(h \leq 573\),
+\item \(r,s,t \geq 5\)のとき \(h \leq 907\),
+\item \(r,s,t \geq 4\)のとき \(h \leq 2283\),
+\item \(\min\{r,s\} \geq 4\)または\(t \geq 4\)のとき \(h \leq 14750\),
+\item \(r,s,t \geq 3\)のとき \(h \leq 24626\).
+\end{itemize}
+これらの境界は、素数指数\(p \geq 11\)に対するFLT（すなわち\(x^p + y^p = z^p\)に原始解なし）を即座に導く。また、古典的なFLT証明（指数3,4,5,7の場合）と計算機検証を組み合わせることで、FLTの完全証明が得られる。
+
+\subsubsection{IUTの修正とlog-volume推定（論文第1節）}
+ジョウ氏はIUTの核心であるlog-volume推定を有理数上で再構築する。まず、\(\mu\)-initial \(\Theta\)-data（Mochizukiの[35, Def. 3.1]および[39, Def. 4.1]を参照）の枠組みを導入し、Frey–Hellegouarch曲線（例：\(y^2 = x(x-a)(x+b)\)）に対するGalois表現の条件（\(l \geq 5\)で\(\mathrm{SL}(2,\mathbb{F}_l)\)を含む）から、hyperbolic orbicurve \(C\)とcusp \(\varepsilon\)を構成する（Lemma 1.6）。
+
+次に、局所log-volumeの精密化を行う（Lemma 1.1–1.5）：
+- \(p\)-進局所体\(k_i\)のテンソル積環\(R = \bigotimes O_{k_i}\)上で、uniformizer \(\pi_i\)、ramification指数\(e_i\)、different指数\(d_i\)を定義。
+- lattice \(\Lambda = \mathbb{Z}^{|I|}\)上の\(\lambda\)に対し、holomorphic hullを用いたlog-volume \(\log\mu\)を評価：
+  \[
+  \log\mu(U) \leq \max\left\{ \lceil -\lambda d a \rceil v(2p) b, \log p \right\}
+  \]
+  （\(U\)はhull、\(a,b\)は既約因子の極大・極小値）。
+- 複素（archimedean）場合もradial log-volumeを同様に扱う（Lemma 1.5）。
+
+これらを\(\mu\)-initial \(\Theta\)-dataに適用し、procession-normalized log-volume \(\log(\Theta)^{\mathrm{proc}}\)および総log-volume \(\log(\Theta)\)を定義する（Definition 1.8）。その結果、Proposition 1.10（論文の中心定理）として、従来のIUT log-volume推定（[38, Thm. 1.10]、[39, Thm. 5.1]）の精密版が得られる：
+\[
+\log(\Theta) = \frac{1}{2l} \sum_{v} \log q_v + O(1)
+\]
+（ここで\(q_v\)はbad valuationにおける\(q(E/K)\)）。この改良により、\(\mathbb{Q}\)上でのDiophantine高さの制御が大幅に強化される。
+
+\subsubsection{abc不等式の導出（論文第2–3節）}
+第2節では、Frey曲線に対する\(\Theta\)-linkおよびlog-shellの性質を用いて、bad valuation集合\(V_{\mathrm{bad}}\)上のramification datasetを解析する。log-volumeの上下界から、\(\log|abc|\)と\(\log\mathrm{rad}(abc)\)の関係を抽出：
+\[
+\log|abc| - 3\log\mathrm{rad}(abc) \leq O(\sqrt{\log|abc| \cdot \log\log|abc|}).
+\]
+これが前述の有効abc不等式の核心である。従来のIUT証明では定数が巨大であったが、\(\mathbb{Q}\)上での修正（特にdifferent指数とramificationの精密評価）により400という実用的な定数が得られる。
+
+第3節では、このabc不等式を一般化Fermat方程式に適用する。原始解\((x,y,z)\)に対し、\(a = x^h\), \(b = y^h\), \(c = z^h\)（\(h = \log(xyz)/\log|abc|\)）と置換し、\(t \geq 4\)や\(s \geq 4 > r\)などの場合分けを行う。各場合で
+\[
+5\log\mathrm{rad}(abc) \leq 9h
+\]
+という不等式が導かれ、\(h \geq \log 4\)ならabc不等式に矛盾する。したがって\(h\)は明示的に有界となり、表1の境界値が得られる。
+
+\subsubsection{FLTの再証明（論文第4節）}
+第4節のCorollary 4.5がFLTの鍵である。素数\(p > 11\)に対し、Theorem 4.1（\(h \leq 600\)）と古典的評価（[39, Lemma 5.7]による\(\log(z-1) \asymp 2p\log p\))を組み合わせると
+\[
+\log(xyz) \geq (p-1)\log(z-1) \gg 2p\log p > 600
+\]
+という矛盾が生じる。したがって原始解は存在しない。
+
+残る小指数の場合（3,4,5,7）はWiles–Taylorらの古典証明に依拠し、また\(r,s,t \geq 20\)や\((3,3,n)\)型については計算機検証とCatalan予想により非自明解なしが確認される（Corollary 4.6）。これにより、IUTを基盤としたFLTの完全な代替証明が完成する。
+
+\subsubsection{論文の意義と限界}
+Zhou氏の貢献は、IUTのlog-volume推定を\(\mathbb{Q}\)上で最適化し、実用的なDiophantine境界を初めて得た点にある。特に有効abc定数の劇的改善は、数論的応用（例：Mordell方程式の解探索）に即時的な影響を与える。ただし、本証明はMochizukiのIUT全体に依存するため、IUTの基礎付けが確立されるまでは「条件付き」証明と見なされる可能性もある。将来的にはPart II以降でさらに強いDiophantine結果が期待される。
+
+本解説はarXiv:2503.14510の全節（特に第0–4節およびAppendix）を忠実に要約・翻訳したものである。詳細な証明は原論文を参照されたい。
+
+\begin{thebibliography}{9}
+\bibitem{zhou2025iut}
+Zhong-Peng Zhou, ``The inter-universal Teichmüller theory and new Diophantine results over the rational numbers. I'', arXiv:2503.14510 [math.NT], 2025.
+\end{thebibliography}
 
 \section{二重時空理論におけるIUT的構造の対応}
 
