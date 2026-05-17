@@ -922,7 +922,9 @@ R_{\text{dual}} \to \mathcal{P} \exp\!\left( \frac{1}{2} \int (\theta_a \Gamma_a
 
 \subsection{内在的時間デュアリティとローターパラメーター}
 
-各粒子は16実次元双四元数構造内にミンコフスキー時空の対を符号化する。未来向き時間基底 $j$ で張られる通常時空 $\{j, kI, kJ, kK\}$ と、擬スカラー $i$ による右乗算で得られ $j i = -k$ により過去向き時間基底 $k$ をもつ双対 $\{k, jI, jJ, jK\}$ を思い起こされたい。デュアリティ操作 $X \mapsto X i$ はミンコフスキーノルムを保つ（第\ref{sec:math}節の明示的非可換計算により $(X i)^2 = X^2$）が時間向きを反転させ、根本的カイラリティを刻印する。粒子（通常支配）は前方時間に伝播し、反粒子（双対支配）は動的抑制がなければ本質的に後方時間に伝播する。
+各粒子は16実次元双四元数構造内にミンコフスキー時空の対を符号化する。
+
+未来向き時間基底 $j$ で張られる通常時空 $\{j, kI, kJ, kK\}$ と、擬スカラー $i$ による右乗算で得られる双対 $\{k, jI, jJ, jK\}$（$j i = -k$ により過去向き時間基底 $k$ をもつ）を思い起こされたい。デュアリティ操作 $X \mapsto X i$ はミンコフスキーノルムを保つ（第\ref{sec:math}節の明示的非可換計算により $(X i)^2 = X^2$）が時間向きを反転させ、根本的カイラリティを刻印する。粒子（通常支配）は前方時間に伝播し、反粒子（双対支配）は動的抑制がなければ本質的に後方時間に伝播する。
 
 完全な運動学的進化は完全ローターによって支配される。真空ではねじれなし（$J=0$）が要求され、時間矢の完全反同期が保証される。前方通常ローターは逆行双対ローターに鏡映され、粒子--反粒子等価性が保たれる。
 
@@ -1070,6 +1072,7 @@ S_{\text{particle}} = \int \left[ \frac{1}{2} \sum_{a=1}^3 \dot{\phi}_a^2 - \fra
 
 \bibliographystyle{unsrt}
 \begin{thebibliography}{1}
+\raggedright
 
 \bibitem{einstein1928}
 A.~Einstein,
@@ -1094,11 +1097,12 @@ doi:10.1007/BF03042377
 \bibitem{maluf2013}
 J.~W. Maluf,
 ``The teleparallel equivalent of general relativity,''
-\textit{Ann. Phys. (Berlin)},
-\textbf{525}, 339--359 (2013).
+\textit{Ann.\ Phys.\ (Berlin)} \textbf{525}, 339--359 (2013).
 doi:10.1002/andp.201200272
 
-\bibitem{dst-quantum-gravity} 匿名 2025, 「双四元数二重時空におけるねじれ不整合としての量子重力」, https://github.com/hypernumbernet/dual-spacetime-doc/blob/main/dst-quantum-gravity.pdf.
+\bibitem{dst-quantum-gravity} 匿名,
+「双四元数二重時空におけるねじれ不整合としての量子重力」 (2025),
+\url{https://github.com/hypernumbernet/dual-spacetime-doc/blob/main/dst-quantum-gravity.pdf}.
 
 \end{thebibliography}
 
@@ -1179,7 +1183,7 @@ J = \frac{1}{16} B(\Omega_{\rm biv}, \Omega_{\rm biv}) = \frac12 \sum_{a=1}^3 (\
 \[
 e^a{}_\mu(x) \;=\; \langle R_{\rm total}(x)\, \mathring{e}^a\, R_{\rm total}^\dagger(x) \rangle_{1,\mu},
 \]
-ここで $\langle \cdot \rangle_{1,\mu}$ は座標基底に沿った1次（ベクトル）成分を抽出する。この同定により $R_{\rm total}$ は計量 $g_{\mu\nu} = \eta_{ab}\, e^a{}_\mu e^b{}_\nu$ をもつテトラッド場 $e^a{}_\mu$ へと昇格し、双対不整合バイベクトル $\Omega_{\rm biv}$ は $e^a{}_\mu$ に付随する Weitzenböck 接続の contorsion に比例する。
+ここで $\langle \cdot \rangle_{1,\mu}$ は座標基底に沿った1次（ベクトル）成分を抽出する。この同定により $R_{\rm total}$ は計量 $g_{\mu\nu} = \eta_{ab}\, e^a{}_\mu e^b{}_\nu$ をもつテトラッド場 $e^a{}_\mu$ へと昇格し、双対不整合バイベクトル $\Omega_{\rm biv}$ は $e^a{}_\mu$ に付随するヴァイゼンボック接続のねじれに比例する。
 \[
 \Omega_{\rm biv}\big|_{\mu\nu}^{ab} \;\propto\; K^{ab}{}_\mu\, dx^\mu \wedge dx^\nu,
 \qquad
