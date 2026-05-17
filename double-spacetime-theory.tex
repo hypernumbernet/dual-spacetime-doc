@@ -931,15 +931,17 @@ At the Planck scale ($t \sim 10^{-43}$ s, $T \sim 10^{19}$ GeV), quantum gravita
 \[
 \langle \theta \rangle = \phi + \delta, \quad \delta > 0,
 \]
-where $\delta$ is the CP-odd chiral phase imprinted at the Planck epoch. We take $\delta$ as a small, free parameter of the framework whose magnitude is to be fixed by observation; the rough estimate $\delta \sim 10^{-5}$ (comparable to the Jarlskog measure of the observed CKM phase) is adopted throughout. This fixation arises because the pseudoscalar $i$ commutes with $\Gamma_a$ but anticommutes with $i \Gamma_a$, generating a chiral potential
+where $\delta$ is the CP-odd chiral phase imprinted at the Planck epoch. We take $\delta$ as a small, free parameter of the framework whose magnitude is to be fixed by observation; the rough estimate $\delta \sim 10^{-5}$ (comparable to the Jarlskog measure of the observed CKM phase) is adopted throughout. This fixation reflects the parity-odd character of the dual map $X \mapsto X i$ itself: the pseudoscalar $i$ flips sign under spatial inversion ($i \to -i$), so any Planck-scale potential that distinguishes $R_\text{usual}$ from $R_\text{dual}$ is necessarily CP-odd in $\delta$ and energetically prefers a definite sign of $\delta$. We do not specify the microscopic form of this potential here; it is governed by quantum gravitational dynamics outside the scope of the present algebraic argument and enters only through the single scalar parameter $\delta > 0$.
+
+To extract the resulting torsional mismatch, we apply the dual conversion $\theta \mapsto \theta i$ established in \S\ref{subsec:dual-rotors}. Because the physical effect of the dual rotor on the dual spacetime is that of a boost (with $(\hat q\, i)^2 = +1$), the over-rotation $\delta$ contributes to $\Omega_\text{biv}$ as a pure boost-direction excess. The pre-existing equilibrium ($\theta = \phi$) yields a bivector whose $i\Gamma_a$ and $\Gamma_a$ coefficients balance on the null cone of the Killing form ($J^{(0)} = 0$, consistent with vacuum torsionlessness); the chiral perturbation breaks this balance asymmetrically. Setting $\delta_a = \delta\, p_a$ along the boost axis $\hat p = \sum_a p_a\, i\Gamma_a$, the linearized mismatch reduces to the boost-only form
 \[
-V_\text{chiral} = \frac{1}{2} \mathrm{Tr} \left[ (i \Gamma_a) [\Gamma_b, i] \right] \propto \epsilon_{abc} \delta_a \delta_b \delta_c,
+\Omega_\text{biv} \approx \sum_a \delta_a\, i\Gamma_a \in \mathfrak{so}(3,1),
 \]
-which minimizes when the dual rotor ``over-rotates'' in the positive direction relative to the usual rotor. Consequently, the torsional mismatch bivector becomes
+structurally identical to the weak-field linearization of \S\ref{sec:gravity}. The Killing-form values established there ($B(i\Gamma_a, i\Gamma_b) = +8\,\delta_{ab}$) then yield directly
 \[
-\Omega_\text{biv} = \log(R_\text{usual}^\dagger R_\text{dual}) \approx \sum_a \delta_a (i \Gamma_a + \Gamma_a) \in \mathfrak{so}(3,1) \oplus \mathfrak{so}(3,1),
+J = \frac{1}{16} B(\Omega_\text{biv}, \Omega_\text{biv}) = \frac{1}{2}\sum_a \delta_a^2 = \frac{\delta^2}{2} > 0.
 \]
-yielding a positive torsion scalar $J = \frac{1}{16} B(\Omega_\text{biv}, \Omega_\text{biv}) > 0$. This breaks the particle-antiparticle symmetry at the algebraic core: usual-dominant modes ($\phi$) experience attractive torsional binding ($J > 0$), while dual-dominant modes ($\theta$) are repelled into $J < 0$ layers.
+This breaks the particle--antiparticle symmetry at the algebraic core. For usual-dominant modes (matter), the torsional mismatch is positive ($J > 0$) and produces attractive gravitational binding. For dual-dominant modes (antimatter), the usual/dual role assignment is inverted: the inverse conversion $\phi \mapsto -\phi\, i$ maps the chiral phase $\delta$ into the rotation direction rather than the boost direction, so the mismatch becomes $\Omega_\text{biv} \approx \sum_a \delta_a\, \Gamma_a$. The Killing-form value $B(\Gamma_a, \Gamma_b) = -8\,\delta_{ab}$ then gives $J = -\delta^2/2 < 0$, a repulsive torsional layer that dynamically excludes such modes from the cosmological vacuum.
 
 \subsection{Sakharov Conditions and the Order-of-Magnitude Estimate}
 
@@ -1050,11 +1052,7 @@ This harmonic oscillator dynamics constitutes the bridge between the classical t
 \section{Towards Quantum Gravity and Full Unification}
 \label{sec:quantumgravity}
 
-The classical formulation presented thus far demonstrates that gravity emerges as torsional mismatch between the particle-intrinsic usual and dual spacetimes, encoded in the 16-dimensional biquaternion algebra isomorphic to $\mathrm{Cl}(3,1)$. The action $S = \frac{c^4}{16\pi G} \int J \, d^4x$, with
-\[
-J = \frac{1}{16} B(\Omega_\text{biv}, \Omega_\text{biv}), \quad \Omega_\text{biv} = \log(R_\text{usual}^\dagger R_\text{dual}),
-\]
-yields exact equivalence to the Einstein-Hilbert action while abandoning the continuum hypothesis and Riemannian curvature.
+The classical formulation presented thus far demonstrates that gravity emerges as torsional mismatch between the particle-intrinsic usual and dual spacetimes, encoded in the 16-dimensional biquaternion algebra isomorphic to $\mathrm{Cl}(3,1)$. The action $S$ yields exact equivalence to the Einstein-Hilbert action while abandoning the continuum hypothesis and Riemannian curvature.
 
 A profound extension arises from recognizing that the dual rotor $R_\text{dual}$ is mathematically identical to the SU(2) spin-1/2 rotation operator. The dual-sector phases $\theta$ thus directly parameterize quantum states. Due to the intrinsic compactness of the dual spacetime ($\theta \mod 4\pi$), these phases live on a compact manifold, naturally yielding a Hilbert space structure where each particle's quantum state $|\psi\rangle$ corresponds to the unitary phase part of $R_\text{dual}$.
 
