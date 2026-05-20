@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[a4paper]{article}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{amsthm}
 \usepackage{mathtools}
@@ -201,10 +201,41 @@ The century-old mystery of matter waves is solved: the de Broglie wave is the to
 The wave function is real. It is made of the same stuff as gravity.
 
 \begin{thebibliography}{9}
-\bibitem{DualSpacetime2025} Anonymous, ``Gravity as Torsion between Dual Spacetime'', arXiv:2512.00001 (2025).
-\bibitem{DualRotorDynamics2025} Anonymous, ``Derivation of Dual-Rotor Dynamics in Double Spacetime Theory'', arXiv:2512.00002 (2025).
-\bibitem{Bell1964} J. S. Bell, Physics \textbf{1}, 195 (1964).
-\bibitem{Tsirelson1980} B. S. Tsirelson, Lett. Math. Phys. \textbf{4}, 93 (1980).
+
+% --- Companion / DST internal papers ---
+\bibitem{dst-main}
+Anonymous,
+``Gravity as Torsion between Dual Spacetime: A Biquaternionic Reformulation of General Relativity'' (2025).
+\url{https://github.com/hypernumbernet/dual-spacetime-doc/blob/main/double-spacetime-theory.pdf}.
+
+\bibitem{dst-dynamic-equation}
+Anonymous,
+``Derivation of Dual-Rotor Dynamics in Double Spacetime Theory: A Harmonic Oscillator Model from Torsional Mismatch Potential'' (2025).
+\url{https://github.com/hypernumbernet/dual-spacetime-doc/blob/main/dst-dynamic-equation.pdf}.
+
+% --- de Broglie hypothesis and matter waves ---
+\bibitem{debroglie1924}
+L.~de Broglie,
+``Recherches sur la th\'eorie des quanta,''
+\textit{Ann.\ Phys.} (Paris) \textbf{3}, 22--128 (1925).
+
+% --- de Broglie--Bohm pilot-wave theory ---
+\bibitem{bohm1952}
+D.~Bohm,
+``A suggested interpretation of the quantum theory in terms of ``hidden'' variables.\ I,''
+\textit{Phys.\ Rev.} \textbf{85}, 166--179 (1952).
+
+% --- Quantum foundations and non-locality ---
+\bibitem{bell1964}
+J.~S.~Bell,
+``On the Einstein Podolsky Rosen paradox,''
+\textit{Physics Physique Fizika} \textbf{1}, 195--200 (1964).
+
+\bibitem{tsirelson1980}
+B.~S.~Tsirelson,
+``Quantum generalizations of Bell's inequality,''
+\textit{Lett.\ Math.\ Phys.} \textbf{4}, 93--100 (1980).
+
 \end{thebibliography}
 
 \appendix
@@ -234,12 +265,12 @@ where \(\delta\theta(\mathbf{x},t)\) is the relative torsional mismatch angle be
 \]
 with phase \(\phi = \arg(\hat{n}_{\mathcal{O}}\cdot\hat{n}_A)\).
 
-Identifying the probability amplitude as the modulus and the accumulated phase as the de Broglie–Bohm phase function,
+We identify the probability amplitude with the modulus and the accumulated phase with the de Broglie–Bohm phase function:
 \[
 \sqrt{\rho(\mathbf{x},t)} := \cos\Bigl(\frac{\delta\theta(\mathbf{x},t)}{2}\Bigr),\qquad
-S(\mathbf{x},t)/\hbar := \phi(\mathbf{x},t) + \text{const},
+S(\mathbf{x},t)/\hbar := \phi(\mathbf{x},t) + \text{const}.
 \]
-we obtain precisely the polar form of the wave function
+This yields the polar form of the wave function
 \[
 \psi_A(\mathbf{x},t\mid\mathcal{O}) = \sqrt{\rho}\,e^{i S/\hbar}.
 \]
@@ -249,7 +280,7 @@ This completes the identification of the dual-rotor overlap with the quantum wav
 
 \section{Derivation of Schrödinger Equation from Rotor Linearization}
 
-We start from the exact nonlinear dual-rotor dynamics derived in the companion paper \cite{DualRotorDynamics2025}. The torsional mismatch angle \(\delta\theta_a = \theta_a - \phi_a\) of a free massive particle obeys the simple harmonic oscillator equation
+We start from the exact nonlinear dual-rotor dynamics derived in the companion paper \cite{dst-dynamic-equation}. The torsional mismatch angle \(\delta\theta_a = \theta_a - \phi_a\) of a free massive particle obeys the simple harmonic oscillator equation
 \[
 \ddot{\delta\theta}_a + m\,\delta\theta_a = 0,
 \]

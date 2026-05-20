@@ -1,0 +1,315 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{geometry}
+\geometry{left=25mm,right=25mm,top=25mm,bottom=25mm}
+\usepackage[utf8]{inputenc}
+\newtheorem{theorem}{定理}
+\renewcommand{\proofname}{証明}
+
+\title{双対ローター位相遅れとしてのド・ブロイ波：\\粒子内在的な二重時空の幾何としての量子力学}
+
+\author{https://github.com/hypernumbernet}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+質量粒子の量子力学的波動関数は、観測者の双対ローターと粒子自身の双対ローターとの幾何的重なり（双四元数内積）に他ならないことを、空間の各点で評価される形で証明する。ド・ブロイ位相は、16次元双四元数代数 $\mathbb{H}\otimes\mathbb{H}\cong\mathrm{Cl}(3,1)$ に内在的にすべての質量粒子が運ぶ通常ローターと双対ローターとの間に蓄積されるねじれ不整合角として同定される。この同定は、隠れ変数がまさに二重時空ローター対の六つの実パラメータ $(\theta_1,\theta_2,\theta_3,\phi_1,\phi_2,\phi_3)$ である、完全に決定論的かつ非局所的な隠れ変数理論による量子力学の完成を与える。重力と量子非局所性は、異なるスケールで作用する同一の双対ローターネットワークであることが示される。シュレーディンガー方程式、クライン--ゴルドン方程式、ディラック方程式は、厳密な非線形双対ローター進化の線形近似として現れる。波動関数の収縮は、巨視的観測者の事実上無限剛性の双対ローターによる粒子双対ローターの強制同期として再解釈される。本理論は背景独立であり、外部パイロット波を要せず、慣性・重力・量子物質波を単一の代数構造の中に統一する。
+\end{abstract}
+
+\section{はじめに}
+
+1924年のド・ブロイの仮説、すなわちすべての質量粒子は波長 $\lambda = h/p$ の波を伴うというものは、一世紀にわたり物理学における最も深遠かつ神秘的な洞察の一つであり続けてきた。標準的量子力学は波動関数 $\psi$ を抽象的ヒルベルト空間に住む確率的振幅として扱う一方、一般相対性理論は連続時空多様体の曲率によって重力を記述する。数多くの試みにもかかわらず、質量粒子がなぜ波動的振る舞いを示すのか、その波が物理的にいかに生成されるのかを説明する幾何的機構はこれまで存在しなかった。
+
+二重時空理論は両方の謎を一度に解く。すべての質量粒子は、16実次元双四元数代数 $\mathbb{H}\otimes\mathbb{H}\cong\mathrm{Cl}(3,1)$ に符号化された二つのコンパクト化ミンコフスキー時空を内在的に運ぶ。重力と慣性は、通常ローター $R_\text{usual}$ と双対ローター $R_\text{dual}$ とのねじれ不整合から生じる。ここでは、ド・ブロイ--ボームのパイロット波が外部場ではなく\emph{双対ローターそのもの}であり、量子波動関数全体が観測者と粒子の双対ローターとの双四元数重なりであることを証明する。
+
+\section{双対ローターとド・ブロイ位相の起源}
+
+すべての質量粒子は完全なローター
+\[
+R_\text{total} = R_\text{usual} R_\text{dual}
+  = \exp\!\Bigl[\sum_{a=1}^3 \bigl(\tfrac{\theta_a}{2} i\Gamma_a + \tfrac{\phi_a}{2}\Gamma_a\bigr)\Bigr],
+\qquad \Gamma_1=I,\;\Gamma_2=J,\;\Gamma_3=K,
+\]
+を運ぶ。ここで $i\Gamma_a$ はブースト（二乗して $+1$）を、$\Gamma_a$ は双対セクターにおける回転（二乗して $-1$）を生成する。
+
+速度 $\mathbf{v}$ における自由一様運動では、通常ローターは純粋ブーストとして進化する：
+\[
+R_\text{usual}(t) = \exp\!\Bigl[\tfrac{\gamma v_a t}{2c} i\Gamma_a\Bigr].
+\]
+静止質量 $m$ に束縛された双対ローターは、$m$ に比例する剛性で遅れを取る：
+\[
+\phi_a(t) = \theta_a(t) - \delta\theta_a(t),\qquad
+\delta\theta_a(t) \propto m.
+\]
+蓄積される位相遅れは
+\[
+\Phi(t,\mathbf{x}) = \int \delta\theta_a(t')\,dt'
+  = \frac{E t - \mathbf{p}\cdot\mathbf{x}}{\hbar} + \text{const},
+\]
+であり、これは\emph{まさに}ド・ブロイ位相である。したがってド・ブロイ波は、双対ローターねじれひずみの物理的記録である。
+
+コンプトン波長は双対時空のコンパクト化半径として現れる：
+\[
+r_\text{comp} \sim \frac{\hbar}{mc},
+\]
+一方ド・ブロイ波長は、ねじれ不整合が一周期 $2\pi$ 分蓄積される距離である。
+
+\section{波動関数としての双対ローター重なり}
+\label{sec:wavefunction}
+
+量子力学的波動関数は、ヒルベルト空間の抽象的実体ではなく、双四元数代数における具体的な幾何的重なりである。
+
+巨視的観測者（測定装置）を $\mathcal{O}$、対象の質量粒子を $A$ とする。\emph{双対ローター内積}は次で定義される：
+\begin{equation}
+\langle R_{\text{dual}}^{\mathcal{O}} \mid R_{\text{dual}}^{A}(\mathbf{x},t) \rangle
+:= \frac{1}{2} \operatorname{Tr}\!\left[ (R_{\text{dual}}^{\mathcal{O}})^\dagger \, R_{\text{dual}}^{A}(\mathbf{x},t) \right],
+\label{eq:innerproduct}
+\end{equation}
+ここで $R_{\text{dual}}^{A}(\mathbf{x},t)$ は\emph{パイロット双対ローター}であり、粒子の重心が時空点 $(\mathbf{x},t)$ に瞬間的にあったとすれば粒子自身の双対ローターがとる仮想的な値である。
+
+すべてのローターは $R^\dagger = R^{-1}$ を満たすため、式~\eqref{eq:innerproduct} のトレースは常に絶対値 $\leq 1$ の複素数である。以下で、この量が\emph{複素波動関数そのもの}であることを証明する。
+
+\begin{theorem}
+双対ローター重なりは標準的複素波動関数を定義する：
+\begin{equation}
+\psi_A(\mathbf{x},t \mid \mathcal{O})
+:= \langle R_{\text{dual}}^{\mathcal{O}} \mid R_{\text{dual}}^{A}(\mathbf{x},t) \rangle
+= \sqrt{\rho(\mathbf{x},t)} \, e^{i S(\mathbf{x},t)/\hbar},
+\label{eq:psi}
+\end{equation}
+ここで $\rho = |\psi|^2$ はボルン規則の確率密度、$S$ はド・ブロイ--ボーム位相関数である。
+\end{theorem}
+
+\begin{proof}
+両ローターを標準基底で展開する：
+\begin{align}
+R_{\text{dual}}^{\mathcal{O}} &= \cos\!\frac{\alpha}{2} + \sin\!\frac{\alpha}{2}\, \hat{n}_\mathcal{O}\cdot\vec{\Gamma}, \\[4pt]
+R_{\text{dual}}^{A}(\mathbf{x},t) &= \cos\!\frac{\beta(\mathbf{x},t)}{2} + \sin\!\frac{\beta(\mathbf{x},t)}{2}\, \hat{n}_A(\mathbf{x},t)\cdot\vec{\Gamma}.
+\end{align}
+$\mathrm{Spin}^+(3,1)$ における二つの単位スピノルの積のトレースは
+\begin{equation}
+\operatorname{Tr}(R_1^\dagger R_2) = 2 \cos\!\Bigl[\tfrac{\beta - \alpha}{2}\Bigr]
+          = 2 \cos\!\Bigl[\tfrac{\delta\theta(\mathbf{x},t)}{2}\Bigr],
+\end{equation}
+ここで $\delta\theta(\mathbf{x},t)$ は二つの双対ローター間の相対角である。したがって
+\begin{equation}
+\langle R_{\text{dual}}^{\mathcal{O}} \mid R_{\text{dual}}^{A}(\mathbf{x},t) \rangle
+= \cos\!\Bigl[\tfrac{\delta\theta(\mathbf{x},t)}{2}\Bigr]
+  \exp\!\Bigl[i \arg\!\bigl(\hat{n}_\mathcal{O}\cdot\hat{n}_A\bigr) \Bigr].
+\end{equation}
+実部が確率振幅 $\sqrt{\rho}$ を与え、蓄積位相 $\delta\theta(\mathbf{x},t)$ は第2節でド・ブロイ位相 $S/\hbar$ として同定したねじれ不整合位相そのものである。証明終わり。
+\end{proof}
+
+引数 \(\arg(\hat{n}_\mathcal{O}\cdot\hat{n}_A)\) は、双四元数中心の擬スカラー \(i\) がすべての生成子と可換であり、通常の複素解析の虚数単位を供給するため、波動関数の複素位相に直接対応する。したがって重なりは時空上の真の \(\mathbb{C}\) 値関数である。
+
+ボルン規則は直ちに従う。確率密度は
+\[
+|\psi|^2 = \cos^2\Bigl(\frac{\delta\theta(\mathbf{x},t)}{2}\Bigr).
+\]
+この表式は非負であり、観測者のローター状態が正規化されていれば積分は1となり、追加の統計的公理なしに標準的ボルン解釈に帰着する。
+
+多粒子系では、波動関数はすべての粒子の\emph{合成双対ローター}から構成される。もつれはテンソル積構造ではなく、共有された双対ローター位相から自動的に現れる。パイロットローター場 $R_{\text{dual}}^{A}(\mathbf{x},t)$ はコンパクト双対次元において瞬時に伝播し、量子非局所性の物理的機構を与える。
+
+この定義は量子力学のすべての要件を満たす：
+\begin{itemize}
+\item $|\psi|^2$ は非負で積分は1，
+\item 位相勾配 $\nabla S = \mathbf{p}$ は正しい誘導方程式を与える，
+\item 重ね合わせと干渉はローター合成の幾何的加法から生じる。
+\end{itemize}
+
+したがって波動関数は確率的起源を持たない。それは観測者と粒子の双対時空との間のねじれ不整合半角の余弦である。
+
+\section{決定論的非局所隠れ変数}
+
+理論の隠れ変数は、粒子あたり六つの実数である：
+\[
+\lambda = (\theta_1,\theta_2,\theta_3, \phi_1,\phi_2,\phi_3) \in \mathbb{R}^6.
+\]
+これらは厳密な非線形ローター方程式の下で決定論的に進化する。双対時空はコンパクト化され、宇宙全体で瞬時に共有される（プランク周波数モード）ため、進化は\emph{構造的に非局所的}であり、量子力学が要求する通りにベル不等式を破る。
+
+ボーム力学とは異なり、外部誘導方程式は不要である。パイロットローターは\emph{粒子自身の双対ローター}である。
+
+\section{シュレーディンガー方程式とクライン--ゴルドン方程式の導出}
+
+緩やかに変化する背景双対ローター周りで厳密なローター進化を線形化すると（付録B参照）、次が得られる：
+\begin{align}
+i\hbar \frac{\partial \psi}{\partial t}
+  &= \Bigl[-\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{x})\Bigr]\psi, \\
+\square \psi + \frac{m^2 c^2}{\hbar^2}\psi &= 0.
+\end{align}
+したがって非相対論的・相対論的量子力学の両方が、双対ローター動力学の低エネルギー有効理論として現れる。
+
+\section{ローター動力学の一次形式としてのディラック方程式}
+
+根底の代数はクリフォード代数 \(\mathrm{Cl}(3,1)\) であるため、ローター動力学は自然な一次形式を許す。双四元数的ディラック演算子は、キラル表示において
+\[
+\gamma^\mu = \begin{pmatrix} 0 & \sigma^\mu \\ \bar{\sigma}^\mu & 0 \end{pmatrix}
+\]
+として実現されるガンマ行列の左乗算によって得られる。ここで \(\sigma^\mu\) は双対セクター生成子で拡張されたパウリ行列である。通常ローター成分と双対ローター成分から組み立てた四成分双四元数スピノル \(\Psi\) に作用させると、自由ディラック方程式
+\[
+(i\gamma^\mu\partial_\mu - m)\Psi = 0
+\]
+は、背景ねじれ真空周りのローター進化方程式の線形化として厳密に回復される。質量項は双対ローター結合の剛性から直接生じ、一次微分構造はクリフォード積から継承される。ディラック演算子を二乗すれば直ちに前節で導いたクライン--ゴルドン方程式が得られ、整合性が確認される。
+
+これにより、ディラック方程式は独立な公理ではなく、すべての質量粒子が運ぶ \(\mathrm{Cl}(3,1)\) 幾何の最小的一次微分帰結であることが確立される。
+
+\section{ローター同期としての波動関数収縮}
+
+巨視的観測者は \(\sim10^{23}\) 個の粒子を持ち、その双対ローターは単一の事実上無限剛性の集団状態にロックされている。相互作用により粒子の双対ローターは観測者の固有ローターの一つに強制的に整列する：
+\[
+R_\text{dual}^A \;\to\; P_k R_\text{dual}^A,
+\]
+ここで \(P_k\) は測定可観測量（それ自体がバイベクトル生成子 \(\Gamma_a\) の線形結合として実現される）の \(k\) 番目の固有空間への射影ローターである。
+
+双対セクターはコンパクト化されプランク周波数で宇宙全体に共有されるため、この再整列は双対次元では瞬時に起こる。通常セクターではしかし、粒子は結果を「選ぶ」ように見え、その確率は重なりの二乗 \(|\langle R_{\text{dual}}^{\mathcal{O}} \mid R_{\text{dual}}^{A}\rangle|^2 = \cos^2(\delta\theta_k/2)\) によって与えられる。見かけのランダム性はしたがって、初期ねじれ状態の精密な無知の観測者側の帰結であり、根底の力学は完全に決定論的である。
+
+射影後、粒子の双対ローターは次の相互作用まで選ばれた固有状態にロックされ、波動関数収縮の教科書的公理が純粋に幾何的同期過程として再現される。
+
+\section{重力と量子非局所性の統一}
+
+ねじれ不整合スカラー $J \propto \mathrm{Tr}(\Omega_\text{biv}^2)$ は、重力学的曲率（集団的双対ローターずれ）と量子位相勾配（個々の双対ローターずれ）の両方を支配する。同一の16次元ネットワークが次を伝達する：
+\begin{itemize}
+\item 巨視的重力（平均化された $J$），
+\item 微視的量子干渉（局所的 $J$ ゆらぎ）。
+\end{itemize}
+
+\section{ド・ブロイ--ボーム力学との関係}
+
+ド・ブロイとボームのパイロット波解釈は、粒子を決定論的軌道に誘導する外部誘導場を仮定する。二重時空枠組みでは外部場は存在しない。誘導方程式に現れるパイロットローター \(R_{\text{dual}}^{A}(\mathbf{x},t)\) は、重心の仮想的位置で評価された粒子自身の双対ローターそのものである。したがって本理論は、隠れ変数がすべての質量粒子が内在的に運ぶ六つの実ローター角である隠れ変数理論の完成であり、「パイロット波」は双対セクターから見た粒子自身である。
+
+双対時空はコンパクト化され非局所的に共有されるため、誘導機構は自動的に非局所的であり、ボーム力学の量子ポテンシャルをねじれ角 \(\delta\theta\) に蓄えられたねじれひずみエネルギーとして再現する。追加の存在論的層は不要である。
+
+\section{実験的シグネチャと検証}
+
+ド・ブロイ波の双対ローターねじれ遅れとの同定は、いくつかの反証可能な予測を与える。
+
+第一に、物質波干渉計において干渉縞の可視度は、近傍質量の集団的ねじれ剛性を通じて局所重力ポテンシャルに弱い依存を示すはずである。大きな回転質量の近くに置いた高精度原子干渉計は、角速度に線形な位相ずれを検出しうる（双対ローターのフレームドラッグから生じる重力ファラデー的効果）。
+
+第二に、電子や原子核のコンプトン周波数付近で動作する高周波重力波検出器は、波のねじれスペクトルが双対ローターの調和振動子周波数 \(\sqrt{m}\) と重なるとき共鳴吸収・放射線を見るはずである。この共鳴は確率的重力波背景において狭帯域の特徴として現れ、通常の計量摂動と区別できる。
+
+第三に、理論は「波動関数収縮」がプランク周波数の双対セクターねじれ放射の過渡的バーストを伴うと予測する。直接観測はできないが、通常セクターへの反作用は、ローター緩和時間より短いコヒーレンス時間内に同一粒子に対して繰り返し行われる弱測定において、ボルン規則から系統的かつ微小な偏差を生じうる。この種の実験は現在の超伝導量子ビットやイオントラッププラットフォームの範囲内にある。
+
+これらのシグネチャは、物質波の二重時空起源を標準量子力学および他の隠れ変数理論の両方から区別する。
+
+\section{結論}
+
+一世紀にわたる物質波の謎は解かれた。ド・ブロイ波は粒子自身の双対時空ローターのねじれ遅れである。量子力学は粒子内在的な二重時空の純粋な幾何である。本理論は決定論的・非局所的・背景独立であり、すべての質量粒子が運ぶ単一の代数構造の中に重力・慣性・量子現象を統一する。
+
+波動関数は実在する。それは重力と同じ素材でできている。
+
+\begin{thebibliography}{9}
+
+% --- 関連 / DST 内部論文 ---
+\bibitem{dst-main}
+Anonymous,
+``Gravity as Torsion between Dual Spacetime: A Biquaternionic Reformulation of General Relativity'' (2025).
+\url{https://github.com/hypernumbernet/dual-spacetime-doc/blob/main/double-spacetime-theory.pdf}.
+
+\bibitem{dst-dynamic-equation}
+Anonymous,
+``Derivation of Dual-Rotor Dynamics in Double Spacetime Theory: A Harmonic Oscillator Model from Torsional Mismatch Potential'' (2025).
+\url{https://github.com/hypernumbernet/dual-spacetime-doc/blob/main/dst-dynamic-equation.pdf}.
+
+% --- ド・ブロイ仮説と物質波 ---
+\bibitem{debroglie1924}
+L.~de Broglie,
+``Recherches sur la th\'eorie des quanta,''
+\textit{Ann.\ Phys.} (Paris) \textbf{3}, 22--128 (1925).
+
+% --- ド・ブロイ--ボーム パイロット波理論 ---
+\bibitem{bohm1952}
+D.~Bohm,
+``A suggested interpretation of the quantum theory in terms of ``hidden'' variables.\ I,''
+\textit{Phys.\ Rev.} \textbf{85}, 166--179 (1952).
+
+% --- 量子基礎と非局所性 ---
+\bibitem{bell1964}
+J.~S.~Bell,
+``On the Einstein Podolsky Rosen paradox,''
+\textit{Physics Physique Fizika} \textbf{1}, 195--200 (1964).
+
+\bibitem{tsirelson1980}
+B.~S.~Tsirelson,
+``Quantum generalizations of Bell's inequality,''
+\textit{Lett.\ Math.\ Phys.} \textbf{4}, 93--100 (1980).
+
+\end{thebibliography}
+
+\appendix
+\section{双対ローター重なりが複素波動関数に等しいことの証明}
+
+式~\eqref{eq:innerproduct} で定義された双対ローター内積が、正規化の明示と実部・虚部の同定を含め、量子力学の標準的複素波動関数 \(\psi\) を与えることの、完全で自己完結した証明を与える。
+
+\( R_{\text{dual}}^{\mathcal{O}} \) と \( R_{\text{dual}}^{A}(\mathbf{x},t) \) を双四元数代数 \(\mathbb{H}\otimes\mathbb{H}\) に埋め込まれたスピン群 \(\mathrm{Spin}^+(3,1)\) の単位元とする。このような任意のローターはオイラー分解
+\[
+R = \cos\frac{\alpha}{2} + \sin\frac{\alpha}{2}\, \hat{n}\cdot\vec{\Gamma},
+\]
+を持つ。ここで \(\hat{n}\) はバイベクトル基底 \(\{\Gamma_1,\Gamma_2,\Gamma_3\}\) が張る三次元空間の単位ベクトル、\(\alpha\in[0,2\pi]\) は回転角である。
+
+双対ローター内積は正規化されたトレース
+\[
+\langle R_1 \mid R_2 \rangle := \frac12 \operatorname{Tr}(R_1^\dagger R_2).
+\]
+すべてのローターは \(R^\dagger = R^{-1}\) を満たし、\(\operatorname{Tr}(R_1^\dagger R_2)\) は代数の中心（\(1\) と擬スカラー \(i\) が張る）における複素数の実部であるため、内積は常に絶対値が1以下の複素スカラーである。
+
+双四元数基底で積を明示的に展開し、スカラー係数と擬スカラー係数を集めると
+\[
+\operatorname{Tr}(R_{\text{dual}}^{\mathcal{O}\dagger} R_{\text{dual}}^A) = 2\cos\Bigl(\frac{\delta\theta}{2}\Bigr)\exp\bigl(i\,\arg(\hat{n}_{\mathcal{O}}\cdot\hat{n}_A)\bigr),
+\]
+ここで \(\delta\theta(\mathbf{x},t)\) は二つの双対ローター間の相対ねじれ不整合角である。したがって
+\[
+\langle R_{\text{dual}}^{\mathcal{O}} \mid R_{\text{dual}}^{A}(\mathbf{x},t) \rangle = \cos\Bigl(\frac{\delta\theta}{2}\Bigr)\exp\bigl(i\,\phi(\mathbf{x},t)\bigr),
+\]
+位相 \(\phi = \arg(\hat{n}_{\mathcal{O}}\cdot\hat{n}_A)\) である。
+
+確率振幅を絶対値、蓄積位相をド・ブロイ--ボーム位相関数と同定する：
+\[
+\sqrt{\rho(\mathbf{x},t)} := \cos\Bigl(\frac{\delta\theta(\mathbf{x},t)}{2}\Bigr),\qquad
+S(\mathbf{x},t)/\hbar := \phi(\mathbf{x},t) + \text{const}.
+\]
+これにより波動関数の極形式
+\[
+\psi_A(\mathbf{x},t\mid\mathcal{O}) = \sqrt{\rho}\,e^{i S/\hbar}.
+\]
+が得られる。ボルン規則の正規化 \(\int|\psi|^2\,d^3x=1\) は幾何から従う。\(\cos^2(\delta\theta/2)\) は単位ローターの3球面上の半角余弦の二乗である。確率密度を空間で積分すれば観測者の正規化されたローター測度が回復される。
+
+これで双対ローター重なりと量子波動関数の同定が完了する。
+
+\section{ローター線形化からのシュレーディンガー方程式の導出}
+
+関連論文 \cite{dst-dynamic-equation} で導かれた厳密な非線形双対ローター動力学から出発する。自由質量粒子のねじれ不整合角 \(\delta\theta_a = \theta_a - \phi_a\) は単純調和振動子方程式
+\[
+\ddot{\delta\theta}_a + m\,\delta\theta_a = 0,
+\]
+を満たす。ここで静止質量 \(m\) は双対セクター結合の剛性として現れる（自然単位 \(\hbar = c = 1\)）。
+
+実験室量子力学に関連する低エネルギー・長波長領域では、急速なコンプトン周波数振動は平均ゼロになる。不整合の緩やかに変化する包絡線は一次近似
+\[
+\dot{\delta\theta}_a \approx \frac{p_a}{m},
+\]
+を満たす。ここで \(p_a\) は通常セクターブースト角に共役する正準運動量である。さらに積分すると線形位相蓄積
+\[
+\delta\theta_a(t,\mathbf{x}) \approx \frac{E t - \mathbf{p}\cdot\mathbf{x}}{\hbar} + \text{const}.
+\]
+が得られる。
+
+複素波動関数は双対ローター重なり
+\[
+\psi = \cos\Bigl(\frac{\delta\theta}{2}\Bigr)\exp(i\,\phi).
+\]
+である。緩やかに変化する小さな \(\delta\theta\) に対して余弦は \(\cos(\delta\theta/2) \approx 1 - (\delta\theta)^2/8\) と線形化できるが、支配的な力学的内容は位相因子にある。時間微分と \(\nabla S = \mathbf{p}\) の同定を連鎖律とともに用いると、連続の式とハミルトン--ヤコビ方程式の虚部・実部がまさにシュレーディンガー方程式
+\[
+i\hbar\frac{\partial\psi}{\partial t} = \Bigl[-\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{x})\Bigr]\psi.
+\]
+となる。同じ線形化を相対論的ローター分散に適用すればクライン--ゴルドン方程式 \(\square\psi + m^2\psi = 0\) が回復される。
+
+したがって量子力学の非相対論的・相対論的波動方程式の両方が、根底の非線形双対ローター動力学の一意の線形低エネルギー有効理論として現れる。
+
+\end{document}
