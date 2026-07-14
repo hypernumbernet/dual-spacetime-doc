@@ -71,8 +71,6 @@ Section~\ref{sec:gravity} demonstrates that the torsional mismatch scalar $J$, c
 
 Section~\ref{sec:unified} shows that inertia and gravity are identical phenomena arising from the same dual-rotor rigidity, with the equivalence principle emerging as an algebraic identity.
 
-Section~\ref{sec:darkmatter} eliminates the need for dark matter by deriving flat galactic rotation curves from baryons alone.
-
 Section~\ref{sec:strongfield} reinterprets stellar remnants as torsion stars with multi-layered attractive-repulsive structure, forbidding both singularities and event horizons.
 
 Section~\ref{sec:timedilation} derives time dilation effects from torsional mismatch, predicting measurable deviations from GR in strong gravitational fields and planetary interiors.
@@ -82,6 +80,8 @@ Section~\ref{sec:nuclear} proves scale invariance of the torsional layers, ident
 Section~\ref{sec:electronshells} models the electron shell as an electrical inversion layer, explaining electron orbitals and interatomic forces from the perspective of microscopic-scale electromagnetism.
 
 Section~\ref{sec:unification} outlines the unification of all fundamental forces within the biquaternion algebra, with gauge fields emerging as additional rotor components.
+
+Section~\ref{sec:darkmatter}, after the unification of the gravitational and electromagnetic channels, derives flat galactic rotation curves from galaxy-scale dual-spacetime compactness and the geometric distortion of the compact-to-flat map, eliminating the need for dark matter.
 
 Section~\ref{sec:gravitycontrol} details practical mechanisms for gravitational engineering via coherent excitation of dual-spacetime rotors using circularly polarized electromagnetic fields.
 
@@ -432,140 +432,6 @@ For proper accelerations $a < a_\text{crit}$, the dual phase $\theta$ tracks $\p
 
 We propose that this mechanism is observationally realised in the anomalous airbursts of large meteoroids. The hypersonic deceleration experienced by bolides entering the Earth's atmosphere can reach values that, for the constituent atoms of the body, are plausibly of order $a_\text{crit}$. Long-standing puzzles in the bolide community---most prominently the Tunguska event (1908) and the Chelyabinsk superbolide (2013), whose disintegration altitudes and total radiated energies are notoriously difficult to reconcile with kinetic-energy dissipation models based on aerodynamic ablation and fragmentation alone---are naturally explained as collective inertial reversals: when the deceleration of the meteoroid crosses the material-specific $a_\text{crit}$, the dual phases of its constituent atoms wrap simultaneously, dumping the accumulated torsional strain energy as an explosive, predominantly radiative pulse. The dependence of $a_\text{crit}$ on composition would also account for the observed variability in airburst altitudes and yields between different meteorite classes (e.g.\ carbonaceous versus ordinary chondrites). A quantitative derivation of $a_\text{crit}$ from the particle-intrinsic compactification scale, together with a detailed comparison against the bolide observational record, will be presented in a companion paper.
 
-\section{Dark Matter-Free Galactic Rotation Curves from Dual-Spacetime Compactness}
-\label{sec:darkmatter}
-
-The observed flat rotation curves of spiral galaxies have long been regarded as the strongest evidence for non-baryonic dark matter. In the double spacetime theory, these curves emerge naturally from the compact $S^3$ topology of the dual spacetime --- specifically, from the geometric distortion inherent in the logarithmic map between the curved dual sector and the flat usual spacetime. No dark matter of any kind is required.
-
-\subsection{The Compact Dual Spacetime as 3-sphere}
-
-The dual rotor $R_{\text{dual}} \in \mathrm{SU}(2) \cong S^3$ parameterizes the dual spacetime degrees of freedom intrinsic to every massive particle. The three independent rotation angles $(\theta_1, \theta_2, \theta_3)$ define coordinates on a 3-sphere of compactification radius $R$, while the usual spacetime remains flat and non-compact.
-
-The logarithmic (inverse exponential) map
-\[
-\log : S^3 \to \mathfrak{su}(2) \cong \mathbb{R}^3
-\]
-identifies each dual rotor with a point in flat $\mathbb{R}^3$, mapping the 3-sphere onto a ball of radius $\pi R$. This map is the three-dimensional generalization of the azimuthal equidistant projection familiar from cartography.
-
-Just as the azimuthal equidistant projection of $S^2$ centered on the North Pole faithfully represents distances near the pole but distorts areas catastrophically near the South Pole --- mapping a single antipodal point to the entire circumference of the projection boundary --- the logarithmic map of $S^3$ introduces a systematic volume distortion quantified by the Jacobian
-\[
-\mathcal{J}(\chi) = \frac{\sin^2 \chi}{\chi^2},
-\]
-where $\chi = r/R$ is the geodesic angle corresponding to the physical distance $r$ in the usual spacetime. This Jacobian equals unity at the origin ($\chi = 0$, faithful representation) and vanishes at the antipode ($\chi = \pi$, maximal distortion). All standard gravitational calculations implicitly assume $\mathcal{J} = 1$; the double spacetime theory reveals that this assumption fails at galactic scales.
-
-\subsection{Gravitational Potential on 3-sphere: The Cotangent Potential}
-
-The torsional mismatch scalar $J$, from which gravity arises, is computed on the compact dual spacetime. The effective gravitational potential for a point mass $M$ is governed by the Green's function of the Laplacian on $S^3$. For the spherically symmetric case, the unique radially harmonic function is the cotangent:
-\[
-\Phi(r) = -\frac{GM}{R}\cot\!\left(\frac{r}{R}\right).
-\]
-That this satisfies the Laplace equation on $S^3$ can be verified directly: in geodesic polar coordinates with metric $ds^2 = dr^2 + R^2 \sin^2(r/R)\,(d\vartheta^2 + \sin^2\!\vartheta\, d\varphi^2)$, the radial Laplacian annihilates $\cot(r/R)$ identically. The Gauss-law normalization is confirmed by
-\[
-g(r) \cdot 4\pi R^2 \sin^2\!\left(\frac{r}{R}\right) = -\frac{GM}{R^2 \sin^2(r/R)} \cdot 4\pi R^2 \sin^2\!\left(\frac{r}{R}\right) = -4\pi GM.
-\]
-
-In the limit $r \ll R$, the cotangent expands as
-\[
-\cot\!\left(\frac{r}{R}\right) = \frac{R}{r} - \frac{r}{3R} - \frac{r^3}{45R^3} - \cdots\,,
-\]
-yielding
-\[
-\Phi(r) \approx -\frac{GM}{r} + \frac{GM\,r}{3R^2} + \mathcal{O}\!\left(\frac{r^3}{R^4}\right),
-\]
-which recovers the standard Newtonian potential as the leading term. The higher-order corrections arise purely from the curvature of $S^3$ and vanish in the decompactification limit $R \to \infty$.
-
-\subsection{Geometric Enhancement of Gravity}
-
-The gravitational acceleration on $S^3$,
-\[
-g(r) = -\frac{d\Phi}{dr} = -\frac{GM}{R^2 \sin^2(r/R)},
-\]
-exceeds the flat-space Newtonian acceleration $g_{\text{N}} = -GM/r^2$ by the enhancement factor
-\[
-\eta(r) \equiv \frac{g_{S^3}(r)}{g_{\text{N}}(r)} = \left[\frac{r/R}{\sin(r/R)}\right]^2.
-\]
-This factor is precisely the square of the metric distortion of the azimuthal equidistant projection: gravitational flux through a sphere of geodesic radius $r$ on $S^3$ subtends an area $4\pi R^2 \sin^2(r/R)$, which is smaller than the flat-space area $4\pi r^2$. The flux is concentrated, and gravity is strengthened --- not by invisible matter, but by the curvature of the compact dual spacetime.
-
-Representative values: $\eta = 1.003$ at $r/R = 0.1$; $\eta = 1.41$ at $r/R = 1.0$; $\eta = 2.26$ at $r/R = 1.5$; $\eta = 4.84$ at $r/R = 2.0$.
-
-\subsection{Emergence of Flat Rotation Curves}
-
-For a test particle in circular orbit at distance $r$ from an enclosed mass $M(r)$, the orbital velocity satisfies
-\[
-v^2(r) = \frac{GM(r)}{r} \cdot \eta(r) = \frac{GM(r)}{r} \cdot \left[\frac{r/R}{\sin(r/R)}\right]^2.
-\]
-Outside the luminous disk ($r > r_{\text{disk}}$), where $M(r) \approx M_{\text{tot}}$, the flat-space Keplerian velocity $v_K^2 = GM_{\text{tot}}/r$ declines as $r^{-1}$. The $S^3$ enhancement factor $\eta(r)$, growing monotonically with $r$, counteracts this decline.
-
-The combined dimensionless function $f(x) \equiv x / \sin^2 x$ (where $x = r/R$) governs the shape of the rotation curve. It possesses a broad minimum at $x_0 \approx 1.17$, the solution of $\tan x = 2x$, producing an extended plateau:
-\begin{itemize}
-  \item \textbf{Inner region} ($r \ll R$): Keplerian behavior modified by the rising $M(r)$, reproducing the observed solid-body rise.
-  \item \textbf{Transition region} ($r \sim R$): the declining Keplerian factor is balanced by the growing $\eta(r)$, yielding a nearly flat plateau whose breadth is set by the width of the minimum of $f(x)$.
-  \item \textbf{Outer region} ($r \gtrsim 2R$): $\eta(r)$ dominates, and the rotation curve rises gently before entering the torsional reversal regime.
-\end{itemize}
-
-\subsection{The Baryonic Tully-Fisher Relation and the Compactification Radius}
-
-The asymptotic circular velocity at the plateau satisfies
-\[
-v_{\text{flat}}^2 \sim \frac{GM_{\text{tot}}}{R} \cdot f_0,
-\]
-where $f_0 \equiv \min_x [x/\sin^2 x] \approx 1.10$ is an order-unity geometric constant. If the compactification radius scales with the total enclosed mass as
-\[
-R = \sqrt{\frac{GM_{\text{tot}}}{a_0}},
-\]
-where $a_0$ is a fundamental acceleration set by the dual-spacetime compactification scale, then
-\[
-v_{\text{flat}}^4 = G M_{\text{tot}} \, a_0 \, f_0^2,
-\]
-which is precisely the baryonic Tully-Fisher relation (McGaugh et al.\ 2016), with $a_0 \approx 1.2 \times 10^{-10}\;\mathrm{m/s^2}$. The scaling $R \propto M^{1/2}$ implies that more massive galaxies possess larger dual-spacetime patches, a physically natural consequence of greater total torsional charge.
-
-For the Milky Way ($M_{\text{tot}} \approx 6 \times 10^{10}\,M_\odot$), this yields
-\[
-R = \sqrt{\frac{G \times 6 \times 10^{10}\,M_\odot}{1.2 \times 10^{-10}\;\mathrm{m/s^2}}} \approx 27\;\mathrm{kpc},
-\]
-in striking agreement with the observed radial extent of the flat rotation curve. The acceleration scale $a_0$ is thus identified as the characteristic gravitational acceleration at the $S^3$ boundary of a typical galaxy, and its origin lies in the discrete compactification structure of the dual spacetime (Section~\ref{sec:discretetime}).
-
-\subsection{Torsional Reversal and the Finite Range of Gravity}
-
-The cotangent potential crosses zero at $r = \pi R/2$, beyond which the dual-spacetime rotation angle $\theta(r) = r/R$ exceeds $\pi/2$. In the torsional mismatch framework (Section~\ref{sec:gravity}), this crossing triggers a sign change in the torsion scalar $J$: the compact trigonometric contribution from the dual sector overwhelms the non-compact hyperbolic contribution from the usual sector, yielding $J < 0$ and repulsive gravity. The scalar interference factor (Section~\ref{sec:timedilation})
-\[
-\gamma_s = \cosh\!\left(\frac{\phi}{2}\right)\cos\!\left(\frac{\theta}{2}\right) - \sinh\!\left(\frac{\phi}{2}\right)\sin\!\left(\frac{\theta}{2}\right)
-\]
-becomes negative when $\theta$ exceeds the critical value satisfying $\tanh(\phi/2)\tan(\theta_c/2) = 1$.
-
-Gravitational attraction is therefore confined to a finite $S^3$ patch of effective radius $\sim \pi R/2$, beyond which a weakly repulsive torsional barrier emerges. This finite range is the compact-space analog of the Newtonian $1/r$ potential extending to infinity: the $S^3$ topology naturally ``walls off'' each gravitational source.
-
-\subsection{The Cosmic Atlas: Galaxy-Scale 3-sphere Patches}
-
-The observable universe is tiled by overlapping $S^3$ patches, each centered on a gravitational concentration (galaxy or cluster), forming a cosmic atlas in the strict differential-geometric sense. Each patch functions as an azimuthal equidistant projection chart: faithful near its center, maximally distorted at its boundary. The large-scale structure of the cosmos is that of a manifold covered by galaxy-scale stickers of azimuthal equidistant maps, glued together at their repulsive boundaries.
-
-This patchwork structure naturally accounts for:
-\begin{itemize}
-  \item the \textbf{cosmic web}: galaxies are distributed along the overlap regions of neighboring $S^3$ charts, where the attractive tails of adjacent patches constructively interfere;
-  \item \textbf{cosmic voids}: the vast underdense regions correspond to the repulsive ($J < 0$) boundary zones between charts, where matter is expelled;
-  \item the \textbf{radial acceleration relation}: the tight correlation between observed and baryonic gravitational accelerations follows from the universal $\eta(r)$ enhancement, with residual scatter arising from chart-overlap effects;
-  \item the \textbf{absence of dark matter signals} in direct detection experiments --- because dark matter does not exist.
-\end{itemize}
-
-\subsection{Numerical Verification and Falsifiable Predictions}
-
-Preliminary particle-based simulations using rotor-ensemble dynamics have successfully reproduced flat rotation curves from baryonic mass distributions alone. Public open-source codes are available at:
-\begin{itemize}
-  \item \texttt{https://github.com/hypernumbernet/blackhole-simulator}
-  \item \texttt{https://github.com/hypernumbernet/dual-spacetime-simulator}
-\end{itemize}
-Full $N$-body integrations incorporating the exact $S^3$ cotangent potential are in preparation.
-
-Key predictions distinguishing this theory from $\Lambda$CDM and MOND include:
-\begin{itemize}
-  \item \textbf{Outer rotation curve upturn and reversal}: Isolated galaxies should exhibit a gentle upturn beyond $r \gtrsim 2R$, transitioning to declining and eventually repulsive gravity at $r \approx \pi R/2$, detectable via deep 21-cm HI observations extending to $\sim 100\;\mathrm{kpc}$.
-  \item \textbf{Lensing sign reversal}: Galaxy-galaxy weak lensing should weaken and reverse sign at projected separations exceeding $\pi R/2$, in sharp contrast to the monotonic NFW profiles predicted by $\Lambda$CDM.
-  \item \textbf{Cotangent vs.\ MOND interpolation}: The precise form of the radial acceleration relation should follow the cotangent-derived enhancement $g_{\text{obs}} = g_{\text{bar}} \cdot \eta(r)$ rather than the standard MOND interpolation function $\nu(g_{\text{bar}}/a_0)$, with measurable deviations at $g \lesssim a_0/10$.
-  \item \textbf{Diversity from $R(M)$}: The observed diversity of rotation curve shapes --- from slowly rising (low-surface-brightness dwarfs with $r_{\text{disk}} \ll R$) to flat (Milky Way-type) to gently declining (high-surface-brightness spirals with $r_{\text{disk}} \sim R$) --- is reproduced by the single relation $R = \sqrt{GM/a_0}$ without additional free parameters.
-\end{itemize}
-
-Dark matter is rendered superfluous --- an artifact of projecting the compact $S^3$ geometry of the dual spacetime onto a fictitious flat and infinite background. The cotangent potential, the azimuthal equidistant distortion, and the torsional reversal at the $S^3$ boundary provide all the missing gravity without invisible matter.
-
 \section{Strong-Field Regime: Layered Gravitational Reversal and the New Black Hole Paradigm}
 \label{sec:strongfield}
 
@@ -849,6 +715,140 @@ Unification occurs in the full torsional bivector:
 The scalar $J = \frac{1}{16} B(\Omega_{\text{biv}}, \Omega_{\text{biv}})$ now includes electromagnetic and weak contributions, with the electroweak symmetry emerging as a subgroup of $\mathrm{Spin}^+(3,1) \oplus \mathrm{Spin}^+(3,1)$. Mass generation via rotor rigidity unifies with the Higgs mechanism, eliminating fine-tuning.
 
 This embedding recovers the Standard Model electroweak sector at low energies while resolving hierarchy problems through dual compactness, paving the way for full unification with strong and gravitational forces.
+
+\section{Dark Matter-Free Galactic Rotation Curves from Dual-Spacetime Compactness}
+\label{sec:darkmatter}
+
+Having established the layered torsional geometry of gravity and electromagnetism at nuclear and atomic scales (Sections~\ref{sec:strongfield}--\ref{sec:electronshells}) and their unification as two channels of a single dual-rotor mechanism (Section~\ref{sec:unification}), we now examine how each channel spatially unfolds at cosmological scales. The gravitational channel, driven by the kinematic pair $(\phi, \theta)$ tied to inertial mass, compactifies the dual sector into galaxy-scale $S^3$ patches; the electromagnetic channel, driven by the independent pair $(\alpha, \beta)$ tied to charge, unfolds over substantially larger, near-cosmic scales. The systematic distortion introduced by the logarithmic map from these compact dual geometries to the flat usual spacetime---the three-dimensional azimuthal equidistant projection---is what observers interpret as missing gravitational mass in spiral galaxies. The observed flat rotation curves, long regarded as the strongest evidence for non-baryonic dark matter, emerge from baryons alone through this geometric mechanism; no dark matter of any kind is required.
+
+\subsection{The Compact Dual Spacetime as 3-sphere}
+
+The dual rotor $R_{\text{dual}} \in \mathrm{SU}(2) \cong S^3$ parameterizes the dual spacetime degrees of freedom intrinsic to every massive particle. The three independent rotation angles $(\theta_1, \theta_2, \theta_3)$ define coordinates on a 3-sphere of compactification radius $R$, while the usual spacetime remains flat and non-compact.
+
+The logarithmic (inverse exponential) map
+\[
+\log : S^3 \to \mathfrak{su}(2) \cong \mathbb{R}^3
+\]
+identifies each dual rotor with a point in flat $\mathbb{R}^3$, mapping the 3-sphere onto a ball of radius $\pi R$. This map is the three-dimensional generalization of the azimuthal equidistant projection familiar from cartography.
+
+Just as the azimuthal equidistant projection of $S^2$ centered on the North Pole faithfully represents distances near the pole but distorts areas catastrophically near the South Pole --- mapping a single antipodal point to the entire circumference of the projection boundary --- the logarithmic map of $S^3$ introduces a systematic volume distortion quantified by the Jacobian
+\[
+\mathcal{J}(\chi) = \frac{\sin^2 \chi}{\chi^2},
+\]
+where $\chi = r/R$ is the geodesic angle corresponding to the physical distance $r$ in the usual spacetime. This Jacobian equals unity at the origin ($\chi = 0$, faithful representation) and vanishes at the antipode ($\chi = \pi$, maximal distortion). All standard gravitational calculations implicitly assume $\mathcal{J} = 1$; the double spacetime theory reveals that this assumption fails at galactic scales.
+
+\subsection{Gravitational Potential on 3-sphere: The Cotangent Potential}
+
+The torsional mismatch scalar $J$, from which gravity arises, is computed on the compact dual spacetime. The effective gravitational potential for a point mass $M$ is governed by the Green's function of the Laplacian on $S^3$. For the spherically symmetric case, the unique radially harmonic function is the cotangent:
+\[
+\Phi(r) = -\frac{GM}{R}\cot\!\left(\frac{r}{R}\right).
+\]
+That this satisfies the Laplace equation on $S^3$ can be verified directly: in geodesic polar coordinates with metric $ds^2 = dr^2 + R^2 \sin^2(r/R)\,(d\vartheta^2 + \sin^2\!\vartheta\, d\varphi^2)$, the radial Laplacian annihilates $\cot(r/R)$ identically. The Gauss-law normalization is confirmed by
+\[
+g(r) \cdot 4\pi R^2 \sin^2\!\left(\frac{r}{R}\right) = -\frac{GM}{R^2 \sin^2(r/R)} \cdot 4\pi R^2 \sin^2\!\left(\frac{r}{R}\right) = -4\pi GM.
+\]
+
+In the limit $r \ll R$, the cotangent expands as
+\[
+\cot\!\left(\frac{r}{R}\right) = \frac{R}{r} - \frac{r}{3R} - \frac{r^3}{45R^3} - \cdots\,,
+\]
+yielding
+\[
+\Phi(r) \approx -\frac{GM}{r} + \frac{GM\,r}{3R^2} + \mathcal{O}\!\left(\frac{r^3}{R^4}\right),
+\]
+which recovers the standard Newtonian potential as the leading term. The higher-order corrections arise purely from the curvature of $S^3$ and vanish in the decompactification limit $R \to \infty$.
+
+\subsection{Geometric Enhancement of Gravity}
+
+The gravitational acceleration on $S^3$,
+\[
+g(r) = -\frac{d\Phi}{dr} = -\frac{GM}{R^2 \sin^2(r/R)},
+\]
+exceeds the flat-space Newtonian acceleration $g_{\text{N}} = -GM/r^2$ by the enhancement factor
+\[
+\eta(r) \equiv \frac{g_{S^3}(r)}{g_{\text{N}}(r)} = \left[\frac{r/R}{\sin(r/R)}\right]^2.
+\]
+This factor is precisely the square of the metric distortion of the azimuthal equidistant projection: gravitational flux through a sphere of geodesic radius $r$ on $S^3$ subtends an area $4\pi R^2 \sin^2(r/R)$, which is smaller than the flat-space area $4\pi r^2$. The flux is concentrated, and gravity is strengthened --- not by invisible matter, but by the curvature of the compact dual spacetime.
+
+Representative values: $\eta = 1.003$ at $r/R = 0.1$; $\eta = 1.41$ at $r/R = 1.0$; $\eta = 2.26$ at $r/R = 1.5$; $\eta = 4.84$ at $r/R = 2.0$.
+
+\subsection{Emergence of Flat Rotation Curves}
+
+For a test particle in circular orbit at distance $r$ from an enclosed mass $M(r)$, the orbital velocity satisfies
+\[
+v^2(r) = \frac{GM(r)}{r} \cdot \eta(r) = \frac{GM(r)}{r} \cdot \left[\frac{r/R}{\sin(r/R)}\right]^2.
+\]
+Outside the luminous disk ($r > r_{\text{disk}}$), where $M(r) \approx M_{\text{tot}}$, the flat-space Keplerian velocity $v_K^2 = GM_{\text{tot}}/r$ declines as $r^{-1}$. The $S^3$ enhancement factor $\eta(r)$, growing monotonically with $r$, counteracts this decline.
+
+The combined dimensionless function $f(x) \equiv x / \sin^2 x$ (where $x = r/R$) governs the shape of the rotation curve. It possesses a broad minimum at $x_0 \approx 1.17$, the solution of $\tan x = 2x$, producing an extended plateau:
+\begin{itemize}
+  \item \textbf{Inner region} ($r \ll R$): Keplerian behavior modified by the rising $M(r)$, reproducing the observed solid-body rise.
+  \item \textbf{Transition region} ($r \sim R$): the declining Keplerian factor is balanced by the growing $\eta(r)$, yielding a nearly flat plateau whose breadth is set by the width of the minimum of $f(x)$.
+  \item \textbf{Outer region} ($r \gtrsim 2R$): $\eta(r)$ dominates, and the rotation curve rises gently before entering the torsional reversal regime.
+\end{itemize}
+
+\subsection{The Baryonic Tully-Fisher Relation and the Compactification Radius}
+
+The asymptotic circular velocity at the plateau satisfies
+\[
+v_{\text{flat}}^2 \sim \frac{GM_{\text{tot}}}{R} \cdot f_0,
+\]
+where $f_0 \equiv \min_x [x/\sin^2 x] \approx 1.10$ is an order-unity geometric constant. If the compactification radius scales with the total enclosed mass as
+\[
+R = \sqrt{\frac{GM_{\text{tot}}}{a_0}},
+\]
+where $a_0$ is a fundamental acceleration set by the dual-spacetime compactification scale, then
+\[
+v_{\text{flat}}^4 = G M_{\text{tot}} \, a_0 \, f_0^2,
+\]
+which is precisely the baryonic Tully-Fisher relation (McGaugh et al.\ 2016), with $a_0 \approx 1.2 \times 10^{-10}\;\mathrm{m/s^2}$. The scaling $R \propto M^{1/2}$ implies that more massive galaxies possess larger dual-spacetime patches, a physically natural consequence of greater total torsional charge.
+
+For the Milky Way ($M_{\text{tot}} \approx 6 \times 10^{10}\,M_\odot$), this yields
+\[
+R = \sqrt{\frac{G \times 6 \times 10^{10}\,M_\odot}{1.2 \times 10^{-10}\;\mathrm{m/s^2}}} \approx 27\;\mathrm{kpc},
+\]
+in striking agreement with the observed radial extent of the flat rotation curve. The acceleration scale $a_0$ is thus identified as the characteristic gravitational acceleration at the $S^3$ boundary of a typical galaxy, and its origin lies in the discrete compactification structure of the dual spacetime (Section~\ref{sec:discretetime}).
+
+\subsection{Torsional Reversal and the Finite Range of Gravity}
+
+The cotangent potential crosses zero at $r = \pi R/2$, beyond which the dual-spacetime rotation angle $\theta(r) = r/R$ exceeds $\pi/2$. In the torsional mismatch framework (Section~\ref{sec:gravity}), this crossing triggers a sign change in the torsion scalar $J$: the compact trigonometric contribution from the dual sector overwhelms the non-compact hyperbolic contribution from the usual sector, yielding $J < 0$ and repulsive gravity. The scalar interference factor (Section~\ref{sec:timedilation})
+\[
+\gamma_s = \cosh\!\left(\frac{\phi}{2}\right)\cos\!\left(\frac{\theta}{2}\right) - \sinh\!\left(\frac{\phi}{2}\right)\sin\!\left(\frac{\theta}{2}\right)
+\]
+becomes negative when $\theta$ exceeds the critical value satisfying $\tanh(\phi/2)\tan(\theta_c/2) = 1$.
+
+Gravitational attraction is therefore confined to a finite $S^3$ patch of effective radius $\sim \pi R/2$, beyond which a weakly repulsive torsional barrier emerges. This finite range is the compact-space analog of the Newtonian $1/r$ potential extending to infinity: the $S^3$ topology naturally ``walls off'' each gravitational source.
+
+\subsection{The Cosmic Atlas: Galaxy-Scale 3-sphere Patches}
+
+The observable universe is tiled by overlapping $S^3$ patches, each centered on a gravitational concentration (galaxy or cluster), forming a cosmic atlas in the strict differential-geometric sense. Each patch functions as an azimuthal equidistant projection chart: faithful near its center, maximally distorted at its boundary. The large-scale structure of the cosmos is that of a manifold covered by galaxy-scale stickers of azimuthal equidistant maps, glued together at their repulsive boundaries.
+
+This patchwork structure naturally accounts for:
+\begin{itemize}
+  \item the \textbf{cosmic web}: galaxies are distributed along the overlap regions of neighboring $S^3$ charts, where the attractive tails of adjacent patches constructively interfere;
+  \item \textbf{cosmic voids}: the vast underdense regions correspond to the repulsive ($J < 0$) boundary zones between charts, where matter is expelled;
+  \item the \textbf{radial acceleration relation}: the tight correlation between observed and baryonic gravitational accelerations follows from the universal $\eta(r)$ enhancement, with residual scatter arising from chart-overlap effects;
+  \item the \textbf{absence of dark matter signals} in direct detection experiments --- because dark matter does not exist.
+\end{itemize}
+
+\subsection{Numerical Verification and Falsifiable Predictions}
+
+Preliminary particle-based simulations using rotor-ensemble dynamics have successfully reproduced flat rotation curves from baryonic mass distributions alone. Public open-source codes are available at:
+\begin{itemize}
+  \item \texttt{https://github.com/hypernumbernet/blackhole-simulator}
+  \item \texttt{https://github.com/hypernumbernet/dual-spacetime-simulator}
+\end{itemize}
+Full $N$-body integrations incorporating the exact $S^3$ cotangent potential are in preparation.
+
+Key predictions distinguishing this theory from $\Lambda$CDM and MOND include:
+\begin{itemize}
+  \item \textbf{Outer rotation curve upturn and reversal}: Isolated galaxies should exhibit a gentle upturn beyond $r \gtrsim 2R$, transitioning to declining and eventually repulsive gravity at $r \approx \pi R/2$, detectable via deep 21-cm HI observations extending to $\sim 100\;\mathrm{kpc}$.
+  \item \textbf{Lensing sign reversal}: Galaxy-galaxy weak lensing should weaken and reverse sign at projected separations exceeding $\pi R/2$, in sharp contrast to the monotonic NFW profiles predicted by $\Lambda$CDM.
+  \item \textbf{Cotangent vs.\ MOND interpolation}: The precise form of the radial acceleration relation should follow the cotangent-derived enhancement $g_{\text{obs}} = g_{\text{bar}} \cdot \eta(r)$ rather than the standard MOND interpolation function $\nu(g_{\text{bar}}/a_0)$, with measurable deviations at $g \lesssim a_0/10$.
+  \item \textbf{Diversity from $R(M)$}: The observed diversity of rotation curve shapes --- from slowly rising (low-surface-brightness dwarfs with $r_{\text{disk}} \ll R$) to flat (Milky Way-type) to gently declining (high-surface-brightness spirals with $r_{\text{disk}} \sim R$) --- is reproduced by the single relation $R = \sqrt{GM/a_0}$ without additional free parameters.
+\end{itemize}
+
+Dark matter is rendered superfluous --- an artifact of projecting the compact $S^3$ geometry of the dual spacetime onto a fictitious flat and infinite background. The cotangent potential, the azimuthal equidistant distortion, and the torsional reversal at the $S^3$ boundary provide all the missing gravity without invisible matter.
 
 \section{Gravitational Engineering: Coherent Excitation of Dual-Spacetime Rotors}
 \label{sec:gravitycontrol}
