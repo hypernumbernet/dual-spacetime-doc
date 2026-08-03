@@ -1,0 +1,1302 @@
+\documentclass[dvipdfmx,a4paper,oneside]{jsbook}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage[dvipdfmx,pageanchor=false]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{setspace}
+\usepackage{ascmac}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\geometry{left=25mm,right=25mm,top=30mm,bottom=25mm}
+\onehalfspacing
+
+% 数式環境の調整
+\numberwithin{equation}{chapter}
+
+\title{クリフォード代数から射影幾何代数へ\\
+― 二重時空理論のための \(G(3,1,1)\) 入門 ―}
+\author{二重時空理論プロジェクト}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+%==================================================
+\chapter*{序章　本書の目的と全体像}
+\addcontentsline{toc}{chapter}{序章　本書の目的と全体像}
+
+\section*{二重時空理論とは何か}
+
+本書は、二重時空理論（Double Spacetime Theory, DST）を射影幾何代数 \(G(3,1,1)\) の言語で学ぶ入門書である。
+DST の出発点は、時空が宇宙全体に一つだけ敷かれた連続体である、という従来の発想を改めることにある。
+各粒子は、それぞれ\textbf{通常時空}と\textbf{双対時空}という二つのミンコフスキー構造を内在的に持つ。
+通常時空は、私たちが日常で使う特殊相対性理論の舞台である。
+双対時空は、コンパクト化された位相空間を持ち、時間の矢印が逆向きであるという特徴を持つ。
+
+真空や自由落下の理想的な状態では、二つの時空は完全に同期している。
+質量や運動があると、通常時空のローター \(R_{\mathrm{usual}}\) と双対時空のローター \(R_{\mathrm{dual}}\) の間にずれが生じる。
+このずれこそが\textbf{ねじれ不整合}（torsional mismatch）であり、DST において重力と慣性はこの代数的な「角度のズレ」として記述される。
+背景計量や曲率テンソルを最初から仮定するのではなく、粒子内在の双対構造から時空の効果を導く——これが DST の基本的な立場である。
+
+本書で扱う PGA 版では、さらに第三の要素として\textbf{並進}が加わる。
+並進は、空間や時間方向への実際の移動を司る自由度である。
+従来の \(\mathrm{Cl}(3,1)\) だけでは並進は外付け的に与えられていたが、\(G(3,1,1)\) ではヌルベクトル \(e_4\) から生じる四つの生成子 \(N_\mu = e_4 \wedge e_\mu\) として代数の内部に内在化される。
+したがって PGA 版 DST の構造は、\textbf{通常時空・双対時空・並進}の三者が協調する枠組みとなる。
+
+三者の役割分担は次のように理解できる。
+通常時空は、ローレンツ変換や光速での進行方向の「潰れ」といった、相対論の標準的現象を担う。
+双対時空は、通常時空で失われがちな位相情報——とくに進行方向に関する情報——をコンパクトな位相として保存する。
+並進セクターは、保存された情報をもとに、実際の位置のずれを光的な移動として実行する。
+この三者構造こそが、本書全体を貫く物理的・代数的な骨格である。
+
+\section*{なぜ \(G(3,1,1)\) なのか}
+
+DST の親理論は、ミンコフスキー時空の幾何代数 \(\mathrm{Cl}(3,1)\) 上に構築される。
+この代数は双四元数と同型であり、16 次元の構造を持つ。
+四つのベクトル生成子 \(e_0 = j,\ e_1 = kI,\ e_2 = kJ,\ e_3 = kK\) は符号 \((-,+,+,+)\) のミンコフスキー内積を満たし、ローレンツ群の作用をローターとして表現する。
+ここまでで、回転とブースト——すなわち \(\mathfrak{so}(3,1)\) の六自由度——は自然に扱える。
+
+しかし \(\mathrm{Cl}(3,1)\) だけでは、時空並進は代数の内部からは生まれない。
+並進を幾何的に統合するため、本書は射影幾何代数 \(G(3,1,1)\) へ理論を持ち上げる。
+具体的には、平方がゼロの\textbf{ヌルベクトル} \(e_4\)（\(e_4^2 = 0\)）を一つ付加する。
+\(e_4\) は既存の四ベクトルと反可換し（\(\{e_4, e_\mu\} = 0\)）、双四元数の擬スカラー \(i = e_0 e_1 e_2 e_3\) とは可換である。
+この性質により、親理論の双対写像 \(X \mapsto Xi\) は \(\mathrm{Cl}(3,1)\) 部分代数上で従来どおり作用しつつ、新しいヌル方向 \(e_4\) は独立に保たれる。
+
+\(G(3,1,1)\) のバイベクトル空間は \(\binom{5}{2} = 10\) 次元である。
+拡張されたねじれ不整合の生成子は、この 10 次元空間に次の三つに分類される。
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{双曲生成子}（3 個、平方 \(+1\)）：\(iI = e_0 e_1,\ iJ = e_0 e_2,\ iK = e_0 e_3\)。
+  通常時空側のブーストを担い、\(\mathfrak{so}(3,1)\) の双曲的部分に対応する。
+  \item \textbf{巡回生成子}（3 個、平方 \(-1\)）：\(I = e_3 e_2,\ J = e_1 e_3,\ K = e_2 e_1\)。
+  双対時空側の回転を担い、\(\mathfrak{so}(3,1)\) のもう一つのコピーに対応する。
+  \item \textbf{ヌル生成子}（4 個、平方 \(0\)）：\(N_\mu = e_4 \wedge e_\mu\)（\(\mu = 0,1,2,3\)）。
+  並進を担い、可換な理想 \(\{P_\mu\}\) を形成する。
+\end{itemize}
+
+この 10 次元構造は、ポアンカレ代数 \(\mathfrak{iso}(3,1)\) のリー代数と一致する。
+六つの双曲・巡回生成子が \(\mathfrak{so}(3,1) \oplus \mathfrak{so}(3,1)\) を張り、四つのヌル生成子が並進理想を与える。
+並進がゲージ場や座標変換として外付けされるのではなく、代数のヌルセクターから有限のシフトとして現れる——これが \(G(3,1,1)\) を選ぶ中心的な理由である。
+
+ヌル生成子の代数的性質 \(N_\mu N_\nu = 0\)（すべての \(\mu, \nu\) に対して）は、並進の指数写像を一次多項式に打ち切る。
+すなわち
+\[
+\exp\!\Bigl(\tfrac{1}{2}\lambda^\mu N_\mu\Bigr)
+= 1 + \tfrac{1}{2}\lambda^\mu N_\mu
+\]
+となり、並進は高次補正なしに有限の移動として実現される。
+拡張モーター \(M = \exp(\Omega_{\mathrm{biv}}^{(5)})\) はさらに反転奇性 \(\widetilde{N_\mu} = -N_\mu\) によりユニタリ（\(M\widetilde{M} = 1\)）となり、因果的な伝播を保つ。
+これらの詳細は第 III 部で体系的に扱う。
+
+\section*{ニュートン‐ウィグナー問題を解くための数学的道具立て}
+
+相対論的量子力学において、質量ゼロ粒子——とくに光子——の位置を定義することは長年の難問であった。
+1949 年の Newton と Wigner の論文以降、\textbf{ニュートン‐ウィグナー問題}として知られるこの問題は、質量のある粒子では共変な位置演算子が構成できる一方、光子では進行方向の自由度がローレンツ収縮によって「潰れ」、一意な位置を定義できないことを示している。
+
+問題の核心は次の二点に集約される。
+第一に、光子が光速で進むとき、進行方向の位置座標は観測者のローレンツ変換に依存して消えてしまう。
+第二に、失われた進行方向の情報を別の場所に保存する仕組みが、従来の単一時空の枠組みにはなかった。
+
+PGA 版 DST は、この問題を三者構造で解く。
+通常時空で潰れた情報は双対時空のコンパクト位相に移され、実際の移動は並進セクターが光的に実行する。
+光子では通常時空と双対時空のローターが\textbf{完全反同期}となり、ねじれ不整合がゼロに固定される。
+この条件のもとで並進パラメータ \(\lambda^\mu\) は光円錐上に強制され（\(\eta_{\mu\nu}\lambda^\mu\lambda^\nu = 0\)）、光子の移動は純粋な光速並進となる。
+
+本書で学ぶ数学的道具と、物理問題の対応を表 \ref{tab:tools-nw} に示す。
+ここでは対応関係の概観のみを示し、厳密な構成と証明は第 IV 部・第 V 部に委ねる。
+
+\begin{table}[htbp]
+  \centering
+  \caption{ニュートン‐ウィグナー問題と本書の道具立て}
+  \label{tab:tools-nw}
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+    物理的要請 & 本書の道具 & 登場部 \\
+    \midrule
+    回転・ブーストの統一 & ローター・ベルソル & 第 I--II 部 \\
+    並進の内在化 & \(e_4\), \(N_\mu\), モーター & 第 III 部 \\
+    進行方向情報の保存 & 双対時空のコンパクト位相 & 第 IV 部 \\
+    光的移動の強制 & ねじれ不整合ゼロ \(\Rightarrow\) 光円錐条件 & 第 IV--V 部 \\
+    位置の一意性 & 横方向 \(+\) 位相 \(+\) 光的並進 & 第 V 部 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+位置演算子は、通常時空の進行方向に垂直な横方向座標、双対時空の進行方向位相、および並進セクターによる光的移動の三つを組み合わせて構成される。
+この構成により、すべての観測者で一致する共変な位置演算子が得られ、70 年以上にわたる問題が解決される。
+本書は、この解決のための代数を段階的に積み上げることを目的とする。
+
+\section*{本書の前提知識と記法規約}
+
+\subsection*{前提知識}
+
+本書は一般大学生を想定する。
+以下の内容は既知とみなし、詳しい復習は行わない。
+
+\begin{itemize}[leftmargin=2em]
+  \item 線形代数（ベクトル空間、基底、内積の基本）
+  \item 三次元ユークリッド幾何（内積、外積、回転の直感）
+  \item 四元数の初歩（虚数単位 \(I, J, K\) と回転の関係）
+  \item 特殊相対性理論の初歩（ローレンツ変換、光速度不変、\(E = mc^2\) の直感）
+\end{itemize}
+
+クリフォード代数、射影幾何代数、DST の物理的内容は、本書の第 I 部から順に導入する。
+必要に応じて付録も参照されたい。
+
+\subsection*{用語と記法}
+
+本書では、幾何代数・DST 文献で用いられる英語用語と日本語訳を表 \ref{tab:terminology} のとおり対応させる。
+
+\begin{table}[htbp]
+  \centering
+  \caption{用語対応表}
+  \label{tab:terminology}
+  \begin{tabular}{@{}ll@{}}
+    \toprule
+    英語 & 日本語 \\
+    \midrule
+    dual spacetime & 双対時空 \\
+    biquaternion & 双四元数 \\
+    vector & ベクトル \\
+    bivector & バイベクトル \\
+    blade & ブレード \\
+    multivector & 多重ベクトル \\
+    grade & 階数 \\
+    reversion & 反転 \\
+    versor & ベルソル \\
+    rotor & ローター \\
+    torsion & トーション \\
+    torsion star & トーション星 \\
+    torsional mismatch & ねじれ不整合 \\
+    Killing form & キリング形式 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection*{符号規約}
+
+通常時空の四ベクトルはミンコフスキー符号 \((-,+,+,+)\) を用いる。
+すなわち \(e_0^2 = -1\)、\(e_1^2 = e_2^2 = e_3^2 = +1\)、異なる \(e_\mu\) は反可換である。
+付加するヌルベクトルは \(e_4^2 = 0\) かつ \(\{e_4, e_\mu\} = 0\) を満たす。
+幾何積は、ベクトルの順序を保持する（非可換）積とする。
+反転（reversion）は、バイベクトル以上の反転奇性を持つ元に対して符号を反転させる操作である。
+詳細な符号一覧は付録 A にまとめる。
+
+\subsection*{本書の構成}
+
+本書は五部構成である。
+第 I 部では四元数から出発し、クリフォード代数の公理、多重ベクトル、ベルソルとローターを学ぶ。
+第 II 部では時空代数 \(G(3,1)\) を導入し、ローレンツ変換と電磁気の幾何代数的記述に触れる。
+第 III 部ではヌルベクトル \(e_4\) を加えた \(G(3,1,1)\) を構築し、並進・モーター・双対性の代数的基盤を整える。
+第 IV 部では通常時空と双対時空の二重構造、ねじれ不整合、位置演算子の構成へと DST の数学的枠組みを完成させる。
+第 V 部ではニュートン‐ウィグナー問題の解決と、重力・慣性への拡張の展望を示す。
+
+各章末には演習問題を置く。
+手計算による幾何積の練習を通じて、代数の操作感覚を身につけることが本書の学習目標である。
+
+\newpage
+
+%==================================================
+\part{第I部　クリフォード代数の基礎}
+
+\chapter{四元数からクリフォード代数へ}
+
+序章で述べた \(G(3,1,1)\) や双四元数は、すべてクリフォード代数という枠組みの上に立つ。
+本章では、その出発点となる四元数を復習し、幾何積という一つの積に内積と外積を統合する考え方へと持ち上げる。
+第 II 部以降で現れるバイベクトル生成子 \(\{I,J,K\}\) やローターは、ここで整えた言語の自然な延長である。
+
+\section{四元数の復習（回転としての解釈）}
+
+四元数は、3 次元空間の回転を代数の積だけで記述する道具である。
+本書では論文の巡回生成子と記法を揃えるため、虚数単位を大文字 \(I,J,K\) と書く（従来文献では \(i,j,k\) と書かれることも多い）。
+四元数 \(q\) は
+\begin{equation}
+  q = w + xI + yJ + zK, \qquad w,x,y,z \in \mathbb{R}
+\end{equation}
+と表される。
+乗法規則は
+\begin{align}
+  IJ &= K, & JI &= -K, \notag \\
+  JK &= I, & KJ &= -I, \notag \\
+  KI &= J, & IK &= -J, \notag \\
+  I^2 &= J^2 = K^2 = IJK = -1
+  \label{eq:quat-mult}
+\end{align}
+である。
+非可換性 \(IJ \neq JI\) が、回転の合成が順序に依存することと対応する。
+
+共役は \(\widetilde{q} = w - xI - yJ - zK\)、ノルムは \(|q|^2 = q\widetilde{q} = w^2 + x^2 + y^2 + z^2\) と定義する。
+\(|q|=1\) となる単位四元数が回転を表現する。
+
+純虚四元数 \(u = xI + yJ + zK\) の平方は \(u^2 = -|u|^2\) である。
+単位純虚四元数 \(\hat{q}\)（\(|\hat{q}|=1\)）は回転軸を表し、オイラーの公式の拡張
+\begin{equation}
+  e^{\hat{q}\,\theta/2} = \cos\frac{\theta}{2} + \hat{q}\,\sin\frac{\theta}{2}
+  \label{eq:quat-rotor}
+\end{equation}
+は単位四元数——すなわち\textbf{ローター}——を与える。
+指数の引数に半角 \(\theta/2\) が現れるのは、回転角 \(\theta\) と区別するためである。
+
+3 次元ベクトル \(\mathbf{v}=(x,y,z)\) を純虚四元数 \(v = xI + yJ + zK\) と同一視すると、軸 \(\hat{q}\) 周りの角度 \(\theta\) の回転は
+\begin{equation}
+  v' = q\,v\,\widetilde{q}
+  \label{eq:quat-sandwich}
+\end{equation}
+の\textbf{サンドイッチ積}で与えられる。
+回転の合成は四元数の積 \(q_2 q_1\) として表され、ジンバルロックのような特異点を避けられる。
+
+四元数が示す核心は、「幾何変換が代数の元として書ける」という点にある。
+後の章で現れる巡回生成子 \(I=e_3e_2,\ J=e_1e_3,\ K=e_2e_1\) も、平方 \(-1\) を持つ同型の対象として、この代数の延長線上に位置する。
+
+\section{幾何積の公理的導入}
+
+四元数の乗法は、実部と虚部の内積・外積を一つの積にまとめたものとして読める。
+この統合を一般化したのが\textbf{クリフォード代数}である。
+
+\(n\) 次元ベクトル空間 \(V\) 上に、結合的で双線形な積——\textbf{幾何積}——を導入する。
+任意のベクトル \(a \in V\) に対し、二次形式 \(Q(a)\) を用いて公理
+\begin{equation}
+  a^2 = Q(a)
+  \label{eq:clifford-axiom}
+\end{equation}
+を課す。
+直交基底 \(\{e_1,\ldots,e_n\}\) を取れば、クリフォード関係
+\begin{equation}
+  e_i e_j + e_j e_i = 2\,\eta_{ij}
+  \label{eq:clifford-relation}
+\end{equation}
+が得られる。
+ここで \(\eta_{ij}\) は基底間の内積（本章ではまずユークリッド空間 \(\eta_{ij}=\delta_{ij}\) を想定する）。
+
+幾何積 \(ab\) は一般に可換でも反可換でもない。
+しかし任意の \(a,b\) を対称部分と反対称部分に分解すれば、ベクトル解析で知られる\textbf{内積}と\textbf{外積}が現れる（次節）。
+これが「一つの積から幾何が生まれる」というクリフォード代数の出発点である。
+
+\(n\) 個の基底ベクトルから出発すると、スカラー（0 次）、ベクトル（1 次）、バイベクトル（2 次）、\(\ldots\)、擬スカラー（\(n\) 次）まで、合計 \(2^n\) 次元の代数が生成される。
+この全体を\textbf{幾何代数} \(G(n)\) と呼ぶ。
+\(n\) 次元空間のユークリッド幾何代数を \(G(n)\) と書き、符号付きの場合は \(G(p,q)\) と書く（第 II 部で \(G(3,1)\) が現れる）。
+多重ベクトルの階数分解や操作の詳細は次章に委ねる。
+
+\section{内積・外積の分解とクリフォード関係}
+
+ベクトル \(a,b\) に対し、幾何積は次のように分解される：
+\begin{equation}
+  ab = a\cdot b + a\wedge b,
+  \label{eq:gp-decomp}
+\end{equation}
+\begin{equation}
+  a\cdot b = \tfrac{1}{2}(ab + ba), \qquad
+  a\wedge b = \tfrac{1}{2}(ab - ba).
+  \label{eq:dot-wedge}
+\end{equation}
+\(a\cdot b\) はスカラー（0 次）、\(a\wedge b\) は\textbf{バイベクトル}（2 次）である。
+
+この分解から、計算上の基本ルールが読み取れる。
+\begin{itemize}[leftmargin=2em]
+  \item \(a \parallel b\)（平行）なら \(a\wedge b = 0\)。幾何積は内積のみになる。
+  \item \(a \perp b\)（直交）なら \(a\cdot b = 0\)。幾何積は外積のみになる：\(ab = a\wedge b\)。
+  \item バイベクトル \(a\wedge b\) は、\(a\) と \(b\) が張る\textbf{向き付き平面}を表す。
+  面積の大きさは \(|a\wedge b| = |a|\,|b|\,|\sin\theta|\)（\(\theta\) はなす角）である。
+\end{itemize}
+後の章で現れる 10 次元バイベクトル空間も、この「平面要素」の高次元版として理解できる。
+
+具体例を二つ示す。
+直交単位ベクトル \(e_1,e_2\) に対し
+\begin{equation}
+  e_1 e_2 = e_1 \wedge e_2, \qquad (e_1 e_2)^2 = e_1 e_2 e_1 e_2 = -e_1^2 e_2^2 = -1.
+  \label{eq:bivector-square}
+\end{equation}
+バイベクトルの平方が \(-1\) になるのは、平面内の「90 度回転」を内包しているためである。
+また \(a = e_1 + e_2\) とすると
+\begin{equation}
+  a^2 = (e_1 + e_2)^2 = e_1^2 + e_1 e_2 + e_2 e_1 + e_2^2
+       = 1 + 0 + 1 = 2,
+\end{equation}
+となり、公理 \eqref{eq:clifford-axiom} の \(Q(a) = |a|^2 = 2\) と一致する。
+
+\section{\texorpdfstring{低次元の例：\(G(2)\) と \(G(3)\)}{低次元の例：G(2) と G(3)}}
+
+幾何代数の具体像を得るため、次元 2 と 3 の例を見る。
+
+\paragraph{\(G(2)\)：平面の幾何代数}
+\(e_1^2 = e_2^2 = 1\)、\(e_1 e_2 = -e_2 e_1\) なる直交基底 \(\{e_1, e_2\}\) から、4 次元代数
+\[
+G(2) = \operatorname{span}\{1,\; e_1,\; e_2,\; e_1 e_2\}
+\]
+が生成される。
+擬スカラー \(I_2 := e_1 e_2\) は \(I_2^2 = -1\) を満たし、\(G(2)\) は複素数 \(\mathbb{C}\) と同型である。
+平面内の回転は
+\begin{equation}
+  R(\theta) = e^{I_2 \theta} = \cos\theta + I_2 \sin\theta
+\end{equation}
+と書ける。
+これは \eqref{eq:quat-rotor} の 2 次元版である。
+
+\paragraph{\(G(3)\)：3 次元空間の幾何代数}
+\(e_1^2 = e_2^2 = e_3^2 = 1\) なる直交基底から 8 次元代数 \(G(3)\) が生成される。
+その\textbf{偶数部分代数}（スカラーとバイベクトルのみからなる部分代数）は 4 次元であり、四元数と同型である。
+具体的な同一視は
+\begin{equation}
+  I = e_3 e_2, \qquad J = e_1 e_3, \qquad K = e_2 e_1
+  \label{eq:quat-embedding}
+\end{equation}
+である。
+計算すれば \(I^2 = J^2 = K^2 = -1\)、\(IJK = -1\) が成り立ち、第 1 節の四元数関係と一致する。
+
+したがって四元数は、\(G(3)\) の偶数部分に他ならない。
+3 次元回転のローター \eqref{eq:quat-rotor} も、バイベクトル \(B = \tfrac{1}{2}(xI + yJ + zK)\) を用いた \(e^B\) として幾何代数の言葉で書ける。
+サンドイッチ積 \eqref{eq:quat-sandwich} も、次章以降で一般化される\textbf{ベルソル}作用の特殊例である。
+
+\paragraph{第 II 部への接続}
+符号を \((-,+,+,+)\) に変えた \(G(3,1)\) は 16 次元となり、双四元数 \(\mathrm{Cl}(3,1)\) と同型である（序章参照）。
+さらにヌルベクトル \(e_4\) を加えた \(G(3,1,1)\) が第 III 部の舞台となる。
+本章で学んだ「幾何積 → バイベクトル → ローター」の流れは、そのまま時空代数と PGA へと拡張される。
+
+\section*{演習問題}
+
+\begin{enumerate}[leftmargin=2em]
+  \item \(I,J,K\) の乗法表 \eqref{eq:quat-mult} のうち、\(JK = I\) と \(KJ = -I\) を直接計算で確かめよ（\eqref{eq:quat-embedding} の定義を使ってもよい）。
+
+  \item \(a = 3e_1\)、\(b = 4e_2\) のとき、\(ab\) を \eqref{eq:gp-decomp} に従って \(a\cdot b + a\wedge b\) に分解せよ。
+
+  \item \(G(2)\) において \(e_1 e_2 e_1\) を計算せよ。
+  結果が \(-e_2\) となることを確認し、\(e_1\) による反射の萌芽として解釈せよ。
+
+  \item \eqref{eq:quat-embedding} の \(I,J,K\) が \(I^2 = J^2 = K^2 = -1\) および \(IJ = K\) を満たすことを確かめよ。
+
+  \item （発展）直交する単位ベクトル \(e_i, e_j\)（\(i \neq j\)）に対し、\((e_i e_j)^2 = -1\) となる理由を、\eqref{eq:clifford-relation} と \eqref{eq:bivector-square} を用いて説明せよ。
+\end{enumerate}
+
+\chapter{多重ベクトルと階数}
+
+前章では、幾何積の公理から \(G(2)\) と \(G(3)\) の具体例までを見た。
+本章では、代数の元を\textbf{階数}（grade）で分類し、\textbf{多重ベクトル}として体系的に扱う。
+第 II 部以降の \(G(3,1)\)、第 III 部の \(G(3,1,1)\) も同じ枠組みの高次元版である。
+特に後者では 10 次元のバイベクトル空間や 3-ブレードによる平面表現が中心的役割を担うが、その代数的基礎はここで整える。
+
+\section{ブレードと多重ベクトル}
+
+幾何代数の元は、一次独立なベクトルの外積から生まれる\textbf{ブレード}（blade）を基本単位として理解できる。
+\(k\) 個の一次独立なベクトル \(v_1,\ldots,v_k\) に対し、
+\begin{equation}
+  v_1 \wedge v_2 \wedge \cdots \wedge v_k
+  \label{eq:k-blade}
+\end{equation}
+を \textbf{\(k\)-ブレード}と呼ぶ。
+これは向き付き \(k\) 平行体——点（\(k=0\)）、有向線分（\(k=1\)）、有向平面（\(k=2\)）、有向体積（\(k=3\)）——を表す。
+外積の順序を入れ替えると符号が反転する（\(a\wedge b = -b\wedge a\)）ため、ブレードは向きを持つ。
+
+\textbf{多重ベクトル}（multivector）\(M\) は、各階数の成分を足し合わせた一般の元である：
+\begin{equation}
+  M = \sum_{k=0}^{n} \langle M \rangle_k,
+  \label{eq:mv-decomp}
+\end{equation}
+ここで \(\langle M \rangle_k\) は \(M\) の\textbf{\(k\) 次部分}（grade-\(k\) part）を表す。
+\(n\) 次元ベクトル空間から生成される幾何代数 \(G(n)\) は \(2^n\) 次元であり、階数 \(k\) の部分空間の次元は \(\binom{n}{k}\) である。
+
+\paragraph{\(G(2)\) の基底と階数}
+第 1 章で見た \(G(2)\) を階数の言葉で整理する。
+直交基底 \(\{e_1,e_2\}\) から、4 つの線形独立な元が得られる：
+\begin{center}
+\begin{tabular}{@{}cll@{}}
+  \toprule
+  階数 & 基底元 & 幾何的意味 \\
+  \midrule
+  0 & \(1\) & スカラー \\
+  1 & \(e_1,\ e_2\) & ベクトル \\
+  2 & \(e_1 e_2\) & バイベクトル（有向面積） \\
+  \bottomrule
+\end{tabular}
+\end{center}
+擬スカラー \(I_2 := e_1 e_2\) は 2 次の最高階成分であり、\(I_2^2 = -1\) を満たす。
+
+\paragraph{\(G(3)\) の基底と階数}
+\(G(3)\) は 8 次元である：
+\begin{center}
+\begin{tabular}{@{}cll@{}}
+  \toprule
+  階数 & 基底元 & 幾何的意味 \\
+  \midrule
+  0 & \(1\) & スカラー \\
+  1 & \(e_1,\ e_2,\ e_3\) & ベクトル \\
+  2 & \(e_1 e_2,\ e_2 e_3,\ e_3 e_1\) & バイベクトル（有向平面） \\
+  3 & \(e_1 e_2 e_3\) & 三ベクトル（有向体積）＝擬スカラー \\
+  \bottomrule
+\end{tabular}
+\end{center}
+第 1 章の四元数同一視 \eqref{eq:quat-embedding} では、偶数階数部分（スカラー＋バイベクトル、計 4 次元）だけが四元数代数をなす。
+一方、ベクトル（1 次）と三ベクトル（3 次）は奇数階数部分を形成し、回転のローター単独では生成されない——この偶奇の区別は次章のベルソル論で重要になる。
+
+\paragraph{第 III 部への予告}
+\(G(3,1,1)\) では 5 次元ベクトル空間から 32 次元の代数が生成される。
+とくにバイベクトル空間は \(\binom{5}{2}=10\) 次元であり、双曲・巡回・ヌルの三種類の生成子を収容する（序章参照）。
+また射影幾何では\textbf{平面}が 3-ブレードとして表される。
+例えば \(e_1\wedge e_2\wedge e_3\) は 3 次元部分空間内の有向体積要素であり、\(e_4\wedge e_1\wedge e_2\) のように \(e_4\) を含む 3-ブレードはヌル方向を持つ平面を表す。
+これらの操作の詳細は第 III 部で扱う。
+
+\section{階数分解}
+
+\subsection{階数射影の定義}
+
+任意の多重ベクトル \(M\) に対し、\textbf{階数射影} \(\langle\cdot\rangle_k\) は \(M\) から \(k\) 次部分だけを取り出す線形写像である。
+次の性質を満たす：
+\begin{align}
+  \langle \alpha M + \beta N \rangle_k &= \alpha\langle M \rangle_k + \beta\langle N \rangle_k,
+  \label{eq:grade-linear} \\
+  \langle \langle M \rangle_k \rangle_\ell &= \delta_{k\ell}\,\langle M \rangle_k.
+  \label{eq:grade-idempotent}
+\end{align}
+すなわち、一度 \(k\) 次部分を取り出せば、再度射影しても変わらない（冪等性）。
+直交基底 \(\{e_1,\ldots,e_n\}\) では、\(k\) 個の添字を持つ基底積が \(\langle\cdot\rangle_k\) の像を張る。
+
+例として \(M = 3 + 2e_1 + e_1 e_2 + 4e_1 e_2 e_3 \in G(3)\) を考える。
+\begin{align}
+  \langle M \rangle_0 &= 3, &
+  \langle M \rangle_1 &= 2e_1, &
+  \langle M \rangle_2 &= e_1 e_2, &
+  \langle M \rangle_3 &= 4e_1 e_2 e_3.
+\end{align}
+\(\langle M \rangle_0 + \langle M \rangle_1 + \langle M \rangle_2 + \langle M \rangle_3 = M\) が成り立つ。
+
+\subsection{幾何積の階数内容}
+
+同じ階数 \(r\) の多重ベクトル \(A_r\) と \(s\) 次の \(B_s\) の幾何積 \(A_r B_s\) は、一般に複数の階数を含む。
+可能な階数は
+\begin{equation}
+  \{|r-s|,\ |r-s|+2,\ \ldots,\ r+s\}
+  \label{eq:grade-range}
+\end{equation}
+に限られる。
+直交基底での計算から、この範囲外の成分は現れない。
+
+この事実は、内積と外積の一般化を与える。
+\(r\) 次の \(A_r\) と \(s\) 次の \(B_s\) に対し、
+\begin{equation}
+  A_r \cdot B_s = \langle A_r B_s \rangle_{|r-s|}, \qquad
+  A_r \wedge B_s = \langle A_r B_s \rangle_{r+s}
+  \label{eq:dot-wedge-general}
+\end{equation}
+と定義する。
+\(r=s=1\) のとき \eqref{eq:dot-wedge-general} は前章の \eqref{eq:dot-wedge} に一致する。
+
+\paragraph{計算例}
+直交単位ベクトル \(e_1,e_2,e_3\) に対し、
+\begin{equation}
+  (e_1 e_2)^2 = e_1 e_2 e_1 e_2 = -e_1^2 e_2^2 = -1,
+  \label{eq:biv-square-g3}
+\end{equation}
+これは 0 次部分のみである。
+また三ベクトル \(I_3 := e_1 e_2 e_3\) の平方は
+\begin{equation}
+  I_3^2 = e_1 e_2 e_3 e_1 e_2 e_3 = (-1)^3 e_1^2 e_2^2 e_3^2 = -1.
+  \label{eq:trivector-square}
+\end{equation}
+
+2 次同士の積の例として、\(A_2 = e_1 e_2\)、\(B_2 = e_2 e_3\) を計算する。
+\begin{align}
+  A_2 B_2 &= e_1 e_2 e_2 e_3 = e_1 e_2^2 e_3 = e_1 e_3, \\
+  \langle A_2 B_2 \rangle_0 &= 0, \qquad
+  \langle A_2 B_2 \rangle_2 = e_1 e_3, \qquad
+  \langle A_2 B_2 \rangle_4 = 0.
+\end{align}
+\eqref{eq:grade-range} では \(r=s=2\) なので階数 \(\{0,2,4\}\) が可能だが、\(G(3)\) には 4 次成分は存在せず、実際には 0 次と 2 次のみが現れる。
+
+\paragraph{高次元での階数分解}
+5 次元の \(G(3,1,1)\) では、3 次同士の積 \(A_3 B_3\) の階数内容が
+\begin{equation}
+  A_3 B_3 = \langle A_3 B_3 \rangle_0 + \langle A_3 B_3 \rangle_2 + \langle A_3 B_3 \rangle_4
+  \label{eq:grade-3-product}
+\end{equation}
+に限定される（6 次成分は存在しない）。
+交換子 \(\tfrac{1}{2}(AB-BA)\) は 2 次部分を、反交換子 \(\tfrac{1}{2}(AB+BA)\) は 0 次と 4 次部分を抽出する——この性質は第 III--IV 部の平面幾何と双対時空の対応で決定的な役割を果たす。
+
+\section{逆元・共役・ノルム}
+
+\subsection{反転}
+
+\textbf{反転}（reversion）は、幾何積におけるベクトルの順序を逆にする操作である。
+\(k\)-ブレード \(v_1\wedge\cdots\wedge v_k\) に対し
+\begin{equation}
+  \widetilde{v_1 \wedge \cdots \wedge v_k} = v_k \wedge \cdots \wedge v_1
+  \label{eq:reversion-blade}
+\end{equation}
+と定義し、線形性により一般の多重ベクトルへ拡張する。
+\(k\)-ブレードに対する符号は
+\begin{equation}
+  \widetilde{A_k} = (-1)^{k(k-1)/2}\,A_k
+  \label{eq:reversion-sign}
+\end{equation}
+である。
+具体的には、スカラーはそのまま、ベクトルはそのまま、バイベクトルは符号反転、三ベクトルはそのまま、というパターンになる。
+
+直交基底では \((e_i e_j)^{\sim} = e_j e_i = -e_i e_j\)（\(i\neq j\)）であるから、すべてのバイベクトルは\textbf{反転奇性}（reversal-odd）を持つ：
+\begin{equation}
+  \widetilde{e_i e_j} = -e_i e_j.
+  \label{eq:biv-rev-odd}
+\end{equation}
+第 III 部で現れるヌル生成子 \(N_\mu = e_4\wedge e_\mu\) もバイベクトルであるため \(\widetilde{N_\mu} = -N_\mu\) となる。
+これは並進を\textbf{ヌルベクトル}（1 次）ではなく\textbf{ヌルバイベクトル}（2 次）として実装する代数的理由の一つである——1 次のヌルベクトルは反転偶性を持ち、後述のユニタリ性 \(M\widetilde{M}=1\) が成り立たなくなる。
+
+\subsection{階数対合}
+
+\textbf{階数対合}（grade involution）\(\widehat{M}\) は、\(k\) 次部分に符号 \((-1)^k\) を付ける操作：
+\begin{equation}
+  \widehat{\langle M \rangle_k} = (-1)^k \langle M \rangle_k.
+  \label{eq:grade-involution}
+\end{equation}
+偶数階数部分（スカラー、バイベクトル、\(\ldots\)）と奇数階数部分（ベクトル、三ベクトル、\(\ldots\)）を入れ替える符号を担う。
+\(G(3)\) の偶数部分代数（四元数）や、次章で扱うベルソルの偶奇性の議論に現れる。
+
+\subsection{ノルムと可逆性}
+
+ユークリッド設定では、多重ベクトル \(M\) の\textbf{スカラー部ノルム}を
+\begin{equation}
+  \|M\|^2 = \langle M\widetilde{M}\rangle_0
+  \label{eq:mv-norm}
+\end{equation}
+と定義する。
+\(\|M\|^2\) がゼロでない実数のとき \(M\) は可逆であり、
+\begin{equation}
+  M^{-1} = \frac{\widetilde{M}}{\|M\|^2}
+  \label{eq:mv-inverse}
+\end{equation}
+が成り立つ。
+符号付き代数や退化代数（\(e_4^2=0\) など）では \eqref{eq:mv-norm} の解釈に注意が必要だが、基本的な操作原理は同じである。
+
+\paragraph{例：単位四元数とローター}
+\(G(3)\) の偶数部分 \(q = w + xI + yJ + zK\)（\(I=e_3e_2\) 等）に対し、
+\begin{equation}
+  q\widetilde{q} = w^2 + x^2 + y^2 + z^2 = |q|^2
+\end{equation}
+はスカラーである。
+\(|q|=1\) なら \(q^{-1} = \widetilde{q}\) となり、第 1 章のローター \eqref{eq:quat-rotor} は
+\begin{equation}
+  R\widetilde{R} = 1
+  \label{eq:rotor-unitarity}
+\end{equation}
+を満たす——これが回転を保つ代数的根拠である。
+
+\section{擬スカラーと双対}
+
+\subsection{擬スカラー}
+
+\(n\) 次元ベクトル空間の直交基底 \(\{e_1,\ldots,e_n\}\) から、最高階数の基底元
+\begin{equation}
+  I_n := e_1 e_2 \cdots e_n
+  \label{eq:pseudoscalar-def}
+\end{equation}
+を \textbf{擬スカラー}（pseudoscalar）と呼ぶ。
+\(I_n\) は \(n\) 次ブレードであり、向き付き \(n\) 次元体積要素を表す。
+符号付き代数では
+\begin{equation}
+  I_n^2 = (-1)^{n(n-1)/2}\,\eta_{1}\eta_{2}\cdots\eta_{n},
+  \label{eq:pseudo-square}
+\end{equation}
+ここで \(\eta_i = e_i^2\) は各基底ベクトルの符号である。
+ユークリッド \(G(3)\) では \(I_3^2 = -1\)（\eqref{eq:trivector-square}）、\(G(2)\) では \(I_2^2 = -1\) である。
+
+\subsection{代数的双対}
+
+擬スカラー \(I_n\) を用い、\(k\) 次の \(A_k\) の\textbf{代数的双対}（algebraic dual）を
+\begin{equation}
+  A_k^* := A_k I_n^{-1}
+  \label{eq:algebraic-dual}
+\end{equation}
+と定義する（\(I_n^2 = \pm 1\) なら \(I_n^{-1} = \pm I_n\)）。
+この操作は \(k\) 次と \((n-k)\) 次を対応させ、外積代数におけるホッジ双対 \(\star\) と一致する。
+
+\paragraph{\(G(3)\) での例}
+\(I_3 = e_1 e_2 e_3\)、\(I_3^{-1} = -I_3\) として、ベクトル \(e_1\) の双対は
+\begin{equation}
+  e_1^* = e_1 I_3^{-1} = e_1(-e_1 e_2 e_3) = -e_2 e_3,
+\end{equation}
+すなわち \(e_1\) に垂直な平面 \(e_2\wedge e_3\) に対応する（向きの符号は \(I_3^{-1}\) の取り方に依存する）。
+逆に \((e_2 e_3)^* = -e_1\) であるから、ベクトルとバイベクトルの間に一対一対応が生まれる——3 次元空間特有の \(n=2k\) の自己双対性である。
+
+\subsection{DST における双対写像}
+
+第 II 部以降の時空代数 \(\mathrm{Cl}(3,1)\) では、4 次擬スカラー
+\begin{equation}
+  i = e_0 e_1 e_2 e_3
+  \label{eq:dst-pseudoscalar}
+\end{equation}
+が DST の\textbf{双対写像} \(X \mapsto Xi\) の担い手となる。
+この写像は通常時空セクターと双対時空セクターを入れ替える（第 IV 部で詳述）。
+
+\(G(3,1,1)\) に拡張するとき、ヌルベクトル \(e_4\) は \(i\) と可換である：
+\begin{equation}
+  e_4 i = i e_4.
+  \label{eq:e4-i-commute}
+\end{equation}
+したがって双対写像は \(\mathrm{Cl}(3,1)\) 部分代数上では従来どおり作用しつつ、\(e_4\) 方向は独立に保たれる。
+これが PGA 版 DST において「双対性を保ちながら並進を内在化する」代数的基盤である。
+
+5 次擬スカラー \(I_5 = e_0 e_1 e_2 e_3 e_4\) や、射影幾何代数文献で用いられる anti-scalar による双対化は、第 III 部以降の話題として残す。
+本章で整えた反転・ノルム・階数分解は、次章の\textbf{ベルソル}と\textbf{ローター}——とくにサンドイッチ積 \(X' = RX\widetilde{R}\)——の代数的土台となる。
+
+\section*{演習問題}
+
+\begin{enumerate}[leftmargin=2em]
+  \item \(M = 1 + e_1 + e_2 e_3 + 2e_1 e_2 e_3 \in G(3)\) を \(\langle M \rangle_k\)（\(k=0,1,2,3\)）に分解せよ。
+
+  \item 直交単位ベクトル \(e_i,e_j\)（\(i\neq j\)）に対し、\(\widetilde{e_i e_j} = -e_i e_j\) および \(\widetilde{e_1 e_2 e_3} = e_1 e_2 e_3\) を \eqref{eq:reversion-sign} から確認せよ。
+
+  \item \(G(3)\) において \(e_2^* = e_2 I_3^{-1}\) を計算し、結果が \(e_1 e_3\) となることを確かめよ。
+
+  \item \(A_2 = e_1 e_2\)、\(B_2 = e_1 e_3\) の幾何積 \(A_2 B_2\) を計算し、\(\langle A_2 B_2 \rangle_0\) と \(\langle A_2 B_2 \rangle_2\) を求めよ。
+
+  \item （発展）バイベクトル \(B\) が反転奇性 \(\widetilde{B}=-B\) を満たすとき、\(R = e^B\)（\(B^2\) がスカラー）が \(R\widetilde{R}=1\) を満たすことを示せよ。
+  ヒント：\(e^B\) の級数展開で \(B\) の偶数次だけが寄与し、\(\widetilde{e^B} = e^{\widetilde{B}} = e^{-B}\) を用いよ。
+\end{enumerate}
+
+\chapter{ベルソルとローター}
+
+前章では、多重ベクトルの階数分解、反転、ノルムを整えた。
+本章では、これらの道具を使って\textbf{幾何変換を代数の元として書く}段階に進む。
+可逆なベクトル積の全体を\textbf{ベルソル}（versor）と呼び、その中でも偶数階数部分に属する単位元を\textbf{ローター}（rotor）と呼ぶ。
+ローターは連続的な回転（第 II 部ではローレンツ変換も）を表し、第 III 部以降の\textbf{モーター} \(M=\exp(\Omega)\) の原型となる。
+DST 論文が前提とする \(R\widetilde{R}=1\) とサンドイッチ積 \(X'=MX\widetilde{M}\) も、ここで \(G(3)\) 上に確立する。
+
+\section{ベルソルの定義と群構造}
+
+\subsection{ベルソルの定義}
+
+幾何代数 \(G(n)\) において、零でない可逆ベクトル \(v_1,\ldots,v_k\) の有限積
+\begin{equation}
+  V = v_1 v_2 \cdots v_k
+  \label{eq:versor-def}
+\end{equation}
+を \textbf{ベルソル}と呼ぶ。
+各 \(v_i\) は 1 次部分であり、\(V\) は一般に混合階数の多重ベクトルになる。
+ベルソルは「ベクトルから生成される可逆元」であり、幾何変換の代数的数据を担う。
+
+\paragraph{例}
+\(G(3)\) において、単位ベクトル \(e_1,e_2\) の積 \(V = e_1 e_2\) は 2 次のベルソルである。
+三つの単位ベクトルの積 \(W = e_1 e_2 e_3\) は 3 次のベルソルであり、反射を表す（次節）。
+
+\subsection{逆元と群}
+
+ベルソル \(V = v_1\cdots v_k\) の逆元は、因子の順序を逆にした積で与えられる：
+\begin{equation}
+  V^{-1} = v_k^{-1} \cdots v_1^{-1}.
+  \label{eq:versor-inverse}
+\end{equation}
+ユークリッド設定では、ベクトル \(v\) の逆元は \eqref{eq:mv-inverse} より \(v^{-1} = \widetilde{v}/\|v\|^2\) である。
+可逆ベクトルの有限積全体は、幾何積による乗法で\textbf{群}をなす——単位元は \(1\)、結合律は幾何積の結合律に従う。
+この群は、直交群 \(O(n)\) の二重被覆群 \(\mathrm{Pin}(n)\) の代数的原型として機能する（群名は初出にとどめ、以降はベルソル・ローターという用語を主に用いる）。
+
+\subsection{偶数ベルソルと奇数ベルソル}
+
+ベルソル \(V = v_1\cdots v_k\) の\textbf{階数パリティ}（偶奇）は、因子の個数 \(k\) に依存する。
+\(k\) が偶数なら \(V\) は\textbf{偶数ベルソル}——スカラーとバイベクトル（と高次元の偶数階成分）だけからなる——であり、連続的な回転の候補となる。
+\(k\) が奇数なら \(V\) は\textbf{奇数ベルソル}——ベクトルや三ベクトルなど奇数階成分を含む——であり、一般に\textbf{反射}（向きの反転を伴う等長変換）を表す。
+
+階数対合 \(\widehat{\cdot}\) \eqref{eq:grade-involution} との関係も明確である。
+\(k\) 個のベクトルの積に対し
+\begin{equation}
+  \widehat{V} = \widehat{v_1}\cdots\widehat{v_k} = (-1)^k V,
+  \label{eq:versor-grade-inv}
+\end{equation}
+すなわち偶数ベルソルは \(\widehat{V}=V\)、奇数ベルソルは \(\widehat{V}=-V\) となる。
+第 2 章で強調した「偶数部分代数（四元数）と奇数部分の区別」は、ここで幾何変換の分類として再登場する。
+
+\subsection{正規化と単位ベルソル}
+
+ベルソル \(V\) のスカラー部ノルム \eqref{eq:mv-norm} が零でないとき、
+\begin{equation}
+  V_{\mathrm{u}} := \frac{V}{\sqrt{\|V\|^2}}
+  \label{eq:versor-normalize}
+\end{equation}
+で\textbf{正規化}できる。
+正規化されたベルソルは \(V\widetilde{V} = \pm 1\) を満たす。
+符号は反射の回数（奇数ベルソルでは \(-1\)）に対応する。
+\textbf{単位ベルソル}とは \(V\widetilde{V}=\pm 1\) かつ \(\|V\|^2=1\) を満たす正規化済みのベルソルを指す。
+
+\section{ローターによる回転・反射の表現}
+
+\subsection{反射}
+
+単位ベクトル \(n\)（\(n^2=1\)、\(n^{-1}=\widetilde{n}=n\)）に対し、\(n\) に垂直な超平面での\textbf{反射}はベルソル \(n\) 自身で実現される：
+\begin{equation}
+  x' = -\,n\,x\,n.
+  \label{eq:reflection}
+\end{equation}
+符号 \(-1\) は、反射が向きを反転する（行列式 \(-1\)）ことを反映している。
+第 1 章演習で計算した \(e_1 e_2 e_1 = -e_2\) は、サンドイッチ \(n x n\)（先頭の \(-1\) を除いた形）に相当する。
+完全な反射 \eqref{eq:reflection} では \(-e_1 e_2 e_1 = e_2\) となり、\(e_1\) に垂直な \(e_2\) 方向は固定される——法線方向 \(e_1\) 自身は \(e_1' = -e_1 e_1 e_1 = -e_1\) と反転する。
+
+二つの反射の合成 \(V = n_2 n_1\) は偶数ベルソルとなり、一般に回転を与える。
+\(G(3)\) では \(e_2 e_1 = -(e_1 e_2)\) が \(e_1 e_2\) 平面内の 180° 回転（同値に、平面法線方向の反射の二重適用）に対応する。
+
+\subsection{ベルソル作用（サンドイッチ積）}
+
+一般の可逆ベルソル \(V\) による\textbf{ベルソル作用}（versor action）は
+\begin{equation}
+  X' = V\,X\,V^{-1}
+  \label{eq:versor-action}
+\end{equation}
+で定義される。
+単位ベルソル \(V\widetilde{V}=\pm 1\) では \(V^{-1} = \pm\widetilde{V}\) であるから、符号に応じて
+\begin{equation}
+  X' = V\,X\,\widetilde{V}
+  \quad\text{または}\quad
+  X' = -V\,X\,\widetilde{V}
+  \label{eq:sandwich}
+\end{equation}
+と書ける。
+本書では主に\textbf{サンドイッチ積} \(X' = V X \widetilde{V}\) という形を用い、符号は \(V\widetilde{V}=\pm 1\) の取り方に吸収する。
+
+この作用は次の性質を持つ。
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{階数保存}：\(X\) が \(k\) 次なら \(X'\) も \(k\) 次である（ベルソルは偶数・奇数部分をそれぞれ偶数・奇数部分へ写す）。
+  \item \textbf{ノルム保存}：\(\|X'\|^2 = \langle X'\widetilde{X'}\rangle_0 = \|X\|^2\)（単位ベルソルのとき）。
+  \item \textbf{群作用}：\(V_2(V_1 X V_1^{-1})V_2^{-1} = (V_2 V_1)\,X\,(V_2 V_1)^{-1}\)——変換の合成はベルソルの積に対応する。
+\end{itemize}
+第 1 章の四元数による回転 \eqref{eq:quat-sandwich} は、\(G(3)\) の偶数単位ベルソル \(q\) に対する \eqref{eq:sandwich} の特殊例である。
+
+\subsection{ローター}
+
+\textbf{ローター} \(R\) とは、偶数の単位ベルソルで
+\begin{equation}
+  R\,\widetilde{R} = 1
+  \label{eq:rotor-def}
+\end{equation}
+を満たす元である。
+\eqref{eq:rotor-def} は第 2 章の \eqref{eq:rotor-unitarity} と同内容であり、回転（および第 II 部の真回転）が内積を保つ代数的根拠となる。
+
+\(G(3)\) の偶数部分代数は四元数 \eqref{eq:quat-embedding} と同型であるから、第 1 章の単位四元数ローター \eqref{eq:quat-rotor} はすべて \(G(3)\) のローターである。
+逆に、\(G(3)\) の任意のローターは、ある単位四元数 \(q\) として書ける。
+
+\paragraph{例：\(e_1 e_2\) による平面内 90° 回転}
+\(B = e_1 e_2\) は \(\widetilde{B} = -B\)、\(B^2 = -1\) を満たす。
+ローター \(R = e^{-B\pi/4} = \cos(\pi/4) - B\sin(\pi/4) = \tfrac{1}{\sqrt{2}}(1 - e_1 e_2)\) に対し、
+\(e_3\) 方向のベクトル \(e_3\) は \(B\) と可換であるから \(e_3' = R e_3 \widetilde{R} = e_3\)——\(e_1 e_2\) 平面に垂直な方向は固定される。
+一方 \(e_1\) は \(e_1' = R e_1 \widetilde{R} = e_2\) となり、\(e_1 \to e_2\) の 90° 回転が実現される。
+
+\subsection{回転の合成}
+
+軸 \(\hat{u}_1\) 周りの角度 \(\theta_1\)、続いて軸 \(\hat{u}_2\) 周りの \(\theta_2\) の回転は、ローターの積
+\begin{equation}
+  R_{\mathrm{tot}} = R_2 R_1
+  \label{eq:rotor-composition}
+\end{equation}
+で与えられる——四元数の非可換性 \eqref{eq:quat-mult} と同じ順序依存性である。
+ジンバルロックに代表される特異点は、オイラー角のパラメータ化に固有のものであり、ローター \(R \in \mathrm{Spin}(3)\) 自体は滑らかな多様体上の点として扱える。
+
+指数表示 \(R = e^{-\hat{u}\,\theta/2}\) \eqref{eq:quat-rotor} に現れる\textbf{半角} \(\theta/2\) は、ローター群 \(\mathrm{Spin}(3)\) が回転群 \(\mathrm{SO}(3)\) の二重被覆であることに由来する——\(2\pi\) 回転でローターの符号が反転し、\(4\pi\) で初めて \(1\) に戻る。
+
+\paragraph{DST 論文との接続}
+PGA 版 DST では、拡張モーター \(M = \exp(\Omega_{\mathrm{biv}}^{(5)})\) が \eqref{eq:rotor-def} と同型のユニタリ性 \(M\widetilde{M}=1\) を満たし、幾何変換は
+\begin{equation}
+  X' = M\,X\,\widetilde{M}
+  \label{eq:motor-sandwich}
+\end{equation}
+で与えられる。
+ねじれローター、ヌル並進、光円錐上の移動はすべてこのサンドイッチ積の枠内に収まる（第 III--V 部）。
+
+\section{指数関数写像とリー代数的視点}
+
+\subsection{バイベクトルによる指数写像}
+
+バイベクトル \(B\) が \(B^2\) をスカラーとするとき、指数関数
+\begin{equation}
+  e^{B} = \sum_{n=0}^{\infty} \frac{B^n}{n!}
+  \label{eq:exp-biv}
+\end{equation}
+は有限和に収束する（\(B^2 = s\) スカラーなら奇数・偶数項が分離される）。
+\(B^2 = -\alpha^2 < 0\)（ユークリッド平面内の回転生成）のとき、単位方向 \(\hat{B} = B/\alpha\)（\(\hat{B}^2 = -1\)）を用いて
+\begin{equation}
+  e^{B} = \cos\alpha + \hat{B}\,\sin\alpha.
+  \label{eq:exp-rotation}
+\end{equation}
+\(B^2 = \beta^2 > 0\)（第 II 部のミンコフスキー空間での\textbf{ブースト}生成）のときは
+\begin{equation}
+  e^{B} = \cosh\beta + \hat{B}\,\sinh\beta.
+  \label{eq:exp-boost}
+\end{equation}
+となる。
+
+\subsection{ローターの指数形}
+
+平面内の回転角 \(\theta\) に対し、バイベクトル \(B = \tfrac{\theta}{2}\,\hat{u}\)（\(\hat{u}^2 = -1\)）を取ると
+\begin{equation}
+  R = e^{-B} = e^{-\hat{u}\,\theta/2}
+  = \cos\frac{\theta}{2} - \hat{u}\,\sin\frac{\theta}{2}
+  \label{eq:rotor-exp}
+\end{equation}
+となり、\eqref{eq:quat-rotor} と一致する。
+半角が現れるのは、\eqref{eq:rotor-exp} が \(\mathrm{Spin}(3) \to \mathrm{SO}(3)\) の二重被覆写像であるためである。
+
+\paragraph{反転との整合}
+バイベクトルは反転奇性 \eqref{eq:biv-rev-odd} を満たすから、
+\begin{equation}
+  \widetilde{e^{B}} = e^{\widetilde{B}} = e^{-B},
+  \label{eq:exp-reversion}
+\end{equation}
+したがって \(R = e^{-B}\) に対し
+\begin{equation}
+  R\,\widetilde{R} = e^{-B}\,e^{B} = 1.
+  \label{eq:rotor-unitarity-proof}
+\end{equation}
+これは第 2 章演習（発展）の内容を本節で正式に確立したものである。
+DST 論文の torsional rotor に対する \(R\widetilde{R}=1\) も、すべてのバイベクトル生成子が反転奇性 \((e_\mu e_\nu)^{\sim} = -e_\mu e_\nu\) を持つことに基づく——第 III 部でヌル生成子 \(N_\mu = e_4 \wedge e_\mu\) に拡張される。
+
+\subsection{リー代数的視点}
+
+ローター群の\textbf{リー代数}は、バイベクトル空間 \(\mathfrak{spin}(3) \cong \mathbb{R}^3\)（\(G(3)\) では \(\{e_1 e_2,\, e_2 e_3,\, e_3 e_1\}\) の張る 3 次元空間）である。
+無限小ローター \(R = e^{\varepsilon B} \approx 1 + \varepsilon B\)（\(|B|\ll 1\)）による変換を 1 次で展開すると
+\begin{equation}
+  x' = e^{\varepsilon B}\,x\,e^{-\varepsilon B}
+  \approx x + \varepsilon\,[B, x] + O(\varepsilon^2),
+  \label{eq:infinitesimal-rotor}
+\end{equation}
+ここで \([B,x] := Bx - xB\) は\textbf{交換子}（commutator）である。
+2 つのバイベクトル \(B_1,B_2\) の交換子 \([B_1,B_2]\) は再びバイベクトルであり、これが回転群の\textbf{合成}（非可換性）の無限小版を与える。
+
+物理的には、\(B = \tfrac{1}{2}\sum_i \omega_i\, e_j e_k\)（\(\{i,j,k\}\) の順列）が角速度 \(\boldsymbol{\omega}\) に対応し、\eqref{eq:infinitesimal-rotor} は \(\dot{x} = \boldsymbol{\omega}\times x\) の代数版である。
+
+\paragraph{第 II 部・第 III 部への先読み}
+\(G(3,1)\) では 6 次元バイベクトル空間がローレンツ群のリー代数 \(\mathfrak{so}(3,1)\) を担い、\eqref{eq:exp-boost} の双曲関数がブーストを記述する。
+\(G(3,1,1)\) ではヌルバイベクトル \(N_\mu\) が \(N_\mu^2 = 0\) かつ \(N_\mu N_\nu = 0\) を満たし、指数が
+\begin{equation}
+  e^{\sum_\mu \lambda^\mu N_\mu / 2}
+  = 1 + \sum_\mu \frac{\lambda^\mu}{2}\,N_\mu
+  \label{eq:exp-null-truncation}
+\end{equation}
+と\textbf{1 次で打ち切られる}——並進の有限生成と \(M\widetilde{M}=1\) の両方がここから生まれる（第 III 部・論文 Section 3）。
+
+本章で確立した「ベルソル → ローター → 指数写像 → サンドイッチ積」の鎖は、第 II 部の \(G(3,1)\)（ローレンツ変換）と第 III 部の \(G(3,1,1)\)（モーター）へそのまま拡張される。
+
+\section*{演習問題}
+
+\begin{enumerate}[leftmargin=2em]
+  \item \(G(3)\) において \(V = e_1 e_2\) が偶数ベルソルであることを、\(\widehat{V} = V\) \eqref{eq:versor-grade-inv} から確認せよ。
+  また \(W = e_1 e_2 e_3\) が奇数ベルソルであり \(\widehat{W} = -W\) となることを示せよ。
+
+  \item 単位ベクトル \(n = e_1\) に対し、反射 \eqref{eq:reflection} を \(x = e_1\) に適用し、\(x' = -e_1\) となることを直接計算で確かめよ。
+  同じ \(n\) で \(x = e_2\) のとき \(x' = e_2\)（垂直方向は固定）となることも示せよ。
+
+  \item ローター \(R = \tfrac{1}{\sqrt{2}}(1 - e_1 e_2)\) について、サンドイッチ積 \eqref{eq:sandwich} により \(e_1' = R e_1 \widetilde{R}\) を計算し、結果が \(e_2\) となることを示せよ。
+
+  \item \(B = e_1 e_2\) に対し \eqref{eq:exp-rotation} を用いて \(R = e^{-B\pi/4}\) を求め、\eqref{eq:rotor-unitarity-proof} により \(R\widetilde{R}=1\) を確認せよ。
+
+  \item バイベクトル \(B_1 = e_1 e_2\)、\(B_2 = e_2 e_3\) の交換子 \([B_1,B_2] = B_1 B_2 - B_2 B_1\) を計算せよ。
+  結果が \(2\,e_1 e_3\) となり、再びバイベクトルであることを確かめよ。
+
+  \item （発展）\(G(3,1)\) のバイベクトル \(H = e_0 e_1\)（\(e_0^2=-1\)、\(e_1^2=1\)）について \(H^2 = 1\) を示し、\eqref{eq:exp-boost} からブースト生成子 \(e^H\) の形を書け。
+\end{enumerate}
+
+\newpage
+
+%==================================================
+\part{\texorpdfstring{第II部　時空代数 \(G(3,1)\)}{第II部　時空代数 G(3,1)}}
+
+\chapter{ミンコフスキー空間の幾何代数}
+
+第 I 部ではユークリッド幾何代数 \(G(3)\) 上でベルソル・ローター・指数写像を整えた。
+本章では符号 \((-,+,+,+)\) のミンコフスキー空間に対応する\textbf{時空代数} \(G(3,1)\)（\(\mathrm{Cl}(3,1)\) と同型）を導入する。
+DST の親理論および PGA 版論文が前提とする四ベクトル基底、六つのバイベクトル生成子、ローレンツ変換のローター表現をここで確立する。
+並進の内在化や \(G(3,1,1)\) への拡張は第 III 部に委ね、本章は \(\mathrm{Cl}(3,1)\) 部分代数の基礎に徹する。
+
+\section{\texorpdfstring{符号 \((3,1)\) または \((1,3)\) の選択と物理的意味}{符号 (3,1) または (1,3) の選択と物理的意味}}
+
+\subsection{ミンコフスキー符号とクリフォード代数}
+
+4 次元ベクトル空間に符号 \((p,q,r,s)\) の二次形式を与えたとき、対応する幾何代数を \(G(p,q,r,s)\) と書く。
+ミンコフスキー時空では 1 つの時間成分と 3 つの空間成分を持ち、符号は \((3,1)\) または \((1,3)\) のどちらかになる——前者は空間的ベクトル 3 個が \(+1\)、後者は時間的ベクトル 1 個が \(+1\) となる配置の違いである。
+
+本書および DST 論文は、次の\textbf{ミンコフスキー符号} \((-,+,+,+)\) を一貫して採用する：
+\begin{equation}
+  e_0^2 = -1, \qquad e_1^2 = e_2^2 = e_3^2 = +1, \qquad \{e_\mu, e_\nu\} = 0 \quad (\mu \neq \nu).
+  \label{eq:minkowski-signature}
+\end{equation}
+ここで \(e_0\) は時間方向、\(e_1,e_2,e_3\) は空間方向の直交単位ベクトルである。
+反可換関係 \(\{e_\mu,e_\nu\}=0\) は、異なる方向の幾何積が外積のみを残すことを意味する（第 1 章 \eqref{eq:gp-decomp}）。
+
+この代数を \textbf{\(G(3,1)\)} と呼ぶ。
+文献によっては \(\mathrm{Cl}(3,1)\) とも書かれ、16 次元の\textbf{双四元数}代数と同型である（序章参照）。
+\(G(3)\) が 8 次元だったのに対し、時間成分 \(e_0\) の追加により \(2^4 = 16\) 次元になる——多重ベクトルの階数分解は第 2 章と同様に
+\[
+G(3,1) = \langle 1 \rangle_0 \oplus \langle e_\mu \rangle_1 \oplus \langle e_\mu e_\nu \rangle_2 \oplus \langle e_\mu e_\nu e_\rho \rangle_3 \oplus \langle e_0 e_1 e_2 e_3 \rangle_4
+\]
+であり、各階数の次元は \(1,4,6,4,1\) である。
+
+\subsection{\((3,1)\) と \((1,3)\) の違い}
+
+符号 \((1,3)\) を採る文献では、\(e_0^2 = +1\)、\(e_i^2 = -1\)（\(i=1,2,3\)）と定義することがある。
+これは \((3,1)\) との\textbf{符号の入れ替え}にすぎず、代数構造自体は同型である。
+物理的内容——光円錐、ローレンツ不変量、因果律——は変わらない。
+
+本書が \((-,+,+,+)\) を選ぶ理由は三つある。
+第一に、特殊相対性理論の標準的記法 \(x^2 + y^2 + z^2 - (ct)^2\) との整合である。
+第二に、DST 親理論および PGA 版論文が同一規約を用いること。
+第三に、双四元数表現 \(e_0 = j\)（平方 \(-1\)）、\(e_i = kI,kJ,kK\)（平方 \(+1\)）との自然な対応である。
+
+\paragraph{計量テンソル}
+座標 \(x^\mu = (ct, x, y, z)\) に対し、ミンコフスキー計量は
+\begin{equation}
+  \eta_{\mu\nu} = \mathrm{diag}(-1, +1, +1, +1)
+  \label{eq:minkowski-metric}
+\end{equation}
+である。
+時空ベクトル \(X = x^\mu e_\mu\) の\textbf{二次形式}（スカラー部）は
+\begin{equation}
+  X^2 = \langle X^2 \rangle_0 = \eta_{\mu\nu}\, x^\mu x^\nu = -(ct)^2 + x^2 + y^2 + z^2.
+  \label{eq:spacetime-norm}
+\end{equation}
+\(X^2 > 0\) は空間様、\(X^2 < 0\) は時間様、\(X^2 = 0\) は光的（null）ベクトルに対応する。
+
+\subsection{四元数埋め込みとの連続性}
+
+\(G(3)\) では空間バイベクトル \(I = e_3 e_2\)、\(J = e_1 e_3\)、\(K = e_2 e_1\) が四元数虚数単位 \eqref{eq:quat-embedding} として機能した。
+\(G(3,1)\) では \(e_0\) が加わり、これらの \(I,J,K\) は\textbf{空間回転}生成子として残る。
+一方 \(e_0\) を含むバイベクトル \(e_0 e_i\) は平方 \(+1\) を持ち、\textbf{ブースト}生成子となる——第 3 章 \eqref{eq:exp-boost} で予告した双曲関数の出現点である。
+
+\section{時空ベクトルとバイベクトル}
+
+\subsection{双四元数基底}
+
+DST 論文および PGA 版論文は、四つのベクトル生成子を双四元数要素と同一視する：
+\begin{equation}
+  e_0 = j, \qquad e_1 = kI, \qquad e_2 = kJ, \qquad e_3 = kK.
+  \label{eq:cl31-basis}
+\end{equation}
+\eqref{eq:minkowski-signature} が成り立つことは直接計算で確認できる。
+例えば \(e_1 = kI\) より \(e_1^2 = kIkI = k^2 I^2 = (+1)(-1) = +1\) である。
+
+一般の時空ベクトルは
+\begin{equation}
+  X = x^\mu e_\mu = ct\, e_0 + x\, e_1 + y\, e_2 + z\, e_3
+  \label{eq:spacetime-vector}
+\end{equation}
+と書く。
+\textbf{光的ベクトル}（null vector）は \eqref{eq:spacetime-norm} より
+\begin{equation}
+  L^2 = -(ct)^2 + x^2 + y^2 + z^2 = 0
+  \label{eq:null-vector}
+\end{equation}
+を満たす。
+光速で進む粒子の 4 速度はこの条件を満たす——第 III 部では、並進パラメータが光円錐上に制約される条件として再登場する。
+
+\subsection{六つのバイベクトル生成子}
+
+\(G(3,1)\) の 2 次部分は 6 次元であり、ローレンツ群のリー代数 \(\mathfrak{so}(3,1)\) を張る。
+論文の分類に従い、六生成子は\textbf{双曲}（ブースト）と\textbf{巡回}（回転）の二群に分かれる。
+
+\paragraph{双曲生成子（平方 \(+1\)）}
+\begin{equation}
+  iI = e_0 e_1, \qquad iJ = e_0 e_2, \qquad iK = e_0 e_3.
+  \label{eq:hyperbolic-biv}
+\end{equation}
+各元は \(e_0\) と空間方向 \(e_i\) の外積であり、\(\mathfrak{so}(3,1)\) のブーストセクターを担う。
+計算例：\(H = e_0 e_1\) に対し
+\[
+H^2 = e_0 e_1 e_0 e_1 = -e_0^2 e_1^2 = -(-1)(+1) = +1.
+\]
+
+\paragraph{巡回生成子（平方 \(-1\)）}
+\begin{equation}
+  I = e_3 e_2, \qquad J = e_1 e_3, \qquad K = e_2 e_1.
+  \label{eq:cyclic-biv}
+\end{equation}
+これらは \(G(3)\) の四元数虚数単位 \eqref{eq:quat-embedding} と一致し、空間回転を生成する。
+\(I^2 = e_3 e_2 e_3 e_2 = -e_3^2 e_2^2 = -1\) である。
+
+表 \ref{tab:so31-generators} に六生成子の対応をまとめる。
+
+\begin{table}[htbp]
+  \centering
+  \caption{\(G(3,1)\) の六バイベクトル生成子}
+  \label{tab:so31-generators}
+  \begin{tabular}{@{}llcl@{}}
+    \toprule
+    類 & 生成子 & 平方 & 物理的意味 \\
+    \midrule
+    双曲 & \(iI = e_0 e_1\), \(iJ = e_0 e_2\), \(iK = e_0 e_3\) & \(+1\) & ローレンツ・ブースト \\
+    巡回 & \(I = e_3 e_2\), \(J = e_1 e_3\), \(K = e_2 e_1\) & \(-1\) & 空間回転 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+双曲生成子の平方が正、巡回生成子の平方が負——これは第 3 章 \eqref{eq:exp-rotation} と \eqref{eq:exp-boost} の分岐点であり、ミンコフスキー計量の符号 \((-,+,+,+)\) の直接的帰結である。
+
+\subsection{擬スカラーと双対写像}
+
+4 次擬スカラー
+\begin{equation}
+  i = e_0 e_1 e_2 e_3
+  \label{eq:cl31-pseudoscalar}
+\end{equation}
+は \eqref{eq:dst-pseudoscalar} と同じ元である（\(i^2 = (e_0 e_1 e_2 e_3)^2 = -1\)）。
+DST における\textbf{双対写像} \(X \mapsto Xi\) は、通常時空セクターと双対時空セクターを入れ替える——具体的には双曲生成子 \(\{iI,iJ,iK\}\) と巡回生成子 \(\{I,J,K\}\) を符号まで対応させる（第 IV 部で詳述）。
+
+\(G(3,1,1)\) へ拡張するとき、ヌルベクトル \(e_4\) は \(i\) と可換である \eqref{eq:e4-i-commute}。
+したがって双対写像は \(\mathrm{Cl}(3,1)\) 部分代数上では従来どおり作用し、並進方向 \(e_4\) は独立に保たれる——これが PGA 版 DST の代数的基盤である。
+
+\subsection{電磁場のバイベクトル表現}
+
+時空バイベクトルとして\textbf{電磁場} \(F\) を導入する。
+空間成分 \(E_i\)（電場）と \(B_i\)（磁場）を用い
+\begin{equation}
+  F = E_1 e_0 e_1 + E_2 e_0 e_2 + E_3 e_0 e_3
+    + B_1 e_2 e_3 + B_2 e_3 e_1 + B_3 e_1 e_2
+  \label{eq:em-bivector}
+\end{equation}
+と書ける。
+擬スカラー \(i\) を用いたコンパクトな表記
+\begin{equation}
+  F = \mathbf{E} + i\,\mathbf{B}
+  \label{eq:em-compact}
+\end{equation}
+もよく使われる——ここで \(\mathbf{E} = E_i e_0 e_i\)、\(\mathbf{B} = B_i e_j e_k\)（循環順）である。
+電場と磁場が単一の幾何対象 \(F\) に統合される点が、幾何代数的電磁気の出発点である。
+マックスウェル方程式のコンパクトな形 \(\nabla F = J\) や相対論的変換則は次章で扱う。
+
+\section{ローレンツ変換のローター表現}
+
+\subsection{ローターとサンドイッチ積}
+
+第 3 章で確立したローターの定義 \eqref{eq:rotor-def} とサンドイッチ積 \eqref{eq:sandwich} は、\(G(3,1)\) 上でもそのまま有効である。
+偶数単位ベルソル \(R\) が \(R\widetilde{R} = 1\) を満たすとき、時空ベクトル \(X\) の変換は
+\begin{equation}
+  X' = R\,X\,\widetilde{R}
+  \label{eq:lorentz-sandwich}
+\end{equation}
+で与えられる。
+この作用は階数 1 を保存し、\eqref{eq:spacetime-norm} の二次形式を不変にする——すなわちローレンツ変換である。
+
+\subsection{空間回転}
+
+空間 \(e_i e_j\) 平面内の回転は、第 3 章と同様に \(B^2 = -\alpha^2 < 0\) なるバイベクトル \(B\) から
+\begin{equation}
+  R = e^{-B} = \cos\alpha + \hat{B}\sin\alpha
+  \label{eq:rotation-rotor}
+\end{equation}
+（\eqref{eq:exp-rotation}）で与えられる。
+例えば \(e_1 e_2\) 平面内の角度 \(\theta\) の回転は \(B = \tfrac{\theta}{2} e_1 e_2\) より \(R = \cos(\theta/2) - e_1 e_2 \sin(\theta/2)\) である。
+
+\subsection{ローレンツ・ブースト}
+
+双曲バイベクトル \(H = e_0 e_1\) は \(H^2 = +1\) であるから、第 3 章 \eqref{eq:exp-boost} より
+\begin{equation}
+  R_{\mathrm{bst}} = e^{-H\phi/2} = \cosh\frac{\phi}{2} - H\,\sinh\frac{\phi}{2}
+  \label{eq:boost-rotor}
+\end{equation}
+がブースト生成ローターを与える。
+ここで \(\phi\) は\textbf{ラピディティ}（rapidity）であり、速度 \(v\) との関係は \(\phi = \operatorname{artanh}(v/c)\) である。
+\(H\) の符号と向きがブースト方向を決める。
+
+\paragraph{例：\(x\) 方向へのブースト}
+\(H = e_0 e_1\)、\(\widetilde{H} = -H\) として \eqref{eq:boost-rotor} より
+\[
+R = \cosh\frac{\phi}{2} - e_0 e_1 \sinh\frac{\phi}{2}.
+\]
+サンドイッチ積 \eqref{eq:lorentz-sandwich} を \(X = ct\, e_0 + x\, e_1\) に適用すると
+\begin{align}
+  (ct)' &= ct\,\cosh\phi - x\,\sinh\phi, \\
+  x'    &= -ct\,\sinh\phi + x\,\cosh\phi,
+\end{align}
+すなわち標準的なローレンツ・ブーストが得られる。
+
+\subsection{回転とブーストの統一}
+
+回転（\(B^2 < 0\)、三角関数）とブースト（\(H^2 > 0\)、双曲関数）が、同一の指数形式 \(R = e^{-B/2}\) で記述される——これが幾何代数的特殊相対性理論の核心である。
+一般のローレンツ変換は、適切な 6 次元バイベクトル \(\Omega \in \mathfrak{so}(3,1)\) から
+\begin{equation}
+  R = e^{-\Omega/2}, \qquad X' = R\,X\,\widetilde{R}
+  \label{eq:general-lorentz}
+\end{equation}
+として与えられる。
+
+\subsection{無限小変換とリー代数}
+
+\(|B| \ll 1\) のとき \(R = e^{-B/2} \approx 1 - B/2\) より、無限小ローレンツ変換は
+\begin{equation}
+  X' \approx X - \tfrac{1}{2}[B, X] + O(B^2)
+  \label{eq:infinitesimal-lorentz}
+\end{equation}
+（\eqref{eq:infinitesimal-rotor} の \(G(3,1)\) 版）で与えられる。
+六つのバイベクトル生成子 \eqref{eq:hyperbolic-biv}–\eqref{eq:cyclic-biv} の交換子は再び \(\mathfrak{so}(3,1)\) 内に閉じ、ポアンカレ群の\textbf{非並進}部分 \(\mathrm{SO}(3,1)\) のリー代数構造を与える。
+
+\subsection{DST 論文との接続}
+
+PGA 版 DST では、\(\mathrm{Cl}(3,1)\) 部分代数の六バイベクトルが二つの役割を担う。
+\textbf{双曲生成子} \(\{iI,iJ,iK\}\) は通常時空側のブースト——ねじれ不整合の「引っ張る」方向——に対応する。
+\textbf{巡回生成子} \(\{I,J,K\}\) は双対時空側の回転——コンパクトな位相情報の保存——に対応する。
+擬スカラー \(i\) による双対写像 \(X \mapsto Xi\) が両セクターを入れ替える（第 IV 部）。
+
+第 III 部では、ヌルベクトル \(e_4\) を加えた \(G(3,1,1)\) 上で四つの\textbf{ヌル生成子} \(N_\mu = e_4 \wedge e_\mu\) が並進を内在化する。
+六生成子に四生成子を加えた 10 次元バイベクトル空間がポアンカレ代数 \(\mathfrak{iso}(3,1)\) となり、回転・ブースト・並進が単一のモーター \(M = \exp(\Omega)\) に統合される——本章で整えた \(G(3,1)\) のローター理論が、その直接的な土台となる。
+
+\section*{演習問題}
+
+\begin{enumerate}[leftmargin=2em]
+  \item \(H = e_0 e_1\) について \(H^2 = +1\) を \eqref{eq:minkowski-signature} から直接計算で示せ。
+  同様に \(B = e_1 e_2\) について \(B^2 = -1\) を確認せよ。
+
+  \item 光的ベクトル \(L = c t_0 e_0 + x_0 e_1\)（\(x_0 \neq 0\)）について \eqref{eq:null-vector} より \(L^2 = 0\) となる \(t_0\) の値を求めよ。
+  結果が \(t_0 = x_0/c\) となり、光速条件と一致することを確認せよ。
+
+  \item ブーストローター \eqref{eq:boost-rotor} について、\(H\) の反転奇性 \(\widetilde{H} = -H\) から \(\widetilde{R} = \cosh(\phi/2) + H\sinh(\phi/2)\) を求め、\(R\widetilde{R} = 1\) を示せ。
+
+  \item \(R = \cosh(\phi/2) - e_0 e_1 \sinh(\phi/2)\) について、サンドイッチ積 \eqref{eq:lorentz-sandwich} により \(e_0' = R e_0 \widetilde{R}\) と \(e_1' = R e_1 \widetilde{R}\) を計算し、\(e_0\) と \(e_1\) が双曲関数で混合されることを示せ。
+
+  \item 双曲生成子 \(iI = e_0 e_1\) と巡回生成子 \(I = e_3 e_2\) の交換子 \([iI, I]\) を計算せよ。
+  結果が再びバイベクトルであることを確認し、\(\mathfrak{so}(3,1)\) の閉性を確かめよ。
+
+  \item （発展）擬スカラー \(i = e_0 e_1 e_2 e_3\) について \(iI = e_0 e_1\) との積 \(i \cdot (iI)\) を計算し、巡回生成子 \(I = e_3 e_2\) との関係を調べよ。
+  双対写像 \(X \mapsto Xi\) が双曲生成子と巡回生成子を入れ替えることの手がかりとなる。
+\end{enumerate}
+
+\chapter{時空代数の応用}
+
+\section{相対論的運動学の書き換え}
+% 四元数的な回転・ブーストの統一。
+
+\section{電磁気のマックスウェル方程式のコンパクトな形}
+% \( \nabla F = J \) などの表現。
+
+\section{ディラックスピノルとの接点}
+% 既知の特殊相対論・量子力学との橋渡し。
+
+\section*{演習問題}
+
+\newpage
+
+%==================================================
+\part{\texorpdfstring{第III部　射影幾何代数 \(G(3,1,1)\)}{第III部　射影幾何代数 G(3,1,1)}}
+
+\chapter{ヌル次元の導入と射影構造}
+
+\section{\texorpdfstring{\(G(3,1)\) にヌルベクトル \(e_4\) を加える}{G(3,1) にヌルベクトル e4 を加える}}
+% \(e_4^2 = 0\) の導入と次元の拡張。
+
+\section{点・直線・平面の多重ベクトル表現}
+% 射影幾何の基本対象の符号化。
+
+\section{接合（join）と交わり（meet）の代数的実現}
+% 外積と双対を用いた操作。
+
+\section*{演習問題}
+
+\chapter{並進とモーター}
+
+\section{\texorpdfstring{ヌル生成子 \(N_\mu = e_4 \wedge e_\mu\)}{ヌル生成子 N mu = e4 wedge e mu}}
+% 並進を担う生成子の定義。
+
+\section{並進をモーターとして実現する方法}
+% 並進ローター（モーター）の構成。
+
+\section{剛体運動の統一的記述}
+% ポアンカレ群や SE(3) の部分としての理解。
+
+\section*{演習問題}
+
+\chapter{双対性とトーション関連の構造}
+
+\section{双対写像と極性}
+% J-map などの導入。
+
+\section{キリング形式の役割}
+% 内積構造との関係。
+
+\section{トーション・ねじれ不整合が現れる代数的場所の準備}
+% 後のDSTへの布石。
+
+\section*{演習問題}
+
+\newpage
+
+%==================================================
+\part{第IV部　二重時空理論の数学的枠組み}
+
+\chapter{通常時空と双対時空}
+
+\section{\texorpdfstring{二つの時空のローター \(R_{\mathrm{usual}}\) と \(R_{\mathrm{dual}}\)}{二つの時空のローター R usual と R dual}}
+% 定義と基本的な関係。
+
+\section{コンパクト化と時間矢印の反転}
+% 双対時空の特徴的な性質。
+
+\section{完全反同期の条件（質量ゼロ粒子の場合）}
+% 光子における特別な同期関係。
+
+\section*{演習問題}
+
+\chapter{ねじれ不整合と並進の役割}
+
+\section{ねじれ不整合（torsional mismatch）の定義}
+% 通常時空と双対時空のずれの定量化。
+
+\section{光子における光円錐条件の強制}
+% ねじれ不整合がゼロのときの帰結。
+
+\section{位置演算子の構成}
+% 通常時空の横方向 ＋ 双対時空の位相 ＋ 光的並進。
+
+\section*{演習問題}
+
+\chapter{スピノル・量子状態との統合}
+
+\section{双対時空ローターとディラックスピノルの関係}
+% スピノル表現との自然な接続。
+
+\section{\texorpdfstring{ヒルベルト空間の構成（特に \(S^3\) 構造）}{ヒルベルト空間の構成（特に S3 構造）}}
+% コンパクト位相空間による量子状態の表現。
+
+\section{モーターによる位置とスピンの統一変換}
+% サンドウィッチ積による同時変換。
+
+\section*{演習問題}
+
+\newpage
+
+%==================================================
+\part{第V部　応用と展望}
+
+\chapter{ニュートン‐ウィグナー問題の解決}
+
+\section{質量ゼロ粒子の局所化がなぜ可能になるか}
+% 三者構造による情報の保存と復元。
+
+\section{観測者独立性の回復}
+% 位置演算子の共変性。
+
+\section*{演習問題}
+
+\chapter{重力・慣性への拡張の萌芽}
+
+\section{ねじれ不整合としての重力・慣性}
+% 重力の幾何代数的解釈への入口。
+
+\section{量子重力への道筋（概観）}
+% 今後の研究課題の展望。
+
+\section*{演習問題}
+
+\newpage
+
+%==================================================
+\appendix
+
+\chapter{記法一覧と符号規約}
+% 本書で用いる記号・符号の統一表。
+
+\chapter{主要な同型関係}
+% 四元数・双四元数・ローターなどの関係をまとめる。
+
+\chapter{\texorpdfstring{\(G(3,1,1)\) の基底と積表}{G(3,1,1) の基底と積表}}
+% 計算用チートシート。
+
+\chapter{参考文献と発展的トピック}
+% デイビッド・ヘステネス、チャールズ・ガン、エリック・レンジェルなどの主要文献。
+% その他、関連する幾何代数・相対論・量子重力の文献。
+
+\end{document}
