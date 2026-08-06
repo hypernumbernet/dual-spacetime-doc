@@ -66,7 +66,7 @@ DST の親理論は、ミンコフスキー時空の幾何代数 \(\mathrm{Cl}(3
 しかし \(\mathrm{Cl}(3,1)\) だけでは、時空並進は代数の内部からは生まれない。
 並進を幾何的に統合するため、本書は射影幾何代数 \(G(3,1,1)\) へ理論を持ち上げる。
 具体的には、平方がゼロの\textbf{ヌルベクトル} \(e_4\)（\(e_4^2 = 0\)）を一つ付加する。
-\(e_4\) は既存の四ベクトルと反可換し（\(\{e_4, e_\mu\} = 0\)）、双四元数の擬スカラー \(i = e_0 e_1 e_2 e_3\) とは可換である。
+\(e_4\) は既存の四元ベクトルと反可換し（\(\{e_4, e_\mu\} = 0\)）、双四元数の擬スカラー \(i = e_0 e_1 e_2 e_3\) とは可換である。
 この性質により、親理論の双対写像 \(X \mapsto Xi\) は \(\mathrm{Cl}(3,1)\) 部分代数上で従来どおり作用しつつ、新しいヌル方向 \(e_4\) は独立に保たれる。
 
 \(G(3,1,1)\) のバイベクトル空間は \(\binom{5}{2} = 10\) 次元である。
@@ -181,7 +181,7 @@ PGA 版 DST は、この問題を三者構造で解く。
 
 \subsection*{符号規約}
 
-通常時空の四ベクトルはミンコフスキー符号 \((-,+,+,+)\) を用いる。
+通常時空の四元ベクトルはミンコフスキー符号 \((-,+,+,+)\) を用いる。
 すなわち \(e_0^2 = -1\)、\(e_1^2 = e_2^2 = e_3^2 = +1\)、異なる \(e_\mu\) は反可換である。
 付加するヌルベクトルは \(e_4^2 = 0\) かつ \(\{e_4, e_\mu\} = 0\) を満たす。
 幾何積は、ベクトルの順序を保持する（非可換）積とする。
@@ -904,7 +904,7 @@ DST 論文の torsional rotor に対する \(R\widetilde{R}=1\) も、すべて�
 
 第 I 部ではユークリッド幾何代数 \(G(3)\) 上でベルソル・ローター・指数写像を整えた。
 本章では符号 \((-,+,+,+)\) のミンコフスキー空間に対応する\textbf{時空代数} \(G(3,1)\)（\(\mathrm{Cl}(3,1)\) と同型）を導入する。
-DST の親理論および PGA 版論文が前提とする四ベクトル基底、六つのバイベクトル生成子、ローレンツ変換のローター表現をここで確立する。
+DST の親理論および PGA 版論文が前提とする四元ベクトル基底、六つのバイベクトル生成子、ローレンツ変換のローター表現をここで確立する。
 並進の内在化や \(G(3,1,1)\) への拡張は第 III 部に委ね、本章は \(\mathrm{Cl}(3,1)\) 部分代数の基礎に徹する。
 
 \section{\texorpdfstring{符号 \((3,1)\) または \((1,3)\) の選択と物理的意味}{符号 (3,1) または (1,3) の選択と物理的意味}}
@@ -1161,7 +1161,7 @@ PGA 版 DST では、\(\mathrm{Cl}(3,1)\) 部分代数の六バイベクトル�
 
 前章で \(G(3,1)\) 上のローター、電磁場バイベクトル \(F=\mathbf{E}+i\mathbf{B}\)、サンドイッチ積 \eqref{eq:lorentz-sandwich} を整えた。
 本章では、これらを\textbf{相対論的運動学}、\textbf{マックスウェル方程式}、\textbf{ディラック方程式}へ接続する。特殊相対性理論と古典電磁気論、そして量子力学との橋渡しである。
-DST 固有の双対時空や \(G(3,1,1)\) への拡張は第 III--IV 部に委ね、ここでは \(\mathrm{Cl}(3,1)\) 部分代数上の標準的 STA 応用に徹する。
+DST 固有の双対時空や \(G(3,1,1)\) への拡張は第 III--IV 部に委ね、ここでは \(\mathrm{Cl}(3,1)\) 部分代数上の標準的時空代数（Space-Time Algebra, STA）の応用に徹する。
 
 \section{相対論的運動学の書き換え}
 
@@ -1174,9 +1174,9 @@ DST 固有の双対時空や \(G(3,1,1)\) への拡張は第 III--IV 部に委�
 世界線上の任意の点で、接ベクトル \(v = dX/d\tau\) は\textbf{時間様}（timelike）（\(v^2 < 0\)）である。
 ローター \eqref{eq:lorentz-sandwich} は \(X^2\) を不変に保つ。
 
-\subsection{四速度と正規化}
+\subsection{四元速度と正規化}
 
-\textbf{四速度}（4-velocity）は世界線の接ベクトル
+\textbf{四元速度}（4-velocity）は世界線の接ベクトル
 \begin{equation}
   v = \frac{dX}{d\tau} = c\,\frac{dt}{d\tau}\,e_0 + \frac{dx}{d\tau}\,e_1 + \frac{dy}{d\tau}\,e_2 + \frac{dz}{d\tau}\,e_3
   \label{eq:four-velocity}
@@ -1192,7 +1192,7 @@ DST 固有の双対時空や \(G(3,1,1)\) への拡張は第 III--IV 部に委�
   \label{eq:four-velocity-gamma}
 \end{equation}
 と書ける。
-四速度の\textbf{正規化}は
+四元速度の\textbf{正規化}は
 \begin{equation}
   v^2 = \langle v^2 \rangle_0 = -c^2
   \label{eq:four-velocity-norm}
@@ -1203,15 +1203,15 @@ DST 固有の双対時空や \(G(3,1,1)\) への拡張は第 III--IV 部に委�
 座標時間 \(t\) との関係は \(d\tau = dt/\gamma\) である。
 \(v^2=-c^2\) を成分表示 \((\gamma c, \gamma c\boldsymbol{\beta})\) に代入すると \(\gamma^2(1-\beta^2)=1\) が再現され、ローレンツ因子 \(\gamma\) の幾何学的意味が明確になる。
 
-\subsection{四運動量}
+\subsection{四元運動量}
 
-\textbf{四運動量}は
+\textbf{四元運動量}は
 \begin{equation}
   p = m v
   \label{eq:four-momentum}
 \end{equation}
 で定義される。
-\(m\) は静止質量、\(v\) は \eqref{eq:four-velocity-norm} を満たす四速度である。
+\(m\) は静止質量、\(v\) は \eqref{eq:four-velocity-norm} を満たす四元速度である。
 直ちに
 \begin{equation}
   p^2 = m^2 v^2 = -m^2 c^2
@@ -1234,7 +1234,7 @@ DST 固有の双対時空や \(G(3,1,1)\) への拡張は第 III--IV 部に委�
 
 \subsection{加速度と直交性}
 
-四速度の \(\tau\) 微分を\textbf{四加速度}と呼ぶ：
+四元速度の \(\tau\) 微分を\textbf{四元加速度}と呼ぶ：
 \begin{equation}
   a = \frac{dv}{d\tau}.
   \label{eq:four-acceleration}
@@ -1245,16 +1245,16 @@ DST 固有の双対時空や \(G(3,1,1)\) への拡張は第 III--IV 部に委�
   \label{eq:velocity-acceleration-ortho}
 \end{equation}
 すなわち \(v\cdot a = 0\) である。
-四速度と四加速度は、ミンコフスキー内積の意味で常に直交する。これは「速度を変える方向は、現在の速度方向に垂直である」という直感の相対論版である。
+四元速度と四元加速度は、ミンコフスキー内積の意味で常に直交する。これは「速度を変える方向は、現在の速度方向に垂直である」という直感の相対論版である。
 
-\subsection{ローレンツ変換下の四速度}
+\subsection{ローレンツ変換下の四元速度}
 
-四速度は階数 1 のベクトルであるから、座標変換はサンドイッチ積 \eqref{eq:lorentz-sandwich} で与えられる：
+四元速度は階数 1 のベクトルであるから、座標変換はサンドイッチ積 \eqref{eq:lorentz-sandwich} で与えられる：
 \begin{equation}
   v' = R\,v\,\widetilde{R}.
   \label{eq:four-velocity-transform}
 \end{equation}
-前章の \(x\) 方向ブースト \eqref{eq:boost-rotor} を \(v = c e_0\)（静止四速度）に適用すると
+前章の \(x\) 方向ブースト \eqref{eq:boost-rotor} を \(v = c e_0\)（静止四元速度）に適用すると
 \begin{equation}
   v' = \gamma c\, e_0 + \gamma \beta c\, e_1,
   \label{eq:boost-four-velocity}
@@ -1273,17 +1273,17 @@ DST 固有の双対時空や \(G(3,1,1)\) への拡張は第 III--IV 部に委�
 右辺の \(F\cdot v\) はバイベクトル \(F\) とベクトル \(v\) の\textbf{内積} \eqref{eq:gp-decomp} により階数 1 のベクトルを与える。これが\textbf{ローレンツ力}の STA 形である。
 
 \paragraph{例：一様磁場中の円運動}
-\(z\) 方向一様磁場 \(\mathbf{B} = B e_1 e_2\)（\(B>0\)）、初期四速度 \(v = \gamma c e_0 + \gamma v_0 e_1\) を考える。
+\(z\) 方向一様磁場 \(\mathbf{B} = B e_1 e_2\)（\(B>0\)）、初期四元速度 \(v = \gamma c e_0 + \gamma v_0 e_1\) を考える。
 電場が零なら \(F = i\mathbf{B}\) である。
 \(F\cdot v\) を計算すると、\(v\) の空間成分が \(e_2\) 方向へ曲がる項が現れ、円運動のサイクロトロン半径 \(r = \gamma m v_0 / (qB)\) が得られる。成分計算の詳細は演習に委ねる。
 
 \paragraph{DST への先読み}
-質量零粒子の四速度は光的ベクトル \eqref{eq:null-vector} 上に制約される。
+質量零粒子の四元速度は光的ベクトル \eqref{eq:null-vector} 上に制約される。
 並進自由度は \(\mathrm{Cl}(3,1)\) だけでは外付け的だったが、第 III 部では \(G(3,1,1)\) のモーターとして内在化される。
 
 \section{電磁気のマックスウェル方程式のコンパクトな形}
 
-\subsection{時空勾配と四ベクトル電流}
+\subsection{時空勾配と四元ベクトル電流}
 
 座標 \(x^\mu = (ct, x, y, z)\) に対し、\textbf{時空勾配}（spacetime gradient）は
 \begin{equation}
@@ -1294,7 +1294,7 @@ DST 固有の双対時空や \(G(3,1,1)\) への拡張は第 III--IV 部に委�
 で定義される。
 ここで \(e^\mu\) は \(e_\mu\) の逆元（\(e^0 = e_0\)、\(e^i = e_i\)）である。
 
-\textbf{四ベクトル電流}は
+\textbf{四元ベクトル電流}は
 \begin{equation}
   J = \rho\, e_0 + j_x e_1 + j_y e_2 + j_z e_3
   \label{eq:four-current}
@@ -1363,7 +1363,7 @@ STA の視点では、スピノルは\textbf{代数自身の元}として現れ�
 
 \subsection{ガンマ行列と基底ベクトルの対応}
 
-本書の双四元数基底 \eqref{eq:cl31-basis} において、ディラックの \(\gamma\) 行列は四ベクトル生成子と同一視できる：
+本書の双四元数基底 \eqref{eq:cl31-basis} において、ディラックの \(\gamma\) 行列は四元ベクトル生成子と同一視できる：
 \begin{equation}
   \gamma^0 \longleftrightarrow e_0 = j, \qquad
   \gamma^1 \longleftrightarrow e_1 = kI, \qquad
@@ -1438,7 +1438,7 @@ DST では、通常時空ローター \(R_{\mathrm{usual}}\) と双対時空ロ�
   \item \(v = \gamma c e_0 + \gamma \beta c e_1\) \eqref{eq:four-velocity-gamma} について、\(v^2 = -c^2\) \eqref{eq:four-velocity-norm} を直接計算で確認せよ。
   同様に \(v\cdot a = 0\) \eqref{eq:velocity-acceleration-ortho} が \(a = dv/d\tau\) から従うことを示せ。
 
-  \item 四運動量 \eqref{eq:momentum-example} について、\(p^2 = -m^2 c^2\) \eqref{eq:four-momentum-norm} を成分計算で確認せよ。
+  \item 四元運動量 \eqref{eq:momentum-example} について、\(p^2 = -m^2 c^2\) \eqref{eq:four-momentum-norm} を成分計算で確認せよ。
   エネルギー \(E = \gamma mc^2\) \eqref{eq:energy-ga} と運動量 \(p_x = \gamma m \beta c\) が得られることも示せ。
 
   \item \(z\) 方向一様磁場 \(F = B e_1 e_2\)（\(B>0\)）中で、\(v = c e_0\) から出発した粒子に \eqref{eq:lorentz-force} を適用せよ。
@@ -1479,7 +1479,7 @@ PGA 版 DST では、この並進を代数の内部に内在化する必要が�
 
 射影幾何代数の標準的作法は、既存のベクトル空間に\textbf{退化ベクトル}（degenerate vector）（平方がゼロのベクトル）を一つ加えることである。
 Selig 以来の剛体運動学や Lengyel--Gunn 系 PGA 文献でも、並進はヌルベクトルと既存ベクトルの外積からなるバイベクトルとして符号化される。
-本書では、ミンコフスキー時空の四ベクトル \eqref{eq:cl31-basis} に、新しいベクトル \(e_4\) を付加して \(G(3,1,1)\) へ持ち上げる。
+本書では、ミンコフスキー時空の四元ベクトル \eqref{eq:cl31-basis} に、新しいベクトル \(e_4\) を付加して \(G(3,1,1)\) へ持ち上げる。
 
 \subsection{ヌルベクトル \(e_4\) の定義}
 
@@ -1489,7 +1489,7 @@ Selig 以来の剛体運動学や Lengyel--Gunn 系 PGA 文献でも、並進は
   \label{eq:e4-definitions}
 \end{equation}
 第一式は \(e_4\) が\textbf{ヌル}（null）（自己内積がゼロ）であることを意味する。
-第二式は \(e_4\) が既存の四ベクトル \(e_0,e_1,e_2,e_3\) とすべて反可換することを意味する。
+第二式は \(e_4\) が既存の四元ベクトル \(e_0,e_1,e_2,e_3\) とすべて反可換することを意味する。
 したがって \(e_4\) は \(\mathrm{Cl}(3,1)\) 部分代数の生成元ではなく、独立な\textbf{射影方向}を担う。
 
 \paragraph{計算例}
@@ -1535,7 +1535,7 @@ Selig 以来の剛体運動学や Lengyel--Gunn 系 PGA 文献でも、並進は
     1 & 5 & \(e_\mu,\ e_4\) & ベクトル（時空＋射影方向） \\
     2 & 10 & \(e_\mu e_\nu,\ e_4 e_\mu\) & バイベクトル（平面・回転・並進生成子） \\
     3 & 10 & \(e_a e_b e_c\) & 三ベクトル（平面） \\
-    4 & 5 & \(e_a e_b e_c e_d\) & 四ベクトル（点） \\
+    4 & 5 & \(e_a e_b e_c e_d\) & 四元ベクトル（点） \\
     5 & 1 & \(I_5\) & 5 次擬スカラー \\
     \bottomrule
   \end{tabular}
@@ -1833,7 +1833,7 @@ PGA 版 DST の中心的結果の一つは、\textbf{双対時空}要素が 3-�
   \label{eq:null-generators}
 \end{equation}
 で与えられる。
-ここで \(e_\mu\) は通常時空の四ベクトル \eqref{eq:cl31-basis} である。
+ここで \(e_\mu\) は通常時空の四元ベクトル \eqref{eq:cl31-basis} である。
 外積記号 \(\wedge\) を省略した右辺 \(e_4 e_\mu\) は、\(e_4\) と \(e_\mu\) が反可換 \eqref{eq:e4-definitions} であるため、順序を入れ替えると符号が反転するだけで、2-ブレードとしての内容は同じである。
 
 明示的に書けば
@@ -2434,7 +2434,7 @@ PGA 版では \(\Omega_{\mathrm{trans}}\) が加わり、光の自由度（零�
 
 DST の出発点は、時空が宇宙全体に一つだけ存在する連続体である、という従来の発想を改めることにある。
 各粒子は、それぞれ\textbf{通常時空}（usual spacetime）と\textbf{双対時空}（dual spacetime）という二つのミンコフスキー構造を内在的に持つ。
-両者は \(\mathrm{Cl}(3,1)\) 部分代数 \eqref{eq:cl31-basis} 上の異なる四ベクトル基底として実現され、同一の符号 \((-,+,+,+)\) \eqref{eq:minkowski-signature} の二次形式 \eqref{eq:spacetime-norm} を共有する。
+両者は \(\mathrm{Cl}(3,1)\) 部分代数 \eqref{eq:cl31-basis} 上の異なる四元ベクトル基底として実現され、同一の符号 \((-,+,+,+)\) \eqref{eq:minkowski-signature} の二次形式 \eqref{eq:spacetime-norm} を共有する。
 
 真空や自由落下の理想的状態では、二つの時空は完全に同期している。
 質量や運動があると、通常時空側の変換と双対時空側の変換の間にずれが生じる。この相対ずれが\textbf{ねじれ不整合}（torsional mismatch）であり、次章で \(R_{\mathrm{usual}}^\dagger R_{\mathrm{dual}}\) として定量化する。
@@ -2442,7 +2442,7 @@ DST の出発点は、時空が宇宙全体に一つだけ存在する連続体�
 
 \subsection{通常時空基底と双対時空基底}
 
-双四元数表記 \eqref{eq:cl31-basis} において、通常時空の四ベクトル基底は
+双四元数表記 \eqref{eq:cl31-basis} において、通常時空の四元ベクトル基底は
 \begin{equation}
   (e_0,\, e_1,\, e_2,\, e_3)
   = (j,\, kI,\, kJ,\, kK)
@@ -5734,7 +5734,7 @@ DST の主張は次のとおりである。
 前章では、銀河スケール \(S^3\) コンパクト化 \eqref{eq:S3-phase-space} と余接ポテンシャル \eqref{eq:galaxy-cot-potential} から平坦回転曲線 \eqref{eq:galaxy-v2} を導き、暗黒物質不要 \eqref{eq:galaxy-no-dm} を示した \footnote{親理論 \texttt{double-spacetime-theory-ja.tex}（\texttt{sec:darkmatter}）に対応。}.
 その核心は、ねじれ不整合スカラー \(J\) \eqref{eq:gravity-J} が相対ずれローター \(\Omega = R_{\mathrm{usual}}^\dagger R_{\mathrm{dual}}\) \eqref{eq:gravity-torsion-rotor}（すなわち粒子内在的な\textbf{相対角}）のみに依存し、個々の \(R_{\mathrm{usual}}\) や \(R_{\mathrm{dual}}\) \eqref{eq:R-usual}–\eqref{eq:R-dual} の絶対位相には依存しないこと \footnote{重力章 §5 参照。これが工学的操作の原理的根拠となる。} である。
 
-本章では、親理論 \texttt{sec:gravitycontrol} および姉妹論文 \texttt{dst-quantum-gravity-ja.tex}（\texttt{sec:experiments}）に基づき、次の三つを確立する：
+本章では、次の三つを確立する：
 \begin{enumerate}[leftmargin=2em]
   \item 円偏波電磁場が双対ローター位相 \(\theta_a\) \eqref{eq:R-dual} と結合し、\(J\) \eqref{eq:gravity-J} を変調する理論的機構；
   \item プランクスケールから THz へと赤方偏移する共鳴周波数と、超伝導体による集合コヒーレンスの役割；
@@ -6325,7 +6325,7 @@ PGA 版 DST では、拡張不変量 \(J^{(5)}\) \eqref{eq:J5-invariant} が、�
   \centering
   \caption{DST と他量子重力アプローチの比較（概念的）}
   \label{tab:qg-comparison}
-  \begin{tabular}{@{}p{0.18\linewidth}p{0.36\linewidth}p{0.36\linewidth}@{}}
+  \begin{tabular}{@{}p{0.22\linewidth}p{0.18\linewidth}p{0.40\linewidth}@{}}
     \toprule
     アプローチ & 共通点 & DST との差異 \\
     \midrule
@@ -6521,7 +6521,7 @@ DST の予測は、原理的展望と反証可能な近接実験の両方を含�
     1 & ベクトル \(e_\mu, e_4\) & \(+A_1\) \\
     2 & バイベクトル \(e_\mu e_\nu, N_\mu\) & \(-A_2\) \\
     3 & 三ベクトル & \(+A_3\) \\
-    4 & 四ベクトル & \(-A_4\) \\
+    4 & 四元ベクトル & \(-A_4\) \\
     5 & 擬スカラー \(I_5\) & \(+A_5\) \\
     \bottomrule
   \end{tabular}
@@ -6664,7 +6664,7 @@ DST の予測は、原理的展望と反証可能な近接実験の両方を含�
     \toprule
     & 通常時空 & 双対時空 \\
     \midrule
-    四ベクトル基底 & \((j, kI, kJ, kK)\) \eqref{eq:usual-basis-dst} & \((k, jI, jJ, jK)\) \eqref{eq:dual-basis-dst} \\
+    四元ベクトル基底 & \((j, kI, kJ, kK)\) \eqref{eq:usual-basis-dst} & \((k, jI, jJ, jK)\) \eqref{eq:dual-basis-dst} \\
     ローター & \(R_{\mathrm{usual}}\)（双曲、\(\cosh/\sinh\)） & \(R_{\mathrm{dual}}\)（巡回、\(\cos/\sin\)） \\
     生成子 & \(iI, iJ, iK\) \eqref{eq:hyperbolic-biv} & \(I, J, K\) \eqref{eq:cyclic-biv} \\
     双対写像下 & \(iI \mapsto I\) 等 \eqref{eq:duality-map} & 逆写像 \\
