@@ -1,14 +1,22 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[dvipdfmx,a4paper]{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsmath,amssymb,amsthm,amsfonts}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{enumitem}
 \usepackage[dvipdfmx]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
 \usepackage{xcolor}
 \usepackage{siunitx}
 
-\title{Dual Spacetime Theory and Practical Interstellar Propulsion:\\
-Layer-Hopping vs On-Demand Subspace Entry}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Resonance Warp in PGA--DST:\\
+Layer-Hopping vs On-Demand Phase Entry}
 \author{https://github.com/hypernumbernet}
 \date{\today}
 
@@ -17,176 +25,466 @@ Layer-Hopping vs On-Demand Subspace Entry}
 \maketitle
 
 \begin{abstract}
-Within the dual spacetime theory --- a biquaternionic, torsion-based reformulation of general relativity --- gravity emerges from the torsional mismatch between particle-intrinsic usual and dual spacetimes. The torsion scalar $J$ changes sign at odd multiples of $\pi$ in the dual rotor angle $\theta_a$, giving rise to repulsive layers ($J<0$) that enable effective superluminal coasting without violation of local causality.
+We develop a hypothetical interstellar propulsion framework within the projective geometric algebra (PGA) extension of dual spacetime theory (DST). Gravity and inertia emerge from torsional mismatch between particle-intrinsic usual and dual spacetimes, lifted into $G(3,1,1)$ with a ten-dimensional bivector generator space (hyperbolic, cyclic, and null sectors). The extended motor $M=\exp(\Omega_{\mathrm{biv}}^{(5)})=RT$ is unitary ($M\widetilde{M}=1$), preserving causal propagation on the light cone $\eta_{\mu\nu}\lambda^\mu\lambda^\nu=0$. The torsion scalar $J$ changes sign at odd multiples of $\pi$ in the dual rotor angle $\theta_a$, yielding repulsive layers ($J<0$) that enable \emph{effective} superluminal coasting without local causality violation.
 
-We quantitatively compare two operational regimes for entering these layers: (1) \textit{layer-hopping}, which utilizes the slow cosmic phase drift of the background dual rotors, and (2) \textit{on-demand entry}, which applies active driving to the dual rotor phase. For million-tonne-class vessels cruising at $0.1$--$0.5c$, layer-hopping reduces the subspace-entry energy by 4 to 7 orders of magnitude, bringing it into the practically attainable range of \si{kWh} to low \si{MWh}.
-
-All derivations respect the biquaternion algebra, energy conditions, and causality. We also discuss coherence requirements, layer stability, and an experimental roadmap.
+Unlike Alcubierre-type metric engineering, warp in PGA--DST is not about bending a spacetime fabric with exotic matter; it is about coherently tuning collective dual-rotor resonance and entering $J<0$ layers via circularly polarised THz driving. We quantitatively compare two operational regimes: (1)~\textit{layer-hopping}, exploiting slow cosmic phase drift of background dual rotors, and (2)~\textit{on-demand entry}, applying active phase driving. For million-tonne-class vessels at $0.1$--$0.5c$, layer-hopping reduces entry energy by 4--7 orders of magnitude, into the \si{kWh}--low \si{MWh} range. All derivations respect the $G(3,1,1)$ algebra, teleparallel equivalence with general relativity, and unitary motor causality. We connect Anti-Torsion Fields, helicity-controlled gravity engineering, layer stability, and an experimental roadmap. This paper is explicitly \emph{hypothetical}: macroscopic dual-phase coherence remains unverified.
 \end{abstract}
 
-\section{What is Space? What is Warp? — Foundations in Dual Spacetime Theory}
+\section{Introduction}
+\label{sec:intro}
 
-What is space? In conventional physics, space is a pre-existing, continuous stage on which matter plays out its drama. Coordinates are merely labels on this stage. General relativity refined this picture by making spacetime dynamical, but it still assumes the existence of a differentiable manifold.
+Conventional warp-drive proposals, beginning with Alcubierre's metric bubble~\cite{alcubierre1994}, require exotic negative energy density and violate the null energy condition (NEC)~\cite{ford2000}. Engineering such configurations at macroscopic scales appears prohibitive under known physics.
 
-Dual spacetime theory rejects this premise entirely.
+Dual spacetime theory (DST) offers a fundamentally different ontology~\cite{dual2025}. There is no autonomous spacetime continuum; instead, \emph{space emerges as collective resonance} among dual rotors carried by individual particles. Gravity is torsional mismatch between the usual and dual sectors, reformulated as teleparallel gravity (TEGR)~\cite{tegr} with vanishing curvature and non-zero torsion. The PGA extension~\cite{pga2025} embeds this structure in projective geometric algebra $G(3,1,1)$, adjoining a null vector $e_4$ so that translations, light propagation, and torsion are unified in a single ten-dimensional bivector object propagated by a unitary motor.
 
-In our framework, there is no autonomous spacetime continuum. Instead, \emph{space emerges as a collective resonance phenomenon} among the dual rotors carried by individual particles. Each particle possesses its own pair of compactified spacetimes (usual and dual), encoded in the biquaternion algebra. What we perceive as ``macroscopic space'' and ``coordinates'' is the statistical alignment of these particle-intrinsic rotors across vast numbers of particles. The torsion scalar $J$ measures the degree of this misalignment.
+In this framework, \textbf{warp propulsion} is not metric engineering but \emph{resonance tuning}: shifting the collective dual-rotor phase to enter repulsive torsional layers ($J<0$) where effective displacement exceeds the local light-speed bound, while information remains constrained to the light channel. This paper is a \emph{hypothetical} extension of PGA--DST to interstellar propulsion. We preserve the quantitative energy estimates of the earlier DST warp analysis while grounding them in the PGA algebraic structure, Anti-Torsion Field (AT-field) generation~\cite{atfield}, and gravity-engineering mechanisms from the PGA textbook programme.
 
-When the dual rotors of neighboring particles are well aligned ($\theta_a \approx 2n\pi$), $J>0$ and we experience ordinary attractive gravity and familiar spatial geometry. When they are driven to the repulsive points ($\theta_a \approx (2n+1)\pi$), the collective resonance is disrupted, and the effective geometry changes dramatically.
+\section{PGA--DST Foundations}
+\label{sec:foundations}
 
-In this picture, \textbf{warp propulsion} takes on two distinct philosophical and operational meanings:
+\subsection{Three-sector structure in G(3,1,1)}
 
-\begin{enumerate}
-  \item \textbf{Resonance-Shifting Warp (Layer-Hopping):} \\
-  We remain within the same collective resonance manifold but shift the phase of the local dual rotors to enter a repulsive torsional layer ($J<0$). This is analogous to changing the ``harmonic'' of the cosmic symphony. The spacecraft does not leave ``our space'' but rides a different layer of the same resonant structure. This is the primary mechanism analyzed in this paper.
-
-  \item \textbf{Subspace-Transition Warp (Dual-Space Immersion):} \\
-  We actively decouple the spacecraft's dual rotors from the ambient collective resonance and immerse it into the dual spacetime sector itself. This is closer to the traditional science-fiction concept of entering ``hyperspace'' or ``subspace''. The vessel temporarily exists primarily in the dual sector, where the usual spacetime coordinates lose their dominance. Re-emergence requires precise re-synchronization with the target region's resonance phase.
-\end{enumerate}
-
-The layer-hopping approach is energetically far cheaper because it exploits the natural cosmic drift of the background phase, whereas subspace-transition requires breaking the collective coherence entirely — a much more violent and energy-intensive process.
-
-Thus, in dual spacetime theory, warp drive is not about bending or tearing a spacetime fabric. It is about \emph{changing the tuning of the cosmic resonance} in which matter participates. Space is not a thing we move through; it is a pattern we participate in.
-
-This ontological shift fundamentally alters the engineering problem: the challenge is no longer to generate exotic negative energy, but to achieve coherent control of dual-rotor phases at macroscopic scales.
-
-\section{Background and Notation}
-
-In dual spacetime theory \cite{dual2025}, each particle carries a pair of compactified spacetimes encoded in the 16-dimensional biquaternion algebra isomorphic to $\mathrm{Cl}(3,1)$. The relative rotor between the usual and dual sectors is given by
+Each massive particle carries paired compactified Minkowski structures encoded in $\mathrm{Cl}(3,1)\cong\mathbb{H}\otimes\mathbb{H}$. The PGA lift adjoins $e_4$ with $e_4^2=0$ and $\{e_4,e_\mu\}=0$, extending the algebra to $G(3,1,1)$ (32 real dimensions). Vector generators are
 \[
-\Omega = R_{\text{usual}}^\dagger R_{\text{dual}} = 
-\exp\!\left(\sum_{a=1}^3 \frac{\theta_a}{2}(i\Gamma_a + \Gamma_a)\right),
+e_0=j,\quad e_1=kI,\quad e_2=kJ,\quad e_3=kK,
 \]
-where $\Gamma_a$ are the dual generators satisfying appropriate Clifford relations, and $\theta_a$ are the torsional mismatch angles.
-
-The Lorentz-invariant torsion scalar is constructed from the Killing form:
-\[
-J = \sum_{a=1}^3 \left[ \sinh^2\!\left(\frac{\theta_a}{2}\right) - \sin^2\!\left(\frac{\theta_a}{2}\right) \right].
-\]
-Repulsive layers occur when $J < 0$, which is satisfied near $\theta_a = (2n+1)\pi$ for integer $n$. At these points the dual-sector trigonometric contribution dominates, leading to effective repulsion.
-
-The cosmic background induces a slow phase drift due to the large-scale structure of the universe:
-\[
-\left|\frac{d\theta_a}{dl}\right| \simeq 1.1 \times 10^{-26}~\mathrm{rad \cdot m^{-1}},
-\qquad
-\frac{d\theta_a}{dt} \simeq 3.3 \times 10^{-10} (v/c)~\mathrm{rad \cdot s^{-1}}.
-\]
-This drift continuously sweeps the infinite stack of repulsive layers past an observer moving at velocity $v$.
-
-\section{Mathematical Model of Dual Rotor Dynamics}
-
-The dynamics of the dual rotor phase can be modeled by an effective potential derived from the torsion scalar. Near a repulsive layer, we approximate the relevant degree of freedom by a single angle $\theta = \theta_a - (2n+1)\pi$. The effective Hamiltonian for the collective mode is
-\[
-H = \frac{p^2}{2m_{\text{eff}}} + V(\theta), \qquad
-V(\theta) \approx \frac{1}{2} k \theta^2 - \frac{\hbar \omega_0}{2} \cos(\theta),
-\]
-where $m_{\text{eff}}$ is the effective inertia of the collective dual excitation, $k$ is a stiffness constant related to the cosmic drift, and $\omega_0$ is the natural resonance frequency of the dual rotor ($\sim 10^{14}$--$10^{15}$ Hz for THz collective modes).
-
-The energy cost to reach a phase offset $\Delta\phi$ from the nearest minimum is obtained by integrating the potential:
-\[
-E(\Delta\phi) \approx N_b \hbar \omega_{\text{res}} \left| \sin\left(\frac{\Delta\phi}{2}\right) \right|,
-\]
-where $N_b \approx 6 \times 10^{32}$ is the number of baryons in a $10^6$ kg vessel. This semiclassical expression captures the leading-order barrier penetration or coherent driving cost.
-
-For small deviations ($\Delta\phi \ll 1$), the energy scales quadratically, while near $\pi$ it saturates, explaining the extreme sensitivity of on-demand entry.
-
-\section{Energy Cost of On-Demand Subspace Entry}
-
-To enter the nearest repulsive layer at an arbitrary moment, the worst-case phase deficit is $\Delta\phi_{\max} \approx \pi$. Using the expression above, the total energy requirement for a $10^6~\si{\kg}$ spacecraft is:
+with signature $(-,+,+,+)$. The bivector space has dimension ten and decomposes into three sectors~\cite{pga2025}:
 
 \begin{table}[ht]
 \centering
-\caption{On-demand subspace entry (worst-case $\Delta\phi \simeq \pi$)}
+\caption{Ten-dimensional generator structure in PGA--DST}
+\label{tab:generators}
+\begin{tabular}{@{}clcl@{}}
+\toprule
+Sector & Generators & Square & Role \\
+\midrule
+Hyperbolic & $iI,\, iJ,\, iK$ & $+1$ & Usual-spacetime boosts \\
+Cyclic & $I,\, J,\, K$ & $-1$ & Dual-spacetime rotations \\
+Null & $N_\mu=e_4\wedge e_\mu$ & $0$ & Translations \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The null sector realises the Poincar\'{e} translation ideal: $N_\mu N_\nu=0$ for all $\mu,\nu$, and the Lie algebra closes as $\mathfrak{iso}(3,1)=\mathfrak{so}(3,1)\oplus\mathfrak{so}(3,1)\ltimes\mathbb{R}^{3,1}$.
+
+\subsection{Rotors, motors, and the duality map}
+
+The usual and dual rotors are
+\begin{align}
+R_{\mathrm{usual}} &= \exp\!\Bigl(\sum_{a=1}^3 \frac{\phi_a}{2}\, i\Gamma_a\Bigr),
+&
+R_{\mathrm{dual}} &= \exp\!\Bigl(\sum_{a=1}^3 \frac{\theta_a}{2}\, \Gamma_a\Bigr),
+\end{align}
+where $\Gamma_a\in\{I,J,K\}$. The relative mismatch rotor is
+\begin{equation}
+\Omega = R_{\mathrm{usual}}^\dagger R_{\mathrm{dual}},
+\qquad
+\Omega_{\mathrm{biv}} = \log\Omega.
+\label{eq:omega}
+\end{equation}
+The duality map $X\mapsto Xi$ (with $i=e_0e_1e_2e_3$) interchanges hyperbolic and cyclic sectors while leaving the null sector closed, since $e_4$ commutes with $i$.
+
+The extended mismatch bivector and motor are
+\begin{equation}
+\Omega_{\mathrm{biv}}^{(5)}
+= \underbrace{\sum_{a=1}^3 \Bigl(\tfrac{\alpha_a}{2}B_a^{+} + \tfrac{\beta_a}{2}B_a^{-}\Bigr)}_{\Omega_{\mathrm{torsion}}}
++ \underbrace{\sum_{\mu=0}^{3}\tfrac{\lambda^\mu}{2}N_\mu}_{\Omega_{\mathrm{trans}}},
+\label{eq:omega5}
+\end{equation}
+\begin{equation}
+M = \exp(\Omega_{\mathrm{biv}}^{(5)}) = R\,T,
+\qquad
+T = 1 + \sum_{\mu=0}^{3}\tfrac{\lambda^\mu}{2}N_\mu,
+\label{eq:motor}
+\end{equation}
+where the null exponential truncates at first order because $N_\mu N_\nu=0$.
+
+\begin{theorem}[Motor unitarity]
+\label{thm:unitarity}
+Every bivector generator is reversal-odd ($\widetilde{B}=-B$). Consequently $R\widetilde{R}=1$, $T\widetilde{T}=1$, and $M\widetilde{M}=1$. The sandwich product $X'=MX\widetilde{M}$ preserves the degenerate $G(3,1,1)$ metric and causal structure.
+\end{theorem}
+
+\subsection{Torsion scalar and gravitational action}
+
+The torsion scalar is defined via the Cartan--Killing form on the six-dimensional torsion sector:
+\begin{equation}
+J = \tfrac{1}{16}\,B_{\mathrm{Killing}}(\Omega_{\mathrm{biv}},\Omega_{\mathrm{biv}})
+= \tfrac{1}{2}\sum_{a=1}^{3}(\alpha_a^2 - \beta_a^2).
+\label{eq:J}
+\end{equation}
+The hyperbolic generators contribute $B(B_a^{+})=+8$ and the cyclic generators $B(B_a^{-})=-8$, so $J$ changes sign when dual-sector rotation dominates. In the small-angle regime, with $\alpha_a\sim\sinh(\phi_a/2)$ and $\beta_a\sim\sin(\theta_a/2)$, \eqref{eq:J} reduces to the finite-angle form
+\begin{equation}
+J \approx \sum_{a=1}^{3}\Bigl[\sinh^2\!\Bigl(\tfrac{\phi_a}{2}\Bigr) - \sin^2\!\Bigl(\tfrac{\theta_a}{2}\Bigr)\Bigr],
+\label{eq:J-finite}
+\end{equation}
+used in the operational estimates below.
+
+The PGA extended invariant couples torsion to translation:
+\begin{equation}
+J^{(5)} = J + \tfrac{1}{2}\eta_{\mu\nu}\lambda^\mu\lambda^\nu,
+\label{eq:J5}
+\end{equation}
+where $\eta_{\mu\nu}=\mathrm{diag}(-1,+1,+1,+1)$. The translational term vanishes on the light cone $\eta_{\mu\nu}\lambda^\mu\lambda^\nu=0$, embedding null propagation algebraically.
+
+Gravity follows from the action
+\begin{equation}
+S = \frac{c^4}{16\pi G}\int J\,\sqrt{-g}\,d^4x,
+\label{eq:action}
+\end{equation}
+which is equivalent to the Einstein--Hilbert and TEGR actions: all GR solutions, including Schwarzschild, are recovered from tetrads generated by unitary motors, without invoking curvature~\cite{pga2025,tegr}. Interpretation changes; equations of motion do not.
+
+\section{What Warp Means in PGA--DST}
+\label{sec:warp-ontology}
+
+\subsection{Space as collective resonance}
+
+In PGA--DST, macroscopic space is not a pre-existing manifold but the statistical alignment of particle-intrinsic rotors across $\sim 10^{32}$ baryons per tonne of matter. The scalar $J$ measures misalignment. When neighbouring dual rotors are aligned ($\theta_a\approx 2n\pi$), $J>0$ and we experience attractive gravity. When driven to repulsive points ($\theta_a\approx(2n+1)\pi$), collective resonance shifts and effective geometry changes.
+
+Warp propulsion takes two distinct operational meanings:
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Resonance-shifting warp (layer-hopping).}
+  The vessel remains within the collective resonance manifold but shifts local dual-rotor phase to enter a repulsive layer ($J<0$). The spacecraft rides a different harmonic of the same resonant structure. This is the primary mechanism analysed below.
+
+  \item \textbf{Subspace-transition warp (dual-sector immersion).}
+  The vessel actively decouples from ambient collective resonance and immerses primarily in the dual sector. Re-emergence requires precise re-synchronisation with the target region's phase. This is energetically far costlier than layer-hopping because it breaks macroscopic coherence entirely.
+\end{enumerate}
+
+Thus warp is \emph{changing the tuning of cosmic resonance}, not bending or tearing a fabric. The engineering challenge shifts from exotic negative energy to coherent dual-phase control at macroscopic scales.
+
+\subsection{Comparison with Alcubierre warp drives}
+
+\begin{table}[ht]
+\centering
+\caption{Alcubierre metric engineering vs.\ PGA--DST resonance warp (hypothetical)}
+\label{tab:alcubierre}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}@{}}
+\toprule
+Aspect & Alcubierre~\cite{alcubierre1994} & PGA--DST (this work) \\
+\midrule
+Mechanism &
+Contracting/expanding spacetime bubble via $g_{\mu\nu}$ &
+Collective dual-rotor phase tuning; $J<0$ layers \\
+Exotic matter &
+Required; violates NEC~\cite{ford2000} &
+Not required; $J$ sign from Killing-form asymmetry \\
+Causality &
+Local $c$ exceeded inside bubble &
+Effective superluminal \emph{coast}; local $c$ preserved via $M\widetilde{M}=1$ \\
+Information &
+Can outrun light within bubble &
+Bound to light cone; $\eta_{\mu\nu}\lambda^\mu\lambda^\nu=0$ \\
+GR equivalence &
+Modified Einstein equations &
+TEGR/EH recovered; same weak-field limits \\
+Engineering &
+Negative energy density at bubble wall &
+THz circularly polarised driving of $\theta_a$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The contrast is ontological as well as operational. Alcubierre engineering deforms a background metric. PGA--DST has no background continuum; it modulates the torsion scalar $J$ and, during coast, the translational component of $J^{(5)}$ on approximately light-like worldlines.
+
+\section{Repulsive Layers and Anti-Torsion Fields}
+\label{sec:repulsive}
+
+\subsection{Sign structure of J}
+
+\begin{table}[ht]
+\centering
+\caption{Torsion scalar sign and physical interpretation}
+\label{tab:J-signs}
+\begin{tabular}{@{}cll@{}}
+\toprule
+Condition & Sign of $J$ & Effect \\
+\midrule
+$\alpha_a \gg \beta_a$ (aligned) & $J > 0$ & Attractive gravity \\
+$\alpha_a \approx \beta_a$ & $J \approx 0$ & Vacuum / shielding / inertia reduction \\
+$\beta_a > \alpha_a$ (repulsive point) & $J < 0$ & Repulsive gravity \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Repulsive layers occur near $\theta_a=(2n+1)\pi$. In strong-field astrophysical contexts, the same sign oscillation produces stratified ``onion'' structures (twist stars) rather than event horizons and singularities~\cite{dual2025}: an infinite stack of alternating $J>0$ and $J<0$ shells provides the cosmological backdrop for layer-hopping.
+
+\begin{definition}[Anti-Torsion Field~\cite{atfield}]
+An Anti-Torsion Field (AT-field) is a region $\mathcal{R}$ where $J(x)<0$. Dual-sector rotation dominates, yielding effective repulsion. AT-fields are engineerable in principle via coherent excitation of $\theta_a$.
+\end{definition}
+
+For warp entry, an AT-field is not merely a barrier but the \emph{operational medium}: the vessel transitions into a locally generated or cosmically encountered $J<0$ shell, coasts with reduced gravitational coupling, and exits at a scheduled phase boundary. Stability of AT-fields under perturbation follows from self-reinforcing mismatch dynamics~\cite{atfield}: intrusion of external matter increases $|\beta_a|$, driving $J$ more negative.
+
+\section{Drive Mechanism: THz Helicity and Dual-Rotor Coupling}
+\label{sec:drive}
+
+\subsection{Electromagnetic splitting}
+
+The electromagnetic field splits across DST sectors:
+\begin{equation}
+F = F_{\mathrm{usual}} + F_{\mathrm{dual}},
+\qquad
+F_{\mathrm{usual}} = \mathbf{E}\cdot(iI,iJ,iK),
+\qquad
+F_{\mathrm{dual}} = \mathbf{B}\cdot(I,J,K).
+\label{eq:F-split}
+\end{equation}
+Electric fields couple to hyperbolic (usual) generators; magnetic fields couple exclusively to cyclic (dual) generators. This algebraic separation is the geometric origin of the distinct transformation properties under time reversal ($\mathbf{E}\to\mathbf{E}$, $\mathbf{B}\to-\mathbf{B}$).
+
+\subsection{Circular polarisation as a chiral switch}
+
+For a circularly polarised wave with helicity $\sigma=\pm 1$ propagating along $\hat{z}$,
+\begin{equation}
+\langle F_{\mathrm{dual}}\rangle \propto \sigma\,E_0^2\,K.
+\label{eq:Fdual-avg}
+\end{equation}
+Helicity directly controls $J$:
+\begin{itemize}[leftmargin=2em]
+  \item $\sigma=+1$ (right-handed): enhances attractive torsion ($J>0$).
+  \item $\sigma=-1$ (left-handed): reduces $J$; sufficient intensity can invert to $J<0$.
+\end{itemize}
+The resonance driving equation is
+\begin{equation}
+\dot{\theta} = \kappa\,\sigma\,E_0^2\sin(\omega t - \theta + \delta_\sigma),
+\label{eq:theta-dot}
+\end{equation}
+where $\kappa$ is a matter-dependent coupling constant. Synchronising $\theta$ with $\phi$ drives $J\to 0$ (shielding, inertia reduction); driving $\theta$ past $\phi$ yields $J<0$ (repulsion, warp entry).
+
+\subsection{THz collective resonance}
+
+Single-particle dual resonance lies at Planckian frequencies ($\sim 10^{43}\,\mathrm{Hz}$). Macroscopic coherence over $N\sim 10^{26}$--$10^{32}$ particles redshifts the effective resonance to the THz band:
+\begin{equation}
+\omega_{\mathrm{eff}} \sim \frac{\omega_{\mathrm{Planck}}}{\sqrt{N}} \sim 10^{12}\text{--}10^{15}\,\mathrm{Hz}.
+\label{eq:freq-redshift}
+\end{equation}
+Superconducting phase locking and high-$Q$ cavities further enhance coupling. This is the same mechanism proposed for table-top tests of $\Delta m/m\gtrsim 10^{-6}$ with helicity-reversal signatures~\cite{dual2025}. Warp engineering is the macroscopic extrapolation of that laboratory programme.
+
+\section{Operational Regimes: On-Demand Entry vs Layer-Hopping}
+\label{sec:operational}
+
+\subsection{Cosmic phase drift}
+
+Large-scale structure induces slow background drift of dual-rotor phases:
+\begin{equation}
+\left|\frac{d\theta_a}{dl}\right| \simeq 1.1\times 10^{-26}~\mathrm{rad\cdot m^{-1}},
+\qquad
+\frac{d\theta_a}{dt} \simeq 3.3\times 10^{-10}\,(v/c)~\mathrm{rad\cdot s^{-1}}.
+\label{eq:drift}
+\end{equation}
+This continuously sweeps the infinite stack of repulsive layers past an observer moving at velocity $v$.
+
+\subsection{Effective Hamiltonian and entry energy}
+
+Near a repulsive layer, with $\theta=\theta_a-(2n+1)\pi$,
+\begin{equation}
+H = \frac{p^2}{2m_{\mathrm{eff}}} + V(\theta),
+\qquad
+V(\theta) \approx \tfrac{1}{2}k\theta^2 - \tfrac{\hbar\omega_0}{2}\cos(\theta),
+\label{eq:hamiltonian}
+\end{equation}
+where $m_{\mathrm{eff}}$ is the collective dual excitation inertia and $\omega_0\sim 10^{14}$--$10^{15}\,\mathrm{Hz}$ for THz collective modes. The semiclassical energy to reach phase offset $\Delta\phi$ is
+\begin{equation}
+E(\Delta\phi) \approx N_b\,\hbar\omega_{\mathrm{res}}\,\Bigl|\sin\!\Bigl(\tfrac{\Delta\phi}{2}\Bigr)\Bigr|,
+\label{eq:energy}
+\end{equation}
+with $N_b\approx 6\times 10^{32}$ baryons in a $10^6\,\mathrm{kg}$ vessel. Small $\Delta\phi$ gives quadratic scaling; near $\pi$ the cost saturates, explaining the extreme sensitivity of on-demand entry.
+
+During entry, the motor \eqref{eq:motor} is driven primarily through $\Omega_{\mathrm{torsion}}$ toward $J<0$. During coast in a repulsive layer, translational mismatch $\lambda^\mu$ is tuned to lie near the light cone so that the $J^{(5)}$ translational term is suppressed and displacement proceeds via phase-layer sliding rather than acausal local boosts.
+
+\subsection{On-demand entry energy}
+
+Worst-case on-demand entry ($\Delta\phi_{\max}\approx\pi$) for a $10^6\,\mathrm{kg}$ vessel:
+
+\begin{table}[ht]
+\centering
+\caption{On-demand subspace entry (worst-case $\Delta\phi\simeq\pi$)}
+\label{tab:ondemand}
 \begin{tabular}{@{}lcr@{}}
 \toprule
 Cruise velocity & $\gamma$ & Energy required ($10^6$ kg vessel) \\
 \midrule
-$0.10c$ & 1.005 & $\sim 8 \times 10^{11}~\si{\joule} \approx \qty{220}{GWh}$ \\
-$0.30c$ & 1.048 & $\sim 7.5 \times 10^{11}~\si{\joule} \approx \qty{210}{GWh}$ \\
-$0.50c$ & 1.155 & $\sim 6.9 \times 10^{11}~\si{\joule} \approx \qty{190}{GWh}$ \\
-$0.99c$ & $\sim 7$ & $\sim 3 \times 10^{11}~\si{\joule} \approx \qty{80}{GWh}$ \\
+$0.10c$ & 1.005 & $\sim 8\times 10^{11}\,\mathrm{J}\approx\qty{220}{GWh}$ \\
+$0.30c$ & 1.048 & $\sim 7.5\times 10^{11}\,\mathrm{J}\approx\qty{210}{GWh}$ \\
+$0.50c$ & 1.155 & $\sim 6.9\times 10^{11}\,\mathrm{J}\approx\qty{190}{GWh}$ \\
+$0.99c$ & $\sim 7$ & $\sim 3\times 10^{11}\,\mathrm{J}\approx\qty{80}{GWh}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-These values approach the limit of projected compact fusion or antimatter-catalyzed systems, making pure on-demand entry technologically challenging.
+These values approach projected compact fusion or antimatter-catalysed limits, making pure on-demand entry technologically challenging.
 
-\section{Layer-Hopping: Waiting for Cosmic Phase Weather}
+\subsection{Layer-hopping performance}
 
-The cosmic drift sweeps repulsive layers past the spacecraft at a rate determined by the velocity-dependent phase velocity. The waiting time to achieve a phase deficit smaller than a threshold $\Delta\phi_{\text{threshold}}$ is
-\[
-\tau \simeq \frac{\Delta\phi_{\text{threshold}}}{|d\theta/dt|} 
-= 3 \times 10^9 \,\Delta\phi_{\text{threshold}} \Bigl(\frac{c}{v}\Bigr)~\si{\second}.
-\]
+Waiting time for phase deficit below threshold $\Delta\phi_{\mathrm{threshold}}$:
+\begin{equation}
+\tau \simeq \frac{\Delta\phi_{\mathrm{threshold}}}{|d\theta/dt|}
+= 3\times 10^9\,\Delta\phi_{\mathrm{threshold}}\,\Bigl(\frac{c}{v}\Bigr)~\mathrm{s}.
+\label{eq:wait}
+\end{equation}
 
 \begin{table}[ht]
 \centering
-\caption{Layer-hopping performance at $v = 0.3c$ for a $10^6$ kg vessel}
+\caption{Layer-hopping performance at $v=0.3c$ for a $10^6$ kg vessel}
+\label{tab:layerhop}
 \begin{tabular}{@{}lcccc@{}}
 \toprule
 Threshold $\Delta\phi$ & Typical wait & Energy required & Power (10-min pulse) & Gain \\
 \midrule
-$\pi$ (on-demand) & 0 & \qty{750}{GWh} & — & $1\times$ \\
-$10^{-1}$ & $\sim$ 1 yr & \qty{75}{GWh} & \qty{450}{MW} & $\sim 10^4\times$ \\
-$10^{-2}$ & $\sim$ 40 days & \qty{7.5}{GWh} & \qty{45}{MW} & $\sim 10^5\times$ \\
-$10^{-3}$ & $\sim$ 4 days & \qty{750}{MWh} & \qty{4.5}{MW} & $\sim 10^6\times$ \\
-$10^{-4}$ & $\sim$ 10 hrs & \qty{75}{MWh} & \qty{450}{kW} & $\sim 10^7\times$ \\
-$10^{-5}$ & $\sim$ 1 hr & \qty{7.5}{MWh} & \qty{45}{kW} & $\sim 10^8\times$ \\
+$\pi$ (on-demand) & 0 & \qty{750}{GWh} & --- & $1\times$ \\
+$10^{-1}$ & $\sim$1 yr & \qty{75}{GWh} & \qty{450}{MW} & $\sim 10^4\times$ \\
+$10^{-2}$ & $\sim$40 days & \qty{7.5}{GWh} & \qty{45}{MW} & $\sim 10^5\times$ \\
+$10^{-3}$ & $\sim$4 days & \qty{750}{MWh} & \qty{4.5}{MW} & $\sim 10^6\times$ \\
+$10^{-4}$ & $\sim$10 hrs & \qty{75}{MWh} & \qty{450}{kW} & $\sim 10^7\times$ \\
+$10^{-5}$ & $\sim$1 hr & \qty{7.5}{MWh} & \qty{45}{kW} & $\sim 10^8\times$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Even waiting a few days yields enormous gains. For practical missions, a threshold of $\Delta\phi \approx 10^{-3}$ offers an excellent compromise between waiting time and power requirement.
+A threshold $\Delta\phi\approx 10^{-3}$ offers a practical compromise between waiting time and power. For a 10 light-year mission, total energy expenditure drops to 10--100 MWh under the hybrid protocol.
 
-\section{Combined Strategy and Practical Protocol}
+\section{Causality, Horizons, and Effective Superluminal Coasting}
+\label{sec:causality}
 
-A realistic interstellar mission adopts the following hybrid protocol:
+\subsection{Unitary motors and local causality}
 
-\begin{enumerate}
-  \item Cruise at $0.2$--$0.5c$ using efficient nuclear or beamed propulsion.
-  \item Continuously monitor the local dual phase using a compact THz resonant cavity coupled to the dual degrees of freedom.
-  \item When $\Delta\phi < 10^{-3}~\si{\radian}$ (occurring every few days to weeks at $0.3c$), apply a low-power, circularly-polarised electromagnetic pulse to complete the transition.
-  \item Coast in the repulsive layer for weeks to decades, achieving effective superluminal displacement.
-  \item Repeat the process, using precision navigation between hops.
+Theorem~\ref{thm:unitarity} guarantees that every physical transformation is implemented by a unitary motor $M\widetilde{M}=1$. No sandwich product can produce acausal local propagation: the light cone $\eta_{\mu\nu}\lambda^\mu\lambda^\nu=0$ is built into $J^{(5)}$ \eqref{eq:J5}. Photons correspond to full anti-synchronisation ($\phi=\theta$, $\Omega=1$) with vanishing translational contribution in $J^{(5)}$.
+
+\subsection{Effective superluminal displacement}
+
+``Effective superluminal coasting'' means that the \emph{phase-layer displacement rate} of the vessel exceeds $c$ as measured against the ambient $J>0$ reference frame, while:
+\begin{enumerate}[leftmargin=2em]
+  \item local signal velocity remains $\le c$ in the vessel's instantaneous frame;
+  \item information about the hop is carried only on the light channel;
+  \item no closed timelike curves are generated because hops are finite-duration transitions between globally hyperbolic TEGR patches.
 \end{enumerate}
 
-For a 10 light-year journey the total energy expenditure drops to 10--100 MWh, comparable to the daily electricity consumption of a small town.
+This is analogous to a refractive index change in a medium: phase velocity can exceed $c$ without violating relativity, provided group velocity and information velocity do not.
 
-\section{Layer Stability and Navigation}
+\subsection{Horizons and quasi-horizons}
 
-Once inside a repulsive layer, the spacecraft must maintain stability against perturbations. Small deviations $\delta\theta$ experience a restoring force from the effective potential $V(\theta)$. The characteristic oscillation frequency inside the layer is
-\[
-\omega_{\text{stab}} \approx \sqrt{\frac{k}{m_{\text{eff}}}}.
-\]
-Active feedback using the same THz cavity can damp unwanted excitations.
+PGA--DST excludes true event horizons and central singularities in favour of stratified twist-star interiors~\cite{dual2025}. However, \emph{quasi-horizons}---regions where $\int J\,dr$ rises steeply---can impede exit without supplying sufficient torsion energy. Warp navigation must map local phase gradients to avoid trapping in quasi-horizon shells. This is consistent with the layer-stability analysis below.
 
-Navigation requires precise control of the entry/exit points and direction. We propose using auxiliary low-mass probes to map local phase gradients, enabling predictive hop scheduling analogous to gravitational slingshot maneuvers but in torsional phase space.
+\section{Mission Protocol, Stability, and Navigation}
+\label{sec:mission}
 
-\section{Discussion and Experimental Roadmap}
+\subsection{Hybrid interstellar protocol}
 
-The central assumption of this work is the existence of coherent collective excitations of the dual rotor across a macroscopic object. While the biquaternion formalism is internally consistent, experimental verification is essential.
+\begin{enumerate}[leftmargin=2em]
+  \item Cruise at $0.2$--$0.5c$ using nuclear or beamed propulsion.
+  \item Monitor local dual phase via a compact THz resonant cavity coupled to dual degrees of freedom.
+  \item When $\Delta\phi<10^{-3}\,\mathrm{rad}$ (every few days to weeks at $0.3c$), apply a low-power, left-handed circularly polarised THz pulse to complete the transition into $J<0$.
+  \item Coast in the repulsive layer for weeks to decades, achieving effective superluminal displacement.
+  \item Exit via complementary pulse (helicity reversal or phase realignment) and repeat, scheduling hops from phase-gradient maps.
+\end{enumerate}
 
-\textbf{Key open questions:}
-\begin{itemize}
-  \item What is the precise coupling mechanism between electromagnetic fields and the dual rotor?
+\subsection{Layer stability}
+
+Inside a repulsive layer, small deviations $\delta\theta$ experience restoring forces from $V(\theta)$ in \eqref{eq:hamiltonian}. Characteristic oscillation frequency:
+\begin{equation}
+\omega_{\mathrm{stab}} \approx \sqrt{\frac{k}{m_{\mathrm{eff}}}}.
+\end{equation}
+Active feedback via the same THz cavity damps unwanted excitations. AT-field self-reinforcement~\cite{atfield} provides additional stability against external perturbation.
+
+\subsection{Navigation in torsional phase space}
+
+Navigation requires control of entry/exit points and hop direction. We propose auxiliary low-mass probes to map local $\theta_a$ gradients, enabling predictive scheduling analogous to gravitational slingshots but in torsional phase space. Motor factorisation $M=RT$ separates rotational mismatch (layer selection via $R$) from translational coast (via light-like $T$).
+
+\section{Experimental Roadmap and Open Questions}
+\label{sec:roadmap}
+
+\subsection{Near-term laboratory tests}
+
+Before any warp application, the foundational hypothesis---macroscopic dual-phase coherence coupled to EM fields---must be tested:
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Table-top gravity engineering.} Superconducting test masses in high-$Q$ THz cavities; monitor $\Delta m/m\gtrsim 10^{-6}$ with helicity-reversal sign change~\cite{dual2025}.
+  \item \textbf{AT-field generation.} High-intensity circularly polarised THz ($10^{12}$--$10^{15}\,\mathrm{Hz}$) to drive $J<0$ locally; measure repulsive deflection or weight reduction.
+  \item \textbf{Resonance spectroscopy.} Systematic frequency/helicity scans to constrain $\kappa$ and compactification scale $r_{\mathrm{comp}}$.
+\end{enumerate}
+
+\subsection{Astronomical and space-based tests}
+
+\begin{enumerate}[leftmargin=2em]
+  \item Precision torsion balances or atom interferometers to detect cosmic phase drift \eqref{eq:drift}.
+  \item Satellite baselines to measure large-scale dual-phase gradients across the solar system.
+  \item Correlation of repulsive-layer signatures with galactic-scale $J<0$ boundaries in rotation-curve data~\cite{dual2025}.
+\end{enumerate}
+
+\subsection{Key open questions}
+
+\begin{itemize}[leftmargin=2em]
+  \item What is the precise coupling $\kappa$ between EM fields and dual rotors?
   \item What is the decoherence time for macroscopic dual-phase coherence?
-  \item Can the cosmic drift rate be directly measured using precision torsion balances or atomic interferometers?
+  \item Can collective $N\sim 10^{32}$ baryon locking be maintained during a hop pulse?
+  \item How do quasi-horizon shells interact with repeated layer transitions?
 \end{itemize}
 
-\textbf{Near-term experiments:}
-\begin{enumerate}
-  \item High-precision THz spectroscopy in strong electromagnetic cavities to detect shifts in torsional resonance.
-  \item Laboratory-scale tests of gravity modulation via dual-phase driving.
-  \item Satellite missions to measure cosmic phase drift over astronomical baselines.
+\section{Discussion and Conclusions}
+\label{sec:conclusions}
+
+We have upgraded the dual spacetime warp propulsion hypothesis to the PGA--DST framework. The central claims are:
+
+\begin{enumerate}[leftmargin=2em]
+  \item Warp is resonance tuning of collective dual rotors, not Alcubierre metric engineering.
+  \item Repulsive layers ($J<0$) and AT-fields provide the operational medium for effective superluminal coasting.
+  \item THz circularly polarised driving with helicity $\sigma=-1$ is the proposed entry mechanism.
+  \item Layer-hopping exploits cosmic phase drift to reduce entry energy by 4--7 orders of magnitude relative to on-demand entry.
+  \item Motor unitarity $M\widetilde{M}=1$ and the light-cone structure of $J^{(5)}$ preserve local causality.
 \end{enumerate}
 
-If dual spacetime theory is confirmed, the extreme sensitivity of propulsion energy to phase alignment suggests that practical interstellar travel could become dramatically more accessible than previously thought, while remaining fully consistent with known physics.
+All quantitative estimates inherit the semiclassical model \eqref{eq:energy} and remain \emph{hypothetical} until macroscopic dual-phase coherence is experimentally confirmed. Failure of table-top tests would constrain $\kappa$ and $r_{\mathrm{comp}}$ without falsifying the algebraic PGA--DST structure, which independently recovers GR via TEGR. Success at laboratory scales would open a path toward engineering repulsive layers and, in principle, interstellar layer-hopping.
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
+
+\bibitem{alcubierre1994}
+M.~Alcubierre,
+``The warp drive: hyper-fast travel within general relativity,''
+\emph{Classical and Quantum Gravity} \textbf{11}, L73 (1994).
+
+\bibitem{ford2000}
+L.~H.~Ford and T.~A.~Roman,
+``Negative energy, wormholes and warp drive,''
+\emph{Scientific American} \textbf{281}, 46 (1999);
+see also arXiv:gr-qc/0001073.
+
 \bibitem{dual2025}
-Anonymous, ``Gravity as Torsion between Dual Spacetime: A Biquaternionic Reformulation of General Relativity'', December 2025 (in preparation).
+Anonymous,
+``Gravity as Torsion between Dual Spacetime: A Biquaternionic Reformulation of General Relativity,''
+December 2025 (in preparation).
+
+\bibitem{pga2025}
+Anonymous,
+``\(G(3,1,1)\) Extension of Double Spacetime Torsional Mismatch: 10-Dimensional Generator Structure and Plane-Based Bracket Products,''
+2025.
+
+\bibitem{atfield}
+Anonymous,
+``Anti-Torsion Field: Engineerable Gravitational Repulsion in Dual Spacetime Theory,''
+2025.
+
 \bibitem{tegr}
-Bahamonde et al., ``Teleparallel Gravity: A Review'', arXiv:2106.13757.
+S.~Bahamonde \emph{et al.},
+``Teleparallel Gravity: A Review,''
+arXiv:2106.13757 (2021).
+
+\bibitem{Gunn2017}
+C.~Gunn,
+``Geometric Algebra for Computer Graphics,''
+Springer (2017).
+
+\bibitem{Lengyel2024}
+V.~Lengyel,
+``Projective Geometric Algebra,''
+BCS (2024).
+
+\bibitem{Selig2005}
+J.~M.~Selig,
+``Geometric Fundamentals of Robotics,''
+2nd ed., Springer (2005).
+
+\bibitem{DoranLasenby2003}
+C.~Doran and A.~Lasenby,
+``Geometric Algebra for Physicists,''
+Cambridge University Press (2003).
+
 \end{thebibliography}
 
 \end{document}
