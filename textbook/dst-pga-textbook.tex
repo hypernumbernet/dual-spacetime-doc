@@ -79,7 +79,7 @@ DST の基本形は、ミンコフスキー時空の幾何代数 \(\mathrm{Cl}(3
   双対時空側の回転を担い、\(\mathfrak{so}(3,1)\) のもう一つのコピーに対応する。
   \item \textbf{ヌル生成子}（4 個、平方 \(0\)）：\(N_\mu = e_4 \wedge e_\mu\)（\(\mu = 0,1,2,3\)）。
   並進を担い、ポアンカレ代数 \(\mathfrak{iso}(3,1)\) の並進生成子 \(P_\mu\) に相当する。
-  四つの \(N_\mu\) は互いに可換な並進セクター（ポアンカレ代数の並進理想に対応）を形成する。厳密な代数的意味は第 III 部で扱う。
+  四つの \(N_\mu\) は互いに可換な並進セクター（ポアンカレ代数の並進イデアルに対応）を形成する。厳密な代数的意味は第 III 部で扱う。
 \end{itemize}
 
 この 10 次元構造は、ポアンカレ代数 \(\mathfrak{iso}(3,1)\) のリー代数と一致する。
@@ -172,10 +172,14 @@ PGA 版 DST は、この問題を三者構造で解く。
     reversion & 反転 \\
     versor & ベルソル \\
     rotor & ローター \\
+    translator & 並進 \\
+    motor & モーター \\
     torsion & トーション \\
     torsion star & トーション星 \\
     torsional mismatch & ねじれ不整合 \\
     Killing form & キリング形式 \\
+    Special Relativity (SR) & 特殊相対性理論（狭義相対論とも） \\
+    General Relativity (GR) & 一般相対性理論 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -1263,7 +1267,7 @@ DST 固有の双対時空や \(G(3,1,1)\) への拡張は第 III--IV 部に委�
   \label{eq:boost-four-velocity}
 \end{equation}
 すなわち \eqref{eq:four-velocity-gamma} が得られる。
-回転とブーストが同一のローター形式 \(R=e^{-\Omega/2}\) \eqref{eq:general-lorentz} で記述される点が、幾何代数的 SRT の核心である。
+回転とブーストが同一のローター形式 \(R=e^{-\Omega/2}\) \eqref{eq:general-lorentz} で記述される点が、幾何代数的特殊相対性理論（Special Relativity Theory, SRT）の核心である。\footnote{ここでの SRT は特殊相対性理論を指す。回転とブーストが同一のローター \(R=e^{-\Omega/2}\) で書ける、という主張は前章 \eqref{eq:general-lorentz} 周辺ですでに述べた内容の再確認である。}
 
 \subsection{電磁場中の運動}
 
@@ -1538,7 +1542,7 @@ PGA 版 DST では、この並進を代数の内部に内在化する必要が�
     1 & 5 & \(e_\mu,\ e_4\) & ベクトル（時空＋射影方向） \\
     2 & 10 & \(e_\mu e_\nu,\ e_4 e_\mu\) & バイベクトル（平面・回転・並進生成子） \\
     3 & 10 & \(e_a e_b e_c\) & 三ベクトル（平面） \\
-    4 & 5 & \(e_a e_b e_c e_d\) & 四元ベクトル（点） \\
+    4 & 5 & \(e_a e_b e_c e_d\) & 四ベクトル（点） \\
     5 & 1 & \(I_5\) & 5 次擬スカラー \\
     \bottomrule
   \end{tabular}
@@ -1590,7 +1594,7 @@ PGA 版 DST では、この並進を代数の内部に内在化する必要が�
   \(e_4\) と各時空ベクトルの外積からなる。並進を担う。次章で本格導入する。
 \end{itemize}
 
-六つの双曲・巡回生成子は \(\mathfrak{so}(3,1) \oplus \mathfrak{so}(3,1)\) を張り、四つのヌル生成子は並進理想を与える。
+六つの双曲・巡回生成子は \(\mathfrak{so}(3,1) \oplus \mathfrak{so}(3,1)\) を張り、四つのヌル生成子は並進イデアルを与える。
 全体として 10 次元バイベクトル空間はポアンカレ代数 \(\mathfrak{iso}(3,1)\) と一致する。これが PGA 版 DST の生成子構造の骨格である。
 
 \section{点・直線・平面の多重ベクトル表現}
@@ -1749,7 +1753,7 @@ PGA では、交わりは\textbf{双対}を介して定義される：
   \label{eq:bracket-def}
 \end{equation}
 を定義する。
-ここで \(\mathbin{\underline{\vee}}\) と \(\mathbin{\overline{\vee}}\) は、標準 PGA 文献の反内積 / 反外積とは異なる規約に従う \footnote{標準 PGA 文献（レンジェル（E. Lengyel）, ドースト / フォンティニー / マン（L. Dorst / D. Fontijne / S. Mann）等）の反内積 / 反外積は 5 次擬スカラーによる双対化で定義され、\eqref{eq:bracket-def} とは一般に異なる。}.
+ここで \(\mathbin{\underline{\vee}}\) と \(\mathbin{\overline{\vee}}\) は、標準 PGA 文献の反内積 / 反外積とは異なる規約に従う \footnote{標準 PGA 文献（レンジェル（E. Lengyel）, ドースト / フォンティニー / マン（L. Dorst / D. Fontijne / S. Mann）等）の反内積 / 反外積は 5 次擬スカラーによる双対化で定義され、\eqref{eq:bracket-def} とは一般に異なる。}。
 
 5 次元ベクトル空間では 6 次成分は存在しないため、3-ブレード同士の幾何積の階数内容は
 \[
@@ -1874,7 +1878,7 @@ PGA 版 DST の中心的結果の一つは、\textbf{双対時空}要素が 3-�
 \[
   N_0 N_1 = e_4 j e_4 kI = -e_4 e_4 j kI = -e_4^2 j kI = 0.
 \]
-四つの生成子は互いに\textbf{可換}でもある（\([N_\mu, N_\nu] = N_\mu N_\nu - N_\nu N_\mu = 0\)）したがって、ヌルセクターは\textbf{可換な理想}（abelian ideal）を形成する。
+四つの生成子は互いに\textbf{可換}でもある（\([N_\mu, N_\nu] = N_\mu N_\nu - N_\nu N_\mu = 0\)）したがって、ヌルセクターは\textbf{可換イデアル}（abelian ideal）を形成する。
 
 \subsection{ポアンカレ代数 \(\mathfrak{iso}(3,1)\) への埋め込み}
 
@@ -1887,12 +1891,12 @@ PGA 版 DST の中心的結果の一つは、\textbf{双対時空}要素が 3-�
 \end{itemize}
 
 六つの双曲・巡回生成子の交換子は \(\mathfrak{so}(3,1)\) 内に閉じ、二つの \(\mathfrak{so}(3,1)\) コピーの直和 \(\mathfrak{so}(3,1) \oplus \mathfrak{so}(3,1)\) を張る。第 II 部 \eqref{eq:hyperbolic-biv}–\eqref{eq:cyclic-biv} の構造の拡張である。
-四つのヌル生成子は可換理想をなし、ポアンカレ代数の並進生成子 \(P_\mu\) に対応する。
+四つのヌル生成子は可換イデアルをなし、ポアンカレ代数の並進生成子 \(P_\mu\) に対応する。
 全体として
 \begin{equation}
   \dim \mathfrak{iso}(3,1)
   = \underbrace{3 + 3}_{\mathfrak{so}(3,1) \oplus \mathfrak{so}(3,1)}
-  + \underbrace{4}_{\text{並進}}
+  + \underbrace{4}_{\text{並進イデアル}}
   = 10
   \label{eq:poincare-iso}
 \end{equation}
@@ -1908,7 +1912,7 @@ PGA 版 DST の中心的結果の一つは、\textbf{双対時空}要素が 3-�
   \widetilde{N_\mu} = -N_\mu.
   \label{eq:null-rev-odd}
 \end{equation}
-1 次のベクトル \(v\) は \(\widetilde{v} = v\)（反転偶）であるから、もし \(e_4\) 自身を並進生成子に使おうとすると、後述のユニタリ性 \(M\widetilde{M} = 1\) が成り立たなくなる \footnote{Selig 以来の PGA 文献でも、ユークリッド・ミンコフスキー双方で並進はヌル\textbf{バイベクトル}として符号化される。第 2 章 \eqref{eq:biv-rev-odd} の脚注参照。}.
+1 次のベクトル \(v\) は \(\widetilde{v} = v\)（反転偶）であるから、もし \(e_4\) 自身を並進生成子に使おうとすると、後述のユニタリ性 \(M\widetilde{M} = 1\) が成り立たなくなる \footnote{Selig 以来の PGA 文献でも、ユークリッド・ミンコフスキー双方で並進はヌル\textbf{バイベクトル}として符号化される。第 2 章 \eqref{eq:biv-rev-odd} の脚注参照。}。
 \(N_\mu\) が 2 次であること（\(e_4\) と \(e_\mu\) の\textbf{外積}）が、モーターの因果的伝播を保証する代数的根拠である。
 
 \subsection{双対写像下でのヌルセクターの閉性}
@@ -2254,7 +2258,7 @@ PGA 版 DST では、平面ベースの議論 \eqref{eq:normal-correspondence} �
 \end{equation}
 で定義される対称双線形形式である。
 ここで \(\mathrm{ad}_X(Y) = [X,Y]\) は随伴表現、\(\mathrm{Tr}\) は適切な基底での行列のトレースである。
-キリング形式はリー代数の構造（とくに半単純性）を二次形式で測る道具であり、DST 親理論ではねじれ不整合スカラー \(J\) の定義に現れる \footnote{親理論では \(B_{\mathrm{Killing}}(X,Y) = 4\,\mathrm{Tr}(XY)\) 型の正規化が用いられることが多い。\hyperref[sec:sister-manuscripts]{PGA 版論文}「Correspondence between Plane-Based Bracket Products and the Dual Spacetime」\eqref{eq:J5-invariant} の係数 \(1/16\) はこの正規化に合わせている。}.
+キリング形式はリー代数の構造（とくに半単純性）を二次形式で測る道具であり、DST 親理論ではねじれ不整合スカラー \(J\) の定義に現れる \footnote{親理論では \(B_{\mathrm{Killing}}(X,Y) = 4\,\mathrm{Tr}(XY)\) 型の正規化が用いられることが多い。\hyperref[sec:sister-manuscripts]{PGA 版論文}「Correspondence between Plane-Based Bracket Products and the Dual Spacetime」\eqref{eq:J5-invariant} の係数 \(1/16\) はこの正規化に合わせている。}。
 
 \(G(3,1,1)\) の 10 次元バイベクトル空間 \eqref{eq:poincare-iso} では、六つの双曲・巡回生成子が \(\mathfrak{so}(3,1) \oplus \mathfrak{so}(3,1)\) を張る。
 この半単純部分に対するキリング形式は、ねじれ部分 \(\Omega_{\mathrm{torsion}}\) \eqref{eq:Omega-decomp} の二次形式
@@ -2272,7 +2276,7 @@ PGA 版 DST では、平面ベースの議論 \eqref{eq:normal-correspondence} �
   B_{\mathrm{Killing}}(P_\mu, P_\nu) = 0
   \label{eq:killing-degeneracy}
 \end{equation}
-が成り立つ。これはリー代数論の標準的事実である \footnote{可解理想（並進部分）が存在する代数では、キリング形式はその理想に対して零になる。}.
+が成り立つ。これはリー代数論の標準的事実である \footnote{可換イデアル（並進部分）が存在する代数では、キリング形式はそのイデアルに対して零になる。}。
 したがってキリング形式\textbf{単独}では、並進的不整合 \(\lambda^\mu\) を検出する二次不変量を与えられない。
 前章 \eqref{eq:J5-preview} で予告した拡張が必要な理由がここにある。
 
@@ -2682,7 +2686,7 @@ PGA 版では、双対時空要素が 3-ブレードの法線として機能す�
     \toprule
     セクター & 担う情報 & 代数的実体 \\
     \midrule
-    通常時空 & 横方向座標、標準的 SR 現象 & \(R_{\mathrm{usual}}\), \(\{iI,iJ,iK\}\) \\
+    通常時空 & 横方向座標、標準的 SR 現象\footnote{SR = Special Relativity（特殊相対性理論）。「標準的 SR 現象」とは、通常時空セクター \(R_{\mathrm{usual}}\) だけで記述される標準的な相対論的効果（ローレンツ収縮、時間膨張、進行方向に垂直な座標成分の保存など）を指す。進行方向に沿った「潰れ」に関する情報は、双対時空および並進セクターへ移される（本書の三者構造 \eqref{eq:position-decomp}）。} & \(R_{\mathrm{usual}}\), \(\{iI,iJ,iK\}\) \\
     双対時空 & 進行方向位相、コンパクト自由度 & \(R_{\mathrm{dual}}\), \(\{I,J,K\}\) \\
     並進 & 光的移動、実際の位置シフト & \(N_\mu\), \(\lambda^\mu\) \eqref{eq:null-generators} \\
     \bottomrule
@@ -2760,7 +2764,7 @@ PGA 版では、双対時空要素が 3-ブレードの法線として機能す�
   \label{eq:torsion-rotor}
 \end{equation}
 で定義される。
-\(\Omega\) は偶数ローターであり、二つの時空セクターの「角度のズレ」を測る。DST において慣性と重力の代数的原型となる量である \footnote{親理論 DST では、テレパラレル重力（TEGR）との対応の下で、このスカラー不整合がトーション星に結びつく。\hyperref[sec:sister-manuscripts]{PGA 版論文}「Explicit Recovery of the Schwarzschild Solution without Curvature」参照。}.
+\(\Omega\) は偶数ローターであり、二つの時空セクターの「角度のズレ」を測る。DST において慣性と重力の代数的原型となる量である \footnote{親理論 DST では、テレパラレル重力（TEGR）との対応の下で、このスカラー不整合がトーション星に結びつく。\hyperref[sec:sister-manuscripts]{PGA 版論文}「Explicit Recovery of the Schwarzschild Solution without Curvature」参照。}。
 
 真空や完全同期の理想的状態では \(R_{\mathrm{usual}} = R_{\mathrm{dual}}\)（適切な同定の下）であり、\(\Omega = 1\) となる。
 質量や運動、外部場により通常時空側の変換だけが変化すると、双対時空のコンパクト剛性 \footnote{前章：双対時空の位相空間は \(4\pi\) 周期のコンパクト構造を持ち、即座に追従できない。これが「剛性」の直感的内容である。} により \(R_{\mathrm{dual}}\) が遅れ、\(\Omega \neq 1\) となる。
@@ -2950,7 +2954,7 @@ PGA 版 DST の解決方針は、失われた情報を別の場所に移し、�
   = f(\theta)\,\bigl(jI\cos\varphi + jJ\sin\varphi\bigr)
   \label{eq:X-phase}
 \end{equation}
-のような双対基底 \eqref{eq:dual-basis-dst} 上のコンパクト座標として現れる。ここで \(\varphi\) は進行方向の方位角、\(f(\theta)\) は位相 \(\theta\) による振幅 \footnote{厳密な \(f(\theta)\) の取り方と量子化は次章「ヒルベルト空間の構成（特に \(S^3\) 構造）」で扱う。}.
+のような双対基底 \eqref{eq:dual-basis-dst} 上のコンパクト座標として現れる。ここで \(\varphi\) は進行方向の方位角、\(f(\theta)\) は位相 \(\theta\) による振幅 \footnote{厳密な \(f(\theta)\) の取り方と量子化は次章「ヒルベルト空間の構成（特に \(S^3\) 構造）」で扱う。}。
 双対時空要素は 3-ブレードの法線として機能し \eqref{eq:normal-correspondence-chapter}、位相情報は法線方向 \(N_\mu\) に符号化される。
 
 並進部分は、トランスレーター \(T\) \eqref{eq:translator-lightlike} によるシフトとして
@@ -2959,7 +2963,7 @@ PGA 版 DST の解決方針は、失われた情報を別の場所に移し、�
   = T\, X_\perp\, \widetilde{T} - X_\perp
   \label{eq:delta-trans}
 \end{equation}
-のように、サンドイッチ積 \eqref{eq:motor-sandwich-chapter} の枠内で定義される \footnote{より一般的には、\(M = R\,T\) \eqref{eq:motor-factor} 全体が位置とスピンを同時に変換する。次章でスピノル表現と統合する。}.
+のように、サンドイッチ積 \eqref{eq:motor-sandwich-chapter} の枠内で定義される \footnote{より一般的には、\(M = R\,T\) \eqref{eq:motor-factor} 全体が位置とスピンを同時に変換する。次章でスピノル表現と統合する。}。
 
 位置の代数的構成を、ボックスでまとめる：
 \begin{equation}
@@ -2979,7 +2983,7 @@ PGA 版 DST の解決方針は、失われた情報を別の場所に移し、�
 
 \begin{itemize}[leftmargin=2em]
   \item 進行方向に沿った「潰れた」座標は、双対位相 \(\theta\) \eqref{eq:X-phase} に移される。情報は失われない。
-  \item 横方向座標 \(X_\perp\) \eqref{eq:X-perp} は通常時空に残り、標準的な SR 現象として扱える。
+  \item 横方向座標 \(X_\perp\) \eqref{eq:X-perp} は通常時空に残り、標準的な特殊相対論（SR）の現象として扱える。
   \item 実際の時空位置のずれは、光円錐上の並進 \(\lambda^\mu\) \eqref{eq:light-cone-forced} として実行される。無限収縮の心配なく、有限シフト \eqref{eq:exp-truncation} として現れる。
 \end{itemize}
 
@@ -3077,7 +3081,7 @@ PGA 版 DST の解決方針は、失われた情報を別の場所に移し、�
   \label{eq:spinor-general}
 \end{equation}
 と書ける。
-\(a_0, a_1\) は通常時空セクター（左手性成分）、\(c_i\) は双対時空セクター（右手性成分）、\(b_i\) は両者を結ぶ混合成分に対応する \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「双四元数スピノルと最小左イデアル」参照。}.
+\(a_0, a_1\) は通常時空セクター（左手性成分）、\(c_i\) は双対時空セクター（右手性成分）、\(b_i\) は両者を結ぶ混合成分に対応する \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「双四元数スピノルと最小左イデアル」参照。}。
 擬スカラー \(i\) を量子力学の虚数単位と同一視すると、\(\psi\) はウェイル基底の 4 成分複素列スピノルとして読める。外部の列ベクトル空間も手で導入するガンマ行列も不要である。
 
 双対写像 \(X \mapsto X i\) \eqref{eq:duality-map-chapter} は時間矢印を反転させ、スピノル空間上に\textbf{キラル射影}
@@ -3157,7 +3161,7 @@ PGA 版 DST の解決方針は、失われた情報を別の場所に移し、�
   U(\vec\phi) = \exp\!\Bigl(-\frac{i}{2}\,\vec\phi\cdot\vec\sigma\Bigr)
   \label{eq:SU2-rotation}
 \end{equation}
-と完全に一致する \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「双対時空回転としての量子状態」参照。}.
+と完全に一致する \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「双対時空回転としての量子状態」参照。}。
 したがって、スピン \(1/2\) 粒子の\textbf{内在的量子状態}は、双対ローターの三つの実角 \(\phi_a\) によって完全にパラメーター化される。2 次元複素ヒルベルト空間は、\(I, J, K\) が生成する回転群の基本表現として代数内部から現れる。
 
 通常時空で静止するフェルミオン（\(\theta_a = 0\)）の量子情報はすべてこれらの双対位相 \(\phi_a\) に宿る。
@@ -3209,7 +3213,7 @@ PGA 版 DST の解決方針は、失われた情報を別の場所に移し、�
   \mathcal{H} = L^2(S^3)
   \label{eq:hilbert-s3}
 \end{equation}
-を定義する \footnote{\hyperref[sec:sister-manuscripts]{NW-PGA 読み物}「二重時空理論（PGA版）がどのように解決するか？」参照。}.
+を定義する \footnote{\hyperref[sec:sister-manuscripts]{NW-PGA 読み物}「二重時空理論（PGA版）がどのように解決するか？」参照。}。
 \(S^3\) はコンパクト多様体であるから、内積
 \begin{equation}
   \langle \psi_1 | \psi_2 \rangle
@@ -3251,13 +3255,13 @@ PGA 版では、この構造に並進セクター \(N_\mu\) \eqref{eq:null-gener
   [\hat{x}^i,\, \hat{p}_j] = i\hbar\,\delta^{ij}
   \label{eq:CCR}
 \end{equation}
-は量子化公理として手で課すのではなく、リー代数の交換子構造から\textbf{代数的恒等式}として自動的に満たされる \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「双対時空回転としての量子状態」。}.
+は量子化公理として手で課すのではなく、リー代数の交換子構造から\textbf{代数的恒等式}として自動的に満たされる \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「双対時空回転としての量子状態」。}。
 
 双対セクターのコンパクト性 \eqref{eq:S3-phase-space} は、位置がコンプトン波長より鋭く局在化できないという制約も意味する。高次ねじれモード \eqref{eq:Omega-torsion-only} の励起なしには不可能であり、ニュートン--ウィグナー局在化問題 \eqref{tab:tools-nw} を内在的に取り込む。
 
 \subsection{ボルンの規則と量子確率}
 
-量子力学の確率的解釈も、ねじれ不整合から幾何学的に導かれる \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「双対時空回転としての量子状態」；\hyperref[sec:sister-manuscripts]{de Broglie 波論文}参照。}.
+量子力学の確率的解釈も、ねじれ不整合から幾何学的に導かれる \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「双対時空回転としての量子状態」；\hyperref[sec:sister-manuscripts]{de Broglie 波論文}参照。}。
 ボルンの規則の確率密度は、\eqref{eq:Omega-biv-log} の二乗ノルムと同一視される：
 \begin{equation}
   |\psi|^2
@@ -3278,7 +3282,7 @@ PGA 版では、この構造に並進セクター \(N_\mu\) \eqref{eq:null-gener
 
 \subsection{測定ともつれ（概観）}
 
-DST において、波動関数の\textbf{収縮}（collapse）は、もつれ系全体における双対ローターの強制同期として解釈される。ねじれ不整合スカラー \(J\) \eqref{eq:J5-invariant} の大域最小化によって駆動される \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「双対時空回転としての量子状態」「フェルミオン質量のねじれ的起源とヒッグス機構」。}.
+DST において、波動関数の\textbf{収縮}（collapse）は、もつれ系全体における双対ローターの強制同期として解釈される。ねじれ不整合スカラー \(J\) \eqref{eq:J5-invariant} の大域最小化によって駆動される \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「双対時空回転としての量子状態」「フェルミオン質量のねじれ的起源とヒッグス機構」。}。
 \textbf{もつれ}は、複数粒子が相関した双対位相 \(\phi_a^{(1)} \approx \phi_a^{(2)}\) を共有するときに、集団的ねじれエネルギー最小化の要求により生じる。
 
 この枠組みにおいて、量子力学は時空に課された追加層ではない。すべての質量粒子が内在的に運ぶコンパクト双対時空 \eqref{eq:R-dual} における回転の\textbf{運動学}である。
@@ -3303,7 +3307,7 @@ DST において、波動関数の\textbf{収縮}（collapse）は、もつれ�
     \psi' = R\,\psi
     \label{eq:motor-spinor}
   \end{equation}
-  \eqref{eq:spinor-total-transform}。\(R\) は \(M\) の偶数（ねじれ）部分。並進 \(T\) はスピノル空間上で自明（\(T\psi = \psi\)）である \footnote{並進はベクトル表現にのみ非自明に作用する；スピノルへの並進効果は位置演算子 \eqref{eq:position-op-quantum} を通じて間接的に現れる。}.
+  \eqref{eq:spinor-total-transform}。\(R\) は \(M\) の偶数（ねじれ）部分。並進 \(T\) はスピノル空間上で自明（\(T\psi = \psi\)）である \footnote{並進はベクトル表現にのみ非自明に作用する；スピノルへの並進効果は位置演算子 \eqref{eq:position-op-quantum} を通じて間接的に現れる。}。
 \end{itemize}
 
 この役割分担が、ベクトル（位置）とスピノル（スピン／内在的位相）の物理的分離を代数的に反映する。位置のシフトは \(T\) が担い、スピン／偏光の回転は \(R_{\mathrm{dual}}\) が担う \eqref{tab:usual-dual-rotors}。
@@ -3319,7 +3323,7 @@ DST において、波動関数の\textbf{収縮}（collapse）は、もつれ�
   \label{eq:position-op-quantum}
 \end{equation}
 と定義される。
-ここで \(\hat{x}', \hat{y}', \hat{z}'\) は \(S^3\) 座標 \(\phi_a\) \eqref{eq:S3-phase-space} 上の乗算演算子（\(\phi_a\) の関数を状態に掛ける）、\(\Delta_{\mathrm{trans}}(\hat{\lambda}^\mu)\) はトランスレーター \(T\) \eqref{eq:translator-lightlike} による並進シフト項である \footnote{\hyperref[sec:sister-manuscripts]{NW-PGA 読み物}「双対時空における「潰れ」が生じない理由と、並進の役割」参照。}.
+ここで \(\hat{x}', \hat{y}', \hat{z}'\) は \(S^3\) 座標 \(\phi_a\) \eqref{eq:S3-phase-space} 上の乗算演算子（\(\phi_a\) の関数を状態に掛ける）、\(\Delta_{\mathrm{trans}}(\hat{\lambda}^\mu)\) はトランスレーター \(T\) \eqref{eq:translator-lightlike} による並進シフト項である \footnote{\hyperref[sec:sister-manuscripts]{NW-PGA 読み物}「双対時空における「潰れ」が生じない理由と、並進の役割」参照。}。
 
 表 \ref{tab:position-components} の三者構造 \eqref{eq:position-decomp} と対応する：
 \begin{itemize}[leftmargin=2em]
@@ -3351,7 +3355,7 @@ DST において、波動関数の\textbf{収縮}（collapse）は、もつれ�
 \subsection{ポアンカレ共変性（主張）}
 
 \(G(3,1,1)\) の 10 次元生成子 \eqref{eq:Omega-decomp}（六つのねじれ（双曲・巡回）と四つの並進）は、ポアンカレ群 \(\mathrm{ISO}(3,1)\) のリー代数 \(\mathfrak{iso}(3,1)\) \eqref{eq:poincare-iso} を実現する。
-モーター \(M\) \eqref{eq:motor-factor} による変換 \eqref{eq:motor-vector}–\eqref{eq:motor-spinor} は、この群の表現として位置とスピンを共変に変換する。すなわち、異なる観測者（異なる \(M\)）間で量子状態 \eqref{eq:hilbert-s3} が一貫して記述される \footnote{厳密な共変性の証明と、すべての観測者で一致する位置演算子 \eqref{eq:position-op-quantum} の構成は、第 V 部「ニュートン=ウィグナー問題の解決」で行う \eqref{tab:tools-nw}。}.
+モーター \(M\) \eqref{eq:motor-factor} による変換 \eqref{eq:motor-vector}–\eqref{eq:motor-spinor} は、この群の表現として位置とスピンを共変に変換する。すなわち、異なる観測者（異なる \(M\)）間で量子状態 \eqref{eq:hilbert-s3} が一貫して記述される \footnote{厳密な共変性の証明と、すべての観測者で一致する位置演算子 \eqref{eq:position-op-quantum} の構成は、第 V 部「ニュートン=ウィグナー問題の解決」で行う \eqref{tab:tools-nw}。}。
 
 この主張の核心は、失われた進行方向情報 \eqref{eq:anti-sync} が双対位相 \(\phi_a\) \eqref{eq:S3-phase-space} に移され、実際の変位が並進 \(T\) \eqref{eq:photon-motor} によって実行される三者構造 \eqref{eq:position-decomp} にある。通常の相対論的量子力学では定義困難だった光子の位置が、DST では代数的に一意に定義される \eqref{tab:tools-nw}。
 
@@ -3402,14 +3406,14 @@ DST において、波動関数の\textbf{収縮}（collapse）は、もつれ�
 第 IV 部では、光子の位置を \eqref{eq:position-decomp} の三者構造（横方向 \(X_\perp\)、双対位相 \(X'_{\mathrm{phase}}(\theta)\)、光的並進 \(\Delta_{\mathrm{trans}}(\lambda^\mu)\)）として代数的に定義し、ヒルベルト空間 \eqref{eq:hilbert-s3} 上の位置演算子 \eqref{eq:position-op-quantum} まで構成した。
 本章では、序章 \eqref{tab:tools-nw} で予告した \textbf{ニュートン=ウィグナー問題}（Newton--Wigner localization problem）の解決を本論化する。
 
-1949 年、Newton と Wigner は相対論的量子力学における粒子の位置演算子を検討し、質量のある粒子では共変な位置演算子が構成できる一方、質量ゼロ粒子（とくに光子）では進行方向の座標がローレンツブースト \eqref{eq:R-usual} により収縮して「潰れ」、異なる観測者間で位置の値が一致しないことを示した \footnote{Newton \& Wigner, \textit{Localized States for Elementary Systems}, Rev.\ Mod.\ Phys.\ \textbf{21}, 400 (1949)。}.
+1949 年、Newton と Wigner は相対論的量子力学における粒子の位置演算子を検討し、質量のある粒子では共変な位置演算子が構成できる一方、質量ゼロ粒子（とくに光子）では進行方向の座標がローレンツブースト \eqref{eq:R-usual} により収縮して「潰れ」、異なる観測者間で位置の値が一致しないことを示した \footnote{Newton \& Wigner, \textit{Localized States for Elementary Systems}, Rev.\ Mod.\ Phys.\ \textbf{21}, 400 (1949)。}。
 問題の核心は二点にある。
 第一に、単一のミンコフスキー時空だけでは、潰れた進行方向情報を受け止める場所がない。
 第二に、失われた情報なしに実際の時空変位を記述する仕組みが、従来の \(\mathrm{Cl}(3,1)\) 枠組みには組み込まれていなかった。
 
 PGA 版 DST は、この壁を三者構造 \eqref{tab:triple-structure} で越える。
 通常時空で潰れた情報は双対時空のコンパクト位相 \eqref{eq:anti-sync} に移され、実際の移動は並進セクター \(N_\mu\) \eqref{eq:null-generators} が光的に実行する。
-本章では、この解決の論理を骨格証明と直観の両面から整理する。細部の計算は第 IV 部の式を参照し、完全な表現論的証明は発展課題として明示する \footnote{\hyperref[sec:sister-manuscripts]{NW-PGA 読み物}参照。}.
+本章では、この解決の論理を骨格証明と直観の両面から整理する。細部の計算は第 IV 部の式を参照し、完全な表現論的証明は発展課題として明示する \footnote{\hyperref[sec:sister-manuscripts]{NW-PGA 読み物}参照。}。
 
 \section{質量ゼロ粒子の局所化がなぜ可能になるか}
 
@@ -3459,7 +3463,7 @@ NW 問題は、前者だけを見ていたために生じた。
 
 \begin{itemize}[leftmargin=2em]
   \item \textbf{横方向} \(X_\perp\) \eqref{eq:X-perp}：進行方向 \(\hat{p}\) に垂直な座標。
-  ブースト \eqref{eq:R-usual} により進行方向は潰れるが、垂直成分は保存される。通常の SR 現象として扱える。
+  ブースト \eqref{eq:R-usual} により進行方向は潰れるが、垂直成分は保存される。通常の特殊相対論（SR）の現象として扱える。
   \item \textbf{双対位相} \(X'_{\mathrm{phase}}(\theta)\) \eqref{eq:X-phase}：通常時空で失われた進行方向情報。
   双曲的ラピディティ \(\phi\) が巡回位相 \(\theta\) \eqref{eq:anti-sync} として \(4\pi\) 周期の有限空間に移される。情報は失われない。
   \item \textbf{光的並進} \(\Delta_{\mathrm{trans}}(\lambda^\mu)\) \eqref{eq:delta-trans}：実際の時空位置のずれ。
@@ -3627,11 +3631,11 @@ NW 問題は解決された。ただし、その解は単一時空の座標で�
 \chapter{ねじれ不整合としての重力とTEGR等価性}
 
 前章では、有質量粒子における \(\Omega_{\mathrm{torsion}} \neq 0\) \eqref{eq:Omega-torsion-only} が位置構成 \eqref{eq:position-decomp} に与える効果を、NW 問題の文脈で整理した。
-本章では、第 IV 部で整えた相対ずれローター \(\Omega = R_{\mathrm{usual}}^\dagger R_{\mathrm{dual}}\) \eqref{eq:torsion-rotor} と拡張不変量 \(J^{(5)}\) \eqref{eq:J5-invariant} を、古典重力の物理作用へ接続する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「双対時空間のねじれ不整合としての重力」および「ねじれ不整合スカラー J と TEGR のテレパラレルねじれスカラー T の等価性」付録に対応。}.
+本章では、第 IV 部で整えた相対ずれローター \(\Omega = R_{\mathrm{usual}}^\dagger R_{\mathrm{dual}}\) \eqref{eq:torsion-rotor} と拡張不変量 \(J^{(5)}\) \eqref{eq:J5-invariant} を、古典重力の物理作用へ接続する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「双対時空間のねじれ不整合としての重力」および「ねじれ不整合スカラー J と TEGR のテレパラレルねじれスカラー T の等価性」付録に対応。}。
 
 DST の主張は次のとおりである。
 重力は連続多様体の曲率でも、古典的な「外力」でもなく、各質量粒子が内在的に運ぶ通常時空ローター \(R_{\mathrm{usual}}\) \eqref{eq:R-usual} と双対時空ローター \(R_{\mathrm{dual}}\) \eqref{eq:R-dual} の\textbf{相対ずれ}（\textbf{ねじれ不整合}（torsional mismatch））である。
-この不整合から定義されるスカラー \(J\) により作用を構成すると、テレパラレル重力（TEGR）およびアインシュタイン--ヒルベルト作用と\textbf{動学的に等価}となり、一般相対性理論のすべての解が回復される。
+この不整合から定義されるスカラー \(J\) により作用を構成すると、テレパラレル重力（TEGR）およびアインシュタイン=ヒルベルト作用と\textbf{動学的に等価}となり、一般相対性理論のすべての解が回復される。
 一方、物理的解釈は根本的に異なる。曲率は有効記述にとどまり、第一的存在論的元素は粒子局所の双対ローター角である。
 
 \section{ねじれ不整合ローターと不変スカラー J}
@@ -3644,7 +3648,7 @@ DST の主張は次のとおりである。
   \label{eq:gravity-torsion-rotor}
 \end{equation}
 は、二つの時空セクターの「角度のズレ」を測る偶数ローターである。
-ダガー \(R_{\mathrm{usual}}^\dagger\) は双四元数代数における標準的共役逆であり、双対写像 \eqref{eq:duality-map-chapter} による時間矢印の反転を符号化する。通常時空の双曲ブースト構造と双対時空の巡回回転構造を橋渡しする操作である \footnote{詳細な解析接続 \(\cosh(\phi/2) \leftrightarrow \cos(i\phi/2)\) は\hyperref[sec:sister-manuscripts]{親理論}「双対時空間のねじれ不整合としての重力」参照。本章では物理的内容に必要な最小限にとどめる。}.
+ダガー \(R_{\mathrm{usual}}^\dagger\) は双四元数代数における標準的共役逆であり、双対写像 \eqref{eq:duality-map-chapter} による時間矢印の反転を符号化する。通常時空の双曲ブースト構造と双対時空の巡回回転構造を橋渡しする操作である \footnote{詳細な解析接続 \(\cosh(\phi/2) \leftrightarrow \cos(i\phi/2)\) は\hyperref[sec:sister-manuscripts]{親理論}「双対時空間のねじれ不整合としての重力」参照。本章では物理的内容に必要な最小限にとどめる。}。
 
 真空極限（自由落下）では、完全反同期 \eqref{eq:anti-sync} により \(R_{\mathrm{dual}} = R_{\mathrm{usual}}^\dagger\) となり、\(\Omega = 1\) である \eqref{eq:zero-torsion-massless}。
 質量やエネルギーが存在すると、この同期からのずれが生じ、\(\Omega \neq 1\) となる。これが DST における重力の代数的起源である \eqref{eq:J5-invariant}。
@@ -3667,7 +3671,7 @@ DST の主張は次のとおりである。
   B_{\mathrm{Killing}}(B_a^{-}, B_a^{-}) = -8
   \label{eq:gravity-killing-signs}
 \end{equation}
-を満たす。ローレンツ符号 \((+,+,+,-)\) を代数が再現する \footnote{親理論では \(B(X,Y) = 4\,\mathrm{Tr}(XY)\) 型の正規化が用いられる。}.
+を満たす。ローレンツ符号 \((+,+,+,-)\) を代数が再現する \footnote{親理論では \(B(X,Y) = 4\,\mathrm{Tr}(XY)\) 型の正規化が用いられる。}。
 
 ねじれバイベクトルを
 \begin{equation}
@@ -3691,15 +3695,15 @@ DST の主張は次のとおりである。
   \;}
   \label{eq:gravity-J}
 \end{equation}
-と定義される \footnote{等価に \(J = \tfrac{1}{2}\,\mathrm{Tr}(\Omega_{\mathrm{biv}}^2)\) とも書ける。}.
+と定義される \footnote{等価に \(J = \tfrac{1}{2}\,\mathrm{Tr}(\Omega_{\mathrm{biv}}^2)\) とも書ける。}。
 
 この \(J\) は、拡張不変量 \(J^{(5)}\) \eqref{eq:J5-invariant} の第 1 項 \eqref{eq:J5-torsion-term} と\textbf{同一}である。
-第 2 項 \(\tfrac{1}{2}\eta_{\mu\nu}\lambda^\mu\lambda^\nu\) は並進的不整合を測る。光子では光円錐 \eqref{eq:light-cone-translation} 上で正確に零となり \eqref{eq:J5-light-cone-chapter}、重力作用の接続には直接寄与しない \footnote{並進項は位置 \eqref{eq:position-decomp} と NW 問題の解決に不可欠だが、本章の EH 等価性はねじれスカラー \(J\) だけで成立する。}.
+第 2 項 \(\tfrac{1}{2}\eta_{\mu\nu}\lambda^\mu\lambda^\nu\) は並進的不整合を測る。光子では光円錐 \eqref{eq:light-cone-translation} 上で正確に零となり \eqref{eq:J5-light-cone-chapter}、重力作用の接続には直接寄与しない \footnote{並進項は位置 \eqref{eq:position-decomp} と NW 問題の解決に不可欠だが、本章の EH 等価性はねじれスカラー \(J\) だけで成立する。}。
 有質量粒子の古典重力では、\(J^{(5)}\) の重力寄与は \(J\) そのものとみなしてよい。
 
 \subsection{符号分類}
 
-\(J\) の符号は、二つの時空セクターのどちらが支配的かを示す \footnote{\hyperref[sec:sister-manuscripts]{親理論}「双対時空間のねじれ不整合としての重力」 参照。}.
+\(J\) の符号は、二つの時空セクターのどちらが支配的かを示す \footnote{\hyperref[sec:sister-manuscripts]{親理論}「双対時空間のねじれ不整合としての重力」 参照。}。
 
 \begin{table}[htbp]
   \centering
@@ -3717,9 +3721,9 @@ DST の主張は次のとおりである。
 \end{table}
 
 \(J > 0\) の通常引力は、質量が通常時空側のブースト角 \(\phi\) を双対側の回転角 \(\theta\) より大きくずらす状況に対応する。
-\(J < 0\) の斥力重力は、双対成分が優位となり、原理的に反重力効果を駆動しうる \footnote{第 V 部後半の「重力工学」章 \eqref{tab:tools-nw} 参照。}.
+\(J < 0\) の斥力重力は、双対成分が優位となり、原理的に反重力効果を駆動しうる \footnote{第 V 部後半の「重力工学」章 \eqref{tab:tools-nw} 参照。}。
 
-\section{アインシュタイン--ヒルベルト作用との動学的等価性}
+\section{アインシュタイン=ヒルベルト作用との動学的等価性}
 
 \subsection{ねじれ不整合作用}
 
@@ -3728,11 +3732,11 @@ DST では、重力の物理作用を純代数的に
   S = \frac{c^4}{16\pi G} \int J\, d^4x
   \label{eq:gravity-action}
 \end{equation}
-と提案する \footnote{積分は適切な 4 次元領域 \(\mathcal{M}\) 上で行う。}.
-この作用は、連続多様体の曲率テンソル \(R_{\mu\nu\rho\sigma}\) やクリストッフェル記号を一切使わず、粒子場 \(R_{\mathrm{usual}}(x)\)、\(R_{\mathrm{dual}}(x)\) から直接構成される。背景独立かつ代数的である \footnote{「背景独立」とは、あらかじめ与えられた計量 \(g_{\mu\nu}\) に依存せず、ローター場自体が計量を生成することを意味する。}.
+と提案する \footnote{積分は適切な 4 次元領域 \(\mathcal{M}\) 上で行う。}。
+この作用は、連続多様体の曲率テンソル \(R_{\mu\nu\rho\sigma}\) やクリストッフェル記号を一切使わず、粒子場 \(R_{\mathrm{usual}}(x)\)、\(R_{\mathrm{dual}}(x)\) から直接構成される。背景独立かつ代数的である \footnote{「背景独立」とは、あらかじめ与えられた計量 \(g_{\mu\nu}\) に依存せず、ローター場自体が計量を生成することを意味する。}。
 
-本章の核心は、\eqref{eq:gravity-action} が TEGR および アインシュタイン--ヒルベルト 作用と動学的に等価であることの示し方である。
-以下、NW 章 \eqref{tab:tools-nw} と同様に\textbf{骨格証明}として論理の鎖を整理する。厳密な計算の細部は\hyperref[sec:sister-manuscripts]{親理論}「ねじれ不整合スカラー J と TEGR のテレパラレルねじれスカラー T の等価性」 を参照 \footnote{TEGR の標準的結果については Maluf, \textit{The Teleparallel Equivalent of General Relativity}, Annalen der Phys.\ \textbf{525}, 339 (2013) 等を参照。}.
+本章の核心は、\eqref{eq:gravity-action} が TEGR および アインシュタイン=ヒルベルト 作用と動学的に等価であることの示し方である。
+以下、NW 章 \eqref{tab:tools-nw} と同様に\textbf{骨格証明}として論理の鎖を整理する。厳密な計算の細部は\hyperref[sec:sister-manuscripts]{親理論}「ねじれ不整合スカラー J と TEGR のテレパラレルねじれスカラー T の等価性」 を参照 \footnote{TEGR の標準的結果については Maluf, \textit{The Teleparallel Equivalent of General Relativity}, Annalen der Phys.\ \textbf{525}, 339 (2013) 等を参照。}。
 
 \subsection{ローター場からテトラッドへ}
 
@@ -3748,7 +3752,7 @@ TEGR との比較には、ローター場とテトラッド（四脚場）の幾
   = \bigl\langle R_{\mathrm{total}}(x)\, \mathring{e}^a\, R_{\mathrm{total}}^\dagger(x) \bigr\rangle_{1,\mu},
   \label{eq:gravity-tetrad}
 \end{equation}
-ここで \(\langle \cdot \rangle_{1,\mu}\) は座標基底に沿った 1 次（ベクトル）成分の抽出である \footnote{第 III 部のサンドイッチ積 \eqref{eq:motor-vector} と同型の操作である。}.
+ここで \(\langle \cdot \rangle_{1,\mu}\) は座標基底に沿った 1 次（ベクトル）成分の抽出である \footnote{第 III 部のサンドイッチ積 \eqref{eq:motor-vector} と同型の操作である。}。
 この同定により \(R_{\mathrm{total}}\) は計量
 \begin{equation}
   g_{\mu\nu} = \eta_{ab}\, e^a{}_\mu\, e^b{}_\nu
@@ -3786,9 +3790,9 @@ TEGR の\textbf{ねじれスカラー}は
   J = \tfrac{1}{2}\, T + \nabla_\mu B^\mu,
   \label{eq:gravity-J-T-relation}
 \end{equation}
-ここで \(\nabla_\mu B^\mu\) は \eqref{eq:gravity-contorsion} の射影によって形が定まる全発散である \footnote{全発散は作用の変分に寄与せず、場の方程式には影響しない。これが TEGR と EH の等価性の鍵である。}.
+ここで \(\nabla_\mu B^\mu\) は \eqref{eq:gravity-contorsion} の射影によって形が定まる全発散である \footnote{全発散は作用の変分に寄与せず、場の方程式には影響しない。これが TEGR と EH の等価性の鍵である。}。
 
-\subsection{TEGR から アインシュタイン--ヒルベルト へ}
+\subsection{TEGR から アインシュタイン=ヒルベルト へ}
 
 TEGR の標準的結果 \footnote{Maluf (2013) 等。} により、同一のテトラッド \eqref{eq:gravity-tetrad} に対して
 \begin{equation}
@@ -3805,14 +3809,14 @@ TEGR の標準的結果 \footnote{Maluf (2013) 等。} により、同一のテ�
   + \text{（境界項）},
   \label{eq:gravity-EH-equivalence}
 \end{equation}
-となり、DST 作用 \eqref{eq:gravity-action} は アインシュタイン--ヒルベルト 作用と\textbf{動学的に等価}である \footnote{積分領域の境界 \(\partial\mathcal{M}\) 上ですべての場の変分が零になる標準的境界条件の下で、全発散項は変分方程式に寄与しない。}.
+となり、DST 作用 \eqref{eq:gravity-action} は アインシュタイン=ヒルベルト 作用と\textbf{動学的に等価}である \footnote{積分領域の境界 \(\partial\mathcal{M}\) 上ですべての場の変分が零になる標準的境界条件の下で、全発散項は変分方程式に寄与しない。}。
 
 \(S\) \eqref{eq:gravity-action} をテトラッド \(e^a{}_\mu\)（等価的にはローター場 \(R_{\mathrm{total}}\)）について変分すると、アインシュタイン方程式
 \begin{equation}
   G_{\mu\nu} = \frac{8\pi G}{c^4}\, T_{\mu\nu}
   \label{eq:gravity-einstein}
 \end{equation}
-が得られる \footnote{\(G_{\mu\nu} = R_{\mu\nu} - \tfrac{1}{2} g_{\mu\nu} R\) はアインシュタイン・テンソル、\(T_{\mu\nu}\) は物質のエネルギー--運動量テンソルである。}.
+が得られる \footnote{\(G_{\mu\nu} = R_{\mu\nu} - \tfrac{1}{2} g_{\mu\nu} R\) はアインシュタイン・テンソル、\(T_{\mu\nu}\) は物質のエネルギー--運動量テンソルである。}。
 したがって、DST は GR の\textbf{すべて}の解（シュワルツシルト、カー、FLRW、重力波など）を正確に回復する。
 GR の予言は覆されない；重力の\textbf{存在論的解釈}だけが変わる。
 
@@ -3824,7 +3828,7 @@ GR の予言は覆されない；重力の\textbf{存在論的解釈}だけが�
   \item 全ローター \(R_{\mathrm{total}}\) \eqref{eq:gravity-R-total} \(\Rightarrow\) テトラッド \(e^a{}_\mu\) \eqref{eq:gravity-tetrad} \(\Rightarrow\) 計量 \(g_{\mu\nu}\) \eqref{eq:gravity-metric}
   \item \(\Omega_{\mathrm{biv}}\) \(\propto\) コントーション \eqref{eq:gravity-contorsion} \(\Rightarrow\) トーション \(T^a{}_{\mu\nu}\) \eqref{eq:gravity-torsion-def}
   \item \(J = \tfrac{1}{2}T + \nabla\) \eqref{eq:gravity-J-T-relation} \(\Rightarrow\) \(\int T e \cong -\int R\sqrt{-g}\) \eqref{eq:tegr-integral}
-  \item 作用 \(S\) \eqref{eq:gravity-action} \(\cong\) アインシュタイン--ヒルベルト \eqref{eq:gravity-EH-equivalence} \(\Rightarrow\) アインシュタイン方程式 \eqref{eq:gravity-einstein}
+  \item 作用 \(S\) \eqref{eq:gravity-action} \(\cong\) アインシュタイン=ヒルベルト \eqref{eq:gravity-EH-equivalence} \(\Rightarrow\) アインシュタイン方程式 \eqref{eq:gravity-einstein}
 \end{enumerate}
 
 \subsection{PGA 版：曲率なしでのシュワルツシルト回復}
@@ -3839,7 +3843,7 @@ PGA 版 DST \footnote{\hyperref[sec:sister-manuscripts]{PGA 版日本語論文}�
   e^{3} &= r\sin\theta\, d\phi,
   \label{eq:gravity-sch-tetrad}
 \end{align}
-であり、\(r_s = 2GM/c^2\) である \footnote{\(r_s\) はシュワルツシルト半径。}.
+であり、\(r_s = 2GM/c^2\) である \footnote{\(r_s\) はシュワルツシルト半径。}。
 付随する計量 \(g_{\mu\nu} = \eta_{ab} e^a{}_\mu e^b{}_\nu\) はシュワルツシルト線素そのものである。
 
 このテトラッドから構成される ヴァイツェンベック接続の\textbf{曲率は零}であり、重力の担い手は\textbf{ねじれ}のみである \footnote{これが「テレパラレル」（teleparallel = 並行移動が曲率を持たない）の意味である。}：
@@ -3857,8 +3861,8 @@ PGA 版 DST \footnote{\hyperref[sec:sister-manuscripts]{PGA 版日本語論文}�
   \label{eq:gravity-sch-motor}
 \end{equation}
 のサンドイッチ作用 \eqref{eq:motor-vector} によって生成される。
-双曲係数 \(\alpha^r(r)\) は赤方偏移因子 \(\sqrt{1 - r_s/r}\) を符号化し、零係数 \(\lambda^\mu\) は極座標面が要求する並進調整を担う \footnote{すべての \(N_\mu\) の平方が零 \eqref{eq:null-generators} であるため、指数の並進部分は 1 次で打ち切られユニタリー性を保つ \eqref{eq:exp-truncation}。}.
-二次不変量 \(J^{(5)}\) \eqref{eq:J5-invariant} は（全発散まで）このシュワルツシルト解の TEGR ねじれスカラー \eqref{eq:tegr-T-scalar} と一致する。\textbf{曲率を一切使わず}、通常枠と双対枠の相対的ずれ \((\alpha_a, \beta_a)\) と零並進 \(\lambda^\mu\) だけから重力が現れる \footnote{強場領域の詳細（ねじれ星、層状構造）は後章「強場領域：層状ねじれとねじれ星」で扱う。}.
+双曲係数 \(\alpha^r(r)\) は赤方偏移因子 \(\sqrt{1 - r_s/r}\) を符号化し、零係数 \(\lambda^\mu\) は極座標面が要求する並進調整を担う \footnote{すべての \(N_\mu\) の平方が零 \eqref{eq:null-generators} であるため、指数の並進部分は 1 次で打ち切られユニタリー性を保つ \eqref{eq:exp-truncation}。}。
+二次不変量 \(J^{(5)}\) \eqref{eq:J5-invariant} は（全発散まで）このシュワルツシルト解の TEGR ねじれスカラー \eqref{eq:tegr-T-scalar} と一致する。\textbf{曲率を一切使わず}、通常枠と双対枠の相対的ずれ \((\alpha_a, \beta_a)\) と零並進 \(\lambda^\mu\) だけから重力が現れる \footnote{強場領域の詳細（ねじれ星、層状構造）は後章「強場領域：層状ねじれとねじれ星」で扱う。}。
 
 \section{弱場およびニュートン極限}
 
@@ -3879,7 +3883,7 @@ PGA 版 DST \footnote{\hyperref[sec:sister-manuscripts]{PGA 版日本語論文}�
   J \approx \tfrac{1}{2} \sum_{a=1}^{3} \alpha_a^2.
   \label{eq:gravity-weak-J}
 \end{equation}
-となる \footnote{弱場では双対成分 \(\beta_a\) は通常成分 \(\alpha_a\) より高次である。}.
+となる \footnote{弱場では双対成分 \(\beta_a\) は通常成分 \(\alpha_a\) より高次である。}。
 
 \subsection{ポアソン方程式への回帰}
 
@@ -3899,7 +3903,7 @@ PGA 版 DST \footnote{\hyperref[sec:sister-manuscripts]{PGA 版日本語論文}�
   \nabla^2 \Phi = 4\pi G\, \rho
   \label{eq:gravity-poisson}
 \end{equation}
-が正しい係数で従う \footnote{\(\rho\) は質量密度である。}.
+が正しい係数で従う \footnote{\(\rho\) は質量密度である。}。
 点質量 \(M\) に対する解は
 \begin{equation}
   \Phi = -\frac{GM}{r},
@@ -3928,14 +3932,14 @@ DST が変えるのは、これらの現象の\textbf{存在論的説明}だけ�
 一般相対性理論は、重力を 4 次元連続多様体の\textbf{曲率} \(R_{\mu\nu\rho\sigma}\) として記述する。時空そのものが「曲がる」。
 DST は、この図式を根本的に書き換える。
 
-\textbf{第一的存在論的元素}は、各質量粒子が内在的に運ぶ双対ローター角 \((\phi, \theta)\) \eqref{eq:R-usual}–\eqref{eq:R-dual} である \footnote{弦理論が伸びた物理対象を基本実体とするのに対し、DST ではローター角が第一的存在論的元素である。}.
+\textbf{第一的存在論的元素}は、各質量粒子が内在的に運ぶ双対ローター角 \((\phi, \theta)\) \eqref{eq:R-usual}–\eqref{eq:R-dual} である \footnote{弦理論が伸びた物理対象を基本実体とするのに対し、DST ではローター角が第一的存在論的元素である。}。
 重力、慣性、量子状態はすべて、これらの角のずれとコヒーレンスから\textbf{創発}する \eqref{eq:J5-invariant}。
 連続多様体の曲率 \(R_{\mu\nu\rho\sigma}\) は、多数の粒子のねじれ不整合を巨視的に集約した\textbf{有効記述}にすぎない。§2 の TEGR 等価性 \eqref{eq:gravity-EH-equivalence} が、この有効記述が正確であることを保証する。
 
 \subsection{重力＝相対角のエネルギーコスト}
 
-重力は、双対ローターの相対ずれ \(\Omega\) \eqref{eq:gravity-torsion-rotor} の\textbf{エネルギー的コスト}として理解できる \footnote{作用 \eqref{eq:gravity-action} はまさにこのコストの積分である。}.
-重要なのは、\(J\) \eqref{eq:gravity-J} が相対角 \(\Omega\) のみに依存し、個々の \(R_{\mathrm{usual}}\) や \(R_{\mathrm{dual}}\) の絶対値には依存しないことである \footnote{ゲージ自由度に相当する。全体のローター回転は \(J\) を変えない。}.
+重力は、双対ローターの相対ずれ \(\Omega\) \eqref{eq:gravity-torsion-rotor} の\textbf{エネルギー的コスト}として理解できる \footnote{作用 \eqref{eq:gravity-action} はまさにこのコストの積分である。}。
+重要なのは、\(J\) \eqref{eq:gravity-J} が相対角 \(\Omega\) のみに依存し、個々の \(R_{\mathrm{usual}}\) や \(R_{\mathrm{dual}}\) の絶対値には依存しないことである \footnote{ゲージ自由度に相当する。全体のローター回転は \(J\) を変えない。}。
 したがって、双対成分 \(\theta\) を外部から共鳴的に変調できる仕組みがあれば、\(J\) を変えうる \footnote{高周波電磁場、量子場の共鳴励起などが原理的候補である。}：
 \begin{itemize}[leftmargin=2em]
   \item \(J \to 0\)：重力遮蔽（ねじれの打ち消し）
@@ -3945,14 +3949,14 @@ DST は、この図式を根本的に書き換える。
 
 \subsection{連続体仮説の限界}
 
-DST の視点では、時空は離散的かつ\textbf{粒子局所的}である。各粒子が usual／dual の二重構造 \eqref{eq:position-decomp} を内在する。
+DST の視点では、時空は離散的かつ\textbf{粒子局所的}である。各粒子が 通常時空と双対時空の二重構造 \eqref{eq:position-decomp} を内在する。
 粒子間の「不整合」が巨視的に積分され、我々が「曲がった時空」と呼ぶ現象として現れる \eqref{eq:gravity-einstein}。
-連続多様体は便利な近似であるが、根本的実在ではない \footnote{これは、離散時空を仮定する他の量子重力アプローチと方向性を共有する。}.
+連続多様体は便利な近似であるが、根本的実在ではない \footnote{これは、離散時空を仮定する他の量子重力アプローチと方向性を共有する。}。
 
 \subsection{次章への接続}
 
 本章では、ねじれ不整合スカラー \(J\) \eqref{eq:gravity-J} から古典重力作用 \eqref{eq:gravity-action} を構成し、TEGR／GR との動学的等価性 \eqref{eq:gravity-EH-equivalence} を示した。
-しかし、重力だけでなく\textbf{慣性}も同じ \(\Omega\) \eqref{eq:gravity-torsion-rotor} から生じる \eqref{eq:J5-invariant}。加速系における慣性力と、曲がった時空における重力の区別は、DST では完全に消える \footnote{等価原理は公準ではなく、代数的必然として現れる。}.
+しかし、重力だけでなく\textbf{慣性}も同じ \(\Omega\) \eqref{eq:gravity-torsion-rotor} から生じる \eqref{eq:J5-invariant}。加速系における慣性力と、曲がった時空における重力の区別は、DST では完全に消える \footnote{等価原理は公準ではなく、代数的必然として現れる。}。
 
 次章「慣性と重力の統一」では、双対ローター剛性 \eqref{eq:R-dual} としての慣性抵抗、等価原理の代数的恒等式、質量ゼロ粒子の永続的整列 \eqref{eq:anti-sync} を展開する。重力と慣性が同一のねじれ不整合 \eqref{eq:gravity-torsion-rotor} から生じることを、作用のレベルを超えた物理的内容として確立する。
 
@@ -3979,9 +3983,9 @@ DST の視点では、時空は離散的かつ\textbf{粒子局所的}である�
 
 \chapter{慣性と重力の統一}
 
-前章では、ねじれ不整合スカラー \(J\) \eqref{eq:gravity-J} から重力作用 \eqref{eq:gravity-action} を構成し、TEGR／アインシュタイン--ヒルベルト 作用との動学的等価性 \eqref{eq:gravity-EH-equivalence} を示した。
+前章では、ねじれ不整合スカラー \(J\) \eqref{eq:gravity-J} から重力作用 \eqref{eq:gravity-action} を構成し、TEGR／アインシュタイン=ヒルベルト 作用との動学的等価性 \eqref{eq:gravity-EH-equivalence} を示した。
 しかし、DST の主張はここで終わらない。
-\textbf{慣性力}も、同一の相対ずれローター \(\Omega = R_{\mathrm{usual}}^\dagger R_{\mathrm{dual}}\) \eqref{eq:gravity-torsion-rotor} から生じる。加速系における慣性力と、曲がった時空における重力の区別は、DST では完全に消える \footnote{\hyperref[sec:sister-manuscripts]{親理論}「慣性と重力の統一的記述」に対応。}.
+\textbf{慣性力}も、同一の相対ずれローター \(\Omega = R_{\mathrm{usual}}^\dagger R_{\mathrm{dual}}\) \eqref{eq:gravity-torsion-rotor} から生じる。加速系における慣性力と、曲がった時空における重力の区別は、DST では完全に消える \footnote{\hyperref[sec:sister-manuscripts]{親理論}「慣性と重力の統一的記述」に対応。}。
 等価原理は公準ではなく、双対ローター剛性 \eqref{eq:R-dual} の代数的必然として現れる。
 
 本章では、作用のレベルを超えた物理的内容として、この統一を確立する。
@@ -3992,7 +3996,7 @@ DST の視点では、時空は離散的かつ\textbf{粒子局所的}である�
 \subsection{静止質量と双対セクターの結合}
 
 静止質量 \(m > 0\) は、通常時空ローター \(R_{\mathrm{usual}}\) \eqref{eq:R-usual} と双対時空ローター \(R_{\mathrm{dual}}\) \eqref{eq:R-dual} の間に\textbf{有限の結合}として現れる。
-粒子のエネルギー--運動量は通常時空側にバイアスをかけ、双対ローターを \(R_{\mathrm{usual}}\) に従わせる。ただし、即時ではなく\textbf{剛性} \(k \propto m\) をもって追従させる \footnote{量子版では \(\bar\psi\psi \propto \operatorname{Tr}(\Omega_{\mathrm{biv}})\) \eqref{eq:psi-bar-mass} として同じ結合が現れる。}.
+粒子のエネルギー--運動量は通常時空側にバイアスをかけ、双対ローターを \(R_{\mathrm{usual}}\) に従わせる。ただし、即時ではなく\textbf{剛性} \(k \propto m\) をもって追従させる \footnote{量子版では \(\bar\psi\psi \propto \operatorname{Tr}(\Omega_{\mathrm{biv}})\) \eqref{eq:psi-bar-mass} として同じ結合が現れる。}。
 
 双対セクターの生成子 \(\hat{q}\) は巡回型（\(\hat{q}^2 = -1\)）であり、位相角 \(\theta\) は \(4\pi\) 周期のコンパクト空間 \eqref{eq:S3-phase-space} 上を動く。
 通常セクターのラピディティ \(\phi\) は非コンパクト（\(\phi \in \mathbb{R}\)）である。
@@ -4032,7 +4036,7 @@ DST の視点では、時空は離散的かつ\textbf{粒子局所的}である�
   \label{eq:inertia-J-ma}
 \end{equation}
 （定比例定数は双対セクターのコンパクト化スケールに依存する）。
-したがって、同じ外力 \(\mathbf{F}\) に対してより重い粒子ほど大きな \(J\) が生じ、より強く「抵抗」する。これが \(F = ma\) の DST 的説明である \footnote{厳密には \(J\) はスカラー不変量であり、方向情報は \(\Omega_{\mathrm{biv}}\) の向き \eqref{eq:gravity-omega-expansion} に含まれる。}.
+したがって、同じ外力 \(\mathbf{F}\) に対してより重い粒子ほど大きな \(J\) が生じ、より強く「抵抗」する。これが \(F = ma\) の DST 的説明である \footnote{厳密には \(J\) はスカラー不変量であり、方向情報は \(\Omega_{\mathrm{biv}}\) の向き \eqref{eq:gravity-omega-expansion} に含まれる。}。
 
 \begin{equation}
   \boxed{\;
@@ -4050,14 +4054,14 @@ DST の視点では、時空は離散的かつ\textbf{粒子局所的}である�
 より重い粒子ほど、双対セクターの再整列に必要なエネルギーが大きい。これが、重い物体ほど加速に強く抵抗する理由を説明する。
 
 慣性は、時空が質量に「反応する」性質ではない。
-粒子\textbf{自身}の双対時空が、通常時空の変化に\textbf{瞬時に再整列することを拒否する}性質である \footnote{NW 章 \eqref{tab:tools-nw} でも、有質量粒子の \(\Omega \neq 1\) は双対剛性に帰着される。}.
+粒子\textbf{自身}の双対時空が、通常時空の変化に\textbf{瞬時に再整列することを拒否する}性質である \footnote{NW 章 \eqref{tab:tools-nw} でも、有質量粒子の \(\Omega \neq 1\) は双対剛性に帰着される。}。
 重力 \eqref{eq:gravity-action} も慣性 \eqref{eq:inertia-F-ma} も、同一の \(\Omega\) \eqref{eq:gravity-torsion-rotor} から生じる。区別は、不整合を生む\textbf{原因}（外部重力場 vs 強制加速）にあるだけで、代数的メカニズムは同一である。
 
 \section{等価原理の代数的恒等式}
 
 \subsection{エレベータ思考実験}
 
-加速度 \(a\) で上向きに加速するアインシュタインのエレベータを考える \footnote{平坦時空上の一様加速系。}.
+加速度 \(a\) で上向きに加速するアインシュタインのエレベータを考える \footnote{平坦時空上の一様加速系。}。
 内部の質量 \(m\) をもつ観測者は、下向きの見かけの力 \(ma\) を感じる。
 DST では、この知覚は次の代数的メカニズムとして記述される：
 
@@ -4069,12 +4073,12 @@ DST では、この知覚は次の代数的メカニズムとして記述され�
 
 いま、エレベータに入る光子を考える。
 光子は観測者のねじれ場 \eqref{eq:inertia-mismatch} により\textbf{曲がる}。観測者から見れば重力レンズ効果と同型である。
-しかし光子自身は、完全反同期 \eqref{eq:anti-sync} により常に \(J^{(5)} = 0\) \eqref{eq:J5-massless-zero} を保ち、自身の双対平坦時空における零測地線に従う \footnote{§3 で詳述。}.
+しかし光子自身は、完全反同期 \eqref{eq:anti-sync} により常に \(J^{(5)} = 0\) \eqref{eq:J5-massless-zero} を保ち、自身の双対平坦時空における零測地線に従う \footnote{§3 で詳述。}。
 
 \subsection{重力場との同一性}
 
 地球上で\textbf{静止}したエレベータでは、床は自由落下軌道に対して上向きに加速しなければ、建物内で静止を保てない。
-この「床の加速」は、平坦時空での一様上向き加速 \eqref{eq:inertia-F-ma} と\textbf{同一のローター不整合} \eqref{eq:gravity-torsion-rotor} を生む \footnote{前章の弱場極限 \eqref{eq:gravity-weak-rotors}–\eqref{eq:gravity-newton-potential} が、この対応の古典的限界を与える。}.
+この「床の加速」は、平坦時空での一様上向き加速 \eqref{eq:inertia-F-ma} と\textbf{同一のローター不整合} \eqref{eq:gravity-torsion-rotor} を生む \footnote{前章の弱場極限 \eqref{eq:gravity-weak-rotors}–\eqref{eq:gravity-newton-potential} が、この対応の古典的限界を与える。}。
 
 局所的に、重力加速度 \(g\) と慣性加速度 \(a\) は、同じねじれスカラー \(J\) を生成する：
 \begin{equation}
@@ -4101,7 +4105,7 @@ DST では、この知覚は次の代数的メカニズムとして記述され�
 \end{equation}
 \eqref{eq:inertia-free-fall}。
 自由落下する粒子では、重力による \(R_{\mathrm{usual}}\) の変化が、双対剛性 \eqref{eq:R-dual} により\textbf{完全に相殺}される。
-観測者にとって「力を感じない」状態は、ねじれ不整合が零である状態。重力が「消えた」のではなく、双対時空がそれを完全に追従している \footnote{これは前章 §4 の物理解釈 \eqref{eq:gravity-action} と整合する。}.
+観測者にとって「力を感じない」状態は、ねじれ不整合が零である状態。重力が「消えた」のではなく、双対時空がそれを完全に追従している \footnote{これは前章 §4 の物理解釈 \eqref{eq:gravity-action} と整合する。}。
 
 表 \ref{tab:inertia-scenarios} に、三つの典型状況をまとめる。
 
@@ -4122,9 +4126,9 @@ DST では、この知覚は次の代数的メカニズムとして記述され�
 
 \subsection{帰結と工学的含意}
 
-通常時空と双対時空の時間矢印の非対称性 \eqref{eq:duality-map-chapter} は、有質量粒子に\textbf{優先静止系}がある理由も説明する。双対時間反転が完全対称性を破り、質量ギャップを生む \footnote{量子版 \eqref{eq:psi-bar-mass} 参照。}.
+通常時空と双対時空の時間矢印の非対称性 \eqref{eq:duality-map-chapter} は、有質量粒子に\textbf{優先静止系}がある理由も説明する。双対時間反転が完全対称性を破り、質量ギャップを生む \footnote{量子版 \eqref{eq:psi-bar-mass} 参照。}。
 
-さらに、双対位相 \(\theta\) を外部から共鳴的に \(\phi\) と同期させる原理的可能性があれば、\textbf{慣性質量の低減}も原理的に可能となる \footnote{第 V 部「重力工学」章 \eqref{tab:tools-nw} で展望する。}。慣性も重力 \eqref{eq:gravity-action} も、連続体の幾何制約ではなく、工学的にアクセス可能なねじれ自由度として位置づけられる \footnote{現時点では原理的展望にとどまり、実験的実現は未確認である。}.
+さらに、双対位相 \(\theta\) を外部から共鳴的に \(\phi\) と同期させる原理的可能性があれば、\textbf{慣性質量の低減}も原理的に可能となる \footnote{第 V 部「重力工学」章 \eqref{tab:tools-nw} で展望する。}。慣性も重力 \eqref{eq:gravity-action} も、連続体の幾何制約ではなく、工学的にアクセス可能なねじれ自由度として位置づけられる \footnote{現時点では原理的展望にとどまり、実験的実現は未確認である。}。
 
 \section{質量ゼロ粒子と慣性の不在}
 
@@ -4151,13 +4155,13 @@ DST では、この知覚は次の代数的メカニズムとして記述され�
 観測者の \(J > 0\) による「重力レンズ」効果は、光子の軌道を変える。
 
 しかし光子\textbf{自身}の内在ローターは、完全反同期 \eqref{eq:anti-sync} により常に整列を保つ \eqref{eq:inertia-massless-sync}。
-光子は、自身の双対平坦時空における零測地線に従い続ける。慣性系の変換に対してねじれの代償を一切払わない \footnote{並進セクター \(N_\mu\) \eqref{eq:null-generators} が実際の光速移動 \eqref{eq:photon-motor} を担う。}.
+光子は、自身の双対平坦時空における零測地線に従い続ける。慣性系の変換に対してねじれの代償を一切払わない \footnote{並進セクター \(N_\mu\) \eqref{eq:null-generators} が実際の光速移動 \eqref{eq:photon-motor} を担う。}。
 
 \subsection{光速が普遍的速限である理由}
 
 DST において、光速 \(c\) が普遍的かつ絶対的な速限である理由は代数的に明確である。
 質量ゼロ粒子は、フレーム変化に対してねじれ不整合 \(J\) を生じない \eqref{eq:inertia-massless-sync}。
-したがって、光速以上の速度に「加速」するという概念自体が、質量ゼロ粒子には適用されない。\(F = ma\) \eqref{eq:inertia-F-ma} の前提である \(m > 0\) と \(\Omega \neq 1\) が存在しないからである \footnote{超光速位相速度の原理的可能性は、有質量物体の双対位相操作 \eqref{eq:inertia-equivalence-J} とは別の議論であり、因果律（情報は光速度以下）は保たれる。\hyperref[sec:sister-manuscripts]{親理論}「慣性と重力の統一的記述」 参照。}.
+したがって、光速以上の速度に「加速」するという概念自体が、質量ゼロ粒子には適用されない。\(F = ma\) \eqref{eq:inertia-F-ma} の前提である \(m > 0\) と \(\Omega \neq 1\) が存在しないからである \footnote{超光速位相速度の原理的可能性は、有質量物体の双対位相操作 \eqref{eq:inertia-equivalence-J} とは別の議論であり、因果律（情報は光速度以下）は保たれる。\hyperref[sec:sister-manuscripts]{親理論}「慣性と重力の統一的記述」 参照。}。
 
 有質量粒子が光速に近づくと、\(R_{\mathrm{usual}}\) のラピディティ \(\phi\) は発散するが、双対位相 \(\theta\) の追従限界 \eqref{eq:S3-phase-space} により、有限のエネルギーでは \(c\) 未満に留まる。これは次節の \(a_{\mathrm{crit}}\) \eqref{eq:inertia-acrit} とも整合する。
 
@@ -4165,7 +4169,7 @@ DST において、光速 \(c\) が普遍的かつ絶対的な速限である理
 
 \subsection{コンパクト位相と臨界加速度}
 
-§1 で述べた双対ローター剛性は、加速度そのものに\textbf{絶対的上限}を課す \footnote{\hyperref[sec:sister-manuscripts]{親理論}「加速度の上限と慣性反転現象」 参照。}.
+§1 で述べた双対ローター剛性は、加速度そのものに\textbf{絶対的上限}を課す \footnote{\hyperref[sec:sister-manuscripts]{親理論}「加速度の上限と慣性反転現象」 参照。}。
 通常セクターのブーストは非コンパクト（\(\phi \in \mathbb{R}\)）であり、それだけを見ればラピディティに上限はない \eqref{eq:R-usual}。
 しかし双対セクターは本質的にコンパクトである。生成子 \(\Gamma_a = \{I, J, K\}\) \eqref{eq:cyclic-biv} の平方は \(-1\) なので、双対ローター \eqref{eq:R-dual} は楕円位相 \(\theta \bmod 4\pi\) \eqref{eq:S3-phase-space} によって支配される。
 
@@ -4180,7 +4184,7 @@ DST において、光速 \(c\) が普遍的かつ絶対的な速限である理
   \label{eq:inertia-acrit}
 \end{equation}
 
-光速 \(c\) とは異なり、\(a_{\mathrm{crit}}\) は\textbf{普遍的ではない}。粒子種と双対セクターのコンパクト化スケールに依存するため、異なる原子構成要素は異なる臨界加速度を持つ \footnote{定量的導出は親理論の別稿で提示予定。}.
+光速 \(c\) とは異なり、\(a_{\mathrm{crit}}\) は\textbf{普遍的ではない}。粒子種と双対セクターのコンパクト化スケールに依存するため、異なる原子構成要素は異なる臨界加速度を持つ \footnote{定量的導出は親理論の別稿で提示予定。}。
 
 \subsection{慣性反転メカニズム}
 
@@ -4189,24 +4193,24 @@ DST において、光速 \(c\) が普遍的かつ絶対的な速限である理
 しかし \(a\) が \(a_{\mathrm{crit}}\) に近づく瞬間、\(\theta\) は \(4\pi\) におけるコンパクト境界を貫通し、位相の\textbf{トポロジカルな巻き戻し}（wrap-around）を受ける \eqref{eq:S3-phase-space}。
 双対ローターは \(S^3\) 様の双対セクターの反対側で位相を再縫合する。
 
-この巻き戻しは、ねじれ不整合バイベクトル \(\Omega_{\mathrm{biv}}\) \eqref{eq:gravity-omega-biv} の\textbf{符号を反転}させる \footnote{キリング形式 \eqref{eq:gravity-killing-signs} により、巡回成分 \(\beta_a\) の位相反転は \(J\) の符号反転 \eqref{tab:J-signs} に対応する。}.
+この巻き戻しは、ねじれ不整合バイベクトル \(\Omega_{\mathrm{biv}}\) \eqref{eq:gravity-omega-biv} の\textbf{符号を反転}させる \footnote{キリング形式 \eqref{eq:gravity-killing-signs} により、巡回成分 \(\beta_a\) の位相反転は \(J\) の符号反転 \eqref{tab:J-signs} に対応する。}。
 したがって、単一の双対周期にわたって\textbf{慣性応答の方向}が反転する。印加加速度が \(a_{\mathrm{crit}}\) を横切るときに引き起こされる、実効的な \(F = ma\) ベクトルの突然の離散的反転である。
-これを\textbf{慣性反転}（inertial reversal）現象と呼ぶ \footnote{acceleration reversal とも。}.
+これを\textbf{慣性反転}（inertial reversal）現象と呼ぶ \footnote{acceleration reversal とも。}。
 
-閾値直前まで剛性双対セクターに蓄積されていたねじれひずみエネルギー \eqref{eq:gravity-J} は、巻き戻しの間に急激に解放され、運動学的反転に加えて内部エネルギーの衝撃的バーストを生じる \footnote{作用 \eqref{eq:gravity-action} の \(J\) 積分が、このエネルギー貯蔵の巨視的記述である。}.
+閾値直前まで剛性双対セクターに蓄積されていたねじれひずみエネルギー \eqref{eq:gravity-J} は、巻き戻しの間に急激に解放され、運動学的反転に加えて内部エネルギーの衝撃的バーストを生じる \footnote{作用 \eqref{eq:gravity-action} の \(J\) 積分が、このエネルギー貯蔵の巨視的記述である。}。
 
 \subsection{火球空中爆発への示唆}
 
-DST は、この機構が大型隕石の異常な\textbf{空中爆発}において観測的に実現している可能性を提案する \footnote{反証可能な予測として位置づける。}.
+DST は、この機構が大型隕石の異常な\textbf{空中爆発}において観測的に実現している可能性を提案する \footnote{反証可能な予測として位置づける。}。
 地球大気に侵入する火球の超音速減速は、天体構成原子にとって \(a_{\mathrm{crit}}\) のオーダーに達しうる。
 
-火球研究における長年の謎（とりわけツングースカ事件（1908年）とチェリャビンスク超火球（2013年））は、崩壊高度と総放射エネルギーが、空力焼失と破砕だけに基づく運動エネルギー散逸モデルでは説明困難である \footnote{詳細な比較は別稿。}.
-DST では、隕石の減速度が物質特異的な \(a_{\mathrm{crit}}\) を横切ると、構成原子の双対位相が\textbf{集合的}に巻き戻し、蓄積されたねじれひずみエネルギーを爆発的・主として放射的なパルスとして放出する。\textbf{集合的慣性反転}として説明できる \footnote{\(a_{\mathrm{crit}}\) の組成依存性は、隕石クラス間（炭素質コンドライト vs 普通コンドライト）の空中爆発高度・エネルギーの変動も説明しうる。}.
+火球研究における長年の謎（とりわけツングースカ事件（1908年）とチェリャビンスク超火球（2013年））は、崩壊高度と総放射エネルギーが、空力焼失と破砕だけに基づく運動エネルギー散逸モデルでは説明困難である \footnote{詳細な比較は別稿。}。
+DST では、隕石の減速度が物質特異的な \(a_{\mathrm{crit}}\) を横切ると、構成原子の双対位相が\textbf{集合的}に巻き戻し、蓄積されたねじれひずみエネルギーを爆発的・主として放射的なパルスとして放出する。\textbf{集合的慣性反転}として説明できる \footnote{\(a_{\mathrm{crit}}\) の組成依存性は、隕石クラス間（炭素質コンドライト vs 普通コンドライト）の空中爆発高度・エネルギーの変動も説明しうる。}。
 
 \subsection{次章への接続}
 
 本章の \(a_{\mathrm{crit}}\) \eqref{eq:inertia-acrit} は、\textbf{単一粒子}の固有加速度上限である。
-次章「強場領域：層状ねじれとねじれ星」で扱う \(J\) の符号振動 \eqref{tab:J-signs} は、\textbf{密度増大}に伴う多体・強場効果（引力と斥力の層状交互）であり、スケールの異なる現象である \footnote{両者は同一の \(J\) \eqref{eq:gravity-J} から生じるが、単粒子慣性反転 vs 恒星コアの層状ねじれは物理条件が異なる。}.
+次章「強場領域：層状ねじれとねじれ星」で扱う \(J\) の符号振動 \eqref{tab:J-signs} は、\textbf{密度増大}に伴う多体・強場効果（引力と斥力の層状交互）であり、スケールの異なる現象である \footnote{両者は同一の \(J\) \eqref{eq:gravity-J} から生じるが、単粒子慣性反転 vs 恒星コアの層状ねじれは物理条件が異なる。}。
 
 \paragraph{論理の鎖}
 以上をまとめると：
@@ -4245,8 +4249,8 @@ DST では、隕石の減速度が物質特異的な \(a_{\mathrm{crit}}\) を�
 \chapter{強場領域：層状ねじれとねじれ星}
 
 前章では、単一粒子の固有加速度上限 \(a_{\mathrm{crit}}\) \eqref{eq:inertia-acrit} により、双対位相 \(\theta\) の \(4\pi\) 巻き戻しが\textbf{慣性反転}を引き起こすことを示した \eqref{eq:inertia-J-ma}。
-本章では、\textbf{同一}のねじれ不整合スカラー \(J\) \eqref{eq:gravity-J} が、密度増大に伴う\textbf{多体・強場}条件下でどう振る舞うかを展開する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「強場領域：層状重力反転と新ブラックホール像」に対応。}.
-\(a_{\mathrm{crit}}\) は粒子種固有の単粒子現象であるのに対し、本章の \(J\) 符号振動 \eqref{tab:J-signs} は恒星コアのような極端密度領域における\textbf{集団的}な層状構造を記述する。両者は代数的メカニズム \eqref{eq:gravity-killing-signs} を共有するが、物理条件は異なる \footnote{前章 §5「次章への接続」参照。}.
+本章では、\textbf{同一}のねじれ不整合スカラー \(J\) \eqref{eq:gravity-J} が、密度増大に伴う\textbf{多体・強場}条件下でどう振る舞うかを展開する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「強場領域：層状重力反転と新ブラックホール像」に対応。}。
+\(a_{\mathrm{crit}}\) は粒子種固有の単粒子現象であるのに対し、本章の \(J\) 符号振動 \eqref{tab:J-signs} は恒星コアのような極端密度領域における\textbf{集団的}な層状構造を記述する。両者は代数的メカニズム \eqref{eq:gravity-killing-signs} を共有するが、物理条件は異なる \footnote{前章 §5「次章への接続」参照。}。
 
 DST の主張は次のとおりである。
 キリング形式 \eqref{eq:killing-torsion} の符号非対称性（通常時空ブースト（\(+\)）と双対時空回転（\(-\)））は、重力を\textbf{一度だけ}反転させるのではない。
@@ -4262,11 +4266,11 @@ DST の主張は次のとおりである。
 
 弱場（太陽系スケール）では \(\alpha_a \gg \beta_a\) が成り立ち、\(J > 0\) の通常引力 \eqref{eq:gravity-newton-potential} が支配的である。
 しかし極端密度では、双対ローターパラメーター \(\theta\) \eqref{eq:R-dual} が非線形に増大し、巡回成分 \(\beta_a\) が双曲成分 \(\alpha_a\) に匹敵しうる。
-半径 \(r\) が減少するにつれ、\(J(r)\) の符号が繰り返し反転する（\textbf{連続共鳴}）が駆動される \footnote{定量的プロファイルは\hyperref[sec:sister-manuscripts]{親理論}「強場領域：層状重力反転と新ブラックホール像」 参照。}.
+半径 \(r\) が減少するにつれ、\(J(r)\) の符号が繰り返し反転する（\textbf{連続共鳴}）が駆動される \footnote{定量的プロファイルは\hyperref[sec:sister-manuscripts]{親理論}「強場領域：層状重力反転と新ブラックホール像」 参照。}。
 
 \subsection{玉ねぎ様内部}
 
-結果として、球対称な強場天体の有効ポテンシャルは、中心に向かうにつれ振幅が増大する\textbf{層状}構造を呈する \footnote{曲率テンソルは使わない。すべて \(J\) \eqref{eq:gravity-J} と角度対 \((\alpha_a, \beta_a)\) から記述される。}.
+結果として、球対称な強場天体の有効ポテンシャルは、中心に向かうにつれ振幅が増大する\textbf{層状}構造を呈する \footnote{曲率テンソルは使わない。すべて \(J\) \eqref{eq:gravity-J} と角度対 \((\alpha_a, \beta_a)\) から記述される。}。
 
 \begin{equation}
   \boxed{\;
@@ -4303,7 +4307,7 @@ DST の主張は次のとおりである。
 
 \subsection{特異点・事象地平の不在}
 
-この層状構造は、古典 GR の二大病理（\textbf{中心特異点}と\textbf{事象地平}）の両方を排除する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「強場領域：層状重力反転と新ブラックホール像」 の核心的予測。}.
+この層状構造は、古典 GR の二大病理（\textbf{中心特異点}と\textbf{事象地平}）の両方を排除する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「強場領域：層状重力反転と新ブラックホール像」 の核心的予測。}。
 
 \begin{itemize}[leftmargin=2em]
   \item \textbf{特異点の不在}：物質は \(J\) の符号反転を繰り返す層を貫通するが、\(r = 0\) には到達しない。中心付近では \(J \to 0\) となる浮遊コア \eqref{eq:strongfield-floating-core} が存在する（§5）。
@@ -4313,9 +4317,9 @@ DST の主張は次のとおりである。
 
 \subsection{カー型回転ブラックホールの排除}
 
-従来型のカー型回転ブラックホール（大域的フレームドラッグ \eqref{eq:gravity-sch-torsion} を必要とする）は DST では排除される \footnote{角運動量の保存則そのものを否定するわけではない。}.
+従来型のカー型回転ブラックホール（大域的フレームドラッグ \eqref{eq:gravity-sch-torsion} を必要とする）は DST では排除される \footnote{角運動量の保存則そのものを否定するわけではない。}。
 DST では、角運動量は時空そのものの回転として現れるのではなく、双対ローターの\textbf{縦モード}（\(\theta\) 方向の振動）へ再分配される \eqref{eq:R-dual}。
-理論が許容する大域的フレームドラッグの大きさには厳しい上限があり、観測上の「スピン」パラメーターは、双対位相の縦振動スペクトル \eqref{eq:S3-phase-space} として再解釈される \footnote{カースピン署名の不在は §4 で再論する。}.
+理論が許容する大域的フレームドラッグの大きさには厳しい上限があり、観測上の「スピン」パラメーターは、双対位相の縦振動スペクトル \eqref{eq:S3-phase-space} として再解釈される \footnote{カースピン署名の不在は §4 で再論する。}。
 
 \paragraph{論理の鎖（§1）}
 以上をまとめると：
@@ -4330,19 +4334,19 @@ DST では、角運動量は時空そのものの回転として現れるので�
 
 \subsection{第一斥力層によるコアバウンス}
 
-大質量星（\(M \gtrsim 8\,M_\odot\)）の重力崩壊において、中心コアの密度が核密度 \(\rho_{\mathrm{nuc}} \sim 10^{14}\,\mathrm{g/cm^3}\) に達すると、第一斥力層 \(J < 0\) \eqref{tab:strongfield-layers} が出現する \footnote{核密度スケールの詳細は次章「スケール不変ねじれ：核力と電子殻」でも扱う。}.
-この斥力殻は降着を\textbf{爆発的に停止}させ、コアバウンス（core bounce）を引き起こす。観測される Type II 超新星の主要駆動機構である \footnote{標準的な超新星モデルでは、ニュートリノ加熱の微調整が爆発の成否を左右する。DST では第一斥力層が主役である。}.
+大質量星（\(M \gtrsim 8\,M_\odot\)）の重力崩壊において、中心コアの密度が核密度 \(\rho_{\mathrm{nuc}} \sim 10^{14}\,\mathrm{g/cm^3}\) に達すると、第一斥力層 \(J < 0\) \eqref{tab:strongfield-layers} が出現する \footnote{核密度スケールの詳細は次章「スケール不変ねじれ：核力と電子殻」でも扱う。}。
+この斥力殻は降着を\textbf{爆発的に停止}させ、コアバウンス（core bounce）を引き起こす。観測される Type II 超新星の主要駆動機構である \footnote{標準的な超新星モデルでは、ニュートリノ加熱の微調整が爆発の成否を左右する。DST では第一斥力層が主役である。}。
 
 重要なのは、DST において超新星爆発は\textbf{微調整されたニュートリノ物理}を必要としない点である。
 第一斥力層は、キリング形式 \eqref{eq:gravity-killing-signs} から\textbf{必然的}に現れる \(J < 0\) 領域 \eqref{tab:J-signs} である。双対セクターが通常セクターを上回る密度閾値に達すれば、斥力重力が自動的に駆動される \eqref{eq:gravity-action}。
 
 \subsection{層状残骸の形成}
 
-コアバウンスで外側方向に駆動された物質の一部は、より深い引力層 \(J \gg 0\) \eqref{eq:strongfield-layers} によって\textbf{再捕獲}される \footnote{バウンス後のフォールバック（fallback）現象。}.
+コアバウンスで外側方向に駆動された物質の一部は、より深い引力層 \(J \gg 0\) \eqref{eq:strongfield-layers} によって\textbf{再捕獲}される \footnote{バウンス後のフォールバック（fallback）現象。}。
 残存する層状構造（引力殻と斥力殻の交互）が、観測される超新星残骸（中性子星、ねじれ星）を形成する。
 
-観測事実として、超新星の爆発エネルギー（\(10^{51}\) erg オーダー）と残骸質量（\(1\)–\(2\,M_\odot\)）には大きなばらつきがある \footnote{SN 1987A、カシオペヤ座 A 等。}.
-DST では、この多様性は\textbf{励起されるねじれ層の数と強さ}から自然に創発する。初期コア条件（回転、組成、質量）が、到達する層数 \eqref{tab:strongfield-layers} と各層の \(J\) の大きさを決定し、結果として爆発エネルギーと残骸質量の分布が生じる \footnote{定量的相関の導出は親理論の別稿で提示予定。}.
+観測事実として、超新星の爆発エネルギー（\(10^{51}\) erg オーダー）と残骸質量（\(1\)–\(2\,M_\odot\)）には大きなばらつきがある \footnote{SN 1987A、カシオペヤ座 A 等。}。
+DST では、この多様性は\textbf{励起されるねじれ層の数と強さ}から自然に創発する。初期コア条件（回転、組成、質量）が、到達する層数 \eqref{tab:strongfield-layers} と各層の \(J\) の大きさを決定し、結果として爆発エネルギーと残骸質量の分布が生じる \footnote{定量的相関の導出は親理論の別稿で提示予定。}。
 
 \paragraph{論理の鎖（§2）}
 \begin{enumerate}[leftmargin=2em]
@@ -4356,40 +4360,40 @@ DST では、この多様性は\textbf{励起されるねじれ層の数と強�
 
 \subsection{回転磁化導体像の否定}
 
-観測される中性子星（パルサー）は、従来の天体物理学では\textbf{高速回転磁化導体}として記述される \footnote{回転磁気ブレーキングモデル。}.
+観測される中性子星（パルサー）は、従来の天体物理学では\textbf{高速回転磁化導体}として記述される \footnote{回転磁気ブレーキングモデル。}。
 ミリ秒スピン周期と強い双極磁場（\(10^{12}\)–\(10^{15}\,\mathrm{G}\)）が、パルサー電波パルスとスピンダウンの主要エネルギー源とされる。
 
-DST は、この像を\textbf{根本的に否定}する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「パルサーを縦方向双対ねじれ振動子として」 参照。}.
-パルサー電波パルスは、星表面における双対ローター位相 \(\theta\) \eqref{eq:R-dual} の\textbf{超高周波縦振動}から生じる。回転ではなく、ねじれ波の放射である \footnote{横方向の回転成分は双対位相空間 \eqref{eq:S3-phase-space} の縦モードとして再解釈される。}.
+DST は、この像を\textbf{根本的に否定}する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「パルサーを縦方向双対ねじれ振動子として」 参照。}。
+パルサー電波パルスは、星表面における双対ローター位相 \(\theta\) \eqref{eq:R-dual} の\textbf{超高周波縦振動}から生じる。回転ではなく、ねじれ波の放射である \footnote{横方向の回転成分は双対位相空間 \eqref{eq:S3-phase-space} の縦モードとして再解釈される。}。
 
 \subsection{ねじれ波の伝播とビーム形成}
 
-双対位相 \(\theta\) の縦振動は、ほぼ光速 \(c\) で半径方向に伝播する \footnote{並進セクター \(N_\mu\) \eqref{eq:null-generators} による光速伝播。}.
-内部のカオス的層状構造 \eqref{eq:strongfield-layers} によって変調され、ねじれ衝撃領域（\(J\) の符号反転界面）での曲率放射 \eqref{eq:gravity-action} により、観測方向へのビームが形成される \footnote{従来の磁極カップ放射の代わりに、ねじれ界面放射。}.
+双対位相 \(\theta\) の縦振動は、ほぼ光速 \(c\) で半径方向に伝播する \footnote{並進セクター \(N_\mu\) \eqref{eq:null-generators} による光速伝播。}。
+内部のカオス的層状構造 \eqref{eq:strongfield-layers} によって変調され、ねじれ衝撃領域（\(J\) の符号反転界面）での曲率放射 \eqref{eq:gravity-action} により、観測方向へのビームが形成される \footnote{従来の磁極カップ放射の代わりに、ねじれ界面放射。}。
 
-パルサーのスピンダウン（観測周期 \(P\) の増大 \(\dot{P} > 0\)）も、磁気ブレーキングではなく\textbf{ねじれ波漏れ}（torsion-wave leakage）として説明される \footnote{カニ星雲パルサー（PSR B0531+21）のスピンダウン光度は、非現実的な磁場減衰を要せず、ねじれ波漏れで一致する。}.
+パルサーのスピンダウン（観測周期 \(P\) の増大 \(\dot{P} > 0\)）も、磁気ブレーキングではなく\textbf{ねじれ波漏れ}（torsion-wave leakage）として説明される \footnote{カニ星雲パルサー（PSR B0531+21）のスピンダウン光度は、非現実的な磁場減衰を要せず、ねじれ波漏れで一致する。}。
 
 \subsection{回転磁星モデルを超える予測}
 
-DST によるパルサー関連の主要予測を整理する \footnote{反証可能な予測として位置づける。}.
+DST によるパルサー関連の主要予測を整理する \footnote{反証可能な予測として位置づける。}。
 
 \begin{itemize}[leftmargin=2em]
-  \item \textbf{短周期限界}：理論的最小パルス周期はプランクスケール二重ローター周波数によって決まり、観測された \(\sim 1\,\mathrm{ms}\) 限界より遥かに短い。回転パルサー像では説明困難な短周期パルサーが存在しうる \footnote{ミリ秒パルサー PSR J1748--2446ad（\(\sim 1.4\,\mathrm{ms}\)）等。}.
-  \item \textbf{グリッチと \(\dot{P} < 0\)}：パルサー「グリッチ」（周期の突然の変化）と \(\dot{P} < 0\)（周期\textbf{短縮}）は、パルサーがねじれエネルギーを失い振動界面が縮小することに起因する。時間とともに振動周波数が加速する自然機構であり、純粋な回転モデルには見られない \footnote{Vela パルサーの頻繁なグリッチ。}.
-  \item \textbf{マグネターと FRB}：マグネターフレアと高速電波バースト（FRB）は、引力／斥力層間の激しい反転 \eqref{eq:strongfield-layers} によるねじれひずみの解放である。\(10^{15}\,\mathrm{G}\) の磁場を要しない \footnote{磁場強度は双対位相の縦振動振幅 \eqref{eq:R-dual} から\textbf{創発}的に読み取れる有効量にすぎない。}.
-  \item \textbf{\(P\)–\(\dot{P}\) デスライン}：\(P\)–\(\dot{P}\) 図のデスラインは、内部層状構造が安定化し縦モードが検出限界以下に減衰する点に対応する \footnote{パルサー進化の終端。}.
-  \item \textbf{最大質量}：中性子星の最大質量は、クォーク物質の存在ではなく、核安定性を制限するのと\textbf{同一}のねじれ層状構造 \eqref{tab:strongfield-layers} によって上限される。厳密上界 \(\sim 2.5\,M_\odot\) を予測し、\(\sim 3\,M_\odot\) 以上のパルサーの不在を説明する \footnote{観測上の最大パルサー質量は \(\sim 2.1\,M_\odot\)（PSR J0740+6620）。}.
+  \item \textbf{短周期限界}：理論的最小パルス周期はプランクスケール二重ローター周波数によって決まり、観測された \(\sim 1\,\mathrm{ms}\) 限界より遥かに短い。回転パルサー像では説明困難な短周期パルサーが存在しうる \footnote{ミリ秒パルサー PSR J1748--2446ad（\(\sim 1.4\,\mathrm{ms}\)）等。}。
+  \item \textbf{グリッチと \(\dot{P} < 0\)}：パルサー「グリッチ」（周期の突然の変化）と \(\dot{P} < 0\)（周期\textbf{短縮}）は、パルサーがねじれエネルギーを失い振動界面が縮小することに起因する。時間とともに振動周波数が加速する自然機構であり、純粋な回転モデルには見られない \footnote{Vela パルサーの頻繁なグリッチ。}。
+  \item \textbf{マグネターと FRB}：マグネターフレアと高速電波バースト（FRB）は、引力／斥力層間の激しい反転 \eqref{eq:strongfield-layers} によるねじれひずみの解放である。\(10^{15}\,\mathrm{G}\) の磁場を要しない \footnote{磁場強度は双対位相の縦振動振幅 \eqref{eq:R-dual} から\textbf{創発}的に読み取れる有効量にすぎない。}。
+  \item \textbf{\(P\)–\(\dot{P}\) デスライン}：\(P\)–\(\dot{P}\) 図のデスラインは、内部層状構造が安定化し縦モードが検出限界以下に減衰する点に対応する \footnote{パルサー進化の終端。}。
+  \item \textbf{最大質量}：中性子星の最大質量は、クォーク物質の存在ではなく、核安定性を制限するのと\textbf{同一}のねじれ層状構造 \eqref{tab:strongfield-layers} によって上限される。厳密上界 \(\sim 2.5\,M_\odot\) を予測し、\(\sim 3\,M_\odot\) 以上のパルサーの不在を説明する \footnote{観測上の最大パルサー質量は \(\sim 2.1\,M_\odot\)（PSR J0740+6620）。}。
 \end{itemize}
 
 \section{ねじれ星：新ブラックホール像}
 
 \subsection{準安定層状凝縮物}
 
-観測者が「ブラックホール」と呼ぶ天体は、DST では\textbf{ねじれ星}（torsion star）である \footnote{\hyperref[sec:sister-manuscripts]{親理論}「新ブラックホール像：ねじれ星」 参照。}.
-事象地平も中心特異点も存在しない。代わりに、引力層と斥力層が交互に重なる\textbf{準安定層状凝縮物} \eqref{eq:strongfield-layers} である \footnote{弱場外層 \eqref{eq:gravity-sch-tetrad} はシュバルツシルト近似として有効だが、内部は層状構造で完全に置き換わる。}.
+観測者が「ブラックホール」と呼ぶ天体は、DST では\textbf{ねじれ星}（torsion star）である \footnote{\hyperref[sec:sister-manuscripts]{親理論}「新ブラックホール像：ねじれ星」 参照。}。
+事象地平も中心特異点も存在しない。代わりに、引力層と斥力層が交互に重なる\textbf{準安定層状凝縮物} \eqref{eq:strongfield-layers} である \footnote{弱場外層 \eqref{eq:gravity-sch-tetrad} はシュバルツシルト近似として有効だが、内部は層状構造で完全に置き換わる。}。
 
-最も内側のカオス的コアは、プランク密度プラズマとして永続的ねじれ乱流の中に存在する \footnote{密度 \(\rho \sim \rho_P = c^5/(G^2\hbar) \sim 10^{94}\,\mathrm{g/cm^3}\)。}.
-このコアは、\textbf{ロータートンネル}（rotor tunnelling）（双対ローター位相 \eqref{eq:R-dual} を介した量子トンネル放射）により連続的にエネルギーを放射する \footnote{修正ホーキング過程；因果律を破らない。}.
+最も内側のカオス的コアは、プランク密度プラズマとして永続的ねじれ乱流の中に存在する \footnote{密度 \(\rho \sim \rho_P = c^5/(G^2\hbar) \sim 10^{94}\,\mathrm{g/cm^3}\)。}。
+このコアは、\textbf{ロータートンネル}（rotor tunnelling）（双対ローター位相 \eqref{eq:R-dual} を介した量子トンネル放射）により連続的にエネルギーを放射する \footnote{修正ホーキング過程；因果律を破らない。}。
 
 \begin{equation}
   \boxed{\;
@@ -4403,35 +4407,35 @@ DST によるパルサー関連の主要予測を整理する \footnote{反証�
 
 \subsection{情報の保存}
 
-情報パラドックス（ブラックホール蒸発で情報が失われるか）は、DST では\textbf{解決}される \footnote{\hyperref[sec:sister-manuscripts]{親理論}「強場領域：層状重力反転と新ブラックホール像」 末尾参照。}.
-情報は双対ローター位相 \(\theta_a\) \eqref{eq:R-dual} に\textbf{保存}される。ロータートンネル放射は位相情報を運び、外部観測者が復元可能な形で放出される \footnote{ホーキングの熱放射（情報消滅）ではなく、位相符号付き放射。}.
+情報パラドックス（ブラックホール蒸発で情報が失われるか）は、DST では\textbf{解決}される \footnote{\hyperref[sec:sister-manuscripts]{親理論}「強場領域：層状重力反転と新ブラックホール像」 末尾参照。}。
+情報は双対ローター位相 \(\theta_a\) \eqref{eq:R-dual} に\textbf{保存}される。ロータートンネル放射は位相情報を運び、外部観測者が復元可能な形で放出される \footnote{ホーキングの熱放射（情報消滅）ではなく、位相符号付き放射。}。
 
 \subsection{重力波エコー}
 
-二連星合体後の残存ねじれ星は、引力層と斥力層が交互に重なる層状内部 \eqref{eq:strongfield-layers} を持つ \footnote{\hyperref[sec:sister-manuscripts]{粒子安定性論文}「ねじれ星からの重力波エコー」参照。}.
-入射重力波は各ねじれ界面（\(J\) の符号反転面）で部分的に反射し、\textbf{エコー}の列を生む \footnote{LIGO/Virgo データの再解析にすでに示唆がある。反証可能な予測。}.
+二連星合体後の残存ねじれ星は、引力層と斥力層が交互に重なる層状内部 \eqref{eq:strongfield-layers} を持つ \footnote{\hyperref[sec:sister-manuscripts]{粒子安定性論文}「ねじれ星からの重力波エコー」参照。}。
+入射重力波は各ねじれ界面（\(J\) の符号反転面）で部分的に反射し、\textbf{エコー}の列を生む \footnote{LIGO/Virgo データの再解析にすでに示唆がある。反証可能な予測。}。
 
-連続エコー間の時間遅延 \(\Delta t\) は、ねじれ層の厚さと \(J\) の大きさ \eqref{eq:gravity-J} から計算可能である \footnote{定量的 \(\Delta t \sim 2M\ln(2)\) 型のスケーリングは\hyperref[sec:sister-manuscripts]{親理論}「ねじれ不整合スカラー J と TEGR のテレパラレルねじれスカラー T の等価性」参照。}.
+連続エコー間の時間遅延 \(\Delta t\) は、ねじれ層の厚さと \(J\) の大きさ \eqref{eq:gravity-J} から計算可能である \footnote{定量的 \(\Delta t \sim 2M\ln(2)\) 型のスケーリングは\hyperref[sec:sister-manuscripts]{親理論}「ねじれ不整合スカラー J と TEGR のテレパラレルねじれスカラー T の等価性」参照。}。
 
 \subsection{その他の予測}
 
 \begin{itemize}[leftmargin=2em]
-  \item \textbf{カースピン署名の不在}：大域的フレームドラッグ \eqref{eq:gravity-sch-torsion} が禁じられるため、カー型 BH 特有のスピン測定署名は観測されない \footnote{§1 参照。}.
-  \item \textbf{降着光度の周期変調}：最も重い「ブラックホール」（\(M \gtrsim 100\,M_\odot\)）は、内部斥力層が物質を周期的に放出することにより、降着光度に周期変調を示す \footnote{AGN の変光と関連しうる。}.
+  \item \textbf{カースピン署名の不在}：大域的フレームドラッグ \eqref{eq:gravity-sch-torsion} が禁じられるため、カー型 BH 特有のスピン測定署名は観測されない \footnote{§1 参照。}。
+  \item \textbf{降着光度の周期変調}：最も重い「ブラックホール」（\(M \gtrsim 100\,M_\odot\)）は、内部斥力層が物質を周期的に放出することにより、降着光度に周期変調を示す \footnote{AGN の変光と関連しうる。}。
 \end{itemize}
 
 \section{中心浮遊コアと時間膨張ゼロ}
 
 \subsection{GR との対比}
 
-一般相対性理論（GR）では、球対称静止質量分布に対して、重力学的時間膨張は中心に向かって\textbf{単調に増大}する。\(r = 0\) で固有時は最も遅く流れる \footnote{シュワルツシルト解 \eqref{eq:gravity-sch-tetrad} の \(g_{tt} = -(1 - 2GM/rc^2)\)。}.
+一般相対性理論（GR）では、球対称静止質量分布に対して、重力学的時間膨張は中心に向かって\textbf{単調に増大}する。\(r = 0\) で固有時は最も遅く流れる \footnote{シュワルツシルト解 \eqref{eq:gravity-sch-tetrad} の \(g_{tt} = -(1 - 2GM/rc^2)\)。}。
 
-DST では状況が\textbf{著しく異なる} \footnote{\hyperref[sec:sister-manuscripts]{親理論}「中心浮遊コア：中心での時間膨張ゼロ」 参照。}.
-背景連続時空多様体が存在しないため \eqref{eq:gravity-torsion-rotor}、有効加速度と時間膨張の両方を含む重力効果は、粒子内在的な通常・双対ローター間のねじれ不整合 \eqref{eq:gravity-J} のみから生じる \footnote{次章「時間膨張と双対固有時」で \(\gamma_{\mathrm{eff}}\) を詳述する。}.
+DST では状況が\textbf{著しく異なる} \footnote{\hyperref[sec:sister-manuscripts]{親理論}「中心浮遊コア：中心での時間膨張ゼロ」 参照。}。
+背景連続時空多様体が存在しないため \eqref{eq:gravity-torsion-rotor}、有効加速度と時間膨張の両方を含む重力効果は、粒子内在的な通常・双対ローター間のねじれ不整合 \eqref{eq:gravity-J} のみから生じる \footnote{次章「時間膨張と双対固有時」で \(\gamma_{\mathrm{eff}}\) を詳述する。}。
 
 \subsection{中心での \(J = 0\)}
 
-球対称ねじれ星の幾何学的中心では、完全対称性により反対方向の質量元が誘起する通常時空ブーストパラメーター \(\phi_a\) \eqref{eq:R-usual} が\textbf{完全に打ち消される} \footnote{ニュートン力学でも \(r = 0\) の有効重力加速度は零である。}.
+球対称ねじれ星の幾何学的中心では、完全対称性により反対方向の質量元が誘起する通常時空ブーストパラメーター \(\phi_a\) \eqref{eq:R-usual} が\textbf{完全に打ち消される} \footnote{ニュートン力学でも \(r = 0\) の有効重力加速度は零である。}。
 残余不整合角
 \begin{equation}
   \delta\phi_a := \phi_a - \theta_a
@@ -4450,35 +4454,35 @@ DST では状況が\textbf{著しく異なる} \footnote{\hyperref[sec:sister-ma
 
 したがって：
 \begin{itemize}[leftmargin=2em]
-  \item \textbf{有効重力加速度}は中心で零である \footnote{GR、DST 共通。ただし GR では \(r \to 0\) で時間膨張が発散するのに対し、DST では零になる。}.
-  \item \textbf{重力学的時間膨張}も中心で零である。\(r = 0\) の固有時は星から遠い真空と\textbf{同じ率}で流れる \footnote{次章「時間膨張と双対固有時」で \(\gamma_{\mathrm{eff}}\) として形式化する。}.
+  \item \textbf{有効重力加速度}は中心で零である \footnote{GR、DST 共通。ただし GR では \(r \to 0\) で時間膨張が発散するのに対し、DST では零になる。}。
+  \item \textbf{重力学的時間膨張}も中心で零である。\(r = 0\) の固有時は星から遠い真空と\textbf{同じ率}で流れる \footnote{次章「時間膨張と双対固有時」で \(\gamma_{\mathrm{eff}}\) として形式化する。}。
 \end{itemize}
 
-中心での時間膨張の消失 \eqref{eq:strongfield-floating-core} は、DST の\textbf{区別的}で原理上観測可能な予測である。GR では中心領域が最も強い時間膨張を経験する \footnote{GR と DST の鋭い対比；天体物理観測での検証可能性は別途論じる。}.
+中心での時間膨張の消失 \eqref{eq:strongfield-floating-core} は、DST の\textbf{区別的}で原理上観測可能な予測である。GR では中心領域が最も強い時間膨張を経験する \footnote{GR と DST の鋭い対比；天体物理観測での検証可能性は別途論じる。}。
 
 \subsection{ねじれ星の安定性}
 
-時間膨張ゼロの浮遊コア \eqref{eq:strongfield-floating-core} は、古典 GR 記述における特異点を導く\textbf{無限中心圧縮}と\textbf{極端な時計率勾配}を消去する \footnote{§1「特異点の不在」と整合。}.
-これがねじれ星 \eqref{eq:strongfield-torsion-star} の長期安定性にも寄与する。物質は \(J = 0\) の浮遊コア周辺で準平衡を保ち、永続的ねじれ乱流 \eqref{eq:strongfield-layers} の中に留まる \footnote{完全な熱平衡ではなく、層間振動による準安定状態。}.
+時間膨張ゼロの浮遊コア \eqref{eq:strongfield-floating-core} は、古典 GR 記述における特異点を導く\textbf{無限中心圧縮}と\textbf{極端な時計率勾配}を消去する \footnote{§1「特異点の不在」と整合。}。
+これがねじれ星 \eqref{eq:strongfield-torsion-star} の長期安定性にも寄与する。物質は \(J = 0\) の浮遊コア周辺で準平衡を保ち、永続的ねじれ乱流 \eqref{eq:strongfield-layers} の中に留まる \footnote{完全な熱平衡ではなく、層間振動による準安定状態。}。
 
 \subsection{惑星・恒星コアへの含意}
 
-\(J(r = 0) \approx 0\) \eqref{eq:strongfield-floating-core} で有効重力が中心で消失する浮遊コア像は、惑星と恒星のコアが不活で安定な領域ではなく、\textbf{ねじれ不安定性}に晒された動的に活発な帯であることを意味する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「惑星・恒星コアへの含意：不安定性と揺らぎ」 参照。}.
+\(J(r = 0) \approx 0\) \eqref{eq:strongfield-floating-core} で有効重力が中心で消失する浮遊コア像は、惑星と恒星のコアが不活で安定な領域ではなく、\textbf{ねじれ不安定性}に晒された動的に活発な帯であることを意味する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「惑星・恒星コアへの含意：不安定性と揺らぎ」 参照。}。
 
-連続体モデルで仮定される重力ポテンシャルの単調増大とは異なり、DST では中心浮遊コアが\textbf{準安定状態}であり、引力層と斥力層 \eqref{eq:strongfield-layers} の間の振動遷移を引き起こす摂動に敏感である \footnote{わずかな密度変化や外因でも共鳴条件 \(\beta_a(0) \to 1\) をずらし、\(J\) が零から離れた瞬間的逸脱を導きうる。}.
+連続体モデルで仮定される重力ポテンシャルの単調増大とは異なり、DST では中心浮遊コアが\textbf{準安定状態}であり、引力層と斥力層 \eqref{eq:strongfield-layers} の間の振動遷移を引き起こす摂動に敏感である \footnote{わずかな密度変化や外因でも共鳴条件 \(\beta_a(0) \to 1\) をずらし、\(J\) が零から離れた瞬間的逸脱を導きうる。}。
 
 \begin{itemize}[leftmargin=2em]
-  \item \textbf{ミニねじれ星}：\(J\) の瞬間的逸脱は局所的ねじれエネルギー \eqref{eq:gravity-action} のバーストとして現れ、コア内にミニねじれ星を生成する \footnote{縮尺は天体により異なる。地球コア vs 太陽コア。}.
-  \item \textbf{恒星内部}：コア揺らぎが太陽フレア、黒点、光度変動などに寄与しうる。ねじれエネルギーが層状構造 \eqref{eq:strongfield-layers} を通じて外向きに伝播するため \footnote{定量的相関は未検証。原理的予測として位置づける。}.
-  \item \textbf{惑星内部}：コアねじれ不安定性が地磁気反転、マントルプルーム、断続的火山活動を説明しうる。ねじれ動学 \eqref{eq:R-dual} が上層の対流過程と結合するため \footnote{地球の地磁気反転（\(10^5\) 年スケール）等。}.
+  \item \textbf{ミニねじれ星}：\(J\) の瞬間的逸脱は局所的ねじれエネルギー \eqref{eq:gravity-action} のバーストとして現れ、コア内にミニねじれ星を生成する \footnote{縮尺は天体により異なる。地球コア vs 太陽コア。}。
+  \item \textbf{恒星内部}：コア揺らぎが太陽フレア、黒点、光度変動などに寄与しうる。ねじれエネルギーが層状構造 \eqref{eq:strongfield-layers} を通じて外向きに伝播するため \footnote{定量的相関は未検証。原理的予測として位置づける。}。
+  \item \textbf{惑星内部}：コアねじれ不安定性が地磁気反転、マントルプルーム、断続的火山活動を説明しうる。ねじれ動学 \eqref{eq:R-dual} が上層の対流過程と結合するため \footnote{地球の地磁気反転（\(10^5\) 年スケール）等。}。
 \end{itemize}
 
-したがって浮遊コア \eqref{eq:strongfield-floating-core} は静穏な領域ではなく、惑星・恒星振る舞いに広範な含意をもつ\textbf{動的ねじれ現象}の坩堀である \footnote{反証可能な予測として、コア揺らぎの直接観測は将来の地震学・ヘリオシスモロジーで検証可能。}.
+したがって浮遊コア \eqref{eq:strongfield-floating-core} は静穏な領域ではなく、惑星・恒星振る舞いに広範な含意をもつ\textbf{動的ねじれ現象}の坩堀である \footnote{反証可能な予測として、コア揺らぎの直接観測は将来の地震学・ヘリオシスモロジーで検証可能。}。
 
 \subsection{次章への接続}
 
 本章では、\(J\) \eqref{eq:gravity-J} の符号振動 \eqref{tab:J-signs} が強場天体の層状構造 \eqref{eq:strongfield-layers} を生むことを示した。
-次章「時間膨張と双対固有時」では、通常固有時 \(\tau\) と双対固有時 \(\tilde{\tau}\)（コンパクト位相 \(\theta\) \eqref{eq:R-dual}）の動学的役割を展開し、有効ローレンツ因子 \(\gamma_{\mathrm{eff}}\) とスカラー干渉因子 \(\gamma_s\) の導出（とくに斥力層 \(\gamma_s < 0\) \eqref{tab:J-signs}）を詳述する \footnote{浮遊コア \eqref{eq:strongfield-floating-core} での \(\gamma_{\mathrm{eff}} \to 1\) も次章で形式化される。}.
+次章「時間膨張と双対固有時」では、通常固有時 \(\tau\) と双対固有時 \(\tilde{\tau}\)（コンパクト位相 \(\theta\) \eqref{eq:R-dual}）の動学的役割を展開し、有効ローレンツ因子 \(\gamma_{\mathrm{eff}}\) とスカラー干渉因子 \(\gamma_s\) の導出（とくに斥力層 \(\gamma_s < 0\) \eqref{tab:J-signs}）を詳述する \footnote{浮遊コア \eqref{eq:strongfield-floating-core} での \(\gamma_{\mathrm{eff}} \to 1\) も次章で形式化される。}。
 
 \paragraph{論理の鎖（本章）}
 以上をまとめると：
@@ -4505,7 +4509,7 @@ DST では状況が\textbf{著しく異なる} \footnote{\hyperref[sec:sister-ma
   （b）\(\dot{P} < 0\)（周期短縮）が回転モデルでは説明困難である理由。
 
   \item ねじれ星 \eqref{eq:strongfield-torsion-star} が、古典 GR のブラックホールとどう異なるか、次の三項目について述べよ：
-  事象地平の有無、中心特異点の有無、情報パラドックスの扱い \footnote{ロータートンネル放射と双対位相保存 \eqref{eq:R-dual}。}.
+  事象地平の有無、中心特異点の有無、情報パラドックスの扱い \footnote{ロータートンネル放射と双対位相保存 \eqref{eq:R-dual}。}。
 
   \item 浮遊コア \eqref{eq:strongfield-floating-core} において \(J(r = 0) \approx 0\) となる理由を、球対称性による \(\phi_a\) の打ち消し \eqref{eq:strongfield-delta-phi} から説明せよ。
   GR では中心で時間膨張が最大になるのに対し、DST では中心で時間膨張が零になる対比を 3--4 文で述べよ。
@@ -4515,9 +4519,9 @@ DST では状況が\textbf{著しく異なる} \footnote{\hyperref[sec:sister-ma
 
 \chapter{時間膨張と双対固有時}
 
-前章では、強場天体内部の層状ねじれ構造 \eqref{eq:strongfield-layers} と中心浮遊コア \eqref{eq:strongfield-floating-core} を示した。\(r = 0\) では \(J \approx 0\) となり、GR とは対照的に\textbf{重力学的時間膨張が零}になる \footnote{\hyperref[sec:sister-manuscripts]{親理論}「二重時空理論における時間膨張：双対時空固有時の動学的役割」に対応。}.
+前章では、強場天体内部の層状ねじれ構造 \eqref{eq:strongfield-layers} と中心浮遊コア \eqref{eq:strongfield-floating-core} を示した。\(r = 0\) では \(J \approx 0\) となり、GR とは対照的に\textbf{重力学的時間膨張が零}になる \footnote{\hyperref[sec:sister-manuscripts]{親理論}「二重時空理論における時間膨張：双対時空固有時の動学的役割」に対応。}。
 本章では、その予測を形式化する。
-DST における時間膨張は、背景連続多様体の曲率ではなく、粒子内在の全ローター \(R_{\mathrm{total}} = R_{\mathrm{usual}} R_{\mathrm{dual}}\) \eqref{eq:R-total} の\textbf{干渉}から創発する \footnote{重力作用 \eqref{eq:gravity-action} も同一の \(\Omega\) \eqref{eq:gravity-torsion-rotor} から生じる。時間膨張は重力の運動学的側面である。}.
+DST における時間膨張は、背景連続多様体の曲率ではなく、粒子内在の全ローター \(R_{\mathrm{total}} = R_{\mathrm{usual}} R_{\mathrm{dual}}\) \eqref{eq:R-total} の\textbf{干渉}から創発する \footnote{重力作用 \eqref{eq:gravity-action} も同一の \(\Omega\) \eqref{eq:gravity-torsion-rotor} から生じる。時間膨張は重力の運動学的側面である。}。
 
 通常時空の固有時 \(\tau\) は、第 II 部 \eqref{eq:four-velocity} で導入したとおり、粒子が携える時計が刻む時間に対応する。
 双対時空の固有時 \(\tilde{\tau}\) は、コンパクトローター位相 \(\theta\) \eqref{eq:R-dual} に符号化され、ねじれ不整合 \(J\) \eqref{eq:gravity-J} を駆動する内部動学を担う。
@@ -4546,14 +4550,14 @@ DST における時間膨張は、背景連続多様体の曲率ではなく、�
   \hat{q}\,(-i) = -\hat{p}
   \label{eq:timedilation-q-alignment}
 \end{equation}
-を自然に与える \footnote{完全反同期 \eqref{eq:anti-sync} の第二条件 \(\hat{p}\, i = -\hat{q}\) と同型。双曲生成子と巡回生成子が逆向きに対応する。}.
+を自然に与える \footnote{完全反同期 \eqref{eq:anti-sync} の第二条件 \(\hat{p}\, i = -\hat{q}\) と同型。双曲生成子と巡回生成子が逆向きに対応する。}。
 この整列により、双対ローターは通常時空基底上で\textbf{有効的逆向きローター}へと変換される：
 \begin{equation}
   R_{\mathrm{dual}}^{\mathrm{eff}}
   = \cos\frac{\theta}{2} - \hat{p}\,\sin\frac{\theta}{2}.
   \label{eq:timedilation-Rdual-eff}
 \end{equation}
-\(\sin\) 項の\textbf{負符号}は逆双対写像から直接生じ、ねじれのない平坦時空 \eqref{eq:inertia-free-fall} に必要な反同期を反映する \footnote{絶対角での完全反同期 \eqref{eq:anti-sync}（\(\phi = \theta\), \(\hat{p}\, i = -\hat{q}\)）は、相対ずれローター \(\Omega = 1\) \eqref{eq:zero-torsion-massless} として同じ物理を記述する。有効角表示 \eqref{eq:timedilation-Rdual-eff} では \(\theta = 0\)（双対未励起）が真空条件に対応する。}.
+\(\sin\) 項の\textbf{負符号}は逆双対写像から直接生じ、ねじれのない平坦時空 \eqref{eq:inertia-free-fall} に必要な反同期を反映する \footnote{絶対角での完全反同期 \eqref{eq:anti-sync}（\(\phi = \theta\), \(\hat{p}\, i = -\hat{q}\)）は、相対ずれローター \(\Omega = 1\) \eqref{eq:zero-torsion-massless} として同じ物理を記述する。有効角表示 \eqref{eq:timedilation-Rdual-eff} では \(\theta = 0\)（双対未励起）が真空条件に対応する。}。
 
 全有効ローターはしたがって
 \begin{equation}
@@ -4578,7 +4582,7 @@ DST における時間膨張は、背景連続多様体の曲率ではなく、�
     + \sinh\frac{\phi}{2}\,\cos\frac{\theta}{2}
   \label{eq:timedilation-b}
 \end{equation}
-が得られる \footnote{双曲関数と三角関数の積公式；\(\hat{p}^2 = +1\) より \(R_{\mathrm{eff}} = s + b\hat{p}\) と書ける。}.
+が得られる \footnote{双曲関数と三角関数の積公式；\(\hat{p}^2 = +1\) より \(R_{\mathrm{eff}} = s + b\hat{p}\) と書ける。}。
 
 時間成分の純粋なスケーリングは、サンドイッチ積を通じて時間ベクトルに作用する \(R_{\mathrm{eff}}\) の二乗大きさから生じる。
 \(\hat{p}\) は時間生成子 \(j\) と反可換 \eqref{eq:hyperbolic-biv} するため、\(R_{\mathrm{eff}} = s + b\hat{p}\) が \(X = ct\, j\) に作用するとき時間成分は \(s^2 + b^2\) 倍され、有効ローレンツ因子は一意に
@@ -4596,9 +4600,9 @@ DST における時間膨張は、背景連続多様体の曲率ではなく、�
   \label{eq:timedilation-gamma-s}
 \end{equation}
 も導入する。
-\(\gamma_s\) は \(\gamma_{\mathrm{eff}} \geq 0\) とは異なり\textbf{符号を変えうる}。以下では引力（\(\gamma_s > 0\)）と斥力（\(\gamma_s < 0\)）のねじれ領域 \eqref{tab:J-signs} を区別する次数パラメーターとして用いる \footnote{干渉項の負符号 \eqref{eq:timedilation-s} は双対時空の時間反転デュアリティ \eqref{eq:duality-map-chapter} によって固定される。}.
+\(\gamma_s\) は \(\gamma_{\mathrm{eff}} \geq 0\) とは異なり\textbf{符号を変えうる}。以下では引力（\(\gamma_s > 0\)）と斥力（\(\gamma_s < 0\)）のねじれ領域 \eqref{tab:J-signs} を区別する次数パラメーターとして用いる \footnote{干渉項の負符号 \eqref{eq:timedilation-s} は双対時空の時間反転デュアリティ \eqref{eq:duality-map-chapter} によって固定される。}。
 
-\subsection{真空極限での SR 回復}
+\subsection{真空極限での特殊相対論（SR）回復}
 
 厳密にねじれのない真空（\(J = 0\)）では、双対時空は未励起（\(\theta = 0\)）のままなので \(R_{\mathrm{total}} = R_{\mathrm{usual}}\) \eqref{eq:timedilation-Rtotal} である。
 このとき \(s = \cosh(\phi/2)\)、\(b = \sinh(\phi/2)\) \eqref{eq:timedilation-s}–\eqref{eq:timedilation-b} であり、
@@ -4609,13 +4613,13 @@ DST における時間膨張は、背景連続多様体の曲率ではなく、�
   = \cosh\phi,
   \label{eq:timedilation-vacuum-sr}
 \end{equation}
-となり、標準的狭義相対論のローレンツ因子 \eqref{eq:four-velocity-gamma} が正確に再現される。
+となり、標準的な特殊相対論のローレンツ因子 \eqref{eq:four-velocity-gamma} が正確に再現される。
 
 \section{真空極限と質量ゼロ粒子}
 
 \subsection{\(J = 0\) 真空での運動学}
 
-ねじれのない真空（\(J = 0\)）では、通常ローターと双対ローターの相対ずれが消え \eqref{eq:inertia-free-fall}、\(\gamma_{\mathrm{eff}} \to \cosh\phi\) \eqref{eq:timedilation-vacuum-sr} となる。狭義相対論の標準ローレンツ因子が回復される \footnote{有効角表示 \eqref{eq:timedilation-Rdual-eff} では \(\theta = 0\)；絶対角表示 \eqref{eq:anti-sync} では \(\theta \approx \phi\)（コンパクト周期性を除く）。いずれも \(\Omega = 1\) \eqref{eq:zero-torsion-massless} と同値である。}.
+ねじれのない真空（\(J = 0\)）では、通常ローターと双対ローターの相対ずれが消え \eqref{eq:inertia-free-fall}、\(\gamma_{\mathrm{eff}} \to \cosh\phi\) \eqref{eq:timedilation-vacuum-sr} となる。特殊相対論の標準ローレンツ因子が回復される \footnote{有効角表示 \eqref{eq:timedilation-Rdual-eff} では \(\theta = 0\)；絶対角表示 \eqref{eq:anti-sync} では \(\theta \approx \phi\)（コンパクト周期性を除く）。いずれも \(\Omega = 1\) \eqref{eq:zero-torsion-massless} と同値である。}。
 
 外部重力場も加速もない理想的自由粒子では、双対セクターは通常セクターに追従し、時間膨張は純粋に運動学的 \(\phi\) だけに依存する \eqref{eq:four-velocity-gamma}。
 
@@ -4633,7 +4637,7 @@ DST における時間膨張は、背景連続多様体の曲率ではなく、�
 \eqref{eq:inertia-massless-sync} が\textbf{すべての速度}で正確に保たれる。
 
 光子はすべての慣性系でこの同期を維持し、ねじれ不整合を経験しない \eqref{eq:zero-torsion-massless}。
-したがって \(\delta\theta = \theta - \phi = 0\) となり、\(\gamma_{\mathrm{eff}}\) への\textbf{重力的・慣性的補正は存在しない}。観測される時間膨張は通常運動学的 \(\cosh\phi\) のみである \footnote{周囲のねじれ場 \eqref{eq:inertia-mismatch} により光子の\textbf{軌道}は曲がるが、光子自身の内在ローターは \(J = 0\) \eqref{eq:timedilation-massless-sync} を保つ。慣性章 §3 参照。}.
+したがって \(\delta\theta = \theta - \phi = 0\) となり、\(\gamma_{\mathrm{eff}}\) への\textbf{重力的・慣性的補正は存在しない}。観測される時間膨張は通常運動学的 \(\cosh\phi\) のみである \footnote{周囲のねじれ場 \eqref{eq:inertia-mismatch} により光子の\textbf{軌道}は曲がるが、光子自身の内在ローターは \(J = 0\) \eqref{eq:timedilation-massless-sync} を保つ。慣性章 §3 参照。}。
 
 この事実は、光速 \(c\) が普遍的速限である理由 \eqref{eq:inertia-massless-sync} と整合する。
 質量ゼロ粒子は双対ローター剛性 \eqref{eq:inertia-F-ma} を持たないため、フレーム変換に対してねじれの代償を一切払わない \eqref{tab:torsion-mass}。
@@ -4650,10 +4654,10 @@ DST における時間膨張は、背景連続多様体の曲率ではなく、�
   \delta\theta := \theta - \phi
   \label{eq:timedilation-delta-theta}
 \end{equation}
-が生じ、\(\gamma_{\mathrm{eff}}\) \eqref{eq:timedilation-gamma-eff} に付加的変調をもたらす \footnote{量子版では \(\bar\psi\psi \propto \operatorname{Tr}(\Omega_{\mathrm{biv}})\) \eqref{eq:psi-bar-mass} として同じ結合が現れる。}.
+が生じ、\(\gamma_{\mathrm{eff}}\) \eqref{eq:timedilation-gamma-eff} に付加的変調をもたらす \footnote{量子版では \(\bar\psi\psi \propto \operatorname{Tr}(\Omega_{\mathrm{biv}})\) \eqref{eq:psi-bar-mass} として同じ結合が現れる。}。
 この \(\delta\theta\) こそが、GR で観測される\textbf{重力赤方偏移}と\textbf{重力学的時間膨張}の DST 的解釈である。背景曲率ではなく、粒子内在的な双対時空動学の直接帰結 \eqref{eq:gravity-action}。
 
-弱場近傍では、\(\delta\theta\) は重力ポテンシャル \(\Phi\) に比例し、\(\gamma_{\mathrm{eff}} \approx 1 + \Phi/c^2\) \eqref{eq:gravity-newton-potential} として GR の弱場結果 \eqref{eq:gravity-sch-tetrad} と一致する \footnote{シュワルツシルト tetrad \eqref{eq:gravity-sch-tetrad} の \(g_{tt} = -(1 - 2GM/rc^2)\) に対応。}.
+弱場近傍では、\(\delta\theta\) は重力ポテンシャル \(\Phi\) に比例し、\(\gamma_{\mathrm{eff}} \approx 1 + \Phi/c^2\) \eqref{eq:gravity-newton-potential} として GR の弱場結果 \eqref{eq:gravity-sch-tetrad} と一致する \footnote{シュワルツシルト・テトラッド \eqref{eq:gravity-sch-tetrad} の \(g_{tt} = -(1 - 2GM/rc^2)\) に対応。}。
 
 \subsection{浮遊コアでの \(\gamma_{\mathrm{eff}} \to 1\)}
 
@@ -4668,9 +4672,9 @@ DST における時間膨張は、背景連続多様体の曲率ではなく、�
   \;}
   \label{eq:timedilation-floating-core}
 \end{equation}
-となる \footnote{GR では \(r \to 0\) で \(\gamma_{\mathrm{eff}} \to \infty\)（最も遅い時計）；DST では \(\gamma_{\mathrm{eff}} \to 1\)（真空と同率）。観測上の鋭い対比。}.
+となる \footnote{GR では \(r \to 0\) で \(\gamma_{\mathrm{eff}} \to \infty\)（最も遅い時計）；DST では \(\gamma_{\mathrm{eff}} \to 1\)（真空と同率）。観測上の鋭い対比。}。
 
-GR では球対称静止質量分布の中心で重力学的時間膨張が\textbf{最大}になる \footnote{シュワルツシルト解 \eqref{eq:gravity-sch-tetrad}。}.
+GR では球対称静止質量分布の中心で重力学的時間膨張が\textbf{最大}になる \footnote{シュワルツシルト解 \eqref{eq:gravity-sch-tetrad}。}。
 DST では中心で \(J \approx 0\) \eqref{eq:strongfield-floating-core} かつ \(\delta\phi_a \to 0\) \eqref{eq:strongfield-delta-phi} となり、時間膨張は\textbf{零}。\(r = 0\) の固有時は星から遠い真空と同じ率で流れる \eqref{eq:timedilation-floating-core}。
 
 \section{スカラー干渉因子の符号反転と斥力層}
@@ -4683,33 +4687,33 @@ DST では中心で \(J \approx 0\) \eqref{eq:strongfield-floating-core} かつ 
   \tan\!\left(\frac{\theta}{2}\right) > \coth\!\left(\frac{\phi}{2}\right)
   \label{eq:timedilation-gamma-s-negative}
 \end{equation}
-である \footnote{\(\gamma_s = 0\) となる臨界角も存在する。\(J = 0\) \eqref{eq:gravity-J} との対応は一般に非自明であるが、両者とも双対／通常セクターのバランスを測る。}.
+である \footnote{\(\gamma_s = 0\) となる臨界角も存在する。\(J = 0\) \eqref{eq:gravity-J} との対応は一般に非自明であるが、両者とも双対／通常セクターのバランスを測る。}。
 
 これらの領域ではスカラー干渉因子 \(\gamma_s < 0\) \eqref{eq:timedilation-gamma-s} となる一方、固有時ローレンツ因子
 \begin{equation}
   \gamma_{\mathrm{eff}} = s^2 + b^2 \;\geq\; 0
   \label{eq:timedilation-gamma-eff-nonneg}
 \end{equation}
-は\textbf{非負のまま}である \footnote{因果律の文字通りの反転ではない。固有時は常に正の方向に流れる。}.
+は\textbf{非負のまま}である \footnote{因果律の文字通りの反転ではない。固有時は常に正の方向に流れる。}。
 
 \subsection{ねじれ星の斥力層との対応}
 
-\(\gamma_s\) の符号反転は、前章の層状構造 \eqref{eq:strongfield-layers} における\textbf{斥力層}（\(J < 0\)）\eqref{tab:J-signs} に対応する \footnote{キリング形式 \eqref{eq:gravity-killing-signs} により、双対セクター（\(\beta_a\)）が通常セクター（\(\alpha_a\)）を上回ると \(J < 0\) \eqref{tab:J-signs}。\(\gamma_s < 0\) も同じ物理的バランスの破れをスカラーチャンネルで測る。}.
+\(\gamma_s\) の符号反転は、前章の層状構造 \eqref{eq:strongfield-layers} における\textbf{斥力層}（\(J < 0\)）\eqref{tab:J-signs} に対応する \footnote{キリング形式 \eqref{eq:gravity-killing-signs} により、双対セクター（\(\beta_a\)）が通常セクター（\(\alpha_a\)）を上回ると \(J < 0\) \eqref{tab:J-signs}。\(\gamma_s < 0\) も同じ物理的バランスの破れをスカラーチャンネルで測る。}。
 物理的には、結合ローターのスカラーチャンネル \eqref{eq:timedilation-s} において双対セクター寄与が通常セクターのブーストに打ち勝ち、\textbf{重力学的斥力}として現れる \eqref{eq:gravity-action}。
 
-次章「スケール不変ねじれ：核力と電子殻」では、同一の \(\gamma_s < 0\) 機構が核密度スケール \footnote{\(\sim 10^{14}\)–\(10^{18}\)\,g/cm\(^3\)。} でも現れることを示す。層状ねじれ反転は厳密にスケール不変である \footnote{\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」 参照。}.
+次章「スケール不変ねじれ：核力と電子殻」では、同一の \(\gamma_s < 0\) 機構が核密度スケール \footnote{\(\sim 10^{14}\)–\(10^{18}\)\,g/cm\(^3\)。} でも現れることを示す。層状ねじれ反転は厳密にスケール不変である \footnote{\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」 参照。}。
 
 \subsection{\(\theta\) 中心定式化と工学的含意}
 
 この \(\theta\) 中心定式化 \eqref{eq:timedilation-gamma-eff}–\eqref{eq:timedilation-gamma-s} は、時間膨張が根本的に粒子内在的な双対時空に由来する\textbf{ねじれ現象}であることを明示する。
 通常ラピディティ \(\phi\) は運動学的基準線を与え、コンパクト双対角 \(\theta\) のずれ \(\delta\theta\) \eqref{eq:timedilation-delta-theta} が GR と平坦時空運動学を区別する重力学的・慣性的補正を符号化する \eqref{eq:gravity-EH-equivalence}。
 
-したがって、\(\theta\) の外部\textbf{コヒーレント励起}は、時間膨張と有効重力場を操作する経路を原理上提供する \footnote{詳細は後章「重力工学：双対ローターのコヒーレント励起」で扱う。THz 円偏波と双対成分 \(\theta_a\) の共鳴的変調 \eqref{eq:R-dual}。}.
+したがって、\(\theta\) の外部\textbf{コヒーレント励起}は、時間膨張と有効重力場を操作する経路を原理上提供する \footnote{詳細は後章「重力工学：双対ローターのコヒーレント励起」で扱う。THz 円偏波と双対成分 \(\theta_a\) の共鳴的変調 \eqref{eq:R-dual}。}。
 
 \subsection{次章への接続}
 
 本章では、角度対 \((\phi, \theta)\) から \(\gamma_{\mathrm{eff}}\) \eqref{eq:timedilation-gamma-eff} と \(\gamma_s\) \eqref{eq:timedilation-gamma-s} を導出し、浮遊コア \eqref{eq:timedilation-floating-core} と斥力層 \(\gamma_s < 0\) \eqref{eq:timedilation-gamma-s-negative} を形式化した。
-次章「スケール不変ねじれ：核力と電子殻」では、\(\gamma_s < 0\) の斥力層が核内部の極端密度領域 \footnote{フェムトメートルスケール。} でも同一代数 \eqref{eq:gravity-killing-signs} で現れ、「強い力＝核内部の斥力ねじれ層」として再解釈される \footnote{原子核を原始ねじれ星として記述する。}.
+次章「スケール不変ねじれ：核力と電子殻」では、\(\gamma_s < 0\) の斥力層が核内部の極端密度領域 \footnote{フェムトメートルスケール。} でも同一代数 \eqref{eq:gravity-killing-signs} で現れ、「強い力＝核内部の斥力ねじれ層」として再解釈される \footnote{原子核を原始ねじれ星として記述する。}。
 
 \paragraph{論理の鎖（本章）}
 以上をまとめると：
@@ -4729,7 +4733,7 @@ DST では中心で \(J \approx 0\) \eqref{eq:strongfield-floating-core} かつ 
 
   \item 完全反同期 \eqref{eq:anti-sync} が成り立つ光子について、なぜ \(\delta\theta = 0\) \eqref{eq:timedilation-delta-theta} となり、重力的時間膨張補正が存在しないのか、\(\Omega = 1\) \eqref{eq:timedilation-massless-sync} から 3--4 文で説明せよ。
 
-  \item 質量粒子が外部重力場 \eqref{eq:gravity-action} 中にいるとき、双対ローターが通常ローターに「遅れる」 \eqref{eq:inertia-F-ma} メカニズムから \(\delta\theta \neq 0\) \eqref{eq:timedilation-delta-theta} が生じ、\(\gamma_{\mathrm{eff}}\) \eqref{eq:timedilation-gamma-eff} が SR 値 \(\cosh\phi\) からずれる理由を述べよ。
+  \item 質量粒子が外部重力場 \eqref{eq:gravity-action} 中にいるとき、双対ローターが通常ローターに「遅れる」 \eqref{eq:inertia-F-ma} メカニズムから \(\delta\theta \neq 0\) \eqref{eq:timedilation-delta-theta} が生じ、\(\gamma_{\mathrm{eff}}\) \eqref{eq:timedilation-gamma-eff} が特殊相対論（SR）の値 \(\cosh\phi\) からずれる理由を述べよ。
 
   \item \(\gamma_s < 0\) \eqref{eq:timedilation-gamma-s-negative} となる条件を、\(\tan(\theta/2) > \coth(\phi/2)\) の形で書き、\(\gamma_{\mathrm{eff}} \geq 0\) \eqref{eq:timedilation-gamma-eff-nonneg} が維持される理由を述べよ。
   ねじれ星の斥力層 \eqref{eq:strongfield-layers} との対応を 2--3 文で述べよ。
@@ -4743,13 +4747,13 @@ DST では中心で \(J \approx 0\) \eqref{eq:strongfield-floating-core} かつ 
 
 \chapter{スケール不変ねじれ：核力と電子殻}
 
-前章では、スカラー干渉因子 \(\gamma_s < 0\) \eqref{eq:timedilation-gamma-s-negative} による\textbf{斥力層}が、ねじれ星内部 \eqref{eq:strongfield-layers} で現れることを形式化した \footnote{\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」、「時間反転とクーロンねじれ層による電子殻」に対応。}.
+前章では、スカラー干渉因子 \(\gamma_s < 0\) \eqref{eq:timedilation-gamma-s-negative} による\textbf{斥力層}が、ねじれ星内部 \eqref{eq:strongfield-layers} で現れることを形式化した \footnote{\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」、「時間反転とクーロンねじれ層による電子殻」に対応。}。
 本章では、その機構が\textbf{スケール不変}であることを示し、核力と原子構造を同一の層状ねじれ動力学の異なる密度相として記述する。
 
-キリング形式 \eqref{eq:gravity-killing-signs} によって予測される \(J\) \eqref{eq:gravity-J} の符号反転は、恒星コアの km スケールでも核内部の fm スケールでも\textbf{同一代数} \eqref{eq:gravity-omega-biv} で駆動される。密度が \(\sim 10^{14}\)–\(10^{18}\,\mathrm{g/cm^3}\) に達すれば、双対ローター位相 \(\theta\) \eqref{eq:R-dual} が支配し、フェムトメートルスケールで引力層と斥力層が交互に現れる \footnote{強場章 \eqref{eq:strongfield-layers} の層状構造と同一メカニズム。スケールだけが異なる。}.
+キリング形式 \eqref{eq:gravity-killing-signs} によって予測される \(J\) \eqref{eq:gravity-J} の符号反転は、恒星コアの km スケールでも核内部の fm スケールでも\textbf{同一代数} \eqref{eq:gravity-omega-biv} で駆動される。密度が \(\sim 10^{14}\)–\(10^{18}\,\mathrm{g/cm^3}\) に達すれば、双対ローター位相 \(\theta\) \eqref{eq:R-dual} が支配し、フェムトメートルスケールで引力層と斥力層が交互に現れる \footnote{強場章 \eqref{eq:strongfield-layers} の層状構造と同一メカニズム。スケールだけが異なる。}。
 
 DST の主張は次のとおりである。
-\textbf{強い力は根本的相互作用ではない}。核内部の極端密度領域における\textbf{重力チャンネル} \((\phi, \theta)\) の斥力ねじれ層の創発的現れである \footnote{電磁チャンネル \((\alpha, \beta)\) による原子スケールの層状相は §3 で扱う。詳細な二チャンネル統一は次章「電磁気力・弱い力との統一」。}.
+\textbf{強い力は根本的相互作用ではない}。核内部の極端密度領域における\textbf{重力チャンネル} \((\phi, \theta)\) の斥力ねじれ層の創発的現れである \footnote{電磁チャンネル \((\alpha, \beta)\) による原子スケールの層状相は §3 で扱う。詳細な二チャンネル統一は次章「電磁気力・弱い力との統一」。}。
 原子核は重力チャンネルの\textbf{原始ねじれ星}であり、電子殻は電磁チャンネルの原始ねじれ星として、同一の幾何学的機構（双対ローターの層状舞踏）から創発する。
 
 \section{核密度におけるねじれ層}
@@ -4766,8 +4770,8 @@ DST の主張は次のとおりである。
 キリング形式 \eqref{eq:gravity-killing-signs} により \(B(B_a^{+}) = +8\)、\(B(B_a^{-}) = -8\) なので、支配的寄与が二セクター間で切り替わるたびに \(J\) の符号が反転する \eqref{tab:J-signs}。
 
 強場章 \eqref{eq:strongfield-layers} では、この反転が恒星コアの km スケールで起こることを示した。
-核物理では、バリオン密度が核密度 \(\rho_{\mathrm{nuc}} \sim 10^{14}\,\mathrm{g/cm^3}\) を超え、さらに亜核密度 \(\sim 10^{18}\,\mathrm{g/cm^3}\) に近づくと、双対ローターパラメーター \(\theta\) \eqref{eq:R-dual} が完全に支配する \footnote{超新星コアバウンス \eqref{eq:strongfield-layers} でも同じ密度閾値が現れる。強場章 §2 参照。}.
-\(J\) における符号反転の列は、フェムトメートルスケールで起こる \footnote{スカラー干渉因子 \(\gamma_s < 0\) \eqref{eq:timedilation-gamma-s-negative} も同じ物理的バランスの破れを測る。前章 §4 参照。}.
+核物理では、バリオン密度が核密度 \(\rho_{\mathrm{nuc}} \sim 10^{14}\,\mathrm{g/cm^3}\) を超え、さらに亜核密度 \(\sim 10^{18}\,\mathrm{g/cm^3}\) に近づくと、双対ローターパラメーター \(\theta\) \eqref{eq:R-dual} が完全に支配する \footnote{超新星コアバウンス \eqref{eq:strongfield-layers} でも同じ密度閾値が現れる。強場章 §2 参照。}。
+\(J\) における符号反転の列は、フェムトメートルスケールで起こる \footnote{スカラー干渉因子 \(\gamma_s < 0\) \eqref{eq:timedilation-gamma-s-negative} も同じ物理的バランスの破れを測る。前章 §4 参照。}。
 
 \begin{equation}
   \boxed{\;
@@ -4780,7 +4784,7 @@ DST の主張は次のとおりである。
 
 \subsection{核内部の四層構造}
 
-核密度領域における \(J(r)\) の層状プロファイルを、表 \ref{tab:nuclear-layers} にまとめる \footnote{定量的プロファイルは\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」 参照。}.
+核密度領域における \(J(r)\) の層状プロファイルを、表 \ref{tab:nuclear-layers} にまとめる \footnote{定量的プロファイルは\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」 参照。}。
 
 \begin{table}[htbp]
   \centering
@@ -4798,9 +4802,9 @@ DST の主張は次のとおりである。
   \end{tabular}
 \end{table}
 
-最外層の斥力殻 \(J < 0\) \eqref{tab:J-signs} は、核子--核子散乱における短距離斥力（\(\sim\) 0.5\,fm のハードコア）として観測される \footnote{前章の \(\gamma_s < 0\) \eqref{eq:timedilation-gamma-s-negative} 斥力層と同型。スカラーチャンネル \eqref{eq:timedilation-s} とキリングチャンネル \eqref{eq:gravity-J} の二重記述。}.
+最外層の斥力殻 \(J < 0\) \eqref{tab:J-signs} は、核子--核子散乱における短距離斥力（\(\sim\) 0.5\,fm のハードコア）として観測される \footnote{前章の \(\gamma_s < 0\) \eqref{eq:timedilation-gamma-s-negative} 斥力層と同型。スカラーチャンネル \eqref{eq:timedilation-s} とキリングチャンネル \eqref{eq:gravity-J} の二重記述。}。
 中間層の超強引力 \(J \gg 0\) は、核子を \(\sim\) 40--50\,MeV/核子で束縛する。観測される核束縛エネルギーである。
-最内層の第二斥力殻は、さらなる崩壊を止め、クォーク閉じ込めを課す \footnote{標準模型 QCD における「色閉じ込め」の DST 的再解釈。§2 末尾で触れる。}.
+最内層の第二斥力殻は、さらなる崩壊を止め、クォーク閉じ込めを課す \footnote{標準模型 QCD における「色閉じ込め」の DST 的再解釈。§2 末尾で触れる。}。
 
 \begin{equation}
   \boxed{\;
@@ -4814,17 +4818,17 @@ DST の主張は次のとおりである。
 \subsection{パウリ排他原理の動的生成}
 
 パウリの排他原理は、DST ではもはや\textbf{基本的公理}ではない。
-第一斥力ねじれ層 \(J < 0\) \eqref{tab:nuclear-layers} によって\textbf{動的に生成}される \footnote{\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」 の核心的再解釈。}.
+第一斥力ねじれ層 \(J < 0\) \eqref{tab:nuclear-layers} によって\textbf{動的に生成}される \footnote{\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」 の核心的再解釈。}。
 
 同一の量子状態にフェルミオンが二つ以上占有できない理由は、幾何学的である。
-二つの同一フェルミオンが空間的重なりを試みると、双対ローター位相 \(\theta\) \eqref{eq:R-dual} が斥力領域 \(J < 0\) \eqref{tab:J-signs} に入る。有効フェルミ圧が生じ、占有が阻止される \footnote{量子統計を先験的に要請する必要がない。ねじれ層の幾何から創発する。}.
+二つの同一フェルミオンが空間的重なりを試みると、双対ローター位相 \(\theta\) \eqref{eq:R-dual} が斥力領域 \(J < 0\) \eqref{tab:J-signs} に入る。有効フェルミ圧が生じ、占有が阻止される \footnote{量子統計を先験的に要請する必要がない。ねじれ層の幾何から創発する。}。
 
 対照的に、ボソンはこの位相剛性を欠く。
-ボソンははるかに高密度まで引力層 \(J > 0\) のみを経験しうる。ボース--アインシュタイン凝縮 \footnote{超流動ヘリウム等} との整合性は、位相剛性の有無という単一の原理から説明される。
+ボソンははるかに高密度まで引力層 \(J > 0\) のみを経験しうる。ボース=アインシュタイン凝縮 \footnote{超流動ヘリウム等} との整合性は、位相剛性の有無という単一の原理から説明される。
 
 \subsection{QCD 色電荷の再解釈}
 
-標準模型 QCD における「色電荷」は、DST では双対ローター位相 \(\theta_a\) \eqref{eq:R-dual} が運ぶ\textbf{ねじれ電荷}の誤解釈である \footnote{完全なゲージ理論的記述は次章「標準模型ゲージ群の有効記述」で扱う。}.
+標準模型 QCD における「色電荷」は、DST では双対ローター位相 \(\theta_a\) \eqref{eq:R-dual} が運ぶ\textbf{ねじれ電荷}の誤解釈である \footnote{完全なゲージ理論的記述は次章「標準模型ゲージ群の有効記述」で扱う。}。
 核内部の最内層斥力殻 \eqref{tab:nuclear-layers} が、クォークを閉じ込める幾何学的障壁として機能する。色荷の保存則は、ねじれ層のトポロジー \eqref{eq:S3-phase-space} から創発する有効記述である。
 
 \paragraph{論理の鎖（§1）}
@@ -4841,7 +4845,7 @@ DST の主張は次のとおりである。
 
 \subsection{ねじれ星の微視的類似}
 
-すべての原子核は、強場章 \eqref{eq:strongfield-layers} の\textbf{ねじれ星}の微視的類似物である \footnote{\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」 の「原始ねじれ星」概念。}.
+すべての原子核は、強場章 \eqref{eq:strongfield-layers} の\textbf{ねじれ星}の微視的類似物である \footnote{\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」 の「原始ねじれ星」概念。}。
 核内部は、同一の層状構造 \eqref{tab:nuclear-layers} をもつカオス的ねじれ凝縮物である。スケールだけが km から fm へ縮小される \eqref{eq:nuclear-scale-invariance}。
 
 \begin{itemize}[leftmargin=2em]
@@ -4855,36 +4859,36 @@ DST の主張は次のとおりである。
 
 \subsection{共鳴条件と観測される核性質}
 
-観測される核力の\textbf{電荷独立性}、\textbf{スピン軌道結合}、\textbf{魔法数}は、すべて双対ロータースペクトル \eqref{eq:R-dual} \eqref{eq:S3-phase-space} における\textbf{共鳴条件}から創発する \footnote{魔法数 2, 8, 20, 28, 50, 82, 126 等は、ねじれ層の離散共鳴半径に対応する。詳細は\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」 参照。}.
+観測される核力の\textbf{電荷独立性}、\textbf{スピン軌道結合}、\textbf{魔法数}は、すべて双対ロータースペクトル \eqref{eq:R-dual} \eqref{eq:S3-phase-space} における\textbf{共鳴条件}から創発する \footnote{魔法数 2, 8, 20, 28, 50, 82, 126 等は、ねじれ層の離散共鳴半径に対応する。詳細は\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」 参照。}。
 
-電荷独立性（プロトン--プロトン、中性子--中性子、プロトン--中性子散乱の短距離部分がほぼ同一）は、核力が電荷ではなく\textbf{質量（重力チャンネル）}に結びついたねじれ層 \eqref{eq:nuclear-strong-is-gravity} から生じることの帰結である \footnote{電磁補正は別チャンネル \((\alpha, \beta)\) による小さな摂動。§3 参照。}.
-スピン軌道結合の異常に大きな強度は、双対ローターの\textbf{縦モード} \eqref{eq:R-dual} と軌道角運動量の共鳴から説明される \footnote{強場章 §1「カー型回転 BH の排除」と同型の縦モード再分配。}.
+電荷独立性（プロトン--プロトン、中性子--中性子、プロトン--中性子散乱の短距離部分がほぼ同一）は、核力が電荷ではなく\textbf{質量（重力チャンネル）}に結びついたねじれ層 \eqref{eq:nuclear-strong-is-gravity} から生じることの帰結である \footnote{電磁補正は別チャンネル \((\alpha, \beta)\) による小さな摂動。§3 参照。}。
+スピン軌道結合の異常に大きな強度は、双対ローターの\textbf{縦モード} \eqref{eq:R-dual} と軌道角運動量の共鳴から説明される \footnote{強場章 §1「カー型回転 BH の排除」と同型の縦モード再分配。}。
 
 \subsection{核分裂・核融合と層遷移}
 
-核分裂と核融合は、ねじれ層の\textbf{遷移}として記述される \footnote{\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」。}.
+核分裂と核融合は、ねじれ層の\textbf{遷移}として記述される \footnote{\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」。}。
 
 \begin{itemize}[leftmargin=2em]
   \item \textbf{核分裂}：励起された双対モードが \(J\) を正から負へ反転 \eqref{tab:J-signs} させ、破片を爆発的に斥力層から放出する \eqref{eq:nuclear-strong-is-gravity}。
-  \item \textbf{核融合}：二つの核が外側斥力障壁 \eqref{tab:nuclear-layers} をトンネルして、より深い引力井戸 \(J \gg 0\) に入ることに成功する \footnote{クーロン障壁の DST 版。斥力ねじれ層のトンネル効果。}.
+  \item \textbf{核融合}：二つの核が外側斥力障壁 \eqref{tab:nuclear-layers} をトンネルして、より深い引力井戸 \(J \gg 0\) に入ることに成功する \footnote{クーロン障壁の DST 版。斥力ねじれ層のトンネル効果。}。
 \end{itemize}
 
 \subsection{予測：超重元素の限界}
 
-理論は、十分大きな核（\(A \gtrsim 300\)）が自発的ねじれバウンス \eqref{eq:strongfield-layers} に対して\textbf{不安定}となり、ミニ超新星のように核子を放出すると予測する \footnote{観測される核図表の上限（\(A \approx 300\) 付近）と、自然界に安定な超重元素が存在しないことの説明。}.
+理論は、十分大きな核（\(A \gtrsim 300\)）が自発的ねじれバウンス \eqref{eq:strongfield-layers} に対して\textbf{不安定}となり、ミニ超新星のように核子を放出すると予測する \footnote{観測される核図表の上限（\(A \approx 300\) 付近）と、自然界に安定な超重元素が存在しないことの説明。}。
 
-この予測は、第一斥力層 \(J < 0\) \eqref{tab:nuclear-layers} の\textbf{必然的}帰結である。層状構造の振幅が臨界を超えると、ねじれエネルギー \eqref{eq:gravity-action} が爆発的に解放される \footnote{超新星コアバウンス \eqref{eq:strongfield-layers} の fm スケール版。}.
+この予測は、第一斥力層 \(J < 0\) \eqref{tab:nuclear-layers} の\textbf{必然的}帰結である。層状構造の振幅が臨界を超えると、ねじれエネルギー \eqref{eq:gravity-action} が爆発的に解放される \footnote{超新星コアバウンス \eqref{eq:strongfield-layers} の fm スケール版。}。
 
 \subsection{実験可能な特徴}
 
 \begin{itemize}[leftmargin=2em]
-  \item \textbf{超高エネルギー核--核衝突}（LHC、RHIC）：過渡的 \(J < 0\) 火球を生成し、流体力学的流れではなく\textbf{爆発的ハドロンジェット}を介して崩壊するはずである \footnote{RHIC の異常流データにすでに示唆がある。詳細検証は進行中の研究課題。}.
-  \item \textbf{核物質状態方程式}：飽和密度 \(\rho_0\) を超える精密測定は、圧力対密度において \(\sim 2\)–\(4\,\rho_0\) の特徴的\textbf{斥力ピーク}をもつ振動挙動 \eqref{tab:nuclear-layers} を明らかにするはずである \footnote{中性子星マージー GW170817 の制約 \eqref{eq:gravity-action} とも整合的。}.
+  \item \textbf{超高エネルギー核--核衝突}（LHC、RHIC）：過渡的 \(J < 0\) 火球を生成し、流体力学的流れではなく\textbf{爆発的ハドロンジェット}を介して崩壊するはずである \footnote{RHIC の異常流データにすでに示唆がある。詳細検証は進行中の研究課題。}。
+  \item \textbf{核物質状態方程式}：飽和密度 \(\rho_0\) を超える精密測定は、圧力対密度において \(\sim 2\)–\(4\,\rho_0\) の特徴的\textbf{斥力ピーク}をもつ振動挙動 \eqref{tab:nuclear-layers} を明らかにするはずである \footnote{中性子星マージー GW170817 の制約 \eqref{eq:gravity-action} とも整合的。}。
 \end{itemize}
 
 \subsection{二チャンネル統一の予告}
 
-四つの基本相互作用は、単一の力への還元ではなく、単一の幾何学的機構（\textbf{双対ローターの層状ねじれ動力学}）のもとに統一される \footnote{詳細は次章「電磁気力・弱い力との統一」。}.
+四つの基本相互作用は、単一の力への還元ではなく、単一の幾何学的機構（\textbf{双対ローターの層状ねじれ動力学}）のもとに統一される \footnote{詳細は次章「電磁気力・弱い力との統一」。}。
 
 重力と電磁力は、同一の代数的構造（キリング形式 \eqref{eq:gravity-killing-signs} に由来する \(J\) \eqref{eq:gravity-J} の層状反転）を共有する。
 両者を区別するのは、双対ローターの\textbf{どの位相チャンネル}が不整合の源となるかという一点のみである：
@@ -4893,13 +4897,13 @@ DST の主張は次のとおりである。
   \item \textbf{電磁チャンネル}：電荷に結びついた独立な角度対 \((\alpha, \beta)\)。§3 の電子殻。
 \end{itemize}
 
-存在するのはただ一つの幾何（双対ローターにおける引力と斥力の層状舞踏）であり、それは二つの位相チャンネルにおいて\textbf{同時に}演じられる \footnote{弱い力は双対セクターのキラリティ。次章「電磁気力・弱い力との統一」参照。}.
+存在するのはただ一つの幾何（双対ローターにおける引力と斥力の層状舞踏）であり、それは二つの位相チャンネルにおいて\textbf{同時に}演じられる \footnote{弱い力は双対セクターのキラリティ。次章「電磁気力・弱い力との統一」参照。}。
 
 \section{クーロンねじれ層による電子殻}
 
 \subsection{重力からクーロンへの置換}
 
-二重時空枠組みでは、荷電粒子間のクーロン相互作用は電磁起源であるが、重力の場合 \eqref{eq:gravity-action} と同様に、双対時空セクターにおける\textbf{ねじれ不整合}として再解釈できる \footnote{\hyperref[sec:sister-manuscripts]{親理論}「時間反転とクーロンねじれ層による電子殻」。}.
+二重時空枠組みでは、荷電粒子間のクーロン相互作用は電磁起源であるが、重力の場合 \eqref{eq:gravity-action} と同様に、双対時空セクターにおける\textbf{ねじれ不整合}として再解釈できる \footnote{\hyperref[sec:sister-manuscripts]{親理論}「時間反転とクーロンねじれ層による電子殻」。}。
 
 重力定数 \(G\) と質量 \(M, m\) を、クーロン定数 \(k = 1/(4\pi\epsilon_0)\) と電荷（例：陽子 \(+e\)、電子 \(-e\)）に置き換える。
 有効力は
@@ -4915,7 +4919,7 @@ DST の主張は次のとおりである。
   - \sinh\!\frac{\alpha}{2}\,\sin\!\frac{\beta}{2}.
   \label{eq:nuclear-gamma-s-em}
 \end{equation}
-\eqref{eq:timedilation-s} と同型の代数構造である。固有時ローレンツ因子 \(\gamma_{\mathrm{eff}} \geq 0\) \eqref{eq:timedilation-gamma-eff-nonneg} とは異なり、\(\gamma_s\) は\textbf{符号を変えうる} \footnote{斥力クーロン領域 \(\gamma_s < 0\) は、重力の斥力層 \eqref{eq:timedilation-gamma-s-negative} と同型。}.
+\eqref{eq:timedilation-s} と同型の代数構造である。固有時ローレンツ因子 \(\gamma_{\mathrm{eff}} \geq 0\) \eqref{eq:timedilation-gamma-eff-nonneg} とは異なり、\(\gamma_s\) は\textbf{符号を変えうる} \footnote{斥力クーロン領域 \(\gamma_s < 0\) は、重力の斥力層 \eqref{eq:timedilation-gamma-s-negative} と同型。}。
 
 \subsection{距離スケーリング}
 
@@ -4926,7 +4930,7 @@ DST の主張は次のとおりである。
   \beta(r) = \frac{\lambda}{r},
   \label{eq:nuclear-em-scaling}
 \end{equation}
-\(\lambda\) はコンパクト双対時空 \eqref{eq:S3-phase-space} によって設定される特徴長である \footnote{ボーア半径 \(a_0 = \hbar/(m_e c \alpha_{\mathrm{fine}})\) との整合は、\(\lambda\) の定量的決定に依存する。\hyperref[sec:sister-manuscripts]{親理論}「時間反転とクーロンねじれ層による電子殻」 参照。}.
+\(\lambda\) はコンパクト双対時空 \eqref{eq:S3-phase-space} によって設定される特徴長である \footnote{ボーア半径 \(a_0 = \hbar/(m_e c \alpha_{\mathrm{fine}})\) との整合は、\(\lambda\) の定量的決定に依存する。\hyperref[sec:sister-manuscripts]{親理論}「時間反転とクーロンねじれ層による電子殻」 参照。}。
 
 水素原子（\(Z = 1\)）では \eqref{eq:nuclear-coulomb-force}–\eqref{eq:nuclear-gamma-s-em} より
 \begin{equation}
@@ -4934,7 +4938,7 @@ DST の主張は次のとおりである。
   \label{eq:nuclear-hydrogen-force}
 \end{equation}
 
-多電子原子（\(Z > 1\)）ではスケーリング \eqref{eq:nuclear-em-scaling} が \(\alpha(r), \beta(r) \propto Z/r\) に一般化され、ねじれ層が\textbf{内向き}に収縮する。核電荷増大に伴う電子殻の収縮（スクリーニング効果の第一近似）を説明する \footnote{多電子効果の精密化は親理論の発展課題。}.
+多電子原子（\(Z > 1\)）ではスケーリング \eqref{eq:nuclear-em-scaling} が \(\alpha(r), \beta(r) \propto Z/r\) に一般化され、ねじれ層が\textbf{内向き}に収縮する。核電荷増大に伴う電子殻の収縮（スクリーニング効果の第一近似）を説明する \footnote{多電子効果の精密化は親理論の発展課題。}。
 
 \subsection{層状井戸と離散軌道}
 
@@ -4942,8 +4946,8 @@ DST の主張は次のとおりである。
 \(r\) が減少すると：
 
 \begin{itemize}[leftmargin=2em]
-  \item \textbf{大きい \(r\)}：\(\alpha(r), \beta(r) \to 0\) となり \(\gamma_s \to 1\) \eqref{eq:nuclear-gamma-s-em}。標準クーロン引力が回復する \footnote{遠方では通常の \(1/r^2\) 力。ボーア模型の古典的限界。}.
-  \item \textbf{より小さい半径}：干渉項が \(\gamma_s = 0\)（無限斥力）の点および \(\gamma_s < 0\)（力の反転による斥力）の領域を生成する \footnote{前章 \(\gamma_s < 0\) \eqref{eq:timedilation-gamma-s-negative} と同型。電磁チャンネル版。}.
+  \item \textbf{大きい \(r\)}：\(\alpha(r), \beta(r) \to 0\) となり \(\gamma_s \to 1\) \eqref{eq:nuclear-gamma-s-em}。標準クーロン引力が回復する \footnote{遠方では通常の \(1/r^2\) 力。ボーア模型の古典的限界。}。
+  \item \textbf{より小さい半径}：干渉項が \(\gamma_s = 0\)（無限斥力）の点および \(\gamma_s < 0\)（力の反転による斥力）の領域を生成する \footnote{前章 \(\gamma_s < 0\) \eqref{eq:timedilation-gamma-s-negative} と同型。電磁チャンネル版。}。
   \item \textbf{離散共鳴半径} \(r_n\)：引力井戸を分離する無限斥力障壁により安定円軌道を与える。
 \end{itemize}
 
@@ -4952,9 +4956,9 @@ DST の主張は次のとおりである。
   \tanh\!\frac{\alpha(r_n)}{2}\,\tan\!\frac{\beta(r_n)}{2} = 1
   \label{eq:nuclear-resonance}
 \end{equation}
-である \footnote{核密度の層構造 \eqref{tab:nuclear-layers} における \(J = 0\) 臨界面と同型。スケールとチャンネルが異なるだけ。}.
+である \footnote{核密度の層構造 \eqref{tab:nuclear-layers} における \(J = 0\) 臨界面と同型。スケールとチャンネルが異なるだけ。}。
 
-結果として有効ポテンシャル \(V_{\mathrm{eff}}(r) = -\int F(r)\, dr\) \eqref{eq:nuclear-coulomb-force} は、ねじれ反転障壁で分離された\textbf{層状井戸}の列を形成する \footnote{量子力学の「井戸型ポテンシャル」と同型だが、井戸の位置は共鳴条件 \eqref{eq:nuclear-resonance} から\textbf{創発}する。量子化公準は不要。}.
+結果として有効ポテンシャル \(V_{\mathrm{eff}}(r) = -\int F(r)\, dr\) \eqref{eq:nuclear-coulomb-force} は、ねじれ反転障壁で分離された\textbf{層状井戸}の列を形成する \footnote{量子力学の「井戸型ポテンシャル」と同型だが、井戸の位置は共鳴条件 \eqref{eq:nuclear-resonance} から\textbf{創発}する。量子化公準は不要。}。
 
 \subsection{エネルギー準位とスペクトル}
 
@@ -4963,15 +4967,15 @@ DST の主張は次のとおりである。
   E_n \propto -\frac{1}{n^{2}\, r_1}
   \label{eq:nuclear-energy-levels}
 \end{equation}
-となる \footnote{\(r_1\) は第一共鳴半径 \eqref{eq:nuclear-resonance}。ボーア半径に対応。}.
+となる \footnote{\(r_1\) は第一共鳴半径 \eqref{eq:nuclear-resonance}。ボーア半径に対応。}。
 層間遷移（\(n \to m\)）は光子を放出し、エネルギー差は
 \begin{equation}
   \Delta E_{n \to m} \propto \left(\frac{1}{r_m} - \frac{1}{r_n}\right)
   \label{eq:nuclear-transition}
 \end{equation}
-である \footnote{\(r_m > r_n\)（内殻へ遷移）で \(\Delta E > 0\)。放出光子のエネルギー。}.
+である \footnote{\(r_m > r_n\)（内殻へ遷移）で \(\Delta E > 0\)。放出光子のエネルギー。}。
 
-\eqref{eq:nuclear-energy-levels}–\eqref{eq:nuclear-transition} は、リュードベリ公式と観測水素スペクトル線（バルマー、ライマン、パッシェン系列）を\textbf{正確に再現}する \footnote{ファイン構造・超微細構造は高次ねじれモード \eqref{eq:Omega-torsion-only} の摂動として現れる。第 IV 部 \eqref{eq:psi-bar-mass} 参照。}.
+\eqref{eq:nuclear-energy-levels}–\eqref{eq:nuclear-transition} は、リュードベリ公式と観測水素スペクトル線（バルマー、ライマン、パッシェン系列）を\textbf{正確に再現}する \footnote{ファイン構造・超微細構造は高次ねじれモード \eqref{eq:Omega-torsion-only} の摂動として現れる。第 IV 部 \eqref{eq:psi-bar-mass} 参照。}。
 
 \begin{equation}
   \boxed{\;
@@ -4980,16 +4984,16 @@ DST の主張は次のとおりである。
   \label{eq:nuclear-shells-emergent}
 \end{equation}
 
-アドホックな量子化公準や波動関数は\textbf{不要}である。離散軌道は層状ポテンシャル \eqref{eq:nuclear-resonance} から幾何学的に創発する \footnote{第 VI 部「スピノル・量子状態との統合」 \eqref{eq:position-decomp} で、量子記述との接続を与える。}.
+アドホックな量子化公準や波動関数は\textbf{不要}である。離散軌道は層状ポテンシャル \eqref{eq:nuclear-resonance} から幾何学的に創発する \footnote{第 VI 部「スピノル・量子状態との統合」 \eqref{eq:position-decomp} で、量子記述との接続を与える。}。
 
 \section{双対構造におけるエネルギー保存}
 
 \subsection{顕在ポテンシャルと真のポテンシャル}
 
 \eqref{eq:nuclear-coulomb-force} の層状ポテンシャル \(V_{\mathrm{eff}}(r)\) は、振動と符号変化 \eqref{eq:nuclear-gamma-s-em} を伴い、一見\textbf{非保存的}に見える。
-この見かけの矛盾は、通常時空で観測される\textbf{顕在ポテンシャル}と、コンパクト双対時空ローター位相 \(\theta_a\) \eqref{eq:R-dual} に蓄えられた\textbf{真のポテンシャル}を区別することで解決される \footnote{\hyperref[sec:sister-manuscripts]{親理論}「時間反転とクーロンねじれ層による電子殻」「双対構造におけるエネルギー保存」。}.
+この見かけの矛盾は、通常時空で観測される\textbf{顕在ポテンシャル}と、コンパクト双対時空ローター位相 \(\theta_a\) \eqref{eq:R-dual} に蓄えられた\textbf{真のポテンシャル}を区別することで解決される \footnote{\hyperref[sec:sister-manuscripts]{親理論}「時間反転とクーロンねじれ層による電子殻」「双対構造におけるエネルギー保存」。}。
 
-真のポテンシャル \(V_{\mathrm{true}}\) はねじれ不整合スカラー \(J \propto (\phi - \theta)^{2}\) \eqref{eq:gravity-J} に比例し、\textbf{隠れた貯蔵庫}として作用する \footnote{核密度の \(J\) \eqref{tab:nuclear-layers} も同じ二重簿記。顕在的核力と内在ねじれエネルギーの区別。}.
+真のポテンシャル \(V_{\mathrm{true}}\) はねじれ不整合スカラー \(J \propto (\phi - \theta)^{2}\) \eqref{eq:gravity-J} に比例し、\textbf{隠れた貯蔵庫}として作用する \footnote{核密度の \(J\) \eqref{tab:nuclear-layers} も同じ二重簿記。顕在的核力と内在ねじれエネルギーの区別。}。
 
 \subsection{全エネルギー保存則}
 
@@ -5005,14 +5009,14 @@ DST の主張は次のとおりである。
   \label{eq:nuclear-energy-conservation}
 \end{equation}
 
-層遷移の間、\(V_{\mathrm{eff}}\) の減少（引力井戸から斥力層へ）は、双対ローターが巻かれることによる \(V_{\mathrm{true}}\) の増加と\textbf{正確に相殺}される。その逆も然り \footnote{エネルギー「非保存」に見える層遷移 \eqref{eq:nuclear-transition} は、真のポテンシャルへの移動である。}.
+層遷移の間、\(V_{\mathrm{eff}}\) の減少（引力井戸から斥力層へ）は、双対ローターが巻かれることによる \(V_{\mathrm{true}}\) の増加と\textbf{正確に相殺}される。その逆も然り \footnote{エネルギー「非保存」に見える層遷移 \eqref{eq:nuclear-transition} は、真のポテンシャルへの移動である。}。
 
 \subsection{光子放出の幾何的解釈}
 
-光子放出は、ローターがより低いねじれ状態へ\textbf{巻き戻る}ときに、蓄えられた双対位相エネルギー \(V_{\mathrm{true}}\) \eqref{eq:nuclear-energy-conservation} を解放することに対応する \footnote{第 IV 部「光的並進」 \eqref{eq:light-cone-forced}。光子は並進セクター \(T\) によるエネルギー輸送。}.
+光子放出は、ローターがより低いねじれ状態へ\textbf{巻き戻る}ときに、蓄えられた双対位相エネルギー \(V_{\mathrm{true}}\) \eqref{eq:nuclear-energy-conservation} を解放することに対応する \footnote{第 IV 部「光的並進」 \eqref{eq:light-cone-forced}。光子は並進セクター \(T\) によるエネルギー輸送。}。
 
 この双対簿記 \eqref{eq:nuclear-energy-conservation} は、離散的粒子局所的時空 \eqref{eq:position-decomp} の本性を破らずに\textbf{厳密なエネルギー保存}を保証する。
-リュードベリ差 \eqref{eq:nuclear-transition} は、真のエネルギー準位間の補償された遷移から正確に創発する。原子の安定性は、幾何学的必然である \footnote{ボーアの量子化公準 \(mvr = n\hbar\) は、共鳴条件 \eqref{eq:nuclear-resonance} の有効記述として回復される。}.
+リュードベリ差 \eqref{eq:nuclear-transition} は、真のエネルギー準位間の補償された遷移から正確に創発する。原子の安定性は、幾何学的必然である \footnote{ボーアの量子化公準 \(mvr = n\hbar\) は、共鳴条件 \eqref{eq:nuclear-resonance} の有効記述として回復される。}。
 
 \subsection{原子安定性の帰結}
 
@@ -5023,7 +5027,7 @@ DST の主張は次のとおりである。
   \item \textbf{放出スペクトル}。層間遷移 \eqref{eq:nuclear-transition} による光子エネルギー。
 \end{itemize}
 
-電磁束縛 \eqref{eq:nuclear-shells-emergent} は、重力 \eqref{eq:nuclear-strong-is-gravity} と\textbf{同一の代数的機構} \eqref{eq:gravity-killing-signs} で統一される。チャンネル \((\phi,\theta)\) vs \((\alpha,\beta)\) だけが異なる \footnote{次章で二チャンネルの形式統一を完成する。}.
+電磁束縛 \eqref{eq:nuclear-shells-emergent} は、重力 \eqref{eq:nuclear-strong-is-gravity} と\textbf{同一の代数的機構} \eqref{eq:gravity-killing-signs} で統一される。チャンネル \((\phi,\theta)\) vs \((\alpha,\beta)\) だけが異なる \footnote{次章で二チャンネルの形式統一を完成する。}。
 
 \subsection{次章への接続}
 
@@ -5070,7 +5074,7 @@ DST の主張は次のとおりである。
 
 \chapter{電磁気力・弱い力との統一}
 
-前章では、層状ねじれ反転のスケール不変性 \eqref{eq:nuclear-scale-invariance} から、核力 \eqref{eq:nuclear-strong-is-gravity} と電子殻 \eqref{eq:nuclear-shells-emergent} を同一機構の異なる密度相・チャンネル相として記述した \footnote{\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」、「時間反転とクーロンねじれ層による電子殻」に対応。}.
+前章では、層状ねじれ反転のスケール不変性 \eqref{eq:nuclear-scale-invariance} から、核力 \eqref{eq:nuclear-strong-is-gravity} と電子殻 \eqref{eq:nuclear-shells-emergent} を同一機構の異なる密度相・チャンネル相として記述した \footnote{\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」、「時間反転とクーロンねじれ層による電子殻」に対応。}。
 原子核は重力チャンネル \((\phi, \theta)\) の原始ねじれ星 \eqref{eq:R-usual}–\eqref{eq:R-dual}、電子殻は電磁チャンネル \((\alpha, \beta)\) の原始ねじれ星 \eqref{eq:nuclear-coulomb-force}–\eqref{eq:nuclear-resonance} である。しかし、二チャンネルの\textbf{形式統一}はまだ完成していない。
 
 本章では、\hyperref[sec:sister-manuscripts]{親理論}「二重時空における電磁気力と弱い力の統一」 に基づき、次の三つを確立する：
@@ -5079,7 +5083,7 @@ DST の主張は次のとおりである。
   \item 弱い力が、双対写像 \eqref{eq:duality-map-chapter} による\textbf{内在的キラリティ} \eqref{eq:chiral-projectors} として創発すること；
   \item 標準模型ゲージ群 \(\mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1)\) が、双対ローター代数における\textbf{ねじれ共鳴モードの有効記述}であること。
 \end{enumerate}
-四基本相互作用の完全な幾何的統一像をここで完成し、次章「銀河回転曲線と暗黒物質不要論」では各チャンネルの宇宙論スケール展開を扱う \footnote{\hyperref[sec:sister-manuscripts]{親理論}「暗黒物質なし：双対時空コンパクト性からの銀河回転曲線」 冒頭の接続。}.
+四基本相互作用の完全な幾何的統一像をここで完成し、次章「銀河回転曲線と暗黒物質不要論」では各チャンネルの宇宙論スケール展開を扱う \footnote{\hyperref[sec:sister-manuscripts]{親理論}「暗黒物質なし：双対時空コンパクト性からの銀河回転曲線」 冒頭の接続。}。
 
 \textbf{記号の注意}：本章の \((\alpha, \beta)\) は電磁チャンネルの角度対 \eqref{eq:nuclear-em-scaling} を指す。
 重力章の弱場係数 \(\alpha_a\)（双曲成分）\eqref{eq:gravity-J} とは\textbf{別物}である。混同しないこと。
@@ -5088,7 +5092,7 @@ DST の主張は次のとおりである。
 
 \subsection{同一幾何・二つの位相}
 
-四つの基本相互作用は、単一の力への還元ではなく、単一の幾何学的機構（\textbf{双対ローターの層状ねじれ動力学}）のもとに統一される \footnote{\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」 末尾。}.
+四つの基本相互作用は、単一の力への還元ではなく、単一の幾何学的機構（\textbf{双対ローターの層状ねじれ動力学}）のもとに統一される \footnote{\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」 末尾。}。
 
 重力と電磁力は、同一の代数的構造（キリング形式 \eqref{eq:gravity-killing-signs} に由来するねじれスカラー \(J\) \eqref{eq:gravity-J} の\textbf{層状反転}）を共有する。
 両者を区別するのは、双対ローターの\textbf{どの位相チャンネル}が不整合の源となるかという一点のみである：
@@ -5120,7 +5124,7 @@ DST の主張は次のとおりである。
 
 \subsection{同時に演じられる二重舞踏}
 
-存在するのはただ一つの幾何（双対ローターにおける引力と斥力の層状舞踏）であり、それは二つの位相チャンネルにおいて\textbf{同時に}演じられる \footnote{\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」 末尾。}.
+存在するのはただ一つの幾何（双対ローターにおける引力と斥力の層状舞踏）であり、それは二つの位相チャンネルにおいて\textbf{同時に}演じられる \footnote{\hyperref[sec:sister-manuscripts]{親理論}「スケール不変なねじれ層：重力反発としての強い力と原始的なねじれ星としての原子核」 末尾。}。
 原子核は重力チャンネルの原始ねじれ星 \eqref{tab:nuclear-layers}、電子殻は電磁チャンネルの原始ねじれ星 \eqref{eq:nuclear-shells-emergent}。スケールと駆動量だけが異なる \eqref{eq:nuclear-scale-invariance}。
 
 \begin{equation}
@@ -5163,7 +5167,7 @@ DST の主張は次のとおりである。
   \qquad \Gamma_a \in \{I, J, K\}
   \label{eq:unif-R-dual-reminder}
 \end{equation}
-\eqref{eq:R-dual} 内の\textbf{ねじれ共鳴モード}として埋め込む \footnote{\hyperref[sec:sister-manuscripts]{親理論}「二重時空における電磁気力と弱い力の統一」 冒頭。}.
+\eqref{eq:R-dual} 内の\textbf{ねじれ共鳴モード}として埋め込む \footnote{\hyperref[sec:sister-manuscripts]{親理論}「二重時空における電磁気力と弱い力の統一」 冒頭。}。
 
 \subsection{双対写像とキラル射影}
 
@@ -5179,7 +5183,7 @@ DST の主張は次のとおりである。
   \label{eq:unif-chiral-reminder}
 \end{equation}
 \eqref{eq:chiral-projectors} を\textbf{自動的}に実装する。
-\(P_L \psi\) は通常セクター（\(kI, kJ, kK\) 成分）に、\(P_R \psi\) は双対セクター（\(jI, jJ, jK\) 成分）に優先的に結合する \eqref{eq:duality-generator-swap}。追加のキラル仮定なしに、弱い相互作用で観測されるキラル非対称性の代数的起源となる \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「双四元数スピノルと最小左イデアル」参照。}.
+\(P_L \psi\) は通常セクター（\(kI, kJ, kK\) 成分）に、\(P_R \psi\) は双対セクター（\(jI, jJ, jK\) 成分）に優先的に結合する \eqref{eq:duality-generator-swap}。追加のキラル仮定なしに、弱い相互作用で観測されるキラル非対称性の代数的起源となる \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「双四元数スピノルと最小左イデアル」参照。}。
 
 擬スカラー \(i\) \eqref{eq:dst-pseudoscalar} は、双対写像における時間反転を通じて\textbf{内在的キラリティ}を誘導する。
 通常時空は「未来向き」、双対時空は「過去向き」として刻印され \footnote{本章「バリオン非対称性：双対ローター時間矢固定の幾何的起源」でも同じ構造が使われる。}、左右の区別は代数内部から生じる。
@@ -5191,7 +5195,7 @@ DST の主張は次のとおりである。
   \theta_a \;\mapsto\; \theta_a + q\, A_a,
   \label{eq:unif-theta-shift}
 \end{equation}
-ここで \(q\) は粒子の電荷、\(A_a\) は双対セクター上のベクトルポテンシャル成分である \footnote{第 II 部の \(A\) \eqref{eq:em-compact} とはセクターが異なる。通常時空の EM ポテンシャルが双対ローター位相に結合する。}.
+ここで \(q\) は粒子の電荷、\(A_a\) は双対セクター上のベクトルポテンシャル成分である \footnote{第 II 部の \(A\) \eqref{eq:em-compact} とはセクターが異なる。通常時空の EM ポテンシャルが双対ローター位相に結合する。}。
 
 拡張双対ローターは
 \begin{equation}
@@ -5209,7 +5213,7 @@ DST の主張は次のとおりである。
   = \sum_{a=1}^{3}\bigl(E_a\, i\,\Gamma_a + B_a\,\Gamma_a\bigr),
   \label{eq:unif-F-dual}
 \end{equation}
-\(E_a, B_a\) は双対セクター上の電場・磁場成分である \footnote{\eqref{eq:em-compact} \(F = \mathbf{E} + i\mathbf{B}\) と同型。セクターが双対側に移る。}.
+\(E_a, B_a\) は双対セクター上の電場・磁場成分である \footnote{\eqref{eq:em-compact} \(F = \mathbf{E} + i\mathbf{B}\) と同型。セクターが双対側に移る。}。
 
 荷電粒子の双対時空ベクトル \(X'\) への作用は、サンドイッチ積
 \begin{equation}
@@ -5219,7 +5223,7 @@ DST の主張は次のとおりである。
   X' + q\, F_{\mathrm{dual}} \wedge X'
   \label{eq:unif-lorentz}
 \end{equation}
-から創発する。第 II 部のローレンツ力 \eqref{eq:lorentz-force} と同型の幾何である \footnote{詳細な導出は\hyperref[sec:sister-manuscripts]{親理論}「二重時空における電磁気力と弱い力の統一」 参照。}.
+から創発する。第 II 部のローレンツ力 \eqref{eq:lorentz-force} と同型の幾何である \footnote{詳細な導出は\hyperref[sec:sister-manuscripts]{親理論}「二重時空における電磁気力と弱い力の統一」 参照。}。
 
 \subsection{弱い力の左手結合}
 
@@ -5230,7 +5234,7 @@ DST の主張は次のとおりである。
   \theta_a^{R} = \theta_a,
   \label{eq:unif-weak-shift}
 \end{equation}
-ここで \(g_W\) は弱い結合定数、\(W_a\) は弱いゲージバイベクトルである \footnote{\(\mathrm{SU}(2)\) ゲージ場の有効記述。§3。}.
+ここで \(g_W\) は弱い結合定数、\(W_a\) は弱いゲージバイベクトルである \footnote{\(\mathrm{SU}(2)\) ゲージ場の有効記述。§3。}。
 
 キラルローターは
 \begin{equation}
@@ -5244,12 +5248,12 @@ DST の主張は次のとおりである。
 と書ける。
 右手成分 \(\theta_a^{R} = \theta_a\) は弱いゲージ場に結合せず、左手成分 \(\theta_a^{L}\) のみが \(g_W W_a\) を受け取る。これが V--A（ベクター--アクシアル）構造 \footnote{観測される \(\beta\) 崩壊の左手性。} を再現する。
 
-パリティ破れは、双対写像 \eqref{eq:duality-map-chapter} が時間反転した双対セクター \eqref{eq:unif-chiral-reminder} に従うことから\textbf{必然的}に生じる \footnote{鏡像反射は通常／双対セクターの入れ替え \eqref{eq:duality-map} に対応し、\(P_L\) と \(P_R\) の結合が非対称になる。}.
+パリティ破れは、双対写像 \eqref{eq:duality-map-chapter} が時間反転した双対セクター \eqref{eq:unif-chiral-reminder} に従うことから\textbf{必然的}に生じる \footnote{鏡像反射は通常／双対セクターの入れ替え \eqref{eq:duality-map} に対応し、\(P_L\) と \(P_R\) の結合が非対称になる。}。
 弱い力は「別の力」ではなく、双対セクターの\textbf{本質的キラル非対称}の巨視的現れである。
 
 \subsection{統合ねじれバイベクトル}
 
-電磁気と弱い力の埋め込みは、全ねじれバイベクトル \eqref{eq:gravity-omega-biv} レベルで統合される \footnote{\hyperref[sec:sister-manuscripts]{親理論}「二重時空における電磁気力と弱い力の統一」 末尾。}.
+電磁気と弱い力の埋め込みは、全ねじれバイベクトル \eqref{eq:gravity-omega-biv} レベルで統合される \footnote{\hyperref[sec:sister-manuscripts]{親理論}「二重時空における電磁気力と弱い力の統一」 末尾。}。
 電弱拡張ローター \(R_{\mathrm{dual}}^{\mathrm{EM+weak}}\) を通常ローター \(R_{\mathrm{usual}}\) \eqref{eq:R-usual} と比較し、
 \begin{equation}
   \Omega_{\mathrm{biv}}^{\mathrm{EW}}
@@ -5262,7 +5266,7 @@ DST の主張は次のとおりである。
   \bigr)\,\Gamma_a,
   \label{eq:unif-Omega-EW}
 \end{equation}
-と展開できる \footnote{双曲成分 \(-\phi_a i\) は通常セクター \eqref{eq:R-usual} から、巡回成分 \(\theta_a \Gamma_a\) は双対セクター \eqref{eq:R-dual} から来る。\eqref{eq:gravity-omega-expansion} の電弱拡張版。}.
+と展開できる \footnote{双曲成分 \(-\phi_a i\) は通常セクター \eqref{eq:R-usual} から、巡回成分 \(\theta_a \Gamma_a\) は双対セクター \eqref{eq:R-dual} から来る。\eqref{eq:gravity-omega-expansion} の電弱拡張版。}。
 
 ねじれ不整合スカラーは
 \begin{equation}
@@ -5298,7 +5302,7 @@ DST の主張は次のとおりである。
 \begin{itemize}[leftmargin=2em]
   \item \(\mathrm{U}(1)\)（電磁）：双対位相への最小結合 \eqref{eq:unif-theta-shift}。電荷 \(q\) が回転角をシフトする。
   \item \(\mathrm{SU}(2)\)（弱い）：キラル射影 \(P_L\) \eqref{eq:chiral-projectors} に結合した弱いゲージ場 \(W_a\) \eqref{eq:unif-weak-shift}。左手成分のみが応答する。
-  \item \(\mathrm{SU}(3)\)（強い）：核内部の双対ローター位相 \(\theta_a\) \eqref{eq:R-dual} が運ぶ\textbf{ねじれ電荷}の有効記述 \footnote{前章「QCD 色電荷の再解釈」参照。色閉じ込めは斥力ねじれ層 \eqref{tab:nuclear-layers} の幾何。}.
+  \item \(\mathrm{SU}(3)\)（強い）：核内部の双対ローター位相 \(\theta_a\) \eqref{eq:R-dual} が運ぶ\textbf{ねじれ電荷}の有効記述 \footnote{前章「QCD 色電荷の再解釈」参照。色閉じ込めは斥力ねじれ層 \eqref{tab:nuclear-layers} の幾何。}。
 \end{itemize}
 
 「色電荷」「弱い isospin」「電磁 U(1)」は、すべて同一の双対ローター幾何における\textbf{異なる共鳴モード}の名前である。相互作用の種類が増えるのではなく、ねじれ層の\textbf{励起パターン}が異なるだけである。
@@ -5310,8 +5314,8 @@ DST の主張は次のとおりである。
   \mathrm{Spin}^+(3,1) \oplus \mathrm{Spin}^+(3,1)
   \label{eq:unif-spin-double}
 \end{equation}
-の部分群として創発する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「二重時空における電磁気力と弱い力の統一」。}.
-通常セクター生成子 \(iI, iJ, iK\) \eqref{eq:hyperbolic-biv} と双対セクター生成子 \(I, J, K\) \eqref{eq:cyclic-biv} が可換 \eqref{eq:rotor-commute} であるから、完全ローター \eqref{eq:R-total-exp} は二つのキラルセクターへの独立な作用に因数分解される。電弱ゲージ変換は、この因数分解の\textbf{部分対称性}として現れる \footnote{低エネルギー極限で標準模型の \(\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y\) 構造が回復する。}.
+の部分群として創発する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「二重時空における電磁気力と弱い力の統一」。}。
+通常セクター生成子 \(iI, iJ, iK\) \eqref{eq:hyperbolic-biv} と双対セクター生成子 \(I, J, K\) \eqref{eq:cyclic-biv} が可換 \eqref{eq:rotor-commute} であるから、完全ローター \eqref{eq:R-total-exp} は二つのキラルセクターへの独立な作用に因数分解される。電弱ゲージ変換は、この因数分解の\textbf{部分対称性}として現れる \footnote{低エネルギー極限で標準模型の \(\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y\) 構造が回復する。}。
 
 統合ねじれ \eqref{eq:unif-Omega-EW} において、\(q A_a\) は \(\mathrm{U}(1)\) 因子、\(g_W W_a P_L\) は \(\mathrm{SU}(2)_L\) 因子に対応する。ゲージ場は「付加的なローター成分」 \footnote{\hyperref[sec:sister-manuscripts]{親理論}「二重時空における電磁気力と弱い力の統一」 要約。} として現れ、背景連続体や補助場を要しない。
 
@@ -5323,20 +5327,20 @@ DST の主張は次のとおりである。
   \item \textbf{ゲージボソン質量}：ゲージ場存在下で双対ローターが通常ローターに従うことを強制されるときの双対剛性。\(W\), \(Z\) ボソンの質量は \(g_W\) 結合 \eqref{eq:unif-weak-shift} によるねじれエネルギーに対応する。
 \end{itemize}
 
-標準模型のヒッグス場の真空期待値の役割は、すべての質量粒子が内在的に運ぶ通常時空と双対時空の間の\textbf{自発的ねじれ的ずれ}が果たす \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「フェルミオン質量のねじれ的起源とヒッグス機構」。}.
-ヒッグス機構は、DST 内部の幾何的実現として理解される。スカラー場を別個に導入する必要はない \footnote{詳細な対称性破れの計算は発展課題。}.
+標準模型のヒッグス場の真空期待値の役割は、すべての質量粒子が内在的に運ぶ通常時空と双対時空の間の\textbf{自発的ねじれ的ずれ}が果たす \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「フェルミオン質量のねじれ的起源とヒッグス機構」。}。
+ヒッグス機構は、DST 内部の幾何的実現として理解される。スカラー場を別個に導入する必要はない \footnote{詳細な対称性破れの計算は発展課題。}。
 
 \subsection{階層問題と双対コンパクト性}
 
-質量がコンパクト双対時空 \eqref{eq:S3-phase-space} に由来するため、代数的レベルで\textbf{有界}であり発散できない \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「フェルミオン質量のねじれ的起源とヒッグス機構」。}.
-プランクスケールと電弱スケールの間に微調整はなく、両方が同一の双対ローターコンパクト化半径に支配される。これが階層問題の DST 的緩和である \footnote{\hyperref[sec:sister-manuscripts]{親理論}「二重時空における電磁気力と弱い力の統一」 末尾。}.
+質量がコンパクト双対時空 \eqref{eq:S3-phase-space} に由来するため、代数的レベルで\textbf{有界}であり発散できない \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「フェルミオン質量のねじれ的起源とヒッグス機構」。}。
+プランクスケールと電弱スケールの間に微調整はなく、両方が同一の双対ローターコンパクト化半径に支配される。これが階層問題の DST 的緩和である \footnote{\hyperref[sec:sister-manuscripts]{親理論}「二重時空における電磁気力と弱い力の統一」 末尾。}。
 
-双対セクターの剛性は、真空中のボゾン--フェルミオン打ち消しを強制しつつ、観測される粒子質量も生成する \footnote{宇宙定数問題との関連も同じ起源。\hyperref[sec:sister-manuscripts]{親理論}「量子重力と完全統一に向けて」参照。}.
+双対セクターの剛性は、真空中のボゾン・フェルミオン打ち消しを強制しつつ、観測される粒子質量も生成する \footnote{宇宙定数問題との関連も同じ起源。\hyperref[sec:sister-manuscripts]{親理論}「量子重力と完全統一に向けて」参照。}。
 慣性 \eqref{eq:inertia-F-ma}、重力 \eqref{eq:gravity-action}、ヒッグス的質量生成 \eqref{eq:psi-bar-mass} は、単一の16次元代数構造 \footnote{双四元数 \(\mathbb{H} \otimes_{\mathbb{R}} \mathbb{H}\)。} 内で統一される。
 
 \subsection{低エネルギー極限と完全統一への道筋}
 
-本章の埋め込み \eqref{eq:unif-Omega-EW}–\eqref{eq:unif-J-EW} は、低エネルギーで標準模型電弱セクター \eqref{eq:unif-SM-group} を回復する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「二重時空における電磁気力と弱い力の統一」 締め。}.
+本章の埋め込み \eqref{eq:unif-Omega-EW}–\eqref{eq:unif-J-EW} は、低エネルギーで標準模型電弱セクター \eqref{eq:unif-SM-group} を回復する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「二重時空における電磁気力と弱い力の統一」 締め。}。
 同時に、重力チャンネル \((\phi,\theta)\) \eqref{tab:two-channels}、強い力（重力層状相）\eqref{eq:nuclear-strong-is-gravity}、電磁・弱い力 \eqref{eq:unif-R-dual-EM}–\eqref{eq:unif-R-dual-weak} は、すべて
 \begin{equation}
   \boxed{\;
@@ -5348,7 +5352,7 @@ DST の主張は次のとおりである。
   \;}
   \label{eq:unif-complete}
 \end{equation}
-の枠内に収まる。完全統一はすでに代数レベルで達成されており、残る課題は各チャンネルの\textbf{定量的スケール}と\textbf{宇宙論展開}である \footnote{次章「銀河回転曲線と暗黒物質不要論」：重力チャンネルの \(S^3\) コンパクト化と電磁チャンネルの大スケール展開。}.
+の枠内に収まる。完全統一はすでに代数レベルで達成されており、残る課題は各チャンネルの\textbf{定量的スケール}と\textbf{宇宙論展開}である \footnote{次章「銀河回転曲線と暗黒物質不要論」：重力チャンネルの \(S^3\) コンパクト化と電磁チャンネルの大スケール展開。}。
 
 \subsection{次章への接続}
 
@@ -5392,7 +5396,7 @@ DST の主張は次のとおりである。
 
 \chapter{銀河回転曲線と暗黒物質不要論}
 
-前章では、四基本相互作用が単一のねじれ幾何 \eqref{eq:unif-two-channels} の二つの角度チャンネル \eqref{tab:two-channels} として統一されることを示した \footnote{\hyperref[sec:sister-manuscripts]{親理論}「二重時空における電磁気力と弱い力の統一」に対応。}.
+前章では、四基本相互作用が単一のねじれ幾何 \eqref{eq:unif-two-channels} の二つの角度チャンネル \eqref{tab:two-channels} として統一されることを示した \footnote{\hyperref[sec:sister-manuscripts]{親理論}「二重時空における電磁気力と弱い力の統一」に対応。}。
 原子核は重力チャンネル \((\phi, \theta)\) \eqref{eq:R-usual}–\eqref{eq:R-dual}、電子殻は電磁チャンネル \((\alpha, \beta)\) \eqref{eq:nuclear-em-scaling}。しかし、各チャンネルが\textbf{宇宙論スケール}でどう空間展開するかは、まだ検証されていない。
 
 本章では、\hyperref[sec:sister-manuscripts]{親理論}「暗黒物質なし：双対時空コンパクト性からの銀河回転曲線」 に基づき、次の四つを確立する：
@@ -5400,7 +5404,7 @@ DST の主張は次のとおりである。
   \item 重力チャンネル \((\phi, \theta)\) が、銀河スケールで双対セクターを \(S^3\) パッチ \eqref{eq:S3-phase-space} としてコンパクト化すること；
   \item コンパクト双対幾何から平坦通常時空への対数写像（三次元方位等距投影）が、系統的な体積歪み \(\mathcal{J}(\chi)\) \eqref{eq:galaxy-jacobian} として現れること；
   \item \(S^3\) 上の余接ポテンシャル \eqref{eq:galaxy-cot-potential} と増強因子 \(\eta(r)\) \eqref{eq:galaxy-eta} が、バリオンのみから平坦回転曲線 \eqref{eq:galaxy-v2} を創発すること；
-  \item 暗黒物質仮説が不要であること。「欠落質量」は、虚構の平坦無限背景への投影人工物である \footnote{直接検出実験における信号欠如も、この結論と整合する。}.
+  \item 暗黒物質仮説が不要であること。「欠落質量」は、虚構の平坦無限背景への投影人工物である \footnote{直接検出実験における信号欠如も、この結論と整合する。}。
 \end{enumerate}
 
 \textbf{DST の主張}：長らく非バリオン性暗黒物質の最強の証拠と見なされてきた平坦な回転曲線は、バリオン質量分布と双対時空のコンパクト幾何だけから創発する。いかなる種類の暗黒物質も不要である。
@@ -5409,13 +5413,13 @@ DST の主張は次のとおりである。
 
 \subsection{重力チャンネルの銀河スケールコンパクト化}
 
-双対ローター \(R_{\mathrm{dual}} \in \mathrm{SU}(2) \cong S^3\) \eqref{eq:R-dual} は、各質量粒子に内在的な双対時空自由度をパラメーター化する \footnote{第 IV 部 \eqref{eq:S3-phase-space} で確立した位相空間構造の銀河スケールへの拡張。}.
+双対ローター \(R_{\mathrm{dual}} \in \mathrm{SU}(2) \cong S^3\) \eqref{eq:R-dual} は、各質量粒子に内在的な双対時空自由度をパラメーター化する \footnote{第 IV 部 \eqref{eq:S3-phase-space} で確立した位相空間構造の銀河スケールへの拡張。}。
 三つの独立回転角 \((\theta_1, \theta_2, \theta_3)\) は、コンパクト化半径 \(R\) の 3 次元球面上の座標を定義する。通常時空は平坦かつ非コンパクトのままである \eqref{eq:R-usual}。
 
 前章の表 \ref{tab:two-channels} に示したとおり、二つの角度チャンネルは宇宙論スケールで\textbf{異なる展開}をもつ：
 \begin{itemize}[leftmargin=2em]
   \item \textbf{重力チャンネル} \((\phi, \theta)\)：慣性質量に結びついた運動学的対が、双対セクターを\textbf{銀河スケール}の \(S^3\) パッチとしてコンパクト化する。
-  \item \textbf{電磁チャンネル} \((\alpha, \beta)\)：電荷に結びついた独立な対は、これよりはるかに大きな（宇宙スケールに近い）空間展開をもつ \footnote{本章では重力チャンネルの展開に焦点を当てる。}.
+  \item \textbf{電磁チャンネル} \((\alpha, \beta)\)：電荷に結びついた独立な対は、これよりはるかに大きな（宇宙スケールに近い）空間展開をもつ \footnote{本章では重力チャンネルの展開に焦点を当てる。}。
 \end{itemize}
 
 銀河内部では、全バリオン質量 \(M_{\mathrm{tot}}\) に結びついた重力チャンネルの双対位相 \(\theta\) \eqref{eq:R-dual} が、コンパクト化半径 \(R\) の \(S^3\) パッチ上で支配的になる \eqref{eq:S3-phase-space}。
@@ -5428,7 +5432,7 @@ DST の主張は次のとおりである。
   \log : S^3 \to \mathfrak{su}(2) \cong \mathbb{R}^3
   \label{eq:galaxy-log-map}
 \end{equation}
-によって与えられる \footnote{\hyperref[sec:sister-manuscripts]{親理論}「暗黒物質なし：双対時空コンパクト性からの銀河回転曲線」 §1。}.
+によって与えられる \footnote{\hyperref[sec:sister-manuscripts]{親理論}「暗黒物質なし：双対時空コンパクト性からの銀河回転曲線」 §1。}。
 各双対ローターを平坦な \(\mathbb{R}^3\) の点と同一視し、3 次元球を半径 \(\pi R\) の球へ写す。これは測地図における方位等距図法の 3 次元一般化である。
 
 \(S^2\) の北極を中心とする方位等距図法が極近傍の距離を忠実に表す一方、南極近傍で面積を破滅的に歪め、単一の対蹠点を投影境界の全周長へ写すのと同様に、\(S^3\) の対数写像 \eqref{eq:galaxy-log-map} は系統的な体積歪みを導入する。
@@ -5437,7 +5441,7 @@ DST の主張は次のとおりである。
   \mathcal{J}(\chi) = \frac{\sin^2 \chi}{\chi^2}
   \label{eq:galaxy-jacobian}
 \end{equation}
-で定量化される \footnote{\(\chi = 0\) で \(\mathcal{J} = 1\)；\(\chi = \pi\) で \(\mathcal{J} = 0\)。}.
+で定量化される \footnote{\(\chi = 0\) で \(\mathcal{J} = 1\)；\(\chi = \pi\) で \(\mathcal{J} = 0\)。}。
 
 \begin{equation}
   \boxed{\;
@@ -5448,7 +5452,7 @@ DST の主張は次のとおりである。
   \label{eq:galaxy-J-equals-one}
 \end{equation}
 
-銀河スケールではこの仮定が破れる \eqref{eq:galaxy-jacobian}。観測者が「不足する重力質量」と解釈するものは、実際にはこの投影歪みである \footnote{暗黒物質粒子の存在を要請しない。}.
+銀河スケールではこの仮定が破れる \eqref{eq:galaxy-jacobian}。観測者が「不足する重力質量」と解釈するものは、実際にはこの投影歪みである \footnote{暗黒物質粒子の存在を要請しない。}。
 
 \paragraph{論理の鎖（§1）}
 以上をまとめると：
@@ -5463,7 +5467,7 @@ DST の主張は次のとおりである。
 
 \subsection{\(S^3\) 上のラプラシアン・グリーン関数}
 
-重力の源となるねじれ不整合スカラー \(J\) \eqref{eq:gravity-J} は、コンパクト双対時空上で計算される \footnote{弱場では \(J \approx \tfrac{1}{2c^4}|\nabla\Phi|^2\) \eqref{eq:gravity-weak-J-Phi}。本章では \(S^3\) 幾何が支配的な銀河スケール。}.
+重力の源となるねじれ不整合スカラー \(J\) \eqref{eq:gravity-J} は、コンパクト双対時空上で計算される \footnote{弱場では \(J \approx \tfrac{1}{2c^4}|\nabla\Phi|^2\) \eqref{eq:gravity-weak-J-Phi}。本章では \(S^3\) 幾何が支配的な銀河スケール。}。
 点質量 \(M\) の有効重力ポテンシャルは、\(S^3\) 上のラプラシアンのグリーン関数で支配される。
 球対称の場合、一意の半径方向調和関数は\textbf{余接}（cotangent）である \footnote{平坦空間の \(-GM/r\) ではなく、コンパクト空間の固有解。}：
 \begin{equation}
@@ -5477,7 +5481,7 @@ DST の主張は次のとおりである。
   g(r) \cdot 4\pi R^2 \sin^2\!\left(\frac{r}{R}\right) = -4\pi GM
   \label{eq:galaxy-gauss}
 \end{equation}
-により確認される \footnote{\(S^3\) 上の球面積 \(4\pi R^2\sin^2(r/R)\) が、平坦空間の \(4\pi r^2\) に置き換わる。}.
+により確認される \footnote{\(S^3\) 上の球面積 \(4\pi R^2\sin^2(r/R)\) が、平坦空間の \(4\pi r^2\) に置き換わる。}。
 
 \subsection{短距離極限：ニュートン重力の回復}
 
@@ -5517,7 +5521,7 @@ DST の主張は次のとおりである。
   \label{eq:galaxy-eta-boxed}
 \end{equation}
 
-この因子は方位等距図法の計量歪み \eqref{eq:galaxy-jacobian} の二乗に正確に等しい \footnote{\(\eta = \chi^2/\sin^2\chi = 1/\mathcal{J}(\chi)\) 型の関係。}.
+この因子は方位等距図法の計量歪み \eqref{eq:galaxy-jacobian} の二乗に正確に等しい \footnote{\(\eta = \chi^2/\sin^2\chi = 1/\mathcal{J}(\chi)\) 型の関係。}。
 \(S^3\) 上の測地半径 \(r\) の球を通る重力フラックスが、平坦空間の面積 \(4\pi r^2\) より小さい面積 \(4\pi R^2 \sin^2(r/R)\) \eqref{eq:galaxy-gauss} を張るため、フラックスが集中し、見えない物質によらず双対時空のコンパクト曲率によって重力が強化される。
 
 代表的値：\(r/R = 0.1\) で \(\eta = 1.003\)；\(r/R = 1.0\) で \(\eta = 1.41\)；\(r/R = 1.5\) で \(\eta = 2.26\)；\(r/R = 2.0\) で \(\eta = 4.84\)。
@@ -5550,7 +5554,7 @@ DST の主張は次のとおりである。
   \label{eq:galaxy-f-function}
 \end{equation}
 が回転曲線の形を支配する \eqref{eq:galaxy-v2}。
-\(f'(x) = 0\) すなわち \(\tan x = 2x\) の解 \(x_0 \approx 1.17\) に広い最小値があり、拡張したプラトー領域を生む \footnote{\(f_0 \equiv f(x_0) \approx 1.10\)。}.
+\(f'(x) = 0\) すなわち \(\tan x = 2x\) の解 \(x_0 \approx 1.17\) に広い最小値があり、拡張したプラトー領域を生む \footnote{\(f_0 \equiv f(x_0) \approx 1.10\)。}。
 
 \begin{itemize}[leftmargin=2em]
   \item \textbf{内側領域}（\(r \ll R\)）：上昇する \(M(r)\) により修正されたケプラー挙動が、観測された剛体回転の立ち上がりを再現する。
@@ -5565,7 +5569,7 @@ DST の主張は次のとおりである。
   \label{eq:galaxy-flat-boxed}
 \end{equation}
 
-\subsection{バリオン・タリー--フィッシャー関係とコンパクト化半径}
+\subsection{バリオン・タリー・フィッシャー関係とコンパクト化半径}
 
 プラトー領域における漸近円周速度は
 \begin{equation}
@@ -5585,7 +5589,7 @@ DST の主張は次のとおりである。
   v_{\mathrm{flat}}^4 = G M_{\mathrm{tot}} \, a_0 \, f_0^2,
   \label{eq:galaxy-btfr-relation}
 \end{equation}
-となり、これはまさに\textbf{バリオン・タリー--フィッシャー関係}（BTFR；McGaugh et al.\ 2016）である \footnote{\(a_0 \approx 1.2 \times 10^{-10}\,\mathrm{m/s^2}\)。MOND と同オーダーだが、補間関数の起源は異なる（§6）。}.
+となり、これはまさに\textbf{バリオン・タリー・フィッシャー関係}（BTFR; McGaugh et al.\ 2016）である \footnote{\(a_0 \approx 1.2 \times 10^{-10}\,\mathrm{m/s^2}\)。MOND と同オーダーだが、補間関数の起源は異なる（§6）。}。
 スケーリング \(R \propto M^{1/2}\) は、より大質量銀河がより大きな双対時空パッチを持つことを意味し、より大きな全ねじれ電荷 \eqref{eq:gravity-J} の自然的帰結である。
 
 天の川銀河（\(M_{\mathrm{tot}} \approx 6 \times 10^{10}\,M_\odot\)）に対して
@@ -5594,7 +5598,7 @@ DST の主張は次のとおりである。
   \label{eq:galaxy-MW-R}
 \end{equation}
 となり、観測された平坦回転曲線の半径方向広がりと顕著に一致する \eqref{eq:galaxy-btfr}。
-加速度スケール \(a_0\) は典型銀河の \(S^3\) 境界における特徴的重力加速度として同定され、その起源は双対時空の離散コンパクト化構造 \eqref{eq:S3-phase-space} にある \footnote{\hyperref[sec:sister-manuscripts]{親理論}「離散時間とコンパクト化ねじれスカラー」 との接続。}.
+加速度スケール \(a_0\) は典型銀河の \(S^3\) 境界における特徴的重力加速度として同定され、その起源は双対時空の離散コンパクト化構造 \eqref{eq:S3-phase-space} にある \footnote{\hyperref[sec:sister-manuscripts]{親理論}「離散時間とコンパクト化ねじれスカラー」 との接続。}。
 
 \paragraph{論理の鎖（§3）}
 以上をまとめると：
@@ -5607,9 +5611,9 @@ DST の主張は次のとおりである。
 
 \section{ねじれ反転と重力の有限範囲}
 
-余接ポテンシャル \eqref{eq:galaxy-cot-potential} は \(r = \pi R/2\) で零を横切り、その先では双対時空回転角 \(\theta(r) = r/R\) \eqref{eq:R-dual} が \(\pi/2\) を超える \footnote{コンパクト位相空間 \eqref{eq:S3-phase-space} の自然な境界。}.
+余接ポテンシャル \eqref{eq:galaxy-cot-potential} は \(r = \pi R/2\) で零を横切り、その先では双対時空回転角 \(\theta(r) = r/R\) \eqref{eq:R-dual} が \(\pi/2\) を超える \footnote{コンパクト位相空間 \eqref{eq:S3-phase-space} の自然な境界。}。
 
-ねじれ不整合枠組み \eqref{eq:gravity-J} において、この横切りはねじれスカラー \(J\) の\textbf{符号変化}を引き起こす \eqref{tab:J-signs}。双対セクターからのコンパクト三角関数寄与が通常セクターからの非コンパクト双曲寄与を圧倒し、\(J < 0\) および斥力重力となる \footnote{強場章 \eqref{eq:strongfield-layers} の層状反転と同一メカニズム。スケールが銀河。}.
+ねじれ不整合枠組み \eqref{eq:gravity-J} において、この横切りはねじれスカラー \(J\) の\textbf{符号変化}を引き起こす \eqref{tab:J-signs}。双対セクターからのコンパクト三角関数寄与が通常セクターからの非コンパクト双曲寄与を圧倒し、\(J < 0\) および斥力重力となる \footnote{強場章 \eqref{eq:strongfield-layers} の層状反転と同一メカニズム。スケールが銀河。}。
 
 有効ローレンツ因子 \eqref{eq:timedilation-gamma-eff} は
 \begin{equation}
@@ -5617,7 +5621,7 @@ DST の主張は次のとおりである。
   \label{eq:galaxy-gamma-eff-reminder}
 \end{equation}
 であり、\(\theta\) が \(\tanh(\phi/2)\tan(\theta_c/2) = 1\) を満たす臨界値を超えると負になる \eqref{eq:timedilation-gamma-s-negative}。
-スカラー干渉因子 \(\gamma_s\) \eqref{eq:timedilation-gamma-s} も同じ角度バランス \eqref{eq:gravity-killing-signs} を測る。\(J < 0\) \eqref{tab:J-signs} と \(\gamma_s < 0\) \eqref{eq:timedilation-gamma-s-negative} は代数的に対応する \footnote{時間膨張章 §4 参照。}.
+スカラー干渉因子 \(\gamma_s\) \eqref{eq:timedilation-gamma-s} も同じ角度バランス \eqref{eq:gravity-killing-signs} を測る。\(J < 0\) \eqref{tab:J-signs} と \(\gamma_s < 0\) \eqref{eq:timedilation-gamma-s-negative} は代数的に対応する \footnote{時間膨張章 §4 参照。}。
 
 \begin{equation}
   \boxed{\;
@@ -5629,7 +5633,7 @@ DST の主張は次のとおりである。
 \end{equation}
 
 したがって引力は有効半径 \(\sim \pi R/2\) の有限 \(S^3\) パッチに閉じ込められ、その外側では弱い斥力ねじれ障壁が現れる \eqref{eq:galaxy-reversal}。
-この有限範囲は、無限遠まで伸びるニュートン \(1/r\) ポテンシャル \eqref{eq:gravity-newton-potential} のコンパクト空間類比である。\(S^3\) 位相 \eqref{eq:S3-phase-space} は各重力源を自然に「壁で仕切る」 \footnote{§5 の宇宙地図像と直結。}.
+この有限範囲は、無限遠まで伸びるニュートン \(1/r\) ポテンシャル \eqref{eq:gravity-newton-potential} のコンパクト空間類比である。\(S^3\) 位相 \eqref{eq:S3-phase-space} は各重力源を自然に「壁で仕切る」 \footnote{§5 の宇宙地図像と直結。}。
 
 \paragraph{論理の鎖（§4）}
 以上をまとめると：
@@ -5644,10 +5648,10 @@ DST の主張は次のとおりである。
 
 \subsection{重なり合う \(S^3\) パッチ}
 
-観測可能宇宙は、重力集中（銀河または銀河団）ごとに中心をもつ重なり合う \(S^3\) パッチ \eqref{eq:S3-phase-space} によって形成され、厳密な微分幾何の意味で\textbf{宇宙地図}（cosmic atlas）を形成する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「暗黒物質なし：双対時空コンパクト性からの銀河回転曲線」 §7。}.
+観測可能宇宙は、重力集中（銀河または銀河団）ごとに中心をもつ重なり合う \(S^3\) パッチ \eqref{eq:S3-phase-space} によって形成され、厳密な微分幾何の意味で\textbf{宇宙地図}（cosmic atlas）を形成する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「暗黒物質なし：双対時空コンパクト性からの銀河回転曲線」 §7。}。
 各パッチは方位等距投影図 \eqref{eq:galaxy-log-map} として機能し、中心近傍では忠実、境界 \eqref{eq:galaxy-reversal} では最大歪みである \eqref{eq:galaxy-jacobian}。
 
-宇宙の大規模構造は、方位等距地図の銀河スケールのステッカーが斥力境界 \eqref{eq:galaxy-reversal} で貼り合わされた多様体として理解できる \footnote{背景連続時空多様体 \eqref{eq:gravity-torsion-rotor} は存在しない。パッチワーク構造が基本。}.
+宇宙の大規模構造は、方位等距地図の銀河スケールのステッカーが斥力境界 \eqref{eq:galaxy-reversal} で貼り合わされた多様体として理解できる \footnote{背景連続時空多様体 \eqref{eq:gravity-torsion-rotor} は存在しない。パッチワーク構造が基本。}。
 
 \subsection{観測現象の再解釈}
 
@@ -5656,7 +5660,7 @@ DST の主張は次のとおりである。
   \item \textbf{宇宙の大規模構造}：銀河は隣接 \(S^3\) 図表の重なり領域に沿って分布し、隣接パッチの引力尾部が相長干渉する。
   \item \textbf{宇宙の空洞}：巨大な低密度領域は図表間の斥力（\(J < 0\) \eqref{tab:J-signs}）境界帯 \eqref{eq:galaxy-reversal} に対応し、物質が追い出される。
   \item \textbf{半径方向加速度関係}（RAR）：観測重力加速度 \(g_{\mathrm{obs}}\) とバリオン重力加速度 \(g_{\mathrm{bar}}\) の強い相関は、普遍的 \(\eta(r)\) \eqref{eq:galaxy-eta} 増強に従い、残差散乱は図表重なり効果に由来する。
-  \item \textbf{直接検出実験における暗黒物質信号の欠如}：暗黒物質は存在しないからである \footnote{WIMP 等の候補粒子を要請しない。}.
+  \item \textbf{直接検出実験における暗黒物質信号の欠如}：暗黒物質は存在しないからである \footnote{WIMP 等の候補粒子を要請しない。}。
 \end{itemize}
 
 \begin{equation}
@@ -5690,14 +5694,14 @@ DST の主張は次のとおりである。
     g_{\mathrm{obs}} = g_{\mathrm{bar}} \cdot \eta(r)
     \label{eq:galaxy-g-obs}
   \end{equation}
-  \eqref{eq:galaxy-eta} に従い、\(g \lesssim a_0/10\) で測定可能なずれを生む \footnote{\(a_0\) の数値は同オーダー \eqref{eq:galaxy-btfr-relation} だが、補間の\textbf{関数形}が異なる。これが決定的な反証テスト。}.
+  \eqref{eq:galaxy-eta} に従い、\(g \lesssim a_0/10\) で測定可能なずれを生む \footnote{\(a_0\) の数値は同オーダー \eqref{eq:galaxy-btfr-relation} だが、補間の\textbf{関数形}が異なる。これが決定的な反証テスト。}。
   \item \textbf{\(R(M)\) からの多様性}：観測される回転曲線形状の多様性（表面輝度の低い矮星（\(r_{\mathrm{disk}} \ll R\)）の緩慢な立ち上がりから、銀河型の平坦、高表面輝度渦巻（\(r_{\mathrm{disk}} \sim R\)）の緩やかな減少まで）は、付加自由パラメーターなしに単一関係 \eqref{eq:galaxy-btfr} によって再現される。
 \end{itemize}
 
 \subsection{次章への接続}
 
 本章では、銀河スケール \(S^3\) コンパクト化 \eqref{eq:S3-phase-space} と余接ポテンシャル \eqref{eq:galaxy-cot-potential} から平坦回転曲線 \eqref{eq:galaxy-v2} と BTFR \eqref{eq:galaxy-btfr-relation} を導き、暗黒物質不要 \eqref{eq:galaxy-no-dm} を示した。
-重要なのは、ねじれ不整合スカラー \(J\) \eqref{eq:gravity-J} が相対角 \(\Omega\) \eqref{eq:gravity-torsion-rotor} のみに依存し、個々のローターの絶対値には依存しないことである \footnote{重力章 §5 参照。これが工学的操作の原理的根拠となる。}.
+重要なのは、ねじれ不整合スカラー \(J\) \eqref{eq:gravity-J} が相対角 \(\Omega\) \eqref{eq:gravity-torsion-rotor} のみに依存し、個々のローターの絶対値には依存しないことである \footnote{重力章 §5 参照。これが工学的操作の原理的根拠となる。}。
 
 次章「重力工学：双対ローターのコヒーレント励起」では、外部場による双対ローター位相 \(\theta_a\) \eqref{eq:R-dual} のコヒーレント変調が、\(J \to 0\)（重力遮蔽）または \(J < 0\)（斥力重力）を駆動しうることを展開する \footnote{時間膨張章 \eqref{eq:timedilation-gamma-s} で予告した THz 円偏波との共鳴。}。重力を侵すべからざる幾何制約から工学的ねじれ自由度へと変える DST の展望である。
 
@@ -5734,7 +5738,7 @@ DST の主張は次のとおりである。
 
 \chapter{重力工学：双対ローターのコヒーレント励起}
 
-前章では、銀河スケール \(S^3\) コンパクト化 \eqref{eq:S3-phase-space} と余接ポテンシャル \eqref{eq:galaxy-cot-potential} から平坦回転曲線 \eqref{eq:galaxy-v2} を導き、暗黒物質不要 \eqref{eq:galaxy-no-dm} を示した \footnote{\hyperref[sec:sister-manuscripts]{親理論}「暗黒物質なし：双対時空コンパクト性からの銀河回転曲線」に対応。}.
+前章では、銀河スケール \(S^3\) コンパクト化 \eqref{eq:S3-phase-space} と余接ポテンシャル \eqref{eq:galaxy-cot-potential} から平坦回転曲線 \eqref{eq:galaxy-v2} を導き、暗黒物質不要 \eqref{eq:galaxy-no-dm} を示した \footnote{\hyperref[sec:sister-manuscripts]{親理論}「暗黒物質なし：双対時空コンパクト性からの銀河回転曲線」に対応。}。
 その核心は、ねじれ不整合スカラー \(J\) \eqref{eq:gravity-J} が相対ずれローター \(\Omega = R_{\mathrm{usual}}^\dagger R_{\mathrm{dual}}\) \eqref{eq:gravity-torsion-rotor}（すなわち粒子内在的な\textbf{相対角}）のみに依存し、個々の \(R_{\mathrm{usual}}\) や \(R_{\mathrm{dual}}\) \eqref{eq:R-usual}–\eqref{eq:R-dual} の絶対位相には依存しないこと \footnote{重力章 §5 参照。これが工学的操作の原理的根拠となる。} である。
 
 本章では、次の三つを確立する：
@@ -5744,8 +5748,8 @@ DST の主張は次のとおりである。
   \item 卓上実験プロトコルと、ヘリシティ依存の慣性質量変化 \(\Delta m/m \gtrsim 10^{-6}\) という反証可能な予測。
 \end{enumerate}
 
-\textbf{DST の主張}：重力と慣性は、各質量粒子が運ぶ双対ローターの相対ずれのエネルギーコスト \eqref{eq:gravity-action} である。したがって、双対位相 \(\theta_a\) を外部から\textbf{コヒーレントに}励起できる仕組みがあれば、\(J \to 0\)（重力遮蔽・慣性低減）または \(J < 0\)（斥力重力）を原理上駆動できる \footnote{時間膨張章 \eqref{eq:timedilation-gamma-s} で予告した THz 円偏波との共鳴。}.
-ただし、本章の内容は現時点では\textbf{原理的展望}にとどまり、実験的実現は未確認である \footnote{慣性章 \eqref{eq:inertia-equivalence-J} でも同様の注意を付した。}.
+\textbf{DST の主張}：重力と慣性は、各質量粒子が運ぶ双対ローターの相対ずれのエネルギーコスト \eqref{eq:gravity-action} である。したがって、双対位相 \(\theta_a\) を外部から\textbf{コヒーレントに}励起できる仕組みがあれば、\(J \to 0\)（重力遮蔽・慣性低減）または \(J < 0\)（斥力重力）を原理上駆動できる \footnote{時間膨張章 \eqref{eq:timedilation-gamma-s} で予告した THz 円偏波との共鳴。}。
+ただし、本章の内容は現時点では\textbf{原理的展望}にとどまり、実験的実現は未確認である \footnote{慣性章 \eqref{eq:inertia-equivalence-J} でも同様の注意を付した。}。
 
 \section{円偏波電磁場と双対ローターの理論的結合}
 
@@ -5768,7 +5772,7 @@ DST の主張は次のとおりである。
 \end{equation}
 
 電場成分 \(\mathbf{E}\) は主として通常時空の双曲生成子 \((iI, iJ, iK)\) に結合し、磁場成分 \(\mathbf{B}\) は双対時空の巡回生成子 \((I, J, K)\) \eqref{eq:cyclic-biv} に\textbf{排他的}に結合する。
-この代数的分離は、時間反転 \(T\)（\(\mathbf{E} \to \mathbf{E}\)、\(\mathbf{B} \to -\mathbf{B}\)）の下での変換性質の相違の幾何的起源である。双対時空は内在的に時間反転している \footnote{電弱統一章 §1「二つの角度チャンネル」\eqref{tab:two-channels} と同じ時間矢の非対称性。}.
+この代数的分離は、時間反転 \(T\)（\(\mathbf{E} \to \mathbf{E}\)、\(\mathbf{B} \to -\mathbf{B}\)）の下での変換性質の相違の幾何的起源である。双対時空は内在的に時間反転している \footnote{電弱統一章 §1「二つの角度チャンネル」\eqref{tab:two-channels} と同じ時間矢の非対称性。}。
 
 \begin{table}[htbp]
   \centering
@@ -5815,7 +5819,7 @@ DST の主張は次のとおりである。
   \item \textbf{左旋偏光}（\(\sigma = -1\)）：\(J\) を\textbf{減少}させ、十分な強度では\textbf{反転}（\(J < 0\)、斥力重力）\eqref{tab:J-signs} も可能。
 \end{itemize}
 
-このヘリシティ選択性は、DST の最も鋭い予測の一つである。重力は単に変調されるだけでなく、双対時空の内在的時間反転非対称性を通じて\textbf{キラル}的に作用する \footnote{銀河回転曲線章で \(J < 0\) 斥力境界 \eqref{eq:galaxy-reversal} が予測されたのと同型。本章はその\textbf{局所}・\textbf{工学的}版である。}.
+このヘリシティ選択性は、DST の最も鋭い予測の一つである。重力は単に変調されるだけでなく、双対時空の内在的時間反転非対称性を通じて\textbf{キラル}的に作用する \footnote{銀河回転曲線章で \(J < 0\) 斥力境界 \eqref{eq:galaxy-reversal} が予測されたのと同型。本章はその\textbf{局所}・\textbf{工学的}版である。}。
 
 \begin{equation}
   \boxed{\;
@@ -5843,8 +5847,8 @@ DST の主張は次のとおりである。
   \right),
   \label{eq:graveng-R-dual-path}
 \end{equation}
-と書ける \footnote{\(\mathcal{P}\) は経路順序、\(\lambda\) は世界線パラメーター、\(e\) は結合定数。}.
-双対生成子 \(\Gamma_a = \{I, J, K\}\) \eqref{eq:cyclic-biv} が相互作用を媒介し、結合は最小かつゲージ不変である \footnote{電荷 \(q\) と双対セクター上のベクトルポテンシャル \(A_a\) の役割は \eqref{eq:unif-theta-shift} と同一。}.
+と書ける \footnote{\(\mathcal{P}\) は経路順序、\(\lambda\) は世界線パラメーター、\(e\) は結合定数。}。
+双対生成子 \(\Gamma_a = \{I, J, K\}\) \eqref{eq:cyclic-biv} が相互作用を媒介し、結合は最小かつゲージ不変である \footnote{電荷 \(q\) と双対セクター上のベクトルポテンシャル \(A_a\) の役割は \eqref{eq:unif-theta-shift} と同一。}。
 
 \subsection{共鳴駆動方程式}
 
@@ -5854,7 +5858,7 @@ DST の主張は次のとおりである。
   = \kappa\,\sigma\, E_0^2 \sum_{a=1}^{3} \theta_a\,\Gamma_a,
   \label{eq:graveng-H-int}
 \end{equation}
-と書ける \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「量子的視点からの実験的検証可能性」。}.
+と書ける \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「量子的視点からの実験的検証可能性」。}。
 \(\kappa\) は物質依存結合定数、\(E_0\) は電場振幅である。
 
 共鳴近傍では、双対位相は
@@ -5863,10 +5867,10 @@ DST の主張は次のとおりである。
   = \kappa\,\sigma\, E_0^2 \sin(\omega t - \theta + \delta_\sigma),
   \label{eq:graveng-theta-dot}
 \end{equation}
-として進化する \footnote{\(\delta_\sigma\) はヘリシティ依存位相オフセット。}.
-この方程式は、ねじれ不整合角 \(\Omega_{\mathrm{biv}}\) \eqref{eq:gravity-omega-biv} の\textbf{コヒーレント励起}を与える。外部場が \(\theta\) を \(\phi\) \eqref{eq:R-usual} に同期させれば \(J \to 0\) \eqref{eq:inertia-free-fall}、\(\theta\) が \(\phi\) を上回れば \(J < 0\) \eqref{tab:J-signs} となる \footnote{慣性章 \eqref{eq:inertia-mismatch} の外部駆動版。}.
+として進化する \footnote{\(\delta_\sigma\) はヘリシティ依存位相オフセット。}。
+この方程式は、ねじれ不整合角 \(\Omega_{\mathrm{biv}}\) \eqref{eq:gravity-omega-biv} の\textbf{コヒーレント励起}を与える。外部場が \(\theta\) を \(\phi\) \eqref{eq:R-usual} に同期させれば \(J \to 0\) \eqref{eq:inertia-free-fall}、\(\theta\) が \(\phi\) を上回れば \(J < 0\) \eqref{tab:J-signs} となる \footnote{慣性章 \eqref{eq:inertia-mismatch} の外部駆動版。}。
 
-\(\dot{\theta}\) 方程式 \eqref{eq:graveng-theta-dot} と \(J\) \eqref{eq:gravity-J} の関係は、相対角 \(\Omega = R_{\mathrm{usual}}^\dagger R_{\mathrm{dual}}\) \eqref{eq:gravity-torsion-rotor} が \(\theta - \phi\) に依存することから直接読み取れる。\(\theta\) の外部制御は、実質的に \(J\) の工学的制御である \footnote{時間膨張章 \eqref{eq:timedilation-delta-theta} の \(\delta\theta = \theta - \phi\) も同じ構造。}.
+\(\dot{\theta}\) 方程式 \eqref{eq:graveng-theta-dot} と \(J\) \eqref{eq:gravity-J} の関係は、相対角 \(\Omega = R_{\mathrm{usual}}^\dagger R_{\mathrm{dual}}\) \eqref{eq:gravity-torsion-rotor} が \(\theta - \phi\) に依存することから直接読み取れる。\(\theta\) の外部制御は、実質的に \(J\) の工学的制御である \footnote{時間膨張章 \eqref{eq:timedilation-delta-theta} の \(\delta\theta = \theta - \phi\) も同じ構造。}。
 
 \paragraph{論理の鎖（§1）}
 以上をまとめると：
@@ -5882,9 +5886,9 @@ DST の主張は次のとおりである。
 
 \subsection{プランクスケールから THz への赤方偏移}
 
-粒子内在的な双対時空スケールはプランク的（\(\sim 10^{43}\,\mathrm{Hz}\)）である。単一粒子の双対ローター \eqref{eq:R-dual} を直接 THz 電磁場で共鳴させることは、周波数が \(\sim 30\) 桁も離れているため原理的に困難である \footnote{\hyperref[sec:sister-manuscripts]{親理論}「重力工学：双対時空ローターのコヒーレント励起」。}.
+粒子内在的な双対時空スケールはプランク的（\(\sim 10^{43}\,\mathrm{Hz}\)）である。単一粒子の双対ローター \eqref{eq:R-dual} を直接 THz 電磁場で共鳴させることは、周波数が \(\sim 30\) 桁も離れているため原理的に困難である \footnote{\hyperref[sec:sister-manuscripts]{親理論}「重力工学：双対時空ローターのコヒーレント励起」。}。
 
-しかし、巨視的試験質量（\(N \sim 10^{26}\) 粒子）では、双対ローターが\textbf{集合的}に同一位相へロックされる \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「量子的視点からの実験的検証可能性」。}.
+しかし、巨視的試験質量（\(N \sim 10^{26}\) 粒子）では、双対ローターが\textbf{集合的}に同一位相へロックされる \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「量子的視点からの実験的検証可能性」。}。
 巨視的コヒーレンスは有効共鳴周波数を
 \begin{equation}
   \omega_{\mathrm{eff}} \sim \frac{\omega_{\mathrm{Planck}}}{\sqrt{N}}
@@ -5892,18 +5896,18 @@ DST の主張は次のとおりである。
   10^{12}\text{--}10^{15}\,\mathrm{Hz},
   \label{eq:graveng-freq-redshift}
 \end{equation}
-の THz 領域へ赤方偏移させる \footnote{\(N \sim 10^{26}\) で \(\sqrt{N} \sim 10^{13}\)、\(10^{43}/10^{13} \sim 10^{30}\)。さらに超伝導体の位相ロックで GHz--THz まで下がる。}.
+の THz 領域へ赤方偏移させる \footnote{\(N \sim 10^{26}\) で \(\sqrt{N} \sim 10^{13}\)、\(10^{43}/10^{13} \sim 10^{30}\)。さらに超伝導体の位相ロックで GHz--THz まで下がる。}。
 
 予測される双対ローター共鳴周波数は、粒子質量 \(m\) で決まるコンパクト化半径 \(r_{\mathrm{comp}}\) に依存する：
 \begin{equation}
   \omega_{\mathrm{res}} \sim \frac{c}{2\pi r_{\mathrm{comp}}},
   \label{eq:graveng-resonance-freq}
 \end{equation}
-と書ける \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「量子的視点からの実験的検証可能性」。\(r_{\mathrm{comp}}\) は双対セクターのコンパクト化半径。}.
+と書ける \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「量子的視点からの実験的検証可能性」。\(r_{\mathrm{comp}}\) は双対セクターのコンパクト化半径。}。
 
 \subsection{超伝導体による位相ロック}
 
-超伝導体は、ジョセフソンプラズマ共鳴と\textbf{集合位相ロック}を介して、さらに劇的な周波数低下をもたらす \footnote{\hyperref[sec:sister-manuscripts]{親理論}「重力工学：双対時空ローターのコヒーレント励起」。}.
+超伝導体は、ジョセフソンプラズマ共鳴と\textbf{集合位相ロック}を介して、さらに劇的な周波数低下をもたらす \footnote{\hyperref[sec:sister-manuscripts]{親理論}「重力工学：双対時空ローターのコヒーレント励起」。}。
 超伝導試験質量内部の \(N \sim 10^{26}\) 個の双対ローター \eqref{eq:R-dual} が共通位相 \(\theta_{\mathrm{coh}}\) に同期すれば、外部 THz 場は単一粒子ではなく\textbf{巨視的な双対励起モード}と結合する。これが卓上実験の原理的根拠である。
 
 高 \(Q\)（品質因子）超伝導共振器は、以下の二つの役割を果たす：
@@ -5912,14 +5916,14 @@ DST の主張は次のとおりである。
   \item \textbf{周波数選択}：共鳴条件 \(\omega \approx \omega_{\mathrm{eff}}\) \eqref{eq:graveng-freq-redshift} においてのみ、双対位相のコヒーレント励起が最大化される。
 \end{itemize}
 
-量子カスケードレーザー（QCL）や自由電子レーザー（FEL）空洞と組み合わせれば、0.1--10\,THz 帯の\textbf{調整可能}円偏波放射が実現可能である \footnote{現行技術の到達可能範囲。強度 \(10^{12}\)–\(10^{15}\,\mathrm{W/m^2}\) も議論されている \hyperref[sec:sister-manuscripts]{量子重力論文}。}.
+量子カスケードレーザー（QCL）や自由電子レーザー（FEL）空洞と組み合わせれば、0.1--10\,THz 帯の\textbf{調整可能}円偏波放射が実現可能である \footnote{現行技術の到達可能範囲。強度 \(10^{12}\)–\(10^{15}\,\mathrm{W/m^2}\) も議論されている \hyperref[sec:sister-manuscripts]{量子重力論文}。}。
 
 \subsection{慣性質量低減との接続}
 
 慣性章 \eqref{eq:inertia-F-ma} では、双対ローター剛性 \eqref{eq:R-dual} により加速時 \(\Omega \neq 1\) \eqref{eq:inertia-mismatch} となり \(F = ma\) が生じることを示した。
-外部 THz 円偏波が \(\theta\) を \(\phi\) \eqref{eq:R-usual} に共鳴的に同期させれば、\(\Omega \to 1\)、\(J \to 0\) \eqref{eq:inertia-free-fall} となり、\textbf{見かけの慣性質量}が低減する \footnote{慣性章 §4 脚注で予告した「双対位相 \(\theta\) の外部共鳴励起」。}.
+外部 THz 円偏波が \(\theta\) を \(\phi\) \eqref{eq:R-usual} に共鳴的に同期させれば、\(\Omega \to 1\)、\(J \to 0\) \eqref{eq:inertia-free-fall} となり、\textbf{見かけの慣性質量}が低減する \footnote{慣性章 §4 脚注で予告した「双対位相 \(\theta\) の外部共鳴励起」。}。
 
-この機構は、時間膨張章 \eqref{eq:timedilation-delta-theta} の \(\delta\theta = \theta - \phi\) 補正を外部から操作する版でもある。\(\delta\theta \to 0\) なら \(\gamma_{\mathrm{eff}} \to \cosh\phi\) \eqref{eq:timedilation-vacuum-sr}（SR 値）へ回復し、重力的時間膨張 \eqref{eq:gravity-action} が打ち消される \footnote{時間膨張章 §4「\(\theta\) 中心定式化と工学的含意」。}.
+この機構は、時間膨張章 \eqref{eq:timedilation-delta-theta} の \(\delta\theta = \theta - \phi\) 補正を外部から操作する版でもある。\(\delta\theta \to 0\) なら \(\gamma_{\mathrm{eff}} \to \cosh\phi\) \eqref{eq:timedilation-vacuum-sr}（SR 値）へ回復し、重力的時間膨張 \eqref{eq:gravity-action} が打ち消される \footnote{時間膨張章 §4「\(\theta\) 中心定式化と工学的含意」。}。
 
 \paragraph{論理の鎖（§2）}
 以上をまとめると：
@@ -5935,7 +5939,7 @@ DST の主張は次のとおりである。
 
 \subsection{実験構成}
 
-最もアクセスしやすい検証プラットフォームは、超伝導体の集合コヒーレンスを利用した卓上実験である \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「量子的視点からの実験的検証可能性」。}.
+最もアクセスしやすい検証プラットフォームは、超伝導体の集合コヒーレンスを利用した卓上実験である \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「量子的視点からの実験的検証可能性」。}。
 具体的プロトコルは次のとおり：
 
 \begin{enumerate}[leftmargin=2em]
@@ -5953,7 +5957,7 @@ DST は、共鳴的かつヘリシティ依存の\textbf{慣性質量変化}を�
   \label{eq:graveng-delta-m}
 \end{equation}
 左旋偏光（\(\sigma = -1\)）で\textbf{減少}、右旋偏光（\(\sigma = +1\)）で\textbf{増強}を生む \eqref{eq:graveng-helicity-switch}。
-到達可能な強度 \(10^{12}\)–\(10^{15}\,\mathrm{W/m^2}\) では、理論上 \(\Delta m/m \sim 10^{-2}\)–\(10^{-5}\) も可能とされる \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「量子的視点からの実験的検証可能性」。結合定数 \(\kappa\) に依存。}.
+到達可能な強度 \(10^{12}\)–\(10^{15}\,\mathrm{W/m^2}\) では、理論上 \(\Delta m/m \sim 10^{-2}\)–\(10^{-5}\) も可能とされる \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「量子的視点からの実験的検証可能性」。結合定数 \(\kappa\) に依存。}。
 
 \begin{table}[htbp]
   \centering
@@ -5971,21 +5975,21 @@ DST は、共鳴的かつヘリシティ依存の\textbf{慣性質量変化}を�
   \end{tabular}
 \end{table}
 
-このシグネチャは特徴的である。通常の電磁応答（ジュール熱、磁化など）では、ヘリシティ反転に伴う\textbf{符号反転}は生じにくい \footnote{これが DST 予測の反証可能性の核心。}.
+このシグネチャは特徴的である。通常の電磁応答（ジュール熱、磁化など）では、ヘリシティ反転に伴う\textbf{符号反転}は生じにくい \footnote{これが DST 予測の反証可能性の核心。}。
 
 \subsection{反証可能性と注意点}
 
-系統的な周波数・ヘリシティ走査の後、\(10^{-6}\) レベルでの\textbf{ヌル結果}は、双対ローター結合強度 \(\kappa\) とコンパクト化スケール \(r_{\mathrm{comp}}\) \eqref{eq:graveng-resonance-freq} を制約する \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「量子的視点からの実験的検証可能性」「反証可能性と注意点」。}.
+系統的な周波数・ヘリシティ走査の後、\(10^{-6}\) レベルでの\textbf{ヌル結果}は、双対ローター結合強度 \(\kappa\) とコンパクト化スケール \(r_{\mathrm{comp}}\) \eqref{eq:graveng-resonance-freq} を制約する \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「量子的視点からの実験的検証可能性」「反証可能性と注意点」。}。
 逆に、ヘリシティ反転可能で共鳴ピークを持つ質量シフトの陽性検出は、重力と慣性が双対時空に由来するねじれ現象 \eqref{eq:gravity-J} である強い証拠となる。
 
-本理論は即座の技術的突破を主張しない \footnote{\hyperref[sec:sister-manuscripts]{親理論}「重力工学：双対時空ローターのコヒーレント励起」末尾の注意と同型。}.
-上記提案は、双対時空自由度が実験室電磁場と測定可能に結合するという\textbf{基本仮説}を検証する規模の小さい卓上実験である。このレベルでの成功は大規模重力工学への扉を開く \footnote{失敗は単に枠組みのパラメーターを限定する。}.
+本理論は即座の技術的突破を主張しない \footnote{\hyperref[sec:sister-manuscripts]{親理論}「重力工学：双対時空ローターのコヒーレント励起」末尾の注意と同型。}。
+上記提案は、双対時空自由度が実験室電磁場と測定可能に結合するという\textbf{基本仮説}を検証する規模の小さい卓上実験である。このレベルでの成功は大規模重力工学への扉を開く \footnote{失敗は単に枠組みのパラメーターを限定する。}。
 
 \subsection{スケールアップとより広い含意}
 
 \(\Delta m/m \gtrsim 10^{-6}\) \eqref{eq:graveng-delta-m} レベルでの成功は、試験質量のスケールアップ（グラム、キログラム）と共振器の大型化により、実用的重力工学 \footnote{重力遮蔽（\(J \to 0\)）、慣性低減、将来的には斥力重力（\(J < 0\)）\eqref{tab:J-signs}。} へ直接つながる。
 
-同じ機構は、原子核内のねじれ層遷移 \eqref{tab:nuclear-layers} を駆動することによる核変換や放射性中和への経路も原理上提供する \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「量子的視点からの実験的検証可能性」「より広い含意」。ただし本検証プログラムの範囲外。}.
+同じ機構は、原子核内のねじれ層遷移 \eqref{tab:nuclear-layers} を駆動することによる核変換や放射性中和への経路も原理上提供する \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「量子的視点からの実験的検証可能性」「より広い含意」。ただし本検証プログラムの範囲外。}。
 
 \begin{equation}
   \boxed{\;
@@ -6007,7 +6011,7 @@ DST は、共鳴的かつヘリシティ依存の\textbf{慣性質量変化}を�
 \subsection{次章への接続}
 
 本章では、円偏波電磁場と双対ローター \eqref{eq:R-dual} の理論的結合 \eqref{eq:graveng-F-split}–\eqref{eq:graveng-theta-dot}、THz 共鳴 \eqref{eq:graveng-freq-redshift}、卓上実験プロトコル \eqref{eq:graveng-delta-m} を確立した。
-第 V 部の物理応用（重力 \eqref{eq:gravity-action}、慣性 \eqref{eq:inertia-F-ma}、強場 \eqref{eq:strongfield-layers}、核力 \eqref{tab:nuclear-layers}、銀河 \eqref{eq:galaxy-v2}）はすべて、双対ローター位相 \(\theta_a\) の幾何から創発する \footnote{電弱統一章 \eqref{eq:unif-two-channels} の二チャンネル統一。}.
+第 V 部の物理応用（重力 \eqref{eq:gravity-action}、慣性 \eqref{eq:inertia-F-ma}、強場 \eqref{eq:strongfield-layers}、核力 \eqref{tab:nuclear-layers}、銀河 \eqref{eq:galaxy-v2}）はすべて、双対ローター位相 \(\theta_a\) の幾何から創発する \footnote{電弱統一章 \eqref{eq:unif-two-channels} の二チャンネル統一。}。
 
 次章「宇宙論・量子重力と今後の展望」では、\hyperref[sec:sister-manuscripts]{親理論}「バリオン非対称性：双対ローター時間矢固定の幾何的起源」、「離散時間とコンパクト化ねじれスカラー」、「双対ローター動力学とド・ブロイ位相の幾何的起源」、「量子重力と完全統一に向けて」へと視野を広げ、第 IV 部のスピノル・量子状態 \eqref{eq:spinor-ideal-dst} との接続を明示する。DST の検証可能な近接実験 \eqref{tab:graveng-signatures} と理論的位置づけの総括である。
 
@@ -6050,21 +6054,21 @@ DST は、共鳴的かつヘリシティ依存の\textbf{慣性質量変化}を�
   \item 量子重力への道筋と、検証可能な近接実験の総括。第 IV 部スピノル \eqref{eq:spinor-ideal-dst} との接続を含む。
 \end{enumerate}
 
-\textbf{DST の主張}：宇宙論・量子論・重力は、すべての質量粒子が内在的に運ぶ通常時空ローター \(R_{\mathrm{usual}}\) \eqref{eq:R-usual} と双対時空ローター \(R_{\mathrm{dual}}\) \eqref{eq:R-dual} の\textbf{異なるスケール表現}である。連続体多様体や背景曲率を仮定せず、\(G(3,1,1)\) 上の同一のねじれ構造 \eqref{eq:J5-invariant} から創発する \footnote{\hyperref[sec:sister-manuscripts]{PGA 版論文}「Unitarity of the Extended Motor and Unified Description of Light and Torsion」–「Explicit Recovery of the Schwarzschild Solution without Curvature」：光・並進・ねじれの統一と曲率なし、シュバルツシルト回復。}.
+\textbf{DST の主張}：宇宙論・量子論・重力は、すべての質量粒子が内在的に運ぶ通常時空ローター \(R_{\mathrm{usual}}\) \eqref{eq:R-usual} と双対時空ローター \(R_{\mathrm{dual}}\) \eqref{eq:R-dual} の\textbf{異なるスケール表現}である。連続体多様体や背景曲率を仮定せず、\(G(3,1,1)\) 上の同一のねじれ構造 \eqref{eq:J5-invariant} から創発する \footnote{\hyperref[sec:sister-manuscripts]{PGA 版論文}「Unitarity of the Extended Motor and Unified Description of Light and Torsion」–「Explicit Recovery of the Schwarzschild Solution without Curvature」：光・並進・ねじれの統一と曲率なし、シュバルツシルト回復。}。
 
 \section{バリオン非対称：時間矢固定の幾何的起源}
 
 \subsection{内在的時間デュアリティ}
 
 各粒子は \(G(3,1)\) 最小左イデアル \eqref{eq:spinor-ideal-dst} 上に、通常時空セクター（\(kI, kJ, kK\) 成分）と双対時空セクター（\(jI, jJ, jK\) 成分）の二重構造を内在的に運ぶ。
-双対写像 \(X \mapsto X i\) \eqref{eq:duality-map} はミンコフスキーノルムを保ちつつ時間矢を反転させる。粒子（通常支配）は前方時間に、反粒子（双対支配）は後方時間に本質的に結合する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「バリオン非対称性：双対ローター時間矢固定の幾何的起源」 §1。}.
+双対写像 \(X \mapsto X i\) \eqref{eq:duality-map} はミンコフスキーノルムを保ちつつ時間矢を反転させる。粒子（通常支配）は前方時間に、反粒子（双対支配）は後方時間に本質的に結合する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「バリオン非対称性：双対ローター時間矢固定の幾何的起源」 §1。}。
 
 真空では \(J = 0\) \eqref{eq:gravity-J} が要求され、\(R_{\mathrm{usual}}\) と \(R_{\mathrm{dual}}\) は完全反同期。粒子--反粒子対称性が保たれる。
-バリオン非対称 \(\eta \equiv (n_B - n_{\bar{B}})/n_\gamma \approx 6 \times 10^{-10}\) は、この対称性がプランク期に\textbf{一度だけ}破られた幾何学的遺物として理解される \footnote{サハロフ条件を満たす機構として、付加場や微調整を要しない点が DST の特徴である。}.
+バリオン非対称 \(\eta \equiv (n_B - n_{\bar{B}})/n_\gamma \approx 6 \times 10^{-10}\) は、この対称性がプランク期に\textbf{一度だけ}破られた幾何学的遺物として理解される \footnote{サハロフ条件を満たす機構として、付加場や微調整を要しない点が DST の特徴である。}。
 
 \subsection{プランク期における時間矢の固定}
 
-プランクスケール（\(t \sim 10^{-43}\,\mathrm{s}\)、\(T \sim 10^{19}\,\mathrm{GeV}\)）では、双対ローターバイベクトルの零点振動が、ローターパラメーターの真空期待値における相転移を介した自発的対称性破れを誘起する \footnote{微視的ポテンシャルの詳細は量子重力ダイナミクスの範囲外であり、ここでは代数的枠組みに留める。}.
+プランクスケール（\(t \sim 10^{-43}\,\mathrm{s}\)、\(T \sim 10^{19}\,\mathrm{GeV}\)）では、双対ローターバイベクトルの零点振動が、ローターパラメーターの真空期待値における相転移を介した自発的対称性破れを誘起する \footnote{微視的ポテンシャルの詳細は量子重力ダイナミクスの範囲外であり、ここでは代数的枠組みに留める。}。
 固定された形は
 \begin{equation}
   \langle \theta_a \rangle = \langle \phi_a \rangle + \delta_a,
@@ -6072,7 +6076,7 @@ DST は、共鳴的かつヘリシティ依存の\textbf{慣性質量変化}を�
   \label{eq:cosmo-theta-vev}
 \end{equation}
 ここで \(\delta\) はプランク期に刻印された CP 奇キラル位相である。
-粗い見積もり \(\delta \sim 10^{-5}\)（観測 CKM 位相のヤールスコグ不変量と同程度）を採用する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「バリオン非対称性：双対ローター時間矢固定の幾何的起源」 §2。}.
+粗い見積もり \(\delta \sim 10^{-5}\)（観測 CKM 位相のヤールスコグ不変量と同程度）を採用する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「バリオン非対称性：双対ローター時間矢固定の幾何的起源」 §2。}。
 
 双対写像 \(i\) は空間反転の下で \(i \mapsto -i\) と\textbf{奇}であるから、\(R_{\mathrm{usual}}\) と \(R_{\mathrm{dual}}\) を区別するポテンシャルは必然的に CP 奇となり、エネルギー的に \(\delta\) の符号を一意に選ぶ。
 平衡 \(\theta = \phi\) からのブースト方向の超過 \(\Omega_{\mathrm{biv}} \approx \sum_a \delta_a\, i\Gamma_a\) に対して、キリング形式 \eqref{eq:gravity-J} から
@@ -6088,7 +6092,7 @@ DST は、共鳴的かつヘリシティ依存の\textbf{慣性質量変化}を�
   J = -\frac{\delta^2}{2} < 0
   \label{eq:cosmo-J-antimatter}
 \end{equation}
-。斥力ねじれ層 \eqref{tab:J-signs} として、宇宙論的真空から反物質を動的に排除する \footnote{銀河章 \eqref{eq:galaxy-reversal} の斥力境界 \eqref{tab:J-signs} と同型の \(J < 0\) 機構。}.
+。斥力ねじれ層 \eqref{tab:J-signs} として、宇宙論的真空から反物質を動的に排除する \footnote{銀河章 \eqref{eq:galaxy-reversal} の斥力境界 \eqref{tab:J-signs} と同型の \(J < 0\) 機構。}。
 
 \begin{equation}
   \boxed{\;
@@ -6113,12 +6117,12 @@ DST は、共鳴的かつヘリシティ依存の\textbf{慣性質量変化}を�
   \eta \sim \delta^2,
   \label{eq:cosmo-eta-delta}
 \end{equation}
-を与え、観測値 \(\eta \sim 6 \times 10^{-10}\) は \(\delta \sim 10^{-5}\) で再現される \footnote{正確な数値係数はリヒーティング温度に依存し、このレベルでは予測されない。}.
+を与え、観測値 \(\eta \sim 6 \times 10^{-10}\) は \(\delta \sim 10^{-5}\) で再現される \footnote{正確な数値係数はリヒーティング温度に依存し、このレベルでは予測されない。}。
 
 \subsection{観測的特徴}
 
-この機構は、\(\Omega_{\mathrm{biv}}\) に由来するキラル重力波からの CMB 異方性を予測する。テンソル対スカラー比 \(r \sim \delta^2 \sim 10^{-10}\) および CP 奇パリティスペクトル \footnote{LiteBIRD などの将来ミッションで検出可能なオーダー。}.
-低エネルギーでは普遍的レプトン非対称 \(\eta_\ell \approx \eta_B\) を含意する \footnote{LEGEND-200 などのニュートリノレス二重ベータ崩壊実験で解決可能。}.
+この機構は、\(\Omega_{\mathrm{biv}}\) に由来するキラル重力波からの CMB 異方性を予測する。テンソル対スカラー比 \(r \sim \delta^2 \sim 10^{-10}\) および CP 奇パリティスペクトル \footnote{LiteBIRD などの将来ミッションで検出可能なオーダー。}。
+低エネルギーでは普遍的レプトン非対称 \(\eta_\ell \approx \eta_B\) を含意する \footnote{LEGEND-200 などのニュートリノレス二重ベータ崩壊実験で解決可能。}。
 これらの非観測は理論を反証しうる。逆に、観測されれば双対時空が宇宙論の基礎枠組みであることを裏付ける。
 
 \paragraph{論理の鎖（§1）}
@@ -6135,7 +6139,7 @@ DST は、共鳴的かつヘリシティ依存の\textbf{慣性質量変化}を�
 
 \subsection{連続体仮説の拒否と非対称離散化}
 
-DST は連続時空多様体を根本的実在としない \footnote{離散時空を仮定する他の量子重力アプローチと方向性を共有する。}.
+DST は連続時空多様体を根本的実在としない \footnote{離散時空を仮定する他の量子重力アプローチと方向性を共有する。}。
 双対時空は内在的にコンパクト \eqref{eq:S3-phase-space}（\(\hat{q}^2 = -1\)：巡回）であり、通常時空は非コンパクト（\(\hat{p}^2 = +1\)：双曲）である。したがって、離散化は\textbf{非対称}に課される \footnote{\hyperref[sec:sister-manuscripts]{親理論}「離散時間とコンパクト化ねじれスカラー」 §1。}：
 \begin{equation}
   \theta_a \in \frac{2\pi}{N}\,\mathbb{Z},
@@ -6150,7 +6154,7 @@ DST は連続時空多様体を根本的実在としない \footnote{離散時�
   \item \(\phi\) の連続性は完全ローレンツ群を保ち、巨視的極限における古典 GR との正確な等価性 \eqref{eq:gravity-action} を保証する。
 \end{itemize}
 
-ねじれ不整合ローター \(\Omega = R_{\mathrm{usual}}^\dagger R_{\mathrm{dual}}\) \eqref{eq:torsion-rotor} は、連続的通常成分と離散的双対成分を結合する。ねじれスカラー \(J\) \eqref{eq:gravity-J} は厳密に\textbf{有界}であり、連続体誘起特異点を排除する \footnote{強場章 \eqref{eq:strongfield-layers} の層状ねじれ構造と整合。}.
+ねじれ不整合ローター \(\Omega = R_{\mathrm{usual}}^\dagger R_{\mathrm{dual}}\) \eqref{eq:torsion-rotor} は、連続的通常成分と離散的双対成分を結合する。ねじれスカラー \(J\) \eqref{eq:gravity-J} は厳密に\textbf{有界}であり、連続体誘起特異点を排除する \footnote{強場章 \eqref{eq:strongfield-layers} の層状ねじれ構造と整合。}。
 
 \subsection{ディリクレ核と除去可能特異点}
 
@@ -6160,7 +6164,7 @@ DST は連続時空多様体を根本的実在としない \footnote{離散時�
   \equiv \frac{\sin(N\delta\theta/2)}{N\sin(\delta\theta/2)}
   \label{eq:cosmo-dirichlet}
 \end{equation}
-の形をとる \footnote{\hyperref[sec:sister-manuscripts]{親理論}「離散時間とコンパクト化ねじれスカラー」 §2；時間膨張章 \eqref{eq:timedilation-delta-theta} の \(\delta\theta = \theta - \phi\) と同型。}.
+の形をとる \footnote{\hyperref[sec:sister-manuscripts]{親理論}「離散時間とコンパクト化ねじれスカラー」 §2；時間膨張章 \eqref{eq:timedilation-delta-theta} の \(\delta\theta = \theta - \phi\) と同型。}。
 分母は格子 \(\delta\theta \in 2\pi\mathbb{Z}\) 上で正確に零になるが、分子 \(\sin(Nk\pi)\) も同時に零となる。見かけの特異点は \(0/0\) の除去可能型である。
 ロピタルの法則により
 \begin{equation}
@@ -6168,7 +6172,7 @@ DST は連続時空多様体を根本的実在としない \footnote{離散時�
   \qquad (k \in \mathbb{Z}),
   \label{eq:cosmo-dirichlet-limit}
 \end{equation}
-が得られ、同調関数はコンパクト格子全体で有界。古典連続体極限 \(N \to \infty\) は病理なく回復される \footnote{\(N\) が素数である必要はない；任意の大きな正整数で十分。}.
+が得られ、同調関数はコンパクト格子全体で有界。古典連続体極限 \(N \to \infty\) は病理なく回復される \footnote{\(N\) が素数である必要はない；任意の大きな正整数で十分。}。
 
 \begin{equation}
   \boxed{\;
@@ -6181,7 +6185,7 @@ DST は連続時空多様体を根本的実在としない \footnote{離散時�
 
 \subsection{算術構造への展望}
 
-\(N\) を奇素数として選ぶとき、双四元数整数環は一意分解を継承し、許容されるねじれ層と質量スペクトルはディオファントス方程式の解となる \footnote{詳細は\hyperref[sec:sister-manuscripts]{ディオファントス論文}参照；IUT 由来の素数選択基準との対応も同論文で扱う。}.
+\(N\) を奇素数として選ぶとき、双四元数整数環は一意分解を継承し、許容されるねじれ層と質量スペクトルはディオファントス方程式の解となる \footnote{詳細は\hyperref[sec:sister-manuscripts]{ディオファントス論文}参照；IUT 由来の素数選択基準との対応も同論文で扱う。}。
 本書の射程では、離散時間の\textbf{物理的核心}（\(\theta\) 離散／\(\phi\) 連続の非対称性とディリクレ核による有界性）に留める。
 
 \paragraph{論理の鎖（§2）}
@@ -6197,8 +6201,8 @@ DST は連続時空多様体を根本的実在としない \footnote{離散時�
 
 \subsection{粒子内在的調和振動子}
 
-ねじれ不整合スカラー \(J\) \eqref{eq:gravity-J} は、古典場としての重力作用密度 \eqref{eq:gravity-action} であると同時に、個々の質量粒子の内部ポテンシャルとしても機能する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「双対ローター動力学とド・ブロイ位相の幾何的起源」 §1。}.
-小さな不整合角 \(\delta\phi_a = \phi_a - \theta_a\) に対して \(J \approx \tfrac{1}{2} m \sum_a \delta\phi_a^2\) となる。双対セクターの剛性定数として静止質量 \(m\) を組み込む \footnote{慣性章 \eqref{eq:inertia-F-ma} の双対ローター剛性と同型。}.
+ねじれ不整合スカラー \(J\) \eqref{eq:gravity-J} は、古典場としての重力作用密度 \eqref{eq:gravity-action} であると同時に、個々の質量粒子の内部ポテンシャルとしても機能する \footnote{\hyperref[sec:sister-manuscripts]{親理論}「双対ローター動力学とド・ブロイ位相の幾何的起源」 §1。}。
+小さな不整合角 \(\delta\phi_a = \phi_a - \theta_a\) に対して \(J \approx \tfrac{1}{2} m \sum_a \delta\phi_a^2\) となる。双対セクターの剛性定数として静止質量 \(m\) を組み込む \footnote{慣性章 \eqref{eq:inertia-F-ma} の双対ローター剛性と同型。}。
 
 単一粒子の有効作用を
 \begin{equation}
@@ -6210,7 +6214,7 @@ DST は連続時空多様体を根本的実在としない \footnote{離散時�
   \right] dt
   \label{eq:cosmo-particle-action}
 \end{equation}
-と提案する。運動項の相反符号は、通常セクターのブースト様性質（\(\hat{p}^2 = +1\)）と双対セクターの時間反転回転様性質（\(\hat{q}^2 = -1\)）を反映する \footnote{\hyperref[sec:sister-manuscripts]{de Broglie 波論文}参照。}.
+と提案する。運動項の相反符号は、通常セクターのブースト様性質（\(\hat{p}^2 = +1\)）と双対セクターの時間反転回転様性質（\(\hat{q}^2 = -1\)）を反映する \footnote{\hyperref[sec:sister-manuscripts]{de Broglie 波論文}参照。}。
 
 オイラー--ラグランジュ方程式から、不整合角 \(\delta\phi_a = \phi_a - \theta_a\) は調和振動子方程式
 \begin{equation}
@@ -6228,7 +6232,7 @@ DST は連続時空多様体を根本的実在としない \footnote{離散時�
   \int \delta\phi_a\, dt \;\propto\; \frac{E t - \mathbf{p}\cdot\mathbf{x}}{\hbar},
   \label{eq:cosmo-debroglie}
 \end{equation}
-。これは物質波のド・ブロイ位相である \footnote{\hyperref[sec:sister-manuscripts]{親理論}「双対ローター動力学とド・ブロイ位相の幾何的起源」 §2。}.
+。これは物質波のド・ブロイ位相である \footnote{\hyperref[sec:sister-manuscripts]{親理論}「双対ローター動力学とド・ブロイ位相の幾何的起源」 §2。}。
 
 \begin{equation}
   \boxed{\;
@@ -6241,7 +6245,7 @@ DST は連続時空多様体を根本的実在としない \footnote{離散時�
   \label{eq:cosmo-debroglie-box}
 \end{equation}
 
-量子力学の波動関数位相は、付加公理ではなく、通常ローター \(R_{\mathrm{usual}}\) に対する双対ローター \(R_{\mathrm{dual}}\) の\textbf{幾何的遅れ}として創発する。第 IV 部のスピノル \eqref{eq:spinor-ideal-dst} 上の確率的解釈 \eqref{eq:chiral-projectors} とも整合する \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「双対時空回転としての量子状態」参照。}.
+量子力学の波動関数位相は、付加公理ではなく、通常ローター \(R_{\mathrm{usual}}\) に対する双対ローター \(R_{\mathrm{dual}}\) の\textbf{幾何的遅れ}として創発する。第 IV 部のスピノル \eqref{eq:spinor-ideal-dst} 上の確率的解釈 \eqref{eq:chiral-projectors} とも整合する \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「双対時空回転としての量子状態」参照。}。
 
 \subsection{多粒子平均と古典重力への回帰}
 
@@ -6250,7 +6254,7 @@ DST は連続時空多様体を根本的実在としない \footnote{離散時�
   S = \frac{c^4}{16\pi G} \int J\, d^4x
   \label{eq:cosmo-macro-action}
 \end{equation}
-\eqref{eq:gravity-action} を回復する。巨視的スケールで GR との完全な一貫性を保証しつつ、双対時空自由度の微視的量子動力学を明らかにする \footnote{\hyperref[sec:sister-manuscripts]{親理論}「双対ローター動力学とド・ブロイ位相の幾何的起源」 §3。}.
+\eqref{eq:gravity-action} を回復する。巨視的スケールで GR との完全な一貫性を保証しつつ、双対時空自由度の微視的量子動力学を明らかにする \footnote{\hyperref[sec:sister-manuscripts]{親理論}「双対ローター動力学とド・ブロイ位相の幾何的起源」 §3。}。
 
 この調和振動子動学 \eqref{eq:cosmo-harmonic} が、重力の古典ねじれ記述 \eqref{eq:gravity-J} と次節の完全量子理論 \eqref{eq:spinor-ideal-dst} との\textbf{橋}である。
 
@@ -6275,22 +6279,22 @@ DST は連続時空多様体を根本的実在としない \footnote{離散時�
   \qquad \Gamma_a \in \{I, J, K\},
   \label{eq:qg-R-dual}
 \end{equation}
-\eqref{eq:R-dual} が数学的に \(\mathrm{SU}(2)\) スピン \(1/2\) 回転演算子と\textbf{同一}であることの認識から生じる \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「はじめに：量子重力への代数的アプローチ」「双四元数スピノルと最小左イデアル」；スピノル章 \eqref{eq:spinor-total-transform}。}.
+\eqref{eq:R-dual} が数学的に \(\mathrm{SU}(2)\) スピン \(1/2\) 回転演算子と\textbf{同一}であることの認識から生じる \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「はじめに：量子重力への代数的アプローチ」「双四元数スピノルと最小左イデアル」；スピノル章 \eqref{eq:spinor-total-transform}。}。
 
-双対セクター位相 \(\theta_a\) は量子状態を直接パラメーター化する。コンパクト位相空間 \(S^3\) \eqref{eq:S3-phase-space}（\(\theta \bmod 4\pi\)）上のヒルベルト空間構造が、最小左イデアル \eqref{eq:spinor-ideal-dst} から自然に現れる \footnote{第 IV 部 §2 参照。}.
-位置・運動量演算子は双対ローター角の射影として創発し、重力を含むすべての力は相対ローター位相の変調として現れる \footnote{\hyperref[sec:sister-manuscripts]{親理論}「量子重力と完全統一に向けて」 §1。}.
+双対セクター位相 \(\theta_a\) は量子状態を直接パラメーター化する。コンパクト位相空間 \(S^3\) \eqref{eq:S3-phase-space}（\(\theta \bmod 4\pi\)）上のヒルベルト空間構造が、最小左イデアル \eqref{eq:spinor-ideal-dst} から自然に現れる \footnote{第 IV 部 §2 参照。}。
+位置・運動量演算子は双対ローター角の射影として創発し、重力を含むすべての力は相対ローター位相の変調として現れる \footnote{\hyperref[sec:sister-manuscripts]{親理論}「量子重力と完全統一に向けて」 §1。}。
 
 \subsection{PGA 版：\(J^{(5)}\) による光・ねじれ・並進の統一}
 
-PGA 版 DST では、拡張不変量 \(J^{(5)}\) \eqref{eq:J5-invariant} が、ねじれ不整合（第 1 項）と並進的不整合（第 2 項）を単一の二次形式にまとめる \footnote{\hyperref[sec:sister-manuscripts]{PGA 版論文}「Construction of the Extended Torsional Mismatch」–「Unitarity of the Extended Motor and Unified Description of Light and Torsion」。}.
-並進項 \(\tfrac{1}{2}\eta_{\mu\nu}\lambda^\mu\lambda^\nu\) は光円錐 \eqref{eq:J5-light-cone} 上で正確に消え、光的伝播が因果性 \eqref{eq:light-cone-translation} と整合する。背景連続体なしで、光とねじれが 10 次元バイベクトル \eqref{eq:Omega-decomp} から統一生成される \footnote{\hyperref[sec:sister-manuscripts]{PGA 版論文}「Conclusions」：「並進をねじれ不整合の内在的要素として扱う道を開く」。}.
+PGA 版 DST では、拡張不変量 \(J^{(5)}\) \eqref{eq:J5-invariant} が、ねじれ不整合（第 1 項）と並進的不整合（第 2 項）を単一の二次形式にまとめる \footnote{\hyperref[sec:sister-manuscripts]{PGA 版論文}「Construction of the Extended Torsional Mismatch」–「Unitarity of the Extended Motor and Unified Description of Light and Torsion」。}。
+並進項 \(\tfrac{1}{2}\eta_{\mu\nu}\lambda^\mu\lambda^\nu\) は光円錐 \eqref{eq:J5-light-cone} 上で正確に消え、光的伝播が因果性 \eqref{eq:light-cone-translation} と整合する。背景連続体なしで、光とねじれが 10 次元バイベクトル \eqref{eq:Omega-decomp} から統一生成される \footnote{\hyperref[sec:sister-manuscripts]{PGA 版論文}「Conclusions」：「並進をねじれ不整合の内在的要素として扱う道を開く」。}。
 
-ユニタリモーター \(M = RT\) \eqref{eq:motor-factor} の \(M\widetilde{M} = 1\) により、サンドイッチ積は退化計量を保存し、null geodesic が代数に組み込まれる \footnote{\hyperref[sec:sister-manuscripts]{PGA 版論文}「Unitarity of the Extended Motor and Unified Description of Light and Torsion」–「Explicit Recovery of the Schwarzschild Solution without Curvature」。}.
+ユニタリモーター \(M = RT\) \eqref{eq:motor-factor} の \(M\widetilde{M} = 1\) により、サンドイッチ積は退化計量を保存し、null geodesic が代数に組み込まれる \footnote{\hyperref[sec:sister-manuscripts]{PGA 版論文}「Unitarity of the Extended Motor and Unified Description of Light and Torsion」–「Explicit Recovery of the Schwarzschild Solution without Curvature」。}。
 曲率なしシュバルツシルト解の回復 \footnote{\hyperref[sec:sister-manuscripts]{PGA 版論文}「Explicit Recovery of the Schwarzschild Solution without Curvature」；TEGR 等価性 \eqref{eq:gravity-action}。} は、量子重力への古典的出発点を与える。特異点は離散ねじれ層 \eqref{eq:cosmo-bounded-J} によって代数的に排除される。
 
 \subsection{量子重力の具体的予測}
 
-\hyperref[sec:sister-manuscripts]{量子重力論文}「量子重力の具体的予測」に基づき、DST が他の量子重力アプローチと決定的に区別する予測を表 \ref{tab:qg-predictions} にまとめる \footnote{本章では概要のみ；詳細な導出は姉妹論文参照。}.
+\hyperref[sec:sister-manuscripts]{量子重力論文}「量子重力の具体的予測」に基づき、DST が他の量子重力アプローチと決定的に区別する予測を表 \ref{tab:qg-predictions} にまとめる \footnote{本章では概要のみ；詳細な導出は姉妹論文参照。}。
 
 \begin{table}[htbp]
   \centering
@@ -6318,11 +6322,11 @@ PGA 版 DST では、拡張不変量 \(J^{(5)}\) \eqref{eq:J5-invariant} が、�
   \end{tabular}
 \end{table}
 
-これらの予測は近未来で反証可能である。強重力場ずれの非観測、重力波エコーの欠如、真の事象地平の検出は本枠組みを排除する \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「量子重力の具体的予測」「反証可能性」。}.
+これらの予測は近未来で反証可能である。強重力場ずれの非観測、重力波エコーの欠如、真の事象地平の検出は本枠組みを排除する \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「量子重力の具体的予測」「反証可能性」。}。
 
 \subsection{他アプローチとの比較}
 
-表 \ref{tab:qg-comparison} に、主要な量子重力候補との概念的差異を示す \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「他の量子重力アプローチとの比較」参照。}.
+表 \ref{tab:qg-comparison} に、主要な量子重力候補との概念的差異を示す \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「他の量子重力アプローチとの比較」参照。}。
 
 \begin{table}[htbp]
   \centering
@@ -6349,7 +6353,7 @@ PGA 版 DST では、拡張不変量 \(J^{(5)}\) \eqref{eq:J5-invariant} が、�
 \end{table}
 
 既存の量子重力プログラムは曲率を根本的に保持しつつ連続体多様体を拡張または量子化する。
-DST は多様体と曲率の両方を放棄し、\(G(3,1,1)\) 上の双対ローターの単一代数構造 \eqref{eq:J5-invariant} から時空・重力・量子状態を導く。新次元・超対称性・追加場なしに、重力を工学的にアクセス可能なねじれ自由度 \eqref{eq:graveng-helicity-switch} として位置づける \footnote{重力工学章 \eqref{tab:graveng-signatures}；現時点では原理的展望。}.
+DST は多様体と曲率の両方を放棄し、\(G(3,1,1)\) 上の双対ローターの単一代数構造 \eqref{eq:J5-invariant} から時空・重力・量子状態を導く。新次元・超対称性・追加場なしに、重力を工学的にアクセス可能なねじれ自由度 \eqref{eq:graveng-helicity-switch} として位置づける \footnote{重力工学章 \eqref{tab:graveng-signatures}；現時点では原理的展望。}。
 
 \paragraph{論理の鎖（§4）}
 以上をまとめると：
@@ -6365,7 +6369,7 @@ DST は多様体と曲率の両方を放棄し、\(G(3,1,1)\) 上の双対ロー
 
 \subsection{\(G(3,1)\) 内の力の統一}
 
-DST は、すべての質量粒子が 16 次元代数 \(G(3,1) \cong \mathrm{Cl}(3,1)\) \eqref{eq:spinor-ideal-dst} 上の二重ローター構造 \eqref{eq:R-usual}–\eqref{eq:R-dual} を内在的に運ぶという単一の原理から、表 \ref{tab:cosmo-unification} に示す物理を導く \footnote{\hyperref[sec:sister-manuscripts]{親理論}「結論」。}.
+DST は、すべての質量粒子が 16 次元代数 \(G(3,1) \cong \mathrm{Cl}(3,1)\) \eqref{eq:spinor-ideal-dst} 上の二重ローター構造 \eqref{eq:R-usual}–\eqref{eq:R-dual} を内在的に運ぶという単一の原理から、表 \ref{tab:cosmo-unification} に示す物理を導く \footnote{\hyperref[sec:sister-manuscripts]{親理論}「結論」。}。
 
 \begin{table}[htbp]
   \centering
@@ -6387,7 +6391,7 @@ DST は、すべての質量粒子が 16 次元代数 \(G(3,1) \cong \mathrm{Cl}
   \end{tabular}
 \end{table}
 
-完全統一はすでに代数レベルで達成されている。残る課題は各チャンネルの\textbf{定量的スケール}と\textbf{実験的検証}である \footnote{電弱統一章 \eqref{eq:unif-complete} の結論と同型。}.
+完全統一はすでに代数レベルで達成されている。残る課題は各チャンネルの\textbf{定量的スケール}と\textbf{実験的検証}である \footnote{電弱統一章 \eqref{eq:unif-complete} の結論と同型。}。
 
 \subsection{近接10年の検証プログラム}
 
@@ -6400,13 +6404,13 @@ DST の予測は、原理的展望と反証可能な近接実験の両方を含�
   \item \textbf{宇宙論}：CMB キラル重力波（\(r \sim 10^{-10}\)）；レプトン非対称 \(\eta_\ell \approx \eta_B\)。
 \end{itemize}
 
-系統的走査後の \(10^{-6}\) レベルでのヌル結果は、双対ローター結合強度 \(\kappa\) とコンパクト化スケール \(r_{\mathrm{comp}}\) \eqref{eq:graveng-resonance-freq} を制約する \footnote{重力工学章 \eqref{eq:graveng-delta-m} 脚注参照。}.
+系統的走査後の \(10^{-6}\) レベルでのヌル結果は、双対ローター結合強度 \(\kappa\) とコンパクト化スケール \(r_{\mathrm{comp}}\) \eqref{eq:graveng-resonance-freq} を制約する \footnote{重力工学章 \eqref{eq:graveng-delta-m} 脚注参照。}。
 陽性検出は、重力と慣性が双対時空に由来するねじれ現象である強い証拠となる。
 
 \subsection{GR の保存と重力の工学的制御}
 
-巨視的スケールでは、DST は TEGR 等価性 \eqref{eq:gravity-action} を通じて一般相対性理論を\textbf{正確に保存}する。アインシュタイン方程式、シュバルツシルト解、弱場ニュートン極限はすべて回復される \footnote{\hyperref[sec:sister-manuscripts]{PGA 版論文}「Explicit Recovery of the Schwarzschild Solution without Curvature」；重力章 §4。}.
-しかし、根本レベルでは時空は連続多様体ではなく、各粒子内在的な双対ローターのねじれ的整列の集合効果として\textbf{創発}する \footnote{\hyperref[sec:sister-manuscripts]{PGA 版論文} Abstract。}.
+巨視的スケールでは、DST は TEGR 等価性 \eqref{eq:gravity-action} を通じて一般相対性理論を\textbf{正確に保存}する。アインシュタイン方程式、シュバルツシルト解、弱場ニュートン極限はすべて回復される \footnote{\hyperref[sec:sister-manuscripts]{PGA 版論文}「Explicit Recovery of the Schwarzschild Solution without Curvature」；重力章 §4。}。
+しかし、根本レベルでは時空は連続多様体ではなく、各粒子内在的な双対ローターのねじれ的整列の集合効果として\textbf{創発}する \footnote{\hyperref[sec:sister-manuscripts]{PGA 版論文} Abstract。}。
 
 \begin{equation}
   \boxed{\;
@@ -6417,15 +6421,15 @@ DST の予測は、原理的展望と反証可能な近接実験の両方を含�
   \label{eq:cosmo-GR-engineering}
 \end{equation}
 
-この二重性こそが DST の位置づけである。既存の成功した予測を失うことなく、重力を「侵すべからざる幾何制約」から「コヒーレントに制御可能な相対角」 \eqref{eq:graveng-helicity-switch} へと変える \footnote{重力工学章 \eqref{eq:graveng-chiral-control}；現時点では原理的展望にとどまり、実験的実現は未確認である。}.
+この二重性こそが DST の位置づけである。既存の成功した予測を失うことなく、重力を「侵すべからざる幾何制約」から「コヒーレントに制御可能な相対角」 \eqref{eq:graveng-helicity-switch} へと変える \footnote{重力工学章 \eqref{eq:graveng-chiral-control}；現時点では原理的展望にとどまり、実験的実現は未確認である。}。
 
-\subsection{本書の閉じ}
+\subsection{本書の総括}
 
 本書は、\(G(3,1,1)\) 射影幾何代数 \eqref{eq:J5-invariant} の言語で二重時空理論（DST）を体系的に提示した。
 第 I–III 部で代数基盤と二重時空構造を築き、第 IV 部でスピノル・量子状態 \eqref{eq:spinor-ideal-dst} との統合を示し、第 V 部でニュートン--ウィグナー問題から重力工学 \eqref{eq:graveng-delta-m} まで物理応用を展開した。本章で宇宙論・量子重力の展望まで視野を広げ、DST の検証可能な予測と理論的位置づけを総括した。
 
-付録 A–E では記法一覧、主要な同型関係、\(G(3,1,1)\) の基底と積表、DST 主要公式早見表、参考文献と発展的トピックを提供する \footnote{\hyperref[sec:sister-manuscripts]{親理論}および\hyperref[sec:sister-manuscripts]{量子重力論文}への誘導を含む。}.
-連続体は便利な近似であった。最も深いレベルでの実在は、離散的で粒子局所的かつ二重時間的である \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「結論」。}.
+付録 A–E では記法一覧、主要な同型関係、\(G(3,1,1)\) の基底と積表、DST 主要公式早見表、参考文献と発展的トピックを提供する \footnote{\hyperref[sec:sister-manuscripts]{親理論}および\hyperref[sec:sister-manuscripts]{量子重力論文}への誘導を含む。}。
+連続体は便利な近似であった。最も深いレベルでの実在は、離散的で粒子局所的かつ二重時間的である \footnote{\hyperref[sec:sister-manuscripts]{量子重力論文}「結論」。}。
 
 \paragraph{論理の鎖（本章）}
 以上をまとめると：
@@ -6524,7 +6528,7 @@ DST の予測は、原理的展望と反証可能な近接実験の両方を含�
     1 & ベクトル \(e_\mu, e_4\) & \(+A_1\) \\
     2 & バイベクトル \(e_\mu e_\nu, N_\mu\) & \(-A_2\) \\
     3 & 三ベクトル & \(+A_3\) \\
-    4 & 四元ベクトル & \(-A_4\) \\
+    4 & 四ベクトル & \(-A_4\) \\
     5 & 擬スカラー \(I_5\) & \(+A_5\) \\
     \bottomrule
   \end{tabular}
@@ -6573,28 +6577,52 @@ DST の予測は、原理的展望と反証可能な近接実験の両方を含�
   \label{tab:app-terminology}
   \begin{tabular}{@{}ll@{}}
     \toprule
-    英語 & 日本語 \\
+    % GA 基礎
+    geometric product & 幾何積 \\
+    grade-\(k\) part & \(k\) 次部分 \\
+    grade involution & 階数対合 \\
+    reversal-odd & 反転奇性 \\
+    pseudoscalar & 擬スカラー \\
+    sandwich product & サンドイッチ積 \\
+    even subalgebra & 偶数部分代数 \\
     \midrule
-    motor & モーター \\
-    translator & トランスレーター \\
+    % PGA
+    null vector & ヌルベクトル（光的ベクトル） \\
+    degenerate & 退化 \\
+    anti-scalar & 反スカラー \\
+    abelian ideal & 可換イデアル \\
+    polarity & 極性 \\
     null generator & ヌル生成子 \\
     strong vanishing & 強消滅 \\
     join / meet & 結び / 交わり \\
     plane-based & 平面ベース（3-ブレードで平面を表す規約） \\
-    torsional mismatch & ねじれ不整合 \\
+    \midrule
+    % DST 固有
+    duality map & 双対写像 \\
+    duality covariance & 双対共変性 \\
+    normal bundle & 法線束 \\
+    translational mismatch & 並進的不整合 \\
     anti-synchronization & 完全反同期 \\
-    teleparallel gravity (TEGR) & テレパラレル重力 \\
-    Newton--Wigner problem & ニュートン--ウィグナー問題 \\
+    \midrule
+    % 相対論・TEGR
+    Space-Time Algebra (STA) & 時空代数 \\
+    rapidity & ラピディティ \\
+    proper time & 固有時間 \\
+    timelike & 時間様 \\
+    contorsion & コントーション \\
+    Weitzenböck connection & ヴァイツェンベック接続 \\
+    tetrad & テトラッド \\
+    Newton--Wigner problem & ニュートン=ウィグナー問題（NW 問題） \\
+    \midrule
+    % 応用現象
+    dual rotor rigidity & 双対ローター剛性 \\
+    inertial reversal & 慣性反転 \\
+    quasi-horizon & 準地平 \\
+    torsion-wave leakage & ねじれ波漏れ \\
+    rotor tunnelling & ロータートンネル \\
     \bottomrule
   \end{tabular}
 \end{table}
-
-\section{PGA 規約に関する注意}
-
-本書は \textbf{plane-based} 規約を採用する。平面は 3-ブレード、直線は 2-ブレード、点は 1-ブレード（または 4-ブレード双対）として表す（第 III 部 §2）。
-\textbf{結び}（join）は外積 \(\wedge\)、\textbf{交わり}（meet）は記号 \(\vee\) で表す \footnote{文献によって結び／交わり（join/meet）の記号割当が逆の場合がある。本書は \hyperref[sec:sister-manuscripts]{PGA 版論文}「Correspondence between Plane-Based Bracket Products and the Dual Spacetime」に合わせる。}.
-
-第 III 部 \eqref{eq:bracket-def} の交換子ブラケット \(\mathbin{\underline{\vee}}\) と反交換子ブラケット \(\mathbin{\overline{\vee}}\) は、Lengyel 系 PGA 文献の anti-inner / anti-outer 積 \footnote{Lengyel, \textit{Projective Geometric Algebra Illuminated} (2024) 等。} とは一般に異なる。5 次擬スカラー \(I_5\) による双対化で定義される後者と、本書の grade 分解ブラケットを混同しないこと。
 
 \chapter{主要な同型関係}
 
@@ -6670,7 +6698,7 @@ DST の予測は、原理的展望と反証可能な近接実験の両方を含�
     四元ベクトル基底 & \((j, kI, kJ, kK)\) \eqref{eq:usual-basis-dst} & \((k, jI, jJ, jK)\) \eqref{eq:dual-basis-dst} \\
     ローター & \(R_{\mathrm{usual}}\)（双曲、\(\cosh/\sinh\)） & \(R_{\mathrm{dual}}\)（巡回、\(\cos/\sin\)） \\
     生成子 & \(iI, iJ, iK\) \eqref{eq:hyperbolic-biv} & \(I, J, K\) \eqref{eq:cyclic-biv} \\
-    双対写像下 & \(iI \mapsto I\) 等 \eqref{eq:duality-map} & 逆写像 \\
+    双対写像下 & \(iI \mapsto -I\) 等 & \(I \mapsto iI\) 等 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -6682,7 +6710,7 @@ DST の予測は、原理的展望と反証可能な近接実験の両方を含�
 
 \(G(3,1,1)\) の 2 次部分（10 次元）はポアンカレ代数 \(\mathfrak{iso}(3,1)\) \eqref{eq:poincare-iso} を実現する：
 \begin{equation}
-  \underbrace{3 + 3}_{\mathfrak{so}(3,1) \oplus \mathfrak{so}(3,1)} + \underbrace{4}_{\text{並進理想}} = 10.
+  \underbrace{3 + 3}_{\mathfrak{so}(3,1) \oplus \mathfrak{so}(3,1)} + \underbrace{4}_{\text{並進イデアル }} = 10.
   \label{eq:app-poincare}
 \end{equation}
 並進は座標変換として外付けするのではなく、ヌルセクター \(\{N_\mu\}\) から内生する。PGA 版 DST の代数的核心である。
@@ -6865,7 +6893,7 @@ DST の予測は、原理的展望と反証可能な近接実験の両方を含�
   S = \frac{c^4}{16\pi G} \int J\, d^4x.
   \label{eq:app-gravity-action}
 \end{equation}
-TEGR および アインシュタイン--ヒルベルト 作用と動学的に等価 \eqref{eq:gravity-EH-equivalence}。
+TEGR および アインシュタイン=ヒルベルト 作用と動学的に等価 \eqref{eq:gravity-EH-equivalence}。
 弱場展開 \eqref{eq:gravity-weak-J-Phi}：
 \begin{equation}
   J \approx \frac{1}{2c^4}\,|\nabla\Phi|^2,
