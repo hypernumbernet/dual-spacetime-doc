@@ -1,0 +1,492 @@
+\documentclass[dvipdfmx,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,amsfonts}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{xcolor}
+\usepackage{siunitx}
+
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命題}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定義}
+\newtheorem{remark}[theorem]{注意}
+
+\title{PGA--DST における共鳴ワープ：\\
+レイヤーホッピングとオンデマンド位相進入}
+\author{https://github.com/hypernumbernet}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+二重時空理論（DST）の射影幾何代数（PGA）拡張の枠組みの中で、仮説的な恒星間推進枠組みを展開する。重力と慣性は、粒子内在的な通常時空と双対時空の間のねじれ不整合から生じ、10次元バイベクトル生成子空間（双曲型、巡回型、零セクター）をもつ $G(3,1,1)$ に持ち上げられる。拡張モーター $M=\exp(\Omega_{\mathrm{biv}}^{(5)})=RT$ はユニタリー（$M\widetilde{M}=1$）であり、光円錐 $\eta_{\mu\nu}\lambda^\mu\lambda^\nu=0$ 上の因果的伝播を保つ。ねじれスカラー $J$ は双対ローター角 $\theta_a$ の $\pi$ の奇数倍で符号を変え、局所因果性を破ることなく \emph{実効}超光速コーストを可能にする反発層（$J<0$）を生む。
+
+Alcubierre 型の計量工学とは異なり、PGA--DST におけるワープは、特異物質で時空の布を曲げることではなく、集団的双対ローター共鳴をコヒーレントにチューニングし、円偏光 THz 駆動により $J<0$ 層に進入することである。2つの運用レジームを定量的に比較する：(1)~\textit{レイヤーホッピング}---背景双対ローターの遅い宇宙位相ドリフトを利用---と (2)~\textit{オンデマンド進入}---能動的位相駆動を適用---である。$0.1$--$0.5c$ の100万トン級船体では、レイヤーホッピングは進入エネルギーを4--7桁低減し、\si{kWh}--低 \si{MWh} 帯に落とす。すべての導出は $G(3,1,1)$ 代数、一般相対性理論とのテレパラレル等価性、ユニタリーモーター因果性を尊重する。反ねじれ場、ヘリシティ制御重力工学、層安定性、実験ロードマップを結びつける。本稿は明示的に \emph{仮説的}である：巨視的な双対位相コヒーレンスは未検証のままである。
+\end{abstract}
+
+\section{はじめに}
+\label{sec:intro}
+
+Alcubierre の計量バブル~\cite{alcubierre1994}に始まる従来のワープドライブ提案は、特異的な負エネルギー密度を必要とし、零エネルギー条件（NEC）~\cite{ford2000}に違反する。既知の物理学の下では、巨視的スケールでそのような構成を工学的に実現することは困難と思われる。
+
+二重時空理論（DST）は根本的に異なる存在論を提供する~\cite{dual2025}。自律的な時空連続体は存在せず、代わりに \emph{空間は個々の粒子が運ぶ双対ローター間の集団的共鳴として現れる}。重力は通常セクターと双対セクター間のねじれ不整合であり、曲率が零でねじれが非零のテレパラレル重力（TEGR）~\cite{tegr}として再定式化される。PGA 拡張~\cite{pga2025}はこの構造を射影幾何代数 $G(3,1,1)$ に埋め込み、零ベクトル $e_4$ を付加して並進、光の伝播、ねじれをユニタリーモーターによって伝播される単一の10次元バイベクトル対象に統一する。
+
+この枠組みにおいて、\textbf{ワープ推進}は計量工学ではなく \emph{共鳴チューニング}である：集団的双対ローター位相をシフトして反発的ねじれ層（$J<0$）に進入し、実効変位が局所光速限界を超える一方で、情報は光チャネルに拘束される。本稿は PGA--DST の恒星間推進への \emph{仮説的}拡張である。以前の DST ワープ解析の定量的エネルギー推定を保ちつつ、PGA 代数構造、反ねじれ場（AT-field）生成~\cite{atfield}、PGA 教科書プログラムからの重力工学機構に根拠を置く。
+
+\section{PGA--DST の基礎}
+\label{sec:foundations}
+
+\subsection{$G(3,1,1)$ における三セクター構造}
+
+各質量粒子は $\mathrm{Cl}(3,1)\cong\mathbb{H}\otimes\mathbb{H}$ に符号化されたペアをなすコンパクト化ミンコフスキー構造を運ぶ。PGA 持ち上げは $e_4^2=0$ かつ $\{e_4,e_\mu\}=0$ となる $e_4$ を付加し、代数を $G(3,1,1)$（32実次元）に拡張する。ベクトル生成子は
+\[
+e_0=j,\quad e_1=kI,\quad e_2=kJ,\quad e_3=kK,
+\]
+で、符号 $(-,+,+,+)$ をもつ。バイベクトル空間は10次元であり、三つのセクターに分解される~\cite{pga2025}：
+
+\begin{table}[ht]
+\centering
+\caption{PGA--DST における10次元生成子構造}
+\label{tab:generators}
+\begin{tabular}{@{}clcl@{}}
+\toprule
+セクター & 生成子 & 平方 & 役割 \\
+\midrule
+双曲型 & $iI,\, iJ,\, iK$ & $+1$ & 通常時空ブースト \\
+巡回型 & $I,\, J,\, K$ & $-1$ & 双対時空回転 \\
+零 & $N_\mu=e_4\wedge e_\mu$ & $0$ & 並進 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+零セクターはポアンカレ並進イデアルを実現する：すべての $\mu,\nu$ に対し $N_\mu N_\nu=0$ であり、リー代数は $\mathfrak{iso}(3,1)=\mathfrak{so}(3,1)\oplus\mathfrak{so}(3,1)\ltimes\mathbb{R}^{3,1}$ として閉じる。
+
+\subsection{ローター、モーター、双対写像}
+
+通常ローターと双対ローターは
+\begin{align}
+R_{\mathrm{usual}} &= \exp\!\Bigl(\sum_{a=1}^3 \frac{\phi_a}{2}\, i\Gamma_a\Bigr),
+&
+R_{\mathrm{dual}} &= \exp\!\Bigl(\sum_{a=1}^3 \frac{\theta_a}{2}\, \Gamma_a\Bigr),
+\end{align}
+で、$\Gamma_a\in\{I,J,K\}$ である。相対不整合ローターは
+\begin{equation}
+\Omega = R_{\mathrm{usual}}^\dagger R_{\mathrm{dual}},
+\qquad
+\Omega_{\mathrm{biv}} = \log\Omega.
+\label{eq:omega}
+\end{equation}
+双対写像 $X\mapsto Xi$（$i=e_0e_1e_2e_3$）は双曲型セクターと巡回型セクターを入れ替え、$e_4$ が $i$ と可換であるため零セクターは閉じたままである。
+
+拡張不整合バイベクトルとモーターは
+\begin{equation}
+\Omega_{\mathrm{biv}}^{(5)}
+= \underbrace{\sum_{a=1}^3 \Bigl(\tfrac{\alpha_a}{2}B_a^{+} + \tfrac{\beta_a}{2}B_a^{-}\Bigr)}_{\Omega_{\mathrm{torsion}}}
++ \underbrace{\sum_{\mu=0}^{3}\tfrac{\lambda^\mu}{2}N_\mu}_{\Omega_{\mathrm{trans}}},
+\label{eq:omega5}
+\end{equation}
+\begin{equation}
+M = \exp(\Omega_{\mathrm{biv}}^{(5)}) = R\,T,
+\qquad
+T = 1 + \sum_{\mu=0}^{3}\tfrac{\lambda^\mu}{2}N_\mu,
+\label{eq:motor}
+\end{equation}
+で、$N_\mu N_\nu=0$ であるため零指数は1次で打ち切られる。
+
+\begin{theorem}[モーターのユニタリー性]
+\label{thm:unitarity}
+すべてのバイベクトル生成子は反転奇（$\widetilde{B}=-B$）である。したがって $R\widetilde{R}=1$、$T\widetilde{T}=1$、$M\widetilde{M}=1$ となる。サンドイッチ積 $X'=MX\widetilde{M}$ は退化 $G(3,1,1)$ 計量と因果構造を保つ。
+\end{theorem}
+
+\subsection{ねじれスカラーと重力作用}
+
+ねじれスカラーは6次元ねじれセクター上のカルタン--キリング形式で定義される：
+\begin{equation}
+J = \tfrac{1}{16}\,B_{\mathrm{Killing}}(\Omega_{\mathrm{biv}},\Omega_{\mathrm{biv}})
+= \tfrac{1}{2}\sum_{a=1}^{3}(\alpha_a^2 - \beta_a^2).
+\label{eq:J}
+\end{equation}
+双曲型生成子は $B(B_a^{+})=+8$、巡回型生成子は $B(B_a^{-})=-8$ を寄与するため、双対セクター回転が支配すると $J$ は符号を変える。小角レジームでは $\alpha_a\sim\sinh(\phi_a/2)$、$\beta_a\sim\sin(\theta_a/2)$ として、\eqref{eq:J} は有限角形
+\begin{equation}
+J \approx \sum_{a=1}^{3}\Bigl[\sinh^2\!\Bigl(\tfrac{\phi_a}{2}\Bigr) - \sin^2\!\Bigl(\tfrac{\theta_a}{2}\Bigr)\Bigr],
+\label{eq:J-finite}
+\end{equation}
+に還元され、以下の運用推定で用いられる。
+
+PGA 拡張不変量はねじれと並進を結合する：
+\begin{equation}
+J^{(5)} = J + \tfrac{1}{2}\eta_{\mu\nu}\lambda^\mu\lambda^\nu,
+\label{eq:J5}
+\end{equation}
+ここで $\eta_{\mu\nu}=\mathrm{diag}(-1,+1,+1,+1)$ である。並進項は光円錐 $\eta_{\mu\nu}\lambda^\mu\lambda^\nu=0$ 上で消え、零伝播を代数的に埋め込む。
+
+重力は作用
+\begin{equation}
+S = \frac{c^4}{16\pi G}\int J\,\sqrt{-g}\,d^4x,
+\label{eq:action}
+\end{equation}
+から従い、これはアインシュタイン--ヒルベルト作用および TEGR 作用と等価である：すべての GR 解、シュワルツシルトを含め、曲率を呼び出すことなくユニタリーモーターによって生成されたテトラッドから回復される~\cite{pga2025,tegr}。解釈は変わる；運動方程式は変わらない。
+
+\section{PGA--DST におけるワープの意味}
+\label{sec:warp-ontology}
+
+\subsection{集団的共鳴としての空間}
+
+PGA--DST において、巨視的空間は既存の多様体ではなく、1トンあたり $\sim 10^{32}$ 個のバリオンにわたる粒子内在的ローターの統計的整列である。スカラー $J$ は非整列を測る。近傍双対ローターが整列（$\theta_a\approx 2n\pi$）すると $J>0$ で引力的重力を経験する。反発点（$\theta_a\approx(2n+1)\pi$）へ駆動されると、集団的共鳴がシフトし実効幾何が変わる。
+
+ワープ推進には2つの異なる運用的意味がある：
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{共鳴シフト型ワープ（レイヤーホッピング）。}
+  船体は集団的共鳴多様体内に留まりつつ、局所双対ローター位相をシフトして反発層（$J<0$）に進入する。宇宙船は同一共鳴構造の異なる調和を乗りこなす。以下で分析する主要機構である。
+
+  \item \textbf{部分空間遷移型ワープ（双対セクター没入）。}
+  船体は周囲の集団的共鳴から能動的に脱結合し、主に双対セクターに没入する。再出現には標的地域の位相との精密な再同期が必要である。巨視的コヒーレンスを完全に破るため、レイヤーホッピングよりはるかにエネルギー負荷が大きい。
+\end{enumerate}
+
+したがってワープは布を曲げたり破ったりすることではなく、\emph{宇宙共鳴のチューニングを変える}ことである。工学的課題は特異的負エネルギーから、巨視的スケールでのコヒーレントな双対位相制御へ移る。
+
+\subsection{Alcubierre ワープドライブとの比較}
+
+\begin{table}[ht]
+\centering
+\caption{Alcubierre 計量工学 vs.\ PGA--DST 共鳴ワープ（仮説的）}
+\label{tab:alcubierre}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}@{}}
+\toprule
+側面 & Alcubierre~\cite{alcubierre1994} & PGA--DST（本稿） \\
+\midrule
+機構 &
+$g_{\mu\nu}$ による時空バブルの収縮／膨張 &
+集団的双対ローター位相チューニング；$J<0$ 層 \\
+特異物質 &
+必要；NEC 違反~\cite{ford2000} &
+不要；$J$ 符号はキリング形式非対称性から \\
+因果性 &
+バブル内で局所 $c$ 超過 &
+実効超光速 \emph{コースト}；$M\widetilde{M}=1$ により局所 $c$ 保持 \\
+情報 &
+バブル内で光を追い越せる &
+光円錐に拘束；$\eta_{\mu\nu}\lambda^\mu\lambda^\nu=0$ \\
+GR 等価性 &
+修正アインシュタイン方程式 &
+TEGR/EH 回復；同一弱場限界 \\
+工学 &
+バブル壁での負エネルギー密度 &
+$\theta_a$ の THz 円偏光駆動 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+対比は運用的であると同時に存在論的でもある。Alcubierre 工学は背景計量を変形する。PGA--DST には背景連続体がなく、ねじれスカラー $J$ と、コースト中の近似光様世界線上の $J^{(5)}$ 並進成分を変調する。
+
+\section{反発層と反ねじれ場}
+\label{sec:repulsive}
+
+\subsection{$J$ の符号構造}
+
+\begin{table}[ht]
+\centering
+\caption{ねじれスカラーの符号と物理的解釈}
+\label{tab:J-signs}
+\begin{tabular}{@{}cll@{}}
+\toprule
+条件 & $J$ の符号 & 効果 \\
+\midrule
+$\alpha_a \gg \beta_a$（整列） & $J > 0$ & 引力的重力 \\
+$\alpha_a \approx \beta_a$ & $J \approx 0$ & 真空／シールド／慣性低減 \\
+$\beta_a > \alpha_a$（反発点） & $J < 0$ & 反発的重力 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+反発層は $\theta_a=(2n+1)\pi$ 付近で生じる。強重力天体物理的文脈では、同一符号振動は事象地平と特異点の代わりに層状「玉ねぎ」構造（ツイスト星）を生む~\cite{dual2025}：$J>0$ と $J<0$ が交互の無限積層が、レイヤーホッピングの宇宙論的背景を提供する。
+
+\begin{definition}[反ねじれ場~\cite{atfield}]
+反ねじれ場（AT-field）は $J(x)<0$ なる領域 $\mathcal{R}$ である。双対セクター回転が支配し、実効的反発をもたらす。AT-field は原理的に $\theta_a$ のコヒーレント励起により工学的に生成可能である。
+\end{definition}
+
+ワープ進入において、AT-field は単なる障壁ではなく \emph{運用媒体}である：船体は局所生成または宇宙論的に遭遇した $J<0$ 殻へ遷移し、重力結合を低減したコーストを行い、所定の位相境界で退出する。AT-field の摂動下での安定性は、自己強化型不整合ダイナミクス~\cite{atfield}から従う：外部物質の侵入は $|\beta_a|$ を増大させ、$J$ をより負に駆動する。
+
+\section{駆動機構：THz ヘリシティと双対ローター結合}
+\label{sec:drive}
+
+\subsection{電磁場の分割}
+
+電磁場は DST セクター間で分割される：
+\begin{equation}
+F = F_{\mathrm{usual}} + F_{\mathrm{dual}},
+\qquad
+F_{\mathrm{usual}} = \mathbf{E}\cdot(iI,iJ,iK),
+\qquad
+F_{\mathrm{dual}} = \mathbf{B}\cdot(I,J,K).
+\label{eq:F-split}
+\end{equation}
+電場は双曲型（通常）生成子に結合し、磁場は巡回型（双対）生成子にのみ結合する。この代数的分離が、時間反転下の異なる変換性質（$\mathbf{E}\to\mathbf{E}$、$\mathbf{B}\to-\mathbf{B}$）の幾何的起源である。
+
+\subsection{円偏光をキラルスイッチとして}
+
+$\hat{z}$ 方向に伝播するヘリシティ $\sigma=\pm 1$ の円偏光波に対し、
+\begin{equation}
+\langle F_{\mathrm{dual}}\rangle \propto \sigma\,E_0^2\,K.
+\label{eq:Fdual-avg}
+\end{equation}
+ヘリシティは $J$ を直接制御する：
+\begin{itemize}[leftmargin=2em]
+  \item $\sigma=+1$（右巻き）：引力的ねじれ（$J>0$）を増強。
+  \item $\sigma=-1$（左巻き）：$J$ を低減；十分な強度で $J<0$ へ反転可能。
+\end{itemize}
+共鳴駆動方程式は
+\begin{equation}
+\dot{\theta} = \kappa\,\sigma\,E_0^2\sin(\omega t - \theta + \delta_\sigma),
+\label{eq:theta-dot}
+\end{equation}
+で、$\kappa$ は物質依存結合定数である。$\theta$ を $\phi$ と同期させると $J\to 0$（シールド、慣性低減）；$\theta$ を $\phi$ を超えて駆動すると $J<0$（反発、ワープ進入）となる。
+
+\subsection{THz 集団共鳴}
+
+単粒子双対共鳴はプランク周波数（$\sim 10^{43}\,\mathrm{Hz}$）にある。$N\sim 10^{26}$--$10^{32}$ 粒子にわたる巨視的コヒーレンスは実効共鳴を THz 帯へ赤方偏移する：
+\begin{equation}
+\omega_{\mathrm{eff}} \sim \frac{\omega_{\mathrm{Planck}}}{\sqrt{N}} \sim 10^{12}\text{--}10^{15}\,\mathrm{Hz}.
+\label{eq:freq-redshift}
+\end{equation}
+超伝導位相ロックと高 $Q$ 空洞はさらに結合を増強する。これはヘリシティ反転シグネチャをもつ $\Delta m/m\gtrsim 10^{-6}$ の卓上試験~\cite{dual2025}で提案された機構と同一である。ワープ工学はその実験室プログラムの巨視的外挿である。
+
+\section{運用レジーム：オンデマンド進入 vs レイヤーホッピング}
+\label{sec:operational}
+
+\subsection{宇宙位相ドリフト}
+
+大規模構造は双対ローター位相の遅い背景ドリフトを誘起する：
+\begin{equation}
+\left|\frac{d\theta_a}{dl}\right| \simeq 1.1\times 10^{-26}~\mathrm{rad\cdot m^{-1}},
+\qquad
+\frac{d\theta_a}{dt} \simeq 3.3\times 10^{-10}\,(v/c)~\mathrm{rad\cdot s^{-1}}.
+\label{eq:drift}
+\end{equation}
+これは速度 $v$ で運動する観測者の前を、反発層の無限積層が連続的に通過する。
+
+\subsection{実効ハミルトニアンと進入エネルギー}
+
+反発層付近で、$\theta=\theta_a-(2n+1)\pi$ として、
+\begin{equation}
+H = \frac{p^2}{2m_{\mathrm{eff}}} + V(\theta),
+\qquad
+V(\theta) \approx \tfrac{1}{2}k\theta^2 - \tfrac{\hbar\omega_0}{2}\cos(\theta),
+\label{eq:hamiltonian}
+\end{equation}
+ここで $m_{\mathrm{eff}}$ は集団的双対励起慣性、THz 集団モードでは $\omega_0\sim 10^{14}$--$10^{15}\,\mathrm{Hz}$ である。位相オフセット $\Delta\phi$ に到達する半古典的エネルギーは
+\begin{equation}
+E(\Delta\phi) \approx N_b\,\hbar\omega_{\mathrm{res}}\,\Bigl|\sin\!\Bigl(\tfrac{\Delta\phi}{2}\Bigr)\Bigr|,
+\label{eq:energy}
+\end{equation}
+で、$10^6\,\mathrm{kg}$ 船体では $N_b\approx 6\times 10^{32}$ バリオンである。小さい $\Delta\phi$ は二次スケーリング；$\pi$ 付近でコストは飽和し、オンデマンド進入の極端な感度を説明する。
+
+進入中、モーター \eqref{eq:motor} は主に $\Omega_{\mathrm{torsion}}$ を通じて $J<0$ へ駆動される。反発層内コースト中、並進不整合 $\lambda^\mu$ は光円錐付近にチューニングされ、$J^{(5)}$ 並進項が抑制され、非因果的局所ブーストではなく位相層スライディングによる変位が進む。
+
+\subsection{オンデマンド進入エネルギー}
+
+$10^6\,\mathrm{kg}$ 船体の最悪ケースオンデマンド進入（$\Delta\phi_{\max}\approx\pi$）：
+
+\begin{table}[ht]
+\centering
+\caption{オンデマンド部分空間進入（最悪ケース $\Delta\phi\simeq\pi$）}
+\label{tab:ondemand}
+\begin{tabular}{@{}lcr@{}}
+\toprule
+巡航速度 & $\gamma$ & 必要エネルギー（$10^6$ kg 船体） \\
+\midrule
+$0.10c$ & 1.005 & $\sim 8\times 10^{11}\,\mathrm{J}\approx\qty{220}{GWh}$ \\
+$0.30c$ & 1.048 & $\sim 7.5\times 10^{11}\,\mathrm{J}\approx\qty{210}{GWh}$ \\
+$0.50c$ & 1.155 & $\sim 6.9\times 10^{11}\,\mathrm{J}\approx\qty{190}{GWh}$ \\
+$0.99c$ & $\sim 7$ & $\sim 3\times 10^{11}\,\mathrm{J}\approx\qty{80}{GWh}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+これらの値は予想されるコンパクト核融合または反物質触媒限界に近づき、純粋なオンデマンド進入を技術的に困難にする。
+
+\subsection{レイヤーホッピング性能}
+
+閾値 $\Delta\phi_{\mathrm{threshold}}$ 以下の位相不足に対する待機時間：
+\begin{equation}
+\tau \simeq \frac{\Delta\phi_{\mathrm{threshold}}}{|d\theta/dt|}
+= 3\times 10^9\,\Delta\phi_{\mathrm{threshold}}\,\Bigl(\frac{c}{v}\Bigr)~\mathrm{s}.
+\label{eq:wait}
+\end{equation}
+
+\begin{table}[ht]
+\centering
+\caption{$v=0.3c$ における $10^6$ kg 船体のレイヤーホッピング性能}
+\label{tab:layerhop}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+閾値 $\Delta\phi$ & 典型待機 & 必要エネルギー & 電力（10分パルス） & 利得 \\
+\midrule
+$\pi$（オンデマンド） & 0 & \qty{750}{GWh} & --- & $1\times$ \\
+$10^{-1}$ & $\sim$1 年 & \qty{75}{GWh} & \qty{450}{MW} & $\sim 10^4\times$ \\
+$10^{-2}$ & $\sim$40 日 & \qty{7.5}{GWh} & \qty{45}{MW} & $\sim 10^5\times$ \\
+$10^{-3}$ & $\sim$4 日 & \qty{750}{MWh} & \qty{4.5}{MW} & $\sim 10^6\times$ \\
+$10^{-4}$ & $\sim$10 時間 & \qty{75}{MWh} & \qty{450}{kW} & $\sim 10^7\times$ \\
+$10^{-5}$ & $\sim$1 時間 & \qty{7.5}{MWh} & \qty{45}{kW} & $\sim 10^8\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+閾値 $\Delta\phi\approx 10^{-3}$ は待機時間と電力の実用的妥協点を提供する。10光年ミッションでは、ハイブリッドプロトコル下で総エネルギー消費は10--100 MWh に低下する。
+
+\section{因果性、地平、実効超光速コースト}
+\label{sec:causality}
+
+\subsection{ユニタリーモーターと局所因果性}
+
+定理~\ref{thm:unitarity} はすべての物理変換がユニタリーモーター $M\widetilde{M}=1$ によって実装されることを保証する。どのサンドイッチ積も非因果的局所伝播を生じない：光円錐 $\eta_{\mu\nu}\lambda^\mu\lambda^\nu=0$ は $J^{(5)}$ \eqref{eq:J5} に組み込まれている。光子は完全反同期（$\phi=\theta$、$\Omega=1$）に対応し、$J^{(5)}$ における並進寄与は消える。
+
+\subsection{実効超光速変位}
+
+「実効超光速コースト」とは、周囲 $J>0$ 基準系で測った \emph{位相層変位率}が $c$ を超える一方で、
+\begin{enumerate}[leftmargin=2em]
+  \item 局所信号速度は船体の瞬間系で $\le c$ のまま；
+  \item ホップに関する情報は光チャネルのみで運ばれる；
+  \item ホップは大域的双曲 TEGR パッチ間の有限時間遷移であるため、閉じた時間様曲線は生成されない。
+\end{enumerate}
+
+これは媒質中の屈折率変化に類似する：群速度と情報速度がそうならない限り、位相速度が $c$ を超えても相対性理論に違反しない。
+
+\subsection{地平と準地平}
+
+PGA--DST は真の事象地平と中心特異点を排除し、層状ツイスト星内部を採用する~\cite{dual2025}。しかし \emph{準地平}---$\int J\,dr$ が急峻に上昇する領域---は、十分なねじれエネルギーを供給しないと退出を妨げうる。ワープ航行は局所位相勾配を写像し、準地平殻への捕捉を避けねばならない。これは以下の層安定性解析と整合する。
+
+\section{ミッションプロトコル、安定性、航行}
+\label{sec:mission}
+
+\subsection{ハイブリッド恒星間プロトコル}
+
+\begin{enumerate}[leftmargin=2em]
+  \item 核推進またはビーム推進で $0.2$--$0.5c$ 巡航。
+  \item 双対自由度に結合したコンパクト THz 共鳴空洞で局所双対位相を監視。
+  \item $\Delta\phi<10^{-3}\,\mathrm{rad}$（$0.3c$ では数日から数週ごと）のとき、低電力左巻き円偏光 THz パルスを印加し $J<0$ への遷移を完了。
+  \item 反発層内で数週から数十年コーストし、実効超光速変位を達成。
+  \item 相補パルス（ヘリシティ反転または位相再整列）で退出し、位相勾配マップからホップをスケジュールして繰り返す。
+\end{enumerate}
+
+\subsection{層安定性}
+
+反発層内では、小さな偏差 $\delta\theta$ は \eqref{eq:hamiltonian} の $V(\theta)$ から復元力を受ける。特性振動周波数：
+\begin{equation}
+\omega_{\mathrm{stab}} \approx \sqrt{\frac{k}{m_{\mathrm{eff}}}}.
+\end{equation}
+同一 THz 空洞による能動フィードバックが不要励起を減衰させる。AT-field 自己強化~\cite{atfield} は外部摂動に対する追加安定性を提供する。
+
+\subsection{ねじれ位相空間における航行}
+
+航行には進入／退出点とホップ方向の制御が必要である。局所 $\theta_a$ 勾配を写像する補助低質量プローブを提案し、ねじれ位相空間における重力スリングショットに類似した予測スケジューリングを可能にする。モーター因数分解 $M=RT$ は回転不整合（$R$ による層選択）と並進コースト（光様 $T$ による）を分離する。
+
+\section{実験ロードマップと未解決問題}
+\label{sec:roadmap}
+
+\subsection{近未来の実験室試験}
+
+いかなるワープ応用より前に、基礎仮説---EM 場に結合した巨視的双対位相コヒーレンス---を検証しねばならない：
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{卓上重力工学。} 高 $Q$ THz 空洞内の超伝導試料；ヘリシティ反転符号変化をもつ $\Delta m/m\gtrsim 10^{-6}$ を監視~\cite{dual2025}。
+  \item \textbf{AT-field 生成。} 高強度円偏光 THz（$10^{12}$--$10^{15}\,\mathrm{Hz}$）で局所的に $J<0$ を駆動；反発偏向または重量低減を測定。
+  \item \textbf{共鳴分光。} 系統的周波数／ヘリシティスキャンで $\kappa$ とコンパクト化スケール $r_{\mathrm{comp}}$ を拘束。
+\end{enumerate}
+
+\subsection{天文・宇宙ベース試験}
+
+\begin{enumerate}[leftmargin=2em]
+  \item 精密ねじれ天秤または原子干渉計で宇宙位相ドリフト \eqref{eq:drift} を検出。
+  \item 衛星ベースラインで太陽系横断の大規模双対位相勾配を測定。
+  \item 回転曲線データ~\cite{dual2025}における銀河スケール $J<0$ 境界と反発層シグネチャの相関。
+\end{enumerate}
+
+\subsection{主要な未解決問題}
+
+\begin{itemize}[leftmargin=2em]
+  \item EM 場と双対ローター間の精密結合 $\kappa$ は何か？
+  \item 巨視的双対位相コヒーレンスのデコヒーレンス時間は？
+  \item ホップパルス中に集団 $N\sim 10^{32}$ バリオンロックは維持可能か？
+  \item 準地平殻は反復層遷移とどう相互作用するか？
+\end{itemize}
+
+\section{考察と結論}
+\label{sec:conclusions}
+
+二重時空ワープ推進仮説を PGA--DST 枠組みへ更新した。中心的な主張は：
+
+\begin{enumerate}[leftmargin=2em]
+  \item ワープは Alcubierre 計量工学ではなく、集団的双対ローターの共鳴チューニングである。
+  \item 反発層（$J<0$）と AT-field が実効超光速コーストの運用媒体を提供する。
+  \item ヘリシティ $\sigma=-1$ の THz 円偏光駆動が提案進入機構である。
+  \item レイヤーホッピングは宇宙位相ドリフトを利用し、オンデマンド進入比で進入エネルギーを4--7桁低減する。
+  \item モーター ユニタリー性 $M\widetilde{M}=1$ と $J^{(5)}$ の光円錐構造が局所因果性を保つ。
+\end{enumerate}
+
+すべての定量的推定は半古典モデル \eqref{eq:energy} を継承し、巨視的双対位相コヒーレンスが実験的に確認されるまで \emph{仮説的}のままである。卓上試験の失敗は $\kappa$ と $r_{\mathrm{comp}}$ を拘束するが、TEGR 経由で GR を独立に回復する代数 PGA--DST 構造を反証しない。実験室スケールでの成功は、反発層の工学と、原理的には恒星間レイヤーホッピングへの道を開く。
+
+\begin{thebibliography}{99}
+
+\bibitem{alcubierre1994}
+M.~Alcubierre,
+``The warp drive: hyper-fast travel within general relativity,''
+\emph{Classical and Quantum Gravity} \textbf{11}, L73 (1994).
+
+\bibitem{ford2000}
+L.~H.~Ford and T.~A.~Roman,
+``Negative energy, wormholes and warp drive,''
+\emph{Scientific American} \textbf{281}, 46 (1999);
+see also arXiv:gr-qc/0001073.
+
+\bibitem{dual2025}
+Anonymous,
+``Gravity as Torsion between Dual Spacetime: A Biquaternionic Reformulation of General Relativity,''
+December 2025 (in preparation).
+
+\bibitem{pga2025}
+Anonymous,
+``\(G(3,1,1)\) Extension of Double Spacetime Torsional Mismatch: 10-Dimensional Generator Structure and Plane-Based Bracket Products,''
+2025.
+
+\bibitem{atfield}
+Anonymous,
+``Anti-Torsion Field: Engineerable Gravitational Repulsion in Dual Spacetime Theory,''
+2025.
+
+\bibitem{tegr}
+S.~Bahamonde \emph{et al.},
+``Teleparallel Gravity: A Review,''
+arXiv:2106.13757 (2021).
+
+\bibitem{Gunn2017}
+C.~Gunn,
+``Geometric Algebra for Computer Graphics,''
+Springer (2017).
+
+\bibitem{Lengyel2024}
+V.~Lengyel,
+``Projective Geometric Algebra,''
+BCS (2024).
+
+\bibitem{Selig2005}
+J.~M.~Selig,
+``Geometric Fundamentals of Robotics,''
+2nd ed., Springer (2005).
+
+\bibitem{DoranLasenby2003}
+C.~Doran and A.~Lasenby,
+``Geometric Algebra for Physicists,''
+Cambridge University Press (2003).
+
+\end{thebibliography}
+
+\end{document}
