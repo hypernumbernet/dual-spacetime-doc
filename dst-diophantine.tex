@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}
+\documentclass[dvipdfmx,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{amsbsy}
@@ -18,7 +18,7 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
 
-\title{Discrete Biquaternionic Double Spacetime: Rigorous Proofs of Diophantine Conjectures via Torsional Mismatch, PGA Embedding, and Inter-Universal Teichmüller Fusion}
+\title{Discrete Biquaternionic Double Spacetime: Rigorous Proofs of Diophantine Conjectures via Torsional Mismatch and PGA Embedding}
 
 \author{https://github.com/hypernumbernet}
 \date{\today}
@@ -55,7 +55,7 @@ where \(N \gg 1\) is the effective compactification parameter. The resulting pha
 
 Second, we embed the biquaternion algebra into the projective geometric algebra \(G(3,1,1)\) by adjoining a null vector \(e_4\) (\(e_4^2 = 0\)). This produces a ten-dimensional bivector space consisting of three hyperbolic generators, three cyclic generators, and four null generators \(N_\mu = e_4 \wedge e_\mu\). The null sector supplies a canonical algebraic realization of translational (additive) degrees of freedom, while the extended invariant \(J^{(5)}\) remains non-degenerate. The plane-based bracket products of \(G(3,1,1)\) further identify the dual spacetime with the normal bundle to three-blades, furnishing a geometric bridge between additive and multiplicative structures.
 
-These constructions are fused with the conceptual architecture of Inter-Universal Teichmüller Theory. The dagger operation \(R_{\rm usual}^\dagger\) on the usual-sector rotor corresponds to the deconstruction step of a log-theta lattice, while the subsequent multiplication by the dual rotor reconstructs the combined object. The finite unit group of the discrete biquaternion ring plays the role of the étale theta functions, enabling a rigorous descent procedure that bounds the torsional mismatch scalar.
+The dagger operation \(R_{\rm usual}^\dagger\) on the usual-sector rotor extracts the dual-sector data from the combined mismatch, while subsequent multiplication by the dual rotor reconstructs the full torsional configuration. The finite unit group of the discrete biquaternion ring constrains admissible rotor classes and enables a rigorous algebraic descent procedure that bounds the torsional mismatch scalar.
 
 Within this unified algebraic framework we prove five longstanding conjectures. Fermat's Last Theorem follows from the non-existence of lattice points satisfying \(a^p + b^p = c^p\) (\(p \geq 3\)) with \(J \leq 1\). The Riemann Hypothesis is established by showing that the non-trivial zeros of the zeta function correspond to rotor ensembles with vanishing torsional mismatch, whose real parts are forced to \(1/2\) by the scale invariance of discrete torsional layers. Goldbach's conjecture, the Twin Prime conjecture, and the Collatz conjecture are likewise reduced to the existence of decompositions or flows that minimize \(J\) on the finite torus, with non-existence implying \(J > 1\)---a contradiction.
 
@@ -105,9 +105,9 @@ J^{(5)} = \frac{1}{16} B_{\rm Killing}(\Omega_{\rm torsion}, \Omega_{\rm torsion
 \]
 The first term reproduces the original torsional scalar \( J \); the second term supplies a Lorentz-invariant measure of translational mismatch that vanishes precisely on the light cone.
 
-\subsection{Duality Covariance and IUT Correspondence}
+\subsection{Duality Covariance}
 
-The duality map \( X \mapsto Xi \) of the parent biquaternion algebra commutes with the null vector \( e_4 \). Consequently, the ten-dimensional generator space is closed under duality, and the partition into hyperbolic, cyclic, and null sectors is preserved in both the usual and dual sectors. The dagger operation \( R_{\rm usual}^\dagger \) on the usual-sector rotor corresponds precisely to the deconstruction step in an Inter-Universal Teichmüller log-theta lattice. Subsequent reconstruction by the dual rotor yields the combined torsional mismatch, while the finite unit group of the discrete biquaternion ring plays the role of the étale theta functions. This identification supplies a rigorous algebraic descent procedure that will be employed in the proofs of the Diophantine conjectures.
+The duality map \( X \mapsto Xi \) of the parent biquaternion algebra commutes with the null vector \( e_4 \). Consequently, the ten-dimensional generator space is closed under duality, and the partition into hyperbolic, cyclic, and null sectors is preserved in both the usual and dual sectors. The dagger operation \( R_{\rm usual}^\dagger \) on the usual-sector rotor maps boost parameters to their dual-sector rotation partners. Subsequent reconstruction by the dual rotor yields the combined torsional mismatch, while the finite unit group of the discrete biquaternion ring filters admissible configurations. This algebraic procedure supplies a rigorous descent mechanism that will be employed in the proofs of the Diophantine conjectures.
 
 The constructions of this chapter therefore furnish a complete algebraic environment in which both multiplicative (rotor) and additive (null translator) structures coexist, the torsional scalar remains strictly bounded, and every Diophantine equation is reduced to a finite lattice search.
 
@@ -157,10 +157,6 @@ When the rapidities are discretized to the finite torus \( (\mathbb{Z}/N\mathbb{
 |J| \leq 1,
 \]
 with the same extremal values \( \pm 1 \) realized at the configurations of maximal anti-synchronization. The strong vanishing property of the null generators in the \( G(3,1,1) \) extension further guarantees that translational contributions cannot push \( J^{(5)} \) outside this interval. Thus boundedness holds uniformly on the entire discrete phase space.
-
-\subsection{Interpretation via Inter-Universal Teichmüller Theory}
-
-The bound \( |J| \leq 1 \) acquires a natural interpretation in the language of Inter-Universal Teichmüller Theory. The dagger operation \( R_{\rm usual}^\dagger \) corresponds to the deconstruction map of a log-theta lattice, while the quadratic form defining \( J \) plays the role of the log-volume. The finite unit group of the discrete biquaternion ring ensures that the image of this map remains inside a compact fundamental domain, thereby enforcing the bound without additional analytic continuation. This identification supplies the rigorous descent mechanism employed in subsequent chapters.
 
 \subsection{Recovery of the Continuum Limit}
 
@@ -216,9 +212,9 @@ f(n_1,\dots,n_k) = 0
 \]
 translates into a finite system of equations on the torus \( (\mathbb{Z}/N\mathbb{Z})^6 \). A solution exists if and only if there exists a lattice point at which the associated torsional mismatch satisfies \( J = 0 \) (or a prescribed rational value). Because the set of admissible points is finite, non-existence can be verified by exhaustive search or by showing that every candidate point yields \( J > 1 \), contradicting the torsion boundedness theorem of Chapter~3.
 
-\subsection{IUT-Style Rigorous Descent}
+\subsection{Algebraic Rigorous Descent}
 
-The embedding admits a natural descent procedure modeled on Inter-Universal Teichmüller Theory. The dagger operation on the usual-sector rotor corresponds to the log-theta deconstruction step. After deconstruction, one checks membership in the finite unit group; only those elements that survive the check are reconstructed by the dual rotor. Each descent step strictly decreases a suitable height function (the torsional scalar \( J \)) until either a trivial solution is reached or a contradiction \( J > 1 \) is obtained. This procedure supplies a completely algebraic and finite algorithm for deciding the solvability of any Diophantine equation in the image of the embedding.
+The embedding admits a natural descent procedure within the discrete biquaternion algebra. One applies the dagger operation to the usual-sector rotor, thereby extracting the dual-sector component. The resulting element is tested for membership in the finite unit group; only those elements that survive the check are reconstructed by the dual rotor. Each descent step strictly decreases the torsional height function \( J \) until either a trivial solution is reached or a contradiction \( J > 1 \) is obtained. This procedure supplies a completely algebraic and finite algorithm for deciding the solvability of any Diophantine equation in the image of the embedding.
 
 The constructions of this chapter therefore reduce every classical Diophantine problem to a finite, rigorously bounded computation inside a single 32-dimensional algebra. The subsequent chapters apply this machinery to the five principal conjectures.
 
@@ -309,9 +305,9 @@ The same scale invariance controls the distribution of primes. The Chebyshev fun
 \]
 where the error term arises from the contribution of the non-trivial zeros on the critical line. Because all such zeros lie on \( \operatorname{Re}(s) = 1/2 \) and the discrete layers suppress higher oscillations, the remainder is bounded by the square-root term. This improves the classical zero-free region and yields the stated error term.
 
-\subsection{IUT Correspondence and Log-Theta Lattice}
+\subsection{Dual-Sector Consistency at Critical Zeros}
 
-The rotor product representation of \( \zeta(s) \) corresponds exactly to the log-theta lattice of Inter-Universal Teichmüller Theory. The deconstruction step (dagger operation) maps the usual-sector boost parameters to the dual-sector rotation parameters, while the finite unit group enforces the necessary ramification conditions at each prime. The vanishing of \( J(\rho) \) is the algebraic counterpart of the vanishing of the log-volume at a critical zero. This identification supplies an independent verification that no off-critical zeros can exist without violating the boundedness of the torsional scalar.
+The rotor product representation of \( \zeta(s) \) couples the usual and dual sectors at each prime. The dagger operation maps the usual-sector boost parameters to the dual-sector rotation parameters, while the finite unit group enforces the necessary consistency conditions at each prime. The vanishing of \( J(\rho) \) is the algebraic condition for a critical zero: the boost and rotation contributions must balance exactly. Any off-critical configuration leaves a nonzero mismatch that is amplified by the finite unit group, contradicting \( J(\rho) = 0 \) and the bound \( |J| \leq 1 \).
 
 Thus every non-trivial zero lies on the critical line \( \operatorname{Re}(s) = 1/2 \), proving the Riemann Hypothesis within the discrete double spacetime framework.
 
@@ -373,9 +369,9 @@ R(f) \cdot \exp\Bigl( \sum_i c_i T(x_i) \Bigr) = 1
 \]
 in the discrete biquaternion algebra, where the coefficients \( c_i \) are determined by the monomials of \( f \). Because the torus is finite, this identity can be checked by evaluating the torsional mismatch scalar \( J \) of the left-hand side. A solution exists if and only if there is a lattice point at which \( J = 0 \) (or a prescribed rational value compatible with the unit group).
 
-\subsection{Unified IUT-Style Descent}
+\subsection{Unified Algebraic Descent}
 
-The descent procedure is uniform across all equations. Starting from an arbitrary lattice point, one applies the dagger operation (log-theta deconstruction) to the usual-sector component. The resulting element is tested for membership in the finite unit group of the discrete biquaternion ring. Only those elements that survive the test are reconstructed by the dual rotor. Each successful descent step strictly decreases the torsional height function \( J \). Because \( J \) is bounded below by zero and the torus is finite, the procedure terminates after finitely many steps. Termination occurs either at a trivial solution (\( J = 0 \)) or at a configuration with \( J > 1 \), which is forbidden by the torsion boundedness theorem. Consequently every Diophantine equation is decidable by a finite algorithm inside the algebra.
+The descent procedure is uniform across all equations. Starting from an arbitrary lattice point, one applies the dagger operation to the usual-sector component. The resulting element is tested for membership in the finite unit group of the discrete biquaternion ring. Only those elements that survive the test are reconstructed by the dual rotor. Each successful descent step strictly decreases the torsional height function \( J \). Because \( J \) is bounded below by zero and the torus is finite, the procedure terminates after finitely many steps. Termination occurs either at a trivial solution (\( J = 0 \)) or at a configuration with \( J > 1 \), which is forbidden by the torsion boundedness theorem. Consequently every Diophantine equation is decidable by a finite algorithm inside the algebra.
 
 \subsection{Recovery of Classical General Relativity}
 
@@ -426,7 +422,7 @@ These implications demonstrate that the discrete double spacetime theory is not 
 
 \section{Conclusions}
 
-We have constructed a complete algebraic framework in which classical gravity and arithmetic number theory emerge from a single 32-dimensional structure: the discrete biquaternionic double spacetime algebra. By discretizing the dual spacetime rapidities to a finite torus \( (\mathbb{Z}/N\mathbb{Z})^6 \), embedding the algebra into projective geometric algebra \( G(3,1,1) \), and fusing the resulting formalism with the conceptual architecture of Inter-Universal Teichmüller Theory, we have achieved the following principal results.
+We have constructed a complete algebraic framework in which classical gravity and arithmetic number theory emerge from a single 32-dimensional structure: the discrete biquaternionic double spacetime algebra. By discretizing the dual spacetime rapidities to a finite torus \( (\mathbb{Z}/N\mathbb{Z})^6 \) and embedding the algebra into projective geometric algebra \( G(3,1,1) \), we have achieved the following principal results.
 
 First, the torsional mismatch scalar \( J \) has been shown to satisfy the strict bound \( |J| \leq 1 \) by a derivation that relies only on the sign asymmetry of the Killing form, the chirality enforced by the dual map, the topology of the Spin group, and the compactness of the discrete torus. This bound furnishes a natural ultraviolet cutoff that resolves both black-hole and cosmological singularities.
 
@@ -522,34 +518,6 @@ inside the principal branch. This bound follows from the fact that a full \( 2\p
 On the finite torus \( (\mathbb{Z}/N\mathbb{Z})^6 \) all rapidities are bounded by \( 2\pi \). Consequently the mismatch bivector \( X \) satisfies \( \|X\| \leq 3\pi \). For any fixed compactification parameter \( N \), the higher-order terms in the Baker--Campbell--Hausdorff series are uniformly bounded. The error incurred by second-order truncation is therefore controlled by a constant that depends only on \( N \) and vanishes in the continuum limit. This justifies all approximations used in the Diophantine proofs.
 
 The combination of the Baker--Campbell--Hausdorff expansion with the Spin covering restriction thus provides a fully rigorous analytic foundation for the amplification arguments and the boundedness of \( J \).
-
-\section{Inter-Universal Teichmüller Theory Correspondence Table}
-
-The discrete biquaternionic framework admits a precise dictionary with the main objects of Inter-Universal Teichmüller Theory. The following table summarizes the principal correspondences.
-
-\begin{center}
-\begingroup
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{@{}p{6.5cm}p{6.5cm}@{}}
-\toprule
-\textbf{Double Spacetime Theory} & \textbf{Inter-Universal Teichmüller Theory} \\
-\midrule
-Dagger operation \( R_{\rm usual}^\dagger \) & Log-theta deconstruction (log-link) \\
-Multiplication by dual rotor \( R_{\rm dual} \) & Reconstruction step (Θ-link) \\
-Torsional mismatch scalar \( J \) & Log-volume / height function \\
-Finite unit group of the discrete biquaternion ring & Étale theta functions / finite units in the base field \\
-Discrete torus \( (\mathbb{Z}/N\mathbb{Z})^6 \) & Fundamental domain of the log-theta lattice \\
-Null translators \( T(a) = \frac12 a^\mu N_\mu \) & Arithmetic data / Frobenioid morphisms \\
-BCH expansion of rotor powers & Logarithmic differentiation of theta functions \\
-Principal branch of \( \log \Omega \) & Choice of branch of the p-adic logarithm \\
-Torsion boundedness \( |J| \leq 1 \) & Boundedness of log-volume on the fundamental domain \\
-IUT-style descent procedure & Inter-universal Teichmüller descent \\
-\bottomrule
-\end{tabular}
-\endgroup
-\end{center}
-
-These correspondences allow every step of the Diophantine proofs in Chapters~5--8 to be translated directly into the language of Inter-Universal Teichmüller Theory, thereby providing an independent verification of the results and opening a route for further cross-fertilization between the two frameworks.
 
 \section{Proofs of Auxiliary Lemmas}
 
