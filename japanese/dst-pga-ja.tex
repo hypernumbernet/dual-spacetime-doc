@@ -1,6 +1,7 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[dvipdfmx,11pt,a4paper]{article}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{amsfonts}
 \usepackage{bm}
 \usepackage[utf8]{inputenc}
@@ -11,7 +12,10 @@
 10次元生成子構造と面に基づくブラケット積}
 
 \author{https://github.com/hypernumbernet}
-\date{2026年5月13日}
+\date{\today}
+
+\theoremstyle{remark}
+\newtheorem{remark}{注意}
 
 \begin{document}
 
@@ -26,9 +30,9 @@
 \section{はじめに}
 \label{sec:introduction}
 
-二重時空枠組みは、各質量粒子が内在的にペアをなす2つのミンコフスキー構造の間のねじれ不整合として重力と慣性を記述する。並進自由度を幾何的に自然な形で取り込むため、生成ベクトル空間が5次元でクリフォード代数全体が $2^{5}=32$ 次元である射影幾何代数 $G(3,1,1)$ に構造を持ち上げる。付加的な零ベクトル $e_{4}$ は4つの $\mathrm{Cl}(3,1)$ ベクトル生成子 $\{j, kI, kJ, kK\}$ と反可換であり $e_{4}^{2}=0$ を満たす。さらに双四元数擬スカラー $i=jkI\,kJ\,kK$ と可換であるため、双対写像 $X\mapsto Xi$ は $\mathrm{Cl}(3,1)$ 部分代数上では親論文と同様に作用しつつ、新しい零方向は不変のままである。
+二重時空枠組みは、各質量粒子が内在的にペアをなす2つのミンコフスキー構造の間のねじれ不整合として重力と慣性を記述する。並進自由度を幾何的に自然な形で取り込むため、生成ベクトル空間が5次元でクリフォード代数全体が $2^{5}=32$ 次元である射影幾何代数 $G(3,1,1)$~\cite{Gunn2017,Lengyel2024,DeKeninckDorst2019,GunnDeKeninck2020} に構造を持ち上げる。平方が零の退化ベクトルを用いて並進をバイベクトルとして符号化する手法は、共形／射影クリフォード代数における Selig の剛体運動学の扱い~\cite{Selig2005} に遡り、現在ではユークリッドおよびミンコフスキー符号の両方において標準的な PGA 慣習となっている~\cite{Lengyel2024,GunnDeKeninck2020}。付加的な零ベクトル $e_{4}$ は4つの $\mathrm{Cl}(3,1)$ ベクトル生成子 $\{j, kI, kJ, kK\}$~\cite{Hestenes2015,DoranLasenby2003} と反可換であり $e_{4}^{2}=0$ を満たす。さらに双四元数擬スカラー $i=jkI\,kJ\,kK$~\cite{ConwaySmith2003} と可換であるため、双対写像 $X\mapsto Xi$ は $\mathrm{Cl}(3,1)$ 部分代数上では親論文と同様に作用しつつ、新しい零方向は不変のままである。
 
-不整合バイベクトルは3つの異なる類に分かれる。3つの双曲型生成子 $iI, iJ, iK$ は平方が $+1$ で $\mathfrak{so}(3,1)$ のブーストセクターを張る。3つの巡回型生成子 $I, J, K$ は平方が $-1$ で、双対コピーの $\mathfrak{so}(3,1)$ の回転セクターを張る。4つの零生成子 $N_{\mu} := e_{4}\wedge e_{\mu}$（$\mu=0,1,2,3$）は $e_{4}$ と4つの $\mathrm{Cl}(3,1)$ ベクトル生成子から構成され、平方は零で可換な並進イデアルを形成する。これにより10次元バイベクトル空間が得られ、そのリー代数構造はポアンカレ代数 $\mathfrak{iso}(3,1)$ に一致する。したがって並進は補助ゲージ場なしに零セクターから直接現れ、得られる拡張不整合バイベクトルは、単一の代数対象の中で元のねじれ自由度と並進自由度を統一する。
+不整合バイベクトルは3つの異なる類に分かれる。3つの双曲型生成子 $iI, iJ, iK$ は平方が $+1$ で $\mathfrak{so}(3,1)$ のブーストセクターを張る。3つの巡回型生成子 $I, J, K$ は平方が $-1$ で、双対コピーの $\mathfrak{so}(3,1)$ の回転セクターを張る。4つの零生成子 $N_{\mu} := e_{4}\wedge e_{\mu}$（$\mu=0,1,2,3$）は $e_{4}$ と4つの $\mathrm{Cl}(3,1)$ ベクトル生成子から構成され、平方は零で可換な並進イデアルを形成する。これにより10次元バイベクトル空間が得られ、そのリー代数構造はポアンカレ代数 $\mathfrak{iso}(3,1)$~\cite{Weinberg1995,Tung1985} に一致する。したがって並進は補助ゲージ場なしに零セクターから直接現れ、得られる拡張不整合バイベクトルは、単一の代数対象の中で元のねじれ自由度と並進自由度を統一する。
 
 $G(3,1,1)$ の面幾何を調べると第二の新しい特徴が現れる。面に基づくブラケット積---3ブレード上の幾何積の交換子と反交換子---は、双対時空を特徴づける法線写像性質を正確に再現する。この同定は、双対セクターを3ブレードの法線束としての幾何解釈を与え、代数構造と零方向の射影幾何との結びつきを強める。
 
@@ -160,7 +164,7 @@ N_{\mu}\,i \;=\; (e_{4}e_{\mu})\,i \;=\; e_{4}\,(e_{\mu}\,i),
 
 \subsection{モーターの因子分解}
 
-各 $N_{\mu}$ は自身と（自明に）可換であり、$N_{\mu}N_{\nu}=0$ から $[N_{\mu},N_{\nu}]=0$ が従うので、4つの零生成子は互いに可換である。一方交差交換子 $[B_{a}^{\pm},N_{\mu}]$ は一般に非零であり、一般には $\Omega_{\text{torsion}}$ と $\Omega_{\text{trans}}$ は可換でない。半直積上の標準的なモーター分裂を用いると、完全モーターは
+各 $N_{\mu}$ は自身と（自明に）可換であり、$N_{\mu}N_{\nu}=0$ から $[N_{\mu},N_{\nu}]=0$ が従うので、4つの零生成子は互いに可換である。一方交差交換子 $[B_{a}^{\pm},N_{\mu}]$ は一般に非零であり、一般には $\Omega_{\text{torsion}}$ と $\Omega_{\text{trans}}$ は可換でない。半直積上の標準的なモーター分裂~\cite{Selig2005,DoranLasenby2003,Lengyel2024} を用いると、完全モーターは
 \begin{equation}
 M \;=\; \exp\!\bigl(\Omega_{\text{biv}}^{(5)}\bigr) \;=\; R\,T,
 \qquad
@@ -175,7 +179,7 @@ T := \exp\!\bigl(\Omega'_{\text{trans}}\bigr),
 
 \subsection{10次元空間上の二次不変量}
 
-ポアンカレ代数 $\mathfrak{iso}(3,1)$ 上のカルタン--キリング形式は \emph{退化} していることは衆知である：並進生成子 $P_{\mu}$ に対して
+ポアンカレ代数 $\mathfrak{iso}(3,1)$ 上のカルタン--キリング形式は \emph{退化} していることは衆知である~\cite{FultonHarris1991,Humphreys1972}：並進生成子 $P_{\mu}$ に対して
 \[
 B_{\text{Killing}}(P_{\mu},P_{\nu})\;=\;0.
 \]
@@ -192,6 +196,11 @@ J^{(5)}
 \end{equation}
 と置く。ここで $B_{\text{Killing}}$ は親論文で用いた $\mathfrak{so}(3,1)\oplus\mathfrak{so}(3,1)$ 上のカルタン--キリング形式であり、$\eta_{\mu\nu}=\mathrm{diag}(-1,+1,+1,+1)$ は並進セクター上のミンコフスキー計量である。第1項は親理論のねじれスカラー $J$ を再現し、第2項は並進が零であるときに消える光錐 $\eta_{\mu\nu}\lambda^{\mu}\lambda^{\nu}=0$ 上で正確に零となる、ローレンツ不変な並進不整合の二次測度を与える。2つの寄与は $\mathfrak{iso}(3,1)$ 上のキリング形式が半単純と並進の間で消えるため結合しない。
 
+\begin{remark}[\(J^{(5)}\) の有界性]
+\label{rem:J5-bounded}
+並進寄与 $\tfrac{1}{2}\eta_{\mu\nu}\lambda^{\mu}\lambda^{\nu}$ は $\lambda^{\mu}$ を非制約にしたとき有界ではない：消えるのは零条件 $\eta_{\mu\nu}\lambda^{\mu}\lambda^{\nu}=0$ のみである。離散ディオファントス同伴論文の厳密な有界性定理は、許容構成上のねじれ部分 $J$（正規化スカラー $J_{\rm norm}=\frac{8}{3\pi^2}J$ と等価）に適用される；拡張不変量 $J^{(5)}$ 全体の普遍的上界を主張するものではない。
+\end{remark}
+
 このように、拡張ねじれ不整合バイベクトル $\Omega_{\text{biv}}^{(5)}$ は元の6次元ねじれ自由度と4次元並進セクターを単一の10次元代数対象の中に統一し、自然な非退化二次不変量 \eqref{eq:J5-invariant} が両セクターに結合する。
 
 \section{面に基づくブラケット積と双対時空の対応}
@@ -205,7 +214,7 @@ A \mathbin{\underline{\vee}} B \;:=\; \tfrac{1}{2}(AB - BA),
 A \mathbin{\overline{\vee}} B \;:=\; \tfrac{1}{2}(AB + BA),
 \label{eq:bracket-def}
 \end{equation}
-右辺の積は代数の幾何積である。\footnote{記号 $\underline{\vee}$ と $\overline{\vee}$ は本稿では \eqref{eq:bracket-def} で定義されるブラケット積に用いる；標準的な射影幾何代数（例：Lengyel, Dorst）の「反内積」「反外積」と混同してはならない。後者は反スカラー（最高次数）単位と双対化により定義され、\eqref{eq:bracket-def} とは異なる。ここでのブラケット積は、幾何積の交換子・反交換子の次数分解とみなすのが最も自然である。}
+右辺の積は代数の幾何積である。\footnote{記号 $\underline{\vee}$ と $\overline{\vee}$ は本稿では \eqref{eq:bracket-def} で定義されるブラケット積に用いる；標準的な射影幾何代数~\cite{Lengyel2024,DorstFontijneMann2007} の「反内積」「反外積」と混同してはならない。後者は反スカラー（最高次数）単位と双対化により定義され、\eqref{eq:bracket-def} とは異なる。ここでのブラケット積は、幾何積の次数分解された交換子・反交換子として最も自然に解釈できる~\cite{HestenesSobczyk1984,Lounesto2001}。}
 
 5ベクトル代数 $G(3,1,1)$ 上の次数3の斉次マルチベクトル2つに対し、幾何積の次数内容は
 \[
@@ -268,7 +277,7 @@ $G(3,1,1)$ 上の反転操作 $\,\tilde{}\,$ は次数2の元をその負に送�
 \widetilde{N_{\mu}}   = -N_{\mu}.
 \label{eq:rev-odd}
 \end{equation}
-$N_{\mu}$ の反転奇性は $N_{\mu}$ がバイベクトル $e_{4}\wedge e_{\mu}$ であることに本質的に依存する。次数1の零ベクトルを並進生成子に選んでいたら反転偶となり、以下のユニタリー論証は成立しなかったであろう。\footnote{射影幾何代数において並進生成子に零\emph{ベクトル}ではなく零\emph{バイベクトル}を採用する幾何的理由である。ユークリッドおよびミンコフスキー符号の標準PGA文献でも同じ慣習が用いられる。}
+$N_{\mu}$ の反転奇性は $N_{\mu}$ がバイベクトル $e_{4}\wedge e_{\mu}$ であることに本質的に依存する。次数1の零ベクトルを並進生成子に選んでいたら反転偶となり、以下のユニタリー論証は成立しなかったであろう。\footnote{射影幾何代数において並進生成子に零\emph{ベクトル}ではなく零\emph{バイベクトル}を採用する幾何的理由である。ユークリッドおよびミンコフスキー符号の標準PGA文献~\cite{Gunn2017,Lengyel2024,GunnDeKeninck2020} でも同じ慣習が用いられる。}
 
 \subsection{ユニタリー性の明示計算}
 
@@ -537,5 +546,88 @@ P\mathbin{\underline{\vee}}D \;\to\; \kappa\,(e_{4}\wedge(n\,i)),
 すなわちベクトル因子が双対回転した法線 $n\,i$ をもつ零並進イデアルの別の元へ写される。双対は零セクターを閉じたままにし、対応の形を保持する。これにより10次元生成子分解が $G(3,1,1)$ の面幾何と両立することが保証される。
 
 これらの計算は、面に基づくブラケット積が $\Omega_{\text{biv}}^{(5)}$ に符号化されるねじれ不整合と並進不整合の両方の幾何的実現を与えることを確認する。
+
+\begin{thebibliography}{99}
+
+\bibitem{Gunn2017}
+C.~Gunn,
+\textit{Geometric algebras for Euclidean geometry},
+Advances in Applied Clifford Algebras \textbf{27} (1), 185--208 (2017).
+
+\bibitem{Lengyel2024}
+E.~Lengyel,
+\textit{Projective Geometric Algebra Illuminated},
+Terathon Software LLC (2024).
+
+\bibitem{DeKeninckDorst2019}
+S.~De Keninck and L.~Dorst,
+\textit{Projective geometric algebra: A new framework for doing Euclidean geometry},
+arXiv:1901.05873 (2019).
+
+\bibitem{GunnDeKeninck2020}
+C.~Gunn and S.~De Keninck,
+\textit{Geometric algebra and computer graphics},
+in: SIGGRAPH 2019 Courses, ACM, New York (2019).
+See also: \texttt{https://bivector.net/}.
+
+\bibitem{DorstFontijneMann2007}
+L.~Dorst, D.~Fontijne, and S.~Mann,
+\textit{Geometric Algebra for Computer Science: An Object-Oriented Approach to Geometry},
+Morgan Kaufmann, San Francisco (2007).
+
+\bibitem{DoranLasenby2003}
+C.~Doran and A.~Lasenby,
+\textit{Geometric Algebra for Physicists},
+Cambridge University Press, Cambridge (2003).
+
+\bibitem{Hestenes2015}
+D.~Hestenes,
+\textit{Space-Time Algebra}, 2nd ed.,
+Birkh\"{a}user, Basel (2015).
+
+\bibitem{HestenesSobczyk1984}
+D.~Hestenes and G.~Sobczyk,
+\textit{Clifford Algebra to Geometric Calculus: A Unified Language for Mathematics and Physics},
+Reidel, Dordrecht (1984).
+
+\bibitem{Lounesto2001}
+P.~Lounesto,
+\textit{Clifford Algebras and Spinors}, 2nd ed.,
+London Mathematical Society Lecture Note Series \textbf{286},
+Cambridge University Press, Cambridge (2001).
+
+\bibitem{ConwaySmith2003}
+J.~H.~Conway and D.~A.~Smith,
+\textit{On Quaternions and Octonions: Their Geometry, Arithmetic, and Symmetry},
+A K Peters, Natick, MA (2003).
+
+\bibitem{Selig2005}
+J.~M.~Selig,
+\textit{Geometric Fundamentals of Robotics}, 2nd ed.,
+Monographs in Computer Science, Springer, New York (2005).
+
+\bibitem{Weinberg1995}
+S.~Weinberg,
+\textit{The Quantum Theory of Fields, Volume I: Foundations},
+Cambridge University Press, Cambridge (1995).
+
+\bibitem{Tung1985}
+W.-K.~Tung,
+\textit{Group Theory in Physics},
+World Scientific, Singapore (1985).
+
+\bibitem{FultonHarris1991}
+W.~Fulton and J.~Harris,
+\textit{Representation Theory: A First Course},
+Graduate Texts in Mathematics \textbf{129},
+Springer, New York (1991).
+
+\bibitem{Humphreys1972}
+J.~E.~Humphreys,
+\textit{Introduction to Lie Algebras and Representation Theory},
+Graduate Texts in Mathematics \textbf{9},
+Springer, New York (1972).
+
+\end{thebibliography}
 
 \end{document}

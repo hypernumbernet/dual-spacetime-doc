@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[dvipdfmx,11pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{amsbsy}
@@ -6,6 +6,9 @@
 \usepackage{geometry}
 \usepackage[dvipdfmx]{hyperref}
 \usepackage{enumitem}
+
+\newcommand{\Jnorm}{J_{\rm norm}}
+\newcommand{\Jbound}{\frac{3\pi^2}{8}}
 
 \title{Discrete Dual Spacetime: Bounded Torsion Scalar and Finite Unit Group in the Biquaternion Ring}
 
@@ -17,7 +20,7 @@
 \maketitle
 
 \begin{abstract}
-The dual spacetime theory rejects the continuum hypothesis entirely, positing that each massive particle carries a pair of intrinsically compactified Minkowski spacetimes encoded in the 16-real-dimensional biquaternion algebra isomorphic to $\mathrm{Cl}(3,1)$. In this companion paper, we formalize the discretization of the rapidity parameters arising from the natural compactness induced by the dual map $X \mapsto Xi$. This discretization renders the torsional mismatch rotor periodic, bounds the torsion scalar $J \in [-1, 1]$, and makes the unit group of the corresponding integer biquaternion ring finite. The resulting Diophantine constraints on gravitational solutions provide a rigorous number-theoretic foundation for quantum gravity effects while preserving exact equivalence to General Relativity in the continuum limit. Physical implications include a natural ultraviolet cutoff, discrete torsional spectra in strong fields, and a finite number of stable nuclear states.
+The dual spacetime theory rejects the continuum hypothesis entirely, positing that each massive particle carries a pair of intrinsically compactified Minkowski spacetimes encoded in the 16-real-dimensional biquaternion algebra isomorphic to $\mathrm{Cl}(3,1)$. In this companion paper, we formalize the discretization of the rapidity parameters arising from the natural compactness induced by the dual map $X \mapsto Xi$. This discretization renders the torsional mismatch rotor periodic. On \emph{admissible} configurations (non-negative embedded rapidities with anti-synchronisation $\alpha_a+\beta_a\leq\pi/2$ per axis), the normalized torsion scalar satisfies $|\Jnorm|\leq 1$, equivalently $|J|\leq 3\pi^2/8$; the unit group of the corresponding integer biquaternion ring is finite. The resulting Diophantine constraints on gravitational solutions provide a rigorous number-theoretic foundation for quantum gravity effects while preserving exact equivalence to General Relativity in the continuum limit. Physical implications include a natural ultraviolet cutoff, discrete torsional spectra in strong fields, and a finite number of stable nuclear states.
 \end{abstract}
 
 \section{Introduction}
@@ -29,7 +32,7 @@ This rejection naturally invites a discrete structure at the fundamental scale. 
 
 In this paper, we rigorously develop this discretization. By quantizing the rapidity parameters in units of $2\pi/N$, where $N$ is a large integer related to the particle's compactification scale, we obtain:
 \begin{itemize}
-  \item A bounded torsion scalar $J \in [-1, 1]$ due to the sign asymmetry of the Killing form,
+  \item A bounded normalized torsion scalar $|\Jnorm| \leq 1$ on admissible configurations (equivalently $|J| \leq 3\pi^2/8$), due to the sign asymmetry of the Killing form together with non-negative rapidities and anti-synchronisation,
   \item A finite unit group in the corresponding integer biquaternion ring,
   \item Diophantine equations governing allowable torsional configurations.
 \end{itemize}
@@ -63,18 +66,18 @@ where $N \gg 1$ is the effective number of states in the compact direction. Phys
 
 The mismatch rotor $\Omega$ now takes values in a finite set, as the phase space of relative angles is the torus $(\mathbb{Z}/N\mathbb{Z})^6$.
 
-\section{Bounded Torsion Scalar $J \in [-1, 1]$}
+\section{Bounded Torsion Scalar on Admissible Configurations}
 \label{sec:bounded}
 
-The Killing form asymmetry implies that maximal attraction occurs when usual boosts dominate ($\omega_a \gg \phi_a$), and maximal repulsion when dual rotations dominate. In the discrete case, the extremal configurations are perfect synchronization ($\Omega = 1$, $J = 0$) or maximal antisynchronization ($\Omega = -1$ or phase shifts yielding pure boost/rotation dominance).
+We call a discrete configuration \emph{admissible} when the embedded rapidities satisfy $\alpha_a,\beta_a\geq 0$ and $\alpha_a+\beta_a\leq\pi/2$ for each axis $a=1,2,3$ (see Ref.~\cite{diophantine-paper} for the full definition). The Killing form asymmetry implies that maximal attraction occurs when usual boosts dominate ($\alpha_a \gg \beta_a$), and maximal repulsion when dual rotations dominate. On admissible configurations the extremal values are pure hyperbolic dominance ($\alpha_a=\pi/2$, $\beta_a=0$, all $a$), giving $J=\Jbound$ and $\Jnorm=1$, or pure elliptic dominance ($\alpha_a=0$, $\beta_a=\pi/2$), giving $J=-\Jbound$ and $\Jnorm=-1$.
 
-Explicit computation for small $N$ (e.g., $N=4,8$) shows $J$ confined to a lattice within $[-1,1]$. The bounds follow from the compactness of the Spin group and the quadratic nature of the Killing form. Formally,
+Explicit computation for small $N$ (e.g., $N=4,8$) shows $\Jnorm$ confined to a lattice within $[-1,1]$ on the admissible subset of the torus. Formally,
 \[
-|J| \leq 1,
+|J| \leq \Jbound, \qquad |\Jnorm| \leq 1,
 \]
-with equality at pure boost or rotation dominance over all three axes.
+with equality at the pure boost or rotation dominance configurations above. Configurations that violate admissibility (e.g.\ negative embedded rapidities while $|\delta_a|\leq\pi/2$) need not satisfy this bound.
 
-In the continuum limit $N \to \infty$, unbounded $J$ is recovered locally, preserving TEGR equivalence.
+In the continuum limit $N \to \infty$, the admissible envelope $\alpha_a,\beta_a\in[0,\pi/2]$ with $\alpha_a+\beta_a\leq\pi/2$ persists; the discrete bound $|\Jnorm|\leq 1$ therefore remains valid in the limiting theory on that domain, while TEGR equivalence is recovered locally.
 
 \section{Integer Biquaternion Ring and Finite Unit Group}
 \label{sec:integer}
@@ -94,7 +97,7 @@ The layered torsional structure (attractive/repulsive alternations) manifests as
 \label{sec:implications}
 
 \begin{itemize}
-  \item \textbf{Ultraviolet cutoff}: Maximal $|J| = 1$ implies bounded acceleration, eliminating singularities.
+  \item \textbf{Ultraviolet cutoff}: Maximal $|\Jnorm| = 1$ (equivalently $|J| = 3\pi^2/8$) on admissible configurations implies bounded acceleration, eliminating singularities.
   \item \textbf{Discrete spectra}: Gravitational wave echoes and nuclear energy levels acquire discrete torsional contributions.
   \item \textbf{Nuclear chart}: Finite unit group predicts strict upper bound on stable nuclei ($A \lesssim 300$).
   \item \textbf{Experimental tests}: Search for discrete torsional echoes in LIGO/Virgo data; precision clock networks probing planetary cores for exact $J=0$ cancellation.
@@ -108,9 +111,11 @@ The discretization of dual spacetime completes the rejection of the continuum, y
 This framework elevates dual spacetime theory to a candidate for quantum gravity grounded in classical algebraic geometry and number theory.
 
 \bibliographystyle{unsrt}
-\begin{thebibliography}{1}
+\begin{thebibliography}{2}
 \bibitem{main-paper}
 Hypernumbernet Collaboration, ``Gravity as Torsion between Dual Spacetime: A Biquaternionic Reformulation of General Relativity,'' arXiv:xxxx.xxxxx [gr-qc] (2025).
+\bibitem{diophantine-paper}
+Hypernumbernet Collaboration, ``Discrete Biquaternionic Double Spacetime: Rigorous Proofs of Diophantine Conjectures via Torsional Mismatch and PGA Embedding,'' (2025).
 \end{thebibliography}
 
 \end{document}

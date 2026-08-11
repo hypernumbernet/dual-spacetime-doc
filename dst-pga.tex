@@ -1,6 +1,7 @@
-\documentclass[a4paper]{article}
+\documentclass[dvipdfmx,a4paper]{article}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{amsfonts}
 \usepackage{bm}
 \usepackage{geometry}
@@ -10,6 +11,9 @@
 
 \author{https://github.com/hypernumbernet}
 \date{\today}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
 
 \begin{document}
 
@@ -34,7 +38,7 @@ Because each null bivector squares to zero \emph{and} satisfies \(N_{\mu}N_{\nu}
 
 The paper is organised as follows. Section~2 defines the embedding of the double spacetime into \(G(3,1,1)\) and classifies the ten generators. Section~3 constructs the extended mismatch bivector, gives a rigorous proof of the polynomial form of the null exponential, and introduces the non-degenerate bilinear form on the ten-dimensional generator space. Section~4 establishes the correspondence between the plane-based bracket products and the normal property of the dual spacetime. Section~5 verifies unitarity of the motor and outlines the resulting unified description of light and torsion. Section~6 shows that the Schwarzschild solution is recovered explicitly without curvature. Conclusions are drawn in Section~7.
 
-\section{G(3,1,1) Embedding and the Ten-Dimensional Generator Structure}
+\section{The Ten-Dimensional Generator Structure}
 
 \subsection{Vector basis and the adjunction of \(e_{4}\)}
 
@@ -189,6 +193,11 @@ J^{(5)}
 \label{eq:J5-invariant}
 \end{equation}
 where \(B_{\text{Killing}}\) is the Cartan--Killing form on \(\mathfrak{so}(3,1)\oplus\mathfrak{so}(3,1)\) used in the parent paper and \(\eta_{\mu\nu}=\mathrm{diag}(-1,+1,+1,+1)\) is the Minkowski metric on the translation sector. The first term reproduces the torsional scalar \(J\) of the parent theory, while the second term provides a Lorentz-invariant quadratic measure of translational mismatch which vanishes precisely on the light cone \(\eta_{\mu\nu}\lambda^{\mu}\lambda^{\nu}=0\) where translations are null. The two contributions are decoupled because the Killing form on \(\mathfrak{iso}(3,1)\) vanishes between semisimple and translation generators.
+
+\begin{remark}[Boundedness of \(J^{(5)}\)]
+\label{rem:J5-bounded}
+The translational contribution \(\tfrac{1}{2}\eta_{\mu\nu}\lambda^{\mu}\lambda^{\nu}\) is not bounded when \(\lambda^{\mu}\) is unconstrained: only the null condition \(\eta_{\mu\nu}\lambda^{\mu}\lambda^{\nu}=0\) forces it to vanish. The rigorous boundedness theorem in the discrete Diophantine companion applies to the torsion part \(J\) (equivalently the normalized scalar \(J_{\rm norm}=\frac{8}{3\pi^2}J\)) on admissible configurations; it does not assert a universal bound on the full extended invariant \(J^{(5)}\).
+\end{remark}
 
 In this way, the extended torsional mismatch bivector \(\Omega_{\text{biv}}^{(5)}\) unifies the original six-dimensional torsional degrees of freedom with a four-dimensional translational sector inside a single ten-dimensional algebraic object, and the natural non-degenerate quadratic invariant \eqref{eq:J5-invariant} couples to both sectors.
 

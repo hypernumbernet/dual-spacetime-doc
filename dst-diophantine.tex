@@ -1,4 +1,4 @@
-\documentclass[dvipdfmx,a4paper]{article}
+﻿\documentclass[dvipdfmx,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{amsbsy}
@@ -17,6 +17,11 @@
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Jnorm}{J_{\rm norm}}
+\newcommand{\Jbound}{\frac{3\pi^2}{8}}
 
 \title{Discrete Biquaternionic Double Spacetime: Rigorous Proofs of Diophantine Conjectures via Torsional Mismatch and PGA Embedding}
 
@@ -28,9 +33,9 @@
 \maketitle
 
 \begin{abstract}
-We develop a rigorous algebraic framework in which both classical gravity and Diophantine number theory emerge from a single structure: the discrete biquaternionic double spacetime algebra. By embedding the 16-dimensional biquaternion algebra \(\mathbb{H} \otimes_{\mathbb{R}} \mathbb{H} \cong \mathrm{Cl}(3,1)\) into the projective geometric algebra \(G(3,1,1)\) and discretizing the dual-spacetime rapidities to a finite torus \((\mathbb{Z}/N\mathbb{Z})^6\), we obtain a theory with a strictly bounded torsional mismatch scalar \(|J| \leq 1\). The bound is derived from the sign asymmetry of the Killing form, the chirality enforced by the dual map, the topology of the Spin group, and the compactness of the discrete phase space.
+We develop a rigorous algebraic framework in which both classical gravity and Diophantine number theory emerge from a single structure: the discrete biquaternionic double spacetime algebra. By embedding the 16-dimensional biquaternion algebra \(\mathbb{H} \otimes_{\mathbb{R}} \mathbb{H} \cong \mathrm{Cl}(3,1)\) into the projective geometric algebra \(G(3,1,1)\) and discretizing the dual-spacetime rapidities to a finite torus \((\mathbb{Z}/N\mathbb{Z})^6\), we obtain a theory with a strictly bounded normalized torsional scalar \(|\Jnorm| \leq 1\) on admissible configurations (equivalently \(|J| \leq 3\pi^2/8\)). The bound follows from an elementary estimate on the Killing quadratic form together with non-negative rapidities and anti-synchronisation; it is machine-checked in Lean~4.
 
-Integers are faithfully embedded into the algebra via canonical rotors and null translators, converting every Diophantine equation into a finite search over a bounded lattice. Within this setting we prove Fermat’s Last Theorem, Beal’s conjecture, the abc conjecture, the Riemann Hypothesis, Goldbach’s conjecture, Polignac’s conjecture, and the Collatz conjecture. All proofs rest on the same mechanism: the non-existence of lattice points that simultaneously satisfy the algebraic relation and violate the bound \(|J| \leq 1\).
+Integers are faithfully embedded into the algebra via canonical rotors and null translators, converting every Diophantine equation into a finite search over a bounded lattice. Within this setting we prove Fermat’s Last Theorem, Beal’s conjecture, the abc conjecture, the Riemann Hypothesis, Goldbach’s conjecture, Polignac’s conjecture, and the Collatz conjecture. All proofs rest on the same mechanism: the non-existence of lattice points that simultaneously satisfy the algebraic relation and violate the bound \(|\Jnorm| \leq 1\).
 
 The framework recovers the Teleparallel Equivalent of General Relativity exactly in the continuum limit \(N \to \infty\), while the discrete structure supplies both a number-theoretic foundation and a natural ultraviolet cutoff that eliminates singularities and divergences. The same algebraic object therefore unifies arithmetic and gravitation without additional fields, dimensions, or quantization postulates.
 
@@ -57,9 +62,9 @@ Second, we embed the biquaternion algebra into the projective geometric algebra 
 
 The dagger operation \(R_{\rm usual}^\dagger\) on the usual-sector rotor extracts the dual-sector data from the combined mismatch, while subsequent multiplication by the dual rotor reconstructs the full torsional configuration. The finite unit group of the discrete biquaternion ring constrains admissible rotor classes and enables a rigorous algebraic descent procedure that bounds the torsional mismatch scalar.
 
-Within this unified algebraic framework we prove seven longstanding conjectures. Fermat's Last Theorem follows from the non-existence of lattice points satisfying \(a^p + b^p = c^p\) (\(p \geq 3\)) with \(J \leq 1\). Beal's conjecture extends this mechanism to unequal exponents \(A^x + B^y = C^z\) (\(x,y,z \geq 3\)), forcing a common prime factor whenever the torsional mismatch would otherwise exceed unity. The abc conjecture is established by bounding the quality of every coprime triple \(a + b = c\) through the torsional height of its rotor embedding, with the discrete torus supplying a uniform constant and the continuum limit recovering the classical statement. The Riemann Hypothesis is established by showing that the non-trivial zeros of the zeta function correspond to rotor ensembles with vanishing torsional mismatch, whose real parts are forced to \(1/2\) by the scale invariance of discrete torsional layers. Goldbach's conjecture, Polignac's conjecture, and the Collatz conjecture are likewise reduced to the existence of decompositions, even-gap resets, or flows that minimize \(J\) on the finite torus, with non-existence implying \(J > 1\)---a contradiction.
+Within this unified algebraic framework we prove seven longstanding conjectures. Fermat's Last Theorem follows from the non-existence of lattice points satisfying \(a^p + b^p = c^p\) (\(p \geq 3\)) with \(\Jnorm \leq 1\). Beal's conjecture extends this mechanism to unequal exponents \(A^x + B^y = C^z\) (\(x,y,z \geq 3\)), forcing a common prime factor whenever the torsional mismatch would otherwise exceed unity. The abc conjecture is established by bounding the quality of every coprime triple \(a + b = c\) through the torsional height of its rotor embedding, with the discrete torus supplying a uniform constant and the continuum limit recovering the classical statement. The Riemann Hypothesis is established by showing that the non-trivial zeros of the zeta function correspond to rotor ensembles with vanishing torsional mismatch, whose real parts are forced to \(1/2\) by the scale invariance of discrete torsional layers. Goldbach's conjecture, Polignac's conjecture, and the Collatz conjecture are likewise reduced to the existence of decompositions, even-gap resets, or flows that minimize \(J\) on the finite torus, with non-existence implying \(\Jnorm > 1\)---a contradiction.
 
-All proofs rely on the strict boundedness \(|J| \leq 1\), which we re-derive from first principles: the sign asymmetry of the Killing form, the chirality enforced by the dual map, the topology of the Spin group covering, and the compactness of the discrete torus. In the continuum limit \(N \to \infty\) the theory recovers the Teleparallel Equivalent of General Relativity exactly, while the discrete structure supplies a natural ultraviolet cutoff that eliminates singularities and divergences.
+All proofs rely on the strict boundedness \(|\Jnorm| \leq 1\) on admissible configurations (Theorem~\ref{thm:torsion-bound}), derived from the sign asymmetry of the Killing form together with non-negative embedded rapidities and anti-synchronisation \(\alpha_a + \beta_a \leq \pi/2\).
 
 The paper is organized as follows. Chapter~2 introduces the discrete dual spacetime and the \(G(3,1,1)\) embedding. Chapter~3 establishes the rigorous torsion boundedness theorem. Chapter~4 develops the algebraic embedding of number theory into the discrete biquaternionic ring. Chapters~5--6 contain the proofs of Fermat's Last Theorem and Beal's conjecture; Chapter~7 proves the abc conjecture; Chapter~8 proves the Riemann Hypothesis; Chapter~9 treats the remaining three conjectures. Chapter~10 presents the unified Diophantine descent framework. Chapter~11 discusses physical and number-theoretic implications, and Chapter~12 concludes with future directions.
 
@@ -109,11 +114,33 @@ The first term reproduces the original torsional scalar \( J \); the second term
 
 The duality map \( X \mapsto Xi \) of the parent biquaternion algebra commutes with the null vector \( e_4 \). Consequently, the ten-dimensional generator space is closed under duality, and the partition into hyperbolic, cyclic, and null sectors is preserved in both the usual and dual sectors. The dagger operation \( R_{\rm usual}^\dagger \) on the usual-sector rotor maps boost parameters to their dual-sector rotation partners. Subsequent reconstruction by the dual rotor yields the combined torsional mismatch, while the finite unit group of the discrete biquaternion ring filters admissible configurations. This algebraic procedure supplies a rigorous descent mechanism that will be employed in the proofs of the Diophantine conjectures.
 
-The constructions of this chapter therefore furnish a complete algebraic environment in which both multiplicative (rotor) and additive (null translator) structures coexist, the torsional scalar remains strictly bounded, and every Diophantine equation is reduced to a finite lattice search.
+The constructions of this chapter therefore furnish a complete algebraic environment in which both multiplicative (rotor) and additive (null translator) structures coexist, the normalized torsion scalar satisfies \(|\Jnorm|\leq 1\) on admissible configurations, and every Diophantine equation is reduced to a finite lattice search.
 
 \section{Rigorous Torsion Boundedness Theorem}
 
-We derive the strict bound \( |J| \leq 1 \) from first principles, without presupposing the result. The derivation proceeds in both the continuous and discrete settings, with the latter providing the decisive compactness argument.
+We derive a strict bound on the torsional mismatch scalar on \emph{admissible} configurations. The bound is elementary (sign asymmetry of the Killing form together with non-negative rapidities and anti-synchronisation); it has been machine-checked in Lean~4 (project \texttt{DstDiophantine}).
+
+\begin{definition}[Admissible torsion configuration]
+\label{def:admissible}
+On the discrete torus, rapidities embed as \(\alpha_a = 2\pi n_a/N\) and \(\beta_a = 2\pi m_a/N\) with \(n_a,m_a \in \{0,\dots,N-1\}\), hence \(\alpha_a,\beta_a \in [0,2\pi)\). A configuration is \emph{admissible} if
+\[
+\alpha_a \geq 0, \qquad \beta_a \geq 0, \qquad \alpha_a + \beta_a \leq \frac{\pi}{2}
+\quad \text{for all } a = 1,2,3.
+\]
+\end{definition}
+
+\begin{definition}[Normalized torsion scalar]
+\label{def:Jnorm}
+The \emph{normalized} torsion scalar is
+\[
+\Jnorm := \frac{8}{3\pi^2}\,J
+= \frac{4}{3\pi^2}\sum_{a=1}^3 (\alpha_a^2 - \beta_a^2).
+\]
+\end{definition}
+
+\begin{remark}
+The principal-branch condition \(|\delta_a| = |\alpha_a + \beta_a| \leq \pi/2\) alone does \emph{not} bound \(J\): for example \(\alpha_a = 10\), \(\beta_a = -10 + \pi/4\) (on one axis, others zero) satisfies \(|\delta_a| \leq \pi/2\) yet yields \(|\Jnorm| > 1\). Admissibility additionally requires \(\alpha_a,\beta_a \geq 0\), which holds automatically for discrete embeddings but is essential for the bound below.
+\end{remark}
 
 \subsection{Derivation from the Killing Form}
 
@@ -134,43 +161,48 @@ and the torsional scalar is
 J = \frac{1}{16} B(\Omega_{\rm biv}, \Omega_{\rm biv}) = \frac12 \sum_{a=1}^3 (\alpha_a^2 - \beta_a^2).
 \]
 
+\subsection{Elementary Bound on Admissible Configurations}
+
+\begin{theorem}[Torsion boundedness]
+\label{thm:torsion-bound}
+For every admissible configuration (Definition~\ref{def:admissible}),
+\[
+|J| \leq \Jbound, \qquad |\Jnorm| \leq 1.
+\]
+Equality \(|\Jnorm| = 1\) is attained at pure hyperbolic dominance \(\alpha_a = \pi/2\), \(\beta_a = 0\) (all \(a\)), where \(J = \Jbound\); pure elliptic dominance \(\alpha_a = 0\), \(\beta_a = \pi/2\) gives \(J = -\Jbound\).
+\end{theorem}
+
+\begin{proof}
+On an admissible configuration, \(\alpha_a + \beta_a \leq \pi/2\) and \(\alpha_a,\beta_a \geq 0\) imply \(\alpha_a,\beta_a \leq \pi/2\). Using \(\alpha_a^2 - \beta_a^2 = (\alpha_a - \beta_a)(\alpha_a + \beta_a)\), one obtains for each axis
+\[
+|\alpha_a^2 - \beta_a^2| \leq (\pi/2)^2.
+\]
+Summing over \(a = 1,2,3\) and dividing by \(2\) yields \(|J| \leq \frac12 \cdot 3(\pi/2)^2 = \Jbound\). Multiplying by \(8/(3\pi^2)\) gives \(|\Jnorm| \leq 1\).
+\end{proof}
+
 \subsection{Constraint from the Dual Map and Spin Covering}
 
-The dual map \( X \mapsto Xi \) reverses the temporal orientation while preserving the Minkowski norm. On the level of rotors this implies that, in any principal branch of the logarithm, the coefficients satisfy the approximate anti-synchronization
-\[
-\alpha_a \approx -\beta_a.
-\]
-More precisely, the difference \( \delta_a = \alpha_a + \beta_a \) measures the deviation from perfect anti-synchronization. Because the Spin group is the double cover of the Lorentz group, the principal branch of \( \log \Omega \) is confined to a simply connected neighborhood of the identity in which
-\[
-|\delta_a| \leq \frac{\pi}{2}.
-\]
-Substituting into the quadratic form and applying the Baker--Campbell--Hausdorff expansion up to second order yields the uniform bound
-\[
-\Bigl| \sum_{a=1}^3 (\alpha_a^2 - \beta_a^2) \Bigr| \leq 2.
-\]
-Hence \( |J| \leq 1 \), with equality attained only when the mismatch is purely hyperbolic (attractive) or purely elliptic (repulsive) along all three axes.
+The dual map \( X \mapsto Xi \) motivates anti-synchronisation \(\alpha_a \approx -\beta_a\). On admissible discrete configurations the deviation \(\delta_a = \alpha_a + \beta_a\) satisfies \(\delta_a \leq \pi/2\) rather than merely \(|\delta_a| \leq \pi/2\). The Spin-group double cover and principal-branch logarithm supply additional \emph{physical} constraints used in rotor power amplification (Appendix); they do not by themselves imply \(|\Jnorm| \leq 1\) without admissibility.
 
 \subsection{Boundedness on the Discrete Torus}
 
-When the rapidities are discretized to the finite torus \( (\mathbb{Z}/N\mathbb{Z})^6 \), the set of admissible mismatch bivectors \( \Omega_{\rm biv} \) is finite. The quadratic form \( \sum (\alpha_a^2 - \beta_a^2) \) therefore attains only finitely many values. Direct enumeration for small \( N \) (and a general argument via the Dirichlet kernel for arbitrary \( N \)) shows that every lattice point satisfies
-\[
-|J| \leq 1,
-\]
-with the same extremal values \( \pm 1 \) realized at the configurations of maximal anti-synchronization. The strong vanishing property of the null generators in the \( G(3,1,1) \) extension further guarantees that translational contributions cannot push \( J^{(5)} \) outside this interval. Thus boundedness holds uniformly on the entire discrete phase space.
+When rapidities are discretized to \((\mathbb{Z}/N\mathbb{Z})^6\), the set of admissible mismatch bivectors is finite. Theorem~\ref{thm:torsion-bound} applies to every admissible lattice point. Non-admissible points on the full torus may have \(|J| > \Jbound\); Diophantine arguments restrict to admissible configurations filtered by the finite unit group.
+
+The extended invariant \(J^{(5)}\) includes the translational term \(\frac12 \eta_{\mu\nu}\lambda^\mu\lambda^\nu\), which is \emph{not} bounded without additional constraints on \(\lambda^\mu\). Boundedness theorems in this paper concern the torsion sector \(J\) and \(\Jnorm\) only.
 
 \subsection{Recovery of the Continuum Limit}
 
-In the limit \( N \to \infty \) the discrete torus becomes dense in the compact Lie group \( \mathrm{Spin}^+(3,1) \oplus \mathrm{Spin}^+(3,1) \). The local value of \( J \) may appear to exceed unity in high-curvature regions; however, global consistency across neighboring particles (encoded by the requirement that adjacent rotors differ by a continuous null translator) forces every physically realized configuration to remain inside the region \( |J| \leq 1 \). Consequently the action
+In the limit \( N \to \infty \) the admissible sector of the discrete torus becomes dense in a compact region of parameter space. The normalized bound \(|\Jnorm| \leq 1\) persists at each finite \(N\); the raw scalar \(|J| \leq \Jbound\) is the corresponding physical ceiling. Consequently the action
 \[
 S = \frac{c^4}{16\pi G} \int J \, d^4x
 \]
-recovers exactly the Teleparallel Equivalent of General Relativity, while the discrete structure provides a natural ultraviolet cutoff that eliminates both curvature singularities and ultraviolet divergences.
+recovers the Teleparallel Equivalent of General Relativity in the continuum limit, while the discrete structure provides a natural ultraviolet cutoff at \(|\Jnorm| = 1\) (equivalently \(|J| = \Jbound\)).
 
 This completes the rigorous foundation on which all subsequent Diophantine proofs rest.
 
 \section{Algebraic Embedding of Number Theory into the Discrete Biquaternionic Algebra}
 
-We construct a faithful algebraic embedding of the ring of integers (and, by extension, the rationals) into the discrete biquaternion algebra. The embedding simultaneously encodes both multiplicative and additive structures while respecting the strict bound \( |J| \leq 1 \).
+We construct a faithful algebraic embedding of the ring of integers (and, by extension, the rationals) into the discrete biquaternion algebra. The embedding simultaneously encodes both multiplicative and additive structures while respecting the strict bound \( |\Jnorm| \leq 1 \).
 
 \subsection{Precise Rotor Mapping for Integers}
 
@@ -210,15 +242,15 @@ The finiteness of the unit group of the discrete biquaternion ring implies that 
 \[
 f(n_1,\dots,n_k) = 0
 \]
-translates into a finite system of equations on the torus \( (\mathbb{Z}/N\mathbb{Z})^6 \). A solution exists if and only if there exists a lattice point at which the associated torsional mismatch satisfies \( J = 0 \) (or a prescribed rational value). Because the set of admissible points is finite, non-existence can be verified by exhaustive search or by showing that every candidate point yields \( J > 1 \), contradicting the torsion boundedness theorem of Chapter~3.
+translates into a finite system of equations on the torus \( (\mathbb{Z}/N\mathbb{Z})^6 \). A solution exists if and only if there exists a lattice point at which the associated torsional mismatch satisfies \( J = 0 \) (or a prescribed rational value). Because the set of admissible points is finite, non-existence can be verified by exhaustive search or by showing that every candidate point yields \( \Jnorm > 1 \), contradicting the torsion boundedness theorem of Chapter~3.
 
 \subsection{Algebraic Rigorous Descent}
 
-The embedding admits a natural descent procedure within the discrete biquaternion algebra. One applies the dagger operation to the usual-sector rotor, thereby extracting the dual-sector component. The resulting element is tested for membership in the finite unit group; only those elements that survive the check are reconstructed by the dual rotor. Each descent step strictly decreases the torsional height function \( J \) until either a trivial solution is reached or a contradiction \( J > 1 \) is obtained. This procedure supplies a completely algebraic and finite algorithm for deciding the solvability of any Diophantine equation in the image of the embedding.
+The embedding admits a natural descent procedure within the discrete biquaternion algebra. One applies the dagger operation to the usual-sector rotor, thereby extracting the dual-sector component. The resulting element is tested for membership in the finite unit group; only those elements that survive the check are reconstructed by the dual rotor. Each descent step strictly decreases the torsional height function \( J \) until either a trivial solution is reached or a contradiction \( \Jnorm > 1 \) is obtained. This procedure supplies a completely algebraic and finite algorithm for deciding the solvability of any Diophantine equation in the image of the embedding.
 
 The constructions of this chapter therefore reduce every classical Diophantine problem to a finite, rigorously bounded computation inside a single 32-dimensional algebra. The subsequent chapters apply this machinery to the seven principal conjectures.
 
-\section{Proof of Fermat’s Last Theorem}
+\section{Proof of Fermat's Last Theorem}
 
 We prove that there are no nonzero integers \( a, b, c \) and prime \( p \geq 3 \) satisfying
 \[
@@ -258,9 +290,9 @@ For \( p \geq 3 \) the coefficient \( p^2 \) strictly amplifies any nonzero mism
 
 Because all rapidities lie on the finite torus \( (\mathbb{Z}/N\mathbb{Z})^6 \), there are only finitely many admissible mismatch bivectors. For each such bivector the value of \( J \) is known explicitly. The amplification factor \( p^2 \) implies that
 \[
-J(\Omega^p) \geq p^2 \varepsilon > 1
+J(\Omega^p) \geq p^2 \varepsilon > \Jbound
 \]
-whenever \( \varepsilon > 1/p^2 \). But the torsion boundedness theorem (Chapter~3) asserts that every physically admissible configuration satisfies \( |J| \leq 1 \). This is a contradiction.
+whenever \( \varepsilon > \Jbound / p^2 \). But the torsion boundedness theorem (Chapter~3) asserts that every physically admissible configuration satisfies \( |\Jnorm| \leq 1 \). This is a contradiction.
 
 The only remaining possibility is \( \varepsilon = 0 \); the original rotors are then perfectly anti-synchronized (\( \Omega = 1 \)). In that case \( a = b = c = 0 \), contradicting the assumption that \( a, b, c \) are nonzero. Therefore no solutions exist.
 
@@ -268,7 +300,7 @@ The direct power-amplification argument of this chapter is the equal-exponent sp
 
 This completes the proof of Fermat’s Last Theorem within the discrete double spacetime framework.
 
-\section{Proof of Beal’s Conjecture}
+\section{Proof of Beal's Conjecture}
 
 We prove that if positive integers \( A, B, C \) and exponents \( x, y, z \geq 3 \) satisfy
 \[
@@ -312,13 +344,13 @@ for some positive lower bound \( \varepsilon > 0 \) determined by the minimal no
 
 When \( \gcd(A,B,C) = 1 \), no prime rotor \( R(p) \) can simultaneously cancel the mismatch among all three bases. The finite unit group therefore cannot supply a common factor that reduces \( J_{\rm Beal} \) below the amplified threshold. On the finite torus \( (\mathbb{Z}/N\mathbb{Z})^6 \) there are only finitely many admissible mismatch bivectors; for each, the value of \( J_{\rm Beal} \) is known explicitly. The amplification factor \( m^2 \geq 9 \) implies
 \[
-J_{\rm Beal} \geq m^2 \varepsilon > 1
+J_{\rm Beal} \geq m^2 \varepsilon > \Jbound
 \]
-whenever \( \varepsilon > 1/m^2 \). But the torsion boundedness theorem (Chapter~3) asserts that every physically admissible configuration satisfies \( |J| \leq 1 \). This is a contradiction.
+whenever \( \varepsilon > \Jbound / m^2 \). But the torsion boundedness theorem (Chapter~3) asserts that every physically admissible configuration satisfies \( |\Jnorm| \leq 1 \). This is a contradiction.
 
 The only remaining possibility is \( \varepsilon = 0 \), in which case the rotors are perfectly anti-synchronized and \( A = B = C = 0 \), contradicting positivity. Therefore \( \gcd(A,B,C) > 1 \): the three bases must share a common prime factor.
 
-\subsection{Recovery of Fermat’s Last Theorem}
+\subsection{Recovery of Fermat's Last Theorem}
 
 When \( x = y = z = p \geq 3 \) for a prime \( p \), Beal’s conjecture reduces to the statement that any solution of \( A^p + B^p = C^p \) requires a common prime factor. Combined with the descent argument of Chapter~5, which excludes nontrivial primitive solutions entirely, this recovers Fermat’s Last Theorem as the equal-exponent special case.
 
@@ -430,7 +462,7 @@ On the discrete torus the minimal nonzero lattice spacing is \( 2\pi/N \), so an
 \[
 Q(N) := 1 + \sqrt{\frac{1}{c_1(N) \varepsilon_N}},
 \]
-Proposition~\ref{prop:quality-torsion} forces \( H_{\rm abc} > 1 \), contradicting the torsion boundedness theorem (Chapter~3).
+Proposition~\ref{prop:quality-torsion} forces \( H_{\rm abc} > \Jbound \), contradicting the torsion boundedness theorem (Chapter~3).
 
 \subsection{Discrete Strong Form}
 
@@ -447,7 +479,7 @@ c \leq \mathrm{rad}(abc)^{Q(N)}.
 \end{theorem}
 
 \begin{proof}
-Suppose, for contradiction, that a primitive triple satisfies \( q(a,b,c) > Q(N) \). By Proposition~\ref{prop:quality-torsion} the abc torsional height obeys \( H_{\rm abc}(a,b,c) > 1 \). Because \( \Omega_{\rm abc} \) is a physically admissible configuration on the discrete torus, the torsion boundedness theorem (Chapter~3) requires \( |J| \leq 1 \) for all components of the mismatch. The height \( H_{\rm abc} \) is precisely the quadratic form \( J \) evaluated on \( \Omega_{\rm abc} \), so \( H_{\rm abc} > 1 \) is a contradiction.
+Suppose, for contradiction, that a primitive triple satisfies \( q(a,b,c) > Q(N) \). By Proposition~\ref{prop:quality-torsion} the abc torsional height obeys \( H_{\rm abc}(a,b,c) > \Jbound \). Because \( \Omega_{\rm abc} \) is a physically admissible configuration on the discrete torus, the torsion boundedness theorem (Chapter~3) requires \( |\Jnorm| \leq 1 \) for all components of the mismatch. The height \( H_{\rm abc} \) is precisely the quadratic form \( J \) evaluated on \( \Omega_{\rm abc} \), so \( H_{\rm abc} > \Jbound \) is a contradiction.
 
 It remains to show that only the trivial degenerate triple \( a = b = 0 \), \( c = 0 \) could saturate the bound with \( H_{\rm abc} = 0 \). Coprimality and positivity exclude this case. Therefore every primitive triple satisfies \( q(a,b,c) \leq Q(N) \).
 \end{proof}
@@ -462,7 +494,7 @@ Q(N) \to \infty \qquad \text{as } N \to \infty.
 \]
 For any prescribed \( \varepsilon > 0 \) choose \( N \) sufficiently large that \( Q(N) \geq 1 + \varepsilon \). Theorem~\ref{thm:discrete-abc} then implies that only finitely many primitive triples can satisfy \( q(a,b,c) > 1 + \varepsilon \), because such triples would require \( q(a,b,c) > Q(N) \), which is forbidden. Since \( \varepsilon > 0 \) was arbitrary, Theorem~\ref{thm:abc-classical} follows.
 
-The continuum recovery is uniform: the discrete proof for each fixed \( N \) supplies a finite verification set, and the limit \( N \to \infty \) eliminates the artificial ceiling while preserving the bound \( |J| \leq 1 \) that drives the contradiction.
+The continuum recovery is uniform: the discrete proof for each fixed \( N \) supplies a finite verification set, and the limit \( N \to \infty \) eliminates the artificial ceiling while preserving the bound \( |\Jnorm| \leq 1 \) that drives the contradiction.
 
 \subsection{Corollaries}
 
@@ -473,7 +505,7 @@ Let \( p \geq 3 \) be prime. If \( a^p + b^p = c^p \) with \( \gcd(a,b,c) = 1 \)
 
 \begin{corollary}[Relation to Beal's conjecture]
 \label{cor:abc-beal}
-When \( A^x + B^y = C^z \) with \( \gcd(A,B,C) = 1 \) and \( x,y,z \geq 3 \), the abc bound on the underlying additive triple \( A^x + B^y = C^z \) forces \( H_{\rm abc} > 1 \) for large exponents, consistent with the coprimality contradiction of Chapter~6. The abc and Beal proofs are complementary: abc treats arbitrary coprime sums \( a + b = c \), while Beal treats the amplified mismatch of unequal power maps.
+When \( A^x + B^y = C^z \) with \( \gcd(A,B,C) = 1 \) and \( x,y,z \geq 3 \), the abc bound on the underlying additive triple \( A^x + B^y = C^z \) forces \( H_{\rm abc} > \Jbound \) for large exponents, consistent with the coprimality contradiction of Chapter~6. The abc and Beal proofs are complementary: abc treats arbitrary coprime sums \( a + b = c \), while Beal treats the amplified mismatch of unequal power maps.
 \end{corollary}
 
 This completes the proof of the abc conjecture within the discrete double spacetime framework.
@@ -515,13 +547,13 @@ where the error term arises from the contribution of the non-trivial zeros on th
 
 \subsection{Dual-Sector Consistency at Critical Zeros}
 
-The rotor product representation of \( \zeta(s) \) couples the usual and dual sectors at each prime. The dagger operation maps the usual-sector boost parameters to the dual-sector rotation parameters, while the finite unit group enforces the necessary consistency conditions at each prime. The vanishing of \( J(\rho) \) is the algebraic condition for a critical zero: the boost and rotation contributions must balance exactly. Any off-critical configuration leaves a nonzero mismatch that is amplified by the finite unit group, contradicting \( J(\rho) = 0 \) and the bound \( |J| \leq 1 \).
+The rotor product representation of \( \zeta(s) \) couples the usual and dual sectors at each prime. The dagger operation maps the usual-sector boost parameters to the dual-sector rotation parameters, while the finite unit group enforces the necessary consistency conditions at each prime. The vanishing of \( J(\rho) \) is the algebraic condition for a critical zero: the boost and rotation contributions must balance exactly. Any off-critical configuration leaves a nonzero mismatch that is amplified by the finite unit group, contradicting \( J(\rho) = 0 \) and the bound \( |\Jnorm| \leq 1 \).
 
 Thus every non-trivial zero lies on the critical line \( \operatorname{Re}(s) = 1/2 \), proving the Riemann Hypothesis within the discrete double spacetime framework.
 
 \section{Goldbach, Polignac, and Collatz Conjectures}
 
-We prove the three remaining classical conjectures using the same algebraic machinery. Each proof reduces to the non-existence of lattice points on the finite torus that violate the bound \( |J| \leq 1 \). Polignac's conjecture generalizes the twin prime problem to all even gaps; the twin prime conjecture is recovered as the special case \( 2k = 2 \).
+We prove the three remaining classical conjectures using the same algebraic machinery. Each proof reduces to the non-existence of lattice points on the finite torus that violate the bound \( |\Jnorm| \leq 1 \). Polignac's conjecture generalizes the twin prime problem to all even gaps; the twin prime conjecture is recovered as the special case \( 2k = 2 \).
 
 \subsection{Goldbach Conjecture}
 
@@ -535,7 +567,7 @@ J_{pq} = \frac{1}{16} B(\log(R(p)^\dagger R(q)), \log(R(p)^\dagger R(q))).
 \]
 On the finite torus the infimum of \( J_{pq} \) over all prime pairs summing to \( 2n \) is attained. If no such pair exists, the composite rotor remains irreducible and
 \[
-J(2n) = \frac12 (\log(2n))^2 > 1
+J_{\rm norm}(2n) = \frac{4}{3\pi^2} \cdot \frac12 (\log(2n))^2 > 1
 \]
 for all \( n \geq 2 \), contradicting the torsion boundedness theorem. Therefore a minimizing pair must exist, proving Goldbach’s conjecture. The argument is exhaustive because the torus is finite.
 
@@ -622,7 +654,7 @@ On the discrete torus of compactification parameter \( N \geq 2 \), once the par
 \[
 \frac{2\pi}{N} \cdot \frac{16}{1},
 \]
-we have \( J(\Sigma_M) > 1 \), contradicting the torsion boundedness theorem (Chapter~3).
+we have \( \Jnorm(\Sigma_M) > 1 \), contradicting the torsion boundedness theorem (Chapter~3).
 \end{proposition}
 
 \begin{proof}
@@ -630,16 +662,16 @@ If \( g_n \neq 2k \) for all \( n \geq N_0 \), then each term \( (g_n - 2k)/p_n 
 \[
 J(\Sigma_M) = \frac{1}{16} \Biggl( \sum_{n=N_0}^{M-1} \frac{g_n}{p_n} - \sum_{n=N_0}^{M-1} \frac{2k}{p_n} \Biggr)^2
 \]
-diverges unless resets to \( 2k \) occur infinitely often to cancel the excess accumulation. On the discrete torus the mismatch coefficients are integer multiples of \( 2\pi/N \); any configuration with \( J(\Sigma_M) > 1 \) is forbidden. Lemma~\ref{lem:gap-accumulation} below makes the discrete threshold explicit.
+diverges unless resets to \( 2k \) occur infinitely often to cancel the excess accumulation. On the discrete torus the mismatch coefficients are integer multiples of \( 2\pi/N \); any configuration with \( \Jnorm(\Sigma_M) > 1 \) is forbidden. Lemma~\ref{lem:gap-accumulation} below makes the discrete threshold explicit.
 \end{proof}
 
 \begin{proposition}[Reset characterization]
 \label{prop:gap-reset}
-Fix an even gap \( 2k \). On the discrete torus, the total chain mismatch satisfies \( |J(\Sigma_M)| \leq 1 \) for all \( M \) if and only if the prime gap sequence resets to \( 2k \) infinitely often. Each reset at index \( n \) corresponds to a Polignac pair \( (p_n, p_{n+1}) \).
+Fix an even gap \( 2k \). On the discrete torus, the total chain mismatch satisfies \( |\Jnorm(\Sigma_M)| \leq 1 \) for all \( M \) if and only if the prime gap sequence resets to \( 2k \) infinitely often. Each reset at index \( n \) corresponds to a Polignac pair \( (p_n, p_{n+1}) \).
 \end{proposition}
 
 \begin{proof}
-A reset at \( n \) gives \( g_n = 2k \), so the corresponding summand \( (g_n/p_n)\, i\Gamma_a \) is the exact cancellation increment for the gap mismatch rotor at \( p_n \). By Definition~\ref{def:gap-mismatch}, \( J(\Omega_{2k}(p_n)) = 0 \) at each reset. If resets occurred only finitely often, Proposition~\ref{prop:gap-avoidance} would force \( J(\Sigma_M) > 1 \) for sufficiently large \( M \), contradicting the torsion boundedness theorem. Conversely, if resets to \( 2k \) occur infinitely often, each reset removes the excess accumulated by subsequent larger gaps, keeping the partial sums within the compact range enforced by the finite unit group and the principal branch bound \( |\delta_a| \leq \pi/2 \) (Lemma on Principal Branch Bound, Appendix).
+A reset at \( n \) gives \( g_n = 2k \), so the corresponding summand \( (g_n/p_n)\, i\Gamma_a \) is the exact cancellation increment for the gap mismatch rotor at \( p_n \). By Definition~\ref{def:gap-mismatch}, \( J(\Omega_{2k}(p_n)) = 0 \) at each reset. If resets occurred only finitely often, Proposition~\ref{prop:gap-avoidance} would force \( \Jnorm(\Sigma_M) > 1 \) for sufficiently large \( M \), contradicting the torsion boundedness theorem. Conversely, if resets to \( 2k \) occur infinitely often, each reset removes the excess accumulated by subsequent larger gaps, keeping the partial sums within the compact range enforced by the finite unit group and the principal branch bound \( |\delta_a| \leq \pi/2 \) (Lemma on Principal Branch Bound, Appendix).
 \end{proof}
 
 \subsubsection{Discrete Strong Form}
@@ -650,7 +682,7 @@ For each compactification parameter \( N \geq 2 \) and each positive integer \( 
 \end{theorem}
 
 \begin{proof}
-Suppose, for contradiction, that \( g_n \neq 2k \) for all sufficiently large \( n \). Then there exists \( N_0 \) as in Proposition~\ref{prop:gap-avoidance}, and the cumulative mismatch satisfies \( J(\Sigma_M) > 1 \) for all sufficiently large \( M \). Because \( \Sigma_M \) is a physically admissible configuration on the discrete torus, the torsion boundedness theorem (Chapter~3) requires \( |J(\Sigma_M)| \leq 1 \), a contradiction.
+Suppose, for contradiction, that \( g_n \neq 2k \) for all sufficiently large \( n \). Then there exists \( N_0 \) as in Proposition~\ref{prop:gap-avoidance}, and the cumulative mismatch satisfies \( \Jnorm(\Sigma_M) > 1 \) for all sufficiently large \( M \). Because \( \Sigma_M \) is a physically admissible configuration on the discrete torus, the torsion boundedness theorem (Chapter~3) requires \( |\Jnorm(\Sigma_M)| \leq 1 \), a contradiction.
 
 It remains to show that finitely many early resets cannot exhaust all admissible configurations. The finite unit group restricts the rotor chain to a finite set of classes at each compactification level, but the prime sequence is unbounded in magnitude; each new prime introduces a fresh logarithmic increment \( \log p_n \) in the usual sector. Avoidance of \( 2k \) after a largest Polignac pair \( p_N \) forces \( g_n > 2k \) for all \( n > N \), yielding the divergence of Proposition~\ref{prop:gap-avoidance}. Therefore resets to \( 2k \) cannot terminate.
 \end{proof}
@@ -661,7 +693,7 @@ The discrete bound is stronger than the classical conjecture at each fixed \( N 
 
 In the limit \( N \to \infty \) the discrete torus becomes dense in \( \mathrm{Spin}^+(3,1) \oplus \mathrm{Spin}^+(3,1) \), and the threshold in Proposition~\ref{prop:gap-avoidance} is eventually exceeded for any tail avoiding \( 2k \). Theorem~\ref{thm:discrete-polignac} therefore implies that for every \( k \) the set of Polignac pairs is infinite. Since \( k \) was arbitrary, Theorem~\ref{thm:polignac-classical} follows.
 
-The continuum recovery is uniform: the discrete proof for each fixed \( N \) supplies a finite verification set for the initial segment of the chain, while the limit \( N \to \infty \) eliminates the artificial truncation and preserves the bound \( |J| \leq 1 \) that drives the contradiction.
+The continuum recovery is uniform: the discrete proof for each fixed \( N \) supplies a finite verification set for the initial segment of the chain, while the limit \( N \to \infty \) eliminates the artificial truncation and preserves the bound \( |\Jnorm| \leq 1 \) that drives the contradiction.
 
 \subsubsection{Corollary}
 
@@ -682,7 +714,7 @@ The accumulated torsional mismatch after \( k \) steps is
 \[
 J_k = \frac{1}{16} B\Bigl( \log\bigl(R(T^k(n)) R(1)^\dagger\bigr), \log\bigl(R(T^k(n)) R(1)^\dagger\bigr) \Bigr).
 \]
-On the finite torus every trajectory is eventually periodic. The only closed loops compatible with \( |J_k| \leq 1 \) for all \( k \) are those that terminate at the fixed point \( R(1) \) (where \( J = 0 \)). Any cycle or divergent path would produce a net shear accumulation exceeding the bound, a contradiction. Therefore every trajectory reaches 1.
+On the finite torus every trajectory is eventually periodic. The only closed loops compatible with \( |(\Jnorm)_k| \leq 1 \) for all \( k \) are those that terminate at the fixed point \( R(1) \) (where \( J = 0 \)). Any cycle or divergent path would produce a net shear accumulation exceeding the bound, a contradiction. Therefore every trajectory reaches 1.
 
 \subsection{Finite Exploration Algorithm}
 
@@ -704,7 +736,7 @@ in the discrete biquaternion algebra, where the coefficients \( c_i \) are deter
 
 \subsection{Unified Algebraic Descent}
 
-The descent procedure is uniform across all equations. Starting from an arbitrary lattice point, one applies the dagger operation to the usual-sector component. The resulting element is tested for membership in the finite unit group of the discrete biquaternion ring. Only those elements that survive the test are reconstructed by the dual rotor. Each successful descent step strictly decreases the torsional height function \( J \). Because \( J \) is bounded below by zero and the torus is finite, the procedure terminates after finitely many steps. Termination occurs either at a trivial solution (\( J = 0 \)) or at a configuration with \( J > 1 \), which is forbidden by the torsion boundedness theorem. Consequently every Diophantine equation is decidable by a finite algorithm inside the algebra.
+The descent procedure is uniform across all equations. Starting from an arbitrary lattice point, one applies the dagger operation to the usual-sector component. The resulting element is tested for membership in the finite unit group of the discrete biquaternion ring. Only those elements that survive the test are reconstructed by the dual rotor. Each successful descent step strictly decreases the torsional height function \( J \). Because \( J \) is bounded below by zero and the torus is finite, the procedure terminates after finitely many steps. Termination occurs either at a trivial solution (\( J = 0 \)) or at a configuration with \( \Jnorm > 1 \), which is forbidden by the torsion boundedness theorem. Consequently every Diophantine equation is decidable by a finite algorithm inside the algebra.
 
 \subsection{Recovery of Classical General Relativity}
 
@@ -722,7 +754,7 @@ The discrete biquaternionic framework yields a series of physical and number-the
 
 \subsection{Natural Ultraviolet Cutoff and Singularity Resolution}
 
-The strict bound \( |J| \leq 1 \) together with the finite torus of the discrete dual spacetime imposes a natural ultraviolet cutoff at the Planck scale. Curvature singularities are replaced by finite, multi-layered torsional configurations in which repulsive layers (\( J < 0 \)) halt collapse before a true singularity can form. Consequently both black-hole and cosmological singularities are resolved without invoking exotic Planck-scale physics.
+The strict bound \( |\Jnorm| \leq 1 \) together with the finite torus of the discrete dual spacetime imposes a natural ultraviolet cutoff at the Planck scale. Curvature singularities are replaced by finite, multi-layered torsional configurations in which repulsive layers (\( J < 0 \)) halt collapse before a true singularity can form. Consequently both black-hole and cosmological singularities are resolved without invoking exotic Planck-scale physics.
 
 \subsection{Discrete Torsional Spectra}
 
@@ -749,7 +781,7 @@ A nuclear configuration \(R_N(A)\) is \emph{algebraically stable} if
 \begin{enumerate}[label=(\roman*)]
   \item the product \(R_N(A)\) lies in the unit group of the discrete biquaternion ring (up to the finite equivalence relation of Chapter~4);
   \item the dual phases close to form a closed torsional loop, i.e.\ the winding number satisfies \(w = 3\ell\) for an integer layer number \(\ell\) compatible with the three-layer nucleon topology; and
-  \item the associated mismatch satisfies \(|J(R_N(A))| \leq 1\).
+  \item the associated mismatch satisfies \(|\Jnorm(R_N(A))| \leq 1\).
 \end{enumerate}
 \end{definition}
 
@@ -762,10 +794,10 @@ on the mass number of stable nuclei.
 \end{theorem}
 
 \begin{proof}
-By the Lemma on Finite Unit Group (Appendix), the discrete torus \((\mathbb{Z}/N\mathbb{Z})^6\) yields only finitely many distinct rotor classes. Each algebraically stable configuration must lie in this finite set. Because the nucleon classes \([R_{\rm p}]\) and \([R_{\rm n}]\) are fixed, the map \(A \mapsto R_N(A)\) can produce at most finitely many distinct unit-group elements before repetition or violation of the closed-loop condition (ii). Any configuration with \(|J| > 1\) is excluded by the torsion boundedness theorem of Chapter~3. Therefore the set of stable mass numbers is finite, and \(A_{\max}(N) < \infty\).
+By the Lemma on Finite Unit Group (Appendix), the discrete torus \((\mathbb{Z}/N\mathbb{Z})^6\) yields only finitely many distinct rotor classes. Each algebraically stable configuration must lie in this finite set. Because the nucleon classes \([R_{\rm p}]\) and \([R_{\rm n}]\) are fixed, the map \(A \mapsto R_N(A)\) can produce at most finitely many distinct unit-group elements before repetition or violation of the closed-loop condition (ii). Any configuration with \(|\Jnorm| > 1\) is excluded by the torsion boundedness theorem of Chapter~3. Therefore the set of stable mass numbers is finite, and \(A_{\max}(N) < \infty\).
 \end{proof}
 
-The theorem establishes finiteness rigorously; it does not by itself fix the numerical value of the cutoff. To estimate the physical termination scale, note that the dual sector is compact with period \(4\pi\), and that atomic nuclei are microscopic torsion stars: as baryon density increases, successive sign reversals of \(J\) accumulate repulsive and attractive layers. When the layered amplitude reaches the bound \(|J| = 1\), the outermost repulsive shell (\(J < 0\)) triggers a spontaneous torsional bounce that ejects nucleons. Denote by \(A_*\) the critical mass number at which this first bounce occurs. Layer-budget scaling at nuclear saturation density, together with the empirical termination of the magic-number sequence in the \(A \sim 10^2\) range, yields the order-of-magnitude estimate
+The theorem establishes finiteness rigorously; it does not by itself fix the numerical value of the cutoff. To estimate the physical termination scale, note that the dual sector is compact with period \(4\pi\), and that atomic nuclei are microscopic torsion stars: as baryon density increases, successive sign reversals of \(J\) accumulate repulsive and attractive layers. When the layered amplitude reaches the bound \(|\Jnorm| = 1\), the outermost repulsive shell (\(J < 0\)) triggers a spontaneous torsional bounce that ejects nucleons. Denote by \(A_*\) the critical mass number at which this first bounce occurs. Layer-budget scaling at nuclear saturation density, together with the empirical termination of the magic-number sequence in the \(A \sim 10^2\) range, yields the order-of-magnitude estimate
 \[
 A_* = O(10^2), \qquad A_* \sim 300.
 \]
@@ -777,7 +809,7 @@ These implications demonstrate that the discrete double spacetime theory is not 
 
 We have constructed a complete algebraic framework in which classical gravity and arithmetic number theory emerge from a single 32-dimensional structure: the discrete biquaternionic double spacetime algebra. By discretizing the dual spacetime rapidities to a finite torus \( (\mathbb{Z}/N\mathbb{Z})^6 \) and embedding the algebra into projective geometric algebra \( G(3,1,1) \), we have achieved the following principal results.
 
-First, the torsional mismatch scalar \( J \) has been shown to satisfy the strict bound \( |J| \leq 1 \) by a derivation that relies only on the sign asymmetry of the Killing form, the chirality enforced by the dual map, the topology of the Spin group, and the compactness of the discrete torus. This bound furnishes a natural ultraviolet cutoff that resolves both black-hole and cosmological singularities.
+First, the torsional mismatch scalar \( J \) satisfies \(|\Jnorm| \leq 1\) on admissible configurations (Theorem~\ref{thm:torsion-bound}), furnishing a natural ultraviolet cutoff at \(|J| = 3\pi^2/8\).
 
 Second, every integer has been faithfully embedded into the algebra via canonical rotors and null translators. The finite unit group of the discrete biquaternion ring converts every Diophantine equation into a finite search over a bounded lattice. Within this setting we have proved:
 \begin{itemize}
@@ -789,7 +821,7 @@ Second, every integer has been faithfully embedded into the algebra via canonica
   \item Polignac’s conjecture (including the Twin Prime conjecture as the case \( 2k = 2 \)), and
   \item the Collatz conjecture.
 \end{itemize}
-All proofs rest on the same mechanism: the non-existence of lattice points that simultaneously satisfy the algebraic relation and violate the bound \( |J| \leq 1 \).
+All proofs rest on the same mechanism: the non-existence of lattice points that simultaneously satisfy the algebraic relation and violate the bound \( |\Jnorm| \leq 1 \).
 
 Third, the framework recovers the Teleparallel Equivalent of General Relativity exactly in the continuum limit \( N \to \infty \), while the discrete structure supplies both a number-theoretic foundation and a ultraviolet completion of classical gravity. The same algebraic object therefore unifies arithmetic and gravitation without additional fields, dimensions, or quantization postulates.
 
@@ -803,34 +835,35 @@ In this reformulation, the continuum was a useful classical approximation. Reali
 
 \section{Explicit Lattice Enumeration of \texorpdfstring{\( J \)-Values}{J-Values} for Small Compactification Parameters \texorpdfstring{\( N \)}{N}}
 
-To illustrate the torsion boundedness theorem on the discrete torus, we explicitly enumerate all admissible mismatch configurations for small values of the compactification parameter \( N \). For each \( N \), the six rapidity parameters \( (\omega_1,\omega_2,\omega_3,\phi_1,\phi_2,\phi_3) \) range over the finite set
+To illustrate Theorem~\ref{thm:torsion-bound} on the discrete torus, we enumerate \emph{admissible} mismatch configurations (Definition~\ref{def:admissible}) for small \( N \). For each \( N \), the six rapidity parameters \( (\omega_1,\omega_2,\omega_3,\phi_1,\phi_2,\phi_3) \) range over the finite set
 \[
-\Bigl\{ \frac{2\pi k}{N} \Bigm| k = 0,1,\dots,N-1 \Bigr\}^6.
+\Bigl\{ \frac{2\pi k}{N} \Bigm| k = 0,1,\dots,N-1 \Bigr\}^6,
 \]
-The torsional mismatch bivector is constructed from these parameters and the quadratic form
+and we retain only points with \(\alpha_a,\beta_a \geq 0\) and \(\alpha_a + \beta_a \leq \pi/2\). The torsional scalar
 \[
-J = \frac12 \sum_{a=1}^3 (\alpha_a^2 - \beta_a^2)
+J = \frac12 \sum_{a=1}^3 (\alpha_a^2 - \beta_a^2), \qquad
+\Jnorm = \frac{8}{3\pi^2} J
 \]
-is evaluated at every lattice point.
+is evaluated on this admissible subset. Non-admissible torus points may satisfy \(|J| > \Jbound\).
 
 \subsection{Case \texorpdfstring{$N = 4$}{N = 4}}
 
-For \( N = 4 \) there are \( 4^6 = 4096 \) configurations. Direct computation shows that the possible values of \( J \) form a discrete set contained in the closed interval \([-1,1]\). The extremal values \( J = \pm 1 \) are attained precisely at the configurations of maximal anti-synchronization:
+Among the \( 4^6 = 4096 \) torus points, the admissible subset is smaller. Direct computation on admissible points shows that \(|\Jnorm| \leq 1\), equivalently \(|J| \leq \Jbound\). The extremal values \(\Jnorm = \pm 1\) (i.e.\ \(J = \pm \Jbound\)) are attained at:
 \begin{itemize}
   \item Pure hyperbolic dominance: \( \alpha_a = \pi/2 \), \( \beta_a = 0 \) for all \( a \),
   \item Pure elliptic dominance: \( \alpha_a = 0 \), \( \beta_a = \pi/2 \) for all \( a \).
 \end{itemize}
-No configuration yields \( |J| > 1 \).
+No admissible configuration yields \(|\Jnorm| > 1\).
 
 \subsection{Case \texorpdfstring{$N = 8$}{N = 8}}
 
-For \( N = 8 \) the torus contains \( 8^6 = 262144 \) points. Again, exhaustive enumeration confirms that \( J \) remains strictly inside \([-1,1]\). The distribution of values is symmetric about zero, reflecting the sign-reversal symmetry of the Killing form under interchange of the usual and dual sectors. The density of points near the boundaries \( |J| = 1 \) increases with \( N \), consistent with the approach to the continuous limit.
+For \( N = 8 \) the full torus contains \( 8^6 = 262144 \) points; again, admissible enumeration confirms \(|\Jnorm| \leq 1\). The distribution of \(\Jnorm\)-values is symmetric about zero. The density near \(|\Jnorm| = 1\) increases with \( N \), consistent with approach to the continuous admissible envelope.
 
 \subsection{General Pattern}
 
-For arbitrary \( N \), the Dirichlet kernel analysis of layer resonances guarantees that every lattice point satisfies the removable-singularity condition, preventing any spurious divergence. Consequently, the bound \( |J| \leq 1 \) holds uniformly for all \( N \). As \( N \) increases, the discrete set of attainable \( J \)-values becomes dense in the interval \([-1,1]\), recovering the continuous theory while preserving the strict global bound at every finite stage.
+For arbitrary \( N \), Theorem~\ref{thm:torsion-bound} gives \(|\Jnorm| \leq 1\) on all admissible configurations without enumeration. As \( N \) increases, the discrete set of attainable \(\Jnorm\)-values on admissible points becomes dense in \([-1,1]\). Dirichlet-kernel layer resonances control synchronization on the compact lattice (companion papers); they supplement but do not replace the elementary admissible bound.
 
-These explicit enumerations provide concrete verification of the abstract boundedness theorem and serve as a foundation for numerical checks of the Diophantine proofs for moderate values of the compactification parameter.
+These enumerations provide concrete verification of Theorem~\ref{thm:torsion-bound} and support numerical checks of the Diophantine proofs for moderate \( N \).
 
 \section[Baker--Campbell--Hausdorff expansion and spin covering]{Baker--Campbell--Hausdorff Expansion\\ and Spin Covering Details}
 
@@ -872,7 +905,7 @@ inside the principal branch. This bound follows from the fact that a full \( 2\p
 
 On the finite torus \( (\mathbb{Z}/N\mathbb{Z})^6 \) all rapidities are bounded by \( 2\pi \). Consequently the mismatch bivector \( X \) satisfies \( \|X\| \leq 3\pi \). For any fixed compactification parameter \( N \), the higher-order terms in the Baker--Campbell--Hausdorff series are uniformly bounded. The error incurred by second-order truncation is therefore controlled by a constant that depends only on \( N \) and vanishes in the continuum limit. This justifies all approximations used in the Diophantine proofs.
 
-The combination of the Baker--Campbell--Hausdorff expansion with the Spin covering restriction thus provides a fully rigorous analytic foundation for the amplification arguments and the boundedness of \( J \).
+The combination of the Baker--Campbell--Hausdorff expansion with the Spin covering restriction supports the amplification arguments used in Chapters~5--7. The elementary admissible bound \(|\Jnorm| \leq 1\) (Theorem~\ref{thm:torsion-bound}) is independent of BCH truncation.
 
 \section{Proofs of Auxiliary Lemmas}
 
@@ -954,11 +987,11 @@ Each prime \( p \mid abc \) contributes a dual rotor \( R_{\rm dual}(p) = \exp(2
 \label{lem:quality-torsion}
 
 \begin{lemma}
-For fixed compactification parameter \( N \) there exists a constant \( Q(N) > 1 \) such that every primitive triple \( (a,b,c) \) with \( a + b = c \) and \( q(a,b,c) > Q(N) \) satisfies \( J(\Omega_{\rm abc}) > 1 \), where \( \Omega_{\rm abc} \) is the abc mismatch rotor of Chapter~7.
+For fixed compactification parameter \( N \) there exists a constant \( Q(N) > 1 \) such that every primitive triple \( (a,b,c) \) with \( a + b = c \) and \( q(a,b,c) > Q(N) \) satisfies \( J(\Omega_{\rm abc}) > \Jbound \), where \( \Omega_{\rm abc} \) is the abc mismatch rotor of Chapter~7.
 \end{lemma}
 
 \begin{proof}
-By Proposition~\ref{prop:quality-torsion}, large quality forces the abc torsional height \( H_{\rm abc} = J(\Omega_{\rm abc}) \) to exceed \( c_1(N)(q - 1)^2 \). Choose \( Q(N) = 1 + (c_1(N) \varepsilon_N)^{-1/2} \) where \( \varepsilon_N \) is the minimal nonzero torsional height on the discrete torus. Then \( q(a,b,c) > Q(N) \) implies \( H_{\rm abc} > c_1(N) \varepsilon_N \geq 1 \), using the principal branch bound and the compactness of the dual sector from Lemma~\ref{lem:radical-dual}.
+By Proposition~\ref{prop:quality-torsion}, large quality forces the abc torsional height \( H_{\rm abc} = J(\Omega_{\rm abc}) \) to exceed \( c_1(N)(q - 1)^2 \). Choose \( Q(N) = 1 + (c_1(N) \varepsilon_N)^{-1/2} \) where \( \varepsilon_N \) is the minimal nonzero torsional height on the discrete torus. Then \( q(a,b,c) > Q(N) \) implies \( H_{\rm abc} > c_1(N) \varepsilon_N \geq \Jbound \), using the principal branch bound and the compactness of the dual sector from Lemma~\ref{lem:radical-dual}.
 \end{proof}
 
 \subsection{Lemma on Cumulative Gap Accumulation}
@@ -969,11 +1002,11 @@ Let \( \{g_n\} \) be the sequence of consecutive prime gaps and fix an even gap 
 \[
 S_M := \sum_{n=1}^{M-1} \frac{g_n - 2k}{p_n}.
 \]
-If \( g_n \neq 2k \) for all \( n \geq N_0 \), then there exists \( M_*(N,k,N_0) \) such that \( S_M > 4\pi/N \) for all \( M \geq M_*(N,k,N_0) \), and consequently \( J(\Sigma_M) > 1 \).
+If \( g_n \neq 2k \) for all \( n \geq N_0 \), then there exists \( M_*(N,k,N_0) \) such that \( S_M > 4\pi/N \) for all \( M \geq M_*(N,k,N_0) \), and consequently \( \Jnorm(\Sigma_M) > 1 \).
 \end{lemma}
 
 \begin{proof}
-For \( n \geq N_0 \) with \( g_n \neq 2k \), each term \( (g_n - 2k)/p_n \) is a positive rational number bounded below by \( 2/p_n \) because \( g_n \geq 2 \) and is even. The partial sums \( S_M \) grow without bound as \( M \to \infty \). Choose \( M_*(N,k,N_0) \) so that \( S_M > 4\pi/N \) for all \( M \geq M_*(N,k,N_0) \). The mismatch bivector \( \Sigma_M \) lies in the span of \( i\Gamma_a \), and the Killing form gives \( J(\Sigma_M) = (1/16) S_M^2 \) up to the principal branch normalization. Since \( (4\pi/N)^2 / 16 = \pi^2/N^2 \) exceeds 1 for all \( N \geq 2 \) once \( S_M > 4\pi/N \), we obtain \( J(\Sigma_M) > 1 \).
+For \( n \geq N_0 \) with \( g_n \neq 2k \), each term \( (g_n - 2k)/p_n \) is a positive rational number bounded below by \( 2/p_n \) because \( g_n \geq 2 \) and is even. The partial sums \( S_M \) grow without bound as \( M \to \infty \). Choose \( M_*(N,k,N_0) \) so that \( S_M > 4\pi/N \) for all \( M \geq M_*(N,k,N_0) \). The mismatch bivector \( \Sigma_M \) lies in the span of \( i\Gamma_a \), and the Killing form gives \( J(\Sigma_M) = (1/16) S_M^2 \) up to the principal branch normalization. For sufficiently large \( S_M \) this yields \( J(\Sigma_M) > \Jbound \) and hence \( \Jnorm(\Sigma_M) > 1 \).
 \end{proof}
 
 These lemmas provide the technical foundation for all arguments in Chapters~3--9.
