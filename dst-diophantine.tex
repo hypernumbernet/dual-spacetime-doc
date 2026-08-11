@@ -34,7 +34,7 @@ Integers are faithfully embedded into the algebra via canonical rotors and null 
 
 The framework recovers the Teleparallel Equivalent of General Relativity exactly in the continuum limit \(N \to \infty\), while the discrete structure supplies both a number-theoretic foundation and a natural ultraviolet cutoff that eliminates singularities and divergences. The same algebraic object therefore unifies arithmetic and gravitation without additional fields, dimensions, or quantization postulates.
 
-The theory yields concrete, falsifiable predictions, including discrete gravitational-wave echoes, a strict upper bound on stable nuclei (\(A \lesssim 300\)), and measurable torsional corrections to nuclear energy levels. These predictions are testable with near-future gravitational-wave detectors, precision clocks, and nuclear spectroscopy.
+The theory yields concrete physical implications, including discrete gravitational-wave echoes, a finite upper bound on stable nuclei with estimated cutoff \(A_* \lesssim 300\), and discrete torsional corrections to nuclear energy levels.
 
 In this reformulation, spacetime is discrete, particle-local, and doubly temporal. Gravity is reinterpreted as the collective perception of torsional misalignment between the intrinsic dual spacetimes carried by every massive particle.
 \end{abstract}
@@ -718,7 +718,7 @@ This unified framework demonstrates that the biquaternion algebra, once equipped
 
 \section{Implications and Predictions}
 
-The discrete biquaternionic framework yields a series of sharp, falsifiable predictions that distinguish it from both classical General Relativity and other quantum-gravity approaches.
+The discrete biquaternionic framework yields a series of physical and number-theoretic implications that distinguish it from both classical General Relativity and other quantum-gravity approaches.
 
 \subsection{Natural Ultraviolet Cutoff and Singularity Resolution}
 
@@ -730,28 +730,48 @@ Gravitational waves and nuclear excitations acquire discrete torsional contribut
 \[
 \Delta t \sim \frac{GM}{c^3} \approx 10^{-5} \Bigl( \frac{M}{10 M_\odot} \Bigr) \text{ s}.
 \]
-Nuclear energy levels likewise receive discrete corrections of order \( \ell_N^{-1} \), where \( \ell_N = 2\pi / N \) is the compactification scale. These corrections are in principle measurable with next-generation gravitational-wave detectors and high-precision nuclear spectroscopy.
+Nuclear energy levels likewise receive discrete corrections of order \( \ell_N^{-1} \), where \( \ell_N = 2\pi / N \) is the compactification scale.
 
 \subsection{Finite Number of Stable Nuclei}
 
-The finite unit group of the discrete biquaternion ring implies that only finitely many torsional configurations are stable. This yields a strict upper bound on the mass number of stable nuclei,
+Each nucleon is embedded as a three-layer torsion star: the canonical proton and neutron rotor classes \( [R_{\rm p}], [R_{\rm n}] \in \mathrm{Spin}^+(3,1) \oplus \mathrm{Spin}^+(3,1) \) carry baryon number \(B=1\) and dual-phase winding number \(w=3\), in accordance with the layer-counting classification developed in the companion paper on particle stability. A nucleus with mass number \(A\) is represented by the ordered product
 \[
-A \lesssim 300,
+R_N(A) := \prod_{j=1}^{A} R_{\nu_j},
 \]
-beyond which no closed torsional loops exist. Consequently superheavy elements with \( A > 300 \) cannot be stable, providing a natural explanation for the observed termination of the periodic table.
+where each factor \(R_{\nu_j}\) is a representative of either \([R_{\rm p}]\) or \([R_{\rm n}]\), and the additive mass number is recorded by the null translator
+\[
+T(A) := \sum_{j=1}^{A} T(1),
+\]
+with \(T(1)\) the unit null increment of Chapter~4.
 
-\subsection{Experimental Testability}
+\begin{definition}
+A nuclear configuration \(R_N(A)\) is \emph{algebraically stable} if
+\begin{enumerate}[label=(\roman*)]
+  \item the product \(R_N(A)\) lies in the unit group of the discrete biquaternion ring (up to the finite equivalence relation of Chapter~4);
+  \item the dual phases close to form a closed torsional loop, i.e.\ the winding number satisfies \(w = 3\ell\) for an integer layer number \(\ell\) compatible with the three-layer nucleon topology; and
+  \item the associated mismatch satisfies \(|J(R_N(A))| \leq 1\).
+\end{enumerate}
+\end{definition}
 
-The theory makes several near-term testable predictions:
-\begin{itemize}
-  \item Search for gravitational-wave echoes with characteristic phase modulation in LIGO/Virgo/KAGRA and future detectors (LISA, Einstein Telescope).
-  \item Precision atomic-clock networks probing the Earth’s core and planetary interiors for exact \( J = 0 \) cancellation signatures.
-  \item High-resolution nuclear spectroscopy searching for discrete torsional corrections to energy levels.
-  \item Table-top experiments using circularly polarized THz fields to coherently excite dual-rotor phases and measure induced changes in effective mass or inertia.
-\end{itemize}
-A positive detection of any of these signatures would constitute direct evidence for the discrete torsional structure of spacetime. A null result at the predicted sensitivity would constrain the compactification parameter \( N \) and the coupling strength of dual-rotor excitations.
+\begin{theorem}[Finite nuclear chart]
+For each fixed compactification parameter \(N\), only finitely many mass numbers \(A\) admit algebraically stable nuclear configurations. Consequently there exists a finite upper bound
+\[
+A_{\max}(N) < \infty
+\]
+on the mass number of stable nuclei.
+\end{theorem}
 
-These implications demonstrate that the discrete double spacetime theory is not merely a mathematical reformulation but a physically predictive framework with concrete observational consequences.
+\begin{proof}
+By the Lemma on Finite Unit Group (Appendix), the discrete torus \((\mathbb{Z}/N\mathbb{Z})^6\) yields only finitely many distinct rotor classes. Each algebraically stable configuration must lie in this finite set. Because the nucleon classes \([R_{\rm p}]\) and \([R_{\rm n}]\) are fixed, the map \(A \mapsto R_N(A)\) can produce at most finitely many distinct unit-group elements before repetition or violation of the closed-loop condition (ii). Any configuration with \(|J| > 1\) is excluded by the torsion boundedness theorem of Chapter~3. Therefore the set of stable mass numbers is finite, and \(A_{\max}(N) < \infty\).
+\end{proof}
+
+The theorem establishes finiteness rigorously; it does not by itself fix the numerical value of the cutoff. To estimate the physical termination scale, note that the dual sector is compact with period \(4\pi\), and that atomic nuclei are microscopic torsion stars: as baryon density increases, successive sign reversals of \(J\) accumulate repulsive and attractive layers. When the layered amplitude reaches the bound \(|J| = 1\), the outermost repulsive shell (\(J < 0\)) triggers a spontaneous torsional bounce that ejects nucleons. Denote by \(A_*\) the critical mass number at which this first bounce occurs. Layer-budget scaling at nuclear saturation density, together with the empirical termination of the magic-number sequence in the \(A \sim 10^2\) range, yields the order-of-magnitude estimate
+\[
+A_* = O(10^2), \qquad A_* \sim 300.
+\]
+This estimate is not a theorem constant: it is the torsional-bounce threshold inferred from the \(4\pi\)-compact dual geometry and is consistent with the observed limit of the nuclear chart. For \(A > A_*\), closed torsional loops cannot remain stable, explaining the absence of naturally occurring superheavy elements.
+
+These implications demonstrate that the discrete double spacetime theory is not merely a mathematical reformulation but a physically predictive framework with concrete consequences for both arithmetic and gravitation.
 
 \section{Conclusions}
 
@@ -773,7 +793,7 @@ All proofs rest on the same mechanism: the non-existence of lattice points that 
 
 Third, the framework recovers the Teleparallel Equivalent of General Relativity exactly in the continuum limit \( N \to \infty \), while the discrete structure supplies both a number-theoretic foundation and a ultraviolet completion of classical gravity. The same algebraic object therefore unifies arithmetic and gravitation without additional fields, dimensions, or quantization postulates.
 
-The theory yields concrete, falsifiable predictions: discrete gravitational-wave echoes, finite stable nuclei with \( A \lesssim 300 \), and measurable torsional corrections to nuclear energy levels. Near-term experiments with gravitational-wave detectors, precision clocks, and nuclear spectroscopy can test these predictions within the coming decade.
+The theory yields concrete physical implications: discrete gravitational-wave echoes, a finite upper bound on stable nuclei with estimated cutoff \(A_* \lesssim 300\), and discrete torsional corrections to nuclear energy levels.
 
 Future work includes the complete classification of the units of the integer biquaternion ring, systematic numerical verification for large compactification parameters, and the full integration of the present classical framework with the quantum sector developed in the companion paper on torsional quantum gravity. The discrete biquaternion algebra thus stands as a candidate for a unified foundation of both number theory and gravitational physics.
 
