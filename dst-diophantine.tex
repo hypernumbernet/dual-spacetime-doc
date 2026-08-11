@@ -60,7 +60,7 @@ where \(N \gg 1\) is the effective compactification parameter. The resulting pha
 
 Second, we embed the biquaternion algebra into the projective geometric algebra \(G(3,1,1)\) by adjoining a null vector \(e_4\) (\(e_4^2 = 0\)). This produces a ten-dimensional bivector space consisting of three hyperbolic generators, three cyclic generators, and four null generators \(N_\mu = e_4 \wedge e_\mu\). The null sector supplies a canonical algebraic realization of translational (additive) degrees of freedom, while the extended invariant \(J^{(5)}\) remains non-degenerate. The plane-based bracket products of \(G(3,1,1)\) further identify the dual spacetime with the normal bundle to three-blades, furnishing a geometric bridge between additive and multiplicative structures.
 
-The dagger operation \(R_{\rm usual}^\dagger\) on the usual-sector rotor extracts the dual-sector data from the combined mismatch, while subsequent multiplication by the dual rotor reconstructs the full torsional configuration. The finite unit group of the discrete biquaternion ring constrains admissible rotor classes and enables a rigorous algebraic descent procedure that bounds the torsional mismatch scalar.
+The dagger operation \(R_{\rm usual}^\dagger\) on the usual-sector rotor extracts the dual-sector data from the combined mismatch (equivalently, swaps the rapidity pairs \((\alpha_a,\beta_a)\mapsto(\beta_a,\alpha_a)\)), while subsequent reconstruction by the dual rotor recovers the torsional configuration up to sign of \(J\). Decidability of the discrete Diophantine problems then follows from the finiteness of the admissible torus together with either exhaustive lattice search or amplification contradictions against \(|\Jnorm|\le 1\) (Chapter~10); dagger itself does not decrease the torsional height.
 
 Within this unified algebraic framework we prove seven longstanding conjectures. Fermat's Last Theorem follows from the non-existence of lattice points satisfying \(a^p + b^p = c^p\) (\(p \geq 3\)) with \(\Jnorm \leq 1\). Beal's conjecture extends this mechanism to unequal exponents \(A^x + B^y = C^z\) (\(x,y,z \geq 3\)), forcing a common prime factor whenever the torsional mismatch would otherwise exceed unity. The abc conjecture is established by bounding the quality of every coprime triple \(a + b = c\) through the torsional height of its rotor embedding, with the discrete torus supplying a uniform constant and the continuum limit recovering the classical statement. The Riemann Hypothesis is established by showing that the non-trivial zeros of the zeta function correspond to rotor ensembles with vanishing torsional mismatch, whose real parts are forced to \(1/2\) by the scale invariance of discrete torsional layers. Goldbach's conjecture, Polignac's conjecture, and the Collatz conjecture are likewise reduced to the existence of decompositions, even-gap resets, or flows that minimize \(J\) on the finite torus, with non-existence implying \(\Jnorm > 1\)---a contradiction.
 
@@ -112,7 +112,7 @@ The first term reproduces the original torsional scalar \( J \); the second term
 
 \subsection{Duality Covariance}
 
-The duality map \( X \mapsto Xi \) of the parent biquaternion algebra commutes with the null vector \( e_4 \). Consequently, the ten-dimensional generator space is closed under duality, and the partition into hyperbolic, cyclic, and null sectors is preserved in both the usual and dual sectors. The dagger operation \( R_{\rm usual}^\dagger \) on the usual-sector rotor maps boost parameters to their dual-sector rotation partners. Subsequent reconstruction by the dual rotor yields the combined torsional mismatch, while the finite unit group of the discrete biquaternion ring filters admissible configurations. This algebraic procedure supplies a rigorous descent mechanism that will be employed in the proofs of the Diophantine conjectures.
+The duality map \( X \mapsto Xi \) of the parent biquaternion algebra commutes with the null vector \( e_4 \). Consequently, the ten-dimensional generator space is closed under duality, and the partition into hyperbolic, cyclic, and null sectors is preserved in both the usual and dual sectors. The dagger operation \( R_{\rm usual}^\dagger \) on the usual-sector rotor maps boost parameters to their dual-sector rotation partners and, on the parameter chart, merely swaps \((\alpha_a,\beta_a)\mapsto(\beta_a,\alpha_a)\). In particular it sends \(J\mapsto -J\) and therefore preserves the normalised height \(|\Jnorm|\). The finite unit group of the discrete biquaternion ring records the image of the discrete torus; together with admissibility it delimits the search space used in Chapter~10. Termination of Diophantine arguments relies on that finiteness (and on amplification against Theorem~\ref{thm:torsion-bound}), not on a strict decrease of height under dagger.
 
 The constructions of this chapter therefore furnish a complete algebraic environment in which both multiplicative (rotor) and additive (null translator) structures coexist, the normalized torsion scalar satisfies \(|\Jnorm|\leq 1\) on admissible configurations, and every Diophantine equation is reduced to a finite lattice search.
 
@@ -238,17 +238,23 @@ When this expression is inserted into the mismatch bivector, the leading term pr
 
 \subsection{Diophantine Constraints from the Finite Unit Group}
 
-The finiteness of the unit group of the discrete biquaternion ring implies that every Diophantine equation
+The finiteness of the unit group of the discrete biquaternion ring implies that every power-sum Diophantine equation
 \[
-f(n_1,\dots,n_k) = 0
+\sum_i c_i\, b_i^{e_i} = 0
 \]
-translates into a finite system of equations on the torus \( (\mathbb{Z}/N\mathbb{Z})^6 \). A solution exists if and only if there exists a lattice point at which the associated torsional mismatch satisfies \( J = 0 \) (or a prescribed rational value). Because the set of admissible points is finite, non-existence can be verified by exhaustive search or by showing that every candidate point yields \( \Jnorm > 1 \), contradicting the torsion boundedness theorem of Chapter~3.
+translates into a finite system of checks on the torus \( (\mathbb{Z}/N\mathbb{Z})^6 \). On the integer side the null-translator encoding is faithful. On the discrete side, non-existence of solutions compatible with admissibility can be verified by exhaustive search over the finite admissible set, or by showing that every candidate configuration yields \( \Jnorm > 1 \), contradicting the torsion boundedness theorem of Chapter~3. (We do not identify continuous integer rotors with admissible lattice points without quantisation; see Chapter~10.)
+
 
 \subsection{Algebraic Rigorous Descent}
 
-The embedding admits a natural descent procedure within the discrete biquaternion algebra. One applies the dagger operation to the usual-sector rotor, thereby extracting the dual-sector component. The resulting element is tested for membership in the finite unit group; only those elements that survive the check are reconstructed by the dual rotor. Each descent step strictly decreases the torsional height function \( J \) until either a trivial solution is reached or a contradiction \( \Jnorm > 1 \) is obtained. This procedure supplies a completely algebraic and finite algorithm for deciding the solvability of any Diophantine equation in the image of the embedding.
+\label{sec:ch4-descent}
+The embedding supplies the ingredients of a finite decision procedure, but the mechanism must be stated carefully. The dagger operation extracts the dual-sector component by swapping rapidities, and therefore satisfies
+\[
+J(\Omega^\dagger)=-J(\Omega),\qquad |\Jnorm(\Omega^\dagger)|=|\Jnorm(\Omega)|.
+\]
+Thus dagger alone does \emph{not} furnish a strict descent on torsional height. Membership tests against the finite image of the discrete torus likewise do not, by themselves, shrink \(|\Jnorm|\). What makes Diophantine problems decidable inside the algebra is the combination of (i)~faithful encoding of additive relations by null translators, (ii)~the finite admissible set on \((\mathbb{Z}/N\mathbb{Z})^6\), and (iii)~either exhaustive search for zero-height configurations or an amplification argument that would force \(|\Jnorm|>1\), contradicting Theorem~\ref{thm:torsion-bound}. Chapter~10 abstracts this three-layer scheme; the Lean~4 development \texttt{DstDiophantine} machine-checks the height-preservation identity and the finite-search termination.
 
-The constructions of this chapter therefore reduce every classical Diophantine problem to a finite, rigorously bounded computation inside a single 32-dimensional algebra. The subsequent chapters apply this machinery to the seven principal conjectures.
+The constructions of this chapter therefore reduce classical Diophantine problems to finite, rigorously bounded computations inside a single 32-dimensional algebra. The subsequent chapters apply this machinery to the seven principal conjectures.
 
 \section{Proof of Fermat's Last Theorem}
 
@@ -724,27 +730,59 @@ This completes the proofs of Goldbach’s conjecture, Polignac’s conjecture, a
 
 \section{Unified Diophantine Framework and Descent}
 
-The proofs of the preceding chapters share a common algebraic structure. We now abstract this structure into a general framework capable of treating arbitrary Diophantine equations.
+The proofs of the preceding chapters share a common algebraic structure. We now abstract this structure into a general framework. The presentation below incorporates a correction, machine-checked in Lean~4, to an earlier informal claim that dagger itself strictly decreases \(J\).
 
 \subsection{General Representation of Diophantine Equations}
 
-Let \( f(x_1,\dots,x_k) = 0 \) be any polynomial Diophantine equation with integer coefficients. Using the embedding of Chapter~4 we associate to each variable \( x_i \) its canonical rotor \( R(x_i) \) and, when additive relations appear, the corresponding null translator \( T(x_i) \). The equation \( f = 0 \) is then equivalent to the algebraic identity
+The Diophantine arguments of Chapters~5--9 are carried by \emph{power-sum} equations
+\[
+\sum_i c_i\, b_i^{e_i}=0
+\]
+(with integer coefficients \(c_i\), bases \(b_i\), and exponents \(e_i\)), which cover the additive skeletons of Fermat, Beal, abc, and Goldbach-type statements. Using the embedding of Chapter~4, the additive content is realised by a null translator
+\[
+T\Bigl(\sum_i c_i\, b_i^{e_i}\Bigr),
+\]
+so that the equation vanishes if and only if this translator equals the identity (faithfulness of \(T\)). Multiplicative mismatch among nonzero bases is recorded separately by rotors \(R(b_i)\) and may be amplified under power maps. The informal schematic identity
 \[
 R(f) \cdot \exp\Bigl( \sum_i c_i T(x_i) \Bigr) = 1
 \]
-in the discrete biquaternion algebra, where the coefficients \( c_i \) are determined by the monomials of \( f \). Because the torus is finite, this identity can be checked by evaluating the torsional mismatch scalar \( J \) of the left-hand side. A solution exists if and only if there is a lattice point at which \( J = 0 \) (or a prescribed rational value compatible with the unit group).
+is therefore understood as this two-sector encoding, not as a literal embedding of an arbitrary polynomial AST into a single motor. On the discrete side, one then searches the finite admissible set for zero-height configurations, or derives a contradiction by amplification against Theorem~\ref{thm:torsion-bound}. (Continuous integer rotors are \emph{not} identified with admissible lattice points without quantisation; large \(|n|\) already yields \(|\Jnorm(R(n))|>1\).)
 
-\subsection{Unified Algebraic Descent}
+\subsection{Dual Extraction versus Finite Search}
+\label{sec:unified-descent}
 
-The descent procedure is uniform across all equations. Starting from an arbitrary lattice point, one applies the dagger operation to the usual-sector component. The resulting element is tested for membership in the finite unit group of the discrete biquaternion ring. Only those elements that survive the test are reconstructed by the dual rotor. Each successful descent step strictly decreases the torsional height function \( J \). Because \( J \) is bounded below by zero and the torus is finite, the procedure terminates after finitely many steps. Termination occurs either at a trivial solution (\( J = 0 \)) or at a configuration with \( \Jnorm > 1 \), which is forbidden by the torsion boundedness theorem. Consequently every Diophantine equation is decidable by a finite algorithm inside the algebra.
+\begin{proposition}[Dagger preserves torsional height]
+\label{prop:dagger-height}
+Let \(\Omega\) be a torsional mismatch with parameters \((\alpha_a,\beta_a)\). Writing \(\Omega^\dagger\) for the configuration with parameters \((\beta_a,\alpha_a)\) (the parameter-level dagger / dual reconstruction), one has
+\[
+J(\Omega^\dagger)=-J(\Omega),\qquad |\Jnorm(\Omega^\dagger)|=|\Jnorm(\Omega)|.
+\]
+In particular, dagger never yields a strict decrease of the normalised height.
+\end{proposition}
+
+\begin{proof}
+Immediate from \(J=\frac12\sum_a(\alpha_a^2-\beta_a^2)\) and Definition~\ref{def:Jnorm}. The identity is machine-checked in the Lean~4 module \texttt{DstDiophantine.Framework.Descent}.
+\end{proof}
+
+Consequently the older narrative ``dagger \(\to\) unit-group filter \(\to\) dual reconstruction strictly decreases \(J\)'' is incorrect as stated. The unit-group image of the discrete torus records admissible rotor representatives but does not, under the present definition of that image, impose an independent height-reducing filter.
+
+What remains valid---and what the proofs actually use---is the following three-layer scheme.
+
+\begin{enumerate}[label=(\roman*)]
+  \item \textbf{Faithful integer encoding.} Power-sum vanishing is equivalent to the corresponding null translator equalling \(1\); multiplicative mismatch is available for amplification.
+  \item \textbf{Finite admissible search.} On each fixed \(N\), the set of admissible discrete configurations is finite. Zero normalised height is equivalent to an integer lattice condition on the rapidity indices and is therefore decidable; exhaustive search terminates after finitely many steps (equivalently: any schema that removes candidates from a finite remaining set is well-founded).
+  \item \textbf{Amplification / contradiction.} For specific conjectures, a putative nontrivial solution produces, after power maps, a configuration with \(|\Jnorm|>1\), contradicting Theorem~\ref{thm:torsion-bound}.
+\end{enumerate}
+
+Termination is thus guaranteed by finiteness of the admissible torus (layer~(ii)) or by the bound itself (layer~(iii)), not by a dagger-driven height descent. Dagger remains useful as a duality involution that exchanges the usual and dual sectors while preserving height.
 
 \subsection{Recovery of Classical General Relativity}
 
-In the continuum limit \( N \to \infty \) the discrete torus becomes dense in the compact group \( \mathrm{Spin}^+(3,1) \oplus \mathrm{Spin}^+(3,1) \). The finite descent algorithm converges to the classical variational principle
+In the continuum limit \( N \to \infty \) the discrete torus becomes dense in the compact group \( \mathrm{Spin}^+(3,1) \oplus \mathrm{Spin}^+(3,1) \). The finite discrete analysis converges, in the admissible sector, to the classical variational principle
 \[
 \delta \int J \, d^4x = 0,
 \]
-which is precisely the Teleparallel Equivalent of General Relativity. Thus the same algebraic object that resolves Diophantine conjectures also reproduces classical gravity without any additional structure. The discrete theory therefore provides both a number-theoretic foundation and a ultraviolet completion of General Relativity.
+which is precisely the Teleparallel Equivalent of General Relativity. Thus the same algebraic object that organises Diophantine arguments also reproduces classical gravity without any additional structure. The discrete theory therefore provides both a number-theoretic foundation and a ultraviolet completion of General Relativity.
 
 This unified framework demonstrates that the biquaternion algebra, once equipped with discreteness and projective geometric structure, serves as a single coherent setting for both arithmetic and gravitational physics.
 
@@ -821,13 +859,13 @@ Second, every integer has been faithfully embedded into the algebra via canonica
   \item Polignac’s conjecture (including the Twin Prime conjecture as the case \( 2k = 2 \)), and
   \item the Collatz conjecture.
 \end{itemize}
-All proofs rest on the same mechanism: the non-existence of lattice points that simultaneously satisfy the algebraic relation and violate the bound \( |\Jnorm| \leq 1 \).
+All proofs rest on the same mechanism: the non-existence of configurations that simultaneously satisfy the algebraic relation and violate the bound \( |\Jnorm| \leq 1 \), together with the finiteness of the admissible discrete search space (Chapter~10). Dual extraction by dagger preserves \(|\Jnorm|\) and is not itself a height-reducing descent.
 
 Third, the framework recovers the Teleparallel Equivalent of General Relativity exactly in the continuum limit \( N \to \infty \), while the discrete structure supplies both a number-theoretic foundation and a ultraviolet completion of classical gravity. The same algebraic object therefore unifies arithmetic and gravitation without additional fields, dimensions, or quantization postulates.
 
 The theory yields concrete physical implications: discrete gravitational-wave echoes, a finite upper bound on stable nuclei with estimated cutoff \(A_* \lesssim 300\), and discrete torsional corrections to nuclear energy levels.
 
-Future work includes the complete classification of the units of the integer biquaternion ring, systematic numerical verification for large compactification parameters, and the full integration of the present classical framework with the quantum sector developed in the companion paper on torsional quantum gravity. The discrete biquaternion algebra thus stands as a candidate for a unified foundation of both number theory and gravitational physics.
+Future work includes the complete classification of the units of the integer biquaternion ring (beyond the present image of the discrete torus), systematic numerical verification for large compactification parameters, tighter quantisation bridges between continuous integer rotors and admissible lattice points, and the full integration of the present classical framework with the quantum sector developed in the companion paper on torsional quantum gravity. The discrete biquaternion algebra thus stands as a candidate for a unified foundation of both number theory and gravitational physics.
 
 In this reformulation, the continuum was a useful classical approximation. Reality, at the deepest level, is discrete, particle-local, and doubly temporal. Spacetime does not curve matter; matter misaligns its own intrinsic dual spacetimes, and this misalignment—when perceived collectively—is what we have called gravity.
 
