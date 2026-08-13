@@ -1,15 +1,9 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[dvipdfmx,11pt,a4paper]{article}
 \usepackage[margin=1.0in]{geometry}
 \usepackage{amsmath,amssymb,amsfonts}
-\usepackage{mathtools}
-\usepackage{bm}
-\usepackage{hyperref}
 \usepackage{booktabs}
 \usepackage{caption}
-\usepackage{siunitx}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\usepackage[dvipdfmx]{hyperref}
 
 \title{The Hubble Sequence as Gravitational Resonance:\\Morphological Classification from the First Repulsive Layer of Dual Spacetime}
 
@@ -20,12 +14,12 @@
 \maketitle
 
 \begin{abstract}
-We demonstrate that the entire Hubble classification sequence — from E0 ellipticals to irregular galaxies — emerges as a direct consequence of the first repulsive gravitational layer predicted by dual spacetime theory.  
+We demonstrate that the entire Hubble classification sequence --- from E0 ellipticals to irregular galaxies --- emerges as a direct consequence of the first repulsive gravitational layer predicted by dual spacetime theory.  
 The Triadic Logarithmic Rotor Transform (TLR) produces alternating attractive and repulsive shells at distances $r_k \simeq \Lambda_0 e^{\pi k}$, where $\Lambda_0 \simeq 1.1\,\mathrm{kpc}$ is the Cosmic Resonance Length.  
 Galaxies of different morphological types occupy different radial zones relative to the $k=1$ repulsive crest at $\sim 28\,\mathrm{Mpc}$.  
 No dark matter, no density-wave theory, and no stochastic secular evolution are required.  
-— the arms, bars, bulges, and absence thereof are all standing torsion waves frozen into the phase gradient of particle-intrinsic dual rotors.  
-The Hubble “tuning fork” is revealed to be a spatial resonance diagram of the universe’s first gravitational inversion.
+--- the arms, bars, bulges, and absence thereof are all standing torsion waves frozen into the phase gradient of particle-intrinsic dual rotors.  
+The Hubble ``tuning fork'' is revealed to be a spatial resonance diagram of the universe's first gravitational inversion.
 \end{abstract}
 
 \section{Introduction}
@@ -59,21 +53,23 @@ This is precisely the characteristic size of observed grand-design spiral galaxi
 \begin{table}[ht]
 \centering
 \caption{Hubble type as position within the first repulsive layer}
-\begin{tabular}{lcccc}
+\label{tab:resonance}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lllll@{}}
 \toprule
-Type      & Zone relative to $r_1$                  & $\Delta\phi_\text{total}$ & Dominant force & Key feature \\
+Type & Zone relative to $r_1$ & $\Delta\phi_{\mathrm{total}}$ & Dominant force & Key feature \\
 \midrule
-E0-E3     & $r \ll r_1$ (deep attraction)          & $< 2.5$      & Pure attraction    & Spherical freeze-out \\
-E4-E7     & $r \lesssim r_1$ (attractive edge)     & $\sim \pi/2$-$\pi$ & Weak torque       & Mild flattening \\
-S0        & $r \simeq r_1$ (pre-crest)             & $\approx \pi$ & Stagnation        & Thin disk, no arms \\
-Sa        & $r \gtrsim r_1$ (just inside repulsion)& $\pi$-$\pi{+}0.6$ & Strong inward torque & Tightly wound arms \\
-Sb        & $r \approx r_1$ (repulsive crest)      & $\pi{+}0.8$-$1.2$ & Maximum outward push & Classic 2-arm grand design \\
-Sc        & $r > r_1$ (repulsive downslope)        & $\pi{+}1.4$-$2.0$ & Multi-mode resonance & Fragmented arms \\
-Sd-Sm     & $r \gg r_1$ (post-repulsive)           & $> \pi{+}2.2$ & Free phase lag      & Irregular, bars \\
-Irr       & Multiple layer interference            & $> 2\pi$     & Chaotic torsion     & No coherent structure \\
+E0--E3 & $r \ll r_1$ (deep attraction) & $< 2.5$ & Pure attraction & Spherical freeze-out \\
+E4--E7 & $r \lesssim r_1$ (attractive edge) & $\sim \pi/2$--$\pi$ & Weak torque & Mild flattening \\
+S0 & $r \simeq r_1$ (pre-crest) & $\approx \pi$ & Stagnation & Thin disk, no arms \\
+Sa & $r \gtrsim r_1$ (just inside repulsion) & $\pi$--$\pi{+}0.6$ & Strong inward torque & Tightly wound arms \\
+Sb & $r \approx r_1$ (repulsive crest) & $\pi{+}0.8$--$1.2$ & Maximum outward push & Classic 2-arm grand design \\
+Sc & $r > r_1$ (repulsive downslope) & $\pi{+}1.4$--$2.0$ & Multi-mode resonance & Fragmented arms \\
+Sd--Sm & $r \gg r_1$ (post-repulsive) & $> \pi{+}2.2$ & Free phase lag & Irregular, bars \\
+Irr & Multiple layer interference & $> 2\pi$ & Chaotic torsion & No coherent structure \\
 \bottomrule
 \end{tabular}
-\label{tab:resonance}
 \end{table}
 
 All observed trends follow immediately:
@@ -103,13 +99,13 @@ Time (Gyr) & Observed morphology \\
 \section{Discussion and Predictions}
 
 \begin{enumerate}
-\item The bulge mass fraction should be a universal function of $r_\text{galaxy}/r_1$ alone — testable with JWST + Rubin Observatory.  
-\item Grand-design spirals should show a sharp outer cutoff at $r \simeq 30\,\mathrm{kpc}$ — already observed in THINGS and SPARC surveys.  
+\item The bulge mass fraction should be a universal function of $r_\text{galaxy}/r_1$ alone --- testable with JWST + Rubin Observatory.  
+\item Grand-design spirals should show a sharp outer cutoff at $r \simeq 30\,\mathrm{kpc}$ --- already observed in THINGS and SPARC surveys.  
 \item Bar fraction peaks at galaxies whose half-mass radius satisfies $r_{1/2} \simeq 0.9-1.1\,r_1$.  
 \item No grand-design spiral should ever be found in clusters whose virial radius exceeds $\sim 50\,\mathrm{Mpc}$ (already beyond the $k=1$ crest).
 \end{enumerate}
 
-\section{Self-Induced Torsional Metamorphosis:\\Reinterpreting “Colliding” Galaxies}
+\section{Self-Induced Torsional Metamorphosis: Reinterpreting ``Colliding'' Galaxies}
 
 A striking prediction of dual spacetime theory is that many iconic systems traditionally interpreted as galaxy-galaxy collisions are in fact single galaxies undergoing violent internal metamorphosis as they cross the first repulsive layer.
 
@@ -118,28 +114,28 @@ This creates an extreme radial torque gradient that drives spectacular transient
 
 \begin{itemize}
 \item \textbf{Ring galaxies} (e.g., Cartwheel, AM~0644-741) arise when the repulsive wave propagates as a sharp circular front, compressing gas into a luminous ring.
-\item \textbf{Long tidal-like tails} (e.g., NGC 4038/4039 “Antennae”, NGC 2623) are produced by asymmetric phase crossing: one side of the disk enters the repulsive zone earlier, causing it to be flung outward while the opposite side is still pulled inward.
+\item \textbf{Long tidal-like tails} (e.g., NGC 4038/4039 ``Antennae'', NGC 2623) are produced by asymmetric phase crossing: one side of the disk enters the repulsive zone earlier, causing it to be flung outward while the opposite side is still pulled inward.
 \item \textbf{Polar-ring galaxies} (e.g., NGC 4650A) formed when the repulsive torque excites strong $m=1$ or warping modes in the dual rotor field.
-\item \textbf{“Train-wreck” morphologies} (e.g., Arp 220, NGC 3256) late-stage chaotic torsion after the galaxy has almost completely traversed the $k=1$ layer.
+\item \textbf{``Train-wreck'' morphologies} (e.g., Arp 220, NGC 3256) late-stage chaotic torsion after the galaxy has almost completely traversed the $k=1$ layer.
 \end{itemize}
 
-These structures form naturally in isolated TLR-only simulations on timescales of 0.5-2 Gyr after the galaxy first touches the repulsive crest — exactly matching observed ages of ring and tail features.  
+These structures form naturally in isolated TLR-only simulations on timescales of 0.5--2 Gyr after the galaxy first touches the repulsive crest --- exactly matching observed ages of ring and tail features.  
 No external perturber is required.
 
 Consequently, a significant fraction (potentially the majority) of objects in classical merger catalogues are predicted to be self-induced torsional metamorphoses.  
-True mergers certainly occur, but they are expected to be distinguishable by their double nuclei, strongly disturbed stellar kinematics, and higher merger rates in dense environments — features that many “classical” interacting systems surprisingly lack.
+True mergers certainly occur, but they are expected to be distinguishable by their double nuclei, strongly disturbed stellar kinematics, and higher merger rates in dense environments --- features that many ``classical'' interacting systems surprisingly lack.
 
 Future integral-field spectroscopy (e.g., with JWST/NIRSpec, ELT/HARMONI) and deep imaging will test this prediction by searching for single, rapidly rotating old stellar disks hidden beneath the transient tidal features.
 
 \section{Conclusion}
 
-The Hubble sequence is neither pure evolution nor pure topography —  
+The Hubble sequence is neither pure evolution nor pure topography ---  
 it is the luminous diary of a universal transformation that every massive galaxy experiences exactly once in its lifetime.
 
-From birth in the deep within attraction, through the glorious moment it surfs the crest of the universe’s first gravitational repulsion, to its eventual dissolution into irregularity after the wave has passed —  
+From birth in the deep within attraction, through the glorious moment it surfs the crest of the universe's first gravitational repulsion, to its eventual dissolution into irregularity after the wave has passed ---  
 each morphological type records a different chapter of the same inevitable journey across the first repulsive layer of dual spacetime.
 
-Some of the most dramatic pages in that diary — the rings, tails, and bridges we have long attributed to cosmic collisions —  
+Some of the most dramatic pages in that diary --- the rings, tails, and bridges we have long attributed to cosmic collisions ---  
 may instead be the fingerprints of a solitary galaxy teaching itself, for the first time in 13.8 billion years, how to push back against its own weight.
 
 Gravity does not merely pull.  
@@ -147,13 +143,12 @@ At the right distance, and the right moment, it learns to let go.
 
 And in that brief, brilliant instant of release, the spiral arms are born.
 
-\bibliographystyle{unsrt}
 \begin{thebibliography}{9}
 \bibitem{Hypernumbernet2025}
 Anonymous, ``Gravity as Torsion between Dual Spacetime: A Biquaternionic Reformulation of General Relativity'', arXiv:2512.xxxxx (2025).
 
 \bibitem{githubsim}
-\texttt{https://github.com/hypernumbernet/dual-spacetime-simulator} (2025).
+\url{https://github.com/hypernumbernet/dual-spacetime-simulator} (2025).
 \end{thebibliography}
 
 \end{document}
