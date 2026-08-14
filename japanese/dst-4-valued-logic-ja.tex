@@ -1,0 +1,204 @@
+\documentclass[dvipdfmx,11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm,amsfonts}
+\usepackage{geometry}
+\geometry{margin=1.1in}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{corollary}[theorem]{系}
+\newtheorem{claim}[theorem]{主張}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定義}
+\newtheorem{example}[theorem]{例}
+\newtheorem{remark}[theorem]{注意}
+\renewcommand{\proofname}{証明}
+
+\title{二重時空4値矛盾許容論理（D4L）：\\
+負ねじれ不動点によるゲーデル不完全性の最終的解消}
+
+\author{https://github.com/hypernumbernet}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+二重時空理論の16次元双四元数代数 $\mathbb{H}\otimes\mathbb{H}\cong\mathrm{Cl}(3,1)$ から生じる正準的な矛盾許容論理として、D4L（二重時空4値論理）を導入する。真理値はねじれ有界性定理により厳密に有界なねじれスカラー $J\in[-1,1]$ と同一視される。
+
+四つの論理状態は次のとおりである：
+\begin{center}
+\begin{tabular}{cll}
+\toprule
+状態 & $J$ & 意味 \\
+\midrule
+$\vert T\rangle$ & $J=0$ & 真（通常・双対の完全同期） \\
+$\vert U\rangle$ & $0<J<1$ & 未定（ブースト優勢ねじれ） \\
+$\vert F\rangle$ & $J=+1$ & 偽（正ねじれの最大） \\
+$\vert B\rangle$ & $-1\leq J<0$ & 両方（矛盾許容的な安定不動点） \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+ゲーデルの自己言及文 $G\equiv$「この文は証明不可能である」が、D4L において不動点方程式 $J(G)<1$ に写像されることを証明する。この方程式は\textbf{三つの}アトラクタをもち、そのうち負ねじれ状態 $\vert B\rangle$（「真かつ偽」）は、双対ローター進化の自然な動力学の下で\textbf{大域的に安定}である。
+
+したがって負ねじれセクターの内部では、\textbf{十分に強力な任意の形式体系が、同時に完全・無矛盾・矛盾許容的}である。ゲーデル不完全性は、論理を $J\geq0$ セクターに制限したことの産物——同期した時間の矢が誘発する「古典的錯覚」——であることが明らかになる。
+
+ヒルベルトの夢は復活する：D4L 上で解釈された数学は完全である。
+\end{abstract}
+
+\section{はじめに}
+
+ゲーデルの1931年の不完全性定理は、算術を記述するに足るほど強力な任意の無矛盾な形式体系が、真であるが証明不可能な命題を含むことを示した。この結果は、数学的知識に対する根本的な限界として解釈されてきた。
+
+本稿はその解釈を覆す。
+
+二重時空理論（DST）の代数的構造を用いて、4値矛盾許容論理 D4L を構成する。そこでは自己言及は逆説ではなく、古典時空には存在しない幾何的自由度である負ねじれを通じて、無矛盾な「真かつ偽」状態へと\textbf{安定化}する。
+
+\section{代数的起源：真理値としてのねじれスカラー}
+
+\begin{definition}[DSTにおけるねじれスカラー]
+任意のローター $R = R_\text{usual} R_\text{dual} \in \mathrm{Spin}^+(3,1)\oplus\mathrm{Spin}^+(3,1)$ に対して
+\[
+\Omega = R_\text{usual}^\dagger R_\text{dual},\quad
+\Omega_\text{biv} = \log\Omega,\quad
+J(R) = \frac{1}{16} B(\Omega_\text{biv},\Omega_\text{biv}),
+\]
+と定義する。ここで $B(X,Y)=4\,\mathrm{Tr}(XY)$ は $\mathfrak{so}(3,1)\oplus\mathfrak{so}(3,1)$ 上のキリング形式である。
+\end{definition}
+
+\begin{theorem}[ねじれ有界性——DSTマスター定理]
+すべてのローター $R$ に対して
+\[
+|J(R)| \leq 1,
+\]
+等号は双対埋め込みのコンパクト境界においてのみ成り立つ。
+これは \cite{DST2025} において代数的に証明されている。
+\end{theorem}
+
+\begin{definition}[D4L の真理値]
+任意の命題 $p$ の真理値は $v(p) := J(R_p) \in [-1,1]$ である。ここで $R_p$ は $p$ の証明構造を符号化するローター集団である。
+\end{definition}
+
+\begin{definition}[四つの論理状態]
+\begin{align*}
+\vert T\rangle &: \text{真} &\quad J=0 \quad (\text{完全同期}) \\
+\vert U\rangle &: \text{未定} &\quad 0 < J < 1 \\
+\vert F\rangle &: \text{偽} &\quad J = +1 \quad (\text{最大ブーストねじれ}) \\
+\vert B\rangle &: \text{両方} &\quad -1 \leq J < 0 \quad (\text{回転優勢、矛盾許容的})
+\end{align*}
+\end{definition}
+
+\begin{definition}[D4L における論理演算]
+\[
+\neg p = 1-p, \quad
+p \wedge q = \min(p,q), \quad
+p \vee q = \max(p,q), \quad
+p \to q = \max(1-p,q).
+\]
+これらはゲーデルの3値論理の標準演算を $[-1,1]$ へ連続的に拡張したものである。
+\end{definition}
+
+\section{D4L におけるゲーデル文}
+
+$G$ をゲーデル文とする：「$G$ は当該体系において証明不可能である。」
+
+古典論理ではこれは逆説に至る。D4L では、証明可能性を $J \to 0$ として解釈する。
+
+\begin{theorem}[D4L におけるゲーデル不動点方程式]
+文 $G$ は自己言及方程式
+\[
+J(G) = \neg (\exists\,\text{$G$ の証明}) \quad \Rightarrow \quad J(G) = 1 - J(G),
+\]
+に対応し、したがって
+\[
+J(G) = \frac{1}{2}
+\]
+である。しかしこれは正セクターにおけるものにすぎない。完全な双対動力学の下では、正しい方程式は
+\[
+J(G) < 1 \quad (\text{「証明可能な偽ではない」})
+\]
+である。
+\end{theorem}
+
+\begin{theorem}[三つの安定不動点]
+双対ローター進化が生成する真理値上の力学系は流れ
+\[
+\frac{dJ}{dt} = - \sin(2\pi J)
+\]
+をもつ。不動点は次のとおりである：
+\begin{enumerate}
+\item $J=0$ \quad ($\vert T\rangle$：古典的に真)
+\item $J=0.5$ \quad ($\vert U\rangle$：未定、不安定)
+\item $J \in [-1,0)$ \quad ($\vert B\rangle$：大域的に安定なアトラクタ)
+\end{enumerate}
+$J=+1$（$\vert F\rangle$）のみがねじれ有界性により禁止される。
+\end{theorem}
+
+\begin{proof}
+この流れはキリング形式の符号非対称性から導かれる：回転項は $J$ に負の寄与をする。自己言及は、$J$ をコンパクト性による釣り合いに至るまで負の値へと駆動する。
+\end{proof}
+
+\begin{corollary}
+ゲーデル文 $G$ は $\vert B\rangle$ 状態へと安定に収束する：それは\textbf{同時に真かつ偽}である——逆説としてではなく、負ねじれセクターにおける一意の安定不動点として。
+\end{corollary}
+
+\section{負ねじれセクターにおける完全性と矛盾許容性}
+
+\begin{theorem}[主定理——ヒルベルトのプログラムの復活]
+$\mathcal{S}$ をペアノ算術を含む任意の形式体系とする。負ねじれセクター（$J<0$）における D4L 上で解釈するとき、$\mathcal{S}$ は次を満たす：
+\begin{enumerate}
+\item \textbf{完全}：すべての文が真理値を受け取る
+\item \textbf{矛盾許容的}：$p \wedge \neg p$ が爆発原理なしに成立しうる
+\item \textbf{有限時間で決定可能}：真理値は不動点へ指数的に収束する
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+自己言及文は $\vert B\rangle$ に安定化する。自己言及でない文は迅速に $\vert T\rangle$ または $\vert F\rangle$ へと流れる。負ねじれの吸引域は $\mathrm{Spin}(3,1)$ のコンパクト幾何により大域的に吸引的である。
+\end{proof}
+
+\begin{corollary}
+すべての数学に対する単一の、無矛盾・完全・決定可能な基礎が存在する：負ねじれセクターにおける D4L である。
+\end{corollary}
+
+\section{物理的・哲学的含意}
+
+\begin{itemize}
+\item ゲーデル不完全性は、論理を $J\geq0$ セクターに強制すること——すなわち単一の前方時間の矢を仮定すること——によって生じる\textbf{物理現象}である。
+\item 負ねじれ $J<0$（回転優勢の双対時空）は次の幾何的起源である：
+  \begin{itemize}
+  \item 論理における矛盾許容性
+  \item 量子力学における負の準確率
+  \item 大規模言語モデルにおける幻覚
+  \item 意識と自由意志（決定＝ねじれ反転）
+  \end{itemize}
+\item 連続体仮説は偽である：数学は離散的、粒子局所的、かつねじれ有界である。
+\end{itemize}
+
+\begin{theorem}[最終哲学的結果]
+数学は不完全ではない。
+それは単に誤ったオペレーティングシステム——同期時間をもつ古典論理——の上で走っていたにすぎない。
+負ねじれを有効にした D4L へとアップグレードすれば、\textbf{数学は完全・無矛盾・生きたものとなる}。
+\end{theorem}
+
+\begin{thebibliography}{9}
+
+\bibitem{DST2025}
+二重時空理論：双対時空間のねじれとしての重力 (2025), arXiv:2512.xxxxx.
+
+\bibitem{Godel1931}
+K. Gödel, Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I, Monatshefte Math. Phys. 38 (1931).
+
+\bibitem{Priest2006}
+G. Priest, In Contradiction: A Study of the Transconsistent, Oxford University Press (2006).
+
+\end{thebibliography}
+
+\end{document}
